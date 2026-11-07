@@ -1,0 +1,211 @@
+@import "tailwindcss";
+
+/*
+ * LinguaBloom design tokens.
+ * Source of truth for colour, radius, shadow and motion. Components use the
+ * Tailwind utilities mapped in `@theme inline` below (bg-surface, text-ink …),
+ * never raw hex values.
+ *
+ * Accent colours (blue / mint / coral / yellow) are FILL colours. For text on
+ * light or soft backgrounds use the matching `*-ink` token, which meets
+ * WCAG 2.2 AA (≥ 4.5:1) on surface and on its own `*-soft` background.
+ */
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+@custom-variant sidebar-collapsed (&:where([data-sidebar="collapsed"], [data-sidebar="collapsed"] *));
+
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #f7f8fc;
+  --surface: #ffffff;
+  --surface-soft: #f0f2fa;
+  --surface-raised: #ffffff;
+  /* Selected segment / toggle: must stand out from --surface-soft. */
+  --control-active: #ffffff;
+  --ink: #25283a;
+  /* Spec suggests #73788C (≈4.4:1 on white); darkened to pass AA for body text. */
+  --muted: #676c80;
+  --border: #e7e9f1;
+  --border-strong: #d5d8e5;
+
+  --primary: #6257d9;
+  --primary-hover: #5348c9;
+  --primary-foreground: #ffffff;
+  --primary-soft: #eceaff;
+  --primary-ink: #5247c4;
+
+  --blue: #5b9beb;
+  --blue-soft: #e6f0fc;
+  --blue-ink: #2f6db8;
+
+  --mint: #51b99a;
+  --mint-soft: #e3f5ee;
+  --mint-ink: #1f7a60;
+
+  --coral: #f18a78;
+  --coral-soft: #fdebe7;
+  --coral-ink: #b4473a;
+
+  --yellow: #f4c75e;
+  --yellow-soft: #fdf4dc;
+  --yellow-ink: #8a6410;
+
+  /* Destructive actions only (delete data). Never for "missed a day". */
+  --danger: #c2412d;
+  --danger-soft: #fce9e5;
+
+  --ring: #6257d9;
+  --overlay: rgb(37 40 58 / 0.4);
+
+  --elev-card: 0 1px 2px rgb(37 40 58 / 0.04), 0 4px 16px rgb(37 40 58 / 0.05);
+  --elev-raised: 0 2px 4px rgb(37 40 58 / 0.05), 0 12px 32px rgb(37 40 58 / 0.08);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #14151f;
+  --surface: #1c1e2b;
+  --surface-soft: #252839;
+  --surface-raised: #23263a;
+  --control-active: #3b3f56;
+  --ink: #e9eaf3;
+  --muted: #a3a7bc;
+  --border: #2d3043;
+  --border-strong: #3b3f56;
+
+  --primary: #8b82f0;
+  --primary-hover: #9d95f4;
+  /* Light text on #8B82F0 is only ≈3.2:1, so primary buttons use dark text. */
+  --primary-foreground: #14151f;
+  --primary-soft: #2c2950;
+  --primary-ink: #b3adff;
+
+  --blue: #6fa8f0;
+  --blue-soft: #1d2a40;
+  --blue-ink: #9cc4f5;
+
+  --mint: #5cc6a6;
+  --mint-soft: #17322b;
+  --mint-ink: #8edcc2;
+
+  --coral: #f49a89;
+  --coral-soft: #3a2224;
+  --coral-ink: #f7b4a7;
+
+  --yellow: #f4c75e;
+  --yellow-soft: #352c17;
+  --yellow-ink: #f2d27f;
+
+  --danger: #f2876f;
+  --danger-soft: #3d2120;
+
+  --ring: #a69ff6;
+  --overlay: rgb(0 0 0 / 0.55);
+
+  --elev-card: 0 1px 2px rgb(0 0 0 / 0.3), 0 4px 16px rgb(0 0 0 / 0.2);
+  --elev-raised: 0 2px 4px rgb(0 0 0 / 0.35), 0 12px 32px rgb(0 0 0 / 0.35);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-soft: var(--surface-soft);
+  --color-surface-raised: var(--surface-raised);
+  --color-control-active: var(--control-active);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-ink: var(--primary-ink);
+
+  --color-blue: var(--blue);
+  --color-blue-soft: var(--blue-soft);
+  --color-blue-ink: var(--blue-ink);
+  --color-mint: var(--mint);
+  --color-mint-soft: var(--mint-soft);
+  --color-mint-ink: var(--mint-ink);
+  --color-coral: var(--coral);
+  --color-coral-soft: var(--coral-soft);
+  --color-coral-ink: var(--coral-ink);
+  --color-yellow: var(--yellow);
+  --color-yellow-soft: var(--yellow-soft);
+  --color-yellow-ink: var(--yellow-ink);
+
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-ring: var(--ring);
+  --color-overlay: var(--overlay);
+
+  --font-sans:
+    var(--font-geist-sans), "PingFang SC", "Noto Sans SC", "Microsoft YaHei", "Hiragino Sans GB",
+    system-ui, sans-serif;
+  --font-reading: Georgia, "Noto Serif SC", "Songti SC", "SimSun", serif;
+  /* Fonts with full IPA coverage first; Geist lacks some IPA glyphs. */
+  --font-ipa:
+    "Charis SIL", "Doulos SIL", "Gentium Plus", "Segoe UI", "Lucida Sans Unicode",
+    "Arial Unicode MS", sans-serif;
+
+  --radius-card: 18px;
+  --radius-control: 12px;
+  --radius-pill: 999px;
+
+  --shadow-card: var(--elev-card);
+  --shadow-raised: var(--elev-raised);
+
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Visible, consistent keyboard focus everywhere (WCAG 2.4.7 / 2.4.11). */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background-color: var(--primary-soft);
+    color: var(--ink);
+  }
+}
+
+@utility font-ipa {
+  font-family: var(--font-ipa);
+}
+
+@utility font-reading {
+  font-family: var(--font-reading);
+}
+
+/* Respect reduced-motion: keep state changes, drop movement. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
