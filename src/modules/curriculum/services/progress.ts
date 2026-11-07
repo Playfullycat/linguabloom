@@ -1,7 +1,8 @@
-import { and, asc, eq, isNull, sql } from "drizzle-orm";
+import { and, asc, desc, eq, isNull, sql } from "drizzle-orm";
 
 import type { Database } from "@/db/connection";
-import { learnerLessonProgress, lessonStepAttempts, lessonSteps, lessons } from "@/db/schema";
+import { grammarPoints, learnerLessonProgress, lessonStepAttempts, lessonSteps, lessons, units, type ErrorCategory } from "@/db/schema";
+import { recordError } from "@/modules/errors/services/errors";
 
 import type { LessonStepContent } from "../content/schema";
 import { evaluateStep, type StepEvaluation } from "../domain/scoring";
@@ -55,7 +56,7 @@ export async function recordStepAttempt(db: Database, userId: string, input: Rec
   const evaluation = evaluateStep(content, input.response);
   const nextStepKey = steps[index + 1]?.stepKey ?? null;
 
-  return db.transaction(async (tx) => {
+  const result = await db.transaction(async (tx) => {
     // Idempotency: the same client request id returns the stored attempt.
     const [existing] = await tx
       .select()
@@ -123,6 +124,74 @@ export async function recordStepAttempt(db: Database, userId: string, input: Rec
       });
 
     return { ...evaluation, attemptNo, duplicate, nextStepKey, completionRatio };
+  });
+  if (!result.duplicate && result.isCorrect === false) {
+    await recordLessonStepError(db, userId, input.lessonId, input.stepKey, content, input.response, result.correctAnswer);
+  }
+  return result;
+}
+
+/** What a learner typed or picked, as text for the error notebook. */
+function describeResponse(step: LessonStepContent, response: unknown): string | null {
+  const r = response as { choice?: number; text?: string; tokens?: string[] };
+  if (step.type === "choice" && typeof r.choice === "number") return step.options[r.choice] ?? null;
+  if (typeof r.text === "string") return r.text;
+  if (Array.isArray(r.tokens)) return r.tokens.join(" ");
+  return null;
+}
+
+/**
+ * A wrong lesson answer goes into the error notebook, linked to the grammar
+ * point the unit teaches (grammar steps) or to the lesson (other steps).
+ */
+async function recordLessonStepError(
+  db: Database,
+  userId: string,
+  lessonId: string,
+  stepKey: string,
+  step: LessonStepContent,
+  response: unknown,
+  correct: string | null,
+) {
+  const [row] = await db
+    .select({ titleEn: lessons.titleEn, titleZh: lessons.titleZh, unitContent: units.content })
+    .from(lessons)
+    .innerJoin(units, eq(units.id, lessons.unitId))
+    .where(eq(lessons.id, lessonId));
+  if (!row) return;
+  const unitGrammar = ((row.unitContent as { grammar_points?: { id: string; title_zh: string }[] } | null)?.grammar_points ?? [])[0];
+  const lessonTarget = { pointType: "lesson" as const, pointId: lessonId, title: `${row.titleEn}（${row.titleZh}）` };
+  let target: { category: ErrorCategory; pointType: "grammar" | "unit_grammar" | "lesson"; pointId: string; title: string };
+
+  if (step.skill === "grammar" && unitGrammar) {
+    const [point] = await db
+      .select({ id: grammarPoints.id, titleZh: grammarPoints.titleZh, category: grammarPoints.defaultErrorCategory })
+      .from(grammarPoints)
+      .where(and(isNull(grammarPoints.archivedAt), sql`${grammarPoints.unitGrammarIds} ? ${unitGrammar.id}`))
+      // A unit can cover two map points ("pronouns + be"): the later, more specific one gets the error.
+      .orderBy(desc(grammarPoints.sortOrder))
+      .limit(1);
+    const category = step.type === "order" ? "word_order" : ((point?.category ?? "word_form") as ErrorCategory);
+    target = point
+      ? { category, pointType: "grammar", pointId: point.id, title: point.titleZh }
+      : { category, pointType: "unit_grammar", pointId: unitGrammar.id, title: unitGrammar.title_zh };
+  } else if (step.type === "order") {
+    target = { category: "word_order", ...lessonTarget };
+  } else if (step.skill === "listening") {
+    target = { category: "listening", ...lessonTarget };
+  } else if (step.skill === "vocabulary") {
+    target = { category: step.type === "cloze" ? "spelling" : "comprehension", ...lessonTarget };
+  } else if (step.skill === "reading") {
+    target = { category: "comprehension", ...lessonTarget };
+  } else {
+    target = { category: "pragmatics", ...lessonTarget };
+  }
+  await recordError(db, userId, {
+    ...target,
+    source: "lesson",
+    sourceRef: `${lessonId}#${stepKey}`,
+    wrong: describeResponse(step, response),
+    correct,
   });
 }
 

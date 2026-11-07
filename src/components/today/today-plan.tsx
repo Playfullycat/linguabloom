@@ -10,6 +10,7 @@ import {
   RotateCcw,
   Shapes,
   Undo2,
+  Wrench,
   type LucideIcon,
 } from "lucide-react";
 import Link from "next/link";
@@ -27,6 +28,7 @@ import type { SkipReason, TodayPlan, TodayTask } from "@/modules/study-plan/serv
 const KIND: Record<TodayTask["kind"], { icon: LucideIcon; label: string; accent: string }> = {
   review: { icon: RotateCcw, label: "复习", accent: "bg-yellow-soft text-yellow-ink" },
   lesson: { icon: Shapes, label: "课程", accent: "bg-primary-soft text-primary-ink" },
+  remediation: { icon: Wrench, label: "补救", accent: "bg-coral-soft text-coral-ink" },
   input: { icon: BookOpen, label: "输入", accent: "bg-blue-soft text-blue-ink" },
   output: { icon: MessageCircle, label: "输出", accent: "bg-mint-soft text-mint-ink" },
 };

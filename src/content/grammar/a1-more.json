@@ -1,0 +1,293 @@
+{
+  "schema_version": 1,
+  "source_type": "first_party",
+  "review_status": "pending_owner_review",
+  "points": [
+    {
+      "id": "possessives",
+      "order": 7,
+      "level": "a1",
+      "title_en": "Possessives: my / your … and 's",
+      "title_zh": "所有格：my / your … 和 's",
+      "status": "published",
+      "topics": ["pronouns", "nouns"],
+      "prerequisites": ["subject-pronouns"],
+      "unit_grammar_ids": ["pre-a1.introducing-yourself"],
+      "default_error_category": "word_form",
+      "summary_zh": "说“谁的”：代词用 my / your / his / her / its / our / their，名词后加 's。",
+      "explanation_zh": "所有格放在名词前面，表示“……的”。代词有专门的形式：I → my，you → your，he → his，she → her，it → its，we → our，they → their。人名或名词后面加 's：Tom's car，my mother's job。复数名词已经以 s 结尾，只加 '：my parents' house。注意 its（它的）没有撇号，it's 是 it is 的缩写。",
+      "structure": ["my · your · his · her · its · our · their + 名词", "名词 + 's + 名词（Anna's phone）", "复数名词 + ' + 名词（the students' books）"],
+      "usage_zh": ["介绍自己：My name is Li Na.", "说归属：This is my brother's car."],
+      "examples": [
+        { "en": "Her name is Mei.", "zh": "她的名字叫梅。" },
+        { "en": "This is Tom's bike.", "zh": "这是汤姆的自行车。" },
+        { "en": "Our teacher is from Ireland.", "zh": "我们的老师来自爱尔兰。" }
+      ],
+      "breakdowns": [
+        { "zh": "这是汤姆的自行车。", "parts": [ { "text": "This", "role": "subject" }, { "text": "is", "role": "verb" }, { "text": "Tom's bike", "role": "complement" } ] },
+        { "zh": "她的名字叫梅。", "parts": [ { "text": "Her name", "role": "subject" }, { "text": "is", "role": "verb" }, { "text": "Mei", "role": "complement" } ] }
+      ],
+      "common_errors": [
+        { "wrong": "This is she book.", "right": "This is her book.", "why_zh": "表示“她的”用 her，不用 she。" },
+        { "wrong": "the car of my father", "right": "my father's car", "why_zh": "说人的东西，一般用 's。" },
+        { "wrong": "The dog wagged it's tail.", "right": "The dog wagged its tail.", "why_zh": "its = 它的；it's = it is。" }
+      ],
+      "contrast": {
+        "title_zh": "his 和 her",
+        "items": [
+          { "en": "Ben loves his job.", "zh": "本热爱他的工作。", "note_zh": "跟着“拥有者”走：Ben 是男性 → his" },
+          { "en": "Anna loves her job.", "zh": "安娜热爱她的工作。", "note_zh": "Anna 是女性 → her" }
+        ]
+      },
+      "limits_zh": ["mine / yours / hers 这类“名词性物主代词”单独使用（It's mine.），留到 A2 再系统练。"],
+      "exercises": [
+        { "id": "e1", "type": "choice", "difficulty": 1, "prompt_en": "We love ___ new flat.", "prompt_zh": "选出正确的词", "options": ["our", "we", "us"], "answer": 0, "explanation_zh": "we → our（我们的）。" },
+        { "id": "e2", "type": "choice", "difficulty": 2, "prompt_en": "Mr Li is ___ boss.", "prompt_zh": "“我妹妹的老板”", "options": ["my sister boss", "my sister's", "my sisters"], "answer": 1, "explanation_zh": "名词 + 's 表示“……的”。" },
+        { "id": "e3", "type": "cloze", "difficulty": 2, "sentence_en": "Jack is my friend. ___ wife is a pilot.", "translation_zh": "杰克是我朋友，他的妻子是飞行员。", "answers": ["His"], "explanation_zh": "杰克是男性 → his。" },
+        { "id": "e4", "type": "cloze", "difficulty": 3, "sentence_en": "The cat is eating ___ dinner.", "translation_zh": "猫在吃它的晚饭。", "answers": ["its"], "explanation_zh": "它的 = its（没有撇号）。" },
+        { "id": "e5", "type": "correction", "difficulty": 2, "wrong_en": "What is you name?", "translation_zh": "你叫什么名字？", "answers": ["What is your name?", "What's your name?"], "explanation_zh": "你的 = your。" },
+        { "id": "e6", "type": "order", "difficulty": 2, "translation_zh": "这是我父母的房子。", "tokens": ["parents'", "my", "is", "This", "house"], "answers": ["This is my parents' house."], "explanation_zh": "parents 已有 s，只加 '。" },
+        { "id": "e7", "type": "build", "difficulty": 2, "task_zh": "用 's 和一个物主代词各写一句，介绍家人的东西或工作。", "model_answers": ["My brother's car is red. His job is very busy."], "checklist_zh": ["名词所有格用了 's", "物主代词和“拥有者”一致（男 his / 女 her）"] }
+      ]
+    },
+    {
+      "id": "there-is-are",
+      "order": 8,
+      "level": "a1",
+      "title_en": "There is / There are",
+      "title_zh": "there is / there are（有……）",
+      "status": "published",
+      "topics": ["sentence", "places"],
+      "prerequisites": ["be-verb", "articles"],
+      "unit_grammar_ids": [],
+      "default_error_category": "agreement",
+      "summary_zh": "说某处“有”什么：单数用 there is，复数用 there are。",
+      "explanation_zh": "介绍某个地方有什么东西时，英语用 there is / there are，而不是 have。后面名词是单数或不可数用 there is（口语 there's），复数用 there are。否定：there isn't / there aren't；提问：Is there …? / Are there …? 中文“桌上有一本书”，英语是 There's a book on the table，地点放在句末。",
+      "structure": ["There is (There's) + a / an + 单数名词 + 地点", "There are + 复数名词 + 地点", "Is there …? / Are there …?"],
+      "usage_zh": ["描述房间、城市：There are two bedrooms in my flat.", "问路、问设施：Is there a bank near here?"],
+      "examples": [
+        { "en": "There's a park near my school.", "zh": "我学校附近有个公园。" },
+        { "en": "There are three people in my family.", "zh": "我家有三口人。" },
+        { "en": "Is there a lift in this building?", "zh": "这栋楼有电梯吗？" }
+      ],
+      "breakdowns": [
+        { "zh": "我学校附近有个公园。", "parts": [ { "text": "There's", "role": "verb" }, { "text": "a park", "role": "subject" }, { "text": "near my school", "role": "place" } ] },
+        { "zh": "这栋楼有电梯吗？", "parts": [ { "text": "Is there", "role": "verb" }, { "text": "a lift", "role": "subject" }, { "text": "in this building", "role": "place" } ] }
+      ],
+      "common_errors": [
+        { "wrong": "My room has a desk near the window.", "right": "There's a desk near the window in my room.", "why_zh": "这句不算错，但描述某处有什么时，英语更常用 there is。" },
+        { "wrong": "There is two banks on this street.", "right": "There are two banks on this street.", "why_zh": "two banks 是复数，用 are。" },
+        { "wrong": "In the park have many trees.", "right": "There are many trees in the park.", "why_zh": "“某处有……”不用 have 直译，用 there are。" }
+      ],
+      "contrast": {
+        "title_zh": "there is 和 have",
+        "items": [
+          { "en": "There's a supermarket near my flat.", "zh": "我家附近有家超市。", "note_zh": "某处存在某物 → there is" },
+          { "en": "I have a car.", "zh": "我有一辆车。", "note_zh": "某人拥有某物 → have" }
+        ]
+      },
+      "limits_zh": ["there is 后面紧跟的第一个名词决定用 is 还是 are：There is a pen and two books.（口语常见）。"],
+      "exercises": [
+        { "id": "e1", "type": "choice", "difficulty": 1, "prompt_en": "___ a cinema in my town.", "prompt_zh": "选出正确的开头", "options": ["There is", "There are", "It has"], "answer": 0, "explanation_zh": "a cinema 是单数，用 there is。" },
+        { "id": "e2", "type": "choice", "difficulty": 2, "prompt_en": "___ any eggs in the fridge?", "prompt_zh": "选出正确的问法", "options": ["Is there", "Are there", "Have"], "answer": 1, "explanation_zh": "eggs 是复数：Are there …?" },
+        { "id": "e3", "type": "cloze", "difficulty": 2, "sentence_en": "There ___ twenty students in our class.", "translation_zh": "我们班有二十个学生。", "answers": ["are"], "explanation_zh": "复数 students → are。" },
+        { "id": "e4", "type": "cloze", "difficulty": 3, "sentence_en": "Sorry, there ___ any milk left.", "translation_zh": "抱歉，牛奶没有了。", "answers": ["isn't", "is not"], "explanation_zh": "milk 不可数，用 is；否定 isn't。" },
+        { "id": "e5", "type": "correction", "difficulty": 2, "wrong_en": "There is three chairs in the kitchen.", "translation_zh": "厨房里有三把椅子。", "answers": ["There are three chairs in the kitchen."], "explanation_zh": "three chairs → are。" },
+        { "id": "e6", "type": "order", "difficulty": 2, "translation_zh": "这附近有银行吗？", "tokens": ["here", "there", "Is", "near", "bank", "a"], "answers": ["Is there a bank near here?"], "explanation_zh": "疑问：Is there + a bank + near here?" },
+        { "id": "e7", "type": "build", "difficulty": 2, "task_zh": "用 there is 和 there are 各写一句，描述你住的地方。", "model_answers": ["There's a small balcony in my flat. There are two supermarkets near my building."], "checklist_zh": ["单数用 there is，复数用 there are", "地点放在句末"] }
+      ]
+    },
+    {
+      "id": "present-simple",
+      "order": 9,
+      "level": "a1",
+      "title_en": "Present simple and do / does",
+      "title_zh": "一般现在时和 do / does",
+      "status": "published",
+      "topics": ["verbs", "tenses", "questions"],
+      "prerequisites": ["negatives-questions"],
+      "unit_grammar_ids": ["a1.questions-be-do"],
+      "default_error_category": "agreement",
+      "summary_zh": "说习惯和事实；he / she / it 后动词加 -s；否定和提问用 do / does。",
+      "explanation_zh": "一般现在时用来说习惯、经常发生的事和一般事实。he、she、it 和单数名词作主语时，动词加 -s（works, goes, watches, studies）。普通动词的否定和疑问不能直接加 not 或倒装，要借助 do / does：I don't like…，She doesn't work…，Do you…?，Does he…? 用了 does 之后，动词恢复原形（Does she work? 不是 Does she works?）。",
+      "structure": ["I / you / we / they + 动词原形", "he / she / it + 动词-s", "否定：don't / doesn't + 动词原形", "提问：Do / Does + 主语 + 动词原形？"],
+      "usage_zh": ["习惯：I get up at seven.", "事实：Water boils at 100 degrees.", "日程：The train leaves at 8:15."],
+      "examples": [
+        { "en": "She works in a bank.", "zh": "她在银行工作。" },
+        { "en": "I don't eat meat.", "zh": "我不吃肉。" },
+        { "en": "Does your brother live with you?", "zh": "你哥哥和你住一起吗？" }
+      ],
+      "breakdowns": [
+        { "zh": "她在银行工作。", "parts": [ { "text": "She", "role": "subject" }, { "text": "works", "role": "verb" }, { "text": "in a bank", "role": "place" } ] },
+        { "zh": "你哥哥和你住一起吗？", "parts": [ { "text": "Does", "role": "verb" }, { "text": "your brother", "role": "subject" }, { "text": "live", "role": "verb" }, { "text": "with you", "role": "other" } ] }
+      ],
+      "common_errors": [
+        { "wrong": "He work in Shanghai.", "right": "He works in Shanghai.", "why_zh": "he 作主语，动词加 -s。" },
+        { "wrong": "She doesn't likes coffee.", "right": "She doesn't like coffee.", "why_zh": "doesn't 后面用原形。" },
+        { "wrong": "You like music?", "right": "Do you like music?", "why_zh": "普通动词提问要用 do。" }
+      ],
+      "contrast": {
+        "title_zh": "do 还是 does",
+        "items": [
+          { "en": "Do they speak English?", "zh": "他们说英语吗？", "note_zh": "I / you / we / they → do" },
+          { "en": "Does she speak English?", "zh": "她说英语吗？", "note_zh": "he / she / it → does，动词用原形" }
+        ]
+      },
+      "limits_zh": ["have 的第三人称单数是 has；be 动词不用 do / does（Is she…? 不是 Does she is…?）。", "正在发生的事用现在进行时（I'm working now.），见后续章节。"],
+      "exercises": [
+        { "id": "e1", "type": "choice", "difficulty": 1, "prompt_en": "My dad ___ to work by car.", "prompt_zh": "选出正确的形式", "options": ["go", "goes", "going"], "answer": 1, "explanation_zh": "My dad = he → goes。" },
+        { "id": "e2", "type": "choice", "difficulty": 2, "prompt_en": "___ your sister play the piano?", "prompt_zh": "选出正确的开头", "options": ["Do", "Does", "Is"], "answer": 1, "explanation_zh": "your sister = she → Does。" },
+        { "id": "e3", "type": "cloze", "difficulty": 2, "sentence_en": "I ___ like horror films.", "translation_zh": "我不喜欢恐怖片。", "answers": ["don't", "do not"], "explanation_zh": "I 的否定：don't + 原形。" },
+        { "id": "e4", "type": "cloze", "difficulty": 3, "sentence_en": "She ___ English at a high school. (teach)", "translation_zh": "她在一所高中教英语。", "answers": ["teaches"], "explanation_zh": "ch 结尾加 -es：teaches。" },
+        { "id": "e5", "type": "correction", "difficulty": 2, "wrong_en": "He doesn't drinks tea.", "translation_zh": "他不喝茶。", "answers": ["He doesn't drink tea.", "He does not drink tea."], "explanation_zh": "doesn't 后面用原形 drink。" },
+        { "id": "e6", "type": "correction", "difficulty": 3, "wrong_en": "Does she works on Saturdays?", "translation_zh": "她周六上班吗？", "answers": ["Does she work on Saturdays?"], "explanation_zh": "Does 后面用原形 work。" },
+        { "id": "e7", "type": "order", "difficulty": 2, "translation_zh": "你住在哪里？", "tokens": ["you", "do", "live", "Where"], "answers": ["Where do you live?"], "explanation_zh": "疑问词 + do + 主语 + 动词原形。" },
+        { "id": "e8", "type": "build", "difficulty": 3, "task_zh": "写一位家人的两个习惯：一句肯定，一句用 doesn't 否定。", "model_answers": ["My mum gets up at six. She doesn't drink coffee."], "checklist_zh": ["肯定句动词加了 -s", "否定句用 doesn't + 动词原形"] }
+      ]
+    },
+    {
+      "id": "frequency-adverbs",
+      "order": 10,
+      "level": "a1",
+      "title_en": "Adverbs of frequency",
+      "title_zh": "频率副词 always / usually / often / sometimes / never",
+      "status": "published",
+      "topics": ["adverbs", "sentence"],
+      "prerequisites": ["present-simple"],
+      "unit_grammar_ids": [],
+      "default_error_category": "word_order",
+      "summary_zh": "表示“多常”的副词放在实义动词前、be 动词后。",
+      "explanation_zh": "always（总是）> usually（通常）> often（经常）> sometimes（有时）> never（从不）。它们的位置很固定：放在实义动词前面（I usually walk to work.），但放在 be 动词后面（She is always late.）。never 本身是否定，不要再加 not。how often 用来问频率。",
+      "structure": ["主语 + 频率副词 + 实义动词", "主语 + be + 频率副词", "How often do you …?"],
+      "usage_zh": ["说习惯：I often cook at home.", "抱怨：He's always late!"],
+      "examples": [
+        { "en": "I usually have breakfast at home.", "zh": "我通常在家吃早饭。" },
+        { "en": "She is never late.", "zh": "她从不迟到。" },
+        { "en": "How often do you go swimming?", "zh": "你多久去游一次泳？" }
+      ],
+      "breakdowns": [
+        { "zh": "我通常在家吃早饭。", "parts": [ { "text": "I", "role": "subject" }, { "text": "usually", "role": "adverb" }, { "text": "have", "role": "verb" }, { "text": "breakfast", "role": "object" }, { "text": "at home", "role": "place" } ] },
+        { "zh": "她从不迟到。", "parts": [ { "text": "She", "role": "subject" }, { "text": "is", "role": "verb" }, { "text": "never", "role": "adverb" }, { "text": "late", "role": "complement" } ] }
+      ],
+      "common_errors": [
+        { "wrong": "I go always to the gym.", "right": "I always go to the gym.", "why_zh": "频率副词放在实义动词 go 前面。" },
+        { "wrong": "She always is busy.", "right": "She is always busy.", "why_zh": "遇到 be 动词，频率副词放在后面。" },
+        { "wrong": "I don't never eat fast food.", "right": "I never eat fast food.", "why_zh": "never 已经是否定，不再加 don't。" }
+      ],
+      "contrast": {
+        "title_zh": "实义动词和 be 动词",
+        "items": [
+          { "en": "He often plays games.", "zh": "他经常玩游戏。", "note_zh": "实义动词前" },
+          { "en": "He is often tired.", "zh": "他常常很累。", "note_zh": "be 动词后" }
+        ]
+      },
+      "limits_zh": ["sometimes 也可以放句首：Sometimes I work from home.", "every day、twice a week 这种短语放句末。"],
+      "exercises": [
+        { "id": "e1", "type": "choice", "difficulty": 1, "prompt_zh": "哪一句是对的？", "options": ["I drink usually tea.", "I usually drink tea.", "Usually I tea drink."], "answer": 1, "explanation_zh": "usually 放在实义动词 drink 前。" },
+        { "id": "e2", "type": "choice", "difficulty": 2, "prompt_zh": "哪一句是对的？", "options": ["They are always happy.", "They always are happy.", "They are happy always."], "answer": 0, "explanation_zh": "be 动词后面放 always。" },
+        { "id": "e3", "type": "order", "difficulty": 2, "translation_zh": "我有时在家工作。", "tokens": ["from", "sometimes", "home", "I", "work"], "answers": ["I sometimes work from home.", "Sometimes I work from home."], "explanation_zh": "sometimes 放动词前，也可以放句首。" },
+        { "id": "e4", "type": "cloze", "difficulty": 2, "instructions_zh": "填一个频率副词：他一次都没去过健身房。", "sentence_en": "He ___ goes to the gym.", "translation_zh": "他从不去健身房。", "answers": ["never"], "explanation_zh": "从不 = never。" },
+        { "id": "e5", "type": "correction", "difficulty": 2, "wrong_en": "My boss is late never.", "translation_zh": "我的老板从不迟到。", "answers": ["My boss is never late."], "explanation_zh": "never 放在 be 动词 is 后面。" },
+        { "id": "e6", "type": "correction", "difficulty": 3, "wrong_en": "We don't never watch TV.", "translation_zh": "我们从不看电视。", "answers": ["We never watch TV.", "We don't ever watch TV."], "explanation_zh": "never 本身是否定。" },
+        { "id": "e7", "type": "cloze", "difficulty": 2, "sentence_en": "How ___ do you visit your grandparents?", "translation_zh": "你多久去看一次祖父母？", "answers": ["often"], "explanation_zh": "问频率：How often …?" },
+        { "id": "e8", "type": "build", "difficulty": 2, "task_zh": "用三个不同的频率副词说说你的周末。", "model_answers": ["I usually sleep late on Saturdays. I often meet friends. I never work on Sundays."], "checklist_zh": ["副词放在实义动词前、be 动词后", "用 never 时没有再加 not"] }
+      ]
+    },
+    {
+      "id": "prepositions-place-time",
+      "order": 11,
+      "level": "a1",
+      "title_en": "Prepositions: in / on / at",
+      "title_zh": "介词 in / on / at（地点和时间）",
+      "status": "published",
+      "topics": ["prepositions", "places", "time"],
+      "prerequisites": ["word-order"],
+      "unit_grammar_ids": [],
+      "default_error_category": "preposition",
+      "summary_zh": "时间：at 时刻、on 日期和星期、in 月份年份；地点：at 点、on 面、in 里面。",
+      "explanation_zh": "时间：at + 具体时刻（at seven, at night），on + 某一天（on Monday, on 5 May），in + 较长的时间（in July, in 2025, in the morning）。地点：at + 一个点 / 场所（at the bus stop, at work），on + 表面（on the table, on the wall），in + 在某空间里面（in the box, in Beijing）。这是基本规律，有些是固定说法，需要单独记。",
+      "structure": ["at + 时刻 / 地点（点）", "on + 日期 / 星期 / 表面", "in + 月份 / 年份 / 季节 / 一天中的时段 / 空间里面"],
+      "usage_zh": ["约时间：Let's meet at three on Friday.", "说位置：Your phone is on the sofa."],
+      "examples": [
+        { "en": "The meeting is at ten on Tuesday.", "zh": "会议在周二十点。" },
+        { "en": "I was born in 1995.", "zh": "我生于 1995 年。" },
+        { "en": "She's at work, and her keys are in her bag.", "zh": "她在上班，钥匙在她包里。" }
+      ],
+      "breakdowns": [
+        { "zh": "会议在周二十点。", "parts": [ { "text": "The meeting", "role": "subject" }, { "text": "is", "role": "verb" }, { "text": "at ten", "role": "time" }, { "text": "on Tuesday", "role": "time" } ] },
+        { "zh": "你的手机在沙发上。", "parts": [ { "text": "Your phone", "role": "subject" }, { "text": "is", "role": "verb" }, { "text": "on the sofa", "role": "place" } ] }
+      ],
+      "common_errors": [
+        { "wrong": "See you in Monday.", "right": "See you on Monday.", "why_zh": "星期用 on。" },
+        { "wrong": "I get up on 7 o'clock.", "right": "I get up at 7 o'clock.", "why_zh": "具体时刻用 at。" },
+        { "wrong": "He lives at China.", "right": "He lives in China.", "why_zh": "国家、城市这类大地方用 in。" }
+      ],
+      "contrast": {
+        "title_zh": "in the morning 和 at night",
+        "items": [
+          { "en": "I study in the morning.", "zh": "我早上学习。", "note_zh": "morning / afternoon / evening 用 in the" },
+          { "en": "I sleep at night.", "zh": "我晚上睡觉。", "note_zh": "固定说法：at night" }
+        ]
+      },
+      "limits_zh": ["固定说法要单独记：at home, at the weekend（英式）/ on the weekend（美式）, on the bus。", "last / next / every 前不加介词：next Monday, every day。"],
+      "exercises": [
+        { "id": "e1", "type": "choice", "difficulty": 1, "prompt_en": "My birthday is ___ June.", "prompt_zh": "选出正确的介词", "options": ["at", "on", "in"], "answer": 2, "explanation_zh": "月份用 in。" },
+        { "id": "e2", "type": "choice", "difficulty": 2, "prompt_en": "The picture is ___ the wall.", "prompt_zh": "选出正确的介词", "options": ["in", "on", "at"], "answer": 1, "explanation_zh": "墙的表面上 → on。" },
+        { "id": "e3", "type": "cloze", "difficulty": 1, "sentence_en": "The film starts ___ eight.", "translation_zh": "电影八点开始。", "answers": ["at"], "explanation_zh": "具体时刻用 at。" },
+        { "id": "e4", "type": "cloze", "difficulty": 2, "sentence_en": "We don't work ___ Sundays.", "translation_zh": "我们周日不上班。", "answers": ["on"], "explanation_zh": "星期用 on。" },
+        { "id": "e5", "type": "correction", "difficulty": 2, "wrong_en": "She lives at London.", "translation_zh": "她住在伦敦。", "answers": ["She lives in London."], "explanation_zh": "城市用 in。" },
+        { "id": "e6", "type": "correction", "difficulty": 3, "wrong_en": "I'll call you on next Friday.", "translation_zh": "我下周五给你打电话。", "answers": ["I'll call you next Friday.", "I will call you next Friday."], "explanation_zh": "next 前面不加介词。" },
+        { "id": "e7", "type": "order", "difficulty": 2, "translation_zh": "我们晚上在家吃饭。", "tokens": ["home", "at", "at", "dinner", "night", "We", "have"], "answers": ["We have dinner at home at night."], "explanation_zh": "地点 at home 在前，时间 at night 在后。" },
+        { "id": "e8", "type": "build", "difficulty": 2, "task_zh": "约朋友见面：说清楚哪天、几点、在哪儿。", "model_answers": ["Let's meet at the café on Saturday at two.", "Can we meet at the station on Friday at six?"], "checklist_zh": ["星期 / 日期用 on", "时刻用 at", "地点介词选对了"] }
+      ]
+    },
+    {
+      "id": "can",
+      "order": 12,
+      "level": "a1",
+      "title_en": "Can for ability and requests",
+      "title_zh": "can（能力、请求、许可）",
+      "status": "published",
+      "topics": ["verbs", "modals"],
+      "prerequisites": ["present-simple"],
+      "unit_grammar_ids": [],
+      "default_error_category": "word_form",
+      "summary_zh": "can + 动词原形：会、能、可以；所有人称都用 can，不加 -s。",
+      "explanation_zh": "can 表示能力（I can swim.）、请求（Can you help me?）和许可（You can sit here.）。can 后面永远跟动词原形，不加 to，也不加 -s；主语是 he / she 时 can 本身也不变。否定 can't（cannot），提问把 can 放到主语前：Can you drive?",
+      "structure": ["主语 + can + 动词原形", "主语 + can't + 动词原形", "Can + 主语 + 动词原形？ — Yes, I can. / No, I can't."],
+      "usage_zh": ["说能力：She can speak three languages.", "礼貌请求：Can I have the bill, please?"],
+      "examples": [
+        { "en": "My son can swim.", "zh": "我儿子会游泳。" },
+        { "en": "I can't hear you.", "zh": "我听不见你说话。" },
+        { "en": "Can I open the window?", "zh": "我可以开窗吗？" }
+      ],
+      "breakdowns": [
+        { "zh": "她会说三种语言。", "parts": [ { "text": "She", "role": "subject" }, { "text": "can speak", "role": "verb" }, { "text": "three languages", "role": "object" } ] },
+        { "zh": "我可以开窗吗？", "parts": [ { "text": "Can", "role": "verb" }, { "text": "I", "role": "subject" }, { "text": "open", "role": "verb" }, { "text": "the window", "role": "object" } ] }
+      ],
+      "common_errors": [
+        { "wrong": "She can speaks French.", "right": "She can speak French.", "why_zh": "can 后用原形。" },
+        { "wrong": "I can to drive.", "right": "I can drive.", "why_zh": "can 后不加 to。" },
+        { "wrong": "Do you can help me?", "right": "Can you help me?", "why_zh": "can 自己就能提问，不用 do。" }
+      ],
+      "contrast": {
+        "title_zh": "can 和 can't 的读音",
+        "items": [
+          { "en": "I can come.", "zh": "我能来。", "note_zh": "肯定句里 can 常弱读 /kən/" },
+          { "en": "I can't come.", "zh": "我来不了。", "note_zh": "can't 重读，英式 /kɑːnt/，美式 /kænt/" }
+        ]
+      },
+      "limits_zh": ["过去的能力用 could：I could swim when I was five.", "更正式的请求用 could / may：Could you help me?"],
+      "exercises": [
+        { "id": "e1", "type": "choice", "difficulty": 1, "prompt_en": "My grandma ___ use a smartphone.", "prompt_zh": "选出正确的形式", "options": ["can", "cans", "can to"], "answer": 0, "explanation_zh": "can 不加 -s，也不加 to。" },
+        { "id": "e2", "type": "choice", "difficulty": 2, "prompt_zh": "礼貌地请别人帮忙，哪句对？", "options": ["Do you can help me?", "Can you help me?", "You can help me?"], "answer": 1, "explanation_zh": "提问：Can + you + 原形。" },
+        { "id": "e3", "type": "cloze", "difficulty": 2, "sentence_en": "Sorry, I ___ come tonight. I'm busy.", "translation_zh": "抱歉，我今晚来不了，我很忙。", "answers": ["can't", "cannot", "can not"], "explanation_zh": "否定：can't + 原形。" },
+        { "id": "e4", "type": "correction", "difficulty": 2, "wrong_en": "He can plays the guitar.", "translation_zh": "他会弹吉他。", "answers": ["He can play the guitar."], "explanation_zh": "can 后用原形 play。" },
+        { "id": "e5", "type": "correction", "difficulty": 2, "wrong_en": "We can to park here.", "translation_zh": "我们可以把车停在这儿。", "answers": ["We can park here."], "explanation_zh": "can 后不加 to。" },
+        { "id": "e6", "type": "order", "difficulty": 2, "translation_zh": "我可以用一下你的笔吗？", "tokens": ["I", "use", "Can", "pen", "your"], "answers": ["Can I use your pen?"], "explanation_zh": "Can + I + use + your pen?" },
+        { "id": "e7", "type": "cloze", "difficulty": 3, "sentence_en": "Can you speak Japanese? — No, I ___.", "translation_zh": "你会说日语吗？——不会。", "answers": ["can't", "cannot"], "explanation_zh": "简短否定回答：No, I can't." },
+        { "id": "e8", "type": "build", "difficulty": 2, "task_zh": "写你会做的一件事、不会做的一件事，再礼貌地请别人帮一个忙。", "model_answers": ["I can cook noodles. I can't swim. Can you help me with my homework?"], "checklist_zh": ["can / can't 后面是动词原形", "请求用 Can you … ? 开头"] }
+      ]
+    }
+  ]
+}

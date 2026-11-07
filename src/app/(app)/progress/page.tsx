@@ -1,4 +1,4 @@
-import { BookA, ChartLine, ClipboardCheck, Info, Layers, Timer } from "lucide-react";
+import { BookA, ChartLine, ClipboardCheck, Info, Layers, NotebookPen, Timer } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
@@ -16,6 +16,8 @@ import { DIAGNOSTIC_SKILLS, DIAGNOSTIC_SKILL_LABELS } from "@/modules/assessment
 import { getCurrentEstimates } from "@/modules/assessment/services/assessment";
 import { CEFR_LEVEL_LABELS, isCefrLevel } from "@/modules/curriculum/domain/cefr";
 import { listLevels } from "@/modules/curriculum/services/queries";
+import { listErrors } from "@/modules/errors/services/errors";
+import { ERROR_CATEGORY_LABELS } from "@/modules/grammar/content";
 import { getLearnerSettings } from "@/modules/learner/services/profile";
 import { STATUS_LABELS, type VocabularyStatusValue } from "@/modules/review/domain/status";
 import { getReviewStats } from "@/modules/review/services/review";
@@ -63,12 +65,16 @@ async function ProgressLoader() {
   const now = new Date();
   const { profile } = await getLearnerSettings(db, user.id, getEnv().DEFAULT_TIMEZONE);
   const tz = profile.timezone;
-  const [estimates, levels, stats, week] = await Promise.all([
+  const [estimates, levels, stats, week, errors] = await Promise.all([
     getCurrentEstimates(db, user.id),
     listLevels(db, user.id),
     getReviewStats(db, user.id, now, tz),
     getWeeklyActivity(db, user.id, now, tz),
+    listErrors(db, user.id),
   ]);
+  const openErrors = errors.filter((e) => e.status !== "resolved");
+  const byCategory = [...openErrors.reduce((m, e) => m.set(e.category, (m.get(e.category) ?? 0) + e.occurrenceCount), new Map<string, number>())].sort((a, b) => b[1] - a[1]);
+  const weakPoints = openErrors.filter((e) => e.pointType === "grammar").slice(0, 5);
   const label = (level: string) => (isCefrLevel(level) ? CEFR_LEVEL_LABELS[level] : level);
   const lessonsDone = levels.reduce((s, l) => s + l.completedLessonCount, 0);
   const lessonsTotal = levels.reduce((s, l) => s + l.lessonCount, 0);
@@ -105,7 +111,7 @@ async function ProgressLoader() {
                         <Badge size="sm">依据 {e.evidenceCount} 题</Badge>
                       </div>
                       <p className="mt-2 text-xs text-muted">
-                        {e.source.startsWith("assessment:") ? "来自水平诊断" : e.source} · {e.createdAt.toLocaleDateString("zh-CN", { timeZone: tz })}
+                        {e.source.startsWith("assessment:") ? "来自水平诊断" : e.source === "practice" ? "来自练习记录" : e.source} · {e.createdAt.toLocaleDateString("zh-CN", { timeZone: tz })}
                       </p>
                     </>
                   ) : (
@@ -117,7 +123,7 @@ async function ProgressLoader() {
           </ul>
           <p className="flex items-start gap-2 text-sm text-muted">
             <Info className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
-            这些是根据练习记录的估计，用来安排学习内容，不是官方 CEFR 认证。口语和写作的估计要等 AI 反馈上线（Phase 3）。
+            这些是根据诊断和练习记录的估计（语法看语法练习，阅读和听力看理解题），用来安排学习内容，不是官方 CEFR 认证。口语和写作的估计要等 AI 反馈上线（Phase 3）。
           </p>
         </CardContent>
       </Card>
@@ -201,6 +207,56 @@ async function ProgressLoader() {
                 </dl>
               </div>
             </>
+          )}
+        </CardContent>
+      </Card>
+
+      <Card className="lg:col-span-2">
+        <CardHeader className="flex-row items-start gap-3">
+          <SectionIcon icon={NotebookPen} tone="bg-coral-soft text-coral-ink" />
+          <div className="flex-1">
+            <CardTitle>错误类型与语法薄弱点</CardTitle>
+            <CardDescription>
+              未解决的错误 {openErrors.length} 条，已解决 {errors.length - openErrors.length} 条。
+            </CardDescription>
+          </div>
+          <Button asChild variant="soft" size="sm">
+            <Link href="/errors">打开错误本</Link>
+          </Button>
+        </CardHeader>
+        <CardContent>
+          {openErrors.length === 0 ? (
+            <p className="text-sm text-muted">{errors.length === 0 ? "还没有错误记录。做错的题会自动归类到这里。" : "目前没有未解决的错误。"}</p>
+          ) : (
+            <div className="grid gap-4 md:grid-cols-2">
+              <ul className="flex flex-col gap-2" aria-label="错误类型">
+                {byCategory.map(([cat, n]) => (
+                  <li key={cat} className="flex flex-col gap-1">
+                    <div className="flex justify-between text-sm">
+                      <span className="text-ink">{ERROR_CATEGORY_LABELS[cat as keyof typeof ERROR_CATEGORY_LABELS] ?? cat}</span>
+                      <span className="text-muted">{n} 次</span>
+                    </div>
+                    <ProgressBar value={n / byCategory[0]![1]} label={`${ERROR_CATEGORY_LABELS[cat as keyof typeof ERROR_CATEGORY_LABELS] ?? cat} 出错次数`} />
+                  </li>
+                ))}
+              </ul>
+              <div>
+                <p className="mb-2 text-sm font-medium text-ink">语法薄弱点</p>
+                {weakPoints.length === 0 ? (
+                  <p className="text-sm text-muted">没有未解决的语法错误。</p>
+                ) : (
+                  <ul className="flex flex-col gap-1.5">
+                    {weakPoints.map((w) => (
+                      <li key={w.id}>
+                        <Link href={`/grammar/${w.pointId}`} className="text-sm text-primary-ink hover:underline">
+                          {w.title}（出现 {w.occurrenceCount} 次）
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
           )}
         </CardContent>
       </Card>

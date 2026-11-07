@@ -120,6 +120,7 @@ const learnChildren: Feature[] = [
     icon: Puzzle,
     summary: "放在交际场景里的语法地图。",
     phase: 2,
+    available: true,
     highlights: [
       "按等级和先修关系浏览语法点",
       "句子结构拆解与易混语法对比",
@@ -224,6 +225,7 @@ const practiceChildren: Feature[] = [
     icon: NotebookPen,
     summary: "把反复出现的错误变成补救练习。",
     phase: 2,
+    available: true,
     highlights: [
       "错误关联知识点和错误类型",
       "同类错误反复出现时生成补救任务",

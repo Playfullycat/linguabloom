@@ -137,3 +137,8 @@ src/content/
   - **生词表是查词的唯一来源**（决定 D50）：超出该材料等级的词和短语都要放进去，写清 `zh`，最好有 `ipa`；文中出现的变形写进 `forms`（例如 `book` 的 `forms: ["books"]`）。校验会检查每个变形确实出现在文中。
   - 句子不超过 30 个词。故事和说明文都是虚构的，简介里要写明“虚构”，不要写真实世界的事实。
   - 生词会作为词条导入（id 为 `<材料 id>.<key>`），例句自动取文中第一次出现的那一句。
+- `src/content/grammar/*.json`：语法地图和练习题（规格 §3.6、§3.7、§5.5），由 `src/modules/grammar/content.ts` 校验，在 `rawGrammarFiles` 里登记。
+  - 每个语法点：`id`、`order`（教学顺序，全局唯一）、`level`、中英标题、`status`（`published` / `planned`）、`topics`、`prerequisites`（必须排在前面）、`unit_grammar_ids`（对应课程单元里的语法点 id，用来显示“在哪些课学过”，也用来把课程里的错误归到这个语法点）、`default_error_category`（13 类之一）、`summary_zh`。
+  - `published` 还需要：`explanation_zh`、`structure`、`usage_zh`、`examples`、`breakdowns`（句子成分：subject / verb / object / complement / time / place / adverb / question / other）、`common_errors`，可选 `contrast`、`limits_zh`。
+  - 练习：`choice`、`cloze`（一个 `___`）、`order`（`tokens` 必须正好是第一个答案里的词）、`correction`（`wrong_en` + 可接受的改法）、`build`（`task_zh` + `model_answers` + 1–4 条 `checklist_zh`，学习者自评）。至少 5 道自动判分题、至少 3 种题型（补救用 3 道、再测再用 2 道不同的）。单题可以用 `error_category` 覆盖默认类别。
+  - 练习 id 写成 `e1`、`e2`……，入库后是 `<语法点 id>.<e1>`。已上线的题不要改题意，要换就用新 id。

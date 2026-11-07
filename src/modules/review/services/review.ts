@@ -22,6 +22,8 @@ import {
   serializeCard,
   type FsrsCardJson,
 } from "../domain/scheduler";
+import { recordError } from "@/modules/errors/services/errors";
+
 import { refreshVocabularyStatus, CardNotFoundError } from "./vocabulary";
 
 /** Default new cards per local day; the learner's study_preferences.new_items_limit overrides it. */
@@ -258,6 +260,25 @@ export async function answerCard(db: Database, userId: string, input: AnswerInpu
     });
 
     await refreshVocabularyStatus(tx, userId, card.entryId);
+
+    // A wrong typed answer is a spelling / recall error for the notebook (not a self-rated "Again").
+    if (typed && answerCorrect === false && !input.overridden) {
+      await recordError(
+        tx,
+        userId,
+        {
+          category: "spelling",
+          pointType: "vocabulary",
+          pointId: card.entryId,
+          title: row.text,
+          source: "review",
+          sourceRef: card.id,
+          wrong: input.typed ?? "",
+          correct: row.text,
+        },
+        now,
+      );
+    }
 
     return {
       rating,

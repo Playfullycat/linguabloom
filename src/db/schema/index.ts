@@ -4,3 +4,4 @@ export * from "./curriculum";
 export * from "./vocabulary";
 export * from "./learner";
 export * from "./materials";
+export * from "./grammar";

@@ -28,6 +28,14 @@ export type InputMaterialRef = {
   fit: "easier" | "right" | "stretch" | "hard";
 };
 
+export type RemediationRef = {
+  itemId: string;
+  title: string;
+  categoryLabel: string;
+  count: number;
+  mode: "remediation" | "retest";
+};
+
 export type PlanFacts = {
   sessionMinutes: SessionLength;
   mode: "normal" | "review_only";
@@ -42,12 +50,14 @@ export type PlanFacts = {
   inputMaterial: InputMaterialRef | null;
   /** Fallback: a finished lesson with a dialogue to listen to again. */
   inputLesson: LessonRef | null;
+  /** A recurring error to fix (or retest) today. */
+  remediation: RemediationRef | null;
   /** Placement estimate used for the recommendation text, if any. */
   startingLevelLabel: string | null;
 };
 
 export type PlannedTask = {
-  kind: "review" | "lesson" | "input" | "output";
+  kind: "review" | "lesson" | "remediation" | "input" | "output";
   title: string;
   href: string;
   minutes: number;
@@ -173,6 +183,29 @@ export function buildPlan(facts: PlanFacts): PlannedTask[] {
         targetId: l.id,
       });
     }
+  }
+
+  // Recurring errors come right after reviews and the lesson (spec §4.3); 5 minutes from the longest task.
+  if (facts.remediation) {
+    const r = facts.remediation;
+    const donor = [...tasks].filter((t) => t.kind !== "review").sort((a, b) => b.minutes - a.minutes)[0] ?? tasks[0];
+    let minutes = 5;
+    if (donor) {
+      minutes = Math.max(2, Math.min(5, donor.minutes - 3));
+      donor.minutes -= minutes;
+    } else carry = Math.max(0, carry - minutes);
+    const after = Math.max(tasks.findLastIndex((t) => t.kind === "lesson"), tasks.findLastIndex((t) => t.kind === "review"));
+    tasks.splice(after + 1, 0, {
+      kind: "remediation",
+      title: r.mode === "retest" ? `换个语境再测：${r.title}` : `补救练习：${r.title}`,
+      href: `/errors/${r.itemId}`,
+      minutes,
+      reason:
+        r.mode === "retest"
+          ? `昨天的补救练习通过了。今天用 2 道新题再测一次（${r.categoryLabel}），确认真的掌握了。`
+          : `这个错误（${r.categoryLabel}）已经出现 ${r.count} 次。做 3 道针对练习，通过后明天换个语境再测。`,
+      targetId: r.itemId,
+    });
   }
 
   // Leftover minutes go to the lesson (or review) so the plan matches the chosen length.

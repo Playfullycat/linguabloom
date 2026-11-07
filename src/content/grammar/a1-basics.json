@@ -1,0 +1,291 @@
+{
+  "schema_version": 1,
+  "source_type": "first_party",
+  "review_status": "pending_owner_review",
+  "points": [
+    {
+      "id": "word-order",
+      "order": 1,
+      "level": "a1",
+      "title_en": "Basic word order",
+      "title_zh": "基本词序：主语 + 动词 + 其他",
+      "status": "published",
+      "topics": ["sentence"],
+      "prerequisites": [],
+      "unit_grammar_ids": ["a1.basic-word-order"],
+      "default_error_category": "word_order",
+      "summary_zh": "英语句子先说“谁”，再说“做什么”，然后是宾语、地点、时间。",
+      "explanation_zh": "英语的基本顺序是：主语 + 动词 + 宾语（或其他信息）。地点和时间一般放在句末，顺序通常是“地点在前，时间在后”。中文常把时间放在前面（“我明天去北京”），英语一般放在后面（I'm going to Beijing tomorrow），也可以放在句首，但不能夹在主语和动词中间。",
+      "structure": ["主语 + 动词 + 宾语", "主语 + 动词 + 宾语 + 地点 + 时间", "时间, 主语 + 动词 + ……（强调时间时）"],
+      "usage_zh": ["描述日常行为：I drink coffee every morning.", "说清楚在哪儿、什么时候：We have lunch at work at twelve."],
+      "examples": [
+        { "en": "I like tea.", "zh": "我喜欢茶。" },
+        { "en": "She plays tennis in the park on Sundays.", "zh": "她周日在公园打网球。" },
+        { "en": "On Sundays, she plays tennis in the park.", "zh": "周日，她在公园打网球。" }
+      ],
+      "breakdowns": [
+        { "zh": "她周日在公园打网球。", "parts": [ { "text": "She", "role": "subject" }, { "text": "plays", "role": "verb" }, { "text": "tennis", "role": "object" }, { "text": "in the park", "role": "place" }, { "text": "on Sundays", "role": "time" } ] },
+        { "zh": "我每天早上喝咖啡。", "parts": [ { "text": "I", "role": "subject" }, { "text": "drink", "role": "verb" }, { "text": "coffee", "role": "object" }, { "text": "every morning", "role": "time" } ] }
+      ],
+      "common_errors": [
+        { "wrong": "I every day drink coffee.", "right": "I drink coffee every day.", "why_zh": "时间短语不能夹在主语和动词之间，放到句末。" },
+        { "wrong": "I tomorrow go to Beijing.", "right": "I'm going to Beijing tomorrow.", "why_zh": "tomorrow 放句末（或句首）。" },
+        { "wrong": "She likes very much music.", "right": "She likes music very much.", "why_zh": "very much 放在宾语后面，不放在动词和宾语中间。" }
+      ],
+      "contrast": {
+        "title_zh": "中文和英语里时间的位置",
+        "items": [
+          { "en": "I go to the gym on Mondays.", "zh": "我周一去健身房。", "note_zh": "中文时间在动词前，英语在句末。" },
+          { "en": "On Mondays, I go to the gym.", "zh": "周一我去健身房。", "note_zh": "想强调时间时可以放句首，后面加逗号。" }
+        ]
+      },
+      "limits_zh": ["频率副词（always、usually）是例外：放在实义动词前，见“频率副词”一节。"],
+      "exercises": [
+        { "id": "e1", "type": "choice", "difficulty": 1, "prompt_zh": "哪一句的词序是对的？", "options": ["I like very much cats.", "I like cats very much.", "I very much like cats."], "answer": 1, "explanation_zh": "very much 放在宾语 cats 后面。" },
+        { "id": "e2", "type": "choice", "difficulty": 2, "prompt_zh": "选出最自然的句子。", "options": ["We at home watch TV in the evening.", "We watch TV at home in the evening.", "We watch in the evening TV at home."], "answer": 1, "explanation_zh": "主语 + 动词 + 宾语 + 地点 + 时间。" },
+        { "id": "e3", "type": "order", "difficulty": 2, "translation_zh": "他每天走路去上班。", "tokens": ["to", "every", "walks", "He", "day", "work"], "answers": ["He walks to work every day.", "Every day he walks to work."], "explanation_zh": "主语 He + 动词 walks + 去哪儿 to work + 时间 every day。" },
+        { "id": "e4", "type": "cloze", "difficulty": 2, "instructions_zh": "把 at nine 放进句子里正确的位置（只填这两个词）。", "sentence_en": "I start work ___.", "translation_zh": "我九点开始工作。", "answers": ["at nine"], "explanation_zh": "时间放在句末：I start work at nine." },
+        { "id": "e5", "type": "correction", "difficulty": 3, "wrong_en": "I every morning drink tea.", "translation_zh": "我每天早上喝茶。", "answers": ["I drink tea every morning.", "Every morning I drink tea.", "Every morning, I drink tea."], "explanation_zh": "every morning 不能放在主语和动词之间。" },
+        { "id": "e6", "type": "cloze", "difficulty": 3, "instructions_zh": "填上缺少的动词，让句子完整。", "sentence_en": "My parents ___ in a small flat in Hangzhou.", "translation_zh": "我父母住在杭州的一套小公寓里。", "answers": ["live"], "explanation_zh": "每个英语句子都需要动词：主语 My parents + 动词 live。" },
+        { "id": "e7", "type": "build", "difficulty": 3, "task_zh": "用“主语 + 动词 + 宾语 + 地点 + 时间”说一件你每周都做的事。", "model_answers": ["I buy vegetables at the market on Saturdays.", "My sister plays basketball at school after class."], "checklist_zh": ["句子里有主语和动词", "时间放在句末（或句首加逗号）", "地点在时间前面"] }
+      ]
+    },
+    {
+      "id": "subject-pronouns",
+      "order": 2,
+      "level": "pre_a1",
+      "title_en": "Subject pronouns",
+      "title_zh": "主语代词 I / you / he / she / it / we / they",
+      "status": "published",
+      "topics": ["pronouns"],
+      "prerequisites": ["word-order"],
+      "unit_grammar_ids": ["a1.subject-pronouns-be", "pre-a1.introducing-yourself"],
+      "default_error_category": "word_form",
+      "summary_zh": "用代词代替前面提到的人或物，避免重复。",
+      "explanation_zh": "主语代词放在动词前面，表示“谁”。he 指男性，she 指女性，it 指物品、动物或事情，they 指多个人或物（不分男女）。I 永远大写。英语句子一般不能省略主语，中文可以说“下雨了”“很好”，英语要说 It's raining. / It's good.",
+      "structure": ["I · you · he · she · it（单数）", "we · you · they（复数）", "代词 + 动词：She works. / They are here."],
+      "usage_zh": ["第二次提到某人：This is Tom. He is my brother.", "说天气、时间、距离用 it：It's cold. It's ten o'clock."],
+      "examples": [
+        { "en": "This is Anna. She is a teacher.", "zh": "这是安娜，她是老师。" },
+        { "en": "Where's my phone? Oh, it's on the table.", "zh": "我的手机呢？哦，在桌上。" },
+        { "en": "Tom and I are friends. We play football.", "zh": "汤姆和我是朋友，我们踢足球。" }
+      ],
+      "breakdowns": [
+        { "zh": "她是老师。", "parts": [ { "text": "She", "role": "subject" }, { "text": "is", "role": "verb" }, { "text": "a teacher", "role": "complement" } ] },
+        { "zh": "外面很冷。", "parts": [ { "text": "It", "role": "subject" }, { "text": "is", "role": "verb" }, { "text": "cold", "role": "complement" }, { "text": "outside", "role": "place" } ] }
+      ],
+      "common_errors": [
+        { "wrong": "My mother she is a doctor.", "right": "My mother is a doctor.", "why_zh": "已经有主语 My mother，不要再加 she。" },
+        { "wrong": "Is very cold today.", "right": "It's very cold today.", "why_zh": "英语句子不能没有主语，天气用 it。" },
+        { "wrong": "My brother is a nurse. She works at night.", "right": "My brother is a nurse. He works at night.", "why_zh": "brother 是男性，用 he。中文口语 ta 不分男女，英语要分。" }
+      ],
+      "contrast": {
+        "title_zh": "he、she 和 it",
+        "items": [
+          { "en": "My dad is busy. He works a lot.", "zh": "我爸很忙，他工作很多。", "note_zh": "男性 → he" },
+          { "en": "My cat is old. It sleeps all day.", "zh": "我的猫老了，整天睡觉。", "note_zh": "动物、物品 → it（自家宠物也可以用 he / she）" }
+        ]
+      },
+      "limits_zh": ["做宾语时要换形式：me / him / her / us / them（He likes her.），这一节只讲做主语。"],
+      "exercises": [
+        { "id": "e1", "type": "choice", "difficulty": 1, "prompt_en": "This is my aunt. ___ lives in Shenzhen.", "prompt_zh": "选出正确的代词", "options": ["He", "She", "It"], "answer": 1, "explanation_zh": "aunt（阿姨）是女性，用 she。" },
+        { "id": "e2", "type": "choice", "difficulty": 1, "prompt_en": "My keys? ___ are in my bag.", "prompt_zh": "选出正确的代词", "options": ["It", "They", "We"], "answer": 1, "explanation_zh": "keys 是复数，用 they。" },
+        { "id": "e3", "type": "cloze", "difficulty": 2, "sentence_en": "Look outside! ___ is raining.", "translation_zh": "看外面！下雨了。", "answers": ["It"], "explanation_zh": "天气用 it 作主语。" },
+        { "id": "e4", "type": "cloze", "difficulty": 2, "sentence_en": "Lily and I are classmates. ___ sit together.", "translation_zh": "莉莉和我是同学，我们坐在一起。", "answers": ["We"], "explanation_zh": "Lily and I = we。" },
+        { "id": "e5", "type": "correction", "difficulty": 2, "wrong_en": "My father he is a driver.", "translation_zh": "我父亲是司机。", "answers": ["My father is a driver.", "He is a driver.", "He's a driver."], "explanation_zh": "主语只要一个：My father 或 he。" },
+        { "id": "e6", "type": "order", "difficulty": 2, "translation_zh": "他们来自英国。", "tokens": ["from", "are", "the", "They", "UK"], "answers": ["They are from the UK."], "explanation_zh": "They + are + from the UK。" },
+        { "id": "e7", "type": "build", "difficulty": 2, "task_zh": "介绍一位家人或朋友，第一句用名字，第二句用 he 或 she。", "model_answers": ["This is Wang Lei. He is my cousin.", "My best friend is Jing. She lives in Beijing."], "checklist_zh": ["第二句用了正确的代词（男 he / 女 she）", "没有同时写名字和代词作主语"] }
+      ]
+    },
+    {
+      "id": "be-verb",
+      "order": 3,
+      "level": "a1",
+      "title_en": "The verb be: am / is / are",
+      "title_zh": "be 动词 am / is / are",
+      "status": "published",
+      "topics": ["verbs", "sentence"],
+      "prerequisites": ["subject-pronouns"],
+      "unit_grammar_ids": ["a1.subject-pronouns-be"],
+      "default_error_category": "agreement",
+      "summary_zh": "be 把主语和身份、年龄、状态、地点连起来；I am，he/she/it is，you/we/they are。",
+      "explanation_zh": "be 动词（am / is / are）后面跟名词、形容词或地点，说明主语是什么、怎么样、在哪儿。中文“我很忙”没有动词，但英语必须有：I am busy。I 用 am；he、she、it 和单数名词用 is；you、we、they 和复数名词用 are。口语常用缩写 I'm、she's、they're。",
+      "structure": ["I am (I'm)", "he / she / it is (he's / she's / it's)", "you / we / they are (you're / we're / they're)", "主语 + be + 名词 / 形容词 / 地点"],
+      "usage_zh": ["身份、职业：She's a nurse.", "年龄：I'm twenty-five.", "状态、感受：We're tired.", "位置：The keys are on the table."],
+      "examples": [
+        { "en": "I'm a student.", "zh": "我是学生。" },
+        { "en": "My parents are at home.", "zh": "我父母在家。" },
+        { "en": "The soup is hot.", "zh": "汤很烫。" }
+      ],
+      "breakdowns": [
+        { "zh": "我父母在家。", "parts": [ { "text": "My parents", "role": "subject" }, { "text": "are", "role": "verb" }, { "text": "at home", "role": "place" } ] },
+        { "zh": "这个汤很烫。", "parts": [ { "text": "The soup", "role": "subject" }, { "text": "is", "role": "verb" }, { "text": "hot", "role": "complement" } ] }
+      ],
+      "common_errors": [
+        { "wrong": "I very busy.", "right": "I'm very busy.", "why_zh": "形容词前要有 be 动词。" },
+        { "wrong": "She are my sister.", "right": "She's my sister.", "why_zh": "she 用 is。" },
+        { "wrong": "My friends is here.", "right": "My friends are here.", "why_zh": "friends 是复数，用 are。" }
+      ],
+      "contrast": {
+        "title_zh": "is 还是 are：看主语是一个还是多个",
+        "items": [
+          { "en": "The book is new.", "zh": "这本书是新的。", "note_zh": "一本书 → is" },
+          { "en": "The books are new.", "zh": "这些书是新的。", "note_zh": "多本书 → are" }
+        ]
+      },
+      "limits_zh": ["there is / there are 也用 be，但意思是“有”，见“there is / are”一节。"],
+      "exercises": [
+        { "id": "e1", "type": "choice", "difficulty": 1, "prompt_en": "My brother ___ a cook.", "prompt_zh": "选出正确的形式", "options": ["am", "is", "are"], "answer": 1, "explanation_zh": "My brother = he，用 is。" },
+        { "id": "e2", "type": "choice", "difficulty": 2, "prompt_en": "The shoes ___ too small.", "prompt_zh": "选出正确的形式", "options": ["is", "am", "are"], "answer": 2, "explanation_zh": "shoes 是复数，用 are。" },
+        { "id": "e3", "type": "cloze", "difficulty": 1, "sentence_en": "I ___ hungry. Let's eat.", "translation_zh": "我饿了，我们吃饭吧。", "answers": ["am"], "explanation_zh": "I 用 am（口语 I'm）。" },
+        { "id": "e4", "type": "cloze", "difficulty": 2, "sentence_en": "We ___ from Wuhan.", "translation_zh": "我们来自武汉。", "answers": ["are"], "explanation_zh": "we 用 are。" },
+        { "id": "e5", "type": "correction", "difficulty": 2, "wrong_en": "My mother very kind.", "translation_zh": "我妈妈很和善。", "answers": ["My mother is very kind.", "My mother's very kind."], "explanation_zh": "形容词 kind 前面要有 is。" },
+        { "id": "e6", "type": "correction", "difficulty": 3, "wrong_en": "The children is in the garden.", "translation_zh": "孩子们在花园里。", "answers": ["The children are in the garden."], "explanation_zh": "children 是 child 的复数，用 are。" },
+        { "id": "e7", "type": "order", "difficulty": 2, "translation_zh": "她的办公室在三楼。", "tokens": ["is", "office", "the", "Her", "third", "on", "floor"], "answers": ["Her office is on the third floor."], "explanation_zh": "主语 Her office + is + 地点 on the third floor。" },
+        { "id": "e8", "type": "build", "difficulty": 2, "task_zh": "用 am / is / are 写三句话：你自己、一位家人、两样东西。", "model_answers": ["I'm thirty. My dad is a teacher. My glasses are on the desk."], "checklist_zh": ["I 后面用 am", "一个人或一样东西用 is", "多个人或东西用 are"] }
+      ]
+    },
+    {
+      "id": "negatives-questions",
+      "order": 4,
+      "level": "a1",
+      "title_en": "Negatives and yes/no questions with be",
+      "title_zh": "否定句和一般疑问句（be 动词）",
+      "status": "published",
+      "topics": ["questions", "sentence"],
+      "prerequisites": ["be-verb"],
+      "unit_grammar_ids": ["a1.questions-be-do"],
+      "default_error_category": "word_order",
+      "summary_zh": "否定在 be 后加 not；提问把 be 移到主语前面。",
+      "explanation_zh": "be 动词的否定：在 am / is / are 后面加 not，口语用 isn't、aren't（am not 没有常用缩写，说 I'm not）。一般疑问句：把 be 放到主语前面，句末用问号，读的时候语调上扬。简短回答用 Yes, I am. / No, she isn't.，不用只说 Yes 或 No 那么生硬。",
+      "structure": ["否定：主语 + be + not + ……（I'm not / isn't / aren't）", "疑问：Be + 主语 + ……？", "回答：Yes, 主语 + be. / No, 主语 + be + not."],
+      "usage_zh": ["确认信息：Are you a student?", "纠正别人：No, I'm not Chinese. I'm Korean."],
+      "examples": [
+        { "en": "I'm not tired.", "zh": "我不累。" },
+        { "en": "Is your flat big? — No, it isn't.", "zh": "你的公寓大吗？——不大。" },
+        { "en": "Are they at work? — Yes, they are.", "zh": "他们在上班吗？——是的。" }
+      ],
+      "breakdowns": [
+        { "zh": "你的公寓大吗？", "parts": [ { "text": "Is", "role": "verb" }, { "text": "your flat", "role": "subject" }, { "text": "big", "role": "complement" } ] },
+        { "zh": "他不在家。", "parts": [ { "text": "He", "role": "subject" }, { "text": "isn't", "role": "verb" }, { "text": "at home", "role": "place" } ] }
+      ],
+      "common_errors": [
+        { "wrong": "He not is at home.", "right": "He isn't at home.", "why_zh": "not 放在 be 后面。" },
+        { "wrong": "You are a teacher?", "right": "Are you a teacher?", "why_zh": "书面和正式提问要把 are 提到主语前。" },
+        { "wrong": "Are you hungry? — Yes, I'm.", "right": "Yes, I am.", "why_zh": "简短肯定回答不用缩写。" }
+      ],
+      "contrast": {
+        "title_zh": "陈述句和疑问句的词序",
+        "items": [
+          { "en": "She is a doctor.", "zh": "她是医生。", "note_zh": "主语在前，be 在后" },
+          { "en": "Is she a doctor?", "zh": "她是医生吗？", "note_zh": "be 在前，主语在后" }
+        ]
+      },
+      "limits_zh": ["普通动词（like、work）的否定和提问要用 do / does，见“一般现在时”一节。"],
+      "exercises": [
+        { "id": "e1", "type": "choice", "difficulty": 1, "prompt_zh": "哪一句是正确的否定句？", "options": ["I not am late.", "I'm not late.", "I amn't late."], "answer": 1, "explanation_zh": "I'm not，没有 amn't。" },
+        { "id": "e2", "type": "choice", "difficulty": 2, "prompt_en": "Is your sister married? — No, she ___.", "prompt_zh": "选出正确的简短回答", "options": ["isn't", "doesn't", "not"], "answer": 0, "explanation_zh": "问句用 is，回答也用 is：No, she isn't." },
+        { "id": "e3", "type": "order", "difficulty": 2, "translation_zh": "你们是同事吗？", "tokens": ["colleagues", "you", "Are"], "answers": ["Are you colleagues?"], "explanation_zh": "疑问句：Are + you + colleagues?" },
+        { "id": "e4", "type": "cloze", "difficulty": 2, "sentence_en": "The shop ___ open on Sundays. It's closed.", "translation_zh": "这家店周日不开门，是关着的。", "answers": ["isn't", "is not"], "explanation_zh": "否定：is not / isn't。" },
+        { "id": "e5", "type": "correction", "difficulty": 2, "wrong_en": "They not are students.", "translation_zh": "他们不是学生。", "answers": ["They aren't students.", "They are not students.", "They're not students."], "explanation_zh": "not 放在 are 后面。" },
+        { "id": "e6", "type": "correction", "difficulty": 3, "wrong_en": "Is she your teacher? — Yes, she's.", "answers": ["Is she your teacher? — Yes, she is.", "Yes, she is."], "explanation_zh": "简短肯定回答不用缩写：Yes, she is." },
+        { "id": "e7", "type": "build", "difficulty": 2, "task_zh": "问一个关于朋友的 be 问句，并分别写出肯定和否定的简短回答。", "model_answers": ["Is your friend from Shanghai? — Yes, she is. / No, she isn't."], "checklist_zh": ["be 放在主语前面", "回答里的代词和 be 跟问句一致", "肯定回答没有用缩写"] }
+      ]
+    },
+    {
+      "id": "plural-nouns",
+      "order": 5,
+      "level": "a1",
+      "title_en": "Plural nouns",
+      "title_zh": "名词复数",
+      "status": "published",
+      "topics": ["nouns"],
+      "prerequisites": ["be-verb"],
+      "unit_grammar_ids": [],
+      "default_error_category": "word_form",
+      "summary_zh": "两个或更多时，名词要变复数：一般加 -s，有些加 -es，有些不规则。",
+      "explanation_zh": "英语名词有单复数：一个用单数，两个及以上用复数。大多数加 -s（book → books）；以 s、x、sh、ch 结尾加 -es（box → boxes）；辅音 + y 改 y 为 ies（city → cities）。常见不规则：man → men，woman → women，child → children，person → people，foot → feet。中文“三本书”里“书”不变，英语要变：three books。",
+      "structure": ["一般：+ s（cats）", "s / x / sh / ch 结尾：+ es（buses, watches）", "辅音 + y：y → ies（babies）", "不规则：men, women, children, people, feet, teeth"],
+      "usage_zh": ["数字后：two cups of tea", "泛指一类：I like dogs."],
+      "examples": [
+        { "en": "I have two brothers.", "zh": "我有两个哥哥。" },
+        { "en": "There are three buses an hour.", "zh": "一小时有三班公交。" },
+        { "en": "Many people work here.", "zh": "很多人在这里工作。" }
+      ],
+      "breakdowns": [
+        { "zh": "我有两个哥哥。", "parts": [ { "text": "I", "role": "subject" }, { "text": "have", "role": "verb" }, { "text": "two brothers", "role": "object" } ] },
+        { "zh": "孩子们在睡觉。", "parts": [ { "text": "The children", "role": "subject" }, { "text": "are sleeping", "role": "verb" } ] }
+      ],
+      "common_errors": [
+        { "wrong": "I have three book.", "right": "I have three books.", "why_zh": "three 后面名词要用复数。" },
+        { "wrong": "There are many peoples.", "right": "There are many people.", "why_zh": "people 已经是复数（“人们”），不加 s。" },
+        { "wrong": "two childs", "right": "two children", "why_zh": "child 的复数是不规则的 children。" }
+      ],
+      "contrast": {
+        "title_zh": "-s 和 -es",
+        "items": [
+          { "en": "two cats", "zh": "两只猫", "note_zh": "一般加 -s" },
+          { "en": "two glasses", "zh": "两个杯子", "note_zh": "s 结尾加 -es，多读一个音节 /ɪz/" }
+        ]
+      },
+      "limits_zh": ["water、rice、information 这类不可数名词没有复数，见 A2 “可数与不可数名词”。"],
+      "exercises": [
+        { "id": "e1", "type": "choice", "difficulty": 1, "prompt_zh": "“三个盒子”怎么说？", "options": ["three box", "three boxs", "three boxes"], "answer": 2, "explanation_zh": "x 结尾加 -es：boxes。" },
+        { "id": "e2", "type": "choice", "difficulty": 2, "prompt_en": "There are ten ___ in my class.", "prompt_zh": "选出正确的形式", "options": ["womans", "women", "woman"], "answer": 1, "explanation_zh": "woman 的复数是 women。" },
+        { "id": "e3", "type": "cloze", "difficulty": 2, "sentence_en": "We visited three ___ in Italy. (city)", "translation_zh": "我们在意大利去了三座城市。", "answers": ["cities"], "explanation_zh": "辅音 + y：city → cities。" },
+        { "id": "e4", "type": "cloze", "difficulty": 2, "sentence_en": "My two ___ are at school. (child)", "translation_zh": "我的两个孩子在上学。", "answers": ["children"], "explanation_zh": "child → children（不规则）。" },
+        { "id": "e5", "type": "correction", "difficulty": 2, "wrong_en": "I drink two cup of coffee every day.", "translation_zh": "我每天喝两杯咖啡。", "answers": ["I drink two cups of coffee every day."], "explanation_zh": "two 后 cup 要变 cups。" },
+        { "id": "e6", "type": "order", "difficulty": 2, "translation_zh": "这些人是我的邻居。", "tokens": ["are", "neighbours", "people", "These", "my"], "answers": ["These people are my neighbours."], "explanation_zh": "people 是复数，用 these 和 are。" },
+        { "id": "e7", "type": "build", "difficulty": 2, "task_zh": "说说你家或办公室里有几样东西，至少用两个不同的复数名词。", "model_answers": ["I have two laptops and three plants in my room.", "There are four chairs and two windows in our office."], "checklist_zh": ["数字后面的名词用了复数", "不规则复数（如 people）没有再加 s"] }
+      ]
+    },
+    {
+      "id": "articles",
+      "order": 6,
+      "level": "a1",
+      "title_en": "Articles: a / an / the",
+      "title_zh": "冠词 a / an / the",
+      "status": "published",
+      "topics": ["nouns"],
+      "prerequisites": ["plural-nouns"],
+      "unit_grammar_ids": [],
+      "default_error_category": "article",
+      "summary_zh": "第一次提到、泛指“一个”用 a / an；双方都知道是哪一个用 the。",
+      "explanation_zh": "可数名词单数前通常要有冠词。a 用在辅音音素前（a book, a university），an 用在元音音素前（an apple, an hour）——看发音，不看字母。the 表示“这个 / 那个”，说话双方都知道指哪一个：第二次提到的、唯一的（the sun）、当时环境里明确的（Close the door.）。中文没有冠词，所以最容易漏掉。职业前也要加 a：She's a doctor。",
+      "structure": ["a + 辅音音素开头的单数名词", "an + 元音音素开头的单数名词", "the + 特指的名词（单复数都可以）"],
+      "usage_zh": ["第一次提到：I saw a dog.", "再次提到：The dog was very big.", "说职业：He's an engineer."],
+      "examples": [
+        { "en": "I have a cat and a dog. The cat is black.", "zh": "我有一只猫和一只狗。猫是黑色的。" },
+        { "en": "She's an artist.", "zh": "她是艺术家。" },
+        { "en": "Can you open the window?", "zh": "你能开一下窗吗？" }
+      ],
+      "breakdowns": [
+        { "zh": "她是一名艺术家。", "parts": [ { "text": "She", "role": "subject" }, { "text": "is", "role": "verb" }, { "text": "an artist", "role": "complement" } ] },
+        { "zh": "你能把窗户打开吗？", "parts": [ { "text": "Can", "role": "verb" }, { "text": "you", "role": "subject" }, { "text": "open", "role": "verb" }, { "text": "the window", "role": "object" } ] }
+      ],
+      "common_errors": [
+        { "wrong": "She is doctor.", "right": "She is a doctor.", "why_zh": "职业前要加 a / an。" },
+        { "wrong": "a hour", "right": "an hour", "why_zh": "hour 的 h 不发音，以元音音素开头，用 an。" },
+        { "wrong": "I have a car. A car is red.", "right": "I have a car. The car is red.", "why_zh": "第二次提到同一辆车，用 the。" }
+      ],
+      "contrast": {
+        "title_zh": "a 还是 the",
+        "items": [
+          { "en": "There's a café near my office.", "zh": "我办公室附近有家咖啡馆。", "note_zh": "第一次提到 → a" },
+          { "en": "The café opens at seven.", "zh": "那家咖啡馆七点开门。", "note_zh": "就是刚才那家 → the" }
+        ]
+      },
+      "limits_zh": ["泛指一类的复数名词和不可数名词不加冠词：I like cats. / Water is important.", "一日三餐、球类运动一般不加冠词：have lunch, play football。"],
+      "exercises": [
+        { "id": "e1", "type": "choice", "difficulty": 1, "prompt_en": "He's ___ engineer.", "prompt_zh": "选出正确的冠词", "options": ["a", "an", "the"], "answer": 1, "explanation_zh": "engineer 以元音音素开头，用 an。" },
+        { "id": "e2", "type": "choice", "difficulty": 2, "prompt_en": "I bought a bag and a hat. ___ bag was cheap.", "prompt_zh": "选出正确的冠词", "options": ["A", "An", "The"], "answer": 2, "explanation_zh": "第二次提到同一个包，用 the。" },
+        { "id": "e3", "type": "cloze", "difficulty": 2, "sentence_en": "Wait for me. I'll be back in ___ hour.", "translation_zh": "等我一下，我一个小时后回来。", "answers": ["an"], "explanation_zh": "hour 的 h 不发音：an hour。" },
+        { "id": "e4", "type": "cloze", "difficulty": 2, "sentence_en": "My sister is ___ university student.", "translation_zh": "我妹妹是大学生。", "answers": ["a"], "explanation_zh": "university 开头读 /juː/，是辅音音素，用 a。" },
+        { "id": "e5", "type": "correction", "difficulty": 2, "wrong_en": "My father is teacher.", "translation_zh": "我父亲是老师。", "answers": ["My father is a teacher.", "My father's a teacher."], "explanation_zh": "职业前加 a。" },
+        { "id": "e6", "type": "correction", "difficulty": 3, "wrong_en": "Please close a door. It's cold.", "translation_zh": "请把门关上，好冷。", "answers": ["Please close the door. It's cold.", "Please close the door."], "explanation_zh": "说话双方都知道是哪扇门，用 the。" },
+        { "id": "e7", "type": "order", "difficulty": 2, "translation_zh": "桌上有一个苹果。", "tokens": ["is", "an", "on", "There", "table", "apple", "the"], "answers": ["There is an apple on the table."], "explanation_zh": "第一次提到苹果用 an，眼前的那张桌子用 the。" },
+        { "id": "e8", "type": "build", "difficulty": 3, "task_zh": "写两句话：第一句提到一样东西（用 a / an），第二句再说它（用 the）。", "model_answers": ["I have an old bike. The bike is blue.", "There's a park near my home. The park is very quiet."], "checklist_zh": ["第一次提到用了 a 或 an", "a / an 是按发音选的", "第二次提到用了 the"] }
+      ]
+    }
+  ]
+}

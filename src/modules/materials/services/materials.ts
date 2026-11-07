@@ -4,6 +4,8 @@ import type { Database, DbExecutor } from "@/db/connection";
 import { contentInteractions, learningContents, transcriptSegments, userContentState, userVocabulary, vocabularyEntries } from "@/db/schema";
 import { getCurrentEstimates } from "@/modules/assessment/services/assessment";
 import { CEFR_LEVELS, CEFR_LEVEL_LABELS, isCefrLevel, type CefrLevel } from "@/modules/curriculum/domain/cefr";
+import { refreshPracticeEstimate } from "@/modules/assessment/services/practice-estimates";
+import { recordError } from "@/modules/errors/services/errors";
 import { addEntriesForUser } from "@/modules/review/services/vocabulary";
 
 import type { MaterialQuestion, MaterialType } from "../content";
@@ -352,16 +354,31 @@ export async function answerQuestion(
     .where(and(eq(contentInteractions.clientRequestId, input.clientRequestId), eq(contentInteractions.userId, userId)));
   if (existing) return { ...base, isCorrect: Boolean(existing.isCorrect), duplicate: true };
   const isCorrect = input.choice === q.answer;
-  await db.insert(contentInteractions).values({
-    userId,
-    contentId: m.id,
-    kind: "question",
-    segmentSeq: q.segment ?? null,
-    payload: { questionId: q.id, choice: input.choice },
-    isCorrect,
-    durationMs: input.durationMs ?? null,
-    clientRequestId: input.clientRequestId,
+  await db.transaction(async (tx) => {
+    await tx.insert(contentInteractions).values({
+      userId,
+      contentId: m.id,
+      kind: "question",
+      segmentSeq: q.segment ?? null,
+      payload: { questionId: q.id, choice: input.choice },
+      isCorrect,
+      durationMs: input.durationMs ?? null,
+      clientRequestId: input.clientRequestId,
+    });
+    if (!isCorrect) {
+      await recordError(tx, userId, {
+        category: "comprehension",
+        pointType: "material",
+        pointId: m.id,
+        title: `${m.titleEn}（${m.titleZh}）`,
+        source: m.type === "listening" ? "listening" : "reading",
+        sourceRef: `${m.id}#${q.id}`,
+        wrong: `${q.prompt_zh} → ${q.options[input.choice] ?? "?"}`,
+        correct: base.correctAnswer,
+      });
+    }
   });
+  await refreshPracticeEstimate(db, userId, m.type as MaterialType);
   return { ...base, isCorrect, duplicate: false };
 }
 
@@ -392,6 +409,20 @@ export async function checkDictationAttempt(
     .from(contentInteractions)
     .where(and(eq(contentInteractions.clientRequestId, input.clientRequestId), eq(contentInteractions.userId, userId)));
   if (!existing) {
+    if (!result.isCorrect) {
+      // Dictation errors are listening errors for the material; a missed key word is linked to that word.
+      const kw = input.mode === "keyword" ? m.stored.glossary.find((g) => expected.toLowerCase() === g.text.toLowerCase() || g.forms?.some((f) => f.toLowerCase() === expected.toLowerCase())) : undefined;
+      await recordError(db, userId, {
+        category: "listening",
+        pointType: kw ? "vocabulary" : "material",
+        pointId: kw ? `${m.id}.${kw.key}` : m.id,
+        title: kw ? kw.text : `${m.titleEn}（${m.titleZh}）`,
+        source: "listening",
+        sourceRef: `${m.id}#${input.segmentSeq}`,
+        wrong: input.text,
+        correct: expected,
+      });
+    }
     await db.insert(contentInteractions).values({
       userId,
       contentId: m.id,

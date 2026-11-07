@@ -5,6 +5,7 @@ import {
   assessmentSessions,
   cefrLevels,
   contentInteractions,
+  errorItems,
   learnerLessonProgress,
   lessonStepAttempts,
   lessonSteps,
@@ -19,6 +20,8 @@ import { getCurrentEstimates } from "@/modules/assessment/services/assessment";
 import { CEFR_LEVELS } from "@/modules/curriculum/domain/cefr";
 import { PLACEMENT_LEVELS } from "@/modules/assessment/domain/engine";
 import { getLearnerSettings } from "@/modules/learner/services/profile";
+import { errorSummary } from "@/modules/errors/services/errors";
+import { ERROR_CATEGORY_LABELS } from "@/modules/grammar/content";
 import { pickInputMaterial } from "@/modules/materials/services/materials";
 import { getReviewQueue } from "@/modules/review/services/review";
 
@@ -151,12 +154,26 @@ async function gatherFacts(
 ) {
   // Alternate reading and listening from day to day.
   const preferType = Number(ctx.planDate.slice(-2)) % 2 === 0 ? "reading" : "listening";
-  const [queue, all, estimates, inputMaterial] = await Promise.all([
+  const [queue, all, estimates, inputMaterial, errors] = await Promise.all([
     getReviewQueue(db, userId, now, ctx.timeZone, ctx.newItemsLimit),
     loadPublishedLessons(db, userId),
     getCurrentEstimates(db, userId),
     pickInputMaterial(db, userId, preferType),
+    errorSummary(db, userId, now),
   ]);
+  // Only errors with an exercise bank behind them get a plan task: a due retest first, then the most frequent.
+  const retest = errors.retestDue.filter((e) => e.canPractise).sort((a, b) => (a.retestDueAt?.getTime() ?? 0) - (b.retestDueAt?.getTime() ?? 0))[0];
+  const fix = errors.needsRemediation.filter((e) => e.canPractise).sort((a, b) => b.occurrenceCount - a.occurrenceCount)[0];
+  const pick = retest ?? fix;
+  const remediation = pick
+    ? {
+        itemId: pick.id,
+        title: pick.title,
+        categoryLabel: ERROR_CATEGORY_LABELS[pick.category as keyof typeof ERROR_CATEGORY_LABELS] ?? pick.category,
+        count: pick.occurrenceCount,
+        mode: retest ? ("retest" as const) : ("remediation" as const),
+      }
+    : null;
   const flags = await lessonStepFlags(
     db,
     all.map((l) => l.id),
@@ -207,6 +224,7 @@ async function gatherFacts(
     nextLesson: next ? toRef(next) : null,
     inputMaterial,
     inputLesson: input ? toRef(input) : null,
+    remediation,
     outputLesson: output ? toRef(output) : null,
     startingLevelLabel: !started && placed ? placed.levelLabel : null,
   };
@@ -385,7 +403,8 @@ export async function getTodayPlan(db: Database, userId: string, now = new Date(
     .orderBy(asc(studyPlanTasks.sortOrder), asc(studyPlanTasks.createdAt));
 
   const lessonIds = rows.flatMap((t) => (t.targetId ? [t.targetId] : []));
-  const [queue, [reviewed], completedToday, practisedToday, materialsDone] = await Promise.all([
+  const remediationIds = rows.filter((t) => t.kind === "remediation" && t.targetId).map((t) => t.targetId!);
+  const [queue, [reviewed], completedToday, practisedToday, materialsDone, remediationItems] = await Promise.all([
     getReviewQueue(db, userId, now, ctx.timeZone, ctx.newItemsLimit),
     db
       .select({ n: sql<number>`count(*)::int` })
@@ -435,6 +454,12 @@ export async function getTodayPlan(db: Database, userId: string, now = new Date(
             ),
           )
           .groupBy(contentInteractions.contentId),
+    remediationIds.length === 0
+      ? Promise.resolve([])
+      : db
+          .select({ id: errorItems.id, status: errorItems.status, remediationPassedAt: errorItems.remediationPassedAt, resolvedAt: errorItems.resolvedAt, updatedAt: errorItems.updatedAt })
+          .from(errorItems)
+          .where(and(eq(errorItems.userId, userId), inArray(errorItems.id, remediationIds))),
   ]);
   const dueReviews = queue.cards.filter((c) => !c.isNew).length;
   const reviewsToday = reviewed?.n ?? 0;
@@ -452,6 +477,12 @@ export async function getTodayPlan(db: Database, userId: string, now = new Date(
           return materialsDone.some((m) => m.contentId === t.targetId && m.at >= t.createdAt);
         }
         return practisedToday.some((p) => p.lessonId === t.targetId && p.skill === "listening" && p.at >= t.createdAt);
+      case "remediation": {
+        const item = remediationItems.find((i) => i.id === t.targetId);
+        if (!item) return false;
+        if (t.title.startsWith("换个语境再测")) return item.status !== "retest" && item.updatedAt >= t.createdAt;
+        return item.status !== "active" && ((item.remediationPassedAt ?? item.resolvedAt ?? new Date(0)) >= t.createdAt);
+      }
       case "output":
         return practisedToday.some((p) => p.lessonId === t.targetId && OUTPUT_SKILLS.includes(p.skill) && p.at >= t.createdAt);
       default:

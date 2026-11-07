@@ -28,6 +28,7 @@ const facts = (over: Partial<PlanFacts> = {}): PlanFacts => ({
   outputLesson: null,
   inputMaterial: null,
   inputLesson: null,
+  remediation: null,
   startingLevelLabel: null,
   ...over,
 });
@@ -87,6 +88,15 @@ describe("buildPlan", () => {
   it("still offers the next lesson in a short session with nothing to review", () => {
     const plan = buildPlan(facts({ sessionMinutes: 15, dueReviews: 0 }));
     expect(plan).toEqual([expect.objectContaining({ kind: "lesson", minutes: 15 })]);
+  });
+
+  it("fits a recurring error in after the lesson without changing the total", () => {
+    const plan = buildPlan(facts({ remediation: { itemId: "e1", title: "be 动词", categoryLabel: "主谓一致", count: 3, mode: "remediation" } }));
+    expect(plan.map((t) => t.kind)).toEqual(["review", "lesson", "remediation"]);
+    expect(plan[2]).toMatchObject({ href: "/errors/e1", minutes: 5 });
+    expect(plan[2]!.reason).toContain("出现 3 次");
+    expect(plan.reduce((s, t) => s + t.minutes, 0)).toBe(25);
+    expect(buildPlan(facts({ mode: "review_only", remediation: { itemId: "e1", title: "x", categoryLabel: "y", count: 2, mode: "retest" } })).map((t) => t.kind)).toEqual(["review"]);
   });
 
   it("explains a resumed lesson", () => {
