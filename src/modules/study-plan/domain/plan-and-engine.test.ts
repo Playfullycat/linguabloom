@@ -26,6 +26,7 @@ const facts = (over: Partial<PlanFacts> = {}): PlanFacts => ({
   newCardsAvailable: 0,
   nextLesson: lesson(),
   outputLesson: null,
+  inputMaterial: null,
   inputLesson: null,
   startingLevelLabel: null,
   ...over,
@@ -56,6 +57,19 @@ describe("buildPlan", () => {
     expect(plan.map((t) => t.kind)).toEqual(["review", "lesson", "input", "output"]);
     expect(new Set(plan.map((t) => t.href)).size).toBe(plan.length);
     expect(plan.reduce((s, t) => s + t.minutes, 0)).toBe(60);
+  });
+
+  it("prefers a graded reading or listening for the input block", () => {
+    const plan = buildPlan(
+      facts({
+        sessionMinutes: 15,
+        dueReviews: 0,
+        inputLesson: lesson({ id: "u3-l1" }),
+        inputMaterial: { id: "rd-a1-my-morning", type: "reading", titleEn: "My Morning", titleZh: "我的早晨", levelLabel: "A1", newWords: 4, fit: "right" },
+      }),
+    );
+    expect(plan[0]).toMatchObject({ kind: "input", href: "/reading/rd-a1-my-morning", minutes: 15 });
+    expect(plan[0]!.reason).toContain("生词 4 个");
   });
 
   it("skips a separate output task when the lesson already has one", () => {

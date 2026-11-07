@@ -132,3 +132,8 @@ src/content/
   - 每项技能在 Pre-A1、A1、A2、B1 每一级都至少要有一题，否则校验不通过。题目要比该级的典型能力稍难一点也可以，但不能考生僻知识。
   - 从文件里删掉的题会被归档（不会删除），旧的作答记录仍然有效。改动已上线的题时，题意不要变；要换成新题就用新的 `id`。
 - 所有 seed 在 `src/db/seed/index.ts` 的 `SEEDS` 中登记，先校验再在事务里做幂等 upsert；用 `npm run db:seed` 运行。Docker 容器每次启动都会自动执行。
+- `src/content/materials/<level>.json`：内置分级阅读和听力材料（规格 §5.6、§5.7），由 `src/modules/materials/content.ts` 校验，在 `rawMaterialFiles` 里登记。
+  - 每份材料：`id`（阅读 `rd-…`，听力 `ls-…`）、`type`、`level`、`topic`、中英标题、中文简介、`segments`（每句 `en` + `zh`，听力还要 `speaker`）、`glossary`、2–6 道 `questions`（选择题，可用 `segment` 指向答案所在的句子）。
+  - **生词表是查词的唯一来源**（决定 D50）：超出该材料等级的词和短语都要放进去，写清 `zh`，最好有 `ipa`；文中出现的变形写进 `forms`（例如 `book` 的 `forms: ["books"]`）。校验会检查每个变形确实出现在文中。
+  - 句子不超过 30 个词。故事和说明文都是虚构的，简介里要写明“虚构”，不要写真实世界的事实。
+  - 生词会作为词条导入（id 为 `<材料 id>.<key>`），例句自动取文中第一次出现的那一句。

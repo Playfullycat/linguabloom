@@ -40,6 +40,8 @@ export type Feature = {
   summary: string;
   /** Phase in which the feature becomes usable. */
   phase: Phase;
+  /** Already usable (shown as "可以使用" instead of the planned phase). */
+  available?: boolean;
   /** What the learner will be able to do here (shown while not yet built). */
   highlights: string[];
   /** Other routes that belong to this feature (highlight it there too). */
@@ -70,6 +72,7 @@ const today: Feature = {
   icon: CalendarCheck,
   summary: "打开就知道今天最值得做什么。",
   phase: 1,
+    available: true,
   highlights: [
     "根据到期复习、课程进度和薄弱点生成今日计划",
     "可切换 15 / 25 / 40 / 60 分钟模式，也可以只做复习",
@@ -86,6 +89,7 @@ const learnChildren: Feature[] = [
     icon: Map,
     summary: "从 Pre-A1 到 C2 的能力路线和课程单元。",
     phase: 1,
+    available: true,
     alsoActiveOn: ["/learn/levels", "/learn/units"],
     highlights: [
       "七个 CEFR 等级的学习目标、单元与完成度",
@@ -101,6 +105,7 @@ const learnChildren: Feature[] = [
     icon: BookA,
     summary: "区分“看得懂”和“用得出”的词汇库。",
     phase: 1,
+    available: true,
     highlights: [
       "新词学习与 FSRS 间隔复习",
       "英→义、义→英、听音识别、拼写、语境填空等卡片",
@@ -129,6 +134,7 @@ const learnChildren: Feature[] = [
     icon: BookOpen,
     summary: "略高于当前水平、但能读懂的分级阅读。",
     phase: 2,
+    available: true,
     highlights: [
       "点击单词看释义、音标和发音，可选择是否收藏",
       "按级别调整中文辅助：逐句翻译 → 关键词提示 → 全英文",
@@ -143,6 +149,7 @@ const learnChildren: Feature[] = [
     icon: Headphones,
     summary: "先听后看，按句循环和变速播放。",
     phase: 2,
+    available: true,
     highlights: [
       "0.75× 到 1.5× 变速，逐句 / 逐段 / A-B 循环",
       "字幕可切换：隐藏、英文、中文辅助、双语",
@@ -174,6 +181,7 @@ const practiceChildren: Feature[] = [
     icon: RotateCcw,
     summary: "按 FSRS 调度的到期复习。",
     phase: 1,
+    available: true,
     highlights: [
       "四档评分：忘记了 / 很吃力 / 记得 / 很轻松",
       "答错先看正确答案和简短解释，再立即重试",
@@ -261,6 +269,7 @@ const progress: Feature = {
   icon: ChartLine,
   summary: "来自真实练习记录的学习数据。",
   phase: 1,
+    available: true,
   highlights: [
     "各技能分项趋势与证据数量",
     "词汇被动 / 主动掌握差距与保留率",
@@ -291,6 +300,7 @@ export const settings: Feature = {
   icon: Settings,
   summary: "外观、学习计划、AI 服务和数据备份。",
   phase: 0,
+    available: true,
   highlights: [],
 };
 

@@ -2,10 +2,11 @@ import { expect, test } from "@playwright/test";
 
 import { ensureSignedIn } from "./fixtures";
 
+// Specs are numbered: they share one test database and run in order.
 // Phase 1 acceptance (spec §4, §13): onboarding with resume → adaptive
 // diagnostic with pause, "不会" and skip → preliminary estimates → today plan
 // (reasons, length switch, reorder, skip with reason, review-only) → progress.
-// Runs after lesson.spec.ts and review.spec.ts (lesson 1 done, words in review).
+// Runs after 02-lesson.spec.ts and 03-review.spec.ts (lesson 1 done, words in review).
 
 const shots = (name: string) => `test-results/shots/${name}.png`;
 
@@ -88,10 +89,10 @@ test("onboarding → diagnostic → today plan → progress", async ({ page }) =
   await expect(lesson).toContainText(/这是当前单元的下一课|你上次学到一半/);
   await expect(page.getByText(/计划约 40 分钟/)).toBeVisible();
 
-  // Longer session: adds re-listening to the dialogue of the finished lesson.
+  // Longer session: adds a graded reading or listening near the learner's level.
   await page.getByRole("radio", { name: "60 分钟" }).click();
   await expect(page.getByText(/计划约 60 分钟/)).toBeVisible();
-  await expect(tasks.filter({ hasText: "重听对话" })).toHaveCount(1);
+  await expect(tasks.filter({ hasText: /^(阅读|听力)：/ })).toHaveCount(1);
   await page.screenshot({ path: shots("today-plan"), fullPage: true });
 
   // Reorder: move the last task up one place.

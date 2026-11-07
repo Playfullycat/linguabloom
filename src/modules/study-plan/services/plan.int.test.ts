@@ -4,7 +4,7 @@ import { eq } from "drizzle-orm";
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from "vitest";
 
 import { createDb } from "@/db/connection";
-import { learnerLessonProgress, lessonStepAttempts, reviewLogs, skillEstimates, studyPlanTasks, users } from "@/db/schema";
+import { learnerLessonProgress, learningContents, lessonStepAttempts, reviewLogs, skillEstimates, studyPlanTasks, userContentState, users } from "@/db/schema";
 import { runSeeds } from "@/db/seed";
 import { getTestDatabaseUrl, truncateAll } from "@/test/db";
 import { loadItemBank } from "@/modules/assessment/content";
@@ -217,6 +217,9 @@ describe("today plan", () => {
       clientRequestId: randomUUID(),
       createdAt,
     });
+    // With every graded material finished, the input block falls back to re-listening a lesson.
+    const materials = await db.select({ id: learningContents.id }).from(learningContents);
+    await db.insert(userContentState).values(materials.map((m) => ({ userId: userA, contentId: m.id, completedAt: new Date(Date.now() - 10_000) })));
     await db.insert(learnerLessonProgress).values({ userId: userA, lessonId: L1, status: "completed", completedAt: new Date(Date.now() - 5_000), completionRatio: 1 });
     await db.insert(lessonStepAttempts).values(attempt(new Date(Date.now() - 2_000)));
     await regenerateTodayPlan(db, userA, { sessionMinutes: 60 });

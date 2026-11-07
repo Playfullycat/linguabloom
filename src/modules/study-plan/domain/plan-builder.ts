@@ -18,6 +18,16 @@ export type LessonRef = {
   hasOutputTask: boolean;
 };
 
+export type InputMaterialRef = {
+  id: string;
+  type: "reading" | "listening";
+  titleEn: string;
+  titleZh: string;
+  levelLabel: string;
+  newWords: number;
+  fit: "easier" | "right" | "stretch" | "hard";
+};
+
 export type PlanFacts = {
   sessionMinutes: SessionLength;
   mode: "normal" | "review_only";
@@ -28,7 +38,9 @@ export type PlanFacts = {
   nextLesson: LessonRef | null;
   /** A finished lesson whose speaking/writing task is worth doing again. */
   outputLesson: LessonRef | null;
-  /** A finished lesson with a dialogue to listen to again (easy, meaning-focused input). */
+  /** An unfinished graded reading or listening near the learner's level. */
+  inputMaterial: InputMaterialRef | null;
+  /** Fallback: a finished lesson with a dialogue to listen to again. */
   inputLesson: LessonRef | null;
   /** Placement estimate used for the recommendation text, if any. */
   startingLevelLabel: string | null;
@@ -115,6 +127,20 @@ export function buildPlan(facts: PlanFacts): PlannedTask[] {
       }
       tasks.push(lessonTask(l, budget));
     } else if (block.kind === "input") {
+      const m = facts.inputMaterial;
+      if (m) {
+        const kind = m.type === "reading" ? "阅读" : "听力";
+        const fit = { easier: "比你现在的水平简单一点，适合练流畅", right: "和你现在的水平差不多", stretch: "比你现在的水平稍高，可以打开中文辅助", hard: "偏难" }[m.fit];
+        tasks.push({
+          kind: "input",
+          title: `${kind}：${m.titleEn}（${m.titleZh}）`,
+          href: `/${m.type}/${m.id}`,
+          minutes: budget,
+          reason: `一篇 ${m.levelLabel} ${kind}，生词 ${m.newWords} 个，${fit}。能读懂、听懂的真实内容最能积累语感。`,
+          targetId: m.id,
+        });
+        continue;
+      }
       const l = facts.inputLesson;
       if (!l || l.id === facts.nextLesson?.id) {
         carry = budget;

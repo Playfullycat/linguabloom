@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "source_type": "first_party",
+  "copyright_status": "first_party_original",
+  "review_status": "pending_owner_review",
+  "materials": [
+    {
+      "id": "rd-a1-my-morning",
+      "type": "reading",
+      "level": "a1",
+      "topic": "daily life",
+      "title_en": "My Morning",
+      "title_zh": "我的早晨",
+      "summary_zh": "一位上班族讲述自己工作日的早晨：几点起床、吃什么、怎么去上班。",
+      "segments": [
+        { "en": "My name is David, and I work in an office.", "zh": "我叫大卫，在一家公司上班。" },
+        { "en": "From Monday to Friday, I get up at half past six.", "zh": "周一到周五，我六点半起床。" },
+        { "en": "First, I take a shower and get dressed.", "zh": "首先，我洗个澡，穿好衣服。" },
+        { "en": "Then I have breakfast with my wife.", "zh": "然后我和妻子一起吃早饭。" },
+        { "en": "We usually have eggs, bread and a cup of coffee.", "zh": "我们通常吃鸡蛋、面包，喝一杯咖啡。" },
+        { "en": "At half past seven, I leave home.", "zh": "七点半，我出门。" },
+        { "en": "I go to work by bus, and the trip takes thirty minutes.", "zh": "我坐公交车去上班，路上要三十分钟。" },
+        { "en": "I read the news on my phone on the bus.", "zh": "在公交车上，我用手机看新闻。" },
+        { "en": "I start work at half past eight.", "zh": "我八点半开始工作。" },
+        { "en": "On Saturdays and Sundays, I get up late!", "zh": "周六和周日，我起得很晚！" }
+      ],
+      "glossary": [
+        { "key": "office", "text": "office", "pos": "noun", "ipa": "/ˈɒfɪs/", "zh": "办公室；公司" },
+        { "key": "get-up", "text": "get up", "pos": "phrasal verb", "ipa": "/ɡet ʌp/", "zh": "起床" },
+        { "key": "half-past", "text": "half past", "pos": "phrase", "ipa": "/hɑːf pɑːst/", "zh": "……点半", "note_zh": "half past six = 六点半" },
+        { "key": "take-a-shower", "text": "take a shower", "pos": "phrase", "ipa": "/teɪk ə ˈʃaʊə/", "zh": "洗澡（淋浴）" },
+        { "key": "get-dressed", "text": "get dressed", "pos": "phrase", "ipa": "/ɡet drest/", "zh": "穿衣服" },
+        { "key": "breakfast", "text": "breakfast", "pos": "noun", "ipa": "/ˈbrekfəst/", "zh": "早饭" },
+        { "key": "wife", "text": "wife", "pos": "noun", "ipa": "/waɪf/", "zh": "妻子" },
+        { "key": "usually", "text": "usually", "pos": "adverb", "ipa": "/ˈjuːʒuəli/", "zh": "通常" },
+        { "key": "leave-home", "text": "leave home", "pos": "phrase", "ipa": "/liːv həʊm/", "zh": "出门；离开家" },
+        { "key": "by-bus", "text": "by bus", "pos": "phrase", "ipa": "/baɪ bʌs/", "zh": "坐公交车" },
+        { "key": "trip", "text": "trip", "pos": "noun", "ipa": "/trɪp/", "zh": "路程；行程" },
+        { "key": "news", "text": "news", "pos": "noun", "ipa": "/njuːz/", "zh": "新闻" },
+        { "key": "late", "text": "late", "pos": "adverb", "ipa": "/leɪt/", "zh": "晚；迟" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "大卫工作日几点起床？", "options": ["六点", "六点半", "七点半"], "answer": 1, "explanation_zh": "原文：I get up at half past six. half past six = 六点半。", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "他怎么去上班？", "options": ["开车", "骑自行车", "坐公交车"], "answer": 2, "explanation_zh": "原文：I go to work by bus.", "segment": 6 },
+        { "id": "q3", "type": "choice", "prompt_zh": "路上要多长时间？", "options": ["十三分钟", "三十分钟", "一个小时"], "answer": 1, "explanation_zh": "原文：the trip takes thirty minutes。注意 thirty（30）和 thirteen（13）的区别。", "segment": 6 },
+        { "id": "q4", "type": "choice", "prompt_zh": "周末他起床怎么样？", "options": ["很早", "和平时一样", "很晚"], "answer": 2, "explanation_zh": "原文：On Saturdays and Sundays, I get up late!", "segment": 9 }
+      ]
+    },
+    {
+      "id": "rd-a1-message-from-tom",
+      "type": "reading",
+      "level": "a1",
+      "topic": "home",
+      "title_en": "A Message from Tom",
+      "title_zh": "汤姆的留言",
+      "summary_zh": "汤姆搬进新公寓，给朋友发消息介绍房子和周边。",
+      "segments": [
+        { "en": "Hi Kate,", "zh": "嗨，凯特：" },
+        { "en": "I have a new flat!", "zh": "我有新公寓啦！" },
+        { "en": "It is small, but it is very bright.", "zh": "房子不大，但很亮堂。" },
+        { "en": "There is one bedroom, a living room and a small kitchen.", "zh": "有一间卧室、一个客厅和一个小厨房。" },
+        { "en": "There are two big windows in the living room.", "zh": "客厅里有两扇大窗户。" },
+        { "en": "My flat is on the third floor, and there is no lift.", "zh": "我住在三楼，没有电梯。" },
+        { "en": "There is a park near my building, so I can run in the morning.", "zh": "楼附近有个公园，所以我早上可以去跑步。" },
+        { "en": "There is also a supermarket across the street.", "zh": "街对面还有一家超市。" },
+        { "en": "Are you free on Saturday?", "zh": "你周六有空吗？" },
+        { "en": "Come and see it!", "zh": "过来看看吧！" },
+        { "en": "Tom", "zh": "汤姆" }
+      ],
+      "glossary": [
+        { "key": "flat", "text": "flat", "pos": "noun", "ipa": "/flæt/", "zh": "公寓（英式）", "note_zh": "美式英语常说 apartment。" },
+        { "key": "bright", "text": "bright", "pos": "adjective", "ipa": "/braɪt/", "zh": "明亮的" },
+        { "key": "bedroom", "text": "bedroom", "pos": "noun", "ipa": "/ˈbedruːm/", "zh": "卧室" },
+        { "key": "living-room", "text": "living room", "pos": "noun", "ipa": "/ˈlɪvɪŋ ruːm/", "zh": "客厅" },
+        { "key": "kitchen", "text": "kitchen", "pos": "noun", "ipa": "/ˈkɪtʃɪn/", "zh": "厨房" },
+        { "key": "window", "text": "windows", "pos": "noun", "ipa": "/ˈwɪndəʊz/", "zh": "窗户（复数）" },
+        { "key": "third-floor", "text": "third floor", "pos": "phrase", "ipa": "/θɜːd flɔː/", "zh": "三楼", "note_zh": "英式英语里 ground floor 是一楼，third floor 实际是四楼；这里按中文习惯译作三楼。" },
+        { "key": "lift", "text": "lift", "pos": "noun", "ipa": "/lɪft/", "zh": "电梯（英式）", "note_zh": "美式英语说 elevator。" },
+        { "key": "near", "text": "near", "pos": "preposition", "ipa": "/nɪə/", "zh": "在……附近" },
+        { "key": "building", "text": "building", "pos": "noun", "ipa": "/ˈbɪldɪŋ/", "zh": "楼；建筑" },
+        { "key": "supermarket", "text": "supermarket", "pos": "noun", "ipa": "/ˈsuːpəmɑːkɪt/", "zh": "超市" },
+        { "key": "across-the-street", "text": "across the street", "pos": "phrase", "ipa": "/əˈkrɒs ðə striːt/", "zh": "在街对面" },
+        { "key": "free", "text": "free", "pos": "adjective", "ipa": "/friː/", "zh": "有空的；免费的" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "汤姆的公寓有几间卧室？", "options": ["一间", "两间", "三间"], "answer": 0, "explanation_zh": "原文：There is one bedroom...", "segment": 3 },
+        { "id": "q2", "type": "choice", "prompt_zh": "关于这栋楼，哪一项是对的？", "options": ["有电梯", "没有电梯", "在一楼"], "answer": 1, "explanation_zh": "原文：there is no lift.", "segment": 5 },
+        { "id": "q3", "type": "choice", "prompt_zh": "超市在哪里？", "options": ["公园里", "楼下", "街对面"], "answer": 2, "explanation_zh": "原文：There is also a supermarket across the street.", "segment": 7 },
+        { "id": "q4", "type": "choice", "prompt_zh": "汤姆为什么写这条消息？", "options": ["请凯特来看新家", "问去超市的路", "说他周六很忙"], "answer": 0, "explanation_zh": "结尾：Are you free on Saturday? Come and see it!", "segment": 9 }
+      ]
+    },
+    {
+      "id": "ls-a1-new-neighbour",
+      "type": "listening",
+      "level": "a1",
+      "topic": "people",
+      "title_en": "The New Neighbour",
+      "title_zh": "新邻居",
+      "summary_zh": "在楼道里遇到新搬来的邻居，聊住在哪一户、做什么工作。",
+      "segments": [
+        { "speaker": "Grace", "en": "Hi! Are you new here?", "zh": "嗨！你是新搬来的吗？" },
+        { "speaker": "Omar", "en": "Yes, I am. I live in flat twelve.", "zh": "是的。我住十二号。" },
+        { "speaker": "Grace", "en": "Oh, I live in flat fourteen. I'm Grace.", "zh": "哦，我住十四号。我是格蕾丝。" },
+        { "speaker": "Omar", "en": "Nice to meet you, Grace. I'm Omar.", "zh": "很高兴认识你，格蕾丝。我是奥马尔。" },
+        { "speaker": "Grace", "en": "Where are you from, Omar?", "zh": "奥马尔，你是哪里人？" },
+        { "speaker": "Omar", "en": "I'm from Egypt, but I work here now.", "zh": "我是埃及人，不过现在在这里工作。" },
+        { "speaker": "Grace", "en": "What do you do?", "zh": "你是做什么工作的？" },
+        { "speaker": "Omar", "en": "I'm a nurse. I work at the hospital on King Street.", "zh": "我是护士，在国王街的医院上班。" },
+        { "speaker": "Grace", "en": "Really? My sister works there, too!", "zh": "真的吗？我妹妹也在那儿上班！" },
+        { "speaker": "Omar", "en": "Small world! Have a nice day.", "zh": "世界真小！祝你今天愉快。" }
+      ],
+      "glossary": [
+        { "key": "new-here", "text": "new here", "pos": "phrase", "ipa": "/njuː hɪə/", "zh": "刚来这里的" },
+        { "key": "flat", "text": "flat", "pos": "noun", "ipa": "/flæt/", "zh": "公寓；（楼里的）一户" },
+        { "key": "twelve", "text": "twelve", "pos": "number", "ipa": "/twelv/", "zh": "十二" },
+        { "key": "fourteen", "text": "fourteen", "pos": "number", "ipa": "/ˌfɔːˈtiːn/", "zh": "十四" },
+        { "key": "where-are-you-from", "text": "Where are you from", "pos": "phrase", "ipa": "/weər ɑː juː frɒm/", "zh": "你是哪里人？" },
+        { "key": "what-do-you-do", "text": "What do you do", "pos": "phrase", "ipa": "/wɒt də juː duː/", "zh": "你是做什么工作的？", "note_zh": "问职业，不是问“你在做什么”。" },
+        { "key": "nurse", "text": "nurse", "pos": "noun", "ipa": "/nɜːs/", "zh": "护士" },
+        { "key": "hospital", "text": "hospital", "pos": "noun", "ipa": "/ˈhɒspɪtl/", "zh": "医院" },
+        { "key": "really", "text": "Really", "pos": "adverb", "ipa": "/ˈrɪəli/", "zh": "真的吗" },
+        { "key": "small-world", "text": "Small world", "pos": "phrase", "ipa": "/smɔːl wɜːld/", "zh": "世界真小" },
+        { "key": "have-a-nice-day", "text": "Have a nice day", "pos": "phrase", "ipa": "/hæv ə naɪs deɪ/", "zh": "祝你今天愉快" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "奥马尔住在几号？", "options": ["十二号", "十四号", "二十号"], "answer": 0, "explanation_zh": "原文：I live in flat twelve.", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "奥马尔做什么工作？", "options": ["老师", "护士", "医生"], "answer": 1, "explanation_zh": "原文：I'm a nurse.", "segment": 7 },
+        { "id": "q3", "type": "choice", "prompt_zh": "为什么奥马尔说 Small world?", "options": ["他们来自同一个国家", "格蕾丝的妹妹和他在同一家医院工作", "他们以前见过"], "answer": 1, "explanation_zh": "格蕾丝说 My sister works there, too!", "segment": 8 }
+      ]
+    },
+    {
+      "id": "ls-a1-buying-fruit",
+      "type": "listening",
+      "level": "a1",
+      "topic": "shopping",
+      "title_en": "At the Fruit Stall",
+      "title_zh": "在水果摊",
+      "summary_zh": "在市场买水果：问价格、说要多少、付钱。",
+      "segments": [
+        { "speaker": "Seller", "en": "Good morning! Can I help you?", "zh": "早上好！要买点什么？" },
+        { "speaker": "Customer", "en": "Yes, please. How much are the apples?", "zh": "是的。苹果多少钱？" },
+        { "speaker": "Seller", "en": "They're two pounds a kilo.", "zh": "两英镑一公斤。" },
+        { "speaker": "Customer", "en": "OK. Can I have one kilo, please?", "zh": "好的。请给我一公斤。" },
+        { "speaker": "Seller", "en": "Sure. Anything else?", "zh": "好的。还要别的吗？" },
+        { "speaker": "Customer", "en": "Are the bananas fresh?", "zh": "香蕉新鲜吗？" },
+        { "speaker": "Seller", "en": "Yes, they came this morning. They're one pound for six.", "zh": "新鲜，今天早上刚到。一英镑六根。" },
+        { "speaker": "Customer", "en": "Great, I'll take six, please.", "zh": "太好了，我要六根。" },
+        { "speaker": "Seller", "en": "That's three pounds altogether.", "zh": "一共三英镑。" },
+        { "speaker": "Customer", "en": "Here you are. Thank you!", "zh": "给你。谢谢！" }
+      ],
+      "glossary": [
+        { "key": "can-i-help-you", "text": "Can I help you", "pos": "phrase", "ipa": "/kæn aɪ help juː/", "zh": "需要帮忙吗？（店员常用）" },
+        { "key": "how-much", "text": "How much", "pos": "phrase", "ipa": "/haʊ mʌtʃ/", "zh": "多少钱" },
+        { "key": "pound", "text": "pounds", "forms": ["pound"], "pos": "noun", "ipa": "/paʊndz/", "zh": "英镑" },
+        { "key": "kilo", "text": "kilo", "pos": "noun", "ipa": "/ˈkiːləʊ/", "zh": "公斤" },
+        { "key": "anything-else", "text": "Anything else", "pos": "phrase", "ipa": "/ˈeniθɪŋ els/", "zh": "还要别的吗？" },
+        { "key": "fresh", "text": "fresh", "pos": "adjective", "ipa": "/freʃ/", "zh": "新鲜的" },
+        { "key": "came", "text": "came", "pos": "verb", "ipa": "/keɪm/", "zh": "来了；到了（come 的过去式）" },
+        { "key": "ill-take", "text": "I'll take", "pos": "phrase", "ipa": "/aɪl teɪk/", "zh": "我要（买）……" },
+        { "key": "altogether", "text": "altogether", "pos": "adverb", "ipa": "/ˌɔːltəˈɡeðə/", "zh": "总共" },
+        { "key": "here-you-are", "text": "Here you are", "pos": "phrase", "ipa": "/hɪə juː ɑː/", "zh": "给你" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "苹果多少钱？", "options": ["一英镑一公斤", "两英镑一公斤", "三英镑一公斤"], "answer": 1, "explanation_zh": "原文：They're two pounds a kilo.", "segment": 2 },
+        { "id": "q2", "type": "choice", "prompt_zh": "顾客买了几根香蕉？", "options": ["一根", "两根", "六根"], "answer": 2, "explanation_zh": "原文：I'll take six, please.", "segment": 7 },
+        { "id": "q3", "type": "choice", "prompt_zh": "一共多少钱？", "options": ["两英镑", "三英镑", "六英镑"], "answer": 1, "explanation_zh": "苹果 2 英镑 + 香蕉 1 英镑 = 3 英镑。原文：That's three pounds altogether.", "segment": 8 }
+      ]
+    }
+  ]
+}

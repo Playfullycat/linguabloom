@@ -4,7 +4,7 @@ import { ensureSignedIn } from "./fixtures";
 
 // Phase 1 acceptance (spec §13, §14.2 "复习"): words from a completed lesson
 // become review cards; reviewing updates them; every review is logged.
-// Runs after lesson.spec.ts, which completes lesson 1 of "Hello!" (5 new words).
+// Runs after 02-lesson.spec.ts, which completes lesson 1 of "Hello!" (5 new words).
 
 const GOOD_MORNING = "/vocabulary/pre-a1-u03-hello.good-morning";
 const shots = (name: string) => `test-results/shots/${name}.png`;
@@ -13,7 +13,7 @@ test("lesson words → vocabulary → review session with typed card, retry and 
   await ensureSignedIn(page);
 
   await page.goto("/vocabulary");
-  await expect(page.getByRole("link", { name: /Good morning/ }), "lesson.spec.ts should have added the lesson words").toBeVisible();
+  await expect(page.getByRole("link", { name: /Good morning/ }), "02-lesson.spec.ts should have added the lesson words").toBeVisible();
   await expect(page.getByRole("link", { name: /Good evening/ })).toBeVisible();
   await page.screenshot({ path: shots("vocabulary"), fullPage: true });
 

@@ -1,7 +1,7 @@
 import { and, asc, desc, eq, gte, isNull, lte, ne, sql } from "drizzle-orm";
 
 import type { Database, DbExecutor } from "@/db/connection";
-import { lessons, reviewCards, reviewLogs, userVocabulary, vocabularyEntries } from "@/db/schema";
+import { learningContents, lessons, reviewCards, reviewLogs, userVocabulary, vocabularyEntries } from "@/db/schema";
 import { startOfLocalDay } from "@/lib/time";
 
 import {
@@ -450,7 +450,16 @@ export async function getVocabularyDetail(db: DbExecutor, userId: string, entryI
     ? await db.select({ id: lessons.id, titleEn: lessons.titleEn, titleZh: lessons.titleZh }).from(lessons).where(eq(lessons.id, lessonId)).limit(1)
     : [];
 
-  return { entry: row.entry, vocabulary: row.user, cards, history, sourceLesson: sourceLesson ?? null };
+  const materialId = row.user.addedFrom.startsWith("material:") ? row.user.addedFrom.slice("material:".length) : null;
+  const [sourceMaterial] = materialId
+    ? await db
+        .select({ id: learningContents.id, type: learningContents.type, titleEn: learningContents.titleEn, titleZh: learningContents.titleZh })
+        .from(learningContents)
+        .where(eq(learningContents.id, materialId))
+        .limit(1)
+    : [];
+
+  return { entry: row.entry, vocabulary: row.user, cards, history, sourceLesson: sourceLesson ?? null, sourceMaterial: sourceMaterial ?? null };
 }
 
 /** Most recently added words (Today page). */

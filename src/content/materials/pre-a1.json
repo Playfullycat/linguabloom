@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "source_type": "first_party",
+  "copyright_status": "first_party_original",
+  "review_status": "pending_owner_review",
+  "materials": [
+    {
+      "id": "rd-pa1-this-is-mia",
+      "type": "reading",
+      "level": "pre_a1",
+      "topic": "people",
+      "title_en": "This Is Mia",
+      "title_zh": "这是米娅",
+      "summary_zh": "米娅介绍自己和她的朋友：名字、年龄和来自哪里。",
+      "segments": [
+        { "en": "Hello! My name is Mia.", "zh": "你好！我叫米娅。" },
+        { "en": "I am ten years old.", "zh": "我十岁。" },
+        { "en": "I am from China.", "zh": "我来自中国。" },
+        { "en": "This is my friend Ben.", "zh": "这是我的朋友本。" },
+        { "en": "He is eleven.", "zh": "他十一岁。" },
+        { "en": "He is from Canada.", "zh": "他来自加拿大。" },
+        { "en": "We are in the same class.", "zh": "我们在同一个班。" },
+        { "en": "Our teacher is Ms Green.", "zh": "我们的老师是格林女士。" },
+        { "en": "She is very nice.", "zh": "她人很好。" }
+      ],
+      "glossary": [
+        { "key": "name", "text": "name", "pos": "noun", "ipa": "/neɪm/", "zh": "名字" },
+        { "key": "years-old", "text": "years old", "pos": "phrase", "ipa": "/jɪəz əʊld/", "zh": "……岁", "note_zh": "ten years old = 十岁" },
+        { "key": "from", "text": "from", "pos": "preposition", "ipa": "/frɒm/", "zh": "来自；从" },
+        { "key": "friend", "text": "friend", "pos": "noun", "ipa": "/frend/", "zh": "朋友" },
+        { "key": "eleven", "text": "eleven", "pos": "number", "ipa": "/ɪˈlevn/", "zh": "十一" },
+        { "key": "same", "text": "same", "pos": "adjective", "ipa": "/seɪm/", "zh": "相同的" },
+        { "key": "class", "text": "class", "pos": "noun", "ipa": "/klɑːs/", "zh": "班级" },
+        { "key": "teacher", "text": "teacher", "pos": "noun", "ipa": "/ˈtiːtʃə/", "zh": "老师" },
+        { "key": "nice", "text": "nice", "pos": "adjective", "ipa": "/naɪs/", "zh": "友好的；好的" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "米娅几岁？", "options": ["十岁", "十一岁", "十二岁"], "answer": 0, "explanation_zh": "原文：I am ten years old.", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "本来自哪里？", "options": ["中国", "加拿大", "英国"], "answer": 1, "explanation_zh": "原文：He is from Canada.", "segment": 5 },
+        { "id": "q3", "type": "choice", "prompt_zh": "Ms Green 是谁？", "options": ["米娅的妈妈", "本的姐姐", "他们的老师"], "answer": 2, "explanation_zh": "原文：Our teacher is Ms Green.", "segment": 7 }
+      ]
+    },
+    {
+      "id": "rd-pa1-my-bag",
+      "type": "reading",
+      "level": "pre_a1",
+      "topic": "things",
+      "title_en": "What Is in My Bag?",
+      "title_zh": "我的包里有什么？",
+      "summary_zh": "一个学生说说书包里的东西：数量和颜色。",
+      "segments": [
+        { "en": "This is my bag.", "zh": "这是我的包。" },
+        { "en": "It is blue.", "zh": "它是蓝色的。" },
+        { "en": "In my bag, I have two books.", "zh": "我的包里有两本书。" },
+        { "en": "I have three pens.", "zh": "我有三支笔。" },
+        { "en": "One pen is red, and two pens are black.", "zh": "一支笔是红色的，两支是黑色的。" },
+        { "en": "I have an apple and a bottle of water.", "zh": "我有一个苹果和一瓶水。" },
+        { "en": "My phone is in my bag, too.", "zh": "我的手机也在包里。" },
+        { "en": "Where are my keys?", "zh": "我的钥匙在哪儿？" },
+        { "en": "Oh, they are on the table!", "zh": "哦，在桌子上！" }
+      ],
+      "glossary": [
+        { "key": "bag", "text": "bag", "pos": "noun", "ipa": "/bæɡ/", "zh": "包；书包" },
+        { "key": "blue", "text": "blue", "pos": "adjective", "ipa": "/bluː/", "zh": "蓝色的" },
+        { "key": "book", "text": "book", "forms": ["books"], "pos": "noun", "ipa": "/bʊk/", "zh": "书" },
+        { "key": "pen", "text": "pen", "forms": ["pens"], "pos": "noun", "ipa": "/pen/", "zh": "笔" },
+        { "key": "red", "text": "red", "pos": "adjective", "ipa": "/red/", "zh": "红色的" },
+        { "key": "black", "text": "black", "pos": "adjective", "ipa": "/blæk/", "zh": "黑色的" },
+        { "key": "bottle-of-water", "text": "a bottle of water", "pos": "phrase", "ipa": "/ə ˈbɒtl əv ˈwɔːtə/", "zh": "一瓶水" },
+        { "key": "phone", "text": "phone", "pos": "noun", "ipa": "/fəʊn/", "zh": "手机；电话" },
+        { "key": "too", "text": "too", "pos": "adverb", "ipa": "/tuː/", "zh": "也", "note_zh": "放在句末：My phone is in my bag, too." },
+        { "key": "key", "text": "keys", "pos": "noun", "ipa": "/kiːz/", "zh": "钥匙（复数）" },
+        { "key": "table", "text": "table", "pos": "noun", "ipa": "/ˈteɪbl/", "zh": "桌子" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "包是什么颜色的？", "options": ["红色", "蓝色", "黑色"], "answer": 1, "explanation_zh": "原文：It is blue.", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "包里有几支笔？", "options": ["两支", "三支", "四支"], "answer": 1, "explanation_zh": "原文：I have three pens.", "segment": 3 },
+        { "id": "q3", "type": "choice", "prompt_zh": "钥匙在哪里？", "options": ["包里", "桌子上", "手机旁边"], "answer": 1, "explanation_zh": "原文：Oh, they are on the table!", "segment": 8 }
+      ]
+    },
+    {
+      "id": "ls-pa1-new-classmate",
+      "type": "listening",
+      "level": "pre_a1",
+      "topic": "greetings",
+      "title_en": "A New Classmate",
+      "title_zh": "新同学",
+      "summary_zh": "两个人第一次见面，互相问名字和身体好不好。",
+      "segments": [
+        { "speaker": "Anna", "en": "Hi! I'm Anna.", "zh": "嗨！我是安娜。" },
+        { "speaker": "Leo", "en": "Hello, Anna. I'm Leo.", "zh": "你好，安娜。我是利奥。" },
+        { "speaker": "Anna", "en": "Nice to meet you, Leo.", "zh": "很高兴认识你，利奥。" },
+        { "speaker": "Leo", "en": "Nice to meet you, too.", "zh": "我也很高兴认识你。" },
+        { "speaker": "Anna", "en": "How are you today?", "zh": "你今天好吗？" },
+        { "speaker": "Leo", "en": "I'm fine, thank you. And you?", "zh": "我很好，谢谢。你呢？" },
+        { "speaker": "Anna", "en": "I'm good, thanks.", "zh": "我挺好的，谢谢。" },
+        { "speaker": "Leo", "en": "Are you in Class Two?", "zh": "你在二班吗？" },
+        { "speaker": "Anna", "en": "Yes, I am. See you in class!", "zh": "是的。课上见！" }
+      ],
+      "glossary": [
+        { "key": "nice-to-meet-you", "text": "Nice to meet you", "pos": "phrase", "ipa": "/naɪs tə miːt juː/", "zh": "很高兴认识你" },
+        { "key": "today", "text": "today", "pos": "adverb", "ipa": "/təˈdeɪ/", "zh": "今天" },
+        { "key": "fine", "text": "fine", "pos": "adjective", "ipa": "/faɪn/", "zh": "很好的；健康的" },
+        { "key": "and-you", "text": "And you", "pos": "phrase", "ipa": "/ənd juː/", "zh": "你呢？" },
+        { "key": "thanks", "text": "thanks", "pos": "exclamation", "ipa": "/θæŋks/", "zh": "谢谢（口语）" },
+        { "key": "class", "text": "class", "pos": "noun", "ipa": "/klɑːs/", "zh": "班级；课" },
+        { "key": "see-you", "text": "See you", "pos": "phrase", "ipa": "/siː juː/", "zh": "回头见" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "男生叫什么名字？", "options": ["Leo", "Ben", "Tom"], "answer": 0, "explanation_zh": "原文：Hello, Anna. I'm Leo.", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "Leo 今天怎么样？", "options": ["很累", "很好", "生病了"], "answer": 1, "explanation_zh": "原文：I'm fine, thank you.", "segment": 5 },
+        { "id": "q3", "type": "choice", "prompt_zh": "安娜在几班？", "options": ["一班", "二班", "三班"], "answer": 1, "explanation_zh": "Leo 问 Are you in Class Two? 安娜回答 Yes, I am.", "segment": 8 }
+      ]
+    },
+    {
+      "id": "ls-pa1-phone-number",
+      "type": "listening",
+      "level": "pre_a1",
+      "topic": "numbers",
+      "title_en": "What's Your Phone Number?",
+      "title_zh": "你的电话号码是多少？",
+      "summary_zh": "两个朋友交换电话号码，听清每一个数字。",
+      "segments": [
+        { "speaker": "Sam", "en": "What's your phone number, Lily?", "zh": "莉莉，你的电话号码是多少？" },
+        { "speaker": "Lily", "en": "It's six, two, four, nine, eight.", "zh": "是 6、2、4、9、8。" },
+        { "speaker": "Sam", "en": "Six, two, four, nine, eight?", "zh": "6、2、4、9、8？" },
+        { "speaker": "Lily", "en": "Yes, that's right.", "zh": "对，没错。" },
+        { "speaker": "Lily", "en": "And what's your number?", "zh": "那你的号码是多少？" },
+        { "speaker": "Sam", "en": "It's three, seven, one, five, zero.", "zh": "是 3、7、1、5、0。" },
+        { "speaker": "Lily", "en": "Sorry, can you say it again?", "zh": "不好意思，你能再说一遍吗？" },
+        { "speaker": "Sam", "en": "Three, seven, one, five, zero.", "zh": "3、7、1、5、0。" },
+        { "speaker": "Lily", "en": "Thank you. Bye!", "zh": "谢谢。再见！" }
+      ],
+      "glossary": [
+        { "key": "phone-number", "text": "phone number", "pos": "noun", "ipa": "/fəʊn ˈnʌmbə/", "zh": "电话号码" },
+        { "key": "number", "text": "number", "pos": "noun", "ipa": "/ˈnʌmbə/", "zh": "号码；数字" },
+        { "key": "thats-right", "text": "that's right", "pos": "phrase", "ipa": "/ðæts raɪt/", "zh": "没错；对" },
+        { "key": "zero", "text": "zero", "pos": "number", "ipa": "/ˈzɪərəʊ/", "zh": "零" },
+        { "key": "sorry", "text": "Sorry", "pos": "exclamation", "ipa": "/ˈsɒri/", "zh": "不好意思；对不起" },
+        { "key": "say-it-again", "text": "say it again", "pos": "phrase", "ipa": "/seɪ ɪt əˈɡen/", "zh": "再说一遍" },
+        { "key": "bye", "text": "Bye", "pos": "exclamation", "ipa": "/baɪ/", "zh": "再见" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "莉莉的号码是哪一个？", "options": ["62498", "62489", "26498"], "answer": 0, "explanation_zh": "原文：six, two, four, nine, eight。", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "萨姆的号码最后一个数字是什么？", "options": ["五", "零", "一"], "answer": 1, "explanation_zh": "原文：three, seven, one, five, zero —— zero 是零。", "segment": 5 },
+        { "id": "q3", "type": "choice", "prompt_zh": "莉莉为什么说 Sorry？", "options": ["她打错电话了", "她想让萨姆再说一遍", "她要走了"], "answer": 1, "explanation_zh": "原文：Sorry, can you say it again? 请对方重复。", "segment": 6 }
+      ]
+    }
+  ]
+}

@@ -6,13 +6,14 @@ import { localDateString, startOfLocalDay, startOfLocalWeek } from "@/lib/time";
 import type { Strand } from "../domain/session-templates";
 
 /**
- * Study time from real records (spec §2.2, §5.1): lesson step durations and
- * review times, grouped into the Four Strands. Idle time is capped per
+ * Study time from real records (spec §2.2, §5.1): lesson step durations,
+ * review times and active time on reading / listening materials, grouped into the Four Strands. Idle time is capped per
  * record so a tab left open doesn't count as study.
  */
 
 const STEP_CAP_MS = 5 * 60_000;
 const REVIEW_CAP_MS = 2 * 60_000;
+const TIME_SLICE_CAP_MS = 60_000;
 
 export type WeeklyActivity = {
   /** Last 7 local days, oldest first. */
@@ -47,12 +48,18 @@ export async function getWeeklyActivity(db: DbExecutor, userId: string, now: Dat
     select reviewed_at, least(coalesce(elapsed_ms, 0), ${REVIEW_CAP_MS})::int, 'language_focused_learning'
     from review_logs
     where user_id = ${userId} and reviewed_at >= ${since}::timestamptz
+    union all
+    -- Active time on a reading or listening material (already capped per slice).
+    select created_at, least(coalesce(duration_ms, 0), ${TIME_SLICE_CAP_MS})::int, 'meaning_focused_input'
+    from content_interactions
+    where user_id = ${userId} and kind = 'time' and created_at >= ${since}::timestamptz
   `);
 
   const [last] = await db.execute<{ last: string | null }>(sql`
     select greatest(
       (select max(reviewed_at) from review_logs where user_id = ${userId}),
-      (select max(created_at) from lesson_step_attempts where user_id = ${userId})
+      (select max(created_at) from lesson_step_attempts where user_id = ${userId}),
+      (select max(created_at) from content_interactions where user_id = ${userId} and kind <> 'open')
     ) as last
   `);
 

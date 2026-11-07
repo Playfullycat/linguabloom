@@ -4,6 +4,7 @@ import type { Database, DbExecutor } from "@/db/connection";
 import {
   assessmentSessions,
   cefrLevels,
+  contentInteractions,
   learnerLessonProgress,
   lessonStepAttempts,
   lessonSteps,
@@ -18,6 +19,7 @@ import { getCurrentEstimates } from "@/modules/assessment/services/assessment";
 import { CEFR_LEVELS } from "@/modules/curriculum/domain/cefr";
 import { PLACEMENT_LEVELS } from "@/modules/assessment/domain/engine";
 import { getLearnerSettings } from "@/modules/learner/services/profile";
+import { pickInputMaterial } from "@/modules/materials/services/materials";
 import { getReviewQueue } from "@/modules/review/services/review";
 
 import { buildPlan, isComeback, type LessonRef, type PlannedTask } from "../domain/plan-builder";
@@ -121,6 +123,8 @@ async function lastActivityBefore(db: DbExecutor, userId: string, before: Date):
       union all
       select max(created_at) from lesson_step_attempts where user_id = ${userId} and created_at < ${iso}::timestamptz
       union all
+      select max(created_at) from content_interactions where user_id = ${userId} and kind <> 'open' and created_at < ${iso}::timestamptz
+      union all
       select max(a.created_at) from assessment_attempts a join assessment_sessions s on s.id = a.session_id
         where s.user_id = ${userId} and a.created_at < ${iso}::timestamptz
     ) x
@@ -145,10 +149,13 @@ async function gatherFacts(
   mode: "normal" | "review_only",
   comeback: boolean,
 ) {
-  const [queue, all, estimates] = await Promise.all([
+  // Alternate reading and listening from day to day.
+  const preferType = Number(ctx.planDate.slice(-2)) % 2 === 0 ? "reading" : "listening";
+  const [queue, all, estimates, inputMaterial] = await Promise.all([
     getReviewQueue(db, userId, now, ctx.timeZone, ctx.newItemsLimit),
     loadPublishedLessons(db, userId),
     getCurrentEstimates(db, userId),
+    pickInputMaterial(db, userId, preferType),
   ]);
   const flags = await lessonStepFlags(
     db,
@@ -198,6 +205,7 @@ async function gatherFacts(
     dueReviews: queue.cards.filter((c) => !c.isNew).length,
     newCardsAvailable: queue.cards.filter((c) => c.isNew).length,
     nextLesson: next ? toRef(next) : null,
+    inputMaterial,
     inputLesson: input ? toRef(input) : null,
     outputLesson: output ? toRef(output) : null,
     startingLevelLabel: !started && placed ? placed.levelLabel : null,
@@ -377,7 +385,7 @@ export async function getTodayPlan(db: Database, userId: string, now = new Date(
     .orderBy(asc(studyPlanTasks.sortOrder), asc(studyPlanTasks.createdAt));
 
   const lessonIds = rows.flatMap((t) => (t.targetId ? [t.targetId] : []));
-  const [queue, [reviewed], completedToday, practisedToday] = await Promise.all([
+  const [queue, [reviewed], completedToday, practisedToday, materialsDone] = await Promise.all([
     getReviewQueue(db, userId, now, ctx.timeZone, ctx.newItemsLimit),
     db
       .select({ n: sql<number>`count(*)::int` })
@@ -413,6 +421,20 @@ export async function getTodayPlan(db: Database, userId: string, now = new Date(
             ),
           )
           .groupBy(lessonStepAttempts.lessonId, lessonSteps.skill),
+    lessonIds.length === 0
+      ? Promise.resolve([])
+      : db
+          .select({ contentId: contentInteractions.contentId, at: sql<string>`max(${contentInteractions.createdAt})`.mapWith((v: string) => new Date(v)) })
+          .from(contentInteractions)
+          .where(
+            and(
+              eq(contentInteractions.userId, userId),
+              eq(contentInteractions.kind, "complete"),
+              inArray(contentInteractions.contentId, lessonIds),
+              gte(contentInteractions.createdAt, ctx.dayStart),
+            ),
+          )
+          .groupBy(contentInteractions.contentId),
   ]);
   const dueReviews = queue.cards.filter((c) => !c.isNew).length;
   const reviewsToday = reviewed?.n ?? 0;
@@ -426,6 +448,9 @@ export async function getTodayPlan(db: Database, userId: string, now = new Date(
         return t.targetId !== null && completed.has(t.targetId);
       // Practice counts only once the task was recommended (not earlier the same day).
       case "input":
+        if (t.href.startsWith("/reading/") || t.href.startsWith("/listening/")) {
+          return materialsDone.some((m) => m.contentId === t.targetId && m.at >= t.createdAt);
+        }
         return practisedToday.some((p) => p.lessonId === t.targetId && p.skill === "listening" && p.at >= t.createdAt);
       case "output":
         return practisedToday.some((p) => p.lessonId === t.targetId && OUTPUT_SKILLS.includes(p.skill) && p.at >= t.createdAt);

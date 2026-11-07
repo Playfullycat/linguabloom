@@ -26,7 +26,7 @@ export function formAlert(page: Page) {
 }
 
 /**
- * Sign in for specs that run after auth.spec.ts (which changes the password),
+ * Sign in for specs that run after 01-auth.spec.ts (which changes the password),
  * or set up the owner when the test database is still fresh.
  */
 export async function ensureSignedIn(page: Page) {

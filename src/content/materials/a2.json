@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "source_type": "first_party",
+  "copyright_status": "first_party_original",
+  "review_status": "pending_owner_review",
+  "materials": [
+    {
+      "id": "rd-a2-rainy-saturday",
+      "type": "reading",
+      "level": "a2",
+      "topic": "free time",
+      "title_en": "A Rainy Saturday",
+      "title_zh": "下雨的星期六",
+      "summary_zh": "原本计划去海边，结果下雨了。一家人在家度过了意外愉快的一天。（虚构故事）",
+      "segments": [
+        { "en": "Last Saturday, my family planned a trip to the beach.", "zh": "上周六，我们一家计划去海边玩。" },
+        { "en": "We packed sandwiches, towels and a big umbrella.", "zh": "我们带好了三明治、毛巾和一把大伞。" },
+        { "en": "But when we woke up, it was raining heavily.", "zh": "可是我们醒来时，外面正下着大雨。" },
+        { "en": "My little brother was very disappointed, and he started to cry.", "zh": "我弟弟非常失望，哭了起来。" },
+        { "en": "So my mum had an idea.", "zh": "于是妈妈想了个主意。" },
+        { "en": "We moved the sofa, put the towels on the floor and had a picnic in the living room.", "zh": "我们挪开沙发，把毛巾铺在地上，在客厅里野餐。" },
+        { "en": "After lunch, we played board games and watched an old film together.", "zh": "午饭后，我们一起玩桌游，看了一部老电影。" },
+        { "en": "In the evening, the rain stopped and we saw a rainbow over the houses.", "zh": "傍晚雨停了，我们看到房子上空出现了一道彩虹。" },
+        { "en": "My brother said it was the best beach day ever, even without the beach.", "zh": "弟弟说这是他过得最好的“海边日”，虽然根本没去海边。" }
+      ],
+      "glossary": [
+        { "key": "planned", "text": "planned", "pos": "verb", "ipa": "/plænd/", "zh": "计划了（plan 的过去式）" },
+        { "key": "beach", "text": "beach", "pos": "noun", "ipa": "/biːtʃ/", "zh": "海滩" },
+        { "key": "packed", "text": "packed", "pos": "verb", "ipa": "/pækt/", "zh": "打包；装好（pack 的过去式）" },
+        { "key": "towel", "text": "towels", "pos": "noun", "ipa": "/ˈtaʊəlz/", "zh": "毛巾（复数）" },
+        { "key": "umbrella", "text": "umbrella", "pos": "noun", "ipa": "/ʌmˈbrelə/", "zh": "伞" },
+        { "key": "woke-up", "text": "woke up", "pos": "phrasal verb", "ipa": "/wəʊk ʌp/", "zh": "醒来（wake up 的过去式）" },
+        { "key": "heavily", "text": "heavily", "pos": "adverb", "ipa": "/ˈhevɪli/", "zh": "猛烈地；大量地", "note_zh": "rain heavily = 下大雨" },
+        { "key": "disappointed", "text": "disappointed", "pos": "adjective", "ipa": "/ˌdɪsəˈpɔɪntɪd/", "zh": "失望的" },
+        { "key": "idea", "text": "idea", "pos": "noun", "ipa": "/aɪˈdɪə/", "zh": "主意；想法" },
+        { "key": "sofa", "text": "sofa", "pos": "noun", "ipa": "/ˈsəʊfə/", "zh": "沙发" },
+        { "key": "picnic", "text": "picnic", "pos": "noun", "ipa": "/ˈpɪknɪk/", "zh": "野餐" },
+        { "key": "board-games", "text": "board games", "pos": "noun", "ipa": "/bɔːd ɡeɪmz/", "zh": "桌游；棋盘游戏" },
+        { "key": "rainbow", "text": "rainbow", "pos": "noun", "ipa": "/ˈreɪnbəʊ/", "zh": "彩虹" },
+        { "key": "ever", "text": "ever", "pos": "adverb", "ipa": "/ˈevə/", "zh": "（用于最高级后）有史以来", "note_zh": "the best ... ever = 有史以来最好的" },
+        { "key": "even-without", "text": "even without", "pos": "phrase", "ipa": "/ˈiːvn wɪˈðaʊt/", "zh": "即使没有" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "一家人原本计划去哪里？", "options": ["公园", "海边", "电影院"], "answer": 1, "explanation_zh": "原文：my family planned a trip to the beach.", "segment": 0 },
+        { "id": "q2", "type": "choice", "prompt_zh": "他们为什么没去成？", "options": ["弟弟生病了", "下大雨了", "车坏了"], "answer": 1, "explanation_zh": "原文：it was raining heavily.", "segment": 2 },
+        { "id": "q3", "type": "choice", "prompt_zh": "他们在哪里野餐？", "options": ["花园里", "客厅里", "海边"], "answer": 1, "explanation_zh": "原文：had a picnic in the living room.", "segment": 5 },
+        { "id": "q4", "type": "choice", "prompt_zh": "弟弟最后觉得这一天怎么样？", "options": ["很无聊", "很失望", "非常好"], "answer": 2, "explanation_zh": "原文：it was the best beach day ever.", "segment": 8 }
+      ]
+    },
+    {
+      "id": "rd-a2-library-notice",
+      "type": "reading",
+      "level": "a2",
+      "topic": "public places",
+      "title_en": "Notice: Changes at Hillside Library",
+      "title_zh": "通知：山坡图书馆的变化",
+      "summary_zh": "一家社区图书馆贴出的通知：开放时间、新服务和注意事项。（虚构的通知）",
+      "segments": [
+        { "en": "From 1 March, Hillside Library will have new opening hours.", "zh": "从 3 月 1 日起，山坡图书馆将实行新的开放时间。" },
+        { "en": "We will open at 9 am and close at 7 pm from Monday to Friday.", "zh": "周一至周五，上午 9 点开门，晚上 7 点关门。" },
+        { "en": "On Saturdays, we will close earlier, at 4 pm.", "zh": "周六会提前在下午 4 点关门。" },
+        { "en": "The library will be closed on Sundays.", "zh": "周日闭馆。" },
+        { "en": "There is also some good news: you can now borrow up to ten books at a time.", "zh": "还有一个好消息：现在每次最多可以借十本书。" },
+        { "en": "You can keep them for three weeks.", "zh": "可以借三周。" },
+        { "en": "Our new study room on the first floor is free for all members.", "zh": "二楼新开的自习室对所有会员免费开放。" },
+        { "en": "Please book a table at the front desk before you use it.", "zh": "使用前请在前台预约座位。" },
+        { "en": "Please remember that food is not allowed in the reading areas.", "zh": "请记住，阅读区内禁止饮食。" },
+        { "en": "If you have any questions, please ask our staff.", "zh": "如有任何问题，请咨询工作人员。" }
+      ],
+      "glossary": [
+        { "key": "notice", "text": "Notice", "pos": "noun", "ipa": "/ˈnəʊtɪs/", "zh": "通知；告示" },
+        { "key": "library", "text": "Library", "pos": "noun", "ipa": "/ˈlaɪbrəri/", "zh": "图书馆" },
+        { "key": "opening-hours", "text": "opening hours", "pos": "noun", "ipa": "/ˈəʊpənɪŋ aʊəz/", "zh": "开放时间；营业时间" },
+        { "key": "earlier", "text": "earlier", "pos": "adverb", "ipa": "/ˈɜːliə/", "zh": "更早" },
+        { "key": "closed", "text": "closed", "pos": "adjective", "ipa": "/kləʊzd/", "zh": "关闭的；不开放的" },
+        { "key": "borrow", "text": "borrow", "pos": "verb", "ipa": "/ˈbɒrəʊ/", "zh": "借（入）" },
+        { "key": "up-to", "text": "up to", "pos": "phrase", "ipa": "/ʌp tuː/", "zh": "最多；多达" },
+        { "key": "at-a-time", "text": "at a time", "pos": "phrase", "ipa": "/ət ə taɪm/", "zh": "每次；一次" },
+        { "key": "study-room", "text": "study room", "pos": "noun", "ipa": "/ˈstʌdi ruːm/", "zh": "自习室" },
+        { "key": "first-floor", "text": "first floor", "pos": "phrase", "ipa": "/fɜːst flɔː/", "zh": "（英式）二楼", "note_zh": "英式英语 ground floor 是一楼，first floor 是二楼。" },
+        { "key": "member", "text": "members", "pos": "noun", "ipa": "/ˈmembəz/", "zh": "会员（复数）" },
+        { "key": "book-verb", "text": "book a table", "pos": "phrase", "ipa": "/bʊk ə ˈteɪbl/", "zh": "预约座位", "note_zh": "book 作动词是“预订”。" },
+        { "key": "front-desk", "text": "front desk", "pos": "noun", "ipa": "/frʌnt desk/", "zh": "前台" },
+        { "key": "not-allowed", "text": "not allowed", "pos": "phrase", "ipa": "/nɒt əˈlaʊd/", "zh": "不允许" },
+        { "key": "staff", "text": "staff", "pos": "noun", "ipa": "/stɑːf/", "zh": "工作人员" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "周六图书馆几点关门？", "options": ["下午 4 点", "晚上 7 点", "不开门"], "answer": 0, "explanation_zh": "原文：On Saturdays, we will close earlier, at 4 pm.", "segment": 2 },
+        { "id": "q2", "type": "choice", "prompt_zh": "现在每次最多能借几本书？", "options": ["三本", "七本", "十本"], "answer": 2, "explanation_zh": "原文：borrow up to ten books at a time.", "segment": 4 },
+        { "id": "q3", "type": "choice", "prompt_zh": "使用自习室之前要做什么？", "options": ["付钱", "在前台预约", "办新卡"], "answer": 1, "explanation_zh": "原文：Please book a table at the front desk before you use it.", "segment": 7 },
+        { "id": "q4", "type": "choice", "prompt_zh": "哪一项在阅读区是不允许的？", "options": ["借书", "吃东西", "问问题"], "answer": 1, "explanation_zh": "原文：food is not allowed in the reading areas.", "segment": 8 }
+      ]
+    },
+    {
+      "id": "ls-a2-weekend-plans",
+      "type": "listening",
+      "level": "a2",
+      "topic": "plans",
+      "title_en": "Weekend Plans",
+      "title_zh": "周末计划",
+      "summary_zh": "两个同事聊周末打算做什么，并约好一起去看展。",
+      "segments": [
+        { "speaker": "Mark", "en": "Have you got any plans for the weekend, Jenny?", "zh": "珍妮，你周末有什么安排吗？" },
+        { "speaker": "Jenny", "en": "Yes, I'm going to visit my grandparents on Saturday.", "zh": "有，我周六要去看我的祖父母。" },
+        { "speaker": "Jenny", "en": "They live in a village about an hour from here.", "zh": "他们住在离这儿大约一小时车程的村子里。" },
+        { "speaker": "Mark", "en": "That sounds nice. Are you going by train?", "zh": "听起来不错。你坐火车去吗？" },
+        { "speaker": "Jenny", "en": "No, I'm going to drive. What about you?", "zh": "不，我开车去。你呢？" },
+        { "speaker": "Mark", "en": "I'm not sure yet. I might go to the new photo exhibition on Sunday.", "zh": "我还没定。周日可能去看那个新开的摄影展。" },
+        { "speaker": "Jenny", "en": "Oh, I want to see that too! Is it expensive?", "zh": "哦，我也想去！贵吗？" },
+        { "speaker": "Mark", "en": "No, it's free on Sundays.", "zh": "不贵，周日免费。" },
+        { "speaker": "Jenny", "en": "Shall we go together? I'll be back by Sunday morning.", "zh": "我们一起去吧？我周日上午就回来了。" },
+        { "speaker": "Mark", "en": "Great idea. Let's meet outside the museum at two o'clock.", "zh": "好主意。我们两点在博物馆门口见吧。" }
+      ],
+      "glossary": [
+        { "key": "plans", "text": "plans", "pos": "noun", "ipa": "/plænz/", "zh": "计划；安排（复数）" },
+        { "key": "going-to", "text": "going to", "pos": "phrase", "ipa": "/ˈɡəʊɪŋ tuː/", "zh": "打算；将要", "note_zh": "be going to + 动词原形：表示已经打算好的事。" },
+        { "key": "grandparents", "text": "grandparents", "pos": "noun", "ipa": "/ˈɡrænpeərənts/", "zh": "祖父母；外祖父母" },
+        { "key": "village", "text": "village", "pos": "noun", "ipa": "/ˈvɪlɪdʒ/", "zh": "村庄" },
+        { "key": "sounds-nice", "text": "sounds nice", "pos": "phrase", "ipa": "/saʊndz naɪs/", "zh": "听起来不错" },
+        { "key": "drive", "text": "drive", "pos": "verb", "ipa": "/draɪv/", "zh": "开车" },
+        { "key": "what-about-you", "text": "What about you", "pos": "phrase", "ipa": "/wɒt əˈbaʊt juː/", "zh": "你呢？" },
+        { "key": "not-sure-yet", "text": "not sure yet", "pos": "phrase", "ipa": "/nɒt ʃʊə jet/", "zh": "还没确定" },
+        { "key": "might", "text": "might", "pos": "modal verb", "ipa": "/maɪt/", "zh": "可能（会）" },
+        { "key": "exhibition", "text": "exhibition", "pos": "noun", "ipa": "/ˌeksɪˈbɪʃn/", "zh": "展览" },
+        { "key": "expensive", "text": "expensive", "pos": "adjective", "ipa": "/ɪkˈspensɪv/", "zh": "昂贵的" },
+        { "key": "shall-we", "text": "Shall we", "pos": "phrase", "ipa": "/ʃæl wiː/", "zh": "我们……好吗？（提建议）" },
+        { "key": "be-back", "text": "be back", "pos": "phrase", "ipa": "/biː bæk/", "zh": "回来" },
+        { "key": "museum", "text": "museum", "pos": "noun", "ipa": "/mjuˈziːəm/", "zh": "博物馆" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "珍妮周六要做什么？", "options": ["去看祖父母", "去看展览", "在家休息"], "answer": 0, "explanation_zh": "原文：I'm going to visit my grandparents on Saturday.", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "她怎么去？", "options": ["坐火车", "开车", "坐公交"], "answer": 1, "explanation_zh": "原文：No, I'm going to drive.", "segment": 4 },
+        { "id": "q3", "type": "choice", "prompt_zh": "周日的摄影展票价是？", "options": ["很贵", "免费", "半价"], "answer": 1, "explanation_zh": "原文：it's free on Sundays.", "segment": 7 },
+        { "id": "q4", "type": "choice", "prompt_zh": "他们约在哪里见面？", "options": ["车站", "博物馆门口", "珍妮家"], "answer": 1, "explanation_zh": "原文：Let's meet outside the museum at two o'clock.", "segment": 9 }
+      ]
+    },
+    {
+      "id": "ls-a2-lost-phone",
+      "type": "listening",
+      "level": "a2",
+      "topic": "travel",
+      "title_en": "Lost Property",
+      "title_zh": "失物招领",
+      "summary_zh": "一位乘客在火车上丢了手机，到车站的失物招领处询问。",
+      "segments": [
+        { "speaker": "Clerk", "en": "Good afternoon. How can I help you?", "zh": "下午好。有什么可以帮您？" },
+        { "speaker": "Passenger", "en": "Hi. I think I left my phone on the train this morning.", "zh": "你好。我好像今天早上把手机落在火车上了。" },
+        { "speaker": "Clerk", "en": "I'm sorry to hear that. Which train were you on?", "zh": "很遗憾。您坐的是哪一班车？" },
+        { "speaker": "Passenger", "en": "The 8:15 from Bridgeton. I got off here at nine.", "zh": "布里奇顿发车的 8 点 15 分那班。我九点在这儿下的车。" },
+        { "speaker": "Clerk", "en": "What does your phone look like?", "zh": "您的手机是什么样子的？" },
+        { "speaker": "Passenger", "en": "It's black, and it has a green case with a small star on the back.", "zh": "黑色的，套着绿色手机壳，背面有一颗小星星。" },
+        { "speaker": "Clerk", "en": "Let me check. Someone brought in two phones today.", "zh": "我查一下。今天有人送来两部手机。" },
+        { "speaker": "Clerk", "en": "Is this one yours?", "zh": "这部是您的吗？" },
+        { "speaker": "Passenger", "en": "Yes, that's it! Thank you so much.", "zh": "对，就是它！太感谢了。" },
+        { "speaker": "Clerk", "en": "You're welcome. Can you sign this form, please?", "zh": "不客气。请您在这张表上签个字。" }
+      ],
+      "glossary": [
+        { "key": "lost-property", "text": "Lost Property", "pos": "noun", "ipa": "/lɒst ˈprɒpəti/", "zh": "失物招领处" },
+        { "key": "left", "text": "left", "pos": "verb", "ipa": "/left/", "zh": "落下；遗留（leave 的过去式）" },
+        { "key": "sorry-to-hear-that", "text": "sorry to hear that", "pos": "phrase", "ipa": "/ˈsɒri tə hɪə ðæt/", "zh": "听到这个消息很遗憾" },
+        { "key": "got-off", "text": "got off", "pos": "phrasal verb", "ipa": "/ɡɒt ɒf/", "zh": "下车（get off 的过去式）" },
+        { "key": "look-like", "text": "look like", "pos": "phrase", "ipa": "/lʊk laɪk/", "zh": "看起来像……", "note_zh": "What does it look like? = 它是什么样子的？" },
+        { "key": "case", "text": "case", "pos": "noun", "ipa": "/keɪs/", "zh": "（手机）壳；盒子" },
+        { "key": "star", "text": "star", "pos": "noun", "ipa": "/stɑː/", "zh": "星星" },
+        { "key": "on-the-back", "text": "on the back", "pos": "phrase", "ipa": "/ɒn ðə bæk/", "zh": "在背面" },
+        { "key": "let-me-check", "text": "Let me check", "pos": "phrase", "ipa": "/let miː tʃek/", "zh": "我查一下" },
+        { "key": "brought-in", "text": "brought in", "pos": "phrasal verb", "ipa": "/brɔːt ɪn/", "zh": "送来；拿进来（bring in 的过去式）" },
+        { "key": "yours", "text": "yours", "pos": "pronoun", "ipa": "/jɔːz/", "zh": "你的（东西）" },
+        { "key": "youre-welcome", "text": "You're welcome", "pos": "phrase", "ipa": "/jɔː ˈwelkəm/", "zh": "不客气" },
+        { "key": "sign", "text": "sign", "pos": "verb", "ipa": "/saɪn/", "zh": "签名" },
+        { "key": "form", "text": "form", "pos": "noun", "ipa": "/fɔːm/", "zh": "表格" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "乘客把手机落在哪里了？", "options": ["出租车上", "火车上", "咖啡馆里"], "answer": 1, "explanation_zh": "原文：I left my phone on the train this morning.", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "手机壳是什么颜色的？", "options": ["黑色", "绿色", "蓝色"], "answer": 1, "explanation_zh": "原文：It's black, and it has a green case. 手机是黑色，手机壳是绿色。", "segment": 5 },
+        { "id": "q3", "type": "choice", "prompt_zh": "最后工作人员请乘客做什么？", "options": ["付钱", "在表格上签字", "明天再来"], "answer": 1, "explanation_zh": "原文：Can you sign this form, please?", "segment": 9 }
+      ]
+    }
+  ]
+}

@@ -23,9 +23,15 @@ export function FeatureHub({ group }: { group: NavGroup }) {
                   <span className="grid size-11 place-items-center rounded-2xl bg-primary-soft text-primary-ink">
                     <Icon className="size-5" aria-hidden="true" />
                   </span>
-                  <Badge tone="yellow" size="sm">
-                    Phase {feature.phase}
-                  </Badge>
+                  {feature.available ? (
+                    <Badge tone="mint" size="sm">
+                      可以使用
+                    </Badge>
+                  ) : (
+                    <Badge tone="yellow" size="sm">
+                      Phase {feature.phase}
+                    </Badge>
+                  )}
                 </div>
                 <div className="flex flex-1 flex-col gap-1">
                   <h2 className="flex flex-wrap items-baseline gap-x-2">

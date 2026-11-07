@@ -43,7 +43,7 @@ async function Detail({ params }: Pick<PageProps<"/vocabulary/[entryId]">, "para
   ]);
   if (!detail) notFound();
 
-  const { entry, vocabulary, cards, history, sourceLesson } = detail;
+  const { entry, vocabulary, cards, history, sourceLesson, sourceMaterial } = detail;
   const now = new Date();
   const timeZone = profile.timezone;
   const existingTypes = new Set(cards.map((c) => c.cardType));
@@ -85,6 +85,10 @@ async function Detail({ params }: Pick<PageProps<"/vocabulary/[entryId]">, "para
                 {sourceLesson ? (
                   <Link href={`/lesson/${sourceLesson.id}`} className="text-primary-ink hover:underline">
                     <span lang="en">{sourceLesson.titleEn}</span>（{sourceLesson.titleZh}）
+                  </Link>
+                ) : sourceMaterial ? (
+                  <Link href={`/${sourceMaterial.type}/${sourceMaterial.id}`} className="text-primary-ink hover:underline">
+                    {sourceMaterial.type === "reading" ? "阅读" : "听力"}：<span lang="en">{sourceMaterial.titleEn}</span>（{sourceMaterial.titleZh}）
                   </Link>
                 ) : (
                   "手动添加"
