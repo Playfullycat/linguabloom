@@ -160,6 +160,17 @@ describe("scope and stats", () => {
     await expect(answerCard(db, userB, { cardId: cardA!.id, rating: RATING.Good, clientRequestId: randomUUID() })).rejects.toThrow();
   });
 
+  it("shows each word's own next review time", async () => {
+    await addEntriesForUser(db, userA, [`${HELLO}.hello`, `${HELLO}.hi`], "manual");
+    // Push "hi" a week out; "hello" stays due now.
+    const later = new Date(Date.now() + 7 * 86_400_000);
+    for (const c of await cardsOf(userA, `${HELLO}.hi`)) await db.update(reviewCards).set({ dueAt: later }).where(eq(reviewCards.id, c.id));
+    const words = await listVocabulary(db, userA, {});
+    const due = (id: string) => words.find((w) => w.entryId === id)!.nextDueAt!;
+    expect(new Date(due(`${HELLO}.hi`)).getTime()).toBe(later.getTime());
+    expect(new Date(due(`${HELLO}.hello`)).getTime()).toBeLessThan(later.getTime());
+  });
+
   it("reports due counts and word statuses", async () => {
     await addEntriesForUser(db, userA, [`${HELLO}.hello`, `${HELLO}.hi`], "manual");
     const stats = await getReviewStats(db, userA, new Date(), TZ);

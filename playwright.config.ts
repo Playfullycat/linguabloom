@@ -62,7 +62,10 @@ export default defineConfig({
           APP_SECRET: "e2e-test-secret-not-for-production-use-0123456789",
           OWNER_SETUP_ENABLED: "true",
           OWNER_SETUP_TOKEN: "",
-          AI_ENABLED: "false",
+          // Local mock AI (no network, no cost). The dummy key lets the tests prove it never reaches the browser.
+          AI_ENABLED: "true",
+          AI_PROVIDER: "mock",
+          AI_API_KEY: "sk-e2e-never-leak-0123456789",
           // Uploaded test audio stays apart from development uploads (still under the ignored data/ folder).
           STORAGE_ROOT: "data/e2e",
         },

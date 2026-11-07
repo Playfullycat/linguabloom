@@ -9,6 +9,7 @@ import { ListeningStudio } from "@/components/materials/listening-studio";
 import { LoadingSkeleton } from "@/components/ui/skeleton";
 import { getDb } from "@/db";
 import { requireOwner } from "@/lib/auth/session";
+import { aiStatus } from "@/modules/ai/provider";
 import { MaterialNotFoundError, getMaterialForReader } from "@/modules/materials/services/materials";
 
 export const metadata: Metadata = { title: "Listening" };
@@ -42,7 +43,7 @@ async function Loader({ params }: Pick<PageProps<"/listening/[contentId]">, "par
         titleZh={material.titleZh}
         description={material.summaryZh}
       />
-      <ListeningStudio key={material.id} material={material} />
+      <ListeningStudio key={material.id} material={material} aiAvailable={aiStatus().available} />
     </>
   );
 }

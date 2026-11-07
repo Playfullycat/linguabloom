@@ -1,6 +1,7 @@
 "use client";
 
-import { CircleCheck, Heart, Star } from "lucide-react";
+import { CircleCheck, Heart, Sparkles, Star } from "lucide-react";
+import Link from "next/link";
 import { useMemo, useRef, useState, useTransition } from "react";
 
 import { SpeakButton } from "@/components/media/speak-button";
@@ -131,7 +132,19 @@ export function SourceNote({ material }: { material: ReaderMaterial }) {
   );
 }
 
-export function ReadingRoom({ material }: { material: ReaderMaterial }) {
+/** "Ask the AI coach about this material" (only when AI is available). */
+export function CoachLink({ material, seq }: { material: ReaderMaterial; seq: number | null }) {
+  return (
+    <Button asChild variant="soft">
+      <Link href={`/tutor?content=${encodeURIComponent(material.id)}${seq !== null ? `&seq=${seq}` : ""}`}>
+        <Sparkles aria-hidden="true" />
+        问 AI {material.type === "listening" ? "听力" : "阅读"}教练
+      </Link>
+    </Button>
+  );
+}
+
+export function ReadingRoom({ material, aiAvailable }: { material: ReaderMaterial; aiAvailable: boolean }) {
   useStudyTime(material.id);
   const [assist, setAssist] = useState<AssistMode>(() => defaultAssist(material.levelLabel));
   const [highlight, setHighlight] = useState<number | null>(null);
@@ -246,6 +259,7 @@ export function ReadingRoom({ material }: { material: ReaderMaterial }) {
               </Button>
             )}
             {state.saved.length > 0 ? <p className="text-sm text-muted">收藏了 {state.saved.length} 个句子。</p> : null}
+            {aiAvailable ? <CoachLink material={material} seq={highlight} /> : null}
           </CardContent>
         </Card>
       </aside>

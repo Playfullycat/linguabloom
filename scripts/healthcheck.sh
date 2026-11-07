@@ -41,8 +41,10 @@ else ok "free space: $(df -Ph . | awk 'NR==2 {print $4}')"; fi
 
 log "AI provider"
 if [ "$(env_get AI_ENABLED)" = "true" ]; then
-  if [ -n "$(env_get AI_API_KEY)" ]; then ok "AI enabled, API key is set"
-  else bad "AI_ENABLED=true but AI_API_KEY is empty"; fi
+  if [ "$(env_get AI_PROVIDER)" = "mock" ]; then note "AI enabled with the local mock provider (no real AI, no cost)"
+  elif [ -n "$(env_get AI_API_KEY)" ] && [ -n "$(env_get AI_TEXT_MODEL)" ]; then ok "AI enabled, API key and text model are set"
+  elif [ -z "$(env_get AI_API_KEY)" ]; then bad "AI_ENABLED=true but AI_API_KEY is empty"
+  else bad "AI_ENABLED=true but AI_TEXT_MODEL is empty"; fi
 else
   note "AI disabled (non-AI features work normally)"
 fi

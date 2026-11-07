@@ -37,13 +37,22 @@ export const envSchema = z.object({
 
   // AI (Phase 3). Non-AI features must work with AI disabled.
   AI_ENABLED: booleanFlag.default(false),
-  AI_PROVIDER: z.enum(["openai"]).default("openai"),
+  /** "mock" answers locally without any network call (development and tests; costs nothing). */
+  AI_PROVIDER: z.enum(["openai", "mock"]).default("openai"),
   AI_API_KEY: optionalString,
-  AI_BASE_URL: optionalString,
+  /** Only for trusted OpenAI-compatible endpoints. */
+  AI_BASE_URL: optionalString.pipe(z.url({ protocol: /^https?$/ }).optional()),
   AI_TEXT_MODEL: optionalString,
   AI_REALTIME_MODEL: optionalString,
   AI_TRANSCRIPTION_MODEL: optionalString,
   AI_TTS_MODEL: optionalString,
+  AI_TIMEOUT_MS: z.coerce.number().int().min(1000).max(300_000).default(30_000),
+  AI_MAX_OUTPUT_TOKENS: z.coerce.number().int().min(64).max(16_000).default(900),
+  /** Soft monthly budget in USD (spec §7.6). 0 = no budget check. */
+  AI_MONTHLY_BUDGET: z.coerce.number().min(0).max(100_000).default(5),
+  /** Prices in USD per 1M tokens for the text model, used to estimate cost. Unset = cost unknown. */
+  AI_TEXT_PRICE_INPUT_PER_1M: z.coerce.number().min(0).optional(),
+  AI_TEXT_PRICE_OUTPUT_PER_1M: z.coerce.number().min(0).optional(),
 });
 
 export type Env = z.infer<typeof envSchema>;

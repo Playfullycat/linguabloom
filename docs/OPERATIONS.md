@@ -98,6 +98,25 @@ docker compose down
 
 > ⚠️ `docker compose down -v` 会**删除数据卷**，也就是全部学习数据。除非你确实要清空一切，否则不要加 `-v`。
 
+## 4a. AI 服务（可选）
+
+不配置 AI 时，所有非 AI 功能照常可用。在 `.env` 里设置后重启（`docker compose up -d`）即可启用：
+
+| 变量 | 作用 |
+|---|---|
+| `AI_ENABLED` | `true` 启用 |
+| `AI_PROVIDER` | `openai`（或兼容 OpenAI 接口的服务），或 `mock`：本地模拟，不联网、不花钱，适合先试界面 |
+| `AI_API_KEY` | 只在服务器上使用，不会发到浏览器，也不会写进日志 |
+| `AI_BASE_URL` | 可选，只填你信任的兼容服务地址 |
+| `AI_TEXT_MODEL` | 文本模型名称，按服务商当前文档选一个便宜的小模型即可 |
+| `AI_TIMEOUT_MS` / `AI_MAX_OUTPUT_TOKENS` | 超时和单次回复长度上限 |
+| `AI_MONTHLY_BUDGET` | 月度软预算（美元）：用到 80% 时提醒，用完后 AI 暂停到下个月；设为 0 表示不检查 |
+| `AI_TEXT_PRICE_INPUT_PER_1M` / `AI_TEXT_PRICE_OUTPUT_PER_1M` | 模型每百万 token 的价格，用来估算费用；不填时费用显示为未知，预算只按已知部分计算 |
+
+“设置 → AI 服务”可以看到配置状态、本月请求数、token 和估算费用。用量记录只保存服务商、模型、任务类别、token、耗时和费用估算，不保存密钥和对话内容。`scripts/healthcheck.sh` 会检查 AI 配置是否完整。
+
+AI 对话默认保存在你的数据库里，可以在 AI 辅导页逐条删除，或在设置里关闭保存、一键删除全部。
+
 ## 5. 备份
 
 ```bash
@@ -221,4 +240,5 @@ bash scripts/healthcheck.sh
 - 要彻底删除全部数据并重置系统：`docker compose down -v`。这会删除两个卷，不可恢复，请先备份。
 - 导入的文件（音频）保存在 `appdata` 卷的 `media/<用户 id>/` 下，只能由上传者通过登录后的 `/api/media/…` 访问，会一起进入备份。在“我的材料”里删除一份导入的材料，会同时删除它的音频文件和你在上面的学习记录。
 - 本地不用 Docker 运行时，上传文件放在 `STORAGE_ROOT`（默认项目下的 `data/`，已被 git 忽略）；E2E 测试用 `data/e2e/`。
+- 使用 AI 时，你的消息和必要的学习上下文会发送给你配置的 AI 服务商（页面上写明了发送哪些内容）。不配置 AI 就不会有任何数据发出去。
 - 学习数据导出、单条录音和会话删除等功能随 Phase 1–3 上线。

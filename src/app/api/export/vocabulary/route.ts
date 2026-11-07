@@ -1,7 +1,7 @@
 import { and, eq, sql } from "drizzle-orm";
 
 import { getDb } from "@/db";
-import { reviewCards, userVocabulary, vocabularyEntries } from "@/db/schema";
+import { userVocabulary, vocabularyEntries } from "@/db/schema";
 import { getCurrentUser } from "@/lib/auth/session";
 import { csvResponse, toCsv } from "@/lib/csv";
 
@@ -24,7 +24,8 @@ export async function GET() {
       receptive: userVocabulary.receptiveMastery,
       productive: userVocabulary.productiveMastery,
       firstSeen: userVocabulary.firstSeenAt,
-      nextDue: sql<string | null>`(select min(${reviewCards.dueAt})::text from ${reviewCards} where ${reviewCards.userId} = ${user.id} and ${reviewCards.entryId} = ${userVocabulary.entryId} and ${reviewCards.suspendedAt} is null)`,
+      // Written out: Drizzle leaves outer columns unqualified inside a raw subquery.
+      nextDue: sql<string | null>`(select min(rc.due_at)::text from review_cards rc where rc.user_id = ${user.id} and rc.entry_id = "user_vocabulary"."entry_id" and rc.suspended_at is null)`,
     })
     .from(userVocabulary)
     .innerJoin(vocabularyEntries, eq(vocabularyEntries.id, userVocabulary.entryId))

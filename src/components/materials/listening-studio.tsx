@@ -17,7 +17,7 @@ import type { ReaderMaterial } from "@/modules/materials/services/materials";
 
 import { ComprehensionQuestions } from "./comprehension-questions";
 import { FIT_LABELS, FIT_TONES } from "./fit";
-import { NotesCard, SourceNote, useMaterialLookup, useMaterialState } from "./reading-room";
+import { CoachLink, NotesCard, SourceNote, useMaterialLookup, useMaterialState } from "./reading-room";
 import { TokenText } from "./token-text";
 import { useStudyTime } from "./use-study-time";
 import { WordCard } from "./word-card";
@@ -32,7 +32,7 @@ type Practice = "questions" | "dictation" | "keyword";
  * recorded audio yet, so the browser reads each sentence; there are no fake
  * word-level timestamps.
  */
-export function ListeningStudio({ material }: { material: ReaderMaterial }) {
+export function ListeningStudio({ material, aiAvailable }: { material: ReaderMaterial; aiAvailable: boolean }) {
   useStudyTime(material.id);
   const supported = useSpeechSupported();
   const [rate, setRate] = useState<number>(1);
@@ -395,6 +395,7 @@ export function ListeningStudio({ material }: { material: ReaderMaterial }) {
                 听完了
               </Button>
             )}
+            {aiAvailable ? <CoachLink material={material} seq={current} /> : null}
           </CardContent>
         </Card>
       </aside>

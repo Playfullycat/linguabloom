@@ -9,6 +9,7 @@ import { ReadingRoom } from "@/components/materials/reading-room";
 import { LoadingSkeleton } from "@/components/ui/skeleton";
 import { getDb } from "@/db";
 import { requireOwner } from "@/lib/auth/session";
+import { aiStatus } from "@/modules/ai/provider";
 import { MaterialNotFoundError, getMaterialForReader } from "@/modules/materials/services/materials";
 
 export const metadata: Metadata = { title: "Reading" };
@@ -42,7 +43,7 @@ async function Loader({ params }: Pick<PageProps<"/reading/[contentId]">, "param
         titleZh={material.titleZh}
         description={material.summaryZh}
       />
-      <ReadingRoom key={material.id} material={material} />
+      <ReadingRoom key={material.id} material={material} aiAvailable={aiStatus().available} />
     </>
   );
 }

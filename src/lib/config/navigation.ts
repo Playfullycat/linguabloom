@@ -256,6 +256,7 @@ const tutor: Feature = {
   icon: Sparkles,
   summary: "按你的真实水平调整说话方式的英语老师。",
   phase: 3,
+  available: true,
   highlights: [
     "讲解、练习、自由对话、情景角色扮演、纠错",
     "根据各项技能水平控制语速、词汇和中文辅助比例",

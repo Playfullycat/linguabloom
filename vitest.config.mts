@@ -7,6 +7,8 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "src"),
+      // `server-only` throws outside React Server Components; unit tests import server modules directly.
+      "server-only": path.resolve(import.meta.dirname, "src/test/empty-module.ts"),
     },
   },
   test: {

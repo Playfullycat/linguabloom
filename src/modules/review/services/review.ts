@@ -428,7 +428,8 @@ export async function listVocabulary(
       status: userVocabulary.status,
       receptiveMastery: userVocabulary.receptiveMastery,
       productiveMastery: userVocabulary.productiveMastery,
-      nextDueAt: sql<Date | null>`(select min(${reviewCards.dueAt}) from ${reviewCards} where ${reviewCards.userId} = ${userId} and ${reviewCards.entryId} = ${userVocabulary.entryId} and ${reviewCards.suspendedAt} is null)`,
+      // Written out: Drizzle leaves outer columns unqualified inside a raw subquery ("entry_id" = "entry_id" would match every card).
+      nextDueAt: sql<Date | null>`(select min(rc.due_at) from review_cards rc where rc.user_id = ${userId} and rc.entry_id = "user_vocabulary"."entry_id" and rc.suspended_at is null)`,
       addedFrom: userVocabulary.addedFrom,
     })
     .from(userVocabulary)

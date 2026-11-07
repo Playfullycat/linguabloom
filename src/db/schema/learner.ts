@@ -63,6 +63,8 @@ export const studyPreferences = pgTable(
     remindersEnabled: boolean("reminders_enabled").notNull().default(false),
     /** Gentle "days learned this week" note on Today (can be turned off). */
     showWeeklyStreak: boolean("show_weekly_streak").notNull().default(true),
+    /** Keep AI Tutor conversations (spec §11.2). Off = nothing is stored after each reply. */
+    saveAiConversations: boolean("save_ai_conversations").notNull().default(true),
     ...timestamps,
   },
   (t) => [
