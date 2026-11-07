@@ -17,7 +17,7 @@ export async function signIn(page: Page, password: string = TEST_OWNER.password)
 
 export async function expectSignedIn(page: Page) {
   await expect(page).toHaveURL(/\/today$/);
-  await expect(page.getByRole("heading", { name: /Welcome to LinguaBloom/ })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1, name: /^Today|Welcome back/ })).toBeVisible();
 }
 
 /** The form's own alert (Next.js also renders an empty route-announcer with role="alert"). */

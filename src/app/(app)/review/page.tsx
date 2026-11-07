@@ -12,6 +12,7 @@ import { LoadingSkeleton } from "@/components/ui/skeleton";
 import { getDb } from "@/db";
 import { requireOwner } from "@/lib/auth/session";
 import { getEnv } from "@/lib/config/env";
+import { getLearnerSettings } from "@/modules/learner/services/profile";
 import { getReviewQueue, getReviewStats } from "@/modules/review/services/review";
 
 export const metadata: Metadata = { title: "Review" };
@@ -43,8 +44,12 @@ async function ReviewLoader() {
   const user = await requireOwner();
   const db = getDb();
   const now = new Date();
-  const tz = getEnv().DEFAULT_TIMEZONE;
-  const [queue, stats] = await Promise.all([getReviewQueue(db, user.id, now, tz), getReviewStats(db, user.id, now, tz)]);
+  const { profile, preferences } = await getLearnerSettings(db, user.id, getEnv().DEFAULT_TIMEZONE);
+  const tz = profile.timezone;
+  const [queue, stats] = await Promise.all([
+    getReviewQueue(db, user.id, now, tz, preferences.newItemsLimit),
+    getReviewStats(db, user.id, now, tz),
+  ]);
 
   if (queue.cards.length === 0) {
     return (

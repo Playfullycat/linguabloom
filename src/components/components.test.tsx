@@ -3,8 +3,17 @@ import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 
 import { MobileNavBar } from "@/components/layout/mobile-nav";
-import { SessionTemplatePicker } from "@/components/learning/session-template-picker";
+import { TodayPlanView } from "@/components/today/today-plan";
 import { SegmentedControl } from "@/components/ui/segmented-control";
+import { skipTaskAction } from "@/modules/study-plan/actions";
+import type { TodayPlan } from "@/modules/study-plan/services/plan";
+
+vi.mock("@/modules/study-plan/actions", () => ({
+  moveTaskAction: vi.fn(async () => ({ ok: true })),
+  regeneratePlanAction: vi.fn(async () => ({ ok: true })),
+  restoreTaskAction: vi.fn(async () => ({ ok: true })),
+  skipTaskAction: vi.fn(async () => ({ ok: true })),
+}));
 
 vi.mock("next/link", () => ({
   default: ({ href, children, ...rest }: { href: string; children: React.ReactNode }) => (
@@ -40,16 +49,36 @@ describe("SegmentedControl", () => {
   });
 });
 
-describe("SessionTemplatePicker", () => {
-  it("updates the composition when the length changes", async () => {
-    render(<SessionTemplatePicker />);
-    expect(screen.getByRole("list", { name: "25 分钟学习的组成" })).toBeInTheDocument();
-    expect(screen.queryByText("口语或写作")).not.toBeInTheDocument();
+describe("TodayPlanView", () => {
+  const plan: TodayPlan = {
+    planDate: "2026-11-07",
+    sessionMinutes: 25,
+    mode: "normal",
+    comeback: false,
+    dueReviews: 4,
+    reviewsToday: 0,
+    tasks: [
+      { id: "11111111-1111-4111-8111-111111111111", kind: "review", title: "复习 4 张到期卡片", href: "/review", minutes: 3, reason: "4 张卡片到期。", status: "done", skipReason: null },
+      { id: "22222222-2222-4222-8222-222222222222", kind: "lesson", title: "学习：Hi and Hello（嗨与你好）", href: "/lesson/l1", minutes: 22, reason: "这是当前单元的下一课。", status: "pending", skipReason: null },
+    ],
+  };
+  const reasons = [
+    { value: "too_tired" as const, label: "有点累" },
+    { value: "other" as const, label: "其他原因" },
+  ];
 
-    await userEvent.click(screen.getByRole("radio", { name: "60 分钟" }));
-    expect(screen.getByRole("list", { name: "60 分钟学习的组成" })).toBeInTheDocument();
-    expect(screen.getByText("口语或写作")).toBeInTheDocument();
-    expect(screen.getByText("阅读或听力")).toBeInTheDocument();
+  it("starts with the first pending task and skips with a reason", async () => {
+    render(<TodayPlanView plan={plan} skipReasons={reasons} />);
+    expect(screen.getByRole("link", { name: /开始学习/ })).toHaveAttribute("href", "/lesson/l1");
+    expect(screen.getByText("已完成")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "上移：复习 4 张到期卡片" })).toBeDisabled();
+
+    await userEvent.click(screen.getByRole("button", { name: "跳过" }));
+    const confirm = screen.getByRole("button", { name: "确认跳过" });
+    expect(confirm).toBeDisabled();
+    await userEvent.click(screen.getByText("有点累"));
+    await userEvent.click(confirm);
+    expect(skipTaskAction).toHaveBeenCalledWith({ taskId: plan.tasks[1]!.id, reason: "too_tired" });
   });
 });
 

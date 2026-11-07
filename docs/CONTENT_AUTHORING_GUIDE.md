@@ -126,4 +126,9 @@ src/content/
 ## 9. 其他种子
 
 - `src/db/seed/data/cefr-levels.json`：七个 CEFR 等级的阶段目标与内容重点（规格 §3.1）。
+- `src/content/assessment/diagnostic-v1.json`：水平诊断题库（规格 §4.2），由 `src/modules/assessment/content.ts` 校验。
+  - 每题必须有 `id`（如 `voc-a1-2`）、`skill`（vocabulary / grammar / reading / listening）、`level`、`difficulty`（1–5）、`discrimination`（0–1）和中文解释 `explanation_zh`。
+  - 题型：`choice`（`options` + `answer` 下标，可带阅读短文 `passage_en` 或听力文本 `audio_en`）和 `cloze`（`sentence_en` 里用一个 `___` 标出空格，`answers` 列出可接受的答案）。
+  - 每项技能在 Pre-A1、A1、A2、B1 每一级都至少要有一题，否则校验不通过。题目要比该级的典型能力稍难一点也可以，但不能考生僻知识。
+  - 从文件里删掉的题会被归档（不会删除），旧的作答记录仍然有效。改动已上线的题时，题意不要变；要换成新题就用新的 `id`。
 - 所有 seed 在 `src/db/seed/index.ts` 的 `SEEDS` 中登记，先校验再在事务里做幂等 upsert；用 `npm run db:seed` 运行。Docker 容器每次启动都会自动执行。

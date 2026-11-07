@@ -24,7 +24,7 @@ import {
 } from "../domain/scheduler";
 import { refreshVocabularyStatus, CardNotFoundError } from "./vocabulary";
 
-/** New cards introduced per local day (spec §8.1 new_items_limit; settings in 1.3). */
+/** Default new cards per local day; the learner's study_preferences.new_items_limit overrides it. */
 export const NEW_CARDS_PER_DAY = 20;
 /** Siblings (other cards of the same word) wait this long after a review (spec §2.3 sibling bury). */
 export const SIBLING_GAP_HOURS = 12;
@@ -97,7 +97,7 @@ async function newCardsIntroducedSince(db: DbExecutor, userId: string, since: Da
  * cards up to the daily limit. At most one card per word, and no card whose
  * sibling was reviewed in the last SIBLING_GAP_HOURS (spec §2.3).
  */
-export async function getReviewQueue(db: DbExecutor, userId: string, now: Date, timeZone: string) {
+export async function getReviewQueue(db: DbExecutor, userId: string, now: Date, timeZone: string, newPerDay = NEW_CARDS_PER_DAY) {
   // Written out explicitly: Drizzle does not expand table aliases inside raw SQL.
   const siblingCutoff = new Date(now.getTime() - SIBLING_GAP_HOURS * 3_600_000).toISOString();
   const recentSiblingReview = sql`exists (
@@ -123,7 +123,7 @@ export async function getReviewQueue(db: DbExecutor, userId: string, now: Date, 
     )
     .limit(QUEUE_LIMIT * 3);
 
-  const newBudget = Math.max(0, NEW_CARDS_PER_DAY - (await newCardsIntroducedSince(db, userId, startOfLocalDay(now, timeZone))));
+  const newBudget = Math.max(0, newPerDay - (await newCardsIntroducedSince(db, userId, startOfLocalDay(now, timeZone))));
   const seenEntries = new Set<string>();
   const queue: ClientReviewCard[] = [];
   let newTaken = 0;
@@ -451,4 +451,15 @@ export async function getVocabularyDetail(db: DbExecutor, userId: string, entryI
     : [];
 
   return { entry: row.entry, vocabulary: row.user, cards, history, sourceLesson: sourceLesson ?? null };
+}
+
+/** Most recently added words (Today page). */
+export async function getRecentWords(db: DbExecutor, userId: string, limit = 5) {
+  return db
+    .select({ entryId: userVocabulary.entryId, text: vocabularyEntries.text, zh: vocabularyEntries.definitionZh, status: userVocabulary.status })
+    .from(userVocabulary)
+    .innerJoin(vocabularyEntries, eq(vocabularyEntries.id, userVocabulary.entryId))
+    .where(eq(userVocabulary.userId, userId))
+    .orderBy(desc(userVocabulary.firstSeenAt), asc(vocabularyEntries.text))
+    .limit(limit);
 }

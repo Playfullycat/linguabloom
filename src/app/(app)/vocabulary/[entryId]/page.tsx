@@ -17,6 +17,7 @@ import { requireOwner } from "@/lib/auth/session";
 import { getEnv } from "@/lib/config/env";
 import { describeDueIn } from "@/lib/time";
 import { CARD_TYPE_INFO, RATING_LABELS, availableCardTypes, spokenText, type Grade } from "@/modules/review/domain/cards";
+import { getLearnerSettings } from "@/modules/learner/services/profile";
 import { getVocabularyDetail } from "@/modules/review/services/review";
 
 export const metadata: Metadata = { title: "Word" };
@@ -35,12 +36,16 @@ async function Detail({ params }: Pick<PageProps<"/vocabulary/[entryId]">, "para
   const { entryId: rawId } = await params;
   const entryId = decodeURIComponent(rawId);
   const user = await requireOwner();
-  const detail = await getVocabularyDetail(getDb(), user.id, entryId);
+  const db = getDb();
+  const [detail, { profile }] = await Promise.all([
+    getVocabularyDetail(db, user.id, entryId),
+    getLearnerSettings(db, user.id, getEnv().DEFAULT_TIMEZONE),
+  ]);
   if (!detail) notFound();
 
   const { entry, vocabulary, cards, history, sourceLesson } = detail;
   const now = new Date();
-  const timeZone = getEnv().DEFAULT_TIMEZONE;
+  const timeZone = profile.timezone;
   const existingTypes = new Set(cards.map((c) => c.cardType));
   const missing = availableCardTypes(entry).filter((t) => !existingTypes.has(t));
 

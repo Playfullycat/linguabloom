@@ -33,3 +33,18 @@ export function describeDueIn(due: Date, now: Date): string {
   if (months < 12) return `${months} 个月后`;
   return `${Math.round(days / 365)} 年后`;
 }
+
+/** The learner's local calendar date for `now`, as "YYYY-MM-DD". */
+export function localDateString(now: Date, timeZone: string): string {
+  return new Intl.DateTimeFormat("en-CA", { timeZone, year: "numeric", month: "2-digit", day: "2-digit" }).format(now);
+}
+
+/** UTC instant at which the local week (Monday 00:00) containing `now` starts. */
+export function startOfLocalWeek(now: Date, timeZone: string): Date {
+  const weekday = new Intl.DateTimeFormat("en-US", { timeZone, weekday: "short" }).format(now);
+  const offset = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].indexOf(weekday);
+  let start = startOfLocalDay(now, timeZone);
+  // Step back one local day at a time (safe across DST changes).
+  for (let i = 0; i < offset; i += 1) start = startOfLocalDay(new Date(start.getTime() - 3_600_000), timeZone);
+  return start;
+}

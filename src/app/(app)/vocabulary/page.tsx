@@ -20,6 +20,7 @@ import { describeDueIn } from "@/lib/time";
 import { cn } from "@/lib/utils";
 import { spokenText } from "@/modules/review/domain/cards";
 import { STATUS_LABELS } from "@/modules/review/domain/status";
+import { getLearnerSettings } from "@/modules/learner/services/profile";
 import { getReviewStats, listVocabulary } from "@/modules/review/services/review";
 
 export const metadata: Metadata = { title: "Vocabulary" };
@@ -81,8 +82,9 @@ async function VocabularyContent({ searchParams }: Pick<PageProps<"/vocabulary">
   const user = await requireOwner();
   const db = getDb();
   const now = new Date();
+  const { profile } = await getLearnerSettings(db, user.id, getEnv().DEFAULT_TIMEZONE);
   const [stats, words] = await Promise.all([
-    getReviewStats(db, user.id, now, getEnv().DEFAULT_TIMEZONE),
+    getReviewStats(db, user.id, now, profile.timezone),
     listVocabulary(db, user.id, { status, q: q || undefined }),
   ]);
 
