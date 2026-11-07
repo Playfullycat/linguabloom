@@ -51,6 +51,16 @@ export function ListeningStudio({ material }: { material: ReaderMaterial }) {
   const state = useMaterialState(material);
   const segments = material.segments;
 
+  // Real audio (imported): with subtitle timestamps every sentence can be played and looped exactly.
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const hasAudio = material.media !== null;
+  const timed = hasAudio && segments.every((s) => s.startMs !== null && s.endMs !== null);
+  const stopAtRef = useRef<number | null>(null);
+  const currentRef = useRef<number | null>(null);
+  const [ab, setAb] = useState<{ a: number | null; b: number | null }>({ a: null, b: null });
+  const abRef = useRef(ab);
+  const canPlay = timed || supported;
+
   useEffect(() => () => stopSpeaking(), []);
 
   const notePlay = (seq: number) => {
@@ -59,8 +69,57 @@ export function ListeningStudio({ material }: { material: ReaderMaterial }) {
     void recordEventAction({ contentId: material.id, kind: n > 1 ? "replay" : "play", segmentSeq: seq });
   };
 
+  const setCurrentSeq = (seq: number | null) => {
+    currentRef.current = seq;
+    setCurrent(seq);
+  };
+
+  /** Audio clock → current sentence, sentence end, sentence loop and A-B loop. */
+  const onTimeUpdate = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    const t = audio.currentTime * 1000;
+    const { a, b } = abRef.current;
+    if (a !== null && b !== null && b > a && t >= b) {
+      audio.currentTime = a / 1000;
+      return;
+    }
+    if (!timed) return;
+    const idx = segments.findLastIndex((s) => s.startMs! <= t + 30);
+    const seq = idx === -1 ? 0 : idx;
+    const seg = segments[currentRef.current ?? seq]!;
+    if (loopRef.current && currentRef.current !== null && t >= seg.endMs!) {
+      audio.currentTime = seg.startMs! / 1000;
+      return;
+    }
+    if (stopAtRef.current !== null && t >= stopAtRef.current) {
+      audio.pause();
+      stopAtRef.current = null;
+      setPlaying(false);
+      return;
+    }
+    if (seq !== currentRef.current) {
+      setCurrentSeq(seq);
+      notePlay(seq);
+    }
+  };
+
   /** Play from `start`; one sentence (looping if asked) or through to the end. */
   const play = async (start: number, onlyOne: boolean) => {
+    if (timed && audioRef.current) {
+      const audio = audioRef.current;
+      const seg = segments[start]!;
+      run.current += 1;
+      stopSpeaking();
+      audio.playbackRate = rateRef.current;
+      audio.currentTime = seg.startMs! / 1000;
+      stopAtRef.current = onlyOne ? seg.endMs! : null;
+      setCurrentSeq(start);
+      notePlay(start);
+      setPlaying(true);
+      await audio.play().catch(() => setPlaying(false));
+      return;
+    }
     const id = ++run.current;
     setPlaying(true);
     let i = start;
@@ -82,7 +141,27 @@ export function ListeningStudio({ material }: { material: ReaderMaterial }) {
   const stop = () => {
     run.current += 1;
     stopSpeaking();
+    audioRef.current?.pause();
+    stopAtRef.current = null;
     setPlaying(false);
+  };
+
+  const setPoint = (which: "a" | "b") => {
+    const t = Math.round((audioRef.current?.currentTime ?? 0) * 1000);
+    const next = { ...abRef.current, [which]: t };
+    abRef.current = next;
+    setAb(next);
+  };
+  const clearAb = () => {
+    abRef.current = { a: null, b: null };
+    setAb({ a: null, b: null });
+  };
+  const fmt = (ms: number) => `${Math.floor(ms / 60000)}:${String(Math.floor((ms % 60000) / 1000)).padStart(2, "0")}.${Math.floor((ms % 1000) / 100)}`;
+
+  /** For dictation: one sentence from the recording, or read aloud. */
+  const playOne = (seq: number) => {
+    if (timed) void play(seq, true);
+    else void speak(segments[seq]!.en, rateRef.current);
   };
 
   const changeSubtitles = (v: Subtitles) => {
@@ -106,8 +185,25 @@ export function ListeningStudio({ material }: { material: ReaderMaterial }) {
               <Badge>{segments.length} 句</Badge>
             </div>
 
-            {!supported ? (
+            {!canPlay ? (
               <FormMessage tone="error">当前浏览器不支持语音朗读，无法播放。可以换用 Chrome、Edge 或 Safari 打开。</FormMessage>
+            ) : null}
+            {hasAudio ? (
+              // Hidden when sentences are timed (our controls drive it); native controls otherwise.
+              <audio
+                ref={audioRef}
+                src={material.media!.url}
+                preload="metadata"
+                controls={!timed}
+                className={timed ? "hidden" : "w-full"}
+                onTimeUpdate={onTimeUpdate}
+                onPause={() => {
+                  if (timed) setPlaying(false);
+                }}
+                onEnded={() => setPlaying(false)}
+              >
+                <track kind="captions" />
+              </audio>
             ) : null}
 
             <div className="flex flex-col gap-3 rounded-2xl bg-blue-soft p-4">
@@ -118,19 +214,19 @@ export function ListeningStudio({ material }: { material: ReaderMaterial }) {
                     暂停
                   </Button>
                 ) : (
-                  <Button onClick={() => void play(current ?? 0, false)} disabled={!supported}>
+                  <Button onClick={() => void play(current ?? 0, false)} disabled={!canPlay}>
                     <Play aria-hidden="true" />
                     {current === null ? "播放全文" : "从这句继续"}
                   </Button>
                 )}
-                <Button variant="outline" size="icon" aria-label="上一句" disabled={!supported || (current ?? 0) <= 0} onClick={() => void play(Math.max(0, (current ?? 0) - 1), true)}>
+                <Button variant="outline" size="icon" aria-label="上一句" disabled={!canPlay || (current ?? 0) <= 0} onClick={() => void play(Math.max(0, (current ?? 0) - 1), true)}>
                   <ChevronLeft aria-hidden="true" />
                 </Button>
                 <Button
                   variant="outline"
                   size="icon"
                   aria-label="下一句"
-                  disabled={!supported || (current ?? -1) >= segments.length - 1}
+                  disabled={!canPlay || (current ?? -1) >= segments.length - 1}
                   onClick={() => void play(Math.min(segments.length - 1, (current ?? -1) + 1), true)}
                 >
                   <ChevronRight aria-hidden="true" />
@@ -154,10 +250,34 @@ export function ListeningStudio({ material }: { material: ReaderMaterial }) {
                   onValueChange={(v) => {
                     rateRef.current = Number(v);
                     setRate(Number(v));
+                    if (audioRef.current) audioRef.current.playbackRate = Number(v);
                   }}
                   options={LISTENING_RATES.map((r) => ({ value: String(r), label: `${r}×` }))}
                 />
               </div>
+              {hasAudio ? (
+                <div className="flex flex-wrap items-center gap-2" role="group" aria-label="A-B 循环">
+                  <span className="text-sm text-blue-ink">A-B 循环</span>
+                  <Button size="sm" variant="outline" onClick={() => setPoint("a")}>
+                    设为 A 点
+                  </Button>
+                  <Button size="sm" variant="outline" onClick={() => setPoint("b")} disabled={ab.a === null}>
+                    设为 B 点
+                  </Button>
+                  {ab.a !== null || ab.b !== null ? (
+                    <>
+                      <span className="text-sm text-blue-ink" aria-live="polite">
+                        {ab.a !== null ? `A ${fmt(ab.a)}` : ""}
+                        {ab.b !== null ? ` → B ${fmt(ab.b)}` : ""}
+                        {ab.a !== null && ab.b !== null && ab.b <= ab.a ? "（B 要在 A 之后）" : ""}
+                      </span>
+                      <Button size="sm" variant="ghost" onClick={clearAb}>
+                        清除
+                      </Button>
+                    </>
+                  ) : null}
+                </div>
+              ) : null}
               <p className="text-sm text-blue-ink" aria-live="polite">
                 {current === null ? "先不看文字，完整听一遍，抓住大意。" : `正在第 ${current + 1} / ${segments.length} 句`}
               </p>
@@ -186,7 +306,7 @@ export function ListeningStudio({ material }: { material: ReaderMaterial }) {
                   className={cn("flex items-start gap-2 rounded-xl px-2 py-2 transition-colors", current === s.sequence ? "bg-primary-soft" : "hover:bg-surface-soft")}
                   aria-current={current === s.sequence ? "true" : undefined}
                 >
-                  <Button variant="ghost" size="icon-sm" aria-label={`播放第 ${s.sequence + 1} 句`} disabled={!supported} onClick={() => void play(s.sequence, true)} className="text-primary-ink">
+                  <Button variant="ghost" size="icon-sm" aria-label={`播放第 ${s.sequence + 1} 句`} disabled={!canPlay} onClick={() => void play(s.sequence, true)} className="text-primary-ink">
                     <Volume2 aria-hidden="true" />
                   </Button>
                   <div className="min-w-0 flex-1 pt-1">
@@ -238,9 +358,15 @@ export function ListeningStudio({ material }: { material: ReaderMaterial }) {
             />
           </CardHeader>
           <CardContent>
-            {practice === "questions" ? <ComprehensionQuestions contentId={material.id} questions={material.questions} /> : null}
-            {practice === "dictation" ? <DictationPractice material={material} rate={rate} mode="sentence" /> : null}
-            {practice === "keyword" ? <DictationPractice material={material} rate={rate} mode="keyword" /> : null}
+            {practice === "questions" ? (
+              material.questions.length > 0 ? (
+                <ComprehensionQuestions contentId={material.id} questions={material.questions} />
+              ) : (
+                <p className="text-sm text-muted">你导入的材料没有理解题（AI 出题在 Phase 3）。可以用逐句听写练习。</p>
+              )
+            ) : null}
+            {practice === "dictation" ? <DictationPractice material={material} mode="sentence" playOne={playOne} canPlay={canPlay} /> : null}
+            {practice === "keyword" ? <DictationPractice material={material} mode="keyword" playOne={playOne} canPlay={canPlay} /> : null}
           </CardContent>
         </Card>
 
@@ -297,8 +423,7 @@ function DiffView({ words, extra }: { words: DictationWord[]; extra: string[] })
 }
 
 /** Sentence dictation, or fill in one key word you heard. */
-function DictationPractice({ material, rate, mode }: { material: ReaderMaterial; rate: number; mode: "sentence" | "keyword" }) {
-  const supported = useSpeechSupported();
+function DictationPractice({ material, mode, playOne, canPlay }: { material: ReaderMaterial; mode: "sentence" | "keyword"; playOne: (seq: number) => void; canPlay: boolean }) {
   const items = mode === "keyword" ? material.segments.filter((s) => s.keyword) : material.segments;
   const [index, setIndex] = useState(0);
   const [text, setText] = useState("");
@@ -356,11 +481,11 @@ function DictationPractice({ material, rate, mode }: { material: ReaderMaterial;
       <div className="flex flex-wrap items-center gap-2">
         <Button
           variant="soft"
-          disabled={!supported}
+          disabled={!canPlay}
           onClick={() => {
             startedAt.current ||= Date.now();
             void recordEventAction({ contentId: material.id, kind: "play", segmentSeq: item.sequence, detail: mode });
-            void speak(item.en, rate);
+            playOne(item.sequence);
           }}
         >
           <Volume2 aria-hidden="true" />

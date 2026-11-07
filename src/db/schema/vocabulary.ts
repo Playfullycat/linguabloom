@@ -44,9 +44,11 @@ export const vocabularyEntries = pgTable(
     exampleZh: text("example_zh").notNull(),
     cefrLevel: text("cefr_level").notNull(),
     sourceType: text("source_type").notNull(),
+    /** Set for words the learner imported (CSV/TSV); null for reviewed content. */
+    ownerUserId: uuid("owner_user_id").references(() => users.id, { onDelete: "cascade" }),
     updatedAt,
   },
-  (t) => [index("vocabulary_entries_unit_id_idx").on(t.unitId)],
+  (t) => [index("vocabulary_entries_unit_id_idx").on(t.unitId), index("vocabulary_entries_owner_idx").on(t.ownerUserId)],
 );
 
 export const VOCABULARY_STATUSES = [

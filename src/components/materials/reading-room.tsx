@@ -125,7 +125,8 @@ export function SourceNote({ material }: { material: ReaderMaterial }) {
   return (
     <p className="text-xs text-muted">
       {material.imported ? "你导入的材料，仅供个人学习使用。" : "LinguaBloom 原创分级材料（待 owner 复核）。"}
-      {material.type === "listening" ? " 朗读使用浏览器语音，音色取决于你的设备。" : null}
+      {material.type === "listening" ? (material.media ? " 播放的是你上传的音频。" : " 朗读使用浏览器语音，音色取决于你的设备。") : null}
+      {material.imported ? " 没有生词表：查词会在课程词汇和你导入的词表里找。" : null}
     </p>
   );
 }
@@ -154,7 +155,7 @@ export function ReadingRoom({ material }: { material: ReaderMaterial }) {
                 <Badge tone={FIT_TONES[material.fit]}>
                   {FIT_LABELS[material.fit]}（你约 {material.learnerLevelLabel}）
                 </Badge>
-                <Badge>生词 {material.newWords} 个</Badge>
+                {material.imported ? <Badge tone="outline">我的材料</Badge> : <Badge>生词 {material.newWords} 个</Badge>}
               </div>
               <SegmentedControl<AssistMode>
                 ariaLabel="中文辅助"
@@ -206,14 +207,16 @@ export function ReadingRoom({ material }: { material: ReaderMaterial }) {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>理解练习</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ComprehensionQuestions contentId={material.id} questions={material.questions} onShowSentence={showSentence} />
-          </CardContent>
-        </Card>
+        {material.questions.length > 0 ? (
+          <Card>
+            <CardHeader>
+              <CardTitle>理解练习</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ComprehensionQuestions contentId={material.id} questions={material.questions} onShowSentence={showSentence} />
+            </CardContent>
+          </Card>
+        ) : null}
 
         <NotesCard state={state} />
       </div>

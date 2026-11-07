@@ -200,7 +200,7 @@ export function ReviewSession({ initialCards }: { initialCards: ClientReviewCard
           {card.cardType === "recall" ? (
             <>
               <p className="text-2xl font-semibold text-ink sm:text-3xl">{card.zh}</p>
-              <p className="text-sm text-muted">例句意思：{card.exampleZh}</p>
+              {card.exampleZh ? <p className="text-sm text-muted">例句意思：{card.exampleZh}</p> : null}
             </>
           ) : null}
           {card.cardType === "cloze" && card.cloze ? (
@@ -266,13 +266,16 @@ export function ReviewSession({ initialCards }: { initialCards: ClientReviewCard
               <SpeakButton text={card.spoken} />
             </div>
             <p className="text-ink">{card.zh}</p>
-            <p className="flex items-center gap-1 text-sm">
-              <SpeakButton text={card.exampleEn} label={`朗读例句：${card.exampleEn}`} className="-ml-2" />
-              <span className="flex flex-col">
-                <span lang="en" className="text-ink">{card.exampleEn}</span>
-                <span className="text-muted">{card.exampleZh}</span>
-              </span>
-            </p>
+            {/* Imported words may come without an example sentence. */}
+            {card.exampleEn ? (
+              <p className="flex items-center gap-1 text-sm">
+                <SpeakButton text={card.exampleEn} label={`朗读例句：${card.exampleEn}`} className="-ml-2" />
+                <span className="flex flex-col">
+                  <span lang="en" className="text-ink">{card.exampleEn}</span>
+                  {card.exampleZh ? <span className="text-muted">{card.exampleZh}</span> : null}
+                </span>
+              </p>
+            ) : null}
           </div>
         ) : null}
 

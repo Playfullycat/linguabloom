@@ -16,6 +16,11 @@ if (!existsSync(server)) {
   process.exit(1);
 }
 
+// The standalone server changes into its own directory: pin a relative
+// STORAGE_ROOT to the project folder first, or uploads would land inside
+// .next/standalone and disappear with the next build.
+process.env.STORAGE_ROOT = path.resolve(process.env.STORAGE_ROOT ?? "data");
+
 cpSync(".next/static", path.join(standalone, ".next/static"), { recursive: true });
 if (existsSync("public")) cpSync("public", path.join(standalone, "public"), { recursive: true });
 

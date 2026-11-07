@@ -63,6 +63,8 @@ export default defineConfig({
           OWNER_SETUP_ENABLED: "true",
           OWNER_SETUP_TOKEN: "",
           AI_ENABLED: "false",
+          // Uploaded test audio stays apart from development uploads (still under the ignored data/ folder).
+          STORAGE_ROOT: "data/e2e",
         },
       },
 });

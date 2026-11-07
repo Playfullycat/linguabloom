@@ -144,6 +144,9 @@ export type ClientQuestion = Omit<MaterialQuestion, "answer" | "explanation_zh">
 export type ClientSegment = {
   sequence: number;
   speaker: string | null;
+  /** Real timestamps (imported subtitles) or null. */
+  startMs: number | null;
+  endMs: number | null;
   en: string;
   zh: string | null;
   tokens: Token[];
@@ -169,6 +172,8 @@ export type ReaderMaterial = {
   imported: boolean;
   sourceType: string;
   copyrightStatus: string;
+  /** The learner's uploaded audio, if any. */
+  media: { url: string } | null;
 };
 
 function keywordFor(text: string, tokens: Token[], glossKeySet: Set<string>): ClientSegment["keyword"] {
@@ -220,6 +225,8 @@ export async function getMaterialForReader(db: DbExecutor, userId: string, conte
       return {
         sequence: s.sequence,
         speaker: s.speaker,
+        startMs: s.startMs,
+        endMs: s.endMs,
         en: s.textEn,
         zh: s.textZh,
         tokens,
@@ -244,6 +251,7 @@ export async function getMaterialForReader(db: DbExecutor, userId: string, conte
     imported: m.ownerUserId !== null,
     sourceType: m.sourceType,
     copyrightStatus: m.copyrightStatus,
+    media: m.mediaAssetId ? { url: `/api/media/${m.mediaAssetId}` } : null,
   };
 }
 
@@ -291,8 +299,14 @@ export async function lookupWord(db: DbExecutor, userId: string, contentId: stri
     const [entry] = await db
       .select()
       .from(vocabularyEntries)
-      .where(and(sql`lower(${vocabularyEntries.text}) = ${word.toLowerCase()}`, sql`${vocabularyEntries.unitId} is not null`))
-      .orderBy(asc(vocabularyEntries.id))
+      .where(
+        and(
+          sql`lower(${vocabularyEntries.text}) = ${word.toLowerCase()}`,
+          // Course words, or words this learner imported themselves.
+          or(sql`${vocabularyEntries.unitId} is not null`, eq(vocabularyEntries.ownerUserId, userId)),
+        ),
+      )
+      .orderBy(sql`${vocabularyEntries.ownerUserId} is not null`, asc(vocabularyEntries.id))
       .limit(1);
     result = entry
       ? {
@@ -327,7 +341,7 @@ export async function collectWord(db: Database, userId: string, contentId: strin
   const m = await getVisibleMaterial(db, userId, contentId);
   const [entry] = await db.select().from(vocabularyEntries).where(eq(vocabularyEntries.id, entryId));
   // Only this material's glossary words or course words can be collected from here.
-  if (!entry || !(entry.id.startsWith(`${m.id}.`) || entry.unitId !== null)) throw new MaterialNotFoundError(entryId);
+  if (!entry || !(entry.id.startsWith(`${m.id}.`) || entry.unitId !== null || entry.ownerUserId === userId)) throw new MaterialNotFoundError(entryId);
   const known = await knownGlossaryTexts(db, userId);
   if (known.has(entry.text.toLowerCase())) return { added: false };
   const added = await addEntriesForUser(db, userId, [entry.id], `material:${m.id}`);

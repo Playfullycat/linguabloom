@@ -62,6 +62,8 @@ lingua.example.com {
 
 HSTS 和 `upgrade-insecure-requests` 建议在反向代理上配置。应用本身的 CSP 不包含它们，以免纯 HTTP 的局域网部署失效。
 
+**上传大小**：“我的材料”可以上传最多 50 MB 的音频。反向代理要放开请求体大小，例如 Nginx 设 `client_max_body_size 60m;`（Caddy 默认不限制）。
+
 ## 4. 日常运维
 
 查看服务状态：
@@ -217,4 +219,6 @@ bash scripts/healthcheck.sh
 - 所有数据都保存在你自己的机器上：`pgdata` 和 `appdata` 两个卷。
 - 应用不发送遥测；认证库的遥测已显式关闭。
 - 要彻底删除全部数据并重置系统：`docker compose down -v`。这会删除两个卷，不可恢复，请先备份。
+- 导入的文件（音频）保存在 `appdata` 卷的 `media/<用户 id>/` 下，只能由上传者通过登录后的 `/api/media/…` 访问，会一起进入备份。在“我的材料”里删除一份导入的材料，会同时删除它的音频文件和你在上面的学习记录。
+- 本地不用 Docker 运行时，上传文件放在 `STORAGE_ROOT`（默认项目下的 `data/`，已被 git 忽略）；E2E 测试用 `data/e2e/`。
 - 学习数据导出、单条录音和会话删除等功能随 Phase 1–3 上线。

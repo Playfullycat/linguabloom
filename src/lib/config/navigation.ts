@@ -287,6 +287,7 @@ export const library: Feature = {
   icon: Library,
   summary: "导入你自己的文章、字幕和词表。",
   phase: 2,
+  available: true,
   highlights: [
     "支持粘贴文本、TXT、Markdown、SRT/VTT 字幕、CSV/TSV 词表",
     "导入先进入草稿，预览确认后才进入学习库",
