@@ -7,6 +7,8 @@ import { useEffect, useRef, useState, useTransition } from "react";
 import { SpeakButton } from "@/components/media/speak-button";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { collectAiWordAction, explainWordAction } from "@/modules/ai/generation-actions";
+import type { AiDefinition } from "@/modules/ai/services/generation";
 import { collectWordAction } from "@/modules/materials/actions";
 import type { LookupResult } from "@/modules/materials/services/materials";
 
@@ -16,7 +18,21 @@ export type WordCardState = { status: "loading"; word: string } | { status: "rea
  * The looked-up word: meaning, pronunciation, example, and a choice between
  * "add to my vocabulary" and "just looking" (spec §2.5).
  */
-export function WordCard({ contentId, state, onClose, onCollected }: { contentId: string; state: WordCardState; onClose: () => void; onCollected: (text: string) => void }) {
+export function WordCard({
+  contentId,
+  state,
+  onClose,
+  onCollected,
+  aiAvailable = false,
+  sentence = null,
+}: {
+  contentId: string;
+  state: WordCardState;
+  onClose: () => void;
+  onCollected: (text: string) => void;
+  aiAvailable?: boolean;
+  sentence?: string | null;
+}) {
   const headingRef = useRef<HTMLHeadingElement>(null);
   const [pending, startTransition] = useTransition();
   const [message, setMessage] = useState<string | null>(null);
@@ -52,7 +68,7 @@ export function WordCard({ contentId, state, onClose, onCollected }: { contentId
         state.result.source === "none" ? (
           <div className="mt-2 flex flex-col gap-1 text-sm text-muted">
             <p>这个词不在本文生词表里，课程里也还没教过，暂时没有释义。</p>
-            <p>它通常是这个级别应该认识的词；AI 释义会在 Phase 3 加入。</p>
+            {aiAvailable ? <AiExplain key={word} word={word} sentence={sentence ?? ""} onCollected={onCollected} /> : <p>配置 AI 后可以让 AI 结合句子解释它。</p>}
           </div>
         ) : (
           <div className="mt-2 flex flex-col gap-2">
@@ -116,5 +132,76 @@ export function WordCard({ contentId, state, onClose, onCollected }: { contentId
         )
       ) : null}
     </section>
+  );
+}
+
+/** AI explanation of a word in its sentence (cached on the server); clearly marked as AI-generated. */
+function AiExplain({ word, sentence, onCollected }: { word: string; sentence: string; onCollected: (text: string) => void }) {
+  const [def, setDef] = useState<AiDefinition | null>(null);
+  const [message, setMessage] = useState<string | null>(null);
+  const [pending, startTransition] = useTransition();
+  if (!def) {
+    return (
+      <div className="flex flex-col gap-1">
+        <div>
+          <Button
+            size="sm"
+            variant="soft"
+            disabled={pending}
+            onClick={() =>
+              startTransition(async () => {
+                const r = await explainWordAction({ word, sentence });
+                if (!r.ok) setMessage(r.error);
+                else setDef(r.data);
+              })
+            }
+          >
+            {pending ? "AI 正在解释…" : "用 AI 解释"}
+          </Button>
+        </div>
+        {message ? <p className="text-coral-ink">{message}</p> : null}
+      </div>
+    );
+  }
+  return (
+    <div className="flex flex-col gap-1.5 text-ink">
+      <p className="flex flex-wrap items-center gap-2">
+        <Badge size="sm" tone="yellow">
+          AI 生成，可能有误
+        </Badge>
+        {def.ipa ? <span className="text-muted">{def.ipa}</span> : null}
+        {def.pos ? <Badge size="sm">{def.pos}</Badge> : null}
+      </p>
+      <p className="font-medium">{def.zh}</p>
+      {def.explanation_zh ? <p className="text-muted">{def.explanation_zh}</p> : null}
+      {def.example_en ? (
+        <p className="rounded-xl bg-surface-soft p-2">
+          <span lang="en">{def.example_en}</span>
+          {def.example_zh ? <span className="block text-muted">{def.example_zh}</span> : null}
+        </p>
+      ) : null}
+      <div>
+        <Button
+          size="sm"
+          disabled={pending}
+          onClick={() =>
+            startTransition(async () => {
+              const { cached: _c, ...plain } = def;
+              void _c;
+              const r = await collectAiWordAction(plain);
+              setMessage(r.ok ? (r.data.added ? "已加入词汇库。" : "词汇库里已经有这个词了。") : r.error);
+              if (r.ok) onCollected(def.text);
+            })
+          }
+        >
+          加入词汇库
+        </Button>
+      </div>
+      {message ? (
+        <p role="status" className="text-mint-ink">
+          {message}
+        </p>
+      ) : null}
+    </div>
   );
 }

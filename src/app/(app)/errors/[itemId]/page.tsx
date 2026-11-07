@@ -4,7 +4,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
+import { MicroLessonActions } from "@/components/ai/generation-controls";
 import { ErrorNote, ErrorPractice } from "@/components/errors/error-actions";
+import { ExerciseRunner } from "@/components/grammar/exercise-runner";
 import { SOURCE_LABELS, errorStatus } from "@/components/errors/labels";
 import { PageHeader } from "@/components/layout/page-header";
 import { Badge } from "@/components/ui/badge";
@@ -12,7 +14,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { LoadingSkeleton } from "@/components/ui/skeleton";
 import { getDb } from "@/db";
 import { requireOwner } from "@/lib/auth/session";
+import { aiStatus } from "@/modules/ai/provider";
+import { latestMicroLesson, type MicroLesson } from "@/modules/ai/services/generation";
 import { ErrorItemNotFoundError, getErrorItem } from "@/modules/errors/services/errors";
+import { clientExercises } from "@/modules/grammar/services/grammar";
 import { ERROR_CATEGORY_LABELS } from "@/modules/grammar/content";
 import { getLearnerSettings } from "@/modules/learner/services/profile";
 
@@ -39,6 +44,17 @@ async function Loader({ params }: Pick<PageProps<"/errors/[itemId]">, "params">)
   const { profile } = await getLearnerSettings(db, user.id);
   const tz = profile.timezone;
   const { item, occurrences, grammarPoint } = data;
+  const aiAvailable = aiStatus().available;
+  const microRow = aiAvailable ? await latestMicroLesson(db, user.id, item.id) : null;
+  const micro = microRow
+    ? {
+        id: microRow.id,
+        status: microRow.status,
+        warnings: microRow.warnings,
+        lesson: microRow.payload as MicroLesson,
+        exercises: microRow.status === "published" && microRow.resultRef ? await clientExercises(db, microRow.resultRef.split(",")) : [],
+      }
+    : null;
   const s = errorStatus(item);
   const category = ERROR_CATEGORY_LABELS[item.category as keyof typeof ERROR_CATEGORY_LABELS] ?? item.category;
   const fmt = (d: Date) => d.toLocaleString("zh-CN", { timeZone: tz, month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit" });
@@ -91,6 +107,42 @@ async function Loader({ params }: Pick<PageProps<"/errors/[itemId]">, "params">)
               />
             </CardContent>
           </Card>
+
+          {aiAvailable ? (
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  AI 微课 <Badge tone="yellow">AI 生成</Badge>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="flex flex-col gap-3">
+                {micro ? (
+                  <>
+                    <p className="font-medium text-ink">{micro.lesson.title_zh}</p>
+                    <p className="text-sm text-ink">{micro.lesson.explanation_zh}</p>
+                    <ul className="text-sm">
+                      {micro.lesson.examples.map((e) => (
+                        <li key={e.en}>
+                          <span lang="en" className="text-ink">
+                            {e.en}
+                          </span>
+                          <span className="ml-2 text-muted">{e.zh}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    {micro.warnings.length > 0 ? <p className="text-xs text-yellow-ink">{micro.warnings.join(" ")}</p> : null}
+                  </>
+                ) : (
+                  <p className="text-sm text-muted">让 AI 针对这个错误写一段很短的讲解，再出 3 道新语境的练习题。生成后先给你看，确认了才开始练。</p>
+                )}
+                {micro?.status === "published" ? (
+                  <ExerciseRunner exercises={micro.exercises} context="practice" />
+                ) : (
+                  <MicroLessonActions errorItemId={item.id} draftId={micro?.status === "draft" ? micro.id : null} />
+                )}
+              </CardContent>
+            </Card>
+          ) : null}
 
           <Card>
             <CardHeader>

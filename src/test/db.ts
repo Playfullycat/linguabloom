@@ -72,7 +72,7 @@ export async function truncateAll(url = getTestDatabaseUrl()) {
   const sql = postgres(url, { max: 1, onnotice: () => {} });
   try {
     await sql.unsafe(
-      "truncate table ai_messages, ai_sessions, ai_usage, content_imports, media_assets, error_occurrences, error_items, exercise_attempts, exercises, grammar_points, user_content_state, content_interactions, transcript_segments, learning_contents, study_plan_tasks, study_plans, skill_estimates, assessment_attempts, assessment_sessions, assessment_items, study_preferences, learner_profiles, review_logs, review_cards, user_vocabulary, vocabulary_entries, lesson_step_attempts, learner_lesson_progress, lesson_steps, lessons, units, courses, app_instance, verifications, sessions, accounts, users, cefr_levels restart identity cascade",
+      "truncate table ai_definitions, ai_generations, writing_submissions, ai_messages, ai_sessions, ai_usage, content_imports, media_assets, error_occurrences, error_items, exercise_attempts, exercises, grammar_points, user_content_state, content_interactions, transcript_segments, learning_contents, study_plan_tasks, study_plans, skill_estimates, assessment_attempts, assessment_sessions, assessment_items, study_preferences, learner_profiles, review_logs, review_cards, user_vocabulary, vocabulary_entries, lesson_step_attempts, learner_lesson_progress, lesson_steps, lessons, units, courses, app_instance, verifications, sessions, accounts, users, cefr_levels restart identity cascade",
     );
   } finally {
     await sql.end();

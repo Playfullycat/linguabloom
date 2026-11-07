@@ -13,8 +13,8 @@ import { startOfLocalDay } from "@/lib/time";
 
 export class ErrorItemNotFoundError extends Error {}
 
-export type PointType = "grammar" | "unit_grammar" | "vocabulary" | "material" | "lesson";
-export type ErrorSource = "lesson" | "review" | "grammar" | "reading" | "listening";
+export type PointType = "grammar" | "unit_grammar" | "vocabulary" | "material" | "lesson" | "writing";
+export type ErrorSource = "lesson" | "review" | "grammar" | "reading" | "listening" | "writing";
 
 export type RecordErrorInput = {
   category: ErrorCategory;
@@ -117,6 +117,8 @@ function sourceHref(item: typeof errorItems.$inferSelect, latestRef: string | nu
       const id = item.pointId.split("#")[0]!;
       return `/${id.startsWith("ls-") ? "listening" : "reading"}/${id}`;
     }
+    case "writing":
+      return "/writing";
     case "lesson":
     case "unit_grammar":
       return latestRef ? `/lesson/${latestRef.split("#")[0]}` : null;

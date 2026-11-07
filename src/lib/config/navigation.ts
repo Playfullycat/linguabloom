@@ -211,6 +211,7 @@ const practiceChildren: Feature[] = [
     icon: PenLine,
     summary: "从句子改写到短文的分层批改。",
     phase: 3,
+    available: true,
     highlights: [
       "日记、邮件、图片描述、观点表达",
       "按任务完成度 → 内容 → 语法 → 词汇 → 衔接分层反馈",

@@ -57,6 +57,13 @@
       "when": 1794053499736,
       "tag": "0007_ai",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1794055443616,
+      "tag": "0008_writing_generation",
+      "breakpoints": true
     }
   ]
 }

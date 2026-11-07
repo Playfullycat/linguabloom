@@ -142,3 +142,4 @@ src/content/
   - `published` 还需要：`explanation_zh`、`structure`、`usage_zh`、`examples`、`breakdowns`（句子成分：subject / verb / object / complement / time / place / adverb / question / other）、`common_errors`，可选 `contrast`、`limits_zh`。
   - 练习：`choice`、`cloze`（一个 `___`）、`order`（`tokens` 必须正好是第一个答案里的词）、`correction`（`wrong_en` + 可接受的改法）、`build`（`task_zh` + `model_answers` + 1–4 条 `checklist_zh`，学习者自评）。至少 5 道自动判分题、至少 3 种题型（补救用 3 道、再测再用 2 道不同的）。单题可以用 `error_category` 覆盖默认类别。
   - 练习 id 写成 `e1`、`e2`……，入库后是 `<语法点 id>.<e1>`。已上线的题不要改题意，要换就用新 id。
+- `src/content/writing/prompts.json`：写作题目（规格 §5.11），由 `src/modules/writing/content.ts` 校验。每题有 `id`（`w-…`）、`type`（rewrite / diary / email / opinion / summary）、`level`、中英标题和要求、`min_words` / `max_words`、1–4 条自查清单，摘要题可以用 `source_material` 指向一篇阅读材料。

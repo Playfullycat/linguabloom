@@ -79,7 +79,8 @@ export const grammarSeed: Seed = {
     await db
       .update(exercises)
       .set({ archivedAt: new Date() })
-      .where(and(isNull(exercises.archivedAt), exerciseIds.length > 0 ? notInArray(exercises.id, exerciseIds) : undefined));
+      // Only the reviewed bank: exercises generated for a learner (owner set) are not in the files.
+      .where(and(isNull(exercises.archivedAt), isNull(exercises.ownerUserId), exerciseIds.length > 0 ? notInArray(exercises.id, exerciseIds) : undefined));
     await db
       .update(grammarPoints)
       .set({ archivedAt: new Date() })

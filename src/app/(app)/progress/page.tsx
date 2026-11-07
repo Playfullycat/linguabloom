@@ -96,11 +96,11 @@ async function ProgressLoader() {
         </CardHeader>
         <CardContent className="flex flex-col gap-4">
           <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {DIAGNOSTIC_SKILLS.map((skill) => {
+            {[...DIAGNOSTIC_SKILLS, ...(estimates.some((x) => x.skill === "writing") ? (["writing"] as const) : [])].map((skill) => {
               const e = estimates.find((x) => x.skill === skill);
               return (
                 <li key={skill} className="rounded-2xl bg-surface-soft p-4">
-                  <p className="text-sm text-muted">{DIAGNOSTIC_SKILL_LABELS[skill]}</p>
+                  <p className="text-sm text-muted">{skill === "writing" ? "写作" : DIAGNOSTIC_SKILL_LABELS[skill]}</p>
                   {e ? (
                     <>
                       <p className="mt-1 text-2xl font-semibold text-ink">约 {label(e.level)}</p>
@@ -111,7 +111,7 @@ async function ProgressLoader() {
                         <Badge size="sm">依据 {e.evidenceCount} 题</Badge>
                       </div>
                       <p className="mt-2 text-xs text-muted">
-                        {e.source.startsWith("assessment:") ? "来自水平诊断" : e.source === "practice" ? "来自练习记录" : e.source} · {e.createdAt.toLocaleDateString("zh-CN", { timeZone: tz })}
+                        {e.source.startsWith("assessment:") ? "来自水平诊断" : e.source === "practice" ? "来自练习记录" : e.source === "ai_writing" ? "来自 AI 写作反馈" : e.source} · {e.createdAt.toLocaleDateString("zh-CN", { timeZone: tz })}
                       </p>
                     </>
                   ) : (
@@ -123,7 +123,7 @@ async function ProgressLoader() {
           </ul>
           <p className="flex items-start gap-2 text-sm text-muted">
             <Info className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
-            这些是根据诊断和练习记录的估计（语法看语法练习，阅读和听力看理解题），用来安排学习内容，不是官方 CEFR 认证。口语和写作的估计要等 AI 反馈上线（Phase 3）。
+            这些是根据诊断和练习记录的估计（语法看语法练习，阅读和听力看理解题），用来安排学习内容，不是官方 CEFR 认证。写作估计来自至少 3 篇把握中等以上的 AI 反馈，所以一律标为“把握较低”；口语估计在 Phase 3 后续加入。
           </p>
         </CardContent>
       </Card>

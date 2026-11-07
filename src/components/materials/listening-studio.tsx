@@ -15,6 +15,8 @@ import { checkDictationAction, recordEventAction } from "@/modules/materials/act
 import type { DictationWord } from "@/modules/materials/domain/text";
 import type { ReaderMaterial } from "@/modules/materials/services/materials";
 
+import { EnrichButton } from "@/components/ai/generation-controls";
+
 import { ComprehensionQuestions } from "./comprehension-questions";
 import { FIT_LABELS, FIT_TONES } from "./fit";
 import { CoachLink, NotesCard, SourceNote, useMaterialLookup, useMaterialState } from "./reading-room";
@@ -376,7 +378,7 @@ export function ListeningStudio({ material, aiAvailable }: { material: ReaderMat
       <aside className="flex flex-col gap-4 lg:sticky lg:top-6 lg:self-start" aria-label="查词与进度">
         {words.card ? (
           <div className="fixed inset-x-3 bottom-20 z-30 lg:static lg:inset-auto">
-            <WordCard contentId={material.id} state={words.card} onClose={words.close} onCollected={words.onCollected} />
+            <WordCard contentId={material.id} state={words.card} onClose={words.close} onCollected={words.onCollected} aiAvailable={aiAvailable} sentence={words.sentence} />
           </div>
         ) : (
           <div className="rounded-2xl border border-dashed border-border-strong p-4 text-sm text-muted">打开英文字幕后，可以点任意单词查看释义。</div>
@@ -396,6 +398,7 @@ export function ListeningStudio({ material, aiAvailable }: { material: ReaderMat
               </Button>
             )}
             {aiAvailable ? <CoachLink material={material} seq={current} /> : null}
+            {aiAvailable && material.imported && material.glossary.length === 0 && material.questions.length === 0 ? <EnrichButton contentId={material.id} /> : null}
           </CardContent>
         </Card>
       </aside>

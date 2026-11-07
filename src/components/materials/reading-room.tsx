@@ -14,6 +14,8 @@ import { cn } from "@/lib/utils";
 import { lookupWordAction, recordEventAction, updateMaterialStateAction } from "@/modules/materials/actions";
 import type { ReaderMaterial } from "@/modules/materials/services/materials";
 
+import { EnrichButton } from "@/components/ai/generation-controls";
+
 import { ComprehensionQuestions } from "./comprehension-questions";
 import { FIT_LABELS, FIT_TONES } from "./fit";
 import { ASSIST_OPTIONS, TokenText, defaultAssist, type AssistMode } from "./token-text";
@@ -27,11 +29,13 @@ export function useMaterialLookup(material: ReaderMaterial) {
   const [collected, setCollected] = useState(() => new Set(material.glossary.filter((g) => g.collected).map((g) => g.text.toLowerCase())));
   const [card, setCard] = useState<WordCardState | null>(null);
   const [activeKey, setActiveKey] = useState<string | null>(null);
+  const [sentence, setSentence] = useState<string | null>(null);
   const lastTrigger = useRef<HTMLElement | null>(null);
 
   const lookup = (word: string, glossKey: string | null, segmentSeq: number | null) => {
     lastTrigger.current = document.activeElement as HTMLElement | null;
     setActiveKey(glossKey ?? word.toLowerCase());
+    setSentence(segmentSeq === null ? material.titleEn : (material.segments.find((s) => s.sequence === segmentSeq)?.en ?? null));
     setCard({ status: "loading", word });
     void lookupWordAction({ contentId: material.id, word, glossKey, segmentSeq }).then((r) =>
       setCard(r.ok ? { status: "ready", result: { ...r.data, collected: r.data.collected || collected.has(r.data.text.toLowerCase()) } } : { status: "error", word, error: r.error }),
@@ -46,7 +50,7 @@ export function useMaterialLookup(material: ReaderMaterial) {
     setCollected((c) => new Set(c).add(text.toLowerCase()));
     setCard((c) => (c?.status === "ready" ? { status: "ready", result: { ...c.result, collected: true } } : c));
   };
-  return { glossary, collected, card, activeKey, lookup, close, onCollected };
+  return { glossary, collected, card, activeKey, sentence, lookup, close, onCollected };
 }
 
 export function useMaterialState(material: ReaderMaterial) {
@@ -237,7 +241,7 @@ export function ReadingRoom({ material, aiAvailable }: { material: ReaderMateria
       <aside className="flex flex-col gap-4 lg:sticky lg:top-6 lg:self-start" aria-label="查词与进度">
         {words.card ? (
           <div className="fixed inset-x-3 bottom-20 z-30 lg:static lg:inset-auto">
-            <WordCard contentId={material.id} state={words.card} onClose={words.close} onCollected={words.onCollected} />
+            <WordCard contentId={material.id} state={words.card} onClose={words.close} onCollected={words.onCollected} aiAvailable={aiAvailable} sentence={words.sentence} />
           </div>
         ) : (
           <div className="rounded-2xl border border-dashed border-border-strong p-4 text-sm text-muted">
@@ -260,6 +264,7 @@ export function ReadingRoom({ material, aiAvailable }: { material: ReaderMateria
             )}
             {state.saved.length > 0 ? <p className="text-sm text-muted">收藏了 {state.saved.length} 个句子。</p> : null}
             {aiAvailable ? <CoachLink material={material} seq={highlight} /> : null}
+            {aiAvailable && material.imported && material.glossary.length === 0 && material.questions.length === 0 ? <EnrichButton contentId={material.id} /> : null}
           </CardContent>
         </Card>
       </aside>

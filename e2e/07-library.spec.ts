@@ -42,7 +42,7 @@ test("import a text: preview, confirm, read and look up", async ({ page }) => {
   await expect(page).toHaveURL(/\/library\/[0-9a-f-]{36}$/);
   await expect(page.getByRole("heading", { name: "难度分析" })).toBeVisible();
   await expect(page.getByRole("list", { name: "分句预览" }).getByRole("listitem")).toHaveCount(5);
-  await expect(page.getByLabel(/等级/)).toHaveValue("a1");
+  await expect(page.getByLabel(/建议值按句长/)).toHaveValue("a1");
   await page.screenshot({ path: shots("library-preview"), fullPage: true });
 
   // Not in the reading list until confirmed.
@@ -69,7 +69,7 @@ test("import a text: preview, confirm, read and look up", async ({ page }) => {
 test("import subtitles with audio: timed sentences, A-B loop, dictation; delete", async ({ page }) => {
   await ensureSignedIn(page);
   await page.goto("/library");
-  await page.getByRole("radio", { name: "听力" }).click();
+  await page.getByRole("radio", { name: "听力", exact: true }).click();
   await page.getByLabel("标题").fill("Meeting Anna");
   await page.getByLabel(/或者选择文件/).setInputFiles({ name: "meeting.srt", mimeType: "application/x-subrip", buffer: Buffer.from(SRT) });
   await page.getByLabel(/音频（可选/).setInputFiles({ name: "meeting.wav", mimeType: "audio/wav", buffer: wav() });
@@ -118,7 +118,7 @@ test("import subtitles with audio: timed sentences, A-B loop, dictation; delete"
 test("import a word list into the vocabulary lab", async ({ page, request }) => {
   await ensureSignedIn(page);
   await page.goto("/library");
-  await page.getByRole("radio", { name: "词表" }).click();
+  await page.getByRole("radio", { name: "词表", exact: true }).click();
   await page.getByLabel("标题").fill("Office words");
   await page.getByLabel("粘贴内容").fill("word,meaning,example\nmeeting,会议,The meeting starts at ten.\ndeadline,截止日期,\nhello,你好,");
   await page.getByText("我自己写的", { exact: true }).click();

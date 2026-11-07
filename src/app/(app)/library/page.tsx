@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
 
+import { GenerateReadingForm } from "@/components/ai/generation-controls";
 import { DeleteImported } from "@/components/library/import-review";
 import { ImportForm } from "@/components/library/import-form";
 import { PageHeader } from "@/components/layout/page-header";
@@ -11,7 +12,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { LoadingSkeleton } from "@/components/ui/skeleton";
 import { getDb } from "@/db";
 import { requireOwner } from "@/lib/auth/session";
+import { aiStatus } from "@/modules/ai/provider";
+import { listGenerations } from "@/modules/ai/services/generation";
+import { CEFR_LEVELS, CEFR_LEVEL_LABELS } from "@/modules/curriculum/domain/cefr";
 import { COPYRIGHT_LABELS, COPYRIGHT_STATUSES, listImports } from "@/modules/imports/services/imports";
+import { learnerInputLevel } from "@/modules/materials/services/materials";
 import { getLearnerSettings } from "@/modules/learner/services/profile";
 
 export const metadata: Metadata = { title: "Library" };
@@ -46,9 +51,14 @@ export default function LibraryPage() {
             <ImportForm copyrightOptions={COPYRIGHT_STATUSES.map((value) => ({ value, label: COPYRIGHT_LABELS[value] }))} />
           </CardContent>
         </Card>
-        <Suspense fallback={<LoadingSkeleton label="正在加载…" />}>
-          <ImportList />
-        </Suspense>
+        <div className="flex flex-col gap-6">
+          <Suspense fallback={null}>
+            <GenerateCard />
+          </Suspense>
+          <Suspense fallback={<LoadingSkeleton label="正在加载…" />}>
+            <ImportList />
+          </Suspense>
+        </div>
       </div>
     </>
   );
@@ -105,5 +115,41 @@ async function ImportList() {
         <CardContent>{published.length === 0 ? <p className="text-sm text-muted">还没有导入过材料。</p> : <ul className="flex flex-col gap-2">{published.map(row)}</ul>}</CardContent>
       </Card>
     </div>
+  );
+}
+
+async function GenerateCard() {
+  const user = await requireOwner();
+  const status = aiStatus();
+  if (!status.available) return null;
+  const db = getDb();
+  const [{ level }, drafts] = await Promise.all([learnerInputLevel(db, user.id, "reading"), listGenerations(db, user.id, "graded_reading")]);
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>AI 生成分级材料</CardTitle>
+        <CardDescription>按你选的话题和等级写一篇原创短文或对话，带生词表和理解题。</CardDescription>
+      </CardHeader>
+      <CardContent className="flex flex-col gap-4">
+        <GenerateReadingForm levels={CEFR_LEVELS.map((value) => ({ value, label: CEFR_LEVEL_LABELS[value] }))} defaultLevel={level} />
+        {drafts.length > 0 ? (
+          <ul className="flex flex-col gap-1.5 border-t border-border pt-3" aria-label="AI 生成的材料">
+            {drafts.map((g) => {
+              const p = g.payload as { title_en: string; type: string };
+              return (
+                <li key={g.id} className="flex items-center justify-between gap-2 text-sm">
+                  <Link href={g.status === "published" && g.resultRef ? `/${p.type}/${g.resultRef}` : `/library/ai/${g.id}`} className="text-ink hover:underline">
+                    <span lang="en">{p.title_en}</span>
+                  </Link>
+                  <Badge size="sm" tone={g.status === "draft" ? "yellow" : "mint"}>
+                    {g.status === "draft" ? "草稿待确认" : "已加入"}
+                  </Badge>
+                </li>
+              );
+            })}
+          </ul>
+        ) : null}
+      </CardContent>
+    </Card>
   );
 }

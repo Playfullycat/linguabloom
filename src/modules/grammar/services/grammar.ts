@@ -1,4 +1,4 @@
-import { and, asc, desc, eq, inArray, isNull, sql } from "drizzle-orm";
+import { and, asc, desc, eq, inArray, isNull, or, sql } from "drizzle-orm";
 
 import type { Database, DbExecutor } from "@/db/connection";
 import { cefrLevels, errorItems, exerciseAttempts, exercises, grammarPoints, units, type ErrorCategory } from "@/db/schema";
@@ -222,7 +222,7 @@ export async function answerExercise(db: Database, userId: string, input: Answer
     .select({ exercise: exercises, pointTitle: grammarPoints.titleZh })
     .from(exercises)
     .leftJoin(grammarPoints, eq(grammarPoints.id, exercises.grammarPointId))
-    .where(and(eq(exercises.id, input.exerciseId), isNull(exercises.archivedAt)));
+    .where(and(eq(exercises.id, input.exerciseId), isNull(exercises.archivedAt), or(isNull(exercises.ownerUserId), eq(exercises.ownerUserId, userId))));
   if (!ex) throw new GrammarNotFoundError(input.exerciseId);
   const e = ex.exercise;
   const evaluation = scoreExercise(e.prompt as ExercisePrompt, e.answerKey as AnswerKey, input.response);

@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "source_type": "first_party",
+  "review_status": "pending_owner_review",
+  "prompts": [
+    {
+      "id": "w-a1-about-me",
+      "type": "diary",
+      "level": "a1",
+      "title_zh": "介绍一下你自己",
+      "title_en": "About Me",
+      "task_zh": "用英文写一段自我介绍：你的名字、年龄或工作、住在哪里、喜欢做什么。",
+      "task_en": "Write about yourself: your name, your job or age, where you live and what you like doing.",
+      "min_words": 30,
+      "max_words": 70,
+      "checklist_zh": ["每句话都有主语和动词", "用到 I am / I like / I live in", "说了至少一个爱好"]
+    },
+    {
+      "id": "w-a1-my-weekend",
+      "type": "diary",
+      "level": "a1",
+      "title_zh": "我的周末",
+      "title_en": "My Weekend",
+      "task_zh": "写写你通常怎么过周末：几点起床、和谁在一起、做什么。",
+      "task_en": "Write about a normal weekend for you: when you get up, who you are with and what you do.",
+      "min_words": 30,
+      "max_words": 80,
+      "checklist_zh": ["用一般现在时说习惯（I get up…）", "用到频率副词（usually / sometimes）", "时间和地点放在句末"]
+    },
+    {
+      "id": "w-a1-rewrite-there",
+      "type": "rewrite",
+      "level": "a1",
+      "title_zh": "句子改写：there is / there are",
+      "title_en": "Rewrite with there is / there are",
+      "task_zh": "把下面三句话改写成用 there is / there are 开头的句子，然后再写两句描述你的房间：\n1. My room has a big window.\n2. Our street has two cafés.\n3. The fridge has some milk.",
+      "task_en": "Rewrite the three sentences with there is / there are, then add two sentences about your room.",
+      "min_words": 20,
+      "max_words": 60,
+      "checklist_zh": ["单数用 there is，复数用 there are", "地点放在句末", "加了两句描述自己房间的句子"]
+    },
+    {
+      "id": "w-a1-invite-friend",
+      "type": "email",
+      "level": "a1",
+      "title_zh": "给朋友发消息：周六一起吃饭",
+      "title_en": "A Message to a Friend",
+      "task_zh": "给朋友写一条短消息，约他 / 她周六一起吃饭：说清楚时间、地点，再问对方能不能来。",
+      "task_en": "Write a short message inviting a friend to dinner on Saturday. Say when and where, and ask if they can come.",
+      "min_words": 25,
+      "max_words": 60,
+      "checklist_zh": ["有称呼和署名", "写清楚时间和地点（at / on / in）", "用 Can you … ? 提问"]
+    },
+    {
+      "id": "w-a2-last-holiday",
+      "type": "diary",
+      "level": "a2",
+      "title_zh": "上一次假期",
+      "title_en": "My Last Holiday",
+      "task_zh": "写写你上一次假期：去了哪里、和谁一起、做了什么、感觉怎么样。",
+      "task_en": "Write about your last holiday: where you went, who with, what you did and how it was.",
+      "min_words": 60,
+      "max_words": 120,
+      "checklist_zh": ["用一般过去时（went / saw / ate）", "用 and / but / because 连句子", "最后说说你的感受"]
+    },
+    {
+      "id": "w-a2-email-teacher",
+      "type": "email",
+      "level": "a2",
+      "title_zh": "给老师写邮件请假",
+      "title_en": "An Email to Your Teacher",
+      "task_zh": "你下周二不能去上课。给老师写一封邮件：说明原因，问问怎么补上这节课的内容。",
+      "task_en": "You can't come to class next Tuesday. Email your teacher: explain why and ask how to catch up.",
+      "min_words": 50,
+      "max_words": 100,
+      "checklist_zh": ["开头称呼得体（Dear …）", "说明原因用 because", "礼貌地提问（Could you … ?）", "结尾有问候和署名"]
+    },
+    {
+      "id": "w-a2-opinion-phones",
+      "type": "opinion",
+      "level": "a2",
+      "title_zh": "观点：孩子应该有手机吗？",
+      "title_en": "Should Children Have Phones?",
+      "task_zh": "你觉得小学生应该有自己的手机吗？说出你的观点和两个理由。",
+      "task_en": "Should primary school children have their own phones? Give your opinion and two reasons.",
+      "min_words": 60,
+      "max_words": 120,
+      "checklist_zh": ["第一句就说清楚观点（I think …）", "用 First / Also 列出两个理由", "最后一句总结"]
+    },
+    {
+      "id": "w-a2-summary-rainy",
+      "type": "summary",
+      "level": "a2",
+      "title_zh": "摘要：下雨的星期六",
+      "title_en": "Summary: A Rainy Saturday",
+      "task_zh": "读完阅读室的《A Rainy Saturday》，用 3–5 句话写一个摘要：发生了什么、他们做了什么、结果怎样。尽量用自己的话。",
+      "task_en": "After reading 'A Rainy Saturday', write a 3–5 sentence summary in your own words.",
+      "min_words": 30,
+      "max_words": 80,
+      "source_material": "rd-a2-rainy-saturday",
+      "checklist_zh": ["只写主要情节，不抄原句", "用一般过去时", "按时间顺序写"]
+    },
+    {
+      "id": "w-b1-online-learning",
+      "type": "opinion",
+      "level": "b1",
+      "title_zh": "观点：线上学习和线下课堂",
+      "title_en": "Online or Classroom Learning?",
+      "task_zh": "比较线上学习和线下课堂，说说各自的优点，以及你更喜欢哪一种、为什么。",
+      "task_en": "Compare online learning with classroom learning. Give the advantages of each and say which you prefer and why.",
+      "min_words": 100,
+      "max_words": 180,
+      "checklist_zh": ["有开头、主体、结尾三部分", "用 However / On the other hand 表示对比", "用具体例子支持观点"]
+    },
+    {
+      "id": "w-b1-complaint",
+      "type": "email",
+      "level": "b1",
+      "title_zh": "投诉邮件：买到的耳机坏了",
+      "title_en": "A Complaint Email",
+      "task_zh": "你在网上买的耳机用了一周就坏了。给商家写一封投诉邮件：说明问题，提出你希望的解决办法。",
+      "task_en": "The headphones you bought online broke after a week. Write a complaint email explaining the problem and what you want them to do.",
+      "min_words": 100,
+      "max_words": 160,
+      "checklist_zh": ["语气礼貌但明确", "说清楚购买时间、问题细节", "提出具体要求（退款 / 换货）"]
+    }
+  ]
+}

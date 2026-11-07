@@ -56,6 +56,9 @@ export const exercises = pgTable(
     /** exact | normalized | self */
     scoringRule: text("scoring_rule").notNull(),
     sortOrder: smallint("sort_order").notNull(),
+    /** Set for exercises generated for one learner (AI micro-lessons); null for the reviewed bank. */
+    ownerUserId: uuid("owner_user_id").references(() => users.id, { onDelete: "cascade" }),
+    generationId: uuid("generation_id"),
     contentVersion: integer("content_version").notNull(),
     archivedAt: timestamp("archived_at", { withTimezone: true }),
     updatedAt,
