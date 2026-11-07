@@ -8,8 +8,87 @@
 |---|---|---|
 | Phase 0 | 0.1 骨架与界面 | ✅ 完成（2026-11-07） |
 | Phase 0 | 0.2 数据与登录 | ✅ 完成（2026-11-07） |
-| Phase 0 | 0.3 部署与验收 | ⏳ 未开始 |
+| Phase 0 | 0.3 部署与验收 | ✅ 完成（2026-11-07） |
+| **Phase 0** | **验收** | ✅ **通过**（见下文“Phase 0 验收”） |
 | Phase 1–5 | — | ⏳ 未开始 |
+
+---
+
+## Phase 0 验收（2026-11-07）
+
+规格 §13 的验收标准是：新机器按 README 能用 Docker 启动，创建 owner，登录，刷新后状态保留，数据写入 PostgreSQL。
+
+验收方式：用一套**完全独立**的 Compose 项目模拟新机器。它有全新的数据卷、新生成的随机密钥，使用 3300 / 5433 端口，不碰开发库。验收结束后整套环境已删除。
+
+| 验收项 | 结果 |
+|---|---|
+| `docker compose up -d --build --wait` 从零构建并启动 | ✅ 数据库健康 → 应用执行迁移和种子导入 → 应用健康 |
+| 首次初始化、登录、刷新保持登录、退出、改密码、退出所有设备 | ✅ 对 Docker 部署运行完整 E2E 测试（`E2E_BASE_URL=http://localhost:3300`），5/5 通过 |
+| 数据写入 PostgreSQL 并能持久保存 | ✅ `restart` 后、`down` + `up`（保留卷）后都能用原密码登录；库中能看到 owner 记录和最近登录时间 |
+| 备份 → 删除全部数据卷 → 全新启动 → 恢复 | ✅ 恢复后能登录，用户文件内容和属主一致 |
+| 忘记密码的重设命令 | ✅ 太短的密码被拒绝；重设后新密码可用、旧密码失效，所有会话被清除 |
+| `scripts/update.sh` | ✅ 备份 → 重新构建 → 重启并迁移 → 健康检查全部通过 |
+| `scripts/healthcheck.sh` | ✅ 容器、健康接口、数据库、磁盘、AI 配置各项正常 |
+
+---
+
+## 大步 0.3 — 部署与验收（2026-11-07）
+
+### 已完成
+
+- **Docker 镜像**（`Dockerfile`）：
+  - 多阶段构建：deps → builder → runner；基础镜像 `node:24-alpine`；Next.js `output: "standalone"`。
+  - 运行镜像约 324 MB，以非 root 用户 `node`（uid 1000）运行。
+  - 应用代码归 root 所有，只有 `.next` 和 `/app/data` 可写。
+  - 构建时不需要任何密钥；镜像自带 `HEALTHCHECK`。
+- **启动流程**（`docker/entrypoint.sh`）：先执行数据库迁移，再导入种子，都成功后才启动服务。迁移失败时应用不会启动，不会在迁移到一半的库上运行。
+- **运维脚本打包**：迁移、种子和密码重设脚本用 esbuild 打成单文件（`dist/ops/*.mjs`），运行镜像里不需要 tsx 和开发依赖。
+- **Compose**：
+  - 新增 `app` 服务：等数据库健康后再启动；`init: true` 正确处理信号；用户文件放在命名卷 `appdata`（`/app/data`）。
+  - 所有配置从 `.env` 显式传入，数据库连接串由 `POSTGRES_*` 拼出。
+  - `APP_PORT` 可以自定义，也可以只绑定 `127.0.0.1`；数据库端口只绑定 `127.0.0.1`。
+- **内容安全策略（CSP）**：采用 Next.js 官方“Without Nonces”方案。基于 nonce 的 CSP 会让所有页面变成动态渲染，和部分预渲染不兼容。
+  - 允许内联脚本（Next.js 引导脚本和主题预加载脚本）。
+  - 禁止外部脚本、插件（`object-src 'none'`）、被嵌入框架（`frame-ancestors 'none'`）、向外部提交表单和劫持 `<base>`。
+  - 开发模式额外允许 `unsafe-eval` 和 WebSocket（热更新需要）。
+  - 已确认开发和生产环境都没有 CSP 违规。
+- **运维脚本**（bash，Linux / macOS / Git Bash 通用）：
+  - `scripts/backup.sh`：数据库导出 + 用户文件归档 + 变量名清单（不含值）+ 带 SHA-256 的 manifest。
+  - `scripts/restore.sh`：先校验再动数据；需要确认；替换数据库和文件；启动后等待健康检查。
+  - `scripts/healthcheck.sh`：检查容器、健康接口、数据库、磁盘和 AI 配置，不打印密钥。
+  - `scripts/update.sh`：拉取代码 → 备份 → 构建 → 重启（自动迁移）→ 健康检查；失败时打印回滚步骤。
+  - 都支持用 `ENV_FILE` 和 `COMPOSE_PROJECT_NAME` 指定其他环境。
+- **忘记密码**：`docker compose exec app node ops/reset-owner-password.mjs`（本地开发用 `npm run owner:reset-password`）。密码隐藏输入或从管道读入，不出现在命令参数里；重设后清除所有会话。
+- **`npm start`** 改为和镜像相同的 standalone 方式运行（`scripts/start-standalone.mjs`，跨平台）；E2E 也用这种方式。
+- **E2E**：新增 `E2E_BASE_URL` 模式，可以对已经部署的实例运行同一套测试。
+- **截图**：`scripts/capture-screenshots.ts` 从真实部署截图，放在 `docs/screenshots/`。
+- **文档**：README 按规格 §17 重写；新增 `docs/OPERATIONS.md`（部署、HTTPS / 反向代理、备份恢复、升级回滚、忘记密码、故障排查、数据与隐私）。
+- **界面**：侧栏项目高度和分组间距收紧，1440×900 屏幕上导航不再需要滚动（加入账户区后 AI Tutor 和 Progress 被挤出了可视区域）。新增站点图标（`src/app/icon.svg`）。
+
+### 过程中发现并修复
+
+- **构建时调用了认证实例**：`getCurrentUser` 写成 `getAuth().api.getSession({ headers: await headers() })`，JavaScript 会先执行 `getAuth()` 再执行 `await`。在没有 `.env` 的 Docker 构建中，这会在预渲染阶段报环境变量缺失。改为先读取请求头。本地因为有 `.env` 掩盖了这个问题，干净的 Docker 构建发现了它。
+- **Git Bash 路径转换**：Git Bash 会把传给 docker 的 `/app/data` 改写成 Windows 路径，已在脚本中关闭（`MSYS_NO_PATHCONV=1`）。
+- **ESLint 检查了生成文件**：`dist/` 已加入忽略列表。
+
+### 测试结果
+
+| 检查 | 结果 |
+|---|---|
+| `npm run lint` | ✅ 通过，0 警告 |
+| `npm run typecheck` | ✅ 通过 |
+| `npm run test` | ✅ 9 个文件，53 个测试 |
+| `npm run test:integration` | ✅ 2 个文件，9 个测试 |
+| `npm run test:e2e`（本地 standalone 构建） | ✅ 5 个测试 |
+| E2E 对 Docker 部署运行 | ✅ 5 个测试 |
+| Docker 镜像构建 | ✅ 构建时没有 `.env` 也能通过 |
+
+### 已知限制
+
+- CSP 允许内联脚本（原因见上文）；HSTS 和 `upgrade-insecure-requests` 交给 HTTPS 反向代理配置。
+- 登录失败次数限制保存在进程内存里（单实例部署适用）。
+- 备份脚本面向 Docker 部署；本地开发时的 `./data` 需要自行备份。
+- 学习功能从 Phase 1 开始。
 
 ---
 

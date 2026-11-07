@@ -20,7 +20,12 @@ export type CurrentUser = {
  * Must be called inside a <Suspense> boundary (it reads request headers).
  */
 export const getCurrentUser = cache(async (): Promise<CurrentUser | null> => {
-  const session = await getAuth().api.getSession({ headers: await headers() });
+  // Read the request first: during `next build` prerendering this suspends,
+  // so the auth/database/env singletons are never created at build time.
+  // (`getAuth().api.getSession({ headers: await headers() })` would evaluate
+  // getAuth() before the await and fail without runtime env vars.)
+  const requestHeaders = await headers();
+  const session = await getAuth().api.getSession({ headers: requestHeaders });
   if (!session) return null;
   const { id, name, email, role } = session.user;
   if (role !== "owner") return null;

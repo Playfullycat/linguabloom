@@ -1,0 +1,23 @@
+# Keep the build context small and free of secrets.
+.git
+.github
+.claude
+node_modules
+.next
+dist
+data
+backups
+test-results
+playwright-report
+coverage
+*.tsbuildinfo
+npm-debug.log*
+
+# Secrets / local configuration — never baked into the image.
+.env
+.env.*
+!.env.example
+
+# Not needed to build or run the app.
+docs
+LinguaBloom_Claude_开发规格.md

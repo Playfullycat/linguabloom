@@ -10,7 +10,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "build:ops": "node scripts/build-ops.mjs",
+    "start": "node scripts/start-standalone.mjs",
     "lint": "eslint",
     "typecheck": "next typegen && tsc --noEmit",
     "test": "vitest run",
@@ -22,7 +23,8 @@
     "db:generate": "drizzle-kit generate",
     "db:migrate": "tsx scripts/db-migrate.ts",
     "db:seed": "tsx scripts/db-seed.ts",
-    "db:setup": "npm run db:up && npm run db:migrate && npm run db:seed"
+    "db:setup": "npm run db:up && npm run db:migrate && npm run db:seed",
+    "owner:reset-password": "tsx scripts/reset-owner-password.ts"
   },
   "dependencies": {
     "@node-rs/argon2": "^2.2.2",
@@ -53,6 +55,7 @@
     "@types/react-dom": "^19",
     "@vitejs/plugin-react": "^6.2.1",
     "drizzle-kit": "^0.31.11",
+    "esbuild": "^0.28.2",
     "eslint": "^9",
     "eslint-config-next": "16.4.5",
     "jsdom": "^31.0.0",

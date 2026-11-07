@@ -1,6 +1,7 @@
 /**
  * Apply database migrations.  Usage:  npm run db:migrate
  * Reads DATABASE_URL from the environment (or .env when present).
+ * MIGRATIONS_DIR overrides the SQL folder (the Docker image sets /app/migrations).
  */
 import { existsSync } from "node:fs";
 
@@ -15,7 +16,7 @@ if (!url) {
 }
 
 try {
-  await runMigrations(url);
+  await runMigrations(url, process.env.MIGRATIONS_DIR || undefined);
   console.log("migrations: up to date");
 } catch (error) {
   console.error("migrations failed:", error instanceof Error ? error.message : error);

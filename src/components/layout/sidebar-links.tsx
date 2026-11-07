@@ -25,7 +25,7 @@ function SidebarLink({ feature, active }: { feature: Feature; active: boolean })
       aria-current={active ? "page" : undefined}
       title={`${feature.label} · ${feature.labelZh}`}
       className={cn(
-        "group flex h-10 items-center gap-3 rounded-[var(--radius-control)] px-3 text-sm transition-colors duration-150",
+        "group flex h-9 items-center gap-3 rounded-[var(--radius-control)] px-3 text-sm transition-colors duration-150",
         "sidebar-collapsed:justify-center sidebar-collapsed:px-0",
         active ? "bg-primary-soft text-primary-ink" : "text-muted hover:bg-surface-soft hover:text-ink",
       )}
@@ -61,7 +61,7 @@ export function SidebarLinks({ pathname, section }: { pathname: string | null; s
     <ul className="flex flex-col gap-0.5">
       {primaryNav.map((entry) =>
         isNavGroup(entry) ? (
-          <li key={entry.key} className="mt-4 first:mt-0">
+          <li key={entry.key} className="mt-3 first:mt-0">
             <Link
               href={entry.href}
               aria-current={pathname === entry.href ? "page" : undefined}

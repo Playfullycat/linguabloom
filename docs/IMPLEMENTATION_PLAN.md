@@ -17,7 +17,7 @@
 |---|---|---|
 | 0.1 骨架与界面 | git、计划/规范文档、Next.js + TS + Tailwind、lint/typecheck/test 脚本、设计令牌（亮/暗）、基础组件、AppShell（桌面侧栏 + 移动底部导航）、全部主路由骨架 | 四项脚本通过；桌面与手机尺寸浏览器检查无横向溢出、导航可用、主题切换可用 |
 | 0.2 数据与登录 | Docker Compose 中的 PostgreSQL、Drizzle schema + migrations + seed 机制、`/setup` 首次创建 owner、`/login`、会话、受保护路由、`/api/health` | 创建 owner → 登录 → 刷新状态保留 → 注销后受保护页不可访问；数据写入 PostgreSQL |
-| 0.3 部署与验收 | 多阶段 Dockerfile、compose 中的 app 服务、`.env.example`、README、Phase 0 完整验收 | 新机器按 README 用 Docker 启动并走通完整流程 |
+| 0.3 部署与验收 | 多阶段 Dockerfile、compose 中的 app 服务、CSP、备份 / 恢复 / 升级 / 健康检查脚本、README 与运维文档、Phase 0 完整验收 | 新机器按 README 用 Docker 启动并走通完整流程；备份恢复演练成功（✅ 2026-11-07） |
 
 ### Phase 1 — 学习核心 MVP（大步在进入时细化）
 
@@ -56,7 +56,7 @@ A2/B1 补全、B2–C2 骨架与内容、推荐改进、弱网体验、高级分
 | D7 | **认证：Better Auth（邮箱 + 密码，数据库会话）** | 规格优先 Auth.js Credentials 或“同等成熟方案”。Auth.js 的 Credentials 模式只支持 JWT 会话，难以实现“注销全部会话”；Better Auth 原生支持数据库会话与会话撤销，并有 Drizzle 适配器。实施 0.2 前再次核对其官方文档。 |
 | D8 | **PostgreSQL + Drizzle ORM / drizzle-kit migrations** | 规格定案。生产环境只运行 migrations，禁止 `drizzle-kit push`。 |
 | D9 | **测试：Vitest 5 + Testing Library（单元/组件），Playwright（E2E，0.2 起引入）** | Vitest 不支持 async Server Component，此类组件用 E2E 覆盖（Next 官方说明）。 |
-| D10 | **Node.js：`engines >= 24`**；本机开发为 Node 26 | 规格指定 Node 24 LTS；Node 26 已于 2026-10 进入 LTS。Docker 基础镜像在 0.3 中确定并写入此表。 |
+| D10 | **Node.js：`engines >= 24`；Docker 镜像用 `node:24-alpine`**；本机开发为 Node 26 | 规格指定 Node 24 LTS（维护期到 2028-04），镜像遵循规格；Node 26 已于 2026-10 进入 LTS，本机开发用它同样兼容。 |
 | D11 | **包管理器：npm** | 规格中的命令均为 `npm run …`。 |
 | D12 | **ESLint 9（脚手架锁定）** | `eslint-config-next` 16.4 使用 ESLint 9；ESLint 10 已发布，待 Next 配套插件跟进后再升级。 |
 | D13 | **配色按 WCAG AA 微调**：`--muted` 用 `#676C80`；强调色增加 `*-soft` / `*-ink`；深色主按钮用深色文字 | 规格色值是“建议初始值”，原 `--muted` 在白底上约 4.4:1，不足 AA；强调色作为文字时对比度不足。 |
@@ -71,6 +71,13 @@ A2/B1 补全、B2–C2 骨架与内容、推荐改进、弱网体验、高级分
 | D22 | **项目改为 ESM**（`"type": "module"`）；`NODE_ENV` 不写进 `.env` | 脚本需要顶层 await 和 `import.meta`；`NODE_ENV` 由 Next / Docker 管理，写进 `.env` 会让测试进程把 development 传给 `next build` 导致构建失败。 |
 | D23 | **测试分三层**：`test`（单元，无需数据库）、`test:integration`（测试库 `<库名>_test`）、`test:e2e`（Playwright，生产构建，端口 3200；Next 16 的 dev 输出在 `.next/dev`，与构建互不影响） | 测试库每次运行都会清空；名字不以 `_test` 结尾的库一律拒绝清空，防止误删开发数据。 |
 | D24 | **修改密码成功后跳转到 `/settings?passwordChanged=1`**，而不是在原请求里返回成功 | Better Auth 会替换当前设备的会话 cookie；同一个请求里重新渲染仍会带着旧 cookie，被判定为未登录。 |
+| D25 | **`output: "standalone"`**，镜像只包含追踪到的依赖；`npm start` 用同样方式运行（`scripts/start-standalone.mjs`） | Next 官方自托管方案；`next start` 不支持 standalone，本地和镜像保持一致。 |
+| D26 | **CSP 不用 nonce**（允许内联脚本，严格限制其他来源） | Next 文档说明：基于 nonce 的 CSP 要求所有页面动态渲染，与部分预渲染不兼容。HSTS 和 `upgrade-insecure-requests` 交给 HTTPS 反向代理，以免纯 HTTP 的局域网部署失效。 |
+| D27 | **迁移、种子、密码重设脚本用 esbuild 打成单文件放进镜像**；容器启动时先迁移、再导入种子，成功后才启动服务 | 运行镜像不需要 tsx 和开发依赖；迁移失败时应用不会在不完整的库上运行。`@node-rs/argon2` 是原生模块，不打包，运行时从 standalone 的 node_modules 加载。 |
+| D28 | **Compose 里显式列出应用的每个环境变量**（不用 `env_file`），`DATABASE_URL` 由 `POSTGRES_*` 拼出 | 应用拿到哪些配置一目了然；同一个 `.env` 既能用于 `npm run dev`（连 localhost），也能用于 Docker（连 `db`）。 |
+| D29 | **备份格式 v1**：`database.dump`（pg_dump 自定义格式）+ `appdata.tar.gz` + `env.template`（只有变量名）+ 带 SHA-256 的 `manifest.txt`；恢复前先校验 | 规格 §11.3。数据库和文件必须一起备份、一起恢复；校验失败时不动现有数据。 |
+| D30 | **忘记密码用服务器端命令重设**（`ops/reset-owner-password.mjs`），不做邮件找回 | 单用户私有部署没有邮件服务；能在服务器上执行命令就等于拥有这台机器。重设后清除所有会话。 |
+| D31 | **验收用独立的 Compose 项目**（`COMPOSE_PROJECT_NAME`、独立 env 文件、独立端口和卷），并用 `E2E_BASE_URL` 对部署实例跑 E2E | 模拟新机器，不影响开发库；脚本都支持 `ENV_FILE` 和 `COMPOSE_PROJECT_NAME`。 |
 
 ## 4. 目录约定
 
