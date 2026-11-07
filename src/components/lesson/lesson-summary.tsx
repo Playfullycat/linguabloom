@@ -17,7 +17,7 @@ export function LessonSummary({
   onRestart,
 }: {
   lesson: PlayerLesson;
-  summary: LessonSummaryResult;
+  summary: LessonSummaryResult & { wordsAdded?: number };
   onRestart: () => void;
 }) {
   const words = summary.vocabularyKeys
@@ -105,7 +105,14 @@ export function LessonSummary({
                 </li>
               ))}
             </ul>
-            <p className="text-xs text-muted">词汇复习功能（下一步 1.2）上线后，这些词会自动加入你的复习计划。</p>
+            <p className="text-sm text-muted">
+              {summary.wordsAdded && summary.wordsAdded > 0
+                ? `${summary.wordsAdded} 个新词已加入你的词汇库，会出现在复习里。`
+                : "这些词已经在你的词汇库里了，会按复习计划出现。"}{" "}
+              <Link href="/review" className="font-medium text-primary-ink underline-offset-4 hover:underline">
+                去复习
+              </Link>
+            </p>
           </CardContent>
         </Card>
       ) : null}

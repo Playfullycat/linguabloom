@@ -3,7 +3,7 @@ import { and, eq, inArray, isNull, notInArray, sql } from "drizzle-orm";
 import { loadContent } from "../../modules/curriculum/content/load";
 import { CONTENT_SCHEMA_VERSION, isAssessedStepType } from "../../modules/curriculum/content/schema";
 import type { DbExecutor } from "../connection";
-import { courses, lessons, lessonSteps, units } from "../schema";
+import { courses, lessons, lessonSteps, units, vocabularyEntries } from "../schema";
 import type { Seed } from "./types";
 
 /**
@@ -77,6 +77,39 @@ export const curriculumSeed: Seed = {
           },
         });
       rows += 1;
+
+      // Vocabulary entries of authored units (review cards point at these).
+      for (const item of file?.unit.vocabulary ?? []) {
+        await db
+          .insert(vocabularyEntries)
+          .values({
+            id: `${entry.id}.${item.key}`,
+            unitId: entry.id,
+            key: item.key,
+            text: item.text,
+            partOfSpeech: item.pos,
+            ipa: item.ipa ?? null,
+            definitionZh: item.zh,
+            exampleEn: item.example_en,
+            exampleZh: item.example_zh,
+            cefrLevel: entry.level,
+            sourceType: file!.source_type,
+          })
+          .onConflictDoUpdate({
+            target: vocabularyEntries.id,
+            set: {
+              text: sql`excluded.text`,
+              partOfSpeech: sql`excluded.part_of_speech`,
+              ipa: sql`excluded.ipa`,
+              definitionZh: sql`excluded.definition_zh`,
+              exampleEn: sql`excluded.example_en`,
+              exampleZh: sql`excluded.example_zh`,
+              cefrLevel: sql`excluded.cefr_level`,
+              sourceType: sql`excluded.source_type`,
+            },
+          });
+        rows += 1;
+      }
 
       const fileLessons = file?.unit.lessons ?? [];
       const lessonIds = fileLessons.map((l) => l.id);

@@ -5,6 +5,8 @@ import { z } from "zod";
 import { getDb } from "@/db";
 import { requireOwner } from "@/lib/auth/session";
 
+import { addWordsFromLesson } from "../review/services/vocabulary";
+
 import { InvalidResponseError } from "./domain/scoring";
 import {
   LessonIncompleteError,
@@ -40,16 +42,23 @@ export async function submitStepAction(input: z.input<typeof submitSchema>): Pro
 }
 
 export type CompleteLessonResult =
-  | { ok: true; summary: LessonSummaryResult }
+  | { ok: true; summary: LessonSummaryResult & { wordsAdded: number } }
   | { ok: false; error: string; missingStepKeys?: string[] };
 
+/**
+ * Complete the lesson, then put its words into the learner's vocabulary with
+ * review cards (spec §3.5 next_review: the lesson links to spaced review).
+ */
 export async function completeLessonAction(lessonId: string): Promise<CompleteLessonResult> {
   const user = await requireOwner();
   if (typeof lessonId !== "string" || lessonId.length === 0 || lessonId.length > 120) {
     return { ok: false, error: "课程编号不正确。" };
   }
   try {
-    return { ok: true, summary: await completeLesson(getDb(), user.id, lessonId) };
+    const db = getDb();
+    const summary = await completeLesson(db, user.id, lessonId);
+    const wordsAdded = await addWordsFromLesson(db, user.id, lessonId, summary.vocabularyKeys);
+    return { ok: true, summary: { ...summary, wordsAdded } };
   } catch (error) {
     if (error instanceof LessonIncompleteError) {
       return { ok: false, error: "还有需要作答的步骤没有完成。", missingStepKeys: error.missingStepKeys };

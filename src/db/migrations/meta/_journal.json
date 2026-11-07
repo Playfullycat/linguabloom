@@ -15,6 +15,13 @@
       "when": 1794026867418,
       "tag": "0001_curriculum",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1794037351811,
+      "tag": "0002_vocabulary",
+      "breakpoints": true
     }
   ]
 }

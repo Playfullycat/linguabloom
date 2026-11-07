@@ -106,7 +106,7 @@ export function LessonPlayer({ lesson }: { lesson: PlayerLesson }) {
   const [results, setResults] = useState<Record<string, Evaluation>>({});
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [summary, setSummary] = useState<LessonSummaryResult | null>(null);
+  const [summary, setSummary] = useState<(LessonSummaryResult & { wordsAdded?: number }) | null>(null);
   const [showHelp, setShowHelp] = useState(false);
   const [rate, setRate] = useSpeechRate();
   const stepStartedAt = useRef(0); // set when each step is shown (effect below)

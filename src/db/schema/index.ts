@@ -1,3 +1,4 @@
 export * from "./app";
 export * from "./auth";
 export * from "./curriculum";
+export * from "./vocabulary";
