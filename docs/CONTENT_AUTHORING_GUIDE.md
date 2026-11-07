@@ -55,7 +55,14 @@
 - [ ] 来源与版权状态清楚
 - [ ] AI 生成内容无事实错误或不自然表达
 
-## 7. 待定稿（Phase 1）
+## 7. 种子文件机制（已可用）
+
+- 数据放在 `src/db/seed/data/*.json`，顶层写明 `content_schema_version`、`source_type`、`source_reference`。
+- 每个 seed 对应一个模块（例如 `src/db/seed/cefr-levels.ts`）：先用 Zod 校验整份文件，校验通过后在事务里做幂等 upsert。重复执行只会更新，不会重复插入。
+- 在 `src/db/seed/index.ts` 的 `SEEDS` 中登记执行顺序；用 `npm run db:seed` 运行（先运行 `npm run db:migrate`）。
+- 已有 seed：`cefr-levels`，即七个 CEFR 等级的阶段目标与内容重点（规格 §3.1）。
+
+## 8. 待定稿（Phase 1）
 
 - Course / Level / Unit / Lesson / LessonStep 的 JSON schema
 - `step_type` 枚举与各类型的 `content` 结构（orientation、input、notice、teach、guided_practice、retrieval_practice、communicative_task、feedback、exit_ticket、next_review 等）

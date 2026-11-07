@@ -10,7 +10,7 @@ export const MAIN_CONTENT_ID = "main-content";
  * Signed-in application frame: sidebar on desktop, top bar + bottom
  * navigation on mobile. Content width capped at 1200px (spec §6.5).
  */
-export function AppShell({ children }: { children: ReactNode }) {
+export function AppShell({ children, account }: { children: ReactNode; account?: ReactNode }) {
   return (
     <div className="min-h-dvh lg:flex">
       <a
@@ -19,7 +19,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       >
         跳到主要内容
       </a>
-      <Sidebar />
+      <Sidebar account={account} />
       <div className="flex min-w-0 flex-1 flex-col">
         <MobileHeader />
         <main

@@ -63,6 +63,14 @@ A2/B1 补全、B2–C2 骨架与内容、推荐改进、弱网体验、高级分
 | D14 | **导航与功能注册表集中在 `src/lib/config/navigation.ts`** | 侧栏、底部导航、入口页和占位页共用一份数据；测试保证每个导航链接都有真实页面。这里只放应用结构，不放课程内容。 |
 | D15 | **读取 URL 的导航组件放在 `<Suspense>` 中** | Cache Components 下，`usePathname` 在未预生成参数的动态路由（如 `/lesson/[lessonId]`）中会挂起；fallback 渲染无高亮的同一组链接。 |
 | D16 | **只在浏览器存在的偏好，服务端渲染“未选中”而不是猜默认值** | 避免水合前短暂显示错误的选择（例如主题选择器）。 |
+| D17 | **PostgreSQL 18**（`postgres:18-alpine`），驱动 **postgres.js** | 2026-11 时最新的官方镜像主版本；postgres.js 纯 JS、无原生依赖，Drizzle 原生支持。 |
+| D18 | **Better Auth 定稿**：数据库会话、UUID 主键、snake_case 表；用自定义 hash 接入 Argon2id；关闭遥测 | 已核对 1.7.18 的源码与类型定义（D7 的落实）。`disableSignUp` 也会拦截服务端注册调用，所以 owner 通过内部 adapter 创建。 |
+| D19 | **owner 唯一性用数据库保证**：`app_instance` 单行表 + `INSERT … ON CONFLICT … WHERE` 原子占用 | 不依赖“先查有没有用户”这种有竞态的判断；集成测试覆盖了 5 个并发请求的情况。 |
+| D20 | **环境变量、数据库、认证实例都在首次使用时才创建**；只在请求时读数据库的组件先 `await connection()` | 让 `next build` 和 Docker 构建不需要运行时密钥，也不会在构建时连数据库。 |
+| D21 | **认证类表单用 Server Action + `useActionState` + 共享 Zod schema** | 不依赖客户端 JS 也能提交，服务端校验是唯一可信来源。React Hook Form 留给 Phase 1 起更复杂的客户端表单（如 onboarding）。 |
+| D22 | **项目改为 ESM**（`"type": "module"`）；`NODE_ENV` 不写进 `.env` | 脚本需要顶层 await 和 `import.meta`；`NODE_ENV` 由 Next / Docker 管理，写进 `.env` 会让测试进程把 development 传给 `next build` 导致构建失败。 |
+| D23 | **测试分三层**：`test`（单元，无需数据库）、`test:integration`（测试库 `<库名>_test`）、`test:e2e`（Playwright，生产构建，端口 3200；Next 16 的 dev 输出在 `.next/dev`，与构建互不影响） | 测试库每次运行都会清空；名字不以 `_test` 结尾的库一律拒绝清空，防止误删开发数据。 |
+| D24 | **修改密码成功后跳转到 `/settings?passwordChanged=1`**，而不是在原请求里返回成功 | Better Auth 会替换当前设备的会话 cookie；同一个请求里重新渲染仍会带着旧 cookie，被判定为未登录。 |
 
 ## 4. 目录约定
 

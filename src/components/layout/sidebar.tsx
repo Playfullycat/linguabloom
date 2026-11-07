@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Suspense } from "react";
+import { Suspense, type ReactNode } from "react";
 
 import { BrandMark, BrandWordmark } from "@/components/layout/brand-mark";
 import { ActiveSidebarLinks, SidebarCollapseToggle, SidebarLinks } from "@/components/layout/sidebar-links";
@@ -11,7 +11,7 @@ export const SIDEBAR_ID = "app-sidebar";
  * Desktop navigation (≥ lg). Width follows the `data-sidebar` attribute set
  * before paint, so the collapsed state never flashes.
  */
-export function Sidebar() {
+export function Sidebar({ account }: { account?: ReactNode }) {
   return (
     <aside
       id={SIDEBAR_ID}
@@ -36,6 +36,7 @@ export function Sidebar() {
             <ActiveSidebarLinks section="secondary" />
           </Suspense>
         </nav>
+        {account ? <div className="border-t border-border pt-2">{account}</div> : null}
         <div className="flex items-center justify-between gap-1 px-1 pt-1 sidebar-collapsed:flex-col">
           <ThemeQuickToggle />
           <SidebarCollapseToggle controls={SIDEBAR_ID} />

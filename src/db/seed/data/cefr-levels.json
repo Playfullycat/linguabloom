@@ -1,0 +1,49 @@
+{
+  "content_schema_version": 1,
+  "source_type": "first_party",
+  "source_reference": "LinguaBloom 开发规格 §3.1 七级课程架构；级别框架参考 Council of Europe CEFR Companion Volume (2020)",
+  "levels": [
+    {
+      "code": "pre_a1",
+      "label": "Pre-A1",
+      "stage_goal_zh": "建立英语声音、文字和最基础表达的对应关系",
+      "focus_zh": "字母、音素意识、基本词汇、课堂指令、固定表达、极短句"
+    },
+    {
+      "code": "a1",
+      "label": "A1",
+      "stage_goal_zh": "能完成简单、熟悉的日常交流",
+      "focus_zh": "自我介绍、家庭、时间、日常活动、购物、地点、基础问答"
+    },
+    {
+      "code": "a2",
+      "label": "A2",
+      "stage_goal_zh": "能处理常见生活情境和简短叙述",
+      "focus_zh": "过去经历、计划、比较、旅行、健康、工作日常、简单意见"
+    },
+    {
+      "code": "b1",
+      "label": "B1",
+      "stage_goal_zh": "能在熟悉主题上独立交流并表达理由",
+      "focus_zh": "叙事、观点、问题解决、新闻主旨、工作沟通、较长文本"
+    },
+    {
+      "code": "b2",
+      "label": "B2",
+      "stage_goal_zh": "能进行较复杂的讨论与较自然的表达",
+      "focus_zh": "抽象话题、论证、职场演示、学术/媒体材料、语域控制"
+    },
+    {
+      "code": "c1",
+      "label": "C1",
+      "stage_goal_zh": "能理解复杂长文本并灵活运用语言",
+      "focus_zh": "学术/专业材料、细微语气、复杂论证、风格与修辞"
+    },
+    {
+      "code": "c2",
+      "label": "C2",
+      "stage_goal_zh": "能灵活精确地理解与表达复杂意义",
+      "focus_zh": "高难度文本、隐含意义、修辞、语用、跨语境表达"
+    }
+  ]
+}

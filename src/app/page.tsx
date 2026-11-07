@@ -1,6 +1,24 @@
 import { redirect } from "next/navigation";
+import { connection } from "next/server";
+import { Suspense } from "react";
 
-// Phase 0.2 adds the setup/login decision here; until then the app opens on Today.
+import { getDb } from "@/db";
+import { getCurrentUser } from "@/lib/auth/session";
+import { getSetupStatus } from "@/modules/auth/services/owner-setup";
+
+/** Entry point: first run → /setup, signed in → /today, otherwise → /login. */
 export default function Home() {
-  redirect("/today");
+  return (
+    <Suspense fallback={null}>
+      <EntryRedirect />
+    </Suspense>
+  );
+}
+
+async function EntryRedirect(): Promise<null> {
+  await connection();
+  const { ownerExists } = await getSetupStatus(getDb());
+  if (!ownerExists) redirect("/setup");
+  redirect((await getCurrentUser()) ? "/today" : "/login");
+  return null; // unreachable: redirect() throws
 }

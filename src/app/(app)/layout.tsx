@@ -1,6 +1,32 @@
-import { AppShell } from "@/components/layout/app-shell";
+import { Suspense, type ReactNode } from "react";
 
-// Phase 0.2: this group becomes the authenticated area (owner session required).
-export default function AppLayout({ children }: { children: React.ReactNode }) {
-  return <AppShell>{children}</AppShell>;
+import { AppShell } from "@/components/layout/app-shell";
+import { SidebarAccount, SidebarAccountSkeleton } from "@/components/layout/sidebar-account";
+import { LoadingSkeleton } from "@/components/ui/skeleton";
+import { requireOwner } from "@/lib/auth/session";
+
+/**
+ * Signed-in area. The shell (navigation) is static; page content renders
+ * only after the owner session is verified. Pages, actions and data access
+ * still check the session themselves — a layout is not a security boundary.
+ */
+export default function AppLayout({ children }: { children: ReactNode }) {
+  return (
+    <AppShell
+      account={
+        <Suspense fallback={<SidebarAccountSkeleton />}>
+          <SidebarAccount />
+        </Suspense>
+      }
+    >
+      <Suspense fallback={<LoadingSkeleton />}>
+        <OwnerGate>{children}</OwnerGate>
+      </Suspense>
+    </AppShell>
+  );
+}
+
+async function OwnerGate({ children }: { children: ReactNode }) {
+  await requireOwner();
+  return children;
 }

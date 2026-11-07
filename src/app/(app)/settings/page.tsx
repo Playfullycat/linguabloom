@@ -1,22 +1,17 @@
-import { Bot, DatabaseBackup, KeyRound, Palette, Target, UserRound, type LucideIcon } from "lucide-react";
+import { Bot, DatabaseBackup, Palette, Target, UserRound, type LucideIcon } from "lucide-react";
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
 import { ThemePreferenceControl } from "@/components/layout/theme-controls";
 import { PageHeader } from "@/components/layout/page-header";
 import { PhaseBadge } from "@/components/layout/planned-feature";
+import { AccountSettings, AccountSettingsSkeleton } from "@/components/settings/account-settings";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import type { Phase } from "@/lib/config/navigation";
 
 export const metadata: Metadata = { title: "Settings" };
 
 const plannedSections: { icon: LucideIcon; title: string; titleEn: string; description: string; phase: Phase }[] = [
-  {
-    icon: KeyRound,
-    title: "账户与安全",
-    titleEn: "Account",
-    description: "修改密码、退出登录、注销全部会话。",
-    phase: 0,
-  },
   {
     icon: UserRound,
     title: "学习者档案",
@@ -47,12 +42,16 @@ const plannedSections: { icon: LucideIcon; title: string; titleEn: string; descr
   },
 ];
 
-export default function SettingsPage() {
+export default function SettingsPage({ searchParams }: PageProps<"/settings">) {
   return (
     <>
       <PageHeader title="Settings" titleZh="设置" description="外观、学习计划、AI 服务和数据。" />
 
       <div className="flex flex-col gap-4">
+        <Suspense fallback={<AccountSettingsSkeleton />}>
+          <AccountSettings searchParams={searchParams} />
+        </Suspense>
+
         <Card>
           <CardHeader className="flex-row items-start gap-3">
             <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-primary-soft text-primary-ink">
@@ -67,7 +66,7 @@ export default function SettingsPage() {
           </CardHeader>
           <CardContent>
             <ThemePreferenceControl />
-            <p className="mt-3 text-xs text-muted">目前保存在本浏览器中；登录功能上线后会同步到你的账户偏好。</p>
+            <p className="mt-3 text-xs text-muted">保存在当前浏览器中；学习偏好上线（Phase 1）后会同步到你的账户。</p>
           </CardContent>
         </Card>
 
