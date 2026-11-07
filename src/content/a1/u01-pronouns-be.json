@@ -1,0 +1,998 @@
+{
+  "content_schema_version": 1,
+  "source_type": "first_party",
+  "review_status": "pending_owner_review",
+  "unit": {
+    "id": "a1-u01-pronouns-be",
+    "level": "a1",
+    "order": 1,
+    "status": "published",
+    "title_en": "I'm, You're, She's",
+    "title_zh": "人称代词与 be",
+    "summary_zh": "I / you / he / she / it / we / they 搭配 am / is / are，用来介绍自己和别人、描述人的状态，并学会否定说法。",
+    "can_do": [
+      {
+        "id": "a1.sp.describe-people",
+        "skill": "spoken_production",
+        "en": "Can describe themselves and other people with simple sentences using be.",
+        "zh": "能用 be 的简单句描述自己和别人。"
+      },
+      {
+        "id": "a1.gr.be",
+        "skill": "grammar",
+        "en": "Can use am, is and are (and their negatives) correctly with subject pronouns.",
+        "zh": "能把 am / is / are 及其否定形式和人称代词正确搭配。"
+      },
+      {
+        "id": "a1.l.people",
+        "skill": "listening",
+        "en": "Can follow short, slow descriptions of people.",
+        "zh": "能听懂语速慢的简短人物描述。"
+      }
+    ],
+    "grammar_points": [
+      {
+        "id": "a1.subject-pronouns-be",
+        "title_en": "Subject pronouns + be",
+        "title_zh": "主语代词 + be 动词",
+        "pattern": "I am (I'm)\nyou / we / they are (you're, we're, they're)\nhe / she / it is (he's, she's, it's)\n否定：I'm not / isn't / aren't",
+        "explanation_zh": "be 动词（am / is / are）把主语和后面的信息连起来：身份、国籍、年龄、状态、地点。I 用 am；he / she / it 和单个人或物用 is；you / we / they 和多个人或物用 are。口语里几乎都用缩写。否定在 be 后面加 not。",
+        "examples": [
+          {
+            "en": "I'm tired.",
+            "zh": "我累了。"
+          },
+          {
+            "en": "She's a nurse. She isn't a doctor.",
+            "zh": "她是护士，不是医生。"
+          },
+          {
+            "en": "We're from Chengdu.",
+            "zh": "我们是成都人。"
+          }
+        ],
+        "common_errors": [
+          {
+            "wrong": "She are my sister.",
+            "right": "She's my sister.",
+            "why_zh": "she 后面用 is。"
+          },
+          {
+            "wrong": "I very busy.",
+            "right": "I'm very busy.",
+            "why_zh": "形容词前面不能少了 be 动词。中文说“我很忙”，英语要说 I am busy。"
+          },
+          {
+            "wrong": "He not is here.",
+            "right": "He isn't here. / He's not here.",
+            "why_zh": "not 放在 be 后面。"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "key": "i",
+        "text": "I",
+        "pos": "pronoun",
+        "ipa": "/aɪ/",
+        "zh": "我",
+        "example_en": "I'm happy.",
+        "example_zh": "我很开心。"
+      },
+      {
+        "key": "you",
+        "text": "you",
+        "pos": "pronoun",
+        "ipa": "/juː/",
+        "zh": "你；你们",
+        "example_en": "You're right.",
+        "example_zh": "你说得对。"
+      },
+      {
+        "key": "he",
+        "text": "he",
+        "pos": "pronoun",
+        "ipa": "/hiː/",
+        "zh": "他",
+        "example_en": "He's my brother.",
+        "example_zh": "他是我哥哥。"
+      },
+      {
+        "key": "she",
+        "text": "she",
+        "pos": "pronoun",
+        "ipa": "/ʃiː/",
+        "zh": "她",
+        "example_en": "She's at work.",
+        "example_zh": "她在上班。"
+      },
+      {
+        "key": "it",
+        "text": "it",
+        "pos": "pronoun",
+        "ipa": "/ɪt/",
+        "zh": "它",
+        "example_en": "It's a small city.",
+        "example_zh": "这是一座小城市。"
+      },
+      {
+        "key": "we",
+        "text": "we",
+        "pos": "pronoun",
+        "ipa": "/wiː/",
+        "zh": "我们",
+        "example_en": "We're friends.",
+        "example_zh": "我们是朋友。"
+      },
+      {
+        "key": "they",
+        "text": "they",
+        "pos": "pronoun",
+        "ipa": "/ðeɪ/",
+        "zh": "他们；她们；它们",
+        "example_en": "They're from Japan.",
+        "example_zh": "他们来自日本。"
+      },
+      {
+        "key": "tired",
+        "text": "tired",
+        "pos": "adjective",
+        "ipa": "/ˈtaɪəd/",
+        "zh": "累的",
+        "example_en": "I'm tired today.",
+        "example_zh": "我今天很累。"
+      },
+      {
+        "key": "busy",
+        "text": "busy",
+        "pos": "adjective",
+        "ipa": "/ˈbɪzi/",
+        "zh": "忙的",
+        "example_en": "She's very busy.",
+        "example_zh": "她非常忙。"
+      },
+      {
+        "key": "happy",
+        "text": "happy",
+        "pos": "adjective",
+        "ipa": "/ˈhæpi/",
+        "zh": "开心的",
+        "example_en": "They're happy.",
+        "example_zh": "他们很开心。"
+      },
+      {
+        "key": "friend",
+        "text": "friend",
+        "pos": "noun",
+        "ipa": "/frend/",
+        "zh": "朋友",
+        "example_en": "He's my friend.",
+        "example_zh": "他是我的朋友。"
+      },
+      {
+        "key": "colleague",
+        "text": "colleague",
+        "pos": "noun",
+        "ipa": "/ˈkɒliːɡ/",
+        "zh": "同事",
+        "example_en": "We're colleagues.",
+        "example_zh": "我们是同事。"
+      },
+      {
+        "key": "at-home",
+        "text": "at home",
+        "pos": "phrase",
+        "ipa": "/ət ˈhəʊm/",
+        "zh": "在家",
+        "example_en": "I'm at home.",
+        "example_zh": "我在家。"
+      },
+      {
+        "key": "at-work",
+        "text": "at work",
+        "pos": "phrase",
+        "ipa": "/ət ˈwɜːk/",
+        "zh": "在上班",
+        "example_en": "He isn't at work today.",
+        "example_zh": "他今天没在上班。"
+      }
+    ],
+    "lessons": [
+      {
+        "id": "a1-u01-pronouns-be-l1",
+        "order": 1,
+        "kind": "core",
+        "title_en": "I Am, You Are, We Are",
+        "title_zh": "我是，你是，我们是",
+        "estimated_minutes": 9,
+        "objectives": [
+          {
+            "en": "Use I'm, you're, we're and they're.",
+            "zh": "能用 I'm、you're、we're、they're。"
+          },
+          {
+            "en": "Remember that adjectives need be: I'm busy.",
+            "zh": "记住形容词前要有 be：I'm busy。"
+          }
+        ],
+        "can_do_ids": [
+          "a1.gr.be",
+          "a1.sp.describe-people"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "grammar",
+            "title_zh": "这节课学什么",
+            "body_zh": "中文说“我很忙”，英语要说 I'm busy：中间这个 'm（am）不能省。这节课从 I、you、we、they 开始，把 be 动词用顺。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Monday morning",
+            "instructions_zh": "先听，注意每句话里的 'm 和 're。",
+            "scene_zh": "周一早上，两个同事在电梯里。",
+            "lines": [
+              {
+                "speaker": "Tom",
+                "en": "Morning, Lin. Are you OK?",
+                "zh": "早，林。你还好吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "I'm fine, just tired. We're very busy this week.",
+                "zh": "我还好，就是有点累。我们这周特别忙。"
+              },
+              {
+                "speaker": "Tom",
+                "en": "Yeah, you're right. The new clients are here today.",
+                "zh": "是啊，你说得对。新客户今天来。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "They're in the meeting room now.",
+                "zh": "他们现在就在会议室。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "i",
+              "you",
+              "we",
+              "they",
+              "tired",
+              "busy",
+              "happy"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "notice",
+            "role": "notice",
+            "skill": "grammar",
+            "question_zh": "看看 be 动词跟着谁变：",
+            "examples": [
+              {
+                "en": "I'm busy.",
+                "zh": "我很忙。",
+                "highlight": [
+                  "I'm"
+                ]
+              },
+              {
+                "en": "You're busy.",
+                "zh": "你很忙。",
+                "highlight": [
+                  "You're"
+                ]
+              },
+              {
+                "en": "We're busy.",
+                "zh": "我们很忙。",
+                "highlight": [
+                  "We're"
+                ]
+              },
+              {
+                "en": "They're busy.",
+                "zh": "他们很忙。",
+                "highlight": [
+                  "They're"
+                ]
+              }
+            ],
+            "takeaway_zh": "I 只配 am（I'm）；you、we、they 配 are（you're、we're、they're）。"
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_zh": "选出正确的句子：",
+            "options": [
+              "I very tired.",
+              "I'm very tired.",
+              "I are very tired."
+            ],
+            "answer": 1,
+            "explanation_zh": "形容词前要有 be：I'm（I am）tired。"
+          },
+          {
+            "id": "s06",
+            "type": "cloze",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "instructions_zh": "填 am 或 are。",
+            "sentence_en": "We ___ colleagues.",
+            "translation_zh": "我们是同事。",
+            "answers": [
+              "are"
+            ],
+            "explanation_zh": "we 用 are。"
+          },
+          {
+            "id": "s07",
+            "type": "order",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "排成句子。",
+            "translation_zh": "他们来自日本。",
+            "tokens": [
+              "from",
+              "They're",
+              "Japan"
+            ],
+            "answers": [
+              "They're from Japan."
+            ],
+            "explanation_zh": "They're（They are）+ from + 地方。"
+          },
+          {
+            "id": "s08",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音。他们现在怎么样？",
+            "audio_en": "We're happy, but we're really tired.",
+            "options": [
+              "开心，但很累",
+              "很忙，不开心",
+              "很累，想回家"
+            ],
+            "answer": 0,
+            "explanation_zh": "happy 开心，but 但是，really tired 真的很累。"
+          },
+          {
+            "id": "s09",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "填 am 或 are。",
+            "sentence_en": "I ___ at home.",
+            "translation_zh": "我在家。",
+            "answers": [
+              "am",
+              "'m"
+            ],
+            "explanation_zh": "I 用 am。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_zh": "哪一句是正确的？",
+            "options": [
+              "You is my friend.",
+              "You're my friend.",
+              "You my friend."
+            ],
+            "answer": 1,
+            "explanation_zh": "you 用 are：You're my friend。"
+          }
+        ]
+      },
+      {
+        "id": "a1-u01-pronouns-be-l2",
+        "order": 2,
+        "kind": "core",
+        "title_en": "He Is, She Is, It Is",
+        "title_zh": "他是，她是，它是",
+        "estimated_minutes": 9,
+        "objectives": [
+          {
+            "en": "Use he's, she's and it's to talk about others.",
+            "zh": "能用 he's、she's、it's 谈论别人和事物。"
+          },
+          {
+            "en": "Introduce a friend or colleague.",
+            "zh": "能介绍一位朋友或同事。"
+          }
+        ],
+        "can_do_ids": [
+          "a1.gr.be",
+          "a1.sp.describe-people",
+          "a1.l.people"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "grammar",
+            "title_zh": "这节课学什么",
+            "body_zh": "说到第三个人或一样东西时，be 动词变成 is。这节课用 he's、she's、it's 介绍别人，比如给朋友介绍你的同事。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Meet my colleague",
+            "instructions_zh": "先听。Lin 介绍的这位同事叫什么？做什么工作？",
+            "scene_zh": "Lin 和朋友 Ben 吃饭时，同事 Sara 路过。",
+            "lines": [
+              {
+                "speaker": "Lin",
+                "en": "Ben, this is Sara. She's my colleague.",
+                "zh": "本，这是萨拉，我的同事。"
+              },
+              {
+                "speaker": "Ben",
+                "en": "Hi, Sara. Nice to meet you.",
+                "zh": "嗨，萨拉，很高兴认识你。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "She's a designer. She's really good.",
+                "zh": "她是设计师，非常厉害。"
+              },
+              {
+                "speaker": "Sara",
+                "en": "Thanks, Lin! And this restaurant? It's great.",
+                "zh": "谢谢你，林！这家餐厅呢？很棒啊。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "he",
+              "she",
+              "it",
+              "friend",
+              "colleague",
+              "at-work"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "teach",
+            "role": "teach",
+            "skill": "grammar",
+            "title_zh": "he / she / it + is",
+            "explanation_zh": "说一个人（男用 he，女用 she）或一样东西（it）时，用 is。缩写：he's、she's、it's。介绍别人时常说 This is + 名字，然后用 He's / She's 补充信息。",
+            "pattern": "This is Sara. She's my colleague.",
+            "examples": [
+              {
+                "en": "This is Tom. He's from the UK.",
+                "zh": "这是汤姆，他来自英国。"
+              },
+              {
+                "en": "It's a nice restaurant.",
+                "zh": "这是一家不错的餐厅。"
+              }
+            ],
+            "tips_zh": [
+              "中文“他/她”读音一样，英语要分清 he 和 she，这是中文母语者很常见的口误。"
+            ]
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_zh": "选出正确的句子：",
+            "options": [
+              "She are a designer.",
+              "She is a designer.",
+              "She am a designer."
+            ],
+            "answer": 1,
+            "explanation_zh": "she 用 is。"
+          },
+          {
+            "id": "s06",
+            "type": "match",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "instructions_zh": "给每个主语配上正确的 be 动词形式。",
+            "pairs": [
+              {
+                "left": "I",
+                "right": "am"
+              },
+              {
+                "left": "she",
+                "right": "is"
+              },
+              {
+                "left": "they",
+                "right": "are"
+              }
+            ]
+          },
+          {
+            "id": "s07",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音。说的是男人还是女人？",
+            "audio_en": "He's my brother. He's a doctor.",
+            "options": [
+              "男人",
+              "女人",
+              "听不出来"
+            ],
+            "answer": 0,
+            "explanation_zh": "he 指男性：他是我哥哥/弟弟，是医生。"
+          },
+          {
+            "id": "s08",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_production",
+            "task_zh": "向朋友介绍你的一位同事或家人：说出名字、关系，再加一条信息（职业、来自哪里或性格）。",
+            "model_answers": [
+              "This is Wang Lei. He's my colleague. He's an engineer.",
+              "This is my sister, Mei. She's a nurse. She's very kind."
+            ],
+            "checklist_zh": [
+              "我用了 This is ...",
+              "我用 he 或 she 说对了性别",
+              "我用了 he's / she's + 一条信息"
+            ]
+          },
+          {
+            "id": "s09",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "填 is 或 are。",
+            "sentence_en": "My brother ___ at work.",
+            "translation_zh": "我哥哥在上班。",
+            "answers": [
+              "is",
+              "'s"
+            ],
+            "explanation_zh": "my brother = he，用 is。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_zh": "说到你妈妈，应该用：",
+            "options": [
+              "He's a teacher.",
+              "She's a teacher.",
+              "It's a teacher."
+            ],
+            "answer": 1,
+            "explanation_zh": "妈妈是女性，用 she。"
+          }
+        ]
+      },
+      {
+        "id": "a1-u01-pronouns-be-l3",
+        "order": 3,
+        "kind": "core",
+        "title_en": "Not Today",
+        "title_zh": "否定说法",
+        "estimated_minutes": 9,
+        "objectives": [
+          {
+            "en": "Make negative sentences with be.",
+            "zh": "能用 be 说否定句。"
+          },
+          {
+            "en": "Correct a wrong idea politely.",
+            "zh": "能礼貌地纠正别人的误会。"
+          }
+        ],
+        "can_do_ids": [
+          "a1.gr.be",
+          "a1.l.people"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "grammar",
+            "title_zh": "这节课学什么",
+            "body_zh": "“我不是……”“他不在……”怎么说？在 be 后面加 not 就行。口语里常用缩写 isn't、aren't，以及 I'm not。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "On the phone",
+            "instructions_zh": "先听。Tom 今天在不在公司？为什么？",
+            "scene_zh": "客户打电话找 Tom，Lin 接的电话。",
+            "lines": [
+              {
+                "speaker": "Client",
+                "en": "Hello, is Tom there?",
+                "zh": "你好，汤姆在吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Sorry, he isn't here today. He's at home. He's sick.",
+                "zh": "抱歉，他今天不在。他在家，生病了。"
+              },
+              {
+                "speaker": "Client",
+                "en": "Oh, I'm sorry. Are you his assistant?",
+                "zh": "哦，真遗憾。你是他的助理吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "No, I'm not. I'm his colleague. Can I help?",
+                "zh": "不是，我是他的同事。我能帮忙吗？"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "notice",
+            "role": "notice",
+            "skill": "grammar",
+            "question_zh": "否定句里，not 放在哪里？",
+            "examples": [
+              {
+                "en": "I'm not his assistant.",
+                "zh": "我不是他的助理。",
+                "highlight": [
+                  "'m not"
+                ]
+              },
+              {
+                "en": "He isn't here.",
+                "zh": "他不在这儿。",
+                "highlight": [
+                  "isn't"
+                ]
+              },
+              {
+                "en": "They aren't at work.",
+                "zh": "他们没在上班。",
+                "highlight": [
+                  "aren't"
+                ]
+              }
+            ],
+            "takeaway_zh": "not 放在 be 动词后面：am not（I'm not）、is not（isn't）、are not（aren't）。注意没有 amn't。"
+          },
+          {
+            "id": "s04",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_zh": "选出正确的否定句：",
+            "options": [
+              "He not is here.",
+              "He isn't here.",
+              "He no here."
+            ],
+            "answer": 1,
+            "explanation_zh": "not 在 is 后面，缩写成 isn't。"
+          },
+          {
+            "id": "s05",
+            "type": "cloze",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "instructions_zh": "填 isn't 或 aren't。",
+            "sentence_en": "They ___ at home.",
+            "translation_zh": "他们不在家。",
+            "answers": [
+              "aren't",
+              "are not"
+            ],
+            "explanation_zh": "they 用 are，否定是 aren't。"
+          },
+          {
+            "id": "s06",
+            "type": "order",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "排成否定句。",
+            "translation_zh": "我不是老师。",
+            "tokens": [
+              "not",
+              "I'm",
+              "a",
+              "teacher"
+            ],
+            "answers": [
+              "I'm not a teacher."
+            ],
+            "explanation_zh": "I'm not + 名词。"
+          },
+          {
+            "id": "s07",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音。她在哪里？",
+            "audio_en": "She isn't at work. She's at home.",
+            "options": [
+              "在公司",
+              "在家",
+              "在医院"
+            ],
+            "answer": 1,
+            "explanation_zh": "isn't at work 不在上班，She's at home 在家。"
+          },
+          {
+            "id": "s08",
+            "type": "write",
+            "role": "communicative_task",
+            "skill": "written_interaction",
+            "task_zh": "同事以为你是新来的实习生（intern）。回复一条消息，礼貌地纠正：你不是实习生，说出你真正的职位。",
+            "model_answers": [
+              "Hi! I'm not an intern. I'm an engineer here.",
+              "Sorry, I'm not the intern. I'm a designer in the team."
+            ],
+            "checklist_zh": [
+              "用了 I'm not ...",
+              "说出了真正的职位（I'm a / an ...）",
+              "语气礼貌（Hi / Sorry 等）"
+            ]
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_zh": "哪一句是正确的？",
+            "options": [
+              "I amn't busy.",
+              "I'm not busy.",
+              "I not busy."
+            ],
+            "answer": 1,
+            "explanation_zh": "I 的否定只用 I'm not，没有 amn't。"
+          },
+          {
+            "id": "s10",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "填 isn't 或 aren't。",
+            "sentence_en": "It ___ a big city.",
+            "translation_zh": "这不是一座大城市。",
+            "answers": [
+              "isn't",
+              "is not"
+            ],
+            "explanation_zh": "it 用 is，否定是 isn't。"
+          }
+        ]
+      },
+      {
+        "id": "a1-u01-pronouns-be-l4",
+        "order": 4,
+        "kind": "review",
+        "title_en": "Unit Review: People I Know",
+        "title_zh": "单元复习：我认识的人",
+        "estimated_minutes": 10,
+        "objectives": [
+          {
+            "en": "Follow a short description of several people.",
+            "zh": "能听懂对几个人的简短描述。"
+          },
+          {
+            "en": "Describe yourself and two people you know.",
+            "zh": "能描述自己和两个认识的人。"
+          }
+        ],
+        "can_do_ids": [
+          "a1.sp.describe-people",
+          "a1.gr.be",
+          "a1.l.people"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "listening",
+            "title_zh": "单元复习",
+            "body_zh": "听 Lin 介绍一张合影里的人，然后答题，最后描述你身边的人。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "A team photo",
+            "instructions_zh": "这是本单元的听力任务：先完整听两遍，不看文字。记住每个人是谁、在哪里。",
+            "scene_zh": "Lin 给朋友看团队合影。",
+            "lines": [
+              {
+                "speaker": "Lin",
+                "en": "This is my team. This is Sara. She's our designer.",
+                "zh": "这是我的团队。这是萨拉，我们的设计师。"
+              },
+              {
+                "speaker": "Ben",
+                "en": "And who's he?",
+                "zh": "他是谁？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "That's Tom. He's our manager. He isn't in the office this week.",
+                "zh": "那是汤姆，我们的经理。他这周不在办公室。"
+              },
+              {
+                "speaker": "Ben",
+                "en": "Are they engineers?",
+                "zh": "他们是工程师吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Yes, they are. They're new. We're a small team, but we're happy.",
+                "zh": "是的，他们是新来的。我们团队不大，但大家都很开心。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "Sara 是做什么的？",
+            "options": [
+              "经理",
+              "设计师",
+              "工程师"
+            ],
+            "answer": 1,
+            "explanation_zh": "She's our designer：她是设计师。"
+          },
+          {
+            "id": "s04",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "关于 Tom，哪一句是对的？",
+            "options": [
+              "他这周不在办公室",
+              "他是新来的工程师",
+              "他是设计师"
+            ],
+            "answer": 0,
+            "explanation_zh": "He isn't in the office this week：他这周不在办公室。"
+          },
+          {
+            "id": "s05",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "把句子的前后两半配对。",
+            "pairs": [
+              {
+                "left": "Sara is",
+                "right": "our designer."
+              },
+              {
+                "left": "They aren't",
+                "right": "at home."
+              },
+              {
+                "left": "I'm not",
+                "right": "a manager."
+              },
+              {
+                "left": "We're",
+                "right": "a small team."
+              }
+            ]
+          },
+          {
+            "id": "s06",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "填 am / is / are。",
+            "sentence_en": "My parents ___ from Hangzhou.",
+            "translation_zh": "我父母是杭州人。",
+            "answers": [
+              "are"
+            ],
+            "explanation_zh": "my parents = they，用 are。"
+          },
+          {
+            "id": "s07",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_production",
+            "task_zh": "描述你自己和两个你认识的人（家人、朋友或同事）。每个人一两句，至少用一次否定句。",
+            "model_answers": [
+              "I'm Lin. I'm an engineer. This is my wife, Mei. She's a nurse. My parents are from Chengdu. They aren't in Shanghai."
+            ],
+            "checklist_zh": [
+              "我介绍了自己（I'm ...）",
+              "我用 he / she / they 说了别人",
+              "am / is / are 都用对了",
+              "我至少用了一个否定句（isn't / aren't / I'm not）"
+            ]
+          },
+          {
+            "id": "s08",
+            "type": "write",
+            "role": "communicative_task",
+            "skill": "written_production",
+            "task_zh": "给一张家庭照片写 3 句说明，介绍照片里的人。",
+            "model_answers": [
+              "This is my family. This is my father. He's a teacher. My sister and I are students."
+            ],
+            "checklist_zh": [
+              "用了 This is ...",
+              "he / she / they 用对了",
+              "be 动词和主语搭配正确",
+              "句首大写，句末有句号"
+            ]
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_zh": "哪一句是正确的？",
+            "options": [
+              "My friends is here.",
+              "My friends are here.",
+              "My friends am here."
+            ],
+            "answer": 1,
+            "explanation_zh": "my friends 是复数（= they），用 are。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "listening",
+            "prompt_zh": "听录音。他们是什么关系？",
+            "audio_en": "We aren't colleagues. We're old friends.",
+            "options": [
+              "同事",
+              "老朋友",
+              "家人"
+            ],
+            "answer": 1,
+            "explanation_zh": "We aren't colleagues（不是同事），We're old friends（是老朋友）。"
+          }
+        ]
+      }
+    ]
+  }
+}

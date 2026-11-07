@@ -42,6 +42,8 @@ export type Feature = {
   phase: Phase;
   /** What the learner will be able to do here (shown while not yet built). */
   highlights: string[];
+  /** Other routes that belong to this feature (highlight it there too). */
+  alsoActiveOn?: string[];
 };
 
 export type NavGroup = {
@@ -84,6 +86,7 @@ const learnChildren: Feature[] = [
     icon: Map,
     summary: "从 Pre-A1 到 C2 的能力路线和课程单元。",
     phase: 1,
+    alsoActiveOn: ["/learn/levels", "/learn/units"],
     highlights: [
       "七个 CEFR 等级的学习目标、单元与完成度",
       "前置能力提示，但不强制锁定跳级",
@@ -329,6 +332,11 @@ export function getFeature(key: string): Feature {
 /** `href` itself or any nested route under it. */
 export function isPathActive(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
+}
+
+/** Whether a feature (leaf) is current for `pathname`, including related routes. */
+export function isFeatureActive(feature: Feature, pathname: string): boolean {
+  return isPathActive(pathname, feature.href) || (feature.alsoActiveOn ?? []).some((p) => isPathActive(pathname, p));
 }
 
 /**

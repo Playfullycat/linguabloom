@@ -1,0 +1,974 @@
+{
+  "content_schema_version": 1,
+  "source_type": "first_party",
+  "review_status": "pending_owner_review",
+  "unit": {
+    "id": "pre-a1-u05-numbers",
+    "level": "pre_a1",
+    "order": 5,
+    "status": "published",
+    "title_en": "Numbers Around Me",
+    "title_zh": "身边的数字",
+    "summary_zh": "数字 0–100、年龄、电话号码和价格。学完后，你能听懂和说出生活中最常见的数字，问价格，也能留下自己的电话号码。",
+    "can_do": [
+      {
+        "id": "pre-a1.l.numbers",
+        "skill": "listening",
+        "en": "Can understand numbers, prices and phone numbers when they are said slowly and clearly.",
+        "zh": "数字、价格和电话号码说得慢而清楚时，能听懂。"
+      },
+      {
+        "id": "pre-a1.si.numbers",
+        "skill": "spoken_interaction",
+        "en": "Can ask and answer simple questions about age, phone numbers and prices.",
+        "zh": "能就年龄、电话号码和价格进行简单的问答。"
+      },
+      {
+        "id": "pre-a1.ph.teen-ty",
+        "skill": "phonology",
+        "en": "Can say numbers like thirteen and thirty so that others can tell them apart.",
+        "zh": "说 thirteen 和 thirty 这类数字时，能让别人听出区别。"
+      }
+    ],
+    "grammar_points": [
+      {
+        "id": "pre-a1.numbers-questions",
+        "title_en": "How old? How much?",
+        "title_zh": "问年龄和价格",
+        "pattern": "How old are you? — I'm 25.\nHow much is it? — It's 30 yuan.\nWhat's your phone number? — It's ...",
+        "explanation_zh": "问年龄用 How old are you?，回答 I'm + 数字，可以加 years old，但不能只说 years。问价格用 How much is it?，回答 It's + 价格。电话号码一个一个数字地读，0 常读作 oh，两个相同的数字可以说 double。",
+        "examples": [
+          {
+            "en": "I'm thirty-two.",
+            "zh": "我三十二岁。"
+          },
+          {
+            "en": "It's fifteen dollars.",
+            "zh": "十五美元。"
+          },
+          {
+            "en": "It's oh-one-three, double five ...",
+            "zh": "号码是 013 55……"
+          }
+        ],
+        "common_errors": [
+          {
+            "wrong": "I'm 30 years.",
+            "right": "I'm 30. / I'm 30 years old.",
+            "why_zh": "years 后面要加 old，或者干脆只说数字。"
+          },
+          {
+            "wrong": "How many is it?",
+            "right": "How much is it?",
+            "why_zh": "问价格用 How much。How many 问的是“多少个”。"
+          },
+          {
+            "wrong": "thirteen 和 thirty 读成一样",
+            "right": "thir-TEEN / THIR-ty",
+            "why_zh": "-teen 结尾的数字重音在后面，-ty 结尾的重音在前面。"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "key": "zero",
+        "text": "zero / oh",
+        "pos": "number",
+        "ipa": "/ˈzɪərəʊ/ /əʊ/",
+        "zh": "零（电话号码里常读 oh）",
+        "example_en": "My number starts with oh-one.",
+        "example_zh": "我的号码以 01 开头。"
+      },
+      {
+        "key": "one-to-ten",
+        "text": "one, two, three ... ten",
+        "pos": "number",
+        "ipa": "/wʌn tuː θriː/",
+        "zh": "一到十",
+        "example_en": "One, two, three, go!",
+        "example_zh": "一、二、三，开始！"
+      },
+      {
+        "key": "eleven-twelve",
+        "text": "eleven, twelve",
+        "pos": "number",
+        "ipa": "/ɪˈlevn twelv/",
+        "zh": "十一、十二",
+        "example_en": "The meeting is at eleven.",
+        "example_zh": "会议在十一点。"
+      },
+      {
+        "key": "thirteen",
+        "text": "thirteen",
+        "pos": "number",
+        "ipa": "/ˌθɜːˈtiːn/",
+        "zh": "十三（重音在后）",
+        "example_en": "Bus thirteen, please.",
+        "example_zh": "请问是 13 路车吗？"
+      },
+      {
+        "key": "thirty",
+        "text": "thirty",
+        "pos": "number",
+        "ipa": "/ˈθɜːti/",
+        "zh": "三十（重音在前）",
+        "example_en": "It's thirty yuan.",
+        "example_zh": "三十元。"
+      },
+      {
+        "key": "fifteen-fifty",
+        "text": "fifteen / fifty",
+        "pos": "number",
+        "ipa": "/ˌfɪfˈtiːn/ /ˈfɪfti/",
+        "zh": "十五 / 五十",
+        "example_en": "Fifteen or fifty?",
+        "example_zh": "十五还是五十？"
+      },
+      {
+        "key": "twenty-one",
+        "text": "twenty-one",
+        "pos": "number",
+        "ipa": "/ˌtwenti ˈwʌn/",
+        "zh": "二十一",
+        "example_en": "I'm twenty-one.",
+        "example_zh": "我二十一岁。"
+      },
+      {
+        "key": "one-hundred",
+        "text": "a hundred",
+        "pos": "number",
+        "ipa": "/ə ˈhʌndrəd/",
+        "zh": "一百",
+        "example_en": "It's a hundred yuan.",
+        "example_zh": "一百元。"
+      },
+      {
+        "key": "how-old-are-you",
+        "text": "How old are you?",
+        "pos": "phrase",
+        "ipa": "/ˌhaʊ ˈəʊld ə juː/",
+        "zh": "你多大了？",
+        "example_en": "How old is your son?",
+        "example_zh": "你儿子多大了？"
+      },
+      {
+        "key": "years-old",
+        "text": "... years old",
+        "pos": "phrase",
+        "ipa": "/jɪəz ˈəʊld/",
+        "zh": "……岁",
+        "example_en": "She's six years old.",
+        "example_zh": "她六岁。"
+      },
+      {
+        "key": "phone-number",
+        "text": "phone number",
+        "pos": "noun",
+        "ipa": "/ˈfəʊn ˌnʌmbə/",
+        "zh": "电话号码",
+        "example_en": "What's your phone number?",
+        "example_zh": "你的电话号码是多少？"
+      },
+      {
+        "key": "double",
+        "text": "double",
+        "pos": "adjective",
+        "ipa": "/ˈdʌbl/",
+        "zh": "两个相同的（读号码时）",
+        "example_en": "It's double seven, three.",
+        "example_zh": "是 7、7、3。"
+      },
+      {
+        "key": "how-much-is-it",
+        "text": "How much is it?",
+        "pos": "phrase",
+        "ipa": "/ˌhaʊ ˈmʌtʃ ɪz ɪt/",
+        "zh": "多少钱？",
+        "example_en": "Excuse me, how much is it?",
+        "example_zh": "打扰一下，这个多少钱？"
+      },
+      {
+        "key": "yuan",
+        "text": "yuan",
+        "pos": "noun",
+        "ipa": "/juˈɑːn/",
+        "zh": "元（人民币）",
+        "example_en": "It's twenty yuan.",
+        "example_zh": "二十元。"
+      },
+      {
+        "key": "dollars",
+        "text": "dollars",
+        "pos": "noun",
+        "ipa": "/ˈdɒləz/",
+        "zh": "美元",
+        "example_en": "It's ten dollars.",
+        "example_zh": "十美元。"
+      }
+    ],
+    "lessons": [
+      {
+        "id": "pre-a1-u05-numbers-l1",
+        "order": 1,
+        "kind": "core",
+        "title_en": "Zero to Twenty",
+        "title_zh": "零到二十",
+        "estimated_minutes": 8,
+        "objectives": [
+          {
+            "en": "Say and recognise numbers from 0 to 20.",
+            "zh": "能说出并听懂 0–20。"
+          },
+          {
+            "en": "Hear the difference between thirteen and thirty.",
+            "zh": "能听出 thirteen 和 thirty 的区别。"
+          }
+        ],
+        "can_do_ids": [
+          "pre-a1.l.numbers",
+          "pre-a1.ph.teen-ty"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "listening",
+            "title_zh": "这节课学什么",
+            "body_zh": "数字天天都在用：时间、公交、价格、楼层。这节课先打好 0–20 的基础，重点练一个很多人会混的地方：thirteen（13）和 thirty（30）。"
+          },
+          {
+            "id": "s02",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟着数。注意 thirteen 和 thirty 重音的位置不同。",
+            "items": [
+              "zero",
+              "one-to-ten",
+              "eleven-twelve",
+              "thirteen",
+              "thirty",
+              "fifteen-fifty"
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Which bus?",
+            "instructions_zh": "先听。他要坐几路车？",
+            "scene_zh": "Lin 在公交站问路人。",
+            "lines": [
+              {
+                "speaker": "Lin",
+                "en": "Excuse me, is this bus thirteen?",
+                "zh": "打扰一下，这是 13 路吗？"
+              },
+              {
+                "speaker": "Woman",
+                "en": "No, this is bus thirty. Bus thirteen is over there.",
+                "zh": "不，这是 30 路。13 路在那边。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Thirteen, over there. Thank you!",
+                "zh": "13 路，在那边。谢谢！"
+              }
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "notice",
+            "role": "notice",
+            "skill": "phonology",
+            "question_zh": "大声读这三组数字，用力的音节在哪里？（粗体是重音）",
+            "examples": [
+              {
+                "en": "thirTEEN — THIRty",
+                "zh": "13 — 30",
+                "highlight": [
+                  "TEEN",
+                  "THIR"
+                ]
+              },
+              {
+                "en": "fifTEEN — FIFty",
+                "zh": "15 — 50",
+                "highlight": [
+                  "TEEN",
+                  "FIF"
+                ]
+              },
+              {
+                "en": "eighTEEN — EIGHty",
+                "zh": "18 — 80",
+                "highlight": [
+                  "TEEN",
+                  "EIGH"
+                ]
+              }
+            ],
+            "takeaway_zh": "-teen（13–19）重音在后面，而且 -teen 的音拉得长；-ty（30、40……）重音在前面，结尾很短。听的时候抓住这个区别。"
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，选出你听到的数字。",
+            "audio_en": "Fifteen.",
+            "options": [
+              "15",
+              "50",
+              "5"
+            ],
+            "answer": 0,
+            "explanation_zh": "fif-TEEN：重音在后，-teen 拉长，是 15。"
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，选出你听到的数字。",
+            "audio_en": "Thirty.",
+            "options": [
+              "13",
+              "30",
+              "3"
+            ],
+            "answer": 1,
+            "explanation_zh": "THIR-ty：重音在前，结尾短，是 30。"
+          },
+          {
+            "id": "s07",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "vocabulary",
+            "instructions_zh": "把单词和数字配对。",
+            "pairs": [
+              {
+                "left": "twelve",
+                "right": "12"
+              },
+              {
+                "left": "eleven",
+                "right": "11"
+              },
+              {
+                "left": "twenty",
+                "right": "20"
+              },
+              {
+                "left": "seven",
+                "right": "7"
+              }
+            ]
+          },
+          {
+            "id": "s08",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "vocabulary",
+            "instructions_zh": "用英文单词写出括号里的数字。",
+            "sentence_en": "I have ___ apples. (3)",
+            "translation_zh": "我有三个苹果。",
+            "answers": [
+              "three"
+            ],
+            "explanation_zh": "3 = three。"
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "listening",
+            "prompt_zh": "听录音。楼层是几楼？",
+            "audio_en": "My office is on floor thirteen.",
+            "options": [
+              "3 楼",
+              "13 楼",
+              "30 楼"
+            ],
+            "answer": 1,
+            "explanation_zh": "thir-TEEN，重音在后，是 13。"
+          }
+        ]
+      },
+      {
+        "id": "pre-a1-u05-numbers-l2",
+        "order": 2,
+        "kind": "core",
+        "title_en": "How Old Are You?",
+        "title_zh": "你多大了？",
+        "estimated_minutes": 8,
+        "objectives": [
+          {
+            "en": "Say numbers from 20 to 100.",
+            "zh": "能说出 20–100。"
+          },
+          {
+            "en": "Ask and say someone's age.",
+            "zh": "能问年龄、说年龄。"
+          }
+        ],
+        "can_do_ids": [
+          "pre-a1.si.numbers",
+          "pre-a1.l.numbers"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "spoken_interaction",
+            "title_zh": "这节课学什么",
+            "body_zh": "学会 20 以上的数字，就能说年龄了。注意：和刚认识的成年人直接问年龄，在很多英语国家会显得有点私人，问孩子或熟人的年龄就很自然。"
+          },
+          {
+            "id": "s02",
+            "type": "teach",
+            "role": "teach",
+            "skill": "vocabulary",
+            "title_zh": "20 以上的数字怎么说",
+            "explanation_zh": "整十：twenty（20）、thirty（30）、forty（40，没有 u）、fifty、sixty、seventy、eighty、ninety。中间的数字用连字符连起来：二十一 = twenty-one，四十五 = forty-five。100 = a hundred 或 one hundred。",
+            "pattern": "twenty-one (21)\nforty-five (45)\nninety-nine (99)",
+            "examples": [
+              {
+                "en": "twenty-eight",
+                "zh": "28"
+              },
+              {
+                "en": "sixty-three",
+                "zh": "63"
+              },
+              {
+                "en": "a hundred",
+                "zh": "100"
+              }
+            ],
+            "tips_zh": [
+              "forty 拼写里没有 u（不是 fourty）。"
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "A birthday photo",
+            "instructions_zh": "先听。照片里的孩子几岁？",
+            "scene_zh": "同事 Anna 给 Lin 看女儿的生日照片。",
+            "lines": [
+              {
+                "speaker": "Lin",
+                "en": "She's lovely! How old is she?",
+                "zh": "她好可爱！她多大了？"
+              },
+              {
+                "speaker": "Anna",
+                "en": "She's six. It's her birthday today.",
+                "zh": "六岁。今天是她的生日。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Happy birthday to her!",
+                "zh": "祝她生日快乐！"
+              }
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "twenty-one",
+              "one-hundred",
+              "how-old-are-you",
+              "years-old"
+            ]
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_zh": "选出正确的说法：",
+            "options": [
+              "I'm 30 years.",
+              "I'm 30 years old.",
+              "I have 30 years."
+            ],
+            "answer": 1,
+            "explanation_zh": "说年龄用 I'm + 数字（+ years old）。不能只说 years，也不用 have。"
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音。他多大？",
+            "audio_en": "I'm forty-two.",
+            "options": [
+              "24",
+              "42",
+              "40"
+            ],
+            "answer": 1,
+            "explanation_zh": "forty-two = 42。"
+          },
+          {
+            "id": "s07",
+            "type": "order",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "排成一个问句。",
+            "translation_zh": "你儿子多大了？",
+            "tokens": [
+              "old",
+              "How",
+              "your",
+              "is",
+              "son"
+            ],
+            "answers": [
+              "How old is your son?"
+            ],
+            "explanation_zh": "How old + is / are + 人？"
+          },
+          {
+            "id": "s08",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "vocabulary",
+            "instructions_zh": "用英文写出 45（带连字符）。",
+            "sentence_en": "My father is ___.",
+            "translation_zh": "我爸爸 45 岁。",
+            "answers": [
+              "forty-five",
+              "forty five"
+            ],
+            "explanation_zh": "45 = forty-five，forty 没有 u。"
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "spoken_interaction",
+            "prompt_en": "\"How old is your daughter?\"",
+            "prompt_zh": "怎么回答？",
+            "options": [
+              "She's eight.",
+              "She's eight years.",
+              "She has eight."
+            ],
+            "answer": 0,
+            "explanation_zh": "She's eight 或 She's eight years old 都对。"
+          }
+        ]
+      },
+      {
+        "id": "pre-a1-u05-numbers-l3",
+        "order": 3,
+        "kind": "core",
+        "title_en": "Phone Numbers and Prices",
+        "title_zh": "电话号码与价格",
+        "estimated_minutes": 10,
+        "objectives": [
+          {
+            "en": "Say and understand phone numbers.",
+            "zh": "能说出、听懂电话号码。"
+          },
+          {
+            "en": "Ask how much something is and understand the price.",
+            "zh": "能问价格，并听懂对方说的价格。"
+          }
+        ],
+        "can_do_ids": [
+          "pre-a1.si.numbers",
+          "pre-a1.l.numbers"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "spoken_interaction",
+            "title_zh": "这节课学什么",
+            "body_zh": "留电话、买东西是最实用的两件事。电话号码要一个数字一个数字地读，价格要听清数字和单位。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "At the market",
+            "instructions_zh": "先听。T 恤多少钱？",
+            "scene_zh": "Lin 在市场里看中了一件 T 恤。",
+            "lines": [
+              {
+                "speaker": "Lin",
+                "en": "Excuse me, how much is this T-shirt?",
+                "zh": "打扰一下，这件 T 恤多少钱？"
+              },
+              {
+                "speaker": "Seller",
+                "en": "It's fifty yuan.",
+                "zh": "五十元。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Fifteen?",
+                "zh": "十五？"
+              },
+              {
+                "speaker": "Seller",
+                "en": "No, fifty. Five-oh.",
+                "zh": "不，五十。五、零。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Oh, OK. Here you are.",
+                "zh": "哦，好的。给你。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "phone-number",
+              "double",
+              "how-much-is-it",
+              "yuan",
+              "dollars"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "teach",
+            "role": "teach",
+            "skill": "spoken_interaction",
+            "title_zh": "怎么读电话号码",
+            "explanation_zh": "电话号码一个数字一个数字地读，每三四个数字停一下。0 常读作 oh（像字母 O），两个相同的数字连在一起可以说 double：55 = double five。",
+            "pattern": "138 0055 2468 → one-three-eight, oh-oh-five-five ... 或 double oh, double five",
+            "examples": [
+              {
+                "en": "It's one-three-nine, double two, four-six.",
+                "zh": "号码是 139 22 46。"
+              },
+              {
+                "en": "Sorry, can you say that again?",
+                "zh": "抱歉，能再说一遍吗？"
+              }
+            ],
+            "tips_zh": [
+              "没听清可以说 Sorry, can you say that again?",
+              "问价格：How much is it? / How much is this?"
+            ]
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，选出你听到的号码。",
+            "audio_en": "It's two-oh-seven, double four, nine.",
+            "options": [
+              "207 449",
+              "270 449",
+              "207 499"
+            ],
+            "answer": 0,
+            "explanation_zh": "two-oh-seven = 207，double four = 44，nine = 9。"
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_zh": "问价格，哪一句是对的？",
+            "options": [
+              "How many is it?",
+              "How much is it?",
+              "What money is it?"
+            ],
+            "answer": 1,
+            "explanation_zh": "问价格用 How much。How many 问的是数量（多少个）。"
+          },
+          {
+            "id": "s07",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音。咖啡多少钱？",
+            "audio_en": "The coffee is eighteen yuan.",
+            "options": [
+              "8 元",
+              "18 元",
+              "80 元"
+            ],
+            "answer": 1,
+            "explanation_zh": "eigh-TEEN，重音在后，是 18。"
+          },
+          {
+            "id": "s08",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_interaction",
+            "task_zh": "新朋友想加你，问你的电话号码。用英语一个数字一个数字地读出一个号码（可以编一个）。",
+            "prompt_en": "What's your phone number?",
+            "model_answers": [
+              "It's one-three-eight, double oh, five-six, seven-two, nine-one.",
+              "My number is one-five-nine, two-oh-four-four, eight-six-one-three."
+            ],
+            "checklist_zh": [
+              "我一个数字一个数字地读",
+              "0 读成了 oh 或 zero",
+              "我在中间停顿，让对方好记"
+            ]
+          },
+          {
+            "id": "s09",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "补全问句。",
+            "sentence_en": "How ___ is this bag?",
+            "translation_zh": "这个包多少钱？",
+            "answers": [
+              "much"
+            ],
+            "explanation_zh": "问价格：How much ...?"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "listening",
+            "prompt_zh": "听录音。票价是多少？",
+            "audio_en": "One ticket is forty dollars.",
+            "options": [
+              "14 美元",
+              "40 美元",
+              "4 美元"
+            ],
+            "answer": 1,
+            "explanation_zh": "FOR-ty，重音在前，是 40。"
+          }
+        ]
+      },
+      {
+        "id": "pre-a1-u05-numbers-l4",
+        "order": 4,
+        "kind": "review",
+        "title_en": "Unit Review: Numbers Everywhere",
+        "title_zh": "单元复习：到处都是数字",
+        "estimated_minutes": 10,
+        "objectives": [
+          {
+            "en": "Catch numbers in a short real-life conversation.",
+            "zh": "能在一段生活对话中听出数字。"
+          },
+          {
+            "en": "Use numbers for age, phone numbers and prices.",
+            "zh": "能用数字说年龄、电话号码和价格。"
+          }
+        ],
+        "can_do_ids": [
+          "pre-a1.l.numbers",
+          "pre-a1.si.numbers",
+          "pre-a1.ph.teen-ty"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "listening",
+            "title_zh": "单元复习",
+            "body_zh": "这段对话里有好几个数字。先听，再答题，最后你来问价格、留电话。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Booking a cake",
+            "instructions_zh": "这是本单元的听力任务：不看文字，听两遍，记下蛋糕的价格和电话号码。",
+            "scene_zh": "Lin 打电话到蛋糕店，给朋友订生日蛋糕。",
+            "lines": [
+              {
+                "speaker": "Shop",
+                "en": "Hello, Sweet Cake Shop.",
+                "zh": "您好，甜心蛋糕店。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Hi. How much is the chocolate cake?",
+                "zh": "你好。巧克力蛋糕多少钱？"
+              },
+              {
+                "speaker": "Shop",
+                "en": "It's sixty-five yuan.",
+                "zh": "六十五元。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "OK, one chocolate cake, please. It's for my friend. She's thirty today.",
+                "zh": "好的，要一个巧克力蛋糕，是给我朋友的。她今天三十岁。"
+              },
+              {
+                "speaker": "Shop",
+                "en": "Great. What's your phone number?",
+                "zh": "好的。您的电话号码是多少？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "It's one-three-seven, double eight, two-four, five-oh-one-six.",
+                "zh": "137 88 24 5016。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "巧克力蛋糕多少钱？",
+            "options": [
+              "56 元",
+              "65 元",
+              "60 元"
+            ],
+            "answer": 1,
+            "explanation_zh": "sixty-five = 65。"
+          },
+          {
+            "id": "s04",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "朋友今天几岁？",
+            "options": [
+              "13 岁",
+              "30 岁",
+              "33 岁"
+            ],
+            "answer": 1,
+            "explanation_zh": "She's thirty today：THIR-ty，30 岁。"
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "Lin 的电话号码中间是哪几位？",
+            "options": [
+              "88 24",
+              "8 24",
+              "80 24"
+            ],
+            "answer": 0,
+            "explanation_zh": "double eight = 88，然后是 two-four = 24。"
+          },
+          {
+            "id": "s06",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "spoken_interaction",
+            "instructions_zh": "把问题和回答配对。",
+            "pairs": [
+              {
+                "left": "How old are you?",
+                "right": "I'm twenty-nine."
+              },
+              {
+                "left": "How much is it?",
+                "right": "It's twelve yuan."
+              },
+              {
+                "left": "What's your phone number?",
+                "right": "It's one-three-five ..."
+              },
+              {
+                "left": "Sorry, can you say that again?",
+                "right": "Sure. Twelve."
+              }
+            ]
+          },
+          {
+            "id": "s07",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_interaction",
+            "task_zh": "你在咖啡店，想知道一杯拿铁多少钱。先问价格；店员说了价格以后，你没听清，请她再说一遍。",
+            "prompt_en": "Hi, what can I get you?",
+            "model_answers": [
+              "Hi. How much is a latte?",
+              "Excuse me, how much is the latte? ... Sorry, can you say that again?"
+            ],
+            "checklist_zh": [
+              "我用 How much is ...? 问了价格",
+              "我用了 Sorry, can you say that again? 请对方重复",
+              "我说话前打了招呼或用了 Excuse me"
+            ]
+          },
+          {
+            "id": "s08",
+            "type": "write",
+            "role": "communicative_task",
+            "skill": "written_interaction",
+            "task_zh": "给新同事发一条消息：告诉他你的名字和电话号码（号码可以编一个，用数字写）。",
+            "model_answers": [
+              "Hi, it's Lin. My phone number is 138 0055 2468.",
+              "Hello! I'm Mei. My number is 159 2044 8613."
+            ],
+            "checklist_zh": [
+              "写了自己的名字",
+              "写了 phone number 或 number",
+              "号码完整、分组清楚",
+              "句首大写"
+            ]
+          },
+          {
+            "id": "s09",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "vocabulary",
+            "instructions_zh": "用英文写出 19。",
+            "sentence_en": "My son is ___.",
+            "translation_zh": "我儿子 19 岁。",
+            "answers": [
+              "nineteen"
+            ],
+            "explanation_zh": "19 = nineteen（-teen 结尾，重音在后）。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "listening",
+            "prompt_zh": "听录音。车票多少钱？",
+            "audio_en": "That's seventy yuan, please.",
+            "options": [
+              "17 元",
+              "70 元",
+              "77 元"
+            ],
+            "answer": 1,
+            "explanation_zh": "SEV-en-ty，重音在前，是 70。"
+          }
+        ]
+      }
+    ]
+  }
+}

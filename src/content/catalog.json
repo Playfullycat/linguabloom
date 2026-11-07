@@ -1,0 +1,70 @@
+{
+  "content_schema_version": 1,
+  "course": {
+    "id": "general-english",
+    "title_en": "General English",
+    "title_zh": "通用英语",
+    "summary_zh": "从 Pre-A1 到 C2 的系统课程：每个单元从输入开始，经过练习和复习，最后用英语完成一件真实的小事。",
+    "source_type": "first_party"
+  },
+  "units": [
+    { "id": "pre-a1-u01-meet-english", "level": "pre_a1", "order": 1, "title_en": "Meet English", "title_zh": "认识英语", "summary_zh": "熟悉学习界面和学习方法，认识 26 个字母的名称和大小写。" },
+    { "id": "pre-a1-u02-sounds-letters", "level": "pre_a1", "order": 2, "title_en": "Sounds & Letters", "title_zh": "字母与发音", "summary_zh": "字母在单词里怎么发音、常见字母组合，以及把单词拆成音节。" },
+    { "id": "pre-a1-u03-hello", "level": "pre_a1", "order": 3, "title_en": "Hello!", "title_zh": "你好！", "summary_zh": "打招呼、问候、道别和最常用的礼貌用语。", "file": "pre-a1/u03-hello.json" },
+    { "id": "pre-a1-u04-my-name-is", "level": "pre_a1", "order": 4, "title_en": "My Name Is...", "title_zh": "我叫……", "summary_zh": "说出姓名、来自哪里和职业，做一段最简单的自我介绍。", "file": "pre-a1/u04-my-name-is.json" },
+    { "id": "pre-a1-u05-numbers", "level": "pre_a1", "order": 5, "title_en": "Numbers Around Me", "title_zh": "身边的数字", "summary_zh": "数字 0–100、年龄、电话号码和价格。", "file": "pre-a1/u05-numbers.json" },
+    { "id": "pre-a1-u06-things-people", "level": "pre_a1", "order": 6, "title_en": "Things & People", "title_zh": "物品与人", "summary_zh": "常见物品、家庭成员，初步认识单数和复数。" },
+    { "id": "pre-a1-u07-classroom-english", "level": "pre_a1", "order": 7, "title_en": "Classroom English", "title_zh": "课堂英语", "summary_zh": "听懂常用指令，请对方重复、说慢一点，表达“我不懂”。" },
+    { "id": "pre-a1-u08-first-sentences", "level": "pre_a1", "order": 8, "title_en": "First Sentences", "title_zh": "第一批句子", "summary_zh": "主语 + be 动词 + 补语：肯定句、否定句和最基础的问句。" },
+
+    { "id": "a1-u01-pronouns-be", "level": "a1", "order": 1, "title_en": "I'm, You're, She's", "title_zh": "人称代词与 be", "summary_zh": "I / you / he / she / it / we / they 搭配 am / is / are，介绍自己和别人。", "file": "a1/u01-pronouns-be.json" },
+    { "id": "a1-u02-word-order", "level": "a1", "order": 2, "title_en": "Who Does What", "title_zh": "基本词序", "summary_zh": "英语句子的骨架：谁 + 做什么 + 什么，时间和地点放在哪里。", "file": "a1/u02-word-order.json" },
+    { "id": "a1-u03-questions", "level": "a1", "order": 3, "title_en": "Asking Questions", "title_zh": "提问", "summary_zh": "用 be 和 do 提问、回答 yes / no，以及 what / where / who 开头的问题。", "file": "a1/u03-questions.json" },
+    { "id": "a1-u04-articles", "level": "a1", "order": 4, "title_en": "A, An, The", "title_zh": "冠词入门", "summary_zh": "a / an / the 的基本用法：第一次提到、特指和不用冠词的情况。" },
+    { "id": "a1-u05-plurals", "level": "a1", "order": 5, "title_en": "One and Many", "title_zh": "单数与复数", "summary_zh": "名词复数的规则变化和常见不规则变化。" },
+    { "id": "a1-u06-family", "level": "a1", "order": 6, "title_en": "My Family", "title_zh": "我的家人", "summary_zh": "所有格 my / your / his / her 和 's，介绍家人。" },
+    { "id": "a1-u07-daily-routine", "level": "a1", "order": 7, "title_en": "My Day", "title_zh": "我的一天", "summary_zh": "一般现在时描述日常安排，第三人称单数加 -s。" },
+    { "id": "a1-u08-how-often", "level": "a1", "order": 8, "title_en": "How Often?", "title_zh": "多久一次", "summary_zh": "always / usually / sometimes / never 等频率副词的位置。" },
+    { "id": "a1-u09-time-dates", "level": "a1", "order": 9, "title_en": "Time and Dates", "title_zh": "时间与日期", "summary_zh": "说时间、星期、月份和日期，约时间。" },
+    { "id": "a1-u10-there-is", "level": "a1", "order": 10, "title_en": "There Is, There Are", "title_zh": "有……", "summary_zh": "用 there is / there are 描述一个地方有什么。" },
+    { "id": "a1-u11-prepositions", "level": "a1", "order": 11, "title_en": "In, On, At", "title_zh": "地点与时间介词", "summary_zh": "in / on / at / under / next to 等常用介词。" },
+    { "id": "a1-u12-can", "level": "a1", "order": 12, "title_en": "I Can Swim", "title_zh": "能力与请求", "summary_zh": "can / can't 表达能力、可能和礼貌请求。" },
+    { "id": "a1-u13-right-now", "level": "a1", "order": 13, "title_en": "Right Now", "title_zh": "正在发生", "summary_zh": "现在进行时：现在正在做什么。" },
+    { "id": "a1-u14-countable", "level": "a1", "order": 14, "title_en": "Countable or Not", "title_zh": "可数与不可数", "summary_zh": "可数名词和不可数名词，食物和饮料。" },
+    { "id": "a1-u15-some-any", "level": "a1", "order": 15, "title_en": "Some, Any, Much, Many", "title_zh": "数量表达", "summary_zh": "some / any / much / many 的基础用法。" },
+    { "id": "a1-u16-yesterday", "level": "a1", "order": 16, "title_en": "Yesterday", "title_zh": "昨天", "summary_zh": "一般过去时入门：was / were 和常见规则动词。" },
+    { "id": "a1-u17-plans", "level": "a1", "order": 17, "title_en": "Going To", "title_zh": "计划", "summary_zh": "be going to 谈计划和打算。" },
+    { "id": "a1-u18-comparing", "level": "a1", "order": 18, "title_en": "Bigger and Best", "title_zh": "比较", "summary_zh": "比较级和最高级，比较两个或多个事物。" },
+    { "id": "a1-u19-getting-around", "level": "a1", "order": 19, "title_en": "Getting Around", "title_zh": "问路与交通", "summary_zh": "问路、指路，乘坐公交、地铁和出租车。" },
+    { "id": "a1-u20-everyday-problems", "level": "a1", "order": 20, "title_en": "Everyday Situations", "title_zh": "日常情景", "summary_zh": "点餐、购物、旅行中的常见问题和解决办法。" },
+
+    { "id": "a2-u01-past-stories", "level": "a2", "order": 1, "title_en": "Past Stories", "title_zh": "讲过去的事", "summary_zh": "一般过去时与常见不规则动词，讲一段经历。" },
+    { "id": "a2-u02-while-when", "level": "a2", "order": 2, "title_en": "While It Was Raining", "title_zh": "过去进行时", "summary_zh": "过去进行时初步，描述背景和被打断的动作。" },
+    { "id": "a2-u03-future", "level": "a2", "order": 3, "title_en": "Plans and Predictions", "title_zh": "计划与预测", "summary_zh": "will 与 going to 的区别，谈未来的计划和预测。" },
+    { "id": "a2-u04-experiences", "level": "a2", "order": 4, "title_en": "Have You Ever...?", "title_zh": "经历", "summary_zh": "现在完成时入门：谈人生经历。" },
+    { "id": "a2-u05-advice", "level": "a2", "order": 5, "title_en": "You Should...", "title_zh": "建议与义务", "summary_zh": "should / must / have to / might：建议、义务和可能。" },
+    { "id": "a2-u06-travel-health", "level": "a2", "order": 6, "title_en": "Travel and Health", "title_zh": "旅行与健康", "summary_zh": "订房、看病、描述症状等生活服务场景。" },
+    { "id": "a2-u07-work", "level": "a2", "order": 7, "title_en": "At Work", "title_zh": "工作日常", "summary_zh": "描述工作内容、安排会议、写简短的工作消息。" },
+
+    { "id": "b1-u01-perfect-vs-past", "level": "b1", "order": 1, "title_en": "Done or Did?", "title_zh": "完成时与过去时", "summary_zh": "现在完成时与一般过去时的对比。" },
+    { "id": "b1-u02-conditionals", "level": "b1", "order": 2, "title_en": "If...", "title_zh": "条件句", "summary_zh": "零条件句、第一和第二条件句。" },
+    { "id": "b1-u03-relative-clauses", "level": "b1", "order": 3, "title_en": "The Person Who...", "title_zh": "定语从句", "summary_zh": "who / which / that 引导的定语从句。" },
+    { "id": "b1-u04-passive", "level": "b1", "order": 4, "title_en": "It Was Made In...", "title_zh": "被动语态", "summary_zh": "被动语态基础，描述过程和结果。" },
+    { "id": "b1-u05-reported-speech", "level": "b1", "order": 5, "title_en": "She Said That...", "title_zh": "转述", "summary_zh": "间接引语基础：转述别人说的话。" },
+    { "id": "b1-u06-opinions", "level": "b1", "order": 6, "title_en": "In My Opinion", "title_zh": "表达观点", "summary_zh": "表达观点、给出理由、礼貌地不同意。" },
+
+    { "id": "b2-u01-discourse", "level": "b2", "order": 1, "title_en": "Linking Ideas", "title_zh": "衔接与连贯", "summary_zh": "however / whereas / as a result 等话语标记。" },
+    { "id": "b2-u02-collocations", "level": "b2", "order": 2, "title_en": "Words That Go Together", "title_zh": "词汇搭配", "summary_zh": "常见动名搭配和形名搭配，让表达更自然。" },
+    { "id": "b2-u03-hedging", "level": "b2", "order": 3, "title_en": "It Seems That...", "title_zh": "委婉与立场", "summary_zh": "hedging：表达不确定、立场和保留意见。" },
+    { "id": "b2-u04-presentations", "level": "b2", "order": 4, "title_en": "Presenting", "title_zh": "做演示", "summary_zh": "组织一次短演示：开场、过渡、总结和回答问题。" },
+    { "id": "b2-u05-lectures", "level": "b2", "order": 5, "title_en": "Lectures and Notes", "title_zh": "讲座与笔记", "summary_zh": "听长篇讲座、记笔记并写总结。" },
+
+    { "id": "c1-u01-register", "level": "c1", "order": 1, "title_en": "Register and Tone", "title_zh": "语域与语气", "summary_zh": "正式与非正式表达的选择，信息结构与强调。" },
+    { "id": "c1-u02-academic-writing", "level": "c1", "order": 2, "title_en": "Academic Writing", "title_zh": "学术写作", "summary_zh": "论证结构、引用与综合多篇材料。" },
+    { "id": "c1-u03-argument", "level": "c1", "order": 3, "title_en": "Concession and Rebuttal", "title_zh": "让步与反驳", "summary_zh": "承认对方观点再提出反驳，进行复杂论证。" },
+
+    { "id": "c2-u01-implied-meaning", "level": "c2", "order": 1, "title_en": "Reading Between the Lines", "title_zh": "言外之意", "summary_zh": "隐含意义、反讽和语用推断。" },
+    { "id": "c2-u02-precision", "level": "c2", "order": 2, "title_en": "Precise Expression", "title_zh": "精确表达", "summary_zh": "细微的近义词差别和高度精确的用词。" },
+    { "id": "c2-u03-literature-debate", "level": "c2", "order": 3, "title_en": "Literature and Debate", "title_zh": "文学与辩论", "summary_zh": "文学文本、专业辩论和复杂写作。" }
+  ]
+}

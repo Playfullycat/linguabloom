@@ -1,0 +1,1014 @@
+{
+  "content_schema_version": 1,
+  "source_type": "first_party",
+  "review_status": "pending_owner_review",
+  "unit": {
+    "id": "pre-a1-u04-my-name-is",
+    "level": "pre_a1",
+    "order": 4,
+    "status": "published",
+    "title_en": "My Name Is...",
+    "title_zh": "我叫……",
+    "summary_zh": "说出姓名、来自哪里和职业，做一段最简单的自我介绍。学完后，你能在第一次见面时介绍自己，也能问对方这几件事。",
+    "can_do": [
+      {
+        "id": "pre-a1.si.introduce",
+        "skill": "spoken_interaction",
+        "en": "Can introduce themselves and ask others their name, where they are from and what they do.",
+        "zh": "能介绍自己，并问对方的名字、来自哪里和做什么工作。"
+      },
+      {
+        "id": "pre-a1.sp.personal-info",
+        "skill": "spoken_production",
+        "en": "Can give basic personal information in short, simple phrases.",
+        "zh": "能用简短的句子说出自己的基本信息。"
+      },
+      {
+        "id": "pre-a1.l.personal-info",
+        "skill": "listening",
+        "en": "Can understand names, countries and jobs when people introduce themselves slowly.",
+        "zh": "别人慢慢做自我介绍时，能听懂名字、国家和职业。"
+      }
+    ],
+    "grammar_points": [
+      {
+        "id": "pre-a1.introducing-yourself",
+        "title_en": "Introducing yourself",
+        "title_zh": "介绍自己",
+        "pattern": "I'm / My name's + 名字\nI'm from + 地方\nI'm a / an + 职业",
+        "explanation_zh": "介绍自己最常用 I'm（= I am）。说名字可以用 I'm Lin 或 My name's Lin；说来自哪里用 I'm from + 国家或城市；说职业时，职业名词前要加 a 或 an：以元音音素开头的词（engineer、office worker）用 an，其他用 a。",
+        "examples": [
+          {
+            "en": "Hi, I'm Lin. I'm from Chengdu.",
+            "zh": "你好，我是林。我来自成都。"
+          },
+          {
+            "en": "I'm an engineer.",
+            "zh": "我是一名工程师。"
+          },
+          {
+            "en": "My name's David. I'm a teacher.",
+            "zh": "我叫大卫，我是老师。"
+          }
+        ],
+        "common_errors": [
+          {
+            "wrong": "I'm teacher.",
+            "right": "I'm a teacher.",
+            "why_zh": "说一个人的职业时，前面要加 a / an。"
+          },
+          {
+            "wrong": "I am come from China.",
+            "right": "I'm from China. / I come from China.",
+            "why_zh": "am 和 come 不能同时用：用 I'm from，或者 I come from。"
+          },
+          {
+            "wrong": "My name is call Lin.",
+            "right": "My name is Lin.",
+            "why_zh": "英语不需要“叫”这个词，name 后面直接跟名字。"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "key": "whats-your-name",
+        "text": "What's your name?",
+        "pos": "phrase",
+        "ipa": "/wɒts jɔː ˈneɪm/",
+        "zh": "你叫什么名字？",
+        "example_en": "Hi! What's your name?",
+        "example_zh": "嗨！你叫什么名字？"
+      },
+      {
+        "key": "my-names",
+        "text": "My name's ...",
+        "pos": "phrase",
+        "ipa": "/maɪ ˈneɪmz/",
+        "zh": "我的名字是……",
+        "example_en": "My name's Lin.",
+        "example_zh": "我叫林。"
+      },
+      {
+        "key": "im",
+        "text": "I'm ...",
+        "pos": "phrase",
+        "ipa": "/aɪm/",
+        "zh": "我是……",
+        "example_en": "I'm David.",
+        "example_zh": "我是大卫。"
+      },
+      {
+        "key": "nice-to-meet-you",
+        "text": "Nice to meet you.",
+        "pos": "phrase",
+        "ipa": "/ˈnaɪs tə ˈmiːt juː/",
+        "zh": "很高兴认识你。",
+        "example_en": "Nice to meet you, too.",
+        "example_zh": "我也很高兴认识你。"
+      },
+      {
+        "key": "where-are-you-from",
+        "text": "Where are you from?",
+        "pos": "phrase",
+        "ipa": "/ˈweər ə juː ˈfrɒm/",
+        "zh": "你来自哪里？",
+        "example_en": "Where are you from, Sara?",
+        "example_zh": "萨拉，你是哪里人？"
+      },
+      {
+        "key": "im-from",
+        "text": "I'm from ...",
+        "pos": "phrase",
+        "ipa": "/aɪm frəm/",
+        "zh": "我来自……",
+        "example_en": "I'm from Beijing.",
+        "example_zh": "我来自北京。"
+      },
+      {
+        "key": "china",
+        "text": "China",
+        "pos": "noun",
+        "ipa": "/ˈtʃaɪnə/",
+        "zh": "中国",
+        "example_en": "I'm from China.",
+        "example_zh": "我来自中国。"
+      },
+      {
+        "key": "the-uk",
+        "text": "the UK",
+        "pos": "noun",
+        "ipa": "/ðə ˌjuː ˈkeɪ/",
+        "zh": "英国",
+        "example_en": "She's from the UK.",
+        "example_zh": "她来自英国。"
+      },
+      {
+        "key": "the-us",
+        "text": "the US",
+        "pos": "noun",
+        "ipa": "/ðə ˌjuː ˈes/",
+        "zh": "美国",
+        "example_en": "Tom is from the US.",
+        "example_zh": "汤姆来自美国。"
+      },
+      {
+        "key": "japan",
+        "text": "Japan",
+        "pos": "noun",
+        "ipa": "/dʒəˈpæn/",
+        "zh": "日本",
+        "example_en": "Ken is from Japan.",
+        "example_zh": "肯来自日本。"
+      },
+      {
+        "key": "what-do-you-do",
+        "text": "What do you do?",
+        "pos": "phrase",
+        "ipa": "/ˌwɒt də juː ˈduː/",
+        "zh": "你是做什么工作的？",
+        "example_en": "So, what do you do?",
+        "example_zh": "那么，你是做什么的？"
+      },
+      {
+        "key": "teacher",
+        "text": "teacher",
+        "pos": "noun",
+        "ipa": "/ˈtiːtʃə/",
+        "zh": "老师",
+        "example_en": "I'm a teacher.",
+        "example_zh": "我是老师。"
+      },
+      {
+        "key": "doctor",
+        "text": "doctor",
+        "pos": "noun",
+        "ipa": "/ˈdɒktə/",
+        "zh": "医生",
+        "example_en": "My sister is a doctor.",
+        "example_zh": "我姐姐是医生。"
+      },
+      {
+        "key": "engineer",
+        "text": "engineer",
+        "pos": "noun",
+        "ipa": "/ˌendʒɪˈnɪə/",
+        "zh": "工程师",
+        "example_en": "I'm an engineer.",
+        "example_zh": "我是工程师。"
+      },
+      {
+        "key": "student",
+        "text": "student",
+        "pos": "noun",
+        "ipa": "/ˈstjuːdnt/",
+        "zh": "学生",
+        "example_en": "Are you a student?",
+        "example_zh": "你是学生吗？"
+      },
+      {
+        "key": "office-worker",
+        "text": "office worker",
+        "pos": "noun",
+        "ipa": "/ˈɒfɪs ˌwɜːkə/",
+        "zh": "上班族；办公室职员",
+        "example_en": "I'm an office worker.",
+        "example_zh": "我是一名上班族。"
+      },
+      {
+        "key": "nurse",
+        "text": "nurse",
+        "pos": "noun",
+        "ipa": "/nɜːs/",
+        "zh": "护士",
+        "example_en": "She's a nurse.",
+        "example_zh": "她是护士。"
+      }
+    ],
+    "lessons": [
+      {
+        "id": "pre-a1-u04-my-name-is-l1",
+        "order": 1,
+        "kind": "core",
+        "title_en": "What's Your Name?",
+        "title_zh": "你叫什么名字？",
+        "estimated_minutes": 8,
+        "objectives": [
+          {
+            "en": "Say your name in two ways.",
+            "zh": "能用两种方式说出自己的名字。"
+          },
+          {
+            "en": "Ask someone's name and reply with Nice to meet you.",
+            "zh": "能问对方名字，并回应“很高兴认识你”。"
+          }
+        ],
+        "can_do_ids": [
+          "pre-a1.si.introduce",
+          "pre-a1.l.personal-info"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "spoken_interaction",
+            "title_zh": "这节课学什么",
+            "body_zh": "第一次见面，最先交换的就是名字。这节课学会问名字、说名字，以及那句几乎每次都会听到的 Nice to meet you。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "First day at work",
+            "instructions_zh": "先听两遍。注意 Sara 是怎么说自己名字的。",
+            "scene_zh": "Lin 第一天上班，遇到新同事 Sara。",
+            "lines": [
+              {
+                "speaker": "Sara",
+                "en": "Hi! I'm Sara. What's your name?",
+                "zh": "嗨！我是萨拉。你叫什么名字？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Hi, Sara. My name's Lin.",
+                "zh": "嗨，萨拉。我叫林。"
+              },
+              {
+                "speaker": "Sara",
+                "en": "Nice to meet you, Lin.",
+                "zh": "很高兴认识你，林。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Nice to meet you, too.",
+                "zh": "我也很高兴认识你。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟着读。What's 是 What is 的缩写，name's 是 name is 的缩写。",
+            "items": [
+              "whats-your-name",
+              "my-names",
+              "im",
+              "nice-to-meet-you"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "teach",
+            "role": "teach",
+            "skill": "grammar",
+            "title_zh": "两种说名字的方法",
+            "explanation_zh": "I'm Lin 和 My name's Lin 意思一样，口语里 I'm 更常用。对方说 Nice to meet you，你可以回答 Nice to meet you, too（too 表示“也”）。",
+            "pattern": "I'm + 名字\nMy name's + 名字",
+            "examples": [
+              {
+                "en": "I'm Sara.",
+                "zh": "我是萨拉。"
+              },
+              {
+                "en": "My name's Lin.",
+                "zh": "我叫林。"
+              },
+              {
+                "en": "Nice to meet you, too.",
+                "zh": "我也很高兴认识你。"
+              }
+            ],
+            "tips_zh": [
+              "不要说 My name is call Lin，英语没有“叫”这个词。",
+              "正式场合会用 Mr（先生）、Ms（女士）加姓：Ms Chen。"
+            ]
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "spoken_interaction",
+            "prompt_en": "\"What's your name?\"",
+            "prompt_zh": "对方问你名字，哪一句回答是对的？",
+            "options": [
+              "My name is call Lin.",
+              "I'm Lin.",
+              "I Lin."
+            ],
+            "answer": 1,
+            "explanation_zh": "I'm Lin 或 My name's Lin 都对。英语里不需要“叫”这个词。"
+          },
+          {
+            "id": "s06",
+            "type": "order",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "instructions_zh": "排成一个问句。",
+            "translation_zh": "你叫什么名字？",
+            "tokens": [
+              "What's",
+              "your",
+              "name"
+            ],
+            "answers": [
+              "What's your name?"
+            ],
+            "explanation_zh": "问句以 What's（What is）开头：What's your name?"
+          },
+          {
+            "id": "s07",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音。说话人叫什么名字？",
+            "audio_en": "Hello, my name's Daniel.",
+            "options": [
+              "Danny",
+              "Daniel",
+              "David"
+            ],
+            "answer": 1,
+            "explanation_zh": "他说的是 my name's Daniel。"
+          },
+          {
+            "id": "s08",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "vocabulary",
+            "instructions_zh": "对方说 Nice to meet you，你回答：",
+            "sentence_en": "Nice to meet you, ___.",
+            "translation_zh": "我也很高兴认识你。",
+            "answers": [
+              "too"
+            ],
+            "explanation_zh": "too 放在句尾，表示“也”。"
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "spoken_interaction",
+            "prompt_zh": "第一次见面，对方刚说完自己的名字。你最自然的下一句是：",
+            "options": [
+              "Nice to meet you.",
+              "Good night.",
+              "You're welcome."
+            ],
+            "answer": 0,
+            "explanation_zh": "认识新朋友时说 Nice to meet you。"
+          }
+        ]
+      },
+      {
+        "id": "pre-a1-u04-my-name-is-l2",
+        "order": 2,
+        "kind": "core",
+        "title_en": "Where Are You From?",
+        "title_zh": "你来自哪里？",
+        "estimated_minutes": 8,
+        "objectives": [
+          {
+            "en": "Say where you are from.",
+            "zh": "能说出自己来自哪里。"
+          },
+          {
+            "en": "Ask where someone is from.",
+            "zh": "能问对方来自哪里。"
+          }
+        ],
+        "can_do_ids": [
+          "pre-a1.si.introduce",
+          "pre-a1.l.personal-info"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "spoken_interaction",
+            "title_zh": "这节课学什么",
+            "body_zh": "名字之后，常常会问“你是哪里人”。这节课学会用 Where are you from? 提问，用 I'm from ... 回答，后面可以是国家，也可以是城市。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "At a language class",
+            "instructions_zh": "先听。找一找：Ken 来自哪里？Sara 呢？",
+            "scene_zh": "英语课上，几个新同学在互相认识。",
+            "lines": [
+              {
+                "speaker": "Sara",
+                "en": "Where are you from, Ken?",
+                "zh": "肯，你是哪里人？"
+              },
+              {
+                "speaker": "Ken",
+                "en": "I'm from Japan. I'm from Osaka. And you?",
+                "zh": "我来自日本，大阪人。你呢？"
+              },
+              {
+                "speaker": "Sara",
+                "en": "I'm from the UK.",
+                "zh": "我来自英国。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "And I'm from China, from Chengdu.",
+                "zh": "我来自中国，成都。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。注意 the UK 和 the US 前面有 the。",
+            "items": [
+              "where-are-you-from",
+              "im-from",
+              "china",
+              "the-uk",
+              "the-us",
+              "japan"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "notice",
+            "role": "notice",
+            "skill": "grammar",
+            "question_zh": "看下面几句话，from 后面跟的是什么？",
+            "examples": [
+              {
+                "en": "I'm from China.",
+                "zh": "我来自中国。",
+                "highlight": [
+                  "from"
+                ]
+              },
+              {
+                "en": "I'm from Chengdu.",
+                "zh": "我来自成都。",
+                "highlight": [
+                  "from"
+                ]
+              },
+              {
+                "en": "She's from the UK.",
+                "zh": "她来自英国。",
+                "highlight": [
+                  "from the"
+                ]
+              }
+            ],
+            "takeaway_zh": "from 后面直接跟国家或城市。只有少数国家名前要加 the，比如 the UK、the US。"
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_zh": "选出正确的句子：",
+            "options": [
+              "I am come from China.",
+              "I'm from China.",
+              "I from China."
+            ],
+            "answer": 1,
+            "explanation_zh": "说“我来自……”用 I'm from ...，不要把 am 和 come 放在一起。"
+          },
+          {
+            "id": "s06",
+            "type": "order",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "instructions_zh": "排成一个问句。",
+            "translation_zh": "你来自哪里？",
+            "tokens": [
+              "are",
+              "Where",
+              "from",
+              "you"
+            ],
+            "answers": [
+              "Where are you from?"
+            ],
+            "explanation_zh": "Where are you from? 注意 from 放在句子最后。"
+          },
+          {
+            "id": "s07",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "vocabulary",
+            "instructions_zh": "把城市和它所在的国家配对。",
+            "pairs": [
+              {
+                "left": "London",
+                "right": "the UK"
+              },
+              {
+                "left": "Tokyo",
+                "right": "Japan"
+              },
+              {
+                "left": "New York",
+                "right": "the US"
+              },
+              {
+                "left": "Shanghai",
+                "right": "China"
+              }
+            ]
+          },
+          {
+            "id": "s08",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "listening",
+            "prompt_zh": "听录音。她来自哪里？",
+            "audio_en": "Hi, I'm Emma. I'm from the US.",
+            "options": [
+              "英国",
+              "美国",
+              "日本"
+            ],
+            "answer": 1,
+            "explanation_zh": "the US 是美国，the UK 是英国。"
+          },
+          {
+            "id": "s09",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "I'm ___ Beijing.",
+            "translation_zh": "我来自北京。",
+            "answers": [
+              "from"
+            ],
+            "explanation_zh": "I'm from + 地方。"
+          }
+        ]
+      },
+      {
+        "id": "pre-a1-u04-my-name-is-l3",
+        "order": 3,
+        "kind": "core",
+        "title_en": "What Do You Do?",
+        "title_zh": "你做什么工作？",
+        "estimated_minutes": 9,
+        "objectives": [
+          {
+            "en": "Say your job with a or an.",
+            "zh": "能用 a / an 说出自己的职业。"
+          },
+          {
+            "en": "Ask someone what they do.",
+            "zh": "能问对方做什么工作。"
+          }
+        ],
+        "can_do_ids": [
+          "pre-a1.si.introduce",
+          "pre-a1.sp.personal-info",
+          "pre-a1.l.personal-info"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "spoken_interaction",
+            "title_zh": "这节课学什么",
+            "body_zh": "聊到工作时，英语常问 What do you do?（你是做什么的？）。回答时职业前面要加 a 或 an，这是中文没有、英语里却很重要的一个小词。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "At a party",
+            "instructions_zh": "先听。他们分别是做什么的？",
+            "scene_zh": "朋友聚会上，Lin 认识了 Anna。",
+            "lines": [
+              {
+                "speaker": "Anna",
+                "en": "So, Lin, what do you do?",
+                "zh": "那么，林，你是做什么的？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "I'm an engineer. What about you?",
+                "zh": "我是工程师。你呢？"
+              },
+              {
+                "speaker": "Anna",
+                "en": "I'm a nurse.",
+                "zh": "我是护士。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Oh, nice!",
+                "zh": "哦，挺好的！"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读，注意每个职业前面的 a 或 an。",
+            "items": [
+              "what-do-you-do",
+              "teacher",
+              "doctor",
+              "engineer",
+              "student",
+              "office-worker",
+              "nurse"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "teach",
+            "role": "teach",
+            "skill": "grammar",
+            "title_zh": "a 还是 an？",
+            "explanation_zh": "说一个人的职业时，职业前面加 a 或 an。选哪个看后面那个词的第一个“音”：以元音音开头（a、e、i、o、u 的音）用 an，其他用 a。",
+            "pattern": "I'm a teacher.\nI'm an engineer.",
+            "examples": [
+              {
+                "en": "I'm a doctor.",
+                "zh": "我是医生。"
+              },
+              {
+                "en": "I'm an office worker.",
+                "zh": "我是上班族。"
+              },
+              {
+                "en": "She's a student.",
+                "zh": "她是学生。"
+              }
+            ],
+            "tips_zh": [
+              "看的是读音，不是字母：an hour，a university。",
+              "What do you do? 问的是工作，不是“你在做什么”。"
+            ]
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_zh": "选出正确的句子：",
+            "options": [
+              "I'm engineer.",
+              "I'm a engineer.",
+              "I'm an engineer."
+            ],
+            "answer": 2,
+            "explanation_zh": "engineer 以元音音 /e/ 开头，所以用 an。"
+          },
+          {
+            "id": "s06",
+            "type": "match",
+            "role": "guided_practice",
+            "skill": "vocabulary",
+            "instructions_zh": "给每个职业配上 a 或 an 的正确说法。",
+            "pairs": [
+              {
+                "left": "老师",
+                "right": "a teacher"
+              },
+              {
+                "left": "工程师",
+                "right": "an engineer"
+              },
+              {
+                "left": "上班族",
+                "right": "an office worker"
+              },
+              {
+                "left": "医生",
+                "right": "a doctor"
+              }
+            ]
+          },
+          {
+            "id": "s07",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音。他是做什么的？",
+            "audio_en": "I'm a doctor. I work in a hospital.",
+            "options": [
+              "老师",
+              "医生",
+              "学生"
+            ],
+            "answer": 1,
+            "explanation_zh": "doctor 是医生，hospital 是医院。"
+          },
+          {
+            "id": "s08",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_production",
+            "task_zh": "新同事问你是做什么的。用一两句话回答，然后把问题问回去。",
+            "prompt_en": "What do you do?",
+            "model_answers": [
+              "I'm an office worker. What about you?",
+              "I'm a student. And you?"
+            ],
+            "checklist_zh": [
+              "我说了自己的职业",
+              "职业前面用了 a 或 an",
+              "我把问题问回去了（And you? / What about you?）"
+            ]
+          },
+          {
+            "id": "s09",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "My brother is ___ teacher.",
+            "translation_zh": "我哥哥是老师。",
+            "answers": [
+              "a"
+            ],
+            "explanation_zh": "teacher 以辅音 /t/ 开头，用 a。"
+          },
+          {
+            "id": "s10",
+            "type": "order",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "排成问句。",
+            "translation_zh": "你是做什么工作的？",
+            "tokens": [
+              "do",
+              "What",
+              "do",
+              "you"
+            ],
+            "answers": [
+              "What do you do?"
+            ],
+            "explanation_zh": "What do you do? 第一个 do 帮助提问，第二个 do 是“做”。"
+          }
+        ]
+      },
+      {
+        "id": "pre-a1-u04-my-name-is-l4",
+        "order": 4,
+        "kind": "review",
+        "title_en": "Unit Review: Nice to Meet You",
+        "title_zh": "单元复习：很高兴认识你",
+        "estimated_minutes": 10,
+        "objectives": [
+          {
+            "en": "Understand a short self-introduction.",
+            "zh": "能听懂一段简短的自我介绍。"
+          },
+          {
+            "en": "Introduce yourself: name, where you are from and your job.",
+            "zh": "能介绍自己的名字、来自哪里和职业。"
+          }
+        ],
+        "can_do_ids": [
+          "pre-a1.si.introduce",
+          "pre-a1.sp.personal-info",
+          "pre-a1.l.personal-info"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "listening",
+            "title_zh": "单元复习",
+            "body_zh": "先听一段完整的自我介绍，再做几道题，最后轮到你：用英语介绍自己。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "A new neighbour",
+            "instructions_zh": "这是本单元的听力任务：先完整听两遍，不看文字，试着记住 Maria 的名字、国家和职业。",
+            "scene_zh": "Lin 在楼道里遇到刚搬来的邻居。",
+            "lines": [
+              {
+                "speaker": "Maria",
+                "en": "Hi! I'm Maria. I'm your new neighbour.",
+                "zh": "嗨！我是玛丽亚，你的新邻居。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Oh, hi, Maria. I'm Lin. Nice to meet you.",
+                "zh": "哦，嗨，玛丽亚。我是林。很高兴认识你。"
+              },
+              {
+                "speaker": "Maria",
+                "en": "Nice to meet you, too.",
+                "zh": "我也很高兴认识你。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Where are you from, Maria?",
+                "zh": "玛丽亚，你是哪里人？"
+              },
+              {
+                "speaker": "Maria",
+                "en": "I'm from Spain. I'm a teacher. And you?",
+                "zh": "我来自西班牙，我是老师。你呢？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "I'm from Chengdu. I'm an engineer.",
+                "zh": "我是成都人，我是工程师。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "Maria 来自哪里？",
+            "options": [
+              "日本",
+              "西班牙",
+              "美国"
+            ],
+            "answer": 1,
+            "explanation_zh": "她说 I'm from Spain：西班牙。"
+          },
+          {
+            "id": "s04",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "Maria 是做什么的？",
+            "options": [
+              "老师",
+              "护士",
+              "工程师"
+            ],
+            "answer": 0,
+            "explanation_zh": "I'm a teacher：她是老师。工程师是 Lin。"
+          },
+          {
+            "id": "s05",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "spoken_interaction",
+            "instructions_zh": "把问题和回答配对。",
+            "pairs": [
+              {
+                "left": "What's your name?",
+                "right": "I'm Maria."
+              },
+              {
+                "left": "Where are you from?",
+                "right": "I'm from Spain."
+              },
+              {
+                "left": "What do you do?",
+                "right": "I'm a teacher."
+              },
+              {
+                "left": "Nice to meet you.",
+                "right": "Nice to meet you, too."
+              }
+            ]
+          },
+          {
+            "id": "s06",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_production",
+            "task_zh": "用英语介绍自己：名字、来自哪里、做什么工作。说三句左右就好。",
+            "model_answers": [
+              "Hi, I'm Lin. I'm from Chengdu, China. I'm an engineer.",
+              "Hello, my name's Wang Fang. I'm from Shanghai. I'm a student."
+            ],
+            "checklist_zh": [
+              "我说了名字",
+              "我说了来自哪里（I'm from ...）",
+              "我说了职业，并用了 a / an"
+            ]
+          },
+          {
+            "id": "s07",
+            "type": "write",
+            "role": "communicative_task",
+            "skill": "written_production",
+            "task_zh": "在一个英语学习群里写一段自我介绍（2–3 句）。",
+            "model_answers": [
+              "Hi everyone! I'm Lin. I'm from Chengdu. I'm an engineer.",
+              "Hello! My name's Mei. I'm from Beijing, China. I'm a nurse."
+            ],
+            "checklist_zh": [
+              "有打招呼的话",
+              "写了名字",
+              "写了来自哪里",
+              "写了职业，职业前有 a / an",
+              "句首大写，句末有标点"
+            ]
+          },
+          {
+            "id": "s08",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_zh": "哪一句是正确的？",
+            "options": [
+              "I'm a office worker.",
+              "I'm an office worker.",
+              "I'm office worker."
+            ],
+            "answer": 1,
+            "explanation_zh": "office 以元音音 /ɒ/ 开头，用 an。"
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "listening",
+            "prompt_zh": "听录音，选出最合适的回答。",
+            "audio_en": "Where are you from?",
+            "options": [
+              "I'm a nurse.",
+              "I'm from China.",
+              "I'm Lin."
+            ],
+            "answer": 1,
+            "explanation_zh": "问的是来自哪里，所以回答 I'm from China。"
+          },
+          {
+            "id": "s10",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "vocabulary",
+            "instructions_zh": "补全问句。",
+            "sentence_en": "What's your ___?",
+            "translation_zh": "你叫什么名字？",
+            "answers": [
+              "name"
+            ],
+            "explanation_zh": "What's your name? 问对方的名字。"
+          }
+        ]
+      }
+    ]
+  }
+}

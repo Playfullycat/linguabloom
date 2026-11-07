@@ -1,0 +1,1030 @@
+{
+  "content_schema_version": 1,
+  "source_type": "first_party",
+  "review_status": "pending_owner_review",
+  "unit": {
+    "id": "a1-u03-questions",
+    "level": "a1",
+    "order": 3,
+    "status": "published",
+    "title_en": "Asking Questions",
+    "title_zh": "提问",
+    "summary_zh": "用 be 和 do 提问、用简短的 Yes / No 回答，以及 what / where / who 开头的问题。学完后，你能和新认识的人进行一段简单的一问一答。",
+    "can_do": [
+      {
+        "id": "a1.si.ask-answer",
+        "skill": "spoken_interaction",
+        "en": "Can ask and answer simple questions about familiar topics.",
+        "zh": "能就熟悉的话题进行简单的问答。"
+      },
+      {
+        "id": "a1.gr.questions",
+        "skill": "grammar",
+        "en": "Can form yes/no questions with be and do, short answers, and simple wh-questions.",
+        "zh": "能用 be 和 do 构成一般疑问句、简略回答和简单的特殊疑问句。"
+      },
+      {
+        "id": "a1.l.questions",
+        "skill": "listening",
+        "en": "Can recognise simple questions and answer them when spoken slowly.",
+        "zh": "对方慢慢说时，能听懂简单的问题并作答。"
+      }
+    ],
+    "grammar_points": [
+      {
+        "id": "a1.questions-be-do",
+        "title_en": "Questions with be and do",
+        "title_zh": "be 和 do 的问句",
+        "pattern": "Are you a student? — Yes, I am. / No, I'm not.\nDo you like tea? — Yes, I do. / No, I don't.\nWhere do you live? / What's your job?",
+        "explanation_zh": "句子里有 be（am / is / are）时，把 be 移到主语前面就成了问句。句子里是普通动词（like、live、work）时，在句首加 Do，动词不变。简略回答只重复 be 或 do，不重复整句。what / where / who 开头的问题，把疑问词放在最前面，后面是问句的语序。",
+        "examples": [
+          {
+            "en": "Is she your sister? — Yes, she is.",
+            "zh": "她是你姐姐吗？——是的。"
+          },
+          {
+            "en": "Do you work here? — No, I don't.",
+            "zh": "你在这儿工作吗？——不是。"
+          },
+          {
+            "en": "Where do you work?",
+            "zh": "你在哪儿工作？"
+          }
+        ],
+        "common_errors": [
+          {
+            "wrong": "You are a student?",
+            "right": "Are you a student?",
+            "why_zh": "be 要放到主语前面（口语里升调说陈述句有时也行，但标准问句是倒装）。"
+          },
+          {
+            "wrong": "Do you are busy?",
+            "right": "Are you busy?",
+            "why_zh": "有 be 的句子直接倒装，不加 do。"
+          },
+          {
+            "wrong": "Yes, I like.",
+            "right": "Yes, I do.",
+            "why_zh": "简略回答用 do，不重复动词。"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "key": "are-you",
+        "text": "Are you ...?",
+        "pos": "phrase",
+        "ipa": "/ɑː juː/",
+        "zh": "你是……吗？",
+        "example_en": "Are you ready?",
+        "example_zh": "你准备好了吗？"
+      },
+      {
+        "key": "is-it",
+        "text": "Is it ...?",
+        "pos": "phrase",
+        "ipa": "/ɪz ɪt/",
+        "zh": "它是……吗？",
+        "example_en": "Is it far?",
+        "example_zh": "远吗？"
+      },
+      {
+        "key": "do-you",
+        "text": "Do you ...?",
+        "pos": "phrase",
+        "ipa": "/də juː/",
+        "zh": "你……吗？（普通动词）",
+        "example_en": "Do you like music?",
+        "example_zh": "你喜欢音乐吗？"
+      },
+      {
+        "key": "yes-i-am",
+        "text": "Yes, I am.",
+        "pos": "phrase",
+        "ipa": "/jes aɪ ˈæm/",
+        "zh": "是的。（回答 Are you ...?）",
+        "example_en": "\"Are you Lin?\" \"Yes, I am.\"",
+        "example_zh": "“你是林吗？”“是的。”"
+      },
+      {
+        "key": "no-im-not",
+        "text": "No, I'm not.",
+        "pos": "phrase",
+        "ipa": "/nəʊ aɪm ˈnɒt/",
+        "zh": "不是。（回答 Are you ...?）",
+        "example_en": "\"Are you busy?\" \"No, I'm not.\"",
+        "example_zh": "“你忙吗？”“不忙。”"
+      },
+      {
+        "key": "yes-i-do",
+        "text": "Yes, I do.",
+        "pos": "phrase",
+        "ipa": "/jes aɪ ˈduː/",
+        "zh": "是的。（回答 Do you ...?）",
+        "example_en": "\"Do you like it?\" \"Yes, I do.\"",
+        "example_zh": "“你喜欢吗？”“喜欢。”"
+      },
+      {
+        "key": "no-i-dont",
+        "text": "No, I don't.",
+        "pos": "phrase",
+        "ipa": "/nəʊ aɪ ˈdəʊnt/",
+        "zh": "不。（回答 Do you ...?）",
+        "example_en": "\"Do you drive?\" \"No, I don't.\"",
+        "example_zh": "“你开车吗？”“不开。”"
+      },
+      {
+        "key": "what",
+        "text": "what",
+        "pos": "question word",
+        "ipa": "/wɒt/",
+        "zh": "什么",
+        "example_en": "What's your favourite food?",
+        "example_zh": "你最喜欢的食物是什么？"
+      },
+      {
+        "key": "where",
+        "text": "where",
+        "pos": "question word",
+        "ipa": "/weə/",
+        "zh": "哪里",
+        "example_en": "Where do you live?",
+        "example_zh": "你住在哪里？"
+      },
+      {
+        "key": "who",
+        "text": "who",
+        "pos": "question word",
+        "ipa": "/huː/",
+        "zh": "谁",
+        "example_en": "Who is that?",
+        "example_zh": "那是谁？"
+      },
+      {
+        "key": "favourite",
+        "text": "favourite",
+        "pos": "adjective",
+        "ipa": "/ˈfeɪvərɪt/",
+        "zh": "最喜欢的",
+        "example_en": "Blue is my favourite colour.",
+        "example_zh": "蓝色是我最喜欢的颜色。"
+      },
+      {
+        "key": "weekend",
+        "text": "weekend",
+        "pos": "noun",
+        "ipa": "/ˌwiːkˈend/",
+        "zh": "周末",
+        "example_en": "What do you do at the weekend?",
+        "example_zh": "你周末做什么？"
+      }
+    ],
+    "lessons": [
+      {
+        "id": "a1-u03-questions-l1",
+        "order": 1,
+        "kind": "core",
+        "title_en": "Are You...?",
+        "title_zh": "你是……吗？",
+        "estimated_minutes": 9,
+        "objectives": [
+          {
+            "en": "Make yes/no questions with be.",
+            "zh": "能用 be 构成一般疑问句。"
+          },
+          {
+            "en": "Give short answers: Yes, I am. / No, she isn't.",
+            "zh": "能用简略形式回答：Yes, I am. / No, she isn't."
+          }
+        ],
+        "can_do_ids": [
+          "a1.gr.questions",
+          "a1.si.ask-answer",
+          "a1.l.questions"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "grammar",
+            "title_zh": "这节课学什么",
+            "body_zh": "把陈述句变成问句，最简单的方法是：如果句子里有 am / is / are，就把它挪到最前面。You are busy → Are you busy?。回答时不用重复整句，用 Yes, I am 这样的简略回答就好。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Is this seat free?",
+            "instructions_zh": "先听。注意问句的开头和简短的回答。",
+            "scene_zh": "在培训课的教室里，Lin 想坐到一位陌生人旁边。",
+            "lines": [
+              {
+                "speaker": "Lin",
+                "en": "Excuse me, is this seat free?",
+                "zh": "打扰一下，这个座位有人吗？"
+              },
+              {
+                "speaker": "Kate",
+                "en": "Yes, it is. Sit down.",
+                "zh": "没人，坐吧。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Thanks. Are you new here?",
+                "zh": "谢谢。你是新来的吗？"
+              },
+              {
+                "speaker": "Kate",
+                "en": "No, I'm not. But this class is new for me. Are you a teacher?",
+                "zh": "不是。不过这门课对我来说是新的。你是老师吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "No, I'm not. I'm a student too.",
+                "zh": "不是，我也是学生。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读问句和回答。",
+            "items": [
+              "are-you",
+              "is-it",
+              "yes-i-am",
+              "no-im-not"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "notice",
+            "role": "notice",
+            "skill": "grammar",
+            "question_zh": "陈述句变问句时，be 动词去了哪里？",
+            "examples": [
+              {
+                "en": "You are new. → Are you new?",
+                "zh": "你是新来的。→ 你是新来的吗？",
+                "highlight": [
+                  "Are"
+                ]
+              },
+              {
+                "en": "She is a teacher. → Is she a teacher?",
+                "zh": "她是老师。→ 她是老师吗？",
+                "highlight": [
+                  "Is"
+                ]
+              },
+              {
+                "en": "This seat is free. → Is this seat free?",
+                "zh": "这个座位没人。→ 这个座位没人吗？",
+                "highlight": [
+                  "Is"
+                ]
+              }
+            ],
+            "takeaway_zh": "把 am / is / are 移到主语前面就是问句，句末用问号，语调通常上扬。"
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_zh": "选出正确的问句：",
+            "options": [
+              "Is she your sister?",
+              "She is your sister is?",
+              "Do she is your sister?"
+            ],
+            "answer": 0,
+            "explanation_zh": "把 is 放到 she 前面：Is she your sister?"
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_en": "\"Are you a teacher?\"",
+            "prompt_zh": "你不是老师，简短地回答：",
+            "options": [
+              "No, I'm not.",
+              "No, I don't.",
+              "No, I'm not a."
+            ],
+            "answer": 0,
+            "explanation_zh": "Are you ...? 用 be 回答：Yes, I am. / No, I'm not."
+          },
+          {
+            "id": "s07",
+            "type": "order",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "排成问句。",
+            "translation_zh": "他们是你的同事吗？",
+            "tokens": [
+              "your",
+              "they",
+              "Are",
+              "colleagues"
+            ],
+            "answers": [
+              "Are they your colleagues?"
+            ],
+            "explanation_zh": "Are + they + your colleagues?"
+          },
+          {
+            "id": "s08",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，选出最合适的回答。",
+            "audio_en": "Is it far from here?",
+            "options": [
+              "No, it isn't.",
+              "No, I don't.",
+              "Yes, I am."
+            ],
+            "answer": 0,
+            "explanation_zh": "Is it ...? 用 it is / it isn't 回答。"
+          },
+          {
+            "id": "s09",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "补全问句。",
+            "sentence_en": "___ you ready?",
+            "translation_zh": "你准备好了吗？",
+            "answers": [
+              "Are"
+            ],
+            "explanation_zh": "you 用 are，放在句首构成问句。"
+          },
+          {
+            "id": "s10",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "补全简略回答。",
+            "sentence_en": "\"Is Tom at work?\" \"Yes, he ___.\"",
+            "translation_zh": "“汤姆在上班吗？”“是的。”",
+            "answers": [
+              "is"
+            ],
+            "explanation_zh": "Is he ...? → Yes, he is."
+          }
+        ]
+      },
+      {
+        "id": "a1-u03-questions-l2",
+        "order": 2,
+        "kind": "core",
+        "title_en": "Do You...?",
+        "title_zh": "你……吗？",
+        "estimated_minutes": 9,
+        "objectives": [
+          {
+            "en": "Make yes/no questions with do.",
+            "zh": "能用 do 构成一般疑问句。"
+          },
+          {
+            "en": "Answer with Yes, I do. / No, I don't.",
+            "zh": "能用 Yes, I do. / No, I don't. 回答。"
+          }
+        ],
+        "can_do_ids": [
+          "a1.gr.questions",
+          "a1.si.ask-answer",
+          "a1.l.questions"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "grammar",
+            "title_zh": "这节课学什么",
+            "body_zh": "句子里没有 be、而是普通动词（like、live、work）时，不能把动词挪到前面，要在句首加 Do：You like tea → Do you like tea?。这是中文母语者最容易漏掉的一步。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Getting to know you",
+            "instructions_zh": "先听。Kate 喜欢什么？会不会开车？",
+            "scene_zh": "课间休息，Lin 和 Kate 聊天。",
+            "lines": [
+              {
+                "speaker": "Lin",
+                "en": "Do you like coffee?",
+                "zh": "你喜欢咖啡吗？"
+              },
+              {
+                "speaker": "Kate",
+                "en": "Yes, I do. I love it. Do you?",
+                "zh": "喜欢，我很爱喝。你呢？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "No, I don't. I like tea. Do you drive to class?",
+                "zh": "我不喜欢，我喜欢茶。你开车来上课吗？"
+              },
+              {
+                "speaker": "Kate",
+                "en": "No, I don't. I take the bus.",
+                "zh": "不，我坐公交。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "do-you",
+              "yes-i-do",
+              "no-i-dont"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "teach",
+            "role": "teach",
+            "skill": "grammar",
+            "title_zh": "什么时候用 Do？",
+            "explanation_zh": "先看句子里有没有 am / is / are：有，就把它提前（Are you busy?）；没有，句子里是普通动词，就在句首加 Do，动词保持原样（Do you like tea?）。回答也对应：Are you ...? 用 I am / I'm not；Do you ...? 用 I do / I don't。",
+            "pattern": "Do + you / we / they + 动词 ...?",
+            "examples": [
+              {
+                "en": "Do you live near here?",
+                "zh": "你住在附近吗？"
+              },
+              {
+                "en": "Do they work on Saturdays? — No, they don't.",
+                "zh": "他们周六上班吗？——不上。"
+              }
+            ],
+            "tips_zh": [
+              "不要说 Do you are ...?，be 和 do 不一起用。",
+              "Yes, I like 不对，要说 Yes, I do。"
+            ]
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_zh": "选出正确的问句：",
+            "options": [
+              "Like you music?",
+              "Do you like music?",
+              "Are you like music?"
+            ],
+            "answer": 1,
+            "explanation_zh": "like 是普通动词，句首加 Do：Do you like music?"
+          },
+          {
+            "id": "s06",
+            "type": "match",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "instructions_zh": "把问句和合适的简略回答配对。",
+            "pairs": [
+              {
+                "left": "Do you like tea?",
+                "right": "Yes, I do."
+              },
+              {
+                "left": "Are you tired?",
+                "right": "Yes, I am."
+              },
+              {
+                "left": "Do they live here?",
+                "right": "No, they don't."
+              },
+              {
+                "left": "Is it expensive?",
+                "right": "No, it isn't."
+              }
+            ]
+          },
+          {
+            "id": "s07",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "prompt_zh": "哪一句是对的？",
+            "options": [
+              "Do you are busy?",
+              "Are you busy?",
+              "Do you busy?"
+            ],
+            "answer": 1,
+            "explanation_zh": "busy 是形容词，句子里用 be：Are you busy?，不加 do。"
+          },
+          {
+            "id": "s08",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，选出最合适的回答。",
+            "audio_en": "Do you work at the weekend?",
+            "options": [
+              "No, I don't.",
+              "No, I'm not.",
+              "No, it isn't."
+            ],
+            "answer": 0,
+            "explanation_zh": "Do you ...? 用 I do / I don't 回答。"
+          },
+          {
+            "id": "s09",
+            "type": "order",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "排成问句。",
+            "translation_zh": "你住在上海吗？",
+            "tokens": [
+              "live",
+              "Do",
+              "in",
+              "you",
+              "Shanghai"
+            ],
+            "answers": [
+              "Do you live in Shanghai?"
+            ],
+            "explanation_zh": "Do + you + live + in Shanghai?"
+          },
+          {
+            "id": "s10",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "补全简略回答（你喜欢）。",
+            "sentence_en": "\"Do you like dogs?\" \"Yes, I ___.\"",
+            "translation_zh": "“你喜欢狗吗？”“喜欢。”",
+            "answers": [
+              "do"
+            ],
+            "explanation_zh": "Do you ...? → Yes, I do."
+          }
+        ]
+      },
+      {
+        "id": "a1-u03-questions-l3",
+        "order": 3,
+        "kind": "core",
+        "title_en": "What, Where, Who",
+        "title_zh": "什么、哪里、谁",
+        "estimated_minutes": 10,
+        "objectives": [
+          {
+            "en": "Ask questions with what, where and who.",
+            "zh": "能用 what、where、who 提问。"
+          },
+          {
+            "en": "Keep a short conversation going with questions.",
+            "zh": "能用提问让简短的对话继续下去。"
+          }
+        ],
+        "can_do_ids": [
+          "a1.gr.questions",
+          "a1.si.ask-answer",
+          "a1.l.questions"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "grammar",
+            "title_zh": "这节课学什么",
+            "body_zh": "想知道具体信息时，用疑问词开头：what（什么）、where（哪里）、who（谁）。后面接的就是上两节课练过的问句语序：Where do you live? / Who is that?"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "After class",
+            "instructions_zh": "先听。找出对话里的三个疑问词。",
+            "scene_zh": "下课后，Lin 和 Kate 一起走出教室。",
+            "lines": [
+              {
+                "speaker": "Kate",
+                "en": "Where do you live, Lin?",
+                "zh": "林，你住在哪里？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "In Jing'an. What about you?",
+                "zh": "静安。你呢？"
+              },
+              {
+                "speaker": "Kate",
+                "en": "Near the river. Oh, who's that man?",
+                "zh": "河边。哦，那个男人是谁？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "That's Mr Green, our new teacher.",
+                "zh": "那是格林先生，我们的新老师。"
+              },
+              {
+                "speaker": "Kate",
+                "en": "What do you do at the weekend?",
+                "zh": "你周末做什么？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "I usually play badminton. Do you play?",
+                "zh": "我一般打羽毛球。你打吗？"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "what",
+              "where",
+              "who",
+              "favourite",
+              "weekend"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "notice",
+            "role": "notice",
+            "skill": "grammar",
+            "question_zh": "疑问词后面的语序和一般疑问句一样吗？",
+            "examples": [
+              {
+                "en": "Do you live near here? → Where do you live?",
+                "zh": "你住附近吗？→ 你住在哪里？",
+                "highlight": [
+                  "Where"
+                ]
+              },
+              {
+                "en": "Is that Mr Green? → Who is that?",
+                "zh": "那是格林先生吗？→ 那是谁？",
+                "highlight": [
+                  "Who"
+                ]
+              },
+              {
+                "en": "Do you do sports? → What do you do at the weekend?",
+                "zh": "你做运动吗？→ 你周末做什么？",
+                "highlight": [
+                  "What"
+                ]
+              }
+            ],
+            "takeaway_zh": "疑问词放最前面，后面保持问句语序：疑问词 + do / be + 主语 + ……？"
+          },
+          {
+            "id": "s05",
+            "type": "match",
+            "role": "guided_practice",
+            "skill": "vocabulary",
+            "instructions_zh": "把问题和最合适的回答配对。",
+            "pairs": [
+              {
+                "left": "Where do you work?",
+                "right": "In a bank."
+              },
+              {
+                "left": "Who is she?",
+                "right": "My sister."
+              },
+              {
+                "left": "What's your favourite food?",
+                "right": "Dumplings."
+              }
+            ]
+          },
+          {
+            "id": "s06",
+            "type": "order",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "instructions_zh": "排成问句。",
+            "translation_zh": "你在哪里工作？",
+            "tokens": [
+              "you",
+              "Where",
+              "work",
+              "do"
+            ],
+            "answers": [
+              "Where do you work?"
+            ],
+            "explanation_zh": "Where + do + you + work?"
+          },
+          {
+            "id": "s07",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "prompt_zh": "选出正确的问句：",
+            "options": [
+              "Where you live?",
+              "Where do you live?",
+              "Where you do live?"
+            ],
+            "answer": 1,
+            "explanation_zh": "疑问词后面要有 do：Where do you live?"
+          },
+          {
+            "id": "s08",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，选出最合适的回答。",
+            "audio_en": "Who is your English teacher?",
+            "options": [
+              "In Room 3.",
+              "Mr Green.",
+              "On Monday."
+            ],
+            "answer": 1,
+            "explanation_zh": "who 问人，回答一个人：Mr Green。"
+          },
+          {
+            "id": "s09",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_interaction",
+            "task_zh": "你在英语角认识了一位新朋友。用至少三个问题了解对方：至少一个 Do you ...?，一个 Are you ...?，一个 what / where / who 问题。",
+            "prompt_en": "Hi, I'm Kate. Nice to meet you!",
+            "model_answers": [
+              "Nice to meet you, Kate. Where do you live? Are you a student? Do you like English music?",
+              "Hi Kate! What do you do? Do you live near here? Are you from Shanghai?"
+            ],
+            "checklist_zh": [
+              "我问了一个 Do you ...? 问题",
+              "我问了一个 Are you ...? 问题",
+              "我问了一个 what / where / who 问题",
+              "问句语序正确（疑问词 / do / be 在主语前）"
+            ]
+          },
+          {
+            "id": "s10",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "填一个疑问词。",
+            "sentence_en": "___ do you live? — In Beijing.",
+            "translation_zh": "你住在哪里？——北京。",
+            "answers": [
+              "Where"
+            ],
+            "explanation_zh": "回答是地点，所以问 where。"
+          },
+          {
+            "id": "s11",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_zh": "回答是 \"My brother.\"，问题应该是：",
+            "options": [
+              "What is that?",
+              "Who is that?",
+              "Where is that?"
+            ],
+            "answer": 1,
+            "explanation_zh": "回答的是人，用 who 提问。"
+          }
+        ]
+      },
+      {
+        "id": "a1-u03-questions-l4",
+        "order": 4,
+        "kind": "review",
+        "title_en": "Unit Review: Twenty Questions",
+        "title_zh": "单元复习：一问一答",
+        "estimated_minutes": 10,
+        "objectives": [
+          {
+            "en": "Follow a short question-and-answer conversation.",
+            "zh": "能听懂一段简短的问答对话。"
+          },
+          {
+            "en": "Ask and answer questions about yourself and others.",
+            "zh": "能就自己和别人进行问答。"
+          }
+        ],
+        "can_do_ids": [
+          "a1.si.ask-answer",
+          "a1.gr.questions",
+          "a1.l.questions"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "listening",
+            "title_zh": "单元复习",
+            "body_zh": "听一段面试式的问答，答几道题，然后你来提问、写问题。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "A flatmate interview",
+            "instructions_zh": "这是本单元的听力任务：先完整听两遍，不看文字。记住 Ben 的工作、作息和爱好。",
+            "scene_zh": "Lin 想找室友，正在问来看房的 Ben 一些问题。",
+            "lines": [
+              {
+                "speaker": "Lin",
+                "en": "So, Ben, what do you do?",
+                "zh": "那么，本，你是做什么的？"
+              },
+              {
+                "speaker": "Ben",
+                "en": "I'm a nurse. I work at the city hospital.",
+                "zh": "我是护士，在市医院工作。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Do you work at night?",
+                "zh": "你上夜班吗？"
+              },
+              {
+                "speaker": "Ben",
+                "en": "Yes, I do, on Mondays and Tuesdays.",
+                "zh": "上，周一和周二。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Are you a quiet person?",
+                "zh": "你是个安静的人吗？"
+              },
+              {
+                "speaker": "Ben",
+                "en": "Yes, I am. I like books and films. Do you have a cat?",
+                "zh": "是的。我喜欢看书和电影。你养猫吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "No, I don't. Why?",
+                "zh": "不养。怎么了？"
+              },
+              {
+                "speaker": "Ben",
+                "en": "Good! I'm allergic to cats.",
+                "zh": "太好了！我对猫过敏。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "Ben 是做什么工作的？",
+            "options": [
+              "医生",
+              "护士",
+              "老师"
+            ],
+            "answer": 1,
+            "explanation_zh": "I'm a nurse：护士。"
+          },
+          {
+            "id": "s04",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "Ben 哪几天上夜班？",
+            "options": [
+              "周一和周二",
+              "周末",
+              "每天"
+            ],
+            "answer": 0,
+            "explanation_zh": "on Mondays and Tuesdays：周一和周二。"
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "Ben 为什么高兴 Lin 没有猫？",
+            "options": [
+              "他怕猫",
+              "他对猫过敏",
+              "他有一只狗"
+            ],
+            "answer": 1,
+            "explanation_zh": "I'm allergic to cats：我对猫过敏。"
+          },
+          {
+            "id": "s06",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "把问题和对话里的回答配对。",
+            "pairs": [
+              {
+                "left": "What do you do?",
+                "right": "I'm a nurse."
+              },
+              {
+                "left": "Do you work at night?",
+                "right": "Yes, I do."
+              },
+              {
+                "left": "Are you a quiet person?",
+                "right": "Yes, I am."
+              },
+              {
+                "left": "Do you have a cat?",
+                "right": "No, I don't."
+              }
+            ]
+          },
+          {
+            "id": "s07",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_interaction",
+            "task_zh": "现在你也在找室友。对来看房的人提 4 个问题，混合使用 Do you ...?、Are you ...? 和 what / where 问题。",
+            "prompt_en": "Hi, I'm here about the room.",
+            "model_answers": [
+              "Hi! What do you do? Where do you work? Do you smoke? Are you tidy?"
+            ],
+            "checklist_zh": [
+              "至少一个 Do you ...?",
+              "至少一个 Are you ...?",
+              "至少一个 what / where / who 问题",
+              "没有出现 Do you are ... 这样的混用"
+            ]
+          },
+          {
+            "id": "s08",
+            "type": "write",
+            "role": "communicative_task",
+            "skill": "written_interaction",
+            "task_zh": "你要见一位网上认识的语言交换伙伴。先给对方发 3 个问题。",
+            "model_answers": [
+              "Hi! Where do you live? What do you do? Do you like Chinese food?"
+            ],
+            "checklist_zh": [
+              "写了 3 个问题",
+              "问句语序正确",
+              "每句以问号结尾",
+              "开头有打招呼"
+            ]
+          },
+          {
+            "id": "s09",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "填 Are 或 Do。",
+            "sentence_en": "___ they from Japan?",
+            "translation_zh": "他们来自日本吗？",
+            "answers": [
+              "Are"
+            ],
+            "explanation_zh": "be from = 来自；句子用 be，所以问 Are they ...?"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "listening",
+            "prompt_zh": "听录音，选出最合适的回答。",
+            "audio_en": "What's your favourite colour?",
+            "options": [
+              "Yes, I do.",
+              "Blue.",
+              "In my bag."
+            ],
+            "answer": 1,
+            "explanation_zh": "what 问“什么”：回答一种颜色。"
+          }
+        ]
+      }
+    ]
+  }
+}

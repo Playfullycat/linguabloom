@@ -1,0 +1,989 @@
+{
+  "content_schema_version": 1,
+  "source_type": "first_party",
+  "review_status": "pending_owner_review",
+  "unit": {
+    "id": "a1-u02-word-order",
+    "level": "a1",
+    "order": 2,
+    "status": "published",
+    "title_en": "Who Does What",
+    "title_zh": "基本词序",
+    "summary_zh": "英语句子的骨架：谁 + 做什么 + 什么；地点和时间通常放在句末，形容词放在名词前面。学完后，你能说出顺序自然的简单句。",
+    "can_do": [
+      {
+        "id": "a1.gr.word-order",
+        "skill": "grammar",
+        "en": "Can put words in the basic English order: subject, verb, object, place, time.",
+        "zh": "能按英语的基本顺序组织句子：主语、动词、宾语、地点、时间。"
+      },
+      {
+        "id": "a1.sp.routine-simple",
+        "skill": "spoken_production",
+        "en": "Can say simple sentences about what they do, where and when.",
+        "zh": "能用简单句说出自己做什么、在哪里、什么时候做。"
+      },
+      {
+        "id": "a1.r.short-sentences",
+        "skill": "reading",
+        "en": "Can understand short, simple sentences about everyday life.",
+        "zh": "能读懂关于日常生活的简短句子。"
+      }
+    ],
+    "grammar_points": [
+      {
+        "id": "a1.basic-word-order",
+        "title_en": "Basic word order",
+        "title_zh": "基本词序",
+        "pattern": "主语 + 动词 + 宾语 + 地点 + 时间\nI drink coffee at work every morning.\n形容词 + 名词：a small flat",
+        "explanation_zh": "英语句子的顺序比中文固定：先说谁（主语），再说做什么（动词），然后是对象（宾语）。地点和时间一般放在句末，地点在前、时间在后。中文常把时间放在前面（“我每天早上喝咖啡”），英语通常放在最后。形容词放在名词前面：a red car，不说 a car red。",
+        "examples": [
+          {
+            "en": "We watch films at home on Fridays.",
+            "zh": "我们周五在家看电影。"
+          },
+          {
+            "en": "I live in a small flat.",
+            "zh": "我住在一套小公寓里。"
+          },
+          {
+            "en": "They play football in the park on Sundays.",
+            "zh": "他们周日在公园踢足球。"
+          }
+        ],
+        "common_errors": [
+          {
+            "wrong": "I every morning drink coffee.",
+            "right": "I drink coffee every morning.",
+            "why_zh": "时间短语一般放在句末，不插在主语和动词之间。"
+          },
+          {
+            "wrong": "I like very much tea.",
+            "right": "I like tea very much.",
+            "why_zh": "very much 放在宾语后面。"
+          },
+          {
+            "wrong": "a car red",
+            "right": "a red car",
+            "why_zh": "形容词放在名词前面。"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "key": "drink",
+        "text": "drink",
+        "pos": "verb",
+        "ipa": "/drɪŋk/",
+        "zh": "喝",
+        "example_en": "I drink tea in the afternoon.",
+        "example_zh": "我下午喝茶。"
+      },
+      {
+        "key": "eat",
+        "text": "eat",
+        "pos": "verb",
+        "ipa": "/iːt/",
+        "zh": "吃",
+        "example_en": "We eat lunch at twelve.",
+        "example_zh": "我们十二点吃午饭。"
+      },
+      {
+        "key": "like",
+        "text": "like",
+        "pos": "verb",
+        "ipa": "/laɪk/",
+        "zh": "喜欢",
+        "example_en": "I like music.",
+        "example_zh": "我喜欢音乐。"
+      },
+      {
+        "key": "work",
+        "text": "work",
+        "pos": "verb",
+        "ipa": "/wɜːk/",
+        "zh": "工作",
+        "example_en": "I work in Shanghai.",
+        "example_zh": "我在上海工作。"
+      },
+      {
+        "key": "live",
+        "text": "live",
+        "pos": "verb",
+        "ipa": "/lɪv/",
+        "zh": "住；生活",
+        "example_en": "They live near the station.",
+        "example_zh": "他们住在车站附近。"
+      },
+      {
+        "key": "play",
+        "text": "play",
+        "pos": "verb",
+        "ipa": "/pleɪ/",
+        "zh": "玩；打（球）",
+        "example_en": "We play tennis on Saturdays.",
+        "example_zh": "我们周六打网球。"
+      },
+      {
+        "key": "watch",
+        "text": "watch",
+        "pos": "verb",
+        "ipa": "/wɒtʃ/",
+        "zh": "看（电视、比赛）",
+        "example_en": "I watch TV in the evening.",
+        "example_zh": "我晚上看电视。"
+      },
+      {
+        "key": "every-morning",
+        "text": "every morning",
+        "pos": "phrase",
+        "ipa": "/ˈevri ˈmɔːnɪŋ/",
+        "zh": "每天早上",
+        "example_en": "I run every morning.",
+        "example_zh": "我每天早上跑步。"
+      },
+      {
+        "key": "on-fridays",
+        "text": "on Fridays",
+        "pos": "phrase",
+        "ipa": "/ɒn ˈfraɪdeɪz/",
+        "zh": "每逢周五",
+        "example_en": "We eat out on Fridays.",
+        "example_zh": "我们周五出去吃饭。"
+      },
+      {
+        "key": "at-eight",
+        "text": "at eight",
+        "pos": "phrase",
+        "ipa": "/ət ˈeɪt/",
+        "zh": "在八点",
+        "example_en": "I start work at eight.",
+        "example_zh": "我八点开始工作。"
+      },
+      {
+        "key": "big",
+        "text": "big",
+        "pos": "adjective",
+        "ipa": "/bɪɡ/",
+        "zh": "大的",
+        "example_en": "It's a big city.",
+        "example_zh": "这是一座大城市。"
+      },
+      {
+        "key": "small",
+        "text": "small",
+        "pos": "adjective",
+        "ipa": "/smɔːl/",
+        "zh": "小的",
+        "example_en": "I have a small flat.",
+        "example_zh": "我有一套小公寓。"
+      },
+      {
+        "key": "new",
+        "text": "new",
+        "pos": "adjective",
+        "ipa": "/njuː/",
+        "zh": "新的",
+        "example_en": "We have a new manager.",
+        "example_zh": "我们来了一位新经理。"
+      },
+      {
+        "key": "flat",
+        "text": "flat",
+        "pos": "noun",
+        "ipa": "/flæt/",
+        "zh": "公寓（英式）",
+        "example_en": "My flat is near the park.",
+        "example_zh": "我的公寓在公园附近。"
+      }
+    ],
+    "lessons": [
+      {
+        "id": "a1-u02-word-order-l1",
+        "order": 1,
+        "kind": "core",
+        "title_en": "Subject + Verb + Object",
+        "title_zh": "谁 + 做什么 + 什么",
+        "estimated_minutes": 8,
+        "objectives": [
+          {
+            "en": "Build sentences in the order subject – verb – object.",
+            "zh": "能按“主语—动词—宾语”造句。"
+          },
+          {
+            "en": "Talk about things you like, eat and drink.",
+            "zh": "能说自己喜欢、吃和喝的东西。"
+          }
+        ],
+        "can_do_ids": [
+          "a1.gr.word-order",
+          "a1.r.short-sentences"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "grammar",
+            "title_zh": "这节课学什么",
+            "body_zh": "英语句子有一个固定的骨架：谁 + 做什么 + 什么。这个顺序和中文差不多，但英语几乎从不省略主语。这节课用“喜欢、吃、喝”练熟这个骨架。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Lunch break",
+            "instructions_zh": "先听。他们喜欢喝什么？",
+            "scene_zh": "午休时，Lin 和同事 Sara 在公司楼下的咖啡店。",
+            "lines": [
+              {
+                "speaker": "Sara",
+                "en": "I drink coffee every day. What about you?",
+                "zh": "我每天都喝咖啡。你呢？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "I don't like coffee. I like tea.",
+                "zh": "我不喜欢咖啡，我喜欢茶。"
+              },
+              {
+                "speaker": "Sara",
+                "en": "Really? I like tea too, but I love coffee!",
+                "zh": "真的吗？我也喜欢茶，不过我更爱咖啡！"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读这些常用动词。",
+            "items": [
+              "drink",
+              "eat",
+              "like",
+              "play",
+              "watch"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "notice",
+            "role": "notice",
+            "skill": "grammar",
+            "question_zh": "看下面三句话，主语、动词、宾语分别在哪里？",
+            "examples": [
+              {
+                "en": "I like tea.",
+                "zh": "我喜欢茶。",
+                "highlight": [
+                  "like"
+                ]
+              },
+              {
+                "en": "We eat rice.",
+                "zh": "我们吃米饭。",
+                "highlight": [
+                  "eat"
+                ]
+              },
+              {
+                "en": "They watch football.",
+                "zh": "他们看足球。",
+                "highlight": [
+                  "watch"
+                ]
+              }
+            ],
+            "takeaway_zh": "主语在最前面，动词紧跟着（标黄的词），宾语在动词后面。英语句子一般都要有主语。"
+          },
+          {
+            "id": "s05",
+            "type": "order",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "instructions_zh": "排成句子。",
+            "translation_zh": "我们喝绿茶。",
+            "tokens": [
+              "green",
+              "We",
+              "tea",
+              "drink"
+            ],
+            "answers": [
+              "We drink green tea."
+            ],
+            "explanation_zh": "主语 We + 动词 drink + 宾语 green tea（形容词在名词前）。"
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_zh": "选出顺序正确的句子：",
+            "options": [
+              "Like I music.",
+              "I music like.",
+              "I like music."
+            ],
+            "answer": 2,
+            "explanation_zh": "主语 + 动词 + 宾语：I like music。"
+          },
+          {
+            "id": "s07",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音。他们周末做什么？",
+            "audio_en": "We play basketball at the weekend.",
+            "options": [
+              "打篮球",
+              "看电影",
+              "踢足球"
+            ],
+            "answer": 0,
+            "explanation_zh": "play basketball：打篮球。"
+          },
+          {
+            "id": "s08",
+            "type": "order",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "排成句子。",
+            "translation_zh": "他们看电视。",
+            "tokens": [
+              "TV",
+              "watch",
+              "They"
+            ],
+            "answers": [
+              "They watch TV."
+            ],
+            "explanation_zh": "They + watch + TV。"
+          },
+          {
+            "id": "s09",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "vocabulary",
+            "instructions_zh": "填一个动词。",
+            "sentence_en": "I ___ coffee in the morning.",
+            "translation_zh": "我早上喝咖啡。",
+            "answers": [
+              "drink",
+              "have"
+            ],
+            "explanation_zh": "drink coffee：喝咖啡（口语里也常说 have coffee）。"
+          }
+        ]
+      },
+      {
+        "id": "a1-u02-word-order-l2",
+        "order": 2,
+        "kind": "core",
+        "title_en": "Where and When",
+        "title_zh": "地点和时间放哪里",
+        "estimated_minutes": 9,
+        "objectives": [
+          {
+            "en": "Put place and time at the end of the sentence.",
+            "zh": "能把地点和时间放在句末。"
+          },
+          {
+            "en": "Say where and when you do things.",
+            "zh": "能说自己在哪里、什么时候做事情。"
+          }
+        ],
+        "can_do_ids": [
+          "a1.gr.word-order",
+          "a1.sp.routine-simple"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "grammar",
+            "title_zh": "这节课学什么",
+            "body_zh": "中文常说“我每天早上在家喝咖啡”，时间和地点放在动词前面。英语通常把它们放在句末：I drink coffee at home every morning。这节课专门练这个“搬家”。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "A new colleague",
+            "instructions_zh": "先听。注意时间和地点都放在句子的哪个位置。",
+            "scene_zh": "新同事 Ken 在问 Lin 的工作安排。",
+            "lines": [
+              {
+                "speaker": "Ken",
+                "en": "Where do you live, Lin?",
+                "zh": "林，你住在哪里？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "I live in Pudong. I take the metro to work.",
+                "zh": "我住在浦东，坐地铁上班。"
+              },
+              {
+                "speaker": "Ken",
+                "en": "When do you start work?",
+                "zh": "你几点开始上班？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "I start work at nine. I have lunch in the canteen at twelve.",
+                "zh": "我九点上班，十二点在食堂吃午饭。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "work",
+              "live",
+              "every-morning",
+              "on-fridays",
+              "at-eight"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "teach",
+            "role": "teach",
+            "skill": "grammar",
+            "title_zh": "地点在前，时间在后，都放句末",
+            "explanation_zh": "英语句子的常见顺序是：主语 + 动词 + 宾语 + 地点 + 时间。如果地点和时间都有，一般地点在前、时间在后。时间短语有时也可以放在句首强调，但不要插在主语和动词中间。",
+            "pattern": "I drink coffee + at home + every morning.",
+            "examples": [
+              {
+                "en": "We eat lunch in the canteen at twelve.",
+                "zh": "我们十二点在食堂吃午饭。"
+              },
+              {
+                "en": "I play tennis in the park on Saturdays.",
+                "zh": "我周六在公园打网球。"
+              }
+            ],
+            "tips_zh": [
+              "不要说 I every day drink coffee。every day 放在最后。"
+            ]
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_zh": "选出顺序最自然的句子：",
+            "options": [
+              "I every morning drink coffee.",
+              "I drink coffee every morning.",
+              "Drink coffee I every morning."
+            ],
+            "answer": 1,
+            "explanation_zh": "时间 every morning 放在句末。"
+          },
+          {
+            "id": "s06",
+            "type": "order",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "instructions_zh": "排成句子（地点在前，时间在后）。",
+            "translation_zh": "我们周五在家看电影。",
+            "tokens": [
+              "at",
+              "We",
+              "films",
+              "on",
+              "watch",
+              "home",
+              "Fridays"
+            ],
+            "answers": [
+              "We watch films at home on Fridays."
+            ],
+            "explanation_zh": "We watch films + at home（地点）+ on Fridays（时间）。"
+          },
+          {
+            "id": "s07",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音。她几点开始工作？",
+            "audio_en": "I start work at eight thirty.",
+            "options": [
+              "8:00",
+              "8:30",
+              "9:30"
+            ],
+            "answer": 1,
+            "explanation_zh": "eight thirty = 8:30。"
+          },
+          {
+            "id": "s08",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_production",
+            "task_zh": "说三句话介绍你的一天：你住在哪里、几点开始工作或上课、在哪里吃午饭。注意把地点和时间放在句末。",
+            "model_answers": [
+              "I live in Chengdu. I start work at nine. I eat lunch in the office at twelve.",
+              "I live near the station. I start class at eight. I have lunch at home."
+            ],
+            "checklist_zh": [
+              "每句都有主语和动词",
+              "地点和时间放在了句末",
+              "如果地点和时间都有，地点在前"
+            ]
+          },
+          {
+            "id": "s09",
+            "type": "order",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "排成句子。",
+            "translation_zh": "我在上海工作。",
+            "tokens": [
+              "in",
+              "work",
+              "I",
+              "Shanghai"
+            ],
+            "answers": [
+              "I work in Shanghai."
+            ],
+            "explanation_zh": "I + work + in Shanghai（地点在句末）。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_zh": "哪一句是正确的？",
+            "options": [
+              "They play football in the park on Sundays.",
+              "They on Sundays play football in the park.",
+              "They play on Sundays football in the park."
+            ],
+            "answer": 0,
+            "explanation_zh": "动词 + 宾语 + 地点 + 时间。"
+          }
+        ]
+      },
+      {
+        "id": "a1-u02-word-order-l3",
+        "order": 3,
+        "kind": "core",
+        "title_en": "A Big City, A Small Flat",
+        "title_zh": "形容词放哪里",
+        "estimated_minutes": 8,
+        "objectives": [
+          {
+            "en": "Put adjectives before nouns.",
+            "zh": "能把形容词放在名词前面。"
+          },
+          {
+            "en": "Describe where you live in a few words.",
+            "zh": "能用几句话描述自己住的地方。"
+          }
+        ],
+        "can_do_ids": [
+          "a1.gr.word-order",
+          "a1.r.short-sentences"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "grammar",
+            "title_zh": "这节课学什么",
+            "body_zh": "描述东西时，英语把形容词放在名词前面：a big city、a new phone。这一点和中文一样，但 a / an 要放在最前面：a small flat，不是 small a flat。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "My new home",
+            "instructions_zh": "先听。Lin 的公寓怎么样？",
+            "scene_zh": "Lin 刚搬家，朋友 Ben 来问情况。",
+            "lines": [
+              {
+                "speaker": "Ben",
+                "en": "How's your new flat?",
+                "zh": "你的新公寓怎么样？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "It's a small flat, but it has a big window.",
+                "zh": "是套小公寓，不过有一扇大窗户。"
+              },
+              {
+                "speaker": "Ben",
+                "en": "Nice! Is it near the metro?",
+                "zh": "不错！离地铁近吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Yes, and there's a new park nearby.",
+                "zh": "近，而且附近有一个新公园。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "big",
+              "small",
+              "new",
+              "flat"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "notice",
+            "role": "notice",
+            "skill": "grammar",
+            "question_zh": "形容词和 a / an 分别在名词的哪一边？",
+            "examples": [
+              {
+                "en": "a small flat",
+                "zh": "一套小公寓",
+                "highlight": [
+                  "small"
+                ]
+              },
+              {
+                "en": "a big window",
+                "zh": "一扇大窗户",
+                "highlight": [
+                  "big"
+                ]
+              },
+              {
+                "en": "a new park",
+                "zh": "一个新公园",
+                "highlight": [
+                  "new"
+                ]
+              }
+            ],
+            "takeaway_zh": "顺序是 a / an + 形容词 + 名词。形容词在名词前面，a / an 在最前面。"
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_zh": "选出正确的短语：",
+            "options": [
+              "a car red",
+              "a red car",
+              "red a car"
+            ],
+            "answer": 1,
+            "explanation_zh": "a + 形容词 + 名词：a red car。"
+          },
+          {
+            "id": "s06",
+            "type": "order",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "instructions_zh": "排成句子。",
+            "translation_zh": "我住在一座大城市。",
+            "tokens": [
+              "live",
+              "a",
+              "city",
+              "in",
+              "big",
+              "I"
+            ],
+            "answers": [
+              "I live in a big city."
+            ],
+            "explanation_zh": "I live + in + a big city。"
+          },
+          {
+            "id": "s07",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "reading",
+            "prompt_en": "\"Tom has a new job in a small company.\"",
+            "prompt_zh": "读句子，哪一项是对的？",
+            "options": [
+              "汤姆的公司很大",
+              "汤姆有一份新工作",
+              "汤姆没有工作"
+            ],
+            "answer": 1,
+            "explanation_zh": "a new job 新工作，a small company 一家小公司。"
+          },
+          {
+            "id": "s08",
+            "type": "write",
+            "role": "communicative_task",
+            "skill": "written_production",
+            "task_zh": "用 2–3 句话描述你住的地方（城市和家），至少用两个形容词。",
+            "model_answers": [
+              "I live in a big city. I have a small flat. It's near a new park.",
+              "I live in Chengdu. It's a big, busy city. My flat is small but nice."
+            ],
+            "checklist_zh": [
+              "每句都有主语和动词",
+              "形容词放在名词前面",
+              "a / an 在形容词前面",
+              "句首大写，句末有句号"
+            ]
+          },
+          {
+            "id": "s09",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "把 new 放进句子正确的位置。",
+            "sentence_en": "We have a ___ manager.",
+            "translation_zh": "我们来了一位新经理。",
+            "answers": [
+              "new"
+            ],
+            "explanation_zh": "a + new + manager。"
+          },
+          {
+            "id": "s10",
+            "type": "order",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "排成短语。",
+            "translation_zh": "一部旧手机",
+            "tokens": [
+              "phone",
+              "an",
+              "old"
+            ],
+            "answers": [
+              "an old phone"
+            ],
+            "explanation_zh": "old 以元音开头，所以用 an：an old phone。"
+          }
+        ]
+      },
+      {
+        "id": "a1-u02-word-order-l4",
+        "order": 4,
+        "kind": "review",
+        "title_en": "Unit Review: My Week",
+        "title_zh": "单元复习：我的一周",
+        "estimated_minutes": 10,
+        "objectives": [
+          {
+            "en": "Understand a short talk about someone's week.",
+            "zh": "能听懂一段关于某人一周安排的简短介绍。"
+          },
+          {
+            "en": "Describe your week with correct word order.",
+            "zh": "能用正确的词序描述自己的一周。"
+          }
+        ],
+        "can_do_ids": [
+          "a1.gr.word-order",
+          "a1.sp.routine-simple",
+          "a1.r.short-sentences"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "listening",
+            "title_zh": "单元复习",
+            "body_zh": "听 Mei 介绍自己的一周，然后用今天学的词序说说你的一周。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Mei's week",
+            "instructions_zh": "这是本单元的听力任务：先完整听两遍，不看文字。记住 Mei 什么时候、在哪里做什么。",
+            "scene_zh": "Mei 在英语角介绍自己的一周。",
+            "lines": [
+              {
+                "speaker": "Mei",
+                "en": "I live in a small town near Hangzhou.",
+                "zh": "我住在杭州附近的一个小镇。"
+              },
+              {
+                "speaker": "Mei",
+                "en": "I work in a big hotel. I start work at seven.",
+                "zh": "我在一家大酒店工作，七点开始上班。"
+              },
+              {
+                "speaker": "Mei",
+                "en": "I eat lunch with my colleagues at eleven thirty.",
+                "zh": "我十一点半和同事一起吃午饭。"
+              },
+              {
+                "speaker": "Mei",
+                "en": "On Saturdays, I play badminton in the sports centre.",
+                "zh": "周六我在体育中心打羽毛球。"
+              },
+              {
+                "speaker": "Mei",
+                "en": "On Sundays, I watch films at home. I love Sundays!",
+                "zh": "周日我在家看电影。我爱周日！"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "Mei 在哪里工作？",
+            "options": [
+              "一家小酒店",
+              "一家大酒店",
+              "一个体育中心"
+            ],
+            "answer": 1,
+            "explanation_zh": "I work in a big hotel：一家大酒店。"
+          },
+          {
+            "id": "s04",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "周六 Mei 做什么？",
+            "options": [
+              "在家看电影",
+              "在体育中心打羽毛球",
+              "上班"
+            ],
+            "answer": 1,
+            "explanation_zh": "On Saturdays, I play badminton in the sports centre。"
+          },
+          {
+            "id": "s05",
+            "type": "order",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "排成句子。",
+            "translation_zh": "我周日在家看电影。",
+            "tokens": [
+              "films",
+              "at",
+              "I",
+              "Sundays",
+              "watch",
+              "on",
+              "home"
+            ],
+            "answers": [
+              "I watch films at home on Sundays.",
+              "On Sundays I watch films at home."
+            ],
+            "explanation_zh": "地点在前、时间在后；时间也可以放在句首：On Sundays, I watch films at home。"
+          },
+          {
+            "id": "s06",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "把句子的前后两半配对，组成顺序正确的句子。",
+            "pairs": [
+              {
+                "left": "I start work",
+                "right": "at seven."
+              },
+              {
+                "left": "I live in",
+                "right": "a small town."
+              },
+              {
+                "left": "I eat lunch",
+                "right": "with my colleagues."
+              },
+              {
+                "left": "I play badminton",
+                "right": "on Saturdays."
+              }
+            ]
+          },
+          {
+            "id": "s07",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_production",
+            "task_zh": "像 Mei 一样，用 4 句左右介绍你的一周：住在哪里、工作或上课时间、周末做什么。",
+            "model_answers": [
+              "I live in a big city. I start work at nine. On Saturdays, I play tennis in the park. On Sundays, I watch TV at home."
+            ],
+            "checklist_zh": [
+              "每句都是“主语 + 动词 + ……”",
+              "地点和时间放在句末（或时间放在句首）",
+              "至少用了一个形容词 + 名词",
+              "说到了周末"
+            ]
+          },
+          {
+            "id": "s08",
+            "type": "write",
+            "role": "communicative_task",
+            "skill": "written_production",
+            "task_zh": "写 3 句话，介绍你最喜欢的一天（比如周六）做什么。",
+            "model_answers": [
+              "I love Saturdays. I get up at ten. I play football in the park with my friends."
+            ],
+            "checklist_zh": [
+              "词序：主语 + 动词 + 宾语 + 地点 + 时间",
+              "没有把时间插在主语和动词之间",
+              "句首大写，句末有句号"
+            ]
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_zh": "哪一句是正确的？",
+            "options": [
+              "I like very much music.",
+              "I like music very much.",
+              "I very much like music."
+            ],
+            "answer": 1,
+            "explanation_zh": "very much 放在宾语后面：I like music very much。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "listening",
+            "prompt_zh": "听录音。他们什么时候在哪里吃饭？",
+            "audio_en": "We eat dinner in a small restaurant on Fridays.",
+            "options": [
+              "周五，在一家小餐馆",
+              "周五，在家",
+              "周六，在一家大餐馆"
+            ],
+            "answer": 0,
+            "explanation_zh": "in a small restaurant（一家小餐馆）+ on Fridays（每周五）。"
+          }
+        ]
+      }
+    ]
+  }
+}

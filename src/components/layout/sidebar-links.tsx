@@ -6,8 +6,8 @@ import { usePathname } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import {
+  isFeatureActive,
   isNavGroup,
-  isPathActive,
   primaryNav,
   secondaryNav,
   type Feature,
@@ -43,14 +43,14 @@ function SidebarLink({ feature, active }: { feature: Feature; active: boolean })
 
 /** Pure list; `pathname === null` renders without an active item (Suspense fallback). */
 export function SidebarLinks({ pathname, section }: { pathname: string | null; section: Section }) {
-  const isActive = (href: string) => pathname !== null && isPathActive(pathname, href);
+  const isActive = (feature: Feature) => pathname !== null && isFeatureActive(feature, pathname);
 
   if (section === "secondary") {
     return (
       <ul className="flex flex-col gap-0.5">
         {secondaryNav.map((feature) => (
           <li key={feature.key}>
-            <SidebarLink feature={feature} active={isActive(feature.href)} />
+            <SidebarLink feature={feature} active={isActive(feature)} />
           </li>
         ))}
       </ul>
@@ -82,14 +82,14 @@ export function SidebarLinks({ pathname, section }: { pathname: string | null; s
             <ul className="flex flex-col gap-0.5">
               {entry.children.map((child) => (
                 <li key={child.key}>
-                  <SidebarLink feature={child} active={isActive(child.href)} />
+                  <SidebarLink feature={child} active={isActive(child)} />
                 </li>
               ))}
             </ul>
           </li>
         ) : (
           <li key={entry.key}>
-            <SidebarLink feature={entry} active={isActive(entry.href)} />
+            <SidebarLink feature={entry} active={isActive(entry)} />
           </li>
         ),
       )}

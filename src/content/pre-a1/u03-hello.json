@@ -1,0 +1,1063 @@
+{
+  "content_schema_version": 1,
+  "source_type": "first_party",
+  "review_status": "pending_owner_review",
+  "unit": {
+    "id": "pre-a1-u03-hello",
+    "level": "pre_a1",
+    "order": 3,
+    "status": "published",
+    "title_en": "Hello!",
+    "title_zh": "你好！",
+    "summary_zh": "打招呼、问候、道别和最常用的礼貌用语。学完后，你能在早上、下午和晚上用合适的方式和人打招呼，问对方好不好，并礼貌地道别。",
+    "can_do": [
+      {
+        "id": "pre-a1.si.greet",
+        "skill": "spoken_interaction",
+        "en": "Can greet people and say goodbye with simple everyday expressions.",
+        "zh": "能用简单的日常用语打招呼和道别。"
+      },
+      {
+        "id": "pre-a1.si.how-are-you",
+        "skill": "spoken_interaction",
+        "en": "Can ask how someone is and reply in a very simple way.",
+        "zh": "能问候对方近况，并用最简单的方式回答。"
+      },
+      {
+        "id": "pre-a1.l.greetings",
+        "skill": "listening",
+        "en": "Can recognise greetings and polite expressions when people speak slowly and clearly.",
+        "zh": "对方说得慢而清楚时，能听懂问候语和礼貌用语。"
+      }
+    ],
+    "grammar_points": [
+      {
+        "id": "pre-a1.greetings-pattern",
+        "title_en": "Greeting and replying",
+        "title_zh": "打招呼和回应",
+        "pattern": "Good + morning / afternoon / evening\nHow are you? — I'm + fine / good, thanks.",
+        "explanation_zh": "英语打招呼常按时间选择：早上 Good morning，下午 Good afternoon，晚上见面 Good evening。Hi 和 Hello 什么时候都能用，Hi 更随意。别人问 How are you? 时，一般先简短回答，再说 thanks，常常再问一句 And you?",
+        "examples": [
+          {
+            "en": "Good morning, Mr Lee.",
+            "zh": "李先生，早上好。"
+          },
+          {
+            "en": "Hi, Anna! How are you?",
+            "zh": "嗨，安娜！你好吗？"
+          },
+          {
+            "en": "I'm good, thanks. And you?",
+            "zh": "我挺好的，谢谢。你呢？"
+          }
+        ],
+        "common_errors": [
+          {
+            "wrong": "Good night! (晚上见面时)",
+            "right": "Good evening!",
+            "why_zh": "Good night 是晚上分别或睡前说的“晚安”，见面打招呼要说 Good evening。"
+          },
+          {
+            "wrong": "You welcome.",
+            "right": "You're welcome.",
+            "why_zh": "You're 是 You are 的缩写，不能省掉。"
+          },
+          {
+            "wrong": "Thanks you.",
+            "right": "Thanks. / Thank you.",
+            "why_zh": "Thanks 本身就是“谢谢”，后面不再加 you；或者说完整的 Thank you。"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "key": "hello",
+        "text": "hello",
+        "pos": "interjection",
+        "ipa": "/həˈləʊ/",
+        "zh": "你好",
+        "example_en": "Hello, I'm Tom.",
+        "example_zh": "你好，我是汤姆。"
+      },
+      {
+        "key": "hi",
+        "text": "hi",
+        "pos": "interjection",
+        "ipa": "/haɪ/",
+        "zh": "嗨；你好（较随意）",
+        "example_en": "Hi, Lily!",
+        "example_zh": "嗨，莉莉！"
+      },
+      {
+        "key": "good-morning",
+        "text": "Good morning",
+        "pos": "phrase",
+        "ipa": "/ɡʊd ˈmɔːnɪŋ/",
+        "zh": "早上好",
+        "example_en": "Good morning, everyone.",
+        "example_zh": "大家早上好。"
+      },
+      {
+        "key": "good-afternoon",
+        "text": "Good afternoon",
+        "pos": "phrase",
+        "ipa": "/ɡʊd ˌɑːftəˈnuːn/",
+        "zh": "下午好",
+        "example_en": "Good afternoon, Ms Chen.",
+        "example_zh": "陈女士，下午好。"
+      },
+      {
+        "key": "good-evening",
+        "text": "Good evening",
+        "pos": "phrase",
+        "ipa": "/ɡʊd ˈiːvnɪŋ/",
+        "zh": "晚上好（见面时）",
+        "example_en": "Good evening. Table for two?",
+        "example_zh": "晚上好。两位吗？"
+      },
+      {
+        "key": "good-night",
+        "text": "Good night",
+        "pos": "phrase",
+        "ipa": "/ɡʊd ˈnaɪt/",
+        "zh": "晚安（分别或睡前）",
+        "example_en": "Good night. See you tomorrow.",
+        "example_zh": "晚安，明天见。"
+      },
+      {
+        "key": "how-are-you",
+        "text": "How are you?",
+        "pos": "phrase",
+        "ipa": "/ˌhaʊ ə ˈjuː/",
+        "zh": "你好吗？",
+        "example_en": "Hi, Sam. How are you?",
+        "example_zh": "嗨，萨姆。你好吗？"
+      },
+      {
+        "key": "im-fine-thank-you",
+        "text": "I'm fine, thank you.",
+        "pos": "phrase",
+        "ipa": "/aɪm ˈfaɪn ˈθæŋk juː/",
+        "zh": "我很好，谢谢。",
+        "example_en": "I'm fine, thank you. And you?",
+        "example_zh": "我很好，谢谢。你呢？"
+      },
+      {
+        "key": "im-good-thanks",
+        "text": "I'm good, thanks.",
+        "pos": "phrase",
+        "ipa": "/aɪm ˈɡʊd θæŋks/",
+        "zh": "我挺好的，谢谢。",
+        "example_en": "I'm good, thanks. How about you?",
+        "example_zh": "我挺好的，谢谢。你呢？"
+      },
+      {
+        "key": "not-bad",
+        "text": "Not bad.",
+        "pos": "phrase",
+        "ipa": "/nɒt ˈbæd/",
+        "zh": "还不错。",
+        "example_en": "Not bad, thanks.",
+        "example_zh": "还不错，谢谢。"
+      },
+      {
+        "key": "and-you",
+        "text": "And you?",
+        "pos": "phrase",
+        "ipa": "/ənd ˈjuː/",
+        "zh": "你呢？",
+        "example_en": "I'm fine. And you?",
+        "example_zh": "我很好。你呢？"
+      },
+      {
+        "key": "goodbye",
+        "text": "goodbye",
+        "pos": "interjection",
+        "ipa": "/ɡʊdˈbaɪ/",
+        "zh": "再见",
+        "example_en": "Goodbye, Mr Wang.",
+        "example_zh": "王先生，再见。"
+      },
+      {
+        "key": "bye",
+        "text": "bye",
+        "pos": "interjection",
+        "ipa": "/baɪ/",
+        "zh": "拜拜（较随意）",
+        "example_en": "Bye, Lily!",
+        "example_zh": "拜拜，莉莉！"
+      },
+      {
+        "key": "see-you-tomorrow",
+        "text": "See you tomorrow.",
+        "pos": "phrase",
+        "ipa": "/ˈsiː juː təˈmɒrəʊ/",
+        "zh": "明天见。",
+        "example_en": "Bye! See you tomorrow.",
+        "example_zh": "拜拜！明天见。"
+      },
+      {
+        "key": "thank-you",
+        "text": "Thank you. / Thanks.",
+        "pos": "phrase",
+        "ipa": "/ˈθæŋk juː/ /θæŋks/",
+        "zh": "谢谢。",
+        "example_en": "Thanks, Tom!",
+        "example_zh": "谢谢你，汤姆！"
+      },
+      {
+        "key": "youre-welcome",
+        "text": "You're welcome.",
+        "pos": "phrase",
+        "ipa": "/jɔː ˈwelkəm/",
+        "zh": "不客气。",
+        "example_en": "\"Thank you!\" \"You're welcome.\"",
+        "example_zh": "“谢谢！”“不客气。”"
+      },
+      {
+        "key": "sorry",
+        "text": "Sorry!",
+        "pos": "interjection",
+        "ipa": "/ˈsɒri/",
+        "zh": "对不起！",
+        "example_en": "Oh, sorry!",
+        "example_zh": "哎呀，对不起！"
+      },
+      {
+        "key": "excuse-me",
+        "text": "Excuse me.",
+        "pos": "phrase",
+        "ipa": "/ɪkˈskjuːz miː/",
+        "zh": "打扰一下；劳驾。",
+        "example_en": "Excuse me, is this seat free?",
+        "example_zh": "打扰一下，这个座位有人吗？"
+      },
+      {
+        "key": "have-a-nice-day",
+        "text": "Have a nice day!",
+        "pos": "phrase",
+        "ipa": "/hæv ə naɪs ˈdeɪ/",
+        "zh": "祝你今天愉快！",
+        "example_en": "Thanks! Have a nice day!",
+        "example_zh": "谢谢！祝你今天愉快！"
+      }
+    ],
+    "lessons": [
+      {
+        "id": "pre-a1-u03-hello-l1",
+        "order": 1,
+        "kind": "core",
+        "title_en": "Hi and Hello",
+        "title_zh": "嗨与你好",
+        "estimated_minutes": 8,
+        "objectives": [
+          {
+            "en": "Say hello in a friendly or polite way.",
+            "zh": "能随意或礼貌地说“你好”。"
+          },
+          {
+            "en": "Choose the right greeting for the time of day.",
+            "zh": "能根据时间选择合适的问候语。"
+          }
+        ],
+        "can_do_ids": [
+          "pre-a1.si.greet",
+          "pre-a1.l.greetings"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "spoken_interaction",
+            "title_zh": "这节课学什么",
+            "body_zh": "见面第一句话怎么说？这节课你会听到几段很短的问候，学会 Hello、Hi 和按时间打招呼的说法。点每句话旁边的喇叭可以听朗读，多听几遍没关系。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Morning at the office",
+            "instructions_zh": "先只听，不看翻译。听两遍以后，再打开中文核对意思。",
+            "scene_zh": "早上 9 点，Tom 走进办公室，遇到同事 Lily 和经理 Ms Chen。",
+            "lines": [
+              {
+                "speaker": "Tom",
+                "en": "Hi, Lily!",
+                "zh": "嗨，莉莉！"
+              },
+              {
+                "speaker": "Lily",
+                "en": "Hi, Tom!",
+                "zh": "嗨，汤姆！"
+              },
+              {
+                "speaker": "Tom",
+                "en": "Good morning, Ms Chen.",
+                "zh": "陈女士，早上好。"
+              },
+              {
+                "speaker": "Ms Chen",
+                "en": "Good morning, Tom.",
+                "zh": "早上好，汤姆。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟着读一读。注意 Hi 比 Hello 更随意。",
+            "items": [
+              "hello",
+              "hi",
+              "good-morning",
+              "good-afternoon",
+              "good-evening"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "notice",
+            "role": "notice",
+            "skill": "grammar",
+            "question_zh": "看下面三句话和它们发生的时间。你发现规律了吗？",
+            "examples": [
+              {
+                "en": "Good morning! (8:30 a.m.)",
+                "zh": "早上好！（上午 8:30）",
+                "highlight": [
+                  "morning"
+                ]
+              },
+              {
+                "en": "Good afternoon! (3:00 p.m.)",
+                "zh": "下午好！（下午 3:00）",
+                "highlight": [
+                  "afternoon"
+                ]
+              },
+              {
+                "en": "Good evening! (7:00 p.m.)",
+                "zh": "晚上好！（晚上 7:00）",
+                "highlight": [
+                  "evening"
+                ]
+              }
+            ],
+            "takeaway_zh": "Good 后面跟上一天中的时间：上午 morning，中午以后 afternoon，傍晚和晚上 evening。"
+          },
+          {
+            "id": "s05",
+            "type": "teach",
+            "role": "teach",
+            "skill": "grammar",
+            "title_zh": "Good evening 和 Good night 不一样",
+            "explanation_zh": "晚上见面说 Good evening（晚上好）。Good night 是分别或睡觉前说的“晚安”，不能用来打招呼。Hi 和 Hello 一天中什么时候都可以用。",
+            "pattern": "见面：Good evening!\n分别：Good night!",
+            "examples": [
+              {
+                "en": "Good evening, everyone. Welcome!",
+                "zh": "大家晚上好，欢迎！"
+              },
+              {
+                "en": "Good night, Mum. See you tomorrow.",
+                "zh": "妈妈，晚安。明天见。"
+              }
+            ],
+            "tips_zh": [
+              "和朋友、同学打招呼，Hi 最常用。",
+              "和客户、老师、长辈打招呼，Good morning 这类说法更礼貌。"
+            ]
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "spoken_interaction",
+            "prompt_zh": "下午 3 点，你在走廊遇到经理。你说：",
+            "options": [
+              "Good morning.",
+              "Good afternoon.",
+              "Good night."
+            ],
+            "answer": 1,
+            "explanation_zh": "下午见面说 Good afternoon。Good night 是分别时说的“晚安”。"
+          },
+          {
+            "id": "s07",
+            "type": "match",
+            "role": "guided_practice",
+            "skill": "vocabulary",
+            "instructions_zh": "把问候语和合适的时间配对。",
+            "pairs": [
+              {
+                "left": "Good morning!",
+                "right": "8:00 a.m. 见面"
+              },
+              {
+                "left": "Good afternoon!",
+                "right": "2:00 p.m. 见面"
+              },
+              {
+                "left": "Good evening!",
+                "right": "7:00 p.m. 见面"
+              },
+              {
+                "left": "Good night!",
+                "right": "11:00 p.m. 睡前"
+              }
+            ]
+          },
+          {
+            "id": "s08",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，选出你听到的句子。",
+            "audio_en": "Good evening, Lily.",
+            "options": [
+              "Good morning, Lily.",
+              "Good evening, Lily.",
+              "Good night, Lily."
+            ],
+            "answer": 1,
+            "explanation_zh": "你听到的是 Good evening：晚上见面时的问候。"
+          },
+          {
+            "id": "s09",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "vocabulary",
+            "instructions_zh": "上午 8 点开会，补全开场白。",
+            "sentence_en": "Good ___, everyone!",
+            "translation_zh": "大家早上好！",
+            "answers": [
+              "morning"
+            ],
+            "explanation_zh": "上午用 Good morning。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "spoken_interaction",
+            "prompt_zh": "晚上 8 点，你走进朋友家的聚会。你最合适的第一句话是：",
+            "options": [
+              "Good night!",
+              "Hi, everyone!",
+              "Goodbye!"
+            ],
+            "answer": 1,
+            "explanation_zh": "刚到的时候要打招呼：Hi, everyone! 或 Good evening!。Good night 和 Goodbye 都是离开时说的。"
+          }
+        ]
+      },
+      {
+        "id": "pre-a1-u03-hello-l2",
+        "order": 2,
+        "kind": "core",
+        "title_en": "How Are You?",
+        "title_zh": "你好吗？",
+        "estimated_minutes": 9,
+        "objectives": [
+          {
+            "en": "Ask someone how they are.",
+            "zh": "能问对方“你好吗？”。"
+          },
+          {
+            "en": "Answer in a short, natural way and ask back.",
+            "zh": "能简短自然地回答，并反问对方。"
+          }
+        ],
+        "can_do_ids": [
+          "pre-a1.si.how-are-you",
+          "pre-a1.l.greetings"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "spoken_interaction",
+            "title_zh": "这节课学什么",
+            "body_zh": "打完招呼，英语里常常接一句 How are you?。它更像一句寒暄，不是真的要你详细说身体情况。这节课学会怎么问、怎么简短回答，再把问题抛回给对方。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Two friends meet",
+            "instructions_zh": "先听，注意 Anna 回答以后又问了 Ben 什么。",
+            "scene_zh": "Anna 和 Ben 在超市门口碰到了。",
+            "lines": [
+              {
+                "speaker": "Ben",
+                "en": "Hi, Anna! How are you?",
+                "zh": "嗨，安娜！你好吗？"
+              },
+              {
+                "speaker": "Anna",
+                "en": "I'm good, thanks. And you?",
+                "zh": "我挺好的，谢谢。你呢？"
+              },
+              {
+                "speaker": "Ben",
+                "en": "Not bad, thanks.",
+                "zh": "还不错，谢谢。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "这些都是回答 How are you? 的常用说法。听一听，跟读。",
+            "items": [
+              "how-are-you",
+              "im-fine-thank-you",
+              "im-good-thanks",
+              "not-bad",
+              "and-you"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "teach",
+            "role": "teach",
+            "skill": "grammar",
+            "title_zh": "怎么回答 How are you?",
+            "explanation_zh": "常见的回答是：I'm fine, thank you. / I'm good, thanks. / Not bad. 它们都对。I'm fine, thank you 比较规范，朋友之间更常说 I'm good, thanks 或 Good, thanks!。回答完常加一句 And you? 把问题还给对方，这样显得礼貌。I'm 是 I am 的缩写，口语里几乎总是说 I'm。",
+            "pattern": "How are you? — I'm good / fine, thanks. And you?",
+            "examples": [
+              {
+                "en": "I'm fine, thank you. And you?",
+                "zh": "我很好，谢谢。你呢？"
+              },
+              {
+                "en": "Good, thanks! How are you?",
+                "zh": "挺好的，谢谢！你呢？"
+              }
+            ],
+            "tips_zh": [
+              "别人问 How are you? 时，通常只简单回答，不用细说。",
+              "Thanks 和 Thank you 意思一样，Thanks 更随意。"
+            ]
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "spoken_interaction",
+            "prompt_en": "\"How are you?\"",
+            "prompt_zh": "同事这样问你，最自然的回答是：",
+            "options": [
+              "I'm good, thanks. And you?",
+              "I'm Tom.",
+              "Good night."
+            ],
+            "answer": 0,
+            "explanation_zh": "回答近况再反问：I'm good, thanks. And you?。I'm Tom 是介绍名字。"
+          },
+          {
+            "id": "s06",
+            "type": "order",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "instructions_zh": "把单词排成一句问候。",
+            "translation_zh": "你好吗？",
+            "tokens": [
+              "are",
+              "How",
+              "you"
+            ],
+            "answers": [
+              "How are you?"
+            ],
+            "explanation_zh": "问句以 How 开头：How are you?"
+          },
+          {
+            "id": "s07",
+            "type": "order",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "排成一句回答。",
+            "translation_zh": "我挺好的，谢谢。",
+            "tokens": [
+              "good",
+              "I'm",
+              "thanks"
+            ],
+            "answers": [
+              "I'm good, thanks."
+            ],
+            "explanation_zh": "先说自己怎么样，再说谢谢：I'm good, thanks."
+          },
+          {
+            "id": "s08",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音。她的意思是：",
+            "audio_en": "Not bad, thanks. And you?",
+            "options": [
+              "还不错，谢谢。你呢？",
+              "不太好，谢谢你。",
+              "对不起，我不知道。"
+            ],
+            "answer": 0,
+            "explanation_zh": "Not bad 是“还不错”，是一句很常见的正面回答。"
+          },
+          {
+            "id": "s09",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "vocabulary",
+            "instructions_zh": "补全回答。",
+            "sentence_en": "I'm fine, ___ you.",
+            "translation_zh": "我很好，谢谢你。",
+            "answers": [
+              "thank"
+            ],
+            "explanation_zh": "thank you：谢谢你。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "spoken_interaction",
+            "prompt_zh": "哪一句不是 How are you? 的回答？",
+            "options": [
+              "Not bad.",
+              "I'm good, thanks.",
+              "See you tomorrow."
+            ],
+            "answer": 2,
+            "explanation_zh": "See you tomorrow 是“明天见”，用来道别。"
+          }
+        ]
+      },
+      {
+        "id": "pre-a1-u03-hello-l3",
+        "order": 3,
+        "kind": "core",
+        "title_en": "Thanks and Goodbye",
+        "title_zh": "谢谢与再见",
+        "estimated_minutes": 10,
+        "objectives": [
+          {
+            "en": "Say thank you and reply to thanks.",
+            "zh": "能说谢谢，也能回应别人的谢谢。"
+          },
+          {
+            "en": "Use sorry and excuse me in the right situation.",
+            "zh": "能在合适的场合用 sorry 和 excuse me。"
+          },
+          {
+            "en": "Say goodbye in a friendly way.",
+            "zh": "能友好地道别。"
+          }
+        ],
+        "can_do_ids": [
+          "pre-a1.si.greet",
+          "pre-a1.l.greetings"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "spoken_interaction",
+            "title_zh": "这节课学什么",
+            "body_zh": "一句谢谢、一句对不起、一句再见，几乎每天都会用到。这节课学习它们的说法和回应，最后你要用英语和同事道别。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "At the coffee shop",
+            "instructions_zh": "先听，找一找：顾客说了几次谢谢？店员怎么回答？",
+            "scene_zh": "Lily 买完咖啡准备离开。",
+            "lines": [
+              {
+                "speaker": "Staff",
+                "en": "Here's your coffee.",
+                "zh": "这是您的咖啡。"
+              },
+              {
+                "speaker": "Lily",
+                "en": "Thank you!",
+                "zh": "谢谢！"
+              },
+              {
+                "speaker": "Staff",
+                "en": "You're welcome. Have a nice day!",
+                "zh": "不客气。祝您今天愉快！"
+              },
+              {
+                "speaker": "Lily",
+                "en": "Thanks, you too. Bye!",
+                "zh": "谢谢，你也是。拜拜！"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "thank-you",
+              "youre-welcome",
+              "have-a-nice-day",
+              "sorry",
+              "excuse-me",
+              "goodbye",
+              "bye",
+              "see-you-tomorrow",
+              "good-night"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "teach",
+            "role": "teach",
+            "skill": "grammar",
+            "title_zh": "Sorry 和 Excuse me 的区别",
+            "explanation_zh": "Excuse me 用在“事情发生之前”：想打扰别人、问路、请别人让一让。Sorry 用在“事情发生之后”：碰到别人、说错了话，表示道歉。",
+            "pattern": "之前：Excuse me, ...\n之后：Sorry!",
+            "examples": [
+              {
+                "en": "Excuse me, where is the station?",
+                "zh": "打扰一下，车站在哪里？"
+              },
+              {
+                "en": "Oh, sorry! Are you OK?",
+                "zh": "哎呀，对不起！你没事吧？"
+              }
+            ],
+            "tips_zh": [
+              "别人说 Thank you，回答 You're welcome（不客气）。",
+              "道别时 Bye 比 Goodbye 更随意，See you tomorrow 表示明天还会见面。"
+            ]
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "spoken_interaction",
+            "prompt_zh": "在地铁上你不小心踩到别人的脚。你说：",
+            "options": [
+              "Excuse me.",
+              "Sorry!",
+              "You're welcome."
+            ],
+            "answer": 1,
+            "explanation_zh": "事情已经发生了，要道歉：Sorry!"
+          },
+          {
+            "id": "s06",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "spoken_interaction",
+            "instructions_zh": "把情景和要说的话配对。",
+            "pairs": [
+              {
+                "left": "想向路人问路",
+                "right": "Excuse me."
+              },
+              {
+                "left": "朋友帮你拿了包",
+                "right": "Thanks!"
+              },
+              {
+                "left": "别人对你说谢谢",
+                "right": "You're welcome."
+              },
+              {
+                "left": "下班离开，明天还见",
+                "right": "See you tomorrow."
+              }
+            ]
+          },
+          {
+            "id": "s07",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音。这个人在做什么？",
+            "audio_en": "Bye! See you tomorrow.",
+            "options": [
+              "打招呼",
+              "道别",
+              "道歉"
+            ],
+            "answer": 1,
+            "explanation_zh": "Bye 和 See you tomorrow 都是道别用语。"
+          },
+          {
+            "id": "s08",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_interaction",
+            "task_zh": "下午 6 点，你要下班了。同事 Sam 还在办公室。用英语和他道别。可以录音后回放，也可以把你会说的话打出来。",
+            "prompt_en": "Oh, are you leaving?",
+            "model_answers": [
+              "Yes. Bye, Sam! See you tomorrow.",
+              "Yes, see you tomorrow! Have a nice evening."
+            ],
+            "checklist_zh": [
+              "我说了道别的话（Bye / Goodbye）",
+              "我说了明天见（See you tomorrow）",
+              "我叫了对方的名字，或者加了一句祝福"
+            ]
+          },
+          {
+            "id": "s09",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "vocabulary",
+            "instructions_zh": "别人说 Thank you，你回答：",
+            "sentence_en": "You're ___.",
+            "translation_zh": "不客气。",
+            "answers": [
+              "welcome"
+            ],
+            "explanation_zh": "You're welcome：不客气。注意 You're 不能省成 You。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "spoken_interaction",
+            "prompt_zh": "你想请前面的人让一让。你先说：",
+            "options": [
+              "Sorry!",
+              "Excuse me.",
+              "Good night."
+            ],
+            "answer": 1,
+            "explanation_zh": "打扰别人之前说 Excuse me。"
+          }
+        ]
+      },
+      {
+        "id": "pre-a1-u03-hello-l4",
+        "order": 4,
+        "kind": "review",
+        "title_en": "Unit Review: Hello Again",
+        "title_zh": "单元复习：再说一次你好",
+        "estimated_minutes": 10,
+        "objectives": [
+          {
+            "en": "Understand a short greeting conversation without reading it.",
+            "zh": "不看文字也能听懂一段简短的问候对话。"
+          },
+          {
+            "en": "Greet, ask how someone is, and say goodbye in one conversation.",
+            "zh": "能在一段对话里完成打招呼、问候和道别。"
+          }
+        ],
+        "can_do_ids": [
+          "pre-a1.si.greet",
+          "pre-a1.si.how-are-you",
+          "pre-a1.l.greetings"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "listening",
+            "title_zh": "单元复习",
+            "body_zh": "这一课把整个单元连起来：先听一段完整的对话，再做几道题检查你记住了多少，最后自己完成一段对话。做错也没关系，正确答案会帮你记得更牢。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Neighbours in the lift",
+            "instructions_zh": "这是本单元的听力任务：先完整听两遍，不看文字。然后试着回答下面的问题，最后再打开文字和中文核对。",
+            "scene_zh": "傍晚，邻居 Mr Brown 和 Mei 在电梯里遇到。",
+            "lines": [
+              {
+                "speaker": "Mr Brown",
+                "en": "Good evening, Mei.",
+                "zh": "晚上好，梅。"
+              },
+              {
+                "speaker": "Mei",
+                "en": "Oh, hi, Mr Brown! How are you?",
+                "zh": "哦，嗨，布朗先生！您好吗？"
+              },
+              {
+                "speaker": "Mr Brown",
+                "en": "I'm fine, thank you. And you?",
+                "zh": "我很好，谢谢。你呢？"
+              },
+              {
+                "speaker": "Mei",
+                "en": "Good, thanks. Excuse me, this is my floor.",
+                "zh": "挺好的，谢谢。不好意思，我到了。"
+              },
+              {
+                "speaker": "Mr Brown",
+                "en": "OK. Good night!",
+                "zh": "好的。晚安！"
+              },
+              {
+                "speaker": "Mei",
+                "en": "Good night!",
+                "zh": "晚安！"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "对话发生在一天中的什么时候？",
+            "options": [
+              "早上",
+              "下午",
+              "晚上"
+            ],
+            "answer": 2,
+            "explanation_zh": "Mr Brown 一开始说的是 Good evening，所以是晚上。"
+          },
+          {
+            "id": "s04",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "Mei 说 Excuse me 是为了：",
+            "options": [
+              "道歉",
+              "告诉对方她要出电梯了",
+              "说谢谢"
+            ],
+            "answer": 1,
+            "explanation_zh": "她要先离开，所以用 Excuse me 礼貌地打断：this is my floor（我到了）。"
+          },
+          {
+            "id": "s05",
+            "type": "order",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "排出一句完整的回答和反问。",
+            "translation_zh": "我很好，谢谢。你呢？",
+            "tokens": [
+              "I'm",
+              "fine",
+              "thank",
+              "you",
+              "and",
+              "you"
+            ],
+            "answers": [
+              "I'm fine, thank you. And you?"
+            ],
+            "explanation_zh": "先回答，再用 And you? 反问。"
+          },
+          {
+            "id": "s06",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "vocabulary",
+            "instructions_zh": "把上半句和最自然的下半句配对。",
+            "pairs": [
+              {
+                "left": "How are you?",
+                "right": "Not bad, thanks."
+              },
+              {
+                "left": "Thank you!",
+                "right": "You're welcome."
+              },
+              {
+                "left": "Good night!",
+                "right": "Good night!"
+              },
+              {
+                "left": "Have a nice day!",
+                "right": "Thanks, you too."
+              }
+            ]
+          },
+          {
+            "id": "s07",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_interaction",
+            "task_zh": "早上在公司电梯里，你遇到新同事 Emma。完成一段小对话：打招呼 → 问她好不好 → 你到楼层了，礼貌地离开。",
+            "prompt_en": "Good morning!",
+            "model_answers": [
+              "Good morning, Emma! How are you?",
+              "Hi, Emma! How are you? ... Oh, excuse me, this is my floor. See you later!"
+            ],
+            "checklist_zh": [
+              "我按时间打了招呼（Good morning / Hi）",
+              "我问了 How are you?",
+              "我用 Excuse me 礼貌地离开",
+              "我道别了（Bye / See you）"
+            ]
+          },
+          {
+            "id": "s08",
+            "type": "write",
+            "role": "communicative_task",
+            "skill": "written_interaction",
+            "task_zh": "给同事 Lisa 发一条早上的工作消息：先打招呼，再问她好不好。",
+            "model_answers": [
+              "Good morning, Lisa! How are you?",
+              "Hi Lisa! How are you today?"
+            ],
+            "checklist_zh": [
+              "开头有问候语",
+              "写了对方的名字",
+              "有 How are you? 这样的问候",
+              "句首字母大写，问句用问号"
+            ]
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "listening",
+            "prompt_zh": "听录音，选出最合适的回答。",
+            "audio_en": "Thanks for your help!",
+            "options": [
+              "You're welcome.",
+              "Good morning.",
+              "Excuse me."
+            ],
+            "answer": 0,
+            "explanation_zh": "别人感谢你，回答 You're welcome。"
+          },
+          {
+            "id": "s10",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "vocabulary",
+            "instructions_zh": "晚上 7 点，你走进餐厅。服务员说：",
+            "sentence_en": "Good ___! Table for one?",
+            "translation_zh": "晚上好！一位吗？",
+            "answers": [
+              "evening"
+            ],
+            "explanation_zh": "晚上见面用 Good evening，不能用 Good night。"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -24,3 +24,27 @@ export async function expectSignedIn(page: Page) {
 export function formAlert(page: Page) {
   return page.locator("form").getByRole("alert");
 }
+
+/**
+ * Sign in for specs that run after auth.spec.ts (which changes the password),
+ * or set up the owner when the test database is still fresh.
+ */
+export async function ensureSignedIn(page: Page) {
+  await page.goto("/");
+  await page.waitForURL(/\/(setup|login|today)$/);
+  if (page.url().endsWith("/today")) return;
+  if (page.url().endsWith("/setup")) {
+    await page.getByLabel("怎么称呼你").fill(TEST_OWNER.name);
+    await page.getByLabel("邮箱（用于登录）").fill(TEST_OWNER.email);
+    await page.getByLabel("密码", { exact: true }).fill(TEST_OWNER.password);
+    await page.getByLabel("再次输入密码").fill(TEST_OWNER.password);
+    await page.getByRole("button", { name: "创建账户并开始" }).click();
+    await expectSignedIn(page);
+    return;
+  }
+  for (const password of [TEST_OWNER.newPassword, TEST_OWNER.password]) {
+    await signIn(page, password);
+    if (await page.waitForURL(/\/today$/, { timeout: 5_000 }).then(() => true, () => false)) return;
+  }
+  throw new Error("Could not sign in with any known test password.");
+}

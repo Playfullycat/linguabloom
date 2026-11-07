@@ -4,7 +4,7 @@ import { z } from "zod";
 import { CEFR_LEVELS } from "../../modules/curriculum/domain/cefr";
 import type { DbExecutor } from "../connection";
 import { cefrLevels } from "../schema";
-import data from "./data/cefr-levels.json";
+import data from "./data/cefr-levels.json" with { type: "json" };
 import type { Seed } from "./types";
 
 const fileSchema = z.object({
