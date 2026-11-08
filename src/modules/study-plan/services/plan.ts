@@ -3,6 +3,7 @@ import { and, asc, desc, eq, gte, inArray, isNull, sql } from "drizzle-orm";
 import type { Database, DbExecutor } from "@/db/connection";
 import {
   assessmentSessions,
+  canDoEvidence,
   cefrLevels,
   contentInteractions,
   errorItems,
@@ -17,6 +18,8 @@ import {
   units,
 } from "@/db/schema";
 import { localDateString, startOfLocalDay } from "@/lib/time";
+import { loadCanDo } from "@/modules/abilities/content";
+import { syncCanDoEvidence } from "@/modules/abilities/services/abilities";
 import { getCurrentEstimates } from "@/modules/assessment/services/assessment";
 import { CEFR_LEVELS } from "@/modules/curriculum/domain/cefr";
 import { PLACEMENT_LEVELS } from "@/modules/assessment/domain/engine";
@@ -156,13 +159,23 @@ async function gatherFacts(
   mode: "normal" | "review_only",
   comeback: boolean,
 ) {
-  // Alternate reading and listening from day to day.
-  const preferType = Number(ctx.planDate.slice(-2)) % 2 === 0 ? "reading" : "listening";
+  // Can-do gaps (Phase 5.3): statements without any passing evidence yet steer materials and output tasks.
+  await syncCanDoEvidence(db, userId, ctx.timeZone);
+  const passedRows = await db
+    .selectDistinct({ id: canDoEvidence.canDoId })
+    .from(canDoEvidence)
+    .where(and(eq(canDoEvidence.userId, userId), eq(canDoEvidence.outcome, "pass")));
+  const passed = new Set(passedRows.map((r) => r.id));
+  const { statements, links } = loadCanDo();
+  const statementById = new Map(statements.map((st) => [st.id, st]));
+  const canDoZh = new Map(statements.map((st) => [st.id, st.zh]));
+  // Reading and listening alternate by day when their estimates are level; otherwise the weaker one goes first.
+  const fallbackType = Number(ctx.planDate.slice(-2)) % 2 === 0 ? "reading" : "listening";
   const [queue, all, estimates, inputMaterial, errors] = await Promise.all([
     getReviewQueue(db, userId, now, ctx.timeZone, ctx.newItemsLimit),
     loadPublishedLessons(db, userId),
     getCurrentEstimates(db, userId),
-    pickInputMaterial(db, userId, preferType),
+    pickInputMaterial(db, userId, { fallbackType, passedCanDo: passed, materialCanDo: links.materials, canDoZh }),
     errorSummary(db, userId, now),
   ]);
   // Only errors with an exercise bank behind them get a plan task: a due retest first, then the most frequent.
@@ -183,7 +196,13 @@ async function gatherFacts(
     all.map((l) => l.id),
   );
 
+  // The unit's own can-do statement a lesson builds toward (the first one listed for it).
+  const lessonGoal = (id: string) => {
+    const own = (links.lessons.get(id) ?? []).map((c) => statementById.get(c)).find((st) => st?.origin.startsWith("unit:"));
+    return own?.zh ?? null;
+  };
   const toRef = (l: LessonRow): LessonRef => ({
+    canDoZh: lessonGoal(l.id),
     id: l.id,
     titleEn: l.titleEn,
     titleZh: l.titleZh,
@@ -217,7 +236,12 @@ async function gatherFacts(
     .filter((l) => l.status === "completed" && l.id !== next?.id)
     .sort((a, b) => (b.completedAt?.getTime() ?? 0) - (a.completedAt?.getTime() ?? 0));
   const input = completed.find((l) => flags.get(l.id)?.listening);
-  const output = completed.find((l) => flags.get(l.id)?.output && l.id !== input?.id);
+  // Output again: prefer a lesson whose speaking / writing can-do still has no passing evidence.
+  const productiveGap = (id: string) =>
+    (links.lessons.get(id) ?? []).map((c) => statementById.get(c)).find((st) => st && OUTPUT_SKILLS.includes(st.skill) && !passed.has(st.id));
+  const outputCandidates = completed.filter((l) => flags.get(l.id)?.output && l.id !== input?.id);
+  const output = outputCandidates.find((l) => productiveGap(l.id)) ?? outputCandidates[0];
+  const outputGap = output ? (productiveGap(output.id)?.zh ?? null) : null;
 
   return {
     sessionMinutes,
@@ -229,7 +253,7 @@ async function gatherFacts(
     inputMaterial,
     inputLesson: input ? toRef(input) : null,
     remediation,
-    outputLesson: output ? toRef(output) : null,
+    outputLesson: output ? { ...toRef(output), gapZh: outputGap } : null,
     startingLevelLabel: !started && placed ? placed.levelLabel : null,
     pte: ctx.goals.includes("exam") && mode === "normal" ? await pickPteTask(db, userId) : null,
   };

@@ -81,7 +81,7 @@ async function PteHome() {
           <ul className="flex flex-wrap gap-x-4 gap-y-1">
             {version.sources.map((s) => (
               <li key={s.url}>
-                <a href={s.url} target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-1 text-primary-ink hover:underline">
+                <a href={s.url} target="_blank" rel="noreferrer noopener" className="inline-flex min-h-6 items-center gap-1 text-primary-ink hover:underline">
                   {s.title}
                   <ExternalLink className="size-3.5" aria-hidden="true" />
                 </a>

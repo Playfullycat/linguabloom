@@ -42,7 +42,7 @@ export function GenerateReadingForm({ levels, defaultLevel }: { levels: { value:
           { value: "listening", label: "对话（听力）" },
         ]}
       />
-      <div className="grid gap-3 sm:grid-cols-[1fr_8rem]">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-[1fr_8rem]">
         <div className="flex flex-col gap-1.5">
           <label htmlFor={`${id}-topic`} className="text-sm font-medium text-ink">
             话题

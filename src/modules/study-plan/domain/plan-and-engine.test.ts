@@ -109,6 +109,34 @@ describe("buildPlan", () => {
     expect(buildPlan(facts({ pte: { ...pte, avgShare: null } })).at(-1)!.reason).toContain("还没练过");
   });
 
+  it("on a heavy review day gives review more time, shortens the lesson and explains why (Phase 5.3)", () => {
+    // 50 due cards ≈ 20 minutes: more than half of a 25-minute session.
+    const plan = buildPlan(facts({ dueReviews: 50, newCardsAvailable: 10 }));
+    const review = plan.find((t) => t.kind === "review")!;
+    const lessonTask = plan.find((t) => t.kind === "lesson")!;
+    expect(review.minutes).toBe(15); // 60% of 25
+    expect(lessonTask.minutes).toBe(10);
+    expect(review.reason).toContain("到期的卡片比较多");
+    expect(review.reason).not.toContain("张新卡可以开始学");
+    expect(plan.reduce((s, t) => s + t.minutes, 0)).toBe(25);
+    // A normal day keeps the template.
+    expect(buildPlan(facts({ dueReviews: 10 })).find((t) => t.kind === "review")!.reason).not.toContain("比较多");
+  });
+
+  it("says what a lesson builds toward, why a text was picked and which productive can-do needs evidence", () => {
+    const plan = buildPlan(
+      facts({
+        sessionMinutes: 60,
+        nextLesson: lesson({ canDoZh: "能用简单的日常用语打招呼和道别。" }),
+        inputMaterial: { id: "ls-a1-x", type: "listening", titleEn: "X", titleZh: "X", levelLabel: "A1", newWords: 3, fit: "right", reasons: ["你的听力（Pre-A1）低于阅读（A1），今天先补这一项"] },
+        outputLesson: lesson({ id: "u3-l3", hasOutputTask: true, gapZh: "能进行简单的自我介绍。" }),
+      }),
+    );
+    expect(plan.find((t) => t.kind === "lesson")!.reason).toContain("这节课练的是：能用简单的日常用语打招呼和道别。");
+    expect(plan.find((t) => t.kind === "input")!.reason).toContain("你的听力（Pre-A1）低于阅读（A1）");
+    expect(plan.find((t) => t.kind === "output")!.reason).toContain("“能进行简单的自我介绍。”还没有足够的证据");
+  });
+
   it("explains a resumed lesson", () => {
     const plan = buildPlan(facts({ nextLesson: lesson({ inProgress: true }) }));
     expect(plan.find((t) => t.kind === "lesson")!.title).toMatch(/^继续/);

@@ -20,6 +20,8 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
+  // On-screen keyboards shrink the layout instead of covering it, so fixed bottom bars stay above the keyboard.
+  interactiveWidget: "resizes-content",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#f7f8fc" },
     { media: "(prefers-color-scheme: dark)", color: "#14151f" },

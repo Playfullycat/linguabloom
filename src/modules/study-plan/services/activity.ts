@@ -26,14 +26,12 @@ export type WeeklyActivity = {
   lastActivityAt: Date | null;
 };
 
-export async function getWeeklyActivity(db: DbExecutor, userId: string, now: Date, timeZone: string): Promise<WeeklyActivity> {
-  const today = startOfLocalDay(now, timeZone);
-  const from = startOfLocalDay(new Date(today.getTime() - 6 * 86_400_000 + 3_600_000), timeZone);
-  const week = startOfLocalWeek(now, timeZone);
-  const since = (from < week ? from : week).toISOString();
-
-  // One row per study record: when, how long (capped), which strand.
-  const rows = await db.execute<{ at: string; ms: number; strand: Strand }>(sql`
+/**
+ * One row per study record since `since`: when, how long (capped), which strand.
+ * Shared by the weekly activity and the long-term trends so both count time the same way.
+ */
+export function studyRecords(userId: string, since: string) {
+  return sql`
     select a.created_at as at,
            least(coalesce(a.duration_ms, 0), ${STEP_CAP_MS})::int as ms,
            case
@@ -59,7 +57,16 @@ export async function getWeeklyActivity(db: DbExecutor, userId: string, now: Dat
     select ended_at, least(coalesce(duration_seconds, 0) * 1000, ${SPEAKING_CAP_MS})::int, 'meaning_focused_output'
     from speaking_attempts
     where user_id = ${userId} and status = 'ended' and ended_at >= ${since}::timestamptz
-  `);
+  `;
+}
+
+export async function getWeeklyActivity(db: DbExecutor, userId: string, now: Date, timeZone: string): Promise<WeeklyActivity> {
+  const today = startOfLocalDay(now, timeZone);
+  const from = startOfLocalDay(new Date(today.getTime() - 6 * 86_400_000 + 3_600_000), timeZone);
+  const week = startOfLocalWeek(now, timeZone);
+  const since = (from < week ? from : week).toISOString();
+
+  const rows = await db.execute<{ at: string; ms: number; strand: Strand }>(studyRecords(userId, since));
 
   const [last] = await db.execute<{ last: string | null }>(sql`
     select greatest(

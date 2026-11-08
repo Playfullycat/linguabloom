@@ -10,6 +10,7 @@ import { getTestDatabaseUrl, truncateAll } from "@/test/db";
 
 import { RATING } from "../domain/cards";
 import { answerCard, getReviewQueue, getReviewStats, listVocabulary, replayCardState } from "./review";
+import { applyOfflineAnswers } from "./offline";
 import { addCardType, addEntriesForUser, addWordsFromLesson, setCardSuspended } from "./vocabulary";
 
 const url = getTestDatabaseUrl();
@@ -113,6 +114,44 @@ describe("answering cards", () => {
     const [stored] = await db.select().from(reviewCards).where(eq(reviewCards.id, card!.id));
     expect(await replayCardState(db, userA, card!.id)).toEqual(stored!.fsrsState);
     expect(await db.select().from(reviewLogs).where(eq(reviewLogs.cardId, card!.id))).toHaveLength(5);
+  });
+});
+
+describe("offline answers (Phase 5.3)", () => {
+  it("are applied at the time they were given, once, in order; newer reviews, old answers and foreign cards are skipped", async () => {
+    await addEntriesForUser(db, userA, [`${HELLO}.hello`, `${HELLO}.hi`], "manual");
+    const [hello] = (await cardsOf(userA, `${HELLO}.hello`)).filter((c) => c.cardType === "recognition");
+    const [hi] = (await cardsOf(userA, `${HELLO}.hi`)).filter((c) => c.cardType === "recognition");
+    await addEntriesForUser(db, userB, [`${HELLO}.hello`], "manual");
+    const [foreign] = (await cardsOf(userB, `${HELLO}.hello`)).filter((c) => c.cardType === "recognition");
+
+    const now = new Date();
+    const hourAgo = new Date(now.getTime() - 3_600_000);
+    // "hi" was reviewed online 30 minutes ago, after the offline answer below was given.
+    await answerCard(db, userA, { cardId: hi!.id, rating: RATING.Good, clientRequestId: randomUUID() }, new Date(now.getTime() - 30 * 60_000));
+
+    const answer = (cardId: string, at: Date) => ({ cardId, rating: RATING.Good, clientRequestId: randomUUID(), reviewedAt: at.toISOString() });
+    const helloAnswer = answer(hello!.id, hourAgo);
+    const results = await applyOfflineAnswers(
+      db,
+      userA,
+      [answer(hi!.id, hourAgo), helloAnswer, answer(hello!.id, new Date(now.getTime() - 20 * 86_400_000)), answer(foreign!.id, hourAgo)],
+      now,
+    );
+    expect(results.map((r) => r.status).sort()).toEqual(["missing", "stale", "stored", "too_old"]);
+    expect(results.find((r) => r.clientRequestId === helloAnswer.clientRequestId)!.status).toBe("stored");
+
+    // Stored with the offline time, so the schedule counts from when the card was really reviewed.
+    const [log] = await db.select().from(reviewLogs).where(eq(reviewLogs.clientRequestId, helloAnswer.clientRequestId));
+    expect(log!.reviewedAt.toISOString()).toBe(hourAgo.toISOString());
+    const [stored] = await db.select().from(reviewCards).where(eq(reviewCards.id, hello!.id));
+    expect(await replayCardState(db, userA, hello!.id)).toEqual(stored!.fsrsState);
+
+    // A retried upload changes nothing.
+    const again = await applyOfflineAnswers(db, userA, [helloAnswer], now);
+    expect(again).toEqual([{ clientRequestId: helloAnswer.clientRequestId, status: "duplicate" }]);
+    expect(await db.select().from(reviewLogs).where(eq(reviewLogs.cardId, hello!.id))).toHaveLength(1);
+    expect(await db.select().from(reviewLogs).where(eq(reviewLogs.cardId, foreign!.id))).toHaveLength(0);
   });
 });
 

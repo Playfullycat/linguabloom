@@ -46,6 +46,8 @@ export function TokenText({
         const button = (
           <button
             type="button"
+            // A word inside running text: an inline target, exempt from the 24px minimum (WCAG 2.5.8).
+            data-inline-target=""
             tabIndex={g ? 0 : -1}
             onClick={() => onWord(t.text, t.gloss)}
             aria-label={g ? `查看生词：${t.text}${collected.has(g.text.toLowerCase()) ? "（已在词汇库）" : ""}` : undefined}

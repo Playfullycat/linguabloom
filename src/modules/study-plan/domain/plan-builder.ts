@@ -16,6 +16,10 @@ export type LessonRef = {
   estimatedMinutes: number;
   inProgress: boolean;
   hasOutputTask: boolean;
+  /** The can-do statement this lesson builds toward (shown in the reason). */
+  canDoZh?: string | null;
+  /** For a lesson suggested again for output: a productive can-do that has no passing evidence yet. */
+  gapZh?: string | null;
 };
 
 export type InputMaterialRef = {
@@ -26,6 +30,8 @@ export type InputMaterialRef = {
   levelLabel: string;
   newWords: number;
   fit: "easier" | "right" | "stretch" | "hard";
+  /** Why this text today: skill gap, first evidence for a can-do (Phase 5.3). */
+  reasons?: string[];
 };
 
 export type RemediationRef = {
@@ -75,6 +81,12 @@ export type PlannedTask = {
 
 const MINUTES_PER_CARD = 0.4;
 
+/** Due reviews that would take more than this share of the session make a "heavy review day" (Phase 5.3). */
+export const HEAVY_REVIEW_SHARE = 0.5;
+/** On a heavy review day, review may take up to this share; the lesson gives up the time. */
+const HEAVY_REVIEW_MAX_SHARE = 0.6;
+const MIN_LESSON_MINUTES = 5;
+
 function lighter(minutes: SessionLength): SessionLength {
   const i = SESSION_LENGTHS.indexOf(minutes);
   return SESSION_LENGTHS[Math.max(0, i - 1)]!;
@@ -88,13 +100,18 @@ export function buildPlan(facts: PlanFacts): PlannedTask[] {
   const minutes = facts.comeback ? lighter(facts.sessionMinutes) : facts.sessionMinutes;
   const reviewable = facts.dueReviews + facts.newCardsAvailable;
   const tasks: PlannedTask[] = [];
+  // Review load: when due cards alone would fill more than half the session, clear them first.
+  const dueNeed = facts.dueReviews * MINUTES_PER_CARD;
+  const heavy = facts.mode === "normal" && facts.dueReviews > 0 && dueNeed > minutes * HEAVY_REVIEW_SHARE;
 
   const reviewTask = (budget: number): PlannedTask | null => {
     if (reviewable === 0) return null;
-    const need = Math.max(3, Math.ceil(facts.dueReviews * MINUTES_PER_CARD + Math.min(facts.newCardsAvailable, 20) * MINUTES_PER_CARD));
+    const newPart = heavy ? 0 : Math.min(facts.newCardsAvailable, 20) * MINUTES_PER_CARD;
+    const need = Math.max(3, Math.ceil(dueNeed + newPart));
     const parts: string[] = [];
     if (facts.dueReviews > 0) parts.push(`${facts.dueReviews} 张卡片到期，先复习能把快要忘记的内容拉回来`);
-    if (facts.newCardsAvailable > 0) parts.push(`${facts.newCardsAvailable} 张新卡可以开始学`);
+    if (heavy) parts.push("到期的卡片比较多，今天先把它们清掉，新卡排在最后，时间不够可以留到明天；课程时间相应缩短");
+    else if (facts.newCardsAvailable > 0) parts.push(`${facts.newCardsAvailable} 张新卡可以开始学`);
     return {
       kind: "review",
       title: facts.dueReviews > 0 ? `复习 ${facts.dueReviews} 张到期卡片` : "开始学新词卡片",
@@ -117,18 +134,32 @@ export function buildPlan(facts: PlanFacts): PlannedTask[] {
       : facts.startingLevelLabel
         ? `这是当前单元的下一课（${where}）。根据诊断的初步估计，从 ${facts.startingLevelLabel} 开始比较合适。`
         : `这是当前单元的下一课（${where}）。`;
+    const goal = l.canDoZh ? `这节课练的是：${l.canDoZh}` : "";
     return {
       kind: "lesson",
       title: `${l.inProgress ? "继续" : "学习"}：${lessonTitle(l)}`,
       href: `/lesson/${l.id}`,
       minutes: budget,
-      reason: l.hasOutputTask ? `${reason}这节课里有开口说或动手写的任务。` : reason,
+      reason: [reason, goal ? `${goal}。` : "", l.hasOutputTask ? "这节课里有开口说或动手写的任务。" : ""].join(""),
       targetId: l.id,
     };
   };
 
+  // On a heavy review day the review block grows and the lesson block gives up the time.
+  const blocks = getSessionTemplate(minutes).map((b) => ({ ...b }));
+  if (heavy) {
+    const review = blocks.find((b) => b.kind === "review");
+    const lesson = blocks.find((b) => b.kind === "lesson");
+    if (review && lesson) {
+      const target = Math.min(Math.ceil(dueNeed), Math.round(minutes * HEAVY_REVIEW_MAX_SHARE));
+      const extra = Math.max(0, Math.min(target - review.minutes, lesson.minutes - MIN_LESSON_MINUTES));
+      review.minutes += extra;
+      lesson.minutes -= extra;
+    }
+  }
+
   let carry = 0;
-  for (const block of getSessionTemplate(minutes)) {
+  for (const block of blocks) {
     const budget = block.minutes + carry;
     carry = 0;
     if (block.kind === "review") {
@@ -154,7 +185,7 @@ export function buildPlan(facts: PlanFacts): PlannedTask[] {
           title: `${kind}：${m.titleEn}（${m.titleZh}）`,
           href: `/${m.type}/${m.id}`,
           minutes: budget,
-          reason: `一篇 ${m.levelLabel} ${kind}，生词 ${m.newWords} 个，${fit}。能读懂、听懂的真实内容最能积累语感。`,
+          reason: `一篇 ${m.levelLabel} ${kind}，生词 ${m.newWords} 个，${fit}。${(m.reasons ?? []).map((r) => `${r}。`).join("")}能读懂、听懂的真实内容最能积累语感。`,
           targetId: m.id,
         });
         continue;
@@ -187,7 +218,9 @@ export function buildPlan(facts: PlanFacts): PlannedTask[] {
         title: `再说一次：${lessonTitle(l)}`,
         href: `/lesson/${l.id}`,
         minutes: budget,
-        reason: "把这节课的口语或写作任务再做一次。每天用学过的英语表达自己，才能检验是不是真的会用。",
+        reason: l.gapZh
+          ? `“${l.gapZh}”还没有足够的证据，再做一次这节课的口语或写作任务正好补上。`
+          : "把这节课的口语或写作任务再做一次。每天用学过的英语表达自己，才能检验是不是真的会用。",
         targetId: l.id,
       });
     }

@@ -41,7 +41,7 @@ async function Loader({ searchParams }: Pick<PageProps<"/writing/new">, "searchP
         titleZh={prompt?.title_en}
         description={prompt ? undefined : "自己定题目和要求，AI 会按你的要求给反馈。"}
       />
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,20rem)]">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,20rem)]">
         <Card>
           <CardContent className="pt-6">
             <WritingEditor promptId={prompt?.id ?? null} minWords={prompt?.min_words ?? 20} maxWords={prompt?.max_words ?? 300} custom={!prompt} />

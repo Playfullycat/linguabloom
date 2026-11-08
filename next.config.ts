@@ -45,6 +45,11 @@ const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
   poweredByHeader: false,
+  experimental: {
+    // Weak network (Phase 5.3): failed navigations and Server Actions wait and retry
+    // once the connection returns instead of throwing; useOffline() drives the banner.
+    useOffline: true,
+  },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },

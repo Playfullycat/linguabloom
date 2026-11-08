@@ -1,6 +1,7 @@
 import { Suspense, type ReactNode } from "react";
 
 import { AppShell } from "@/components/layout/app-shell";
+import { OfflineSupport } from "@/components/layout/offline-support";
 import { SidebarAccount, SidebarAccountSkeleton } from "@/components/layout/sidebar-account";
 import { LoadingSkeleton } from "@/components/ui/skeleton";
 import { requireOwner } from "@/lib/auth/session";
@@ -19,6 +20,7 @@ export default function AppLayout({ children }: { children: ReactNode }) {
         </Suspense>
       }
     >
+      <OfflineSupport />
       <Suspense fallback={<LoadingSkeleton />}>
         <OwnerGate>{children}</OwnerGate>
       </Suspense>

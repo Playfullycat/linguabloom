@@ -4,7 +4,9 @@ import { and, eq } from "drizzle-orm";
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from "vitest";
 
 import { createDb } from "@/db/connection";
-import { canDoEvidence, canDoStatements, contentInteractions, exerciseAttempts, lessonStepAttempts, lessonSteps, speakingAttempts, users, writingSubmissions } from "@/db/schema";
+import { canDoEvidence, canDoStatements, contentInteractions, exerciseAttempts, lessonStepAttempts, lessonSteps, reviewCards, reviewLogs, speakingAttempts, users, writingSubmissions } from "@/db/schema";
+import { recordError } from "@/modules/errors/services/errors";
+import { addWordsFromLesson } from "@/modules/review/services/vocabulary";
 import { runSeeds } from "@/db/seed";
 import { getTestDatabaseUrl, truncateAll } from "@/test/db";
 import {
@@ -19,6 +21,7 @@ import {
 
 import { getAbilityMap, summarizeAbilities, syncCanDoEvidence } from "./abilities";
 import { getSkillAnalytics } from "./analytics";
+import { getLearningTrends } from "./trends";
 
 const url = getTestDatabaseUrl();
 const { db, client } = createDb(url, { max: 4 });
@@ -132,6 +135,47 @@ describe("evidence from practice", () => {
     const analytics = await getSkillAnalytics(db, userA);
     expect(analytics.listening).toMatchObject({ answered: 1, correct: 1, dictation: { attempts: 1, correct: 0 } });
     expect(analytics.writing.texts).toBe(1);
+  });
+});
+
+describe("long-term trends (Phase 5.3)", () => {
+  it("counts study time, mature-card retention, new evidence per skill and errors per category by week, per learner", async () => {
+    await addWordsFromLesson(db, userA, "pre-a1-u03-hello-l1", ["hello"]);
+    const [card] = await db.select({ id: reviewCards.id }).from(reviewCards).where(eq(reviewCards.userId, userA)).limit(1);
+    const now = new Date();
+    // 12 reviews of a mature card this week, 11 remembered: 92% retention.
+    await db.insert(reviewLogs).values(
+      Array.from({ length: 12 }, (_, i) => ({
+        userId: userA,
+        cardId: card!.id,
+        rating: i === 0 ? 1 : 3,
+        reviewedAt: new Date(now.getTime() - i * 60_000),
+        elapsedMs: 30_000,
+        responseMode: "self",
+        stateBefore: { state: 2 },
+        schedulerResult: {},
+        algorithmVersion: "test",
+        clientRequestId: randomUUID(),
+      })),
+    );
+    await db.insert(canDoEvidence).values({ userId: userA, canDoId: "a1.gr.be", source: "exercise", sourceRef: randomUUID(), outcome: "pass", confidence: "medium", weight: 1, occurredAt: now });
+    await recordError(db, userA, { category: "tense", pointType: "grammar", pointId: "past-simple", title: "Past simple", source: "grammar", sourceRef: "x", wrong: "goed", correct: "went" });
+
+    const trends = await getLearningTrends(db, userA, now, TZ);
+    expect(trends.weeks).toHaveLength(8);
+    const thisWeek = trends.weeks.at(-1)!;
+    expect(thisWeek.matureReviews).toBe(12);
+    expect(thisWeek.retention).toBeCloseTo(11 / 12);
+    expect(thisWeek.minutes).toBeGreaterThanOrEqual(6); // 12 × 30 s
+    expect(trends.weeks.slice(0, -1).every((w) => w.retention === null)).toBe(true); // < 10 reviews: not shown
+    expect(trends.evidence.find((r) => r.key === "grammar")).toMatchObject({ total: 1 });
+    expect(trends.errors).toEqual([expect.objectContaining({ key: "tense", label: "时态", total: 1 })]);
+    expect(trends.correlation).toBeNull(); // one week of data is not enough
+
+    const other = await getLearningTrends(db, userB, now, TZ);
+    expect(other.weeks.every((w) => w.minutes === 0 && w.matureReviews === 0)).toBe(true);
+    expect(other.evidence).toEqual([]);
+    expect(other.errors).toEqual([]);
   });
 });
 

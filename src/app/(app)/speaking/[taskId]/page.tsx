@@ -50,7 +50,7 @@ async function TaskLoader({ params }: Pick<PageProps<"/speaking/[taskId]">, "par
         titleZh={task.title_zh}
         description={task.goal_zh}
       />
-      <div className="grid gap-6 xl:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-6 xl:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">

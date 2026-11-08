@@ -16,7 +16,9 @@ export default function FocusLayout({ children }: { children: ReactNode }) {
         </div>
       }
     >
-      <OwnerGate>{children}</OwnerGate>
+      <main>
+        <OwnerGate>{children}</OwnerGate>
+      </main>
     </Suspense>
   );
 }

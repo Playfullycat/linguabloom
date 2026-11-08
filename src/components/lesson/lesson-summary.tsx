@@ -26,7 +26,7 @@ export function LessonSummary({
   const mastery = summary.masteryEstimate;
 
   return (
-    <main className="mx-auto flex min-h-dvh w-full max-w-3xl flex-col gap-6 px-4 py-10">
+    <div className="mx-auto flex min-h-dvh w-full max-w-3xl flex-col gap-6 px-4 py-10">
       <div className="flex flex-col items-center gap-4 text-center">
         {mastery !== null ? (
           <ProgressRing value={mastery} size={96} strokeWidth={9} tone="mint" label={`首次答对 ${Math.round(mastery * 100)}%`} />
@@ -136,6 +136,6 @@ export function LessonSummary({
           ) : null}
         </div>
       </div>
-    </main>
+    </div>
   );
 }

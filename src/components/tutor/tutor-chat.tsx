@@ -221,7 +221,7 @@ export function TutorChat(props: TutorChatProps) {
     });
 
   return (
-    <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(0,18rem)]">
+    <div className="grid grid-cols-[minmax(0,1fr)] gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(0,18rem)]">
       <div className="flex min-w-0 flex-col gap-4">
         <fieldset>
           <legend className="sr-only">选择模式</legend>

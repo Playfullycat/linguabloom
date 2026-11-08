@@ -59,3 +59,25 @@ test("assessment history keeps every diagnostic", async ({ page }) => {
   await expect(history.locator("tbody tr")).not.toHaveCount(0);
   await expect(page.getByText(/优先出上次没做过的题/)).toBeVisible();
 });
+
+test("long-term trends: weekly study time and retention side by side, evidence and errors by week, CSV export (Phase 5.3)", async ({ page }) => {
+  await ensureSignedIn(page);
+  await page.goto("/progress");
+  await page.getByRole("link", { name: /查看长期趋势/ }).click();
+  await expect(page).toHaveURL(/\/progress\/trends$/);
+  const time = page.getByTestId("trends-time-retention");
+  await expect(time.getByText("每周学习时间（分钟）")).toBeVisible();
+  await expect(time.getByText("每周保留率")).toBeVisible();
+  // Earlier specs studied this week: the current week has a bar with a keyboard tooltip.
+  await time.getByRole("button", { name: /起的一周：\d+(\.\d)? 分钟/ }).last().focus();
+  await expect(page.getByRole("tooltip")).toContainText("分钟");
+  await expect(page.getByText(/相关系数|数据还不够/)).toBeVisible();
+  await expect(page.getByTestId("trends-evidence")).toContainText("合计");
+  await expect(page.getByTestId("trends-errors")).toContainText(/拼写|语法|时态|冠词|词形|听辨|语义理解/);
+  await page.screenshot({ path: shots("progress-trends"), fullPage: true });
+
+  const download = page.waitForEvent("download");
+  await page.getByRole("link", { name: "导出 CSV" }).click();
+  const file = await download;
+  expect(file.suggestedFilename()).toMatch(/^linguabloom-trends-\d{4}-\d{2}-\d{2}\.csv$/);
+});

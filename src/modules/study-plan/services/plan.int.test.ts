@@ -232,6 +232,19 @@ describe("today plan", () => {
     expect((await input()).status).toBe("done");
   });
 
+  it("recommends with reasons: the weaker skill's text, first can-do evidence, what the lesson builds toward (Phase 5.3)", async () => {
+    const est = (skill: string, estimatedLevel: string) => ({ userId: userA, skill, estimatedLevel, confidence: "medium", evidenceCount: 6, source: "assessment:test" });
+    await db.insert(skillEstimates).values([est("vocabulary", "a1"), est("grammar", "a1"), est("reading", "a1"), est("listening", "pre_a1")]);
+    await updatePreferences(db, userA, { dailyMinutes: 60 });
+    const plan = await getTodayPlan(db, userA);
+    const input = plan.tasks.find((t) => t.kind === "input")!;
+    // Listening is the weaker skill, so today's text is a listening at the learner's listening level.
+    expect(input.href).toMatch(/^\/listening\/ls-pa1-/);
+    expect(input.reason).toContain("你的听力（Pre-A1）低于阅读（A1）");
+    expect(input.reason).toContain("提供第一份证据");
+    expect(plan.tasks.find((t) => t.kind === "lesson")!.reason).toContain("这节课练的是：");
+  });
+
   it("lightens the plan after a break of more than two days", async () => {
     const now = new Date();
     const old = new Date(now.getTime() - 5 * 86_400_000);

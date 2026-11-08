@@ -78,7 +78,7 @@ async function TodayLoader() {
         </Card>
       ) : null}
 
-      <div className="grid gap-6 xl:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-6 xl:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
         <Card>
           <CardHeader>
             <CardTitle>今天的计划</CardTitle>

@@ -152,7 +152,7 @@ function AbilityCard({ item, timeZone }: { item: AbilityItem; timeZone: string }
                 <li key={e.id} className="flex items-center gap-2">
                   <span className={cn("w-10 shrink-0 text-xs font-medium", e.outcome === "pass" ? "text-mint-ink" : "text-coral-ink")}>{e.outcome === "pass" ? "做到" : "没做到"}</span>
                   {e.href ? (
-                    <Link href={e.href} className="text-primary-ink hover:underline">
+                    <Link href={e.href} className="inline-flex min-h-6 items-center text-primary-ink hover:underline">
                       {e.label}
                     </Link>
                   ) : (
@@ -174,7 +174,7 @@ function AbilityCard({ item, timeZone }: { item: AbilityItem; timeZone: string }
             <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
               <span>去练：</span>
               {item.routes.slice(0, 4).map((r) => (
-                <Link key={`${r.type}-${r.id}`} href={r.href} className="text-primary-ink hover:underline">
+                <Link key={`${r.type}-${r.id}`} href={r.href} className="inline-flex min-h-6 items-center text-primary-ink hover:underline">
                   {r.title}
                   <span className="text-muted">（{EVIDENCE_TYPE_LABELS[r.type]}）</span>
                 </Link>

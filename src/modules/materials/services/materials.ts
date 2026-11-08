@@ -510,7 +510,22 @@ export async function markCompleted(db: DbExecutor, userId: string, contentId: s
 }
 
 /** For the Today plan: an unfinished material near the learner's level. */
-export async function pickInputMaterial(db: DbExecutor, userId: string, preferType: MaterialType) {
+export type InputPickOptions = {
+  /** Used when reading and listening are at the same level: alternate by day. */
+  fallbackType: MaterialType;
+  /** Can-do ids the learner already has passing evidence for. */
+  passedCanDo?: ReadonlySet<string>;
+  /** Can-do statements a material may give evidence for (material id → ids) and their Chinese text. */
+  materialCanDo?: ReadonlyMap<string, string[]>;
+  canDoZh?: ReadonlyMap<string, string>;
+};
+
+/**
+ * Today's reading or listening (spec §4.3, Phase 5.3): the weaker of the two
+ * skills first, at a comfortable level, preferring a text that can give the
+ * first evidence for a can-do statement. Returns the reasons it was chosen.
+ */
+export async function pickInputMaterial(db: DbExecutor, userId: string, options: InputPickOptions) {
   const candidates = await db
     .select({ id: learningContents.id, type: learningContents.type, level: learningContents.cefrLevel, titleEn: learningContents.titleEn, titleZh: learningContents.titleZh, content: learningContents.content })
     .from(learningContents)
@@ -520,22 +535,35 @@ export async function pickInputMaterial(db: DbExecutor, userId: string, preferTy
   if (candidates.length === 0) return null;
   const known = await knownGlossaryTexts(db, userId);
   const levels = { reading: await learnerInputLevel(db, userId, "reading"), listening: await learnerInputLevel(db, userId, "listening") };
+  const gap = CEFR_LEVELS.indexOf(levels.reading.level) - CEFR_LEVELS.indexOf(levels.listening.level);
+  // Skill gap: the lower estimate gets the input today; equal levels alternate by day.
+  const preferType: MaterialType = gap > 0 ? "listening" : gap < 0 ? "reading" : options.fallbackType;
+  const firstEvidence = (id: string) => (options.materialCanDo?.get(id) ?? []).find((c) => !options.passedCanDo?.has(c));
   const score = (c: (typeof candidates)[number]) => {
     const fit = levelFit(c.level, levels[c.type as MaterialType].level);
     const fitScore = { right: 0, easier: 1, stretch: 2, hard: 9 }[fit];
-    return fitScore * 10 + (c.type === preferType ? 0 : 1);
+    return fitScore * 10 + (c.type === preferType ? 0 : 4) + (firstEvidence(c.id) ? 0 : 2);
   };
   const best = [...candidates].sort((a, b) => score(a) - score(b) || a.id.localeCompare(b.id))[0]!;
   if (score(best) >= 90) return null;
   const glossary = (best.content as StoredContent).glossary;
+  const type = best.type as MaterialType;
+  const reasons: string[] = [];
+  if (gap !== 0 && type === preferType) {
+    const label = (t: MaterialType) => `${t === "reading" ? "阅读" : "听力"}（${CEFR_LEVEL_LABELS[levels[t].level]}）`;
+    reasons.push(`你的${label(type)}低于${label(type === "reading" ? "listening" : "reading")}，今天先补这一项`);
+  }
+  const canDo = firstEvidence(best.id);
+  if (canDo && options.canDoZh?.get(canDo)) reasons.push(`做完理解题能为“${options.canDoZh.get(canDo)}”提供第一份证据`);
   return {
     id: best.id,
-    type: best.type as MaterialType,
+    type,
     titleEn: best.titleEn,
     titleZh: best.titleZh,
     levelLabel: isCefrLevel(best.level) ? CEFR_LEVEL_LABELS[best.level] : best.level,
     newWords: glossary.filter((g) => !known.has(g.text.toLowerCase())).length,
-    fit: levelFit(best.level, levels[best.type as MaterialType].level),
+    fit: levelFit(best.level, levels[type].level),
+    reasons,
   };
 }
 

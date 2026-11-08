@@ -79,7 +79,7 @@ async function Loader({ params }: Pick<PageProps<"/grammar/[pointId]">, "params"
           </CardContent>
         </Card>
       ) : (
-        <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(0,20rem)]">
+        <div className="grid grid-cols-[minmax(0,1fr)] gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(0,20rem)]">
           <div className="flex min-w-0 flex-col gap-4">
             <Card>
               <CardHeader>

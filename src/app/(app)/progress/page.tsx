@@ -457,6 +457,12 @@ async function ProgressLoader() {
               </li>
             ))}
           </ul>
+          <Button asChild variant="outline" size="sm" className="mt-4 h-auto min-h-8 self-start py-1.5 whitespace-normal">
+            <Link href="/progress/trends">
+              <TrendingUp aria-hidden="true" />
+              查看长期趋势（逐周）
+            </Link>
+          </Button>
         </CardContent>
       </Card>
     </div>

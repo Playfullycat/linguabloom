@@ -49,7 +49,8 @@ async function WritingHome() {
   const levels = [...new Set(prompts.map((p) => p.level))];
 
   return (
-    <div className="grid gap-6 xl:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
+    // minmax(0, 1fr) at every size: the one-line previews (truncate) must not widen the column on phones.
+    <div className="grid grid-cols-[minmax(0,1fr)] gap-6 xl:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
       <div className="flex flex-col gap-5">
         {!status.available ? (
           <Card>

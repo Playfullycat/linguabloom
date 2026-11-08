@@ -69,7 +69,7 @@ async function TaskLoader({ params }: Pick<PageProps<"/pte/[taskCode]">, "params
         titleZh={type.nameZh}
         description={type.descriptionZh}
       />
-      <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
         <Card>
           <CardHeader>
             <CardTitle>官方说明</CardTitle>

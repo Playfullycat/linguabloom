@@ -41,7 +41,7 @@ export default function LibraryPage() {
         titleZh="我的材料"
         description="导入你自己的文章、字幕、音频和词表。先解析成草稿，你看过预览、确认后才进入学习库。导入的材料只给你自己用。"
       />
-      <div className="grid gap-6 xl:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-6 xl:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
         <Card>
           <CardHeader>
             <CardTitle>导入新材料</CardTitle>
@@ -80,7 +80,7 @@ async function ImportList() {
             <P.icon className="size-4" aria-hidden="true" />
           </span>
           <div className="min-w-0 flex-1">
-            <Link href={href} className="font-medium text-ink hover:underline">
+            <Link href={href} className="inline-flex min-h-6 items-center font-medium text-ink hover:underline">
               {i.title}
             </Link>
             <p className="text-xs text-muted">
@@ -138,7 +138,7 @@ async function GenerateCard() {
               const p = g.payload as { title_en: string; type: string };
               return (
                 <li key={g.id} className="flex items-center justify-between gap-2 text-sm">
-                  <Link href={g.status === "published" && g.resultRef ? `/${p.type}/${g.resultRef}` : `/library/ai/${g.id}`} className="text-ink hover:underline">
+                  <Link href={g.status === "published" && g.resultRef ? `/${p.type}/${g.resultRef}` : `/library/ai/${g.id}`} className="inline-flex min-h-6 items-center text-ink hover:underline">
                     <span lang="en">{p.title_en}</span>
                   </Link>
                   <Badge size="sm" tone={g.status === "draft" ? "yellow" : "mint"}>

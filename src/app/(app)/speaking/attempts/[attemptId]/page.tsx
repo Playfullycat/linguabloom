@@ -59,7 +59,7 @@ async function AttemptLoader({ params, searchParams }: PageProps<"/speaking/atte
         titleZh={task?.title_zh ?? "口语练习"}
         description={`${a.createdAt.toLocaleString("zh-CN", { timeZone: profile.timezone })} · ${SPEAKING_MODE_LABELS[a.mode as "typed"] ?? a.mode}${a.provider === "mock" ? "（模拟 AI）" : ""} · 老师按 ${a.level} 水平说话`}
       />
-      <div className="grid gap-6 xl:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-6 xl:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
         <Card>
           <CardHeader>
             <CardTitle>反馈</CardTitle>
