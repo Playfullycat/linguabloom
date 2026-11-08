@@ -40,7 +40,13 @@ export default defineConfig({
   projects: [
     {
       name: "desktop",
-      use: { ...devices["Desktop Chrome"], channel: process.env.CI ? undefined : "chrome" },
+      use: {
+        ...devices["Desktop Chrome"],
+        channel: process.env.CI ? undefined : "chrome",
+        // Speaking Lab: a fake microphone (a test tone) with permission granted, so recording works headless.
+        permissions: ["microphone"],
+        launchOptions: { args: ["--use-fake-ui-for-media-stream", "--use-fake-device-for-media-stream"] },
+      },
     },
   ],
   webServer: externalBaseUrl

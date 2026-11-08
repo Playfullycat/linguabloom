@@ -158,7 +158,7 @@ export const errorOccurrences = pgTable(
     userId: uuid("user_id")
       .notNull()
       .references(() => users.id, { onDelete: "cascade" }),
-    /** lesson | review | grammar | reading | listening */
+    /** lesson | review | grammar | reading | listening | writing | speaking */
     source: text("source").notNull(),
     /** e.g. lesson id + step, exercise id, material id + sentence */
     sourceRef: text("source_ref").notNull(),

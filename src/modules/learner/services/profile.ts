@@ -76,6 +76,8 @@ export const preferencesSchema = z.object({
   newItemsLimit: z.number().int().min(0).max(100),
   showWeeklyStreak: z.boolean(),
   saveAiConversations: z.boolean(),
+  saveSpeakingAudio: z.boolean(),
+  saveSpeakingTranscripts: z.boolean(),
 });
 
 export async function updateProfile(db: DbExecutor, userId: string, input: Partial<z.infer<typeof profileSchema>>) {

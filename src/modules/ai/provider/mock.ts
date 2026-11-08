@@ -1,5 +1,17 @@
 import { AIError, AI_ERROR_CODES, type AIErrorCode } from "./errors";
-import type { AIProvider, ChatMessage, TextDelta, TextGenerationInput, TextGenerationResult } from "./types";
+import type {
+  AIProvider,
+  ChatMessage,
+  RealtimeConnectInput,
+  RealtimeConnectResult,
+  SpeechInput,
+  SpeechResult,
+  TextDelta,
+  TextGenerationInput,
+  TextGenerationResult,
+  TranscriptionInput,
+  TranscriptionResult,
+} from "./types";
 
 /**
  * Local stand-in for a real provider (AI_PROVIDER=mock): no network, no cost,
@@ -38,6 +50,7 @@ function failIfAsked(text: string) {
 export class MockProvider implements AIProvider {
   readonly name = "mock" as const;
   readonly textModel = "mock-tutor";
+  readonly voice = { realtime: true, transcription: true, speech: true };
 
   async generateText(input: TextGenerationInput): Promise<TextGenerationResult> {
     const user = lastUser(input.messages);
@@ -47,6 +60,8 @@ export class MockProvider implements AIProvider {
     let text: string;
     if (user.includes("[mock:invalid]")) text = "{ not json";
     else if (input.task === "writing_feedback") text = JSON.stringify(mockWritingFeedback(input.system, user, level));
+    else if (input.task === "speaking_feedback") text = JSON.stringify(mockSpeakingFeedback(user));
+    else if (input.task === "speaking_reply") text = mockSpeakingReply(user, level);
     else if (input.task === "definition") text = JSON.stringify(mockDefinition(user));
     else if (input.task === "generation") text = JSON.stringify(mockGeneration(mode, user, level));
     else if (input.json) text = JSON.stringify(this.structured(user, level, mode));
@@ -87,7 +102,96 @@ export class MockProvider implements AIProvider {
     }
     yield { type: "done", usage: { inputTokens: tokens(input.system + user), outputTokens: tokens(reply) }, model: this.textModel };
   }
+
+  /** No network: the browser runs a simulated session (clearly labelled) instead of WebRTC. */
+  async connectRealtime(input: RealtimeConnectInput): Promise<RealtimeConnectResult> {
+    failIfAsked(input.offerSdp);
+    return { answerSdp: "mock-answer", model: "mock-realtime", credentialExpiresAt: new Date(Date.now() + 60_000) };
+  }
+
+  /**
+   * Can't hear anything: near-empty audio counts as silence; otherwise the
+   * expected text (read-aloud) is echoed with its last word missing, or a fixed
+   * sentence with one typical mistake, so feedback has something to show.
+   */
+  async transcribe(input: TranscriptionInput): Promise<TranscriptionResult> {
+    failIfAsked(input.expected ?? "");
+    let text: string;
+    if (input.audio.byteLength < 300) text = "";
+    else if (input.expected) {
+      const words = input.expected.trim().split(/\s+/);
+      text = words.length > 3 ? words.slice(0, -1).join(" ").replace(/[,;:]$/, "") : input.expected;
+    } else text = "She like reading books in the evening. It is relaxing.";
+    return { text, model: "mock-transcribe", usage: { inputTokens: 0, outputTokens: tokens(text) } };
+  }
+
+  /** A short silent WAV whose length follows the text, so the speaking state is visible. */
+  async synthesizeSpeech(input: SpeechInput): Promise<SpeechResult> {
+    failIfAsked(input.text);
+    const seconds = Math.min(2.5, Math.max(0.4, input.text.length * 0.02));
+    return { audio: silentWav(seconds), mimeType: "audio/wav", model: "mock-tts", usage: { inputTokens: tokens(input.text), outputTokens: 0 } };
+  }
 }
+
+/** 8 kHz, 8-bit mono PCM silence. */
+export function silentWav(seconds: number): Uint8Array {
+  const samples = Math.round(8000 * seconds);
+  const buf = new Uint8Array(44 + samples);
+  const view = new DataView(buf.buffer);
+  const ascii = (o: number, s: string) => [...s].forEach((c, i) => view.setUint8(o + i, c.charCodeAt(0)));
+  ascii(0, "RIFF");
+  view.setUint32(4, 36 + samples, true);
+  ascii(8, "WAVE");
+  ascii(12, "fmt ");
+  view.setUint32(16, 16, true);
+  view.setUint16(20, 1, true);
+  view.setUint16(22, 1, true);
+  view.setUint32(24, 8000, true);
+  view.setUint32(28, 8000, true);
+  view.setUint16(32, 1, true);
+  view.setUint16(34, 8, true);
+  ascii(36, "data");
+  view.setUint32(40, samples, true);
+  buf.fill(128, 44);
+  return buf;
+}
+
+// ------------------------------------------------------ speaking mock ----
+
+function mockSpeakingReply(user: string, level: string) {
+  const beginner = level === "Pre-A1" || level === "A1";
+  const rule = RULES.find((r) => r.test.test(user));
+  const recast = rule ? ` I see — "${rule.fix(user).slice(0, 60)}".` : "";
+  return beginner ? `（模拟）Thank you!${recast} What do you like to do after work?` : `（模拟）That's interesting.${recast} Why do you think so?`;
+}
+
+/** Feedback from the learner lines of a transcript ("LEARNER: ..."). */
+function mockSpeakingFeedback(user: string) {
+  const lines = [...user.matchAll(/^LEARNER: (.*)$/gm)].map((m) => m[1]!.trim()).filter(Boolean);
+  const all = lines.join(" ");
+  const words = (all.match(/[A-Za-z]+(?:'[A-Za-z]+)*/g) ?? []).length;
+  const grammar = sentencesOf(all).flatMap((s) => {
+    const i = RULES.findIndex((r) => r.test.test(s));
+    if (i === -1) return [];
+    return [{ original: s, corrected: RULES[i]!.fix(s), explanation_zh: RULES[i]!.zh, category: CATEGORY_FOR_RULE[i], severity: "medium" }];
+  });
+  return {
+    task_completion: { rating: words >= 8 ? "met" : words > 0 ? "partly" : "not_met", comment_zh: `（模拟反馈）一共说了 ${lines.length} 次、约 ${words} 个词。` },
+    comprehensibility: { rating: "clear", comment_zh: "（模拟反馈）意思能听懂。" },
+    fluency: { comment_zh: "（模拟反馈）可以试着把两个短句用 and / because 连起来说。" },
+    grammar,
+    vocabulary: { comment_zh: "（模拟反馈）用词适合这个话题。", suggestions: [] },
+    pronunciation: { assessed: true, comment_zh: "这一条应该被系统去掉" },
+    self_correction: null,
+    strengths: ["敢开口，回答切题"],
+    can_do_evidence: words > 0 ? ["能用简单句子谈论自己的日常"] : [],
+    priorities: grammar.length > 0 ? [`先改：${grammar[0]!.explanation_zh}`] : ["下次试着每次多说一句。"],
+    confidence: "high",
+    limitations: ["这是模拟 AI 的反馈，只用于测试界面。"],
+    next_action: "再做一次同样的任务，试着每次多说一句。",
+  };
+}
+
 
 // ------------------------------------------------- other mock tasks ----
 

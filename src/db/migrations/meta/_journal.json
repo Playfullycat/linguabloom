@@ -64,6 +64,13 @@
       "when": 1794055443616,
       "tag": "0008_writing_generation",
       "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1794058280470,
+      "tag": "0009_speaking",
+      "breakpoints": true
     }
   ]
 }

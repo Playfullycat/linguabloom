@@ -197,6 +197,7 @@ const practiceChildren: Feature[] = [
     icon: Mic,
     summary: "朗读、复述、情境对话等口语任务。",
     phase: 3,
+    available: true,
     highlights: [
       "实时语音对话，网络不佳时自动切换到标准语音模式",
       "反馈先看对方能否理解，再纠正一个最关键的问题",

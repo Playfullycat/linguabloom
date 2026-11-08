@@ -82,6 +82,14 @@ export function checkRateLimit(userId: string, now = Date.now()) {
   recent.set(userId, list);
 }
 
+/** A named sliding-window limit (e.g. realtime voice connections), same store as above. */
+export function checkNamedLimit(key: string, limit: { requests: number; windowMs: number }, now = Date.now()) {
+  const list = (recent.get(key) ?? []).filter((t) => now - t < limit.windowMs);
+  if (list.length >= limit.requests) throw new AIError("rate_limited", `local limit ${key.split(":")[0]}`);
+  list.push(now);
+  recent.set(key, list);
+}
+
 export function resetRateLimit() {
   recent.clear();
 }
@@ -90,7 +98,17 @@ async function record(db: DbExecutor, row: typeof aiUsage.$inferInsert) {
   await db.insert(aiUsage).values(row);
 }
 
-export type RunContext = { db: DbExecutor; userId: string; task: AITask; timeZone: string; now?: Date; env?: Env; provider?: AIProvider | null };
+export type RunContext = {
+  db: DbExecutor;
+  userId: string;
+  task: AITask;
+  timeZone: string;
+  now?: Date;
+  env?: Env;
+  provider?: AIProvider | null;
+  /** Billed differently from text tokens (realtime audio, transcription, speech): cost is recorded as unknown. */
+  unpriced?: boolean;
+};
 
 /** Check, call, record. `fn` returns its value plus token usage. */
 export async function runAI<T>(ctx: RunContext, fn: (provider: AIProvider) => Promise<{ value: T; usage: TokenUsage; model: string }>): Promise<{ value: T; costUsd: number | null; provider: AIProvider }> {
@@ -115,7 +133,7 @@ export async function runAI<T>(ctx: RunContext, fn: (provider: AIProvider) => Pr
 
   try {
     const { value, usage, model } = await fn(provider);
-    const costUsd = provider.name === "mock" ? 0 : estimateCost(usage, env);
+    const costUsd = provider.name === "mock" ? 0 : ctx.unpriced ? null : estimateCost(usage, env);
     await record(ctx.db, { ...base, model, inputTokens: usage.inputTokens, outputTokens: usage.outputTokens, costUsd, latencyMs: Date.now() - started, status: "ok" });
     return { value, costUsd, provider };
   } catch (error) {

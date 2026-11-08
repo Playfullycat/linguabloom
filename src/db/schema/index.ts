@@ -8,3 +8,4 @@ export * from "./grammar";
 export * from "./imports";
 export * from "./ai";
 export * from "./writing";
+export * from "./speaking";

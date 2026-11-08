@@ -9,12 +9,14 @@ import { PhaseBadge } from "@/components/layout/planned-feature";
 import { AccountSettings, AccountSettingsSkeleton } from "@/components/settings/account-settings";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { AiPrivacyControls } from "@/components/settings/ai-settings";
+import { SpeakingPrivacyControls } from "@/components/speaking/attempt-actions";
 import { ProfileForm, StudyPlanForm } from "@/components/settings/learner-settings-form";
 import { Badge } from "@/components/ui/badge";
 import { ProgressBar } from "@/components/ui/progress-bar";
 import { AI_STATUS_LABELS, aiStatus } from "@/modules/ai/provider";
 import { budgetState } from "@/modules/ai/services/usage";
 import { listTutorSessions } from "@/modules/ai/services/tutor";
+import { speakingCounts } from "@/modules/speaking/services/speaking";
 import { Button } from "@/components/ui/button";
 import { LoadingSkeleton } from "@/components/ui/skeleton";
 import { getDb } from "@/db";
@@ -175,7 +177,7 @@ async function AiSettings() {
   const env = getEnv();
   const status = aiStatus(env);
   const { profile, preferences } = await getLearnerSettings(db, user.id, env.DEFAULT_TIMEZONE);
-  const [budget, sessions] = await Promise.all([budgetState(db, user.id, new Date(), profile.timezone, env), listTutorSessions(db, user.id)]);
+  const [budget, sessions, speaking] = await Promise.all([budgetState(db, user.id, new Date(), profile.timezone, env), listTutorSessions(db, user.id), speakingCounts(db, user.id)]);
   const money = (n: number) => `$${n.toFixed(n < 1 ? 4 : 2)}`;
   return (
     <SettingsSection icon={Bot} title="AI 服务" titleEn="AI Providers" description="AI 的配置状态、本月用量和对话保存。密钥只在服务器环境变量里配置，这里不会显示。">
@@ -187,6 +189,9 @@ async function AiSettings() {
               <span className="text-muted">
                 服务：{status.provider} · 文本模型：<code>{status.textModel}</code>
                 {status.simulated ? "" : " · 密钥：已设置"}
+              </span>
+              <span className="w-full text-xs text-muted">
+                语音：实时对话 {status.voice.realtime ? "可用" : "未配置（AI_REALTIME_MODEL）"} · 语音转写 {status.voice.transcription ? "可用" : "未配置（AI_TRANSCRIPTION_MODEL）"} · 语音合成 {status.voice.speech ? "可用" : "未配置（AI_TTS_MODEL，用浏览器朗读代替）"}
               </span>
             </>
           ) : (
@@ -230,6 +235,10 @@ async function AiSettings() {
           </p>
         </div>
         <AiPrivacyControls save={preferences.saveAiConversations} sessions={sessions.length} />
+        <div className="flex flex-col gap-2 border-t border-border pt-4">
+          <p className="text-sm font-medium text-ink">口语练习</p>
+          <SpeakingPrivacyControls saveAudio={preferences.saveSpeakingAudio} saveTranscripts={preferences.saveSpeakingTranscripts} sessions={speaking.sessions} recordings={speaking.recordings} />
+        </div>
       </div>
     </SettingsSection>
   );

@@ -65,6 +65,9 @@ export const studyPreferences = pgTable(
     showWeeklyStreak: boolean("show_weekly_streak").notNull().default(true),
     /** Keep AI Tutor conversations (spec §11.2). Off = nothing is stored after each reply. */
     saveAiConversations: boolean("save_ai_conversations").notNull().default(true),
+    /** Speaking Lab (spec §11.2): recordings are off by default, transcripts on. Asked again before each session. */
+    saveSpeakingAudio: boolean("save_speaking_audio").notNull().default(false),
+    saveSpeakingTranscripts: boolean("save_speaking_transcripts").notNull().default(true),
     ...timestamps,
   },
   (t) => [

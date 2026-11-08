@@ -46,6 +46,10 @@ export const envSchema = z.object({
   AI_REALTIME_MODEL: optionalString,
   AI_TRANSCRIPTION_MODEL: optionalString,
   AI_TTS_MODEL: optionalString,
+  /** Voice for realtime conversation and speech synthesis (must exist for both models). */
+  AI_VOICE: z.string().trim().regex(/^[a-z0-9_-]{1,32}$/).default("alloy"),
+  /** Hard cap for one realtime voice session, in minutes (cost control: realtime audio is billed by the provider). */
+  AI_REALTIME_MAX_MINUTES: z.coerce.number().int().min(1).max(30).default(10),
   AI_TIMEOUT_MS: z.coerce.number().int().min(1000).max(300_000).default(30_000),
   AI_MAX_OUTPUT_TOKENS: z.coerce.number().int().min(64).max(16_000).default(900),
   /** Soft monthly budget in USD (spec §7.6). 0 = no budget check. */

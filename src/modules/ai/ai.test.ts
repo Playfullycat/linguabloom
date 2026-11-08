@@ -31,7 +31,9 @@ describe("AI status", () => {
     expect(aiStatus(parseEnv({ ...base, AI_ENABLED: "true" }))).toMatchObject({ available: false, reason: "missing_key" });
     expect(aiStatus(parseEnv({ ...base, AI_ENABLED: "true", AI_API_KEY: "sk-secret" }))).toMatchObject({ available: false, reason: "missing_model" });
     const ok = aiStatus(parseEnv({ ...base, AI_ENABLED: "true", AI_API_KEY: "sk-secret", AI_TEXT_MODEL: "small-model" }));
-    expect(ok).toEqual({ available: true, provider: "openai", textModel: "small-model", simulated: false });
+    expect(ok).toEqual({ available: true, provider: "openai", textModel: "small-model", simulated: false, voice: { realtime: false, transcription: false, speech: false } });
+    const voice = aiStatus(parseEnv({ ...base, AI_ENABLED: "true", AI_API_KEY: "sk-secret", AI_TEXT_MODEL: "m", AI_REALTIME_MODEL: "rt", AI_TRANSCRIPTION_MODEL: "stt" }));
+    expect(voice).toMatchObject({ voice: { realtime: true, transcription: true, speech: false } });
     expect(JSON.stringify(ok)).not.toContain("sk-secret");
     expect(aiStatus(parseEnv({ ...base, AI_ENABLED: "true", AI_PROVIDER: "mock" }))).toMatchObject({ available: true, simulated: true });
     expect(() => parseEnv({ ...base, AI_BASE_URL: "ftp://x" })).toThrow();
@@ -162,6 +164,65 @@ describe("OpenAI provider (no network)", () => {
       { type: "delta", text: "lo!" },
       { type: "done", usage: { inputTokens: 3, outputTokens: 2 }, model: "m-2" },
     ]);
+  });
+});
+
+describe("OpenAI voice (no network)", () => {
+  type Call = { url: string; init: RequestInit };
+  function fake(handlers: ((url: string, init: RequestInit) => Response)[]) {
+    const calls: Call[] = [];
+    let i = 0;
+    const impl = (async (url: string, init: RequestInit) => {
+      calls.push({ url, init });
+      return handlers[Math.min(i++, handlers.length - 1)]!(url, init);
+    }) as unknown as typeof fetch;
+    return { impl, calls };
+  }
+  const auth = (c: Call) => (c.init.headers as Record<string, string>).Authorization;
+
+  it("realtime: mints a short-lived secret, uses it once for SDP, returns only the answer", async () => {
+    const { impl, calls } = fake([() => Response.json({ value: "ek_temp_123", expires_at: 1_900_000_000 }), () => new Response("v=0 answer", { status: 201 })]);
+    const p = new OpenAIProvider({ apiKey: "sk-secret", baseUrl: "https://example.test/v1", textModel: "m", realtimeModel: "rt-1", transcriptionModel: "stt-1", timeoutMs: 5000, fetchImpl: impl });
+    expect(p.voice).toEqual({ realtime: true, transcription: true, speech: false });
+    const r = await p.connectRealtime({ offerSdp: "v=0 offer", instructions: "LEVEL: A1", voice: "alloy" });
+    expect(r.answerSdp).toBe("v=0 answer");
+    expect(JSON.stringify(r)).not.toContain("ek_temp_123");
+    expect(r.credentialExpiresAt.getTime()).toBe(1_900_000_000_000);
+    expect(calls[0]!.url).toBe("https://example.test/v1/realtime/client_secrets");
+    expect(auth(calls[0]!)).toBe("Bearer sk-secret");
+    const body = JSON.parse(calls[0]!.init.body as string);
+    expect(body.expires_after.seconds).toBe(60);
+    expect(body.session).toMatchObject({ type: "realtime", model: "rt-1", instructions: "LEVEL: A1", audio: { input: { transcription: { model: "stt-1" } }, output: { voice: "alloy" } } });
+    expect(calls[1]!.url).toBe("https://example.test/v1/realtime/calls");
+    expect(auth(calls[1]!)).toBe("Bearer ek_temp_123");
+    expect((calls[1]!.init.headers as Record<string, string>)["Content-Type"]).toBe("application/sdp");
+  });
+
+  it("voice features without a model fail as not configured", async () => {
+    const { impl, calls } = fake([() => Response.json({})]);
+    const p = new OpenAIProvider({ apiKey: "k", baseUrl: "https://example.test/v1", textModel: "m", timeoutMs: 5000, fetchImpl: impl });
+    for (const run of [() => p.connectRealtime({ offerSdp: "v=0", instructions: "", voice: "alloy" }), () => p.transcribe({ audio: new Uint8Array(10), mimeType: "audio/webm" }), () => p.synthesizeSpeech({ text: "hi", voice: "alloy", slow: false })]) {
+      const err = await run().catch((e: unknown) => e);
+      expect((err as AIError).code).toBe("not_configured");
+    }
+    expect(calls).toHaveLength(0);
+  });
+
+  it("transcribes with a multipart form and synthesizes speech", async () => {
+    const { impl, calls } = fake([() => Response.json({ text: " Hello there. ", usage: { input_tokens: 7, output_tokens: 3 } }), () => new Response(new Uint8Array([0x49, 0x44, 0x33, 1]))]);
+    const p = new OpenAIProvider({ apiKey: "k", baseUrl: "https://example.test/v1", textModel: "m", transcriptionModel: "stt-1", ttsModel: "tts-1", timeoutMs: 5000, fetchImpl: impl });
+    const t = await p.transcribe({ audio: new Uint8Array([0x1a, 0x45, 0xdf, 0xa3]), mimeType: "audio/webm;codecs=opus", hint: "good morning" });
+    expect(t).toEqual({ text: "Hello there.", model: "stt-1", usage: { inputTokens: 7, outputTokens: 3 } });
+    const form = calls[0]!.init.body as FormData;
+    expect(calls[0]!.url).toBe("https://example.test/v1/audio/transcriptions");
+    expect(form.get("model")).toBe("stt-1");
+    expect(form.get("language")).toBe("en");
+    expect(form.get("prompt")).toBe("good morning");
+    expect((form.get("file") as File).name).toBe("speech.webm");
+    const sp = await p.synthesizeSpeech({ text: "Hi!", voice: "alloy", slow: true });
+    expect(sp.mimeType).toBe("audio/mpeg");
+    expect(sp.audio.byteLength).toBe(4);
+    expect(JSON.parse(calls[1]!.init.body as string)).toMatchObject({ model: "tts-1", input: "Hi!", voice: "alloy", speed: 0.9 });
   });
 });
 
