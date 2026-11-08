@@ -9,9 +9,9 @@ import { runAI } from "@/modules/ai/services/usage";
 import { recordError } from "@/modules/errors/services/errors";
 import { getLearnerSettings } from "@/modules/learner/services/profile";
 
-import { audioScript, learnerView, loadPte, type LearnerView, type PracticeTaskCode, type Prompt, type TaskCode } from "../content";
-import { parsePteWrittenFeedback, sstFeedbackPrompt, type PteWrittenFeedback } from "../domain/feedback";
-import { scoreObjective, sstForm, type ItemMark, type Response } from "../domain/scoring";
+import { WRITTEN_CODES, audioScript, isSpoken, learnerView, loadPte, type LearnerView, type PracticeTaskCode, type Prompt, type TaskCode } from "../content";
+import { parsePteWrittenFeedback, pteFeedbackPrompt, type PteWrittenFeedback } from "../domain/feedback";
+import { essayForm, scoreObjective, sstForm, swtForm, type FormCheck, type ItemMark, type Response } from "../domain/scoring";
 
 /**
  * PTE practice (spec §5.13, §8.8, §9.6). Every attempt is bound to the
@@ -95,16 +95,31 @@ export type PracticeItem = {
   taskCode: PracticeTaskCode;
   view: LearnerView;
   hasAudio: boolean;
-  /** Suggested (or official, for SST) time in timed mode. */
+  /** Timed mode: total time for reading/listening/writing items (official where it exists). */
   timeLimitSeconds: number;
   /** True when the limit is the official one; otherwise it's a practice suggestion. */
   officialTime: boolean;
+  /** Spoken items: preparation and recording time (official, or a labelled suggestion). */
+  speaking: { prepSeconds: number; responseSeconds: number; officialResponse: boolean } | null;
 };
 
-/** Official time (SST: 10 minutes) or this app's suggestion for timed practice. */
-function timeLimitFor(type: TaskTypeRow) {
+const num = (v: unknown, fallback: number) => (typeof v === "number" ? v : Array.isArray(v) && typeof v[0] === "number" ? Math.round(((v[0] as number) + ((v[1] as number) ?? v[0])) / 2) : fallback);
+
+/** Official time (SST 10 min, SWT 10 min, essay 20 min, speaking prep + response) or this app's suggestion for timed practice. */
+export function timeLimitFor(type: TaskTypeRow) {
+  if (isSpoken(type.code)) {
+    const t = type.timing;
+    const response = num(t.response_seconds ?? t.suggested_response_seconds, 40);
+    return { official: t.response_seconds !== undefined, seconds: num(t.prep_seconds, 0) + response };
+  }
   const official = typeof type.timing.response_minutes === "number";
   return { official, seconds: official ? Math.round(type.timing.response_minutes! * 60) : (type.timing.suggested_seconds ?? 120) };
+}
+
+function speakingTiming(type: TaskTypeRow): PracticeItem["speaking"] {
+  if (!isSpoken(type.code)) return null;
+  const t = type.timing;
+  return { prepSeconds: num(t.prep_seconds, 0), responseSeconds: num(t.response_seconds ?? t.suggested_response_seconds, 40), officialResponse: t.response_seconds !== undefined };
 }
 
 /** What the browser gets for one practice item: no answers, no listening script. */
@@ -123,6 +138,7 @@ export async function getPracticeItem(db: DbExecutor, promptId: string): Promise
     hasAudio: audioScript(prompt) !== null,
     timeLimitSeconds: seconds,
     officialTime: official,
+    speaking: speakingTiming(type),
   };
 }
 
@@ -131,6 +147,12 @@ export function getAudioScript(promptId: string): string {
   const s = audioScript(promptFromContent(promptId));
   if (!s) throw new PteNotFoundError(promptId);
   return s;
+}
+
+/** The text a read-aloud / repeat answer is compared with (the mock transcriber uses it to simulate a transcript). */
+export function expectedSpeech(promptId: string): string | undefined {
+  const p = promptFromContent(promptId);
+  return p.task === "sw_read_aloud" ? p.content.text : p.task === "sw_repeat_sentence" ? p.content.sentence : undefined;
 }
 
 /** After answering: the key, the explanation and the transcript. */
@@ -142,12 +164,12 @@ export type Reveal = {
 };
 
 function reveal(p: Prompt): Reveal {
-  const c = p.content as { explanation_zh?: string; model_summary?: string; key_points_zh?: string[] };
+  const c = p.content as { explanation_zh?: string; model_summary?: string; model_answer?: string; key_points_zh?: string[]; key_features_zh?: string[]; ideas_zh?: string[] };
   return {
     explanationZh: c.explanation_zh ?? null,
     transcript: audioScript(p),
-    modelAnswer: c.model_summary ?? (p.task === "l_wfd" ? p.content.sentence : null),
-    keyPointsZh: c.key_points_zh ?? [],
+    modelAnswer: c.model_summary ?? c.model_answer ?? (p.task === "l_wfd" ? p.content.sentence : null),
+    keyPointsZh: c.key_points_zh ?? c.key_features_zh ?? c.ideas_zh ?? [],
   };
 }
 
@@ -164,15 +186,49 @@ const ERROR_CATEGORY: Partial<Record<TaskCode, ErrorCategory>> = {
   l_fib_type: "listening",
   l_hiw: "listening",
   l_wfd: "listening",
+  sw_answer_short_question: "comprehension",
 };
+
+/** Tasks that get AI-assisted feedback (comments, never a score). */
+const AI_FEEDBACK: readonly string[] = ["l_sst", "sw_describe_image", "sw_retell_lecture", "sw_summarize_group_discussion", "sw_respond_situation", "sw_summarize_written_text", "sw_write_essay"];
+
+/** What the feedback model is given as the source of the task. */
+function feedbackSource(p: Prompt): { label: string; text: string; keyPointsZh: string[]; registerZh?: string } {
+  switch (p.task) {
+    case "sw_describe_image": {
+      const c = p.content.chart;
+      return { label: "CHART DATA", text: `${c.type} chart "${c.title}" (${c.y_label}):\n${c.categories.map((k, i) => `${k}: ${c.values[i]}${c.unit}`).join("\n")}`, keyPointsZh: p.content.key_features_zh };
+    }
+    case "sw_respond_situation":
+      return { label: "SITUATION", text: p.content.situation, keyPointsZh: p.content.key_points_zh, registerZh: p.content.register_zh };
+    case "sw_summarize_written_text":
+      return { label: "PASSAGE", text: p.content.passage, keyPointsZh: p.content.key_points_zh };
+    case "sw_write_essay":
+      return { label: "ESSAY TOPIC", text: p.content.topic, keyPointsZh: p.content.ideas_zh };
+    case "l_sst":
+    case "sw_retell_lecture":
+    case "sw_summarize_group_discussion":
+      return { label: "RECORDING TRANSCRIPT", text: audioScript(p)!, keyPointsZh: p.content.key_points_zh };
+    default:
+      return { label: "SOURCE", text: "", keyPointsZh: [] };
+  }
+}
+
+function formFor(p: Prompt, text: string): FormCheck | null {
+  if (p.task === "l_sst") return sstForm(text);
+  if (p.task === "sw_summarize_written_text") return swtForm(text);
+  if (p.task === "sw_write_essay") return essayForm(text);
+  return null;
+}
 
 export type SubmitInput = {
   promptId: string;
   response: Response;
-  mode: "practice" | "timed";
+  mode: "practice" | "timed" | "mock";
   durationMs: number;
   timedOut: boolean;
   clientRequestId: string;
+  mockTestId?: string;
 };
 
 export type SubmitResult = {
@@ -180,7 +236,9 @@ export type SubmitResult = {
   score: number | null;
   maxScore: number | null;
   marks: ItemMark[];
-  form: ReturnType<typeof sstForm> | null;
+  form: FormCheck | null;
+  /** The transcript of a spoken answer (what the scoring and feedback were based on). */
+  transcript: string | null;
   feedback: PteWrittenFeedback | null;
   feedbackError: string | null;
   reveal: Reveal;
@@ -197,9 +255,26 @@ export async function submitAttempt(db: Database, userId: string, input: SubmitI
   const [existing] = await db.select().from(pteAttempts).where(eq(pteAttempts.clientRequestId, input.clientRequestId));
   if (existing) {
     if (existing.userId !== userId) throw new PteRejectedError("请求编号重复。");
-    const detail = (existing.scoreDetail as { marks?: ItemMark[]; form?: ReturnType<typeof sstForm> } | null) ?? {};
-    return { attemptId: existing.id, score: existing.score, maxScore: existing.maxScore, marks: detail.marks ?? [], form: detail.form ?? null, feedback: existing.feedback as PteWrittenFeedback | null, feedbackError: null, reveal: reveal(prompt), duplicate: true };
+    const detail = (existing.scoreDetail as { marks?: ItemMark[]; form?: FormCheck } | null) ?? {};
+    const r = existing.response as Response;
+    return {
+      attemptId: existing.id,
+      score: existing.score,
+      maxScore: existing.maxScore,
+      marks: detail.marks ?? [],
+      form: detail.form ?? null,
+      transcript: r.kind === "spoken" ? r.transcript : null,
+      feedback: existing.feedback as PteWrittenFeedback | null,
+      feedbackError: null,
+      reveal: reveal(prompt),
+      duplicate: true,
+    };
   }
+
+  // Spoken tasks take a transcript; written tasks a text.
+  const spoken = isSpoken(prompt.task);
+  if (spoken && input.response.kind !== "spoken") throw new PteRejectedError("提交的答案格式不正确。");
+  if ((WRITTEN_CODES as readonly string[]).includes(prompt.task) && input.response.kind !== "text") throw new PteRejectedError("提交的答案格式不正确。");
 
   let objective: ReturnType<typeof scoreObjective>;
   try {
@@ -208,34 +283,32 @@ export async function submitAttempt(db: Database, userId: string, input: SubmitI
     throw new PteRejectedError("提交的答案格式不正确。");
   }
 
-  let form: ReturnType<typeof sstForm> | null = null;
+  const answerText = (input.response.kind === "text" ? input.response.text : input.response.kind === "spoken" ? input.response.transcript : "").trim().slice(0, 4000);
+  const form = formFor(prompt, answerText);
   let feedback: PteWrittenFeedback | null = null;
   let feedbackError: string | null = null;
-  if (prompt.task === "l_sst") {
-    if (input.response.kind !== "text") throw new PteRejectedError("提交的答案格式不正确。");
-    const text = input.response.text.trim().slice(0, 2000);
-    form = sstForm(text);
-    if (form.words > 0) {
-      try {
-        const { profile } = await getLearnerSettings(db, userId);
-        const explanation = (["zh", "mixed", "en"].includes(profile.explanationLanguage) ? profile.explanationLanguage : "zh") as "zh" | "mixed" | "en";
-        const { value } = await runAI({ db, userId, task: "pte_feedback", timeZone: profile.timezone, provider, env }, async (ai) => {
-          const r = await ai.generateText({
-            task: "pte_feedback",
-            system: sstFeedbackPrompt(prompt.content.key_points_zh, explanation),
-            messages: [{ role: "user", content: `TRANSCRIPT:\n${audioScript(prompt)}\n\nSUMMARY:\n${text}` }],
-            json: true,
-            maxOutputTokens: Math.max(env.AI_MAX_OUTPUT_TOKENS, 900),
-          });
-          return { value: parsePteWrittenFeedback(r.text, text), usage: r.usage, model: r.model };
+  if (AI_FEEDBACK.includes(prompt.task) && answerText) {
+    try {
+      const { profile } = await getLearnerSettings(db, userId);
+      const explanation = (["zh", "mixed", "en"].includes(profile.explanationLanguage) ? profile.explanationLanguage : "zh") as "zh" | "mixed" | "en";
+      const src = feedbackSource(prompt);
+      const { value } = await runAI({ db, userId, task: "pte_feedback", timeZone: profile.timezone, provider, env }, async (ai) => {
+        const r = await ai.generateText({
+          task: "pte_feedback",
+          system: pteFeedbackPrompt(prompt.task, { keyPointsZh: src.keyPointsZh, registerZh: src.registerZh, explanation, spoken }),
+          messages: [{ role: "user", content: `${src.label}:\n${src.text}\n\nANSWER:\n${answerText}` }],
+          json: true,
+          maxOutputTokens: Math.max(env.AI_MAX_OUTPUT_TOKENS, prompt.task === "sw_write_essay" ? 1400 : 900),
         });
-        feedback = value;
-      } catch (error) {
-        feedbackError = error instanceof AIError ? error.code : "unknown";
-      }
+        return { value: parsePteWrittenFeedback(r.text, answerText, spoken), usage: r.usage, model: r.model };
+      });
+      feedback = value;
+    } catch (error) {
+      feedbackError = error instanceof AIError ? error.code : "unknown";
     }
   }
 
+  const { seconds } = timeLimitFor(type);
   const [attempt] = await db
     .insert(pteAttempts)
     .values({
@@ -245,6 +318,7 @@ export async function submitAttempt(db: Database, userId: string, input: SubmitI
       promptId: row.id,
       promptVersion: row.contentVersion,
       mode: input.mode,
+      mockTestId: input.mockTestId ?? null,
       response: input.response,
       score: objective?.score ?? null,
       maxScore: objective?.maxScore ?? null,
@@ -260,7 +334,7 @@ export async function submitAttempt(db: Database, userId: string, input: SubmitI
         reveal: reveal(prompt),
       },
       durationMs: Math.max(0, Math.min(Math.round(input.durationMs), 60 * 60_000)),
-      timeLimitSeconds: input.mode === "timed" ? timeLimitFor(type).seconds : null,
+      timeLimitSeconds: input.mode === "practice" ? null : seconds,
       timedOut: input.timedOut,
       clientRequestId: input.clientRequestId,
     })
@@ -282,7 +356,18 @@ export async function submitAttempt(db: Database, userId: string, input: SubmitI
     });
   }
 
-  return { attemptId: attempt!.id, score: objective?.score ?? null, maxScore: objective?.maxScore ?? null, marks: objective?.marks ?? [], form, feedback, feedbackError, reveal: reveal(prompt), duplicate: false };
+  return {
+    attemptId: attempt!.id,
+    score: objective?.score ?? null,
+    maxScore: objective?.maxScore ?? null,
+    marks: objective?.marks ?? [],
+    form,
+    transcript: input.response.kind === "spoken" ? input.response.transcript : null,
+    feedback,
+    feedbackError,
+    reveal: reveal(prompt),
+    duplicate: false,
+  };
 }
 
 export async function listAttempts(db: DbExecutor, userId: string, taskCode?: string, limit = 20) {

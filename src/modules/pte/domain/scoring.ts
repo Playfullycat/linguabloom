@@ -1,4 +1,5 @@
-import { hiwTokens, seededOrder, typedAnswers, words, type Prompt } from "../content";
+import { compareReading } from "../../speaking/domain/compare";
+import { hiwTokens, seededOrder, sentenceCount, typedAnswers, words, type Prompt } from "../content";
 
 /**
  * Objective PTE scoring (spec §5.13: objective items are scored exactly).
@@ -24,7 +25,9 @@ export type Response =
   | { kind: "order"; order: string[] }
   | { kind: "words"; words: (string | null)[] }
   | { kind: "choice"; choice: number | null }
-  | { kind: "text"; text: string };
+  | { kind: "text"; text: string }
+  /** A spoken answer as transcribed (or typed instead, when no microphone / transcription is available). */
+  | { kind: "spoken"; transcript: string; seconds: number; typed: boolean };
 
 export class ResponseShapeError extends Error {}
 
@@ -145,13 +148,50 @@ export function scoreObjective(p: Prompt, response: Response): ObjectiveScore | 
     }
     case "l_wfd":
       return scoreDictation(need(response, "text").text, p.content.sentence);
+    case "sw_read_aloud":
+    case "sw_repeat_sentence": {
+      // What the transcriber recognised, word by word — not a pronunciation score.
+      const r = need(response, "spoken");
+      const c = compareReading(p.task === "sw_read_aloud" ? p.content.text : p.content.sentence, r.transcript);
+      return { score: c.heard, maxScore: c.total, marks: c.words.map((w) => ({ label: w.text, correct: w.heard, given: null, expected: w.heard ? null : w.text })) };
+    }
+    case "sw_answer_short_question": {
+      const r = need(response, "spoken");
+      const said = ` ${norm(r.transcript)} `;
+      const ok = p.content.answers.some((a) => said.includes(` ${norm(a)} `));
+      return { score: ok ? 1 : 0, maxScore: 1, marks: [{ label: "答案", correct: ok, given: r.transcript || null, expected: p.content.answers[0]! }] };
+    }
     case "l_sst":
+    case "sw_describe_image":
+    case "sw_retell_lecture":
+    case "sw_summarize_group_discussion":
+    case "sw_respond_situation":
+    case "sw_summarize_written_text":
+    case "sw_write_essay":
       return null;
   }
 }
 
 /** Summarize Spoken Text form check (official: 50–70 words; outside 40–100 scores zero). */
-export function sstForm(text: string): { words: number; status: "ok" | "outside_target" | "zero" } {
+export function sstForm(text: string): FormCheck {
   const n = words(text);
-  return { words: n, status: n >= 50 && n <= 70 ? "ok" : n >= 40 && n <= 100 ? "outside_target" : "zero" };
+  const status = n >= 50 && n <= 70 ? "ok" : n >= 40 && n <= 100 ? "outside_target" : "zero";
+  return { words: n, status, noteZh: status === "ok" ? "词数符合要求（50–70）" : status === "outside_target" ? "词数不在 50–70 之间：官方会扣“形式”分" : "词数少于 40 或多于 100：按官方规则这篇会得 0 分" };
+}
+
+export type FormCheck = { words: number; sentences?: number; status: "ok" | "outside_target" | "zero"; noteZh: string };
+
+/** Summarize Written Text form (official: one sentence of 5–75 words, otherwise zero). */
+export function swtForm(text: string): FormCheck {
+  const n = words(text);
+  const sentences = sentenceCount(text);
+  const ok = n >= 5 && n <= 75 && sentences === 1;
+  return { words: n, sentences, status: ok ? "ok" : "zero", noteZh: ok ? "一句话、5–75 词，符合要求" : sentences !== 1 ? `写成了 ${sentences} 句话：官方要求只写一句，否则为 0 分` : "词数不在 5–75 之间：按官方规则为 0 分" };
+}
+
+/** Write Essay form (official: 200–300 words; outside 120–380 scores zero). */
+export function essayForm(text: string): FormCheck {
+  const n = words(text);
+  const status = n >= 200 && n <= 300 ? "ok" : n >= 120 && n <= 380 ? "outside_target" : "zero";
+  return { words: n, status, noteZh: status === "ok" ? "词数符合要求（200–300）" : status === "outside_target" ? "词数不在 200–300 之间：官方会扣“形式”分" : "少于 120 或多于 380 词：按官方规则为 0 分" };
 }

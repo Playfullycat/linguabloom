@@ -99,6 +99,16 @@ describe("buildPlan", () => {
     expect(buildPlan(facts({ mode: "review_only", remediation: { itemId: "e1", title: "x", categoryLabel: "y", count: 2, mode: "retest" } })).map((t) => t.kind)).toEqual(["review"]);
   });
 
+  it("adds a short PTE task for the exam goal in longer sessions only, keeping the total", () => {
+    const pte = { taskCode: "r_mcma", nameZh: "阅读多选", avgShare: 0.4 };
+    const plan = buildPlan(facts({ pte }));
+    expect(plan.at(-1)).toMatchObject({ kind: "pte", href: "/pte/r_mcma", minutes: 6, targetId: "r_mcma" });
+    expect(plan.at(-1)!.reason).toContain("40%");
+    expect(plan.reduce((s, t) => s + t.minutes, 0)).toBe(25);
+    expect(buildPlan(facts({ pte, sessionMinutes: 15 })).some((t) => t.kind === "pte")).toBe(false);
+    expect(buildPlan(facts({ pte: { ...pte, avgShare: null } })).at(-1)!.reason).toContain("还没练过");
+  });
+
   it("explains a resumed lesson", () => {
     const plan = buildPlan(facts({ nextLesson: lesson({ inProgress: true }) }));
     expect(plan.find((t) => t.kind === "lesson")!.title).toMatch(/^继续/);

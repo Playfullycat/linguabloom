@@ -161,3 +161,109 @@ describe("a new exam version", () => {
     }
   });
 });
+
+describe("speaking and writing (step 4.3)", () => {
+  const spoken = (transcript: string) => ({ kind: "spoken" as const, transcript, seconds: 20, typed: false });
+
+  it("read aloud is compared word by word; answer short question checks accepted answers", async () => {
+    const ra = await submit(userA, "pte-sw-rs-02", spoken("Please hand in your reports by the end of next week"));
+    expect(ra).toMatchObject({ score: 11, maxScore: 11, transcript: "Please hand in your reports by the end of next week", feedback: null });
+    const asq = await submit(userA, "pte-sw-asq-01", spoken("a telescope"));
+    expect(asq).toMatchObject({ score: 1, maxScore: 1 });
+    expect((await getPracticeItem(db, "pte-sw-ra-01")).speaking).toEqual({ prepSeconds: 35, responseSeconds: 40, officialResponse: false });
+    expect((await getPracticeItem(db, "pte-sw-sgd-01")).speaking).toEqual({ prepSeconds: 10, responseSeconds: 120, officialResponse: true });
+    await expect(submit(userA, "pte-sw-ra-01", { kind: "text", text: "x" })).rejects.toThrow(PteRejectedError);
+  });
+
+  it("spoken answers get AI feedback from the transcript without spelling; register for situations", async () => {
+    const r = await submit(userA, "pte-sw-rts-01", spoken("Hi Sam, my computer stopped working and my report is due tomorrow. Could I borrow your spare laptop?"));
+    expect(r.score).toBeNull();
+    expect(r.feedback).toMatchObject({ spoken: true, spelling: { errors: [] } });
+    expect(r.feedback!.extra.map((x) => x.key)).toContain("register");
+    expect(r.reveal.modelAnswer).toContain("Hi Sam");
+  });
+
+  it("written tasks: form checks by the program, feedback by AI", async () => {
+    const swt = await submit(userA, "pte-sw-swt-01", { kind: "text", text: "A four-day week can keep productivity. But it does not suit every job." });
+    expect(swt.form).toMatchObject({ status: "zero", sentences: 2 });
+    const essay = await submit(userA, "pte-sw-we-01", { kind: "text", text: "University should be free for everyone because education helps society." });
+    expect(essay.form).toMatchObject({ status: "zero" });
+    expect(essay.feedback).not.toBeNull();
+  });
+});
+
+describe("mock tests", () => {
+  it("one item per task type, resumable, saves time, ends when all are answered", async () => {
+    const { startOrResumeMock, getMockState, saveMockProgress, getMockResult } = await import("./mock");
+    // A prompt practised before is avoided.
+    await submit(userA, "pte-r-mcsa-01", { kind: "choice", choice: 1 });
+    const id = await startOrResumeMock(db, userA, "reading");
+    expect(await startOrResumeMock(db, userA, "reading")).toBe(id);
+    let state = await getMockState(db, userA, id);
+    expect(state.items.map((i) => i.taskCode)).toEqual(["r_fib_dropdown", "r_mcma", "r_reorder", "r_fib_drag", "r_mcsa"]);
+    expect(state.items.find((i) => i.taskCode === "r_mcsa")!.promptId).not.toBe("pte-r-mcsa-01");
+    expect(state.timeLimitSeconds).toBe(150 + 150 + 120 + 90 + 90);
+
+    // Answer the first item, leave, come back: time is kept and the test continues at item 2.
+    const first = state.items[0]!;
+    await submit(userA, first.promptId, { kind: "choices", choices: [0, 1, 1, 0] }, { mode: "mock", mockTestId: id });
+    state = await saveMockProgress(db, userA, id, 100);
+    expect(state).toMatchObject({ elapsedSeconds: 100, currentIndex: 1, status: "in_progress" });
+    // Time never goes backwards.
+    expect((await saveMockProgress(db, userA, id, 40)).elapsedSeconds).toBe(100);
+
+    for (const item of state.items.slice(1)) {
+      const response = item.taskCode === "r_mcma" ? { kind: "selected" as const, selected: [] } : item.taskCode === "r_reorder" ? { kind: "order" as const, order: ["A", "B", "C", "D"] } : item.taskCode === "r_fib_drag" ? { kind: "words" as const, words: [null, null, null] } : { kind: "choice" as const, choice: 0 };
+      await submit(userA, item.promptId, response, { mode: "mock", mockTestId: id });
+    }
+    state = await saveMockProgress(db, userA, id, 300);
+    expect(state).toMatchObject({ status: "completed", endReason: "finished", currentIndex: null });
+    const result = await getMockResult(db, userA, id);
+    expect(result.answered).toBe(5);
+    expect(result.items[0]).toMatchObject({ score: 4, maxScore: 4 });
+    expect(result.bySkill.find((s) => s.skill === "reading")!.items).toBe(5);
+    // Mock attempts are bound to the test.
+    expect((await db.select().from(pteAttempts).where(eq(pteAttempts.mockTestId, id))).every((a) => a.mode === "mock")).toBe(true);
+  });
+
+  it("reaching the time limit ends the test; unanswered objective items count as zero; owner only", async () => {
+    const { startOrResumeMock, saveMockProgress, getMockResult, getMockState } = await import("./mock");
+    const id = await startOrResumeMock(db, userA, "listening");
+    const state = await getMockState(db, userA, id);
+    const ended = await saveMockProgress(db, userA, id, state.timeLimitSeconds + 50);
+    expect(ended).toMatchObject({ status: "completed", endReason: "time_up", elapsedSeconds: state.timeLimitSeconds });
+    const result = await getMockResult(db, userA, id);
+    expect(result.answered).toBe(0);
+    expect(result.objectiveShare).toBe(0);
+    await expect(getMockState(db, userB, id)).rejects.toThrow(PteNotFoundError);
+  });
+});
+
+describe("report and today plan", () => {
+  it("averages objective shares per task type and skill; AI tasks are counted, not scored", async () => {
+    const { getPteReport } = await import("./report");
+    await submit(userA, "pte-l-wfd-01", { kind: "text", text: "The library will be closed on Sunday for repairs" });
+    await submit(userA, "pte-l-sst-01", { kind: "text", text: "A short summary." });
+    const report = await getPteReport(db, userA);
+    expect(report.byTask.find((t) => t.code === "l_wfd")).toMatchObject({ attempts: 1, avgShare: 1, objective: true });
+    expect(report.byTask.find((t) => t.code === "l_sst")).toMatchObject({ attempts: 1, avgShare: null, objective: false });
+    const writing = report.bySkill.find((s) => s.skill === "writing")!;
+    expect(writing.avgShare).toBe(1);
+    expect(writing.contributing.find((c) => c.code === "l_wfd")!.alsoCounts).toEqual(["listening"]);
+  });
+
+  it("the exam goal adds a PTE task to today's plan; doing it marks it done", async () => {
+    const { updateProfile, updatePreferences } = await import("@/modules/learner/services/profile");
+    const { getTodayPlan } = await import("@/modules/study-plan/services/plan");
+    await updateProfile(db, userA, { learningGoals: ["exam"] });
+    await updatePreferences(db, userA, { dailyMinutes: 40 });
+    let plan = await getTodayPlan(db, userA);
+    const task = plan.tasks.find((t) => t.kind === "pte");
+    expect(task).toMatchObject({ href: "/pte/sw_read_aloud", status: "pending" });
+    await submit(userA, "pte-sw-ra-01", { kind: "spoken", transcript: "Public libraries do much more than lend books.", seconds: 10, typed: true });
+    plan = await getTodayPlan(db, userA);
+    expect(plan.tasks.find((t) => t.kind === "pte")!.status).toBe("done");
+    // Without the goal there is no PTE task.
+    expect((await getTodayPlan(db, userB)).tasks.some((t) => t.kind === "pte")).toBe(false);
+  });
+});

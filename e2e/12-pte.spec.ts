@@ -15,15 +15,15 @@ test("PTE hub: exam version with sources and all 22 task types", async ({ page }
   await expect(version).toContainText("官方题型页最近一次核对：2026-11-08");
   await expect(version).toContainText("生效日期：官方页面没有写");
   await expect(version.getByRole("link", { name: "Reading" })).toHaveAttribute("href", "https://www.pearsonpte.com/pte-academic/test-format/reading/");
-  await expect(page.locator("main").getByRole("link").filter({ hasText: /可以练习|下一步上线/ })).toHaveCount(22);
+  await expect(page.locator("main").getByRole("link").filter({ hasText: /可以练习/ })).toHaveCount(22);
   await expect(page.getByRole("link", { name: /阅读填空（下拉选择）.*可以练习/ })).toBeVisible();
-  await expect(page.getByRole("link", { name: /作文.*下一步上线/ })).toBeVisible();
+  await expect(page.getByRole("link", { name: /作文.*可以练习/ })).toBeVisible();
   await page.screenshot({ path: shots("pte-hub"), fullPage: true });
 
-  // A speaking type: official description now, practice in the next step.
+  // A writing type: the official description with its zero-score rule.
   await page.getByRole("link", { name: /作文/ }).click();
   await expect(page.getByTestId("pte-official")).toContainText("跑题或少于 120 / 多于 380 词为 0 分");
-  await expect(page.getByText(/练习在下一步（4.3）上线/)).toBeVisible();
+  await expect(page.getByTestId("pte-prompts").getByRole("link")).toHaveCount(3);
 });
 
 test("reading: dropdown blanks, negative marking in multiple answers, re-order paragraphs", async ({ page }) => {
@@ -81,7 +81,7 @@ test("listening: timed dictation plays once; summary gets AI feedback apart from
   await expect(page.getByText("词数符合要求（50–70）")).toBeVisible();
   await expect(page.getByRole("heading", { name: /AI 辅助反馈/ })).toBeVisible();
   await expect(page.getByText(/不是 Pearson 的评分/)).toBeVisible();
-  await expect(page.getByText("录音要点")).toBeVisible();
+  await expect(page.getByText("要点", { exact: true })).toBeVisible();
   await page.screenshot({ path: shots("pte-sst-feedback"), fullPage: true });
 });
 

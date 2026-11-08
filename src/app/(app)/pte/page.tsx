@@ -1,15 +1,18 @@
-import { ExternalLink, GraduationCap, Info } from "lucide-react";
+import { ChartLine, ExternalLink, GraduationCap, Info } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
 
 import { PageHeader } from "@/components/layout/page-header";
+import { StartMockButton } from "@/components/pte/mock-runner";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { LoadingSkeleton } from "@/components/ui/skeleton";
 import { getDb } from "@/db";
 import { requireOwner } from "@/lib/auth/session";
 import { SECTIONS, SECTION_LABELS } from "@/modules/pte/content";
+import { listMocks } from "@/modules/pte/services/mock";
 import { getCurrentVersion, listTaskTypes, taskStats } from "@/modules/pte/services/pte";
 
 export const metadata: Metadata = { title: "PTE" };
@@ -41,10 +44,31 @@ async function PteHome() {
   const user = await requireOwner();
   const db = getDb();
   const version = await getCurrentVersion(db);
-  const [types, stats] = await Promise.all([listTaskTypes(db, version.id), taskStats(db, user.id)]);
+  const [types, stats, mocks] = await Promise.all([listTaskTypes(db, version.id), taskStats(db, user.id), listMocks(db, user.id, 20)]);
+  const open = new Set(mocks.filter((m) => m.status === "in_progress").map((m) => m.section));
 
   return (
     <div className="flex flex-col gap-6">
+      <Card>
+        <CardHeader>
+          <CardTitle>模拟练习与报告</CardTitle>
+        </CardHeader>
+        <CardContent className="flex flex-col gap-3 text-sm" data-testid="pte-mock-start">
+          <p className="text-muted">迷你模拟：一个部分里每个题型一道题，整体计时，可以保存后再继续。时间是各题时间相加，不是完整考试。</p>
+          <div className="flex flex-wrap gap-3">
+            {SECTIONS.map((s) => (
+              <StartMockButton key={s} section={s} label={`${SECTION_LABELS[s]}模拟`} inProgress={open.has(s)} />
+            ))}
+            <Button asChild variant="soft" size="sm">
+              <Link href="/pte/report">
+                <ChartLine aria-hidden="true" />
+                练习报告
+              </Link>
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
+
       <Card>
         <CardHeader>
           <CardTitle>考试版本与来源</CardTitle>

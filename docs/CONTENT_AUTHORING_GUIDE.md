@@ -157,3 +157,4 @@ src/content/
   - 阅读填空用 `{1}`、`{2}` 标出空；听力填空直接把答案写在花括号里，可接受的其他写法用 `/` 分开（例如 `{analysed/analyzed}`）；“找出不同的词”写成 `[文字稿里的词|录音里的词]`。
   - 听力题写 `script`（录音的文字，用语音合成朗读）；文字长度按官方上限（阅读填空 200 词、多选 350 词、排序和单选 110 词、拖放 80 词）。
   - 改动已上线的题目时，种子会自动升 `content_version`，旧作答仍显示当时的内容。题目全部原创，不要改写真题或第三方题库。
+  - 口语与写作题（`speaking-writing.json`）：朗读写 `text`（≤60 词）；复述句子写 `sentence`；看图描述写 `chart`（`type` 为 bar / line，`categories` 和 `values` 一一对应，单一系列）、`key_features_zh`、`model_answer`；复述讲座、小组讨论总结写 `script`（小组讨论要三位有名字的说话人）、`key_points_zh`、`model_answer`；简短回答写 `script` 和可接受的 `answers`；情景回应写 `situation`（≤60 词）、`key_points_zh`、`register_zh`、`model_answer`；写作摘要写 `passage`（≤300 词）和一句话的 `model_answer`；作文写 `topic` 和 `ideas_zh`。

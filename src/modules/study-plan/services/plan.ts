@@ -10,6 +10,7 @@ import {
   lessonStepAttempts,
   lessonSteps,
   lessons,
+  pteAttempts,
   reviewLogs,
   studyPlanTasks,
   studyPlans,
@@ -23,9 +24,10 @@ import { getLearnerSettings } from "@/modules/learner/services/profile";
 import { errorSummary } from "@/modules/errors/services/errors";
 import { ERROR_CATEGORY_LABELS } from "@/modules/grammar/content";
 import { pickInputMaterial } from "@/modules/materials/services/materials";
+import { getCurrentVersion, listTaskTypes, taskStats } from "@/modules/pte/services/pte";
 import { getReviewQueue } from "@/modules/review/services/review";
 
-import { buildPlan, isComeback, type LessonRef, type PlannedTask } from "../domain/plan-builder";
+import { buildPlan, isComeback, type LessonRef, type PlannedTask, type PteRef } from "../domain/plan-builder";
 import { isSessionLength, type SessionLength } from "../domain/session-templates";
 
 /**
@@ -137,6 +139,8 @@ async function lastActivityBefore(db: DbExecutor, userId: string, before: Date):
 
 export type PlanContext = {
   timeZone: string;
+  /** The learner's goals (PTE practice is added for "exam"). */
+  goals: string[];
   dayStart: Date;
   planDate: string;
   defaultMinutes: SessionLength;
@@ -227,7 +231,21 @@ async function gatherFacts(
     remediation,
     outputLesson: output ? toRef(output) : null,
     startingLevelLabel: !started && placed ? placed.levelLabel : null,
+    pte: ctx.goals.includes("exam") && mode === "normal" ? await pickPteTask(db, userId) : null,
   };
+}
+
+/** PTE task for today: a practisable type never tried yet, otherwise the one with the lowest average share. */
+async function pickPteTask(db: DbExecutor, userId: string): Promise<PteRef | null> {
+  const version = await getCurrentVersion(db).catch(() => null);
+  if (!version) return null;
+  const [types, stats] = await Promise.all([listTaskTypes(db, version.id), taskStats(db, userId)]);
+  const practisable = types.filter((t) => t.practiceAvailable);
+  const untried = practisable.find((t) => !stats.has(t.code));
+  if (untried) return { taskCode: untried.code, nameZh: untried.nameZh, avgShare: null };
+  const scored = practisable.filter((t) => stats.get(t.code)?.avgShare !== null && stats.get(t.code)?.avgShare !== undefined);
+  const weakest = scored.sort((a, b) => stats.get(a.code)!.avgShare! - stats.get(b.code)!.avgShare!)[0];
+  return weakest ? { taskCode: weakest.code, nameZh: weakest.nameZh, avgShare: stats.get(weakest.code)!.avgShare } : null;
 }
 
 async function planContext(db: DbExecutor, userId: string, now: Date, defaultTimeZone?: string): Promise<PlanContext> {
@@ -235,6 +253,7 @@ async function planContext(db: DbExecutor, userId: string, now: Date, defaultTim
   const timeZone = profile.timezone;
   return {
     timeZone,
+    goals: profile.learningGoals,
     dayStart: startOfLocalDay(now, timeZone),
     planDate: localDateString(now, timeZone),
     defaultMinutes: isSessionLength(preferences.dailyMinutes) ? preferences.dailyMinutes : 25,
@@ -461,6 +480,12 @@ export async function getTodayPlan(db: Database, userId: string, now = new Date(
           .from(errorItems)
           .where(and(eq(errorItems.userId, userId), inArray(errorItems.id, remediationIds))),
   ]);
+  const pteToday = rows.some((t) => t.kind === "pte")
+    ? await db
+        .select({ taskCode: pteAttempts.taskCode, at: pteAttempts.createdAt })
+        .from(pteAttempts)
+        .where(and(eq(pteAttempts.userId, userId), gte(pteAttempts.createdAt, ctx.dayStart)))
+    : [];
   const dueReviews = queue.cards.filter((c) => !c.isNew).length;
   const reviewsToday = reviewed?.n ?? 0;
   const completed = new Set(completedToday.map((r) => r.lessonId));
@@ -485,6 +510,8 @@ export async function getTodayPlan(db: Database, userId: string, now = new Date(
       }
       case "output":
         return practisedToday.some((p) => p.lessonId === t.targetId && OUTPUT_SKILLS.includes(p.skill) && p.at >= t.createdAt);
+      case "pte":
+        return pteToday.some((p) => p.taskCode === t.targetId && p.at >= t.createdAt);
       default:
         return false;
     }

@@ -85,6 +85,38 @@ export const ptePrompts = pgTable(
   (t) => [index("pte_prompts_task_idx").on(t.taskCode)],
 );
 
+/**
+ * A timed mini mock test for one section: one item per task type, a section
+ * clock that can be paused (save and continue later), results at the end.
+ */
+export const pteMockTests = pgTable(
+  "pte_mock_tests",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    userId: uuid("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    examVersionId: text("exam_version_id")
+      .notNull()
+      .references(() => examVersions.id),
+    /** speaking_writing | reading | listening */
+    section: text("section").notNull(),
+    /** in_progress | completed */
+    status: text("status").notNull().default("in_progress"),
+    /** The items in order. */
+    items: jsonb("items").$type<{ promptId: string; taskCode: string }[]>().notNull(),
+    timeLimitSeconds: integer("time_limit_seconds").notNull(),
+    /** Time used so far (the clock stops while the test is saved and closed). */
+    elapsedSeconds: integer("elapsed_seconds").notNull().default(0),
+    /** finished | time_up */
+    endReason: text("end_reason"),
+    startedAt: timestamp("started_at", { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+    completedAt: timestamp("completed_at", { withTimezone: true }),
+  },
+  (t) => [index("pte_mock_tests_user_idx").on(t.userId, t.startedAt), check("pte_mock_tests_status_check", sql`${t.status} in ('in_progress','completed')`)],
+);
+
 export const pteAttempts = pgTable(
   "pte_attempts",
   {
@@ -100,8 +132,9 @@ export const pteAttempts = pgTable(
       .notNull()
       .references(() => ptePrompts.id),
     promptVersion: integer("prompt_version").notNull(),
-    /** practice | timed (| mock in step 4.3) */
+    /** practice | timed | mock */
     mode: text("mode").notNull(),
+    mockTestId: uuid("mock_test_id").references(() => pteMockTests.id, { onDelete: "set null" }),
     response: jsonb("response").notNull(),
     /** Objective points (null when the task only has AI-assisted feedback). */
     score: real("score"),

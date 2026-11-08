@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "source_type": "first_party",
+  "review_status": "pending_owner_review",
+  "prompts": [
+    {
+      "id": "pte-sw-ra-01", "task": "sw_read_aloud", "difficulty": 2, "title_zh": "图书馆的作用",
+      "content": { "text": "Public libraries do much more than lend books. They offer free internet access, quiet places to study and courses for people of all ages. For many families, the local library is one of the few places where they can learn something new without paying." }
+    },
+    {
+      "id": "pte-sw-ra-02", "task": "sw_read_aloud", "difficulty": 3, "title_zh": "睡眠研究",
+      "content": { "text": "Researchers have found that a regular sleep schedule may be just as important as the total number of hours we sleep. Going to bed and getting up at similar times each day helps the body's internal clock and can improve both mood and concentration." }
+    },
+    {
+      "id": "pte-sw-ra-03", "task": "sw_read_aloud", "difficulty": 4, "title_zh": "城市农业",
+      "content": { "text": "Urban agriculture, the practice of growing food within city limits, has expanded rapidly in recent years. Supporters argue that it shortens supply chains and strengthens communities, although critics question whether it can produce food on a meaningful scale." }
+    },
+    {
+      "id": "pte-sw-rs-01", "task": "sw_repeat_sentence", "difficulty": 2, "title_zh": "复述 1",
+      "content": { "sentence": "The seminar has been moved to room twelve." }
+    },
+    {
+      "id": "pte-sw-rs-02", "task": "sw_repeat_sentence", "difficulty": 3, "title_zh": "复述 2",
+      "content": { "sentence": "Please hand in your reports by the end of next week." }
+    },
+    {
+      "id": "pte-sw-rs-03", "task": "sw_repeat_sentence", "difficulty": 4, "title_zh": "复述 3",
+      "content": { "sentence": "Most students found the second part of the lecture easier to follow." }
+    },
+    {
+      "id": "pte-sw-di-01", "task": "sw_describe_image", "difficulty": 2, "title_zh": "学生上学的交通方式",
+      "content": {
+        "chart": { "type": "bar", "title": "How students travel to campus", "y_label": "Students (%)", "unit": "%", "categories": ["Bus", "Bicycle", "Walking", "Car", "Train"], "values": [38, 22, 18, 14, 8] },
+        "key_features_zh": ["主题：学生去学校的交通方式（百分比）", "公交最多（38%）", "自行车第二（22%），步行 18%", "火车最少（8%）", "结论：多数学生用公共交通或不开车的方式"],
+        "model_answer": "This bar chart shows how students travel to campus. The bus is the most popular choice, used by 38 percent of students, followed by bicycles at 22 percent and walking at 18 percent. Only 14 percent come by car, and the train is the least common option at 8 percent. Overall, most students use public transport or travel without a car."
+      }
+    },
+    {
+      "id": "pte-sw-di-02", "task": "sw_describe_image", "difficulty": 3, "title_zh": "图书馆每月借阅量",
+      "content": {
+        "chart": { "type": "line", "title": "Books borrowed per month (thousands)", "y_label": "Books (thousands)", "unit": "k", "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"], "values": [12, 14, 13, 9, 7, 10] },
+        "key_features_zh": ["主题：一到六月图书馆每月借阅量（千本）", "二月最高（1.4 万）", "四月、五月明显下降，五月最低（7 千）", "六月回升到 1 万", "结论：上半年先升后降再回升"],
+        "model_answer": "The line graph shows the number of books borrowed from a library each month from January to June. Borrowing rose from 12,000 in January to a peak of 14,000 in February, then fell steadily to a low of 7,000 in May. In June it recovered to 10,000. Overall, borrowing was highest in early spring and lowest in May."
+      }
+    },
+    {
+      "id": "pte-sw-di-03", "task": "sw_describe_image", "difficulty": 4, "title_zh": "家庭用电构成",
+      "content": {
+        "chart": { "type": "bar", "title": "Household electricity use by purpose", "y_label": "Share of total use (%)", "unit": "%", "categories": ["Heating", "Cooking", "Lighting", "Appliances", "Other"], "values": [42, 12, 9, 27, 10] },
+        "key_features_zh": ["主题：家庭用电按用途的比例", "取暖最多（42%），远高于其他", "家电第二（27%）", "照明最少（9%），做饭 12%", "结论：取暖和家电占了约七成"],
+        "model_answer": "This chart shows how households use electricity. Heating accounts for by far the largest share at 42 percent, followed by appliances at 27 percent. Cooking uses 12 percent, other purposes 10 percent, and lighting only 9 percent. In conclusion, heating and appliances together make up almost 70 percent of household electricity use."
+      }
+    },
+    {
+      "id": "pte-sw-rl-01", "task": "sw_retell_lecture", "difficulty": 3, "title_zh": "城市里的鸟",
+      "content": {
+        "script": [{ "text": "Today I'd like to look at how birds adapt to city life. Cities are noisy, so some species have started to sing at a higher pitch, which travels better above the low sound of traffic. Others sing earlier in the morning, before the roads get busy. Food is another factor. Birds in cities often eat food left by people, and this has changed their behaviour: some have become much less afraid of humans. However, not all species can adapt. Birds that need large areas of forest or very specific food tend to disappear from urban areas. So cities are not empty of nature, but they favour a particular kind of bird: flexible, bold and able to live close to people." }],
+        "key_points_zh": ["城市噪音：一些鸟用更高的音调唱歌，或更早唱", "食物：吃人类留下的食物，变得不怕人", "不是所有鸟都能适应：需要大片森林或特殊食物的鸟会消失", "结论：城市有利于灵活、大胆、能靠近人生活的鸟"],
+        "model_answer": "The lecture explains how birds adapt to cities. Because of traffic noise, some birds sing at a higher pitch or earlier in the morning. Many eat food left by people and have become less afraid of humans. However, species that need large forests or special food often disappear, so cities favour flexible, bold birds that can live near people."
+      }
+    },
+    {
+      "id": "pte-sw-rl-02", "task": "sw_retell_lecture", "difficulty": 3, "title_zh": "间隔学习",
+      "content": {
+        "script": [{ "text": "Let me tell you about the spacing effect, one of the most reliable findings in learning research. If you study something three times in one evening, you'll probably remember it well the next day, but after a week much of it will be gone. If you spread the same three sessions over a week, you will remember far more in the long run. The reason seems to be that forgetting a little between sessions forces your brain to work harder to recall the information, and that effort makes the memory stronger. The practical lesson for students is simple: start revising early and come back to the material several times, rather than cramming everything into the night before the exam." }],
+        "key_points_zh": ["间隔效应是学习研究中最可靠的发现之一", "一晚学三次：第二天记得，一周后忘很多；分散到一周：长期记得更多", "原因：中间忘一点，回忆更费力，记忆更牢", "建议：早开始复习、多次回顾，不要考前突击"],
+        "model_answer": "The speaker describes the spacing effect. Studying the same material three times in one evening helps the next day, but spreading the sessions over a week leads to much better long-term memory. Forgetting a little between sessions makes recall harder, which strengthens memory. So students should start revising early and review several times instead of cramming."
+      }
+    },
+    {
+      "id": "pte-sw-rl-03", "task": "sw_retell_lecture", "difficulty": 4, "title_zh": "海水淡化",
+      "content": {
+        "script": [{ "text": "Desalination, turning sea water into drinking water, is increasingly used in dry regions. The most common method, reverse osmosis, pushes sea water through a very fine membrane that lets water through but stops the salt. The technology works well, but it has two main drawbacks. First, it uses a great deal of energy, which makes the water expensive and can increase carbon emissions if the energy comes from fossil fuels. Second, it produces a very salty waste called brine, which can harm marine life if it is released back into the sea without care. Engineers are now trying to power plants with solar energy and to find uses for the brine, but for many places, reducing water waste is still the cheapest solution." }],
+        "key_points_zh": ["海水淡化在干旱地区越来越多", "最常见的方法反渗透：用细膜挡住盐", "缺点一：耗能大，水贵，可能增加排放", "缺点二：产生高盐废水，可能伤害海洋生物", "改进：太阳能供电、利用废水；但减少浪费往往最便宜"],
+        "model_answer": "The lecture is about desalination, which is used in dry regions to turn sea water into drinking water, mainly through reverse osmosis with a fine membrane. Its drawbacks are high energy use, which makes water expensive and can raise emissions, and salty brine that can harm sea life. Engineers are trying solar power and new uses for brine, but reducing water waste is often cheaper."
+      }
+    },
+    {
+      "id": "pte-sw-asq-01", "task": "sw_answer_short_question", "difficulty": 2, "title_zh": "简短回答 1",
+      "content": { "script": [{ "text": "What do you call the instrument used to look at stars and planets?" }], "answers": ["telescope", "a telescope"], "explanation_zh": "看星星和行星的仪器是望远镜 telescope。" }
+    },
+    {
+      "id": "pte-sw-asq-02", "task": "sw_answer_short_question", "difficulty": 2, "title_zh": "简短回答 2",
+      "content": { "script": [{ "text": "How many days are there in a leap year?" }], "answers": ["366", "three hundred and sixty-six", "three hundred sixty-six", "three hundred and sixty six"], "explanation_zh": "闰年有 366 天。" }
+    },
+    {
+      "id": "pte-sw-asq-03", "task": "sw_answer_short_question", "difficulty": 3, "title_zh": "简短回答 3",
+      "content": { "script": [{ "text": "If a shop is open from nine in the morning until five in the afternoon, how many hours is it open?" }], "answers": ["8", "eight", "eight hours", "8 hours"], "explanation_zh": "早上九点到下午五点是 8 个小时。" }
+    },
+    {
+      "id": "pte-sw-sgd-01", "task": "sw_summarize_group_discussion", "difficulty": 3, "title_zh": "要不要取消期末考试",
+      "content": {
+        "script": [
+          { "speaker": "Anna", "text": "I think our department should replace final exams with continuous assessment. One exam at the end puts huge pressure on students and doesn't show what they can do over a whole term." },
+          { "speaker": "Ben", "text": "I see the point, but continuous assessment means deadlines every few weeks. Some students would feel stressed all the time instead of just once." },
+          { "speaker": "Chloe", "text": "Maybe a mix is best. Keep a shorter final exam, but let coursework count for half of the grade. That way one bad day doesn't decide everything." },
+          { "speaker": "Anna", "text": "That could work, as long as the coursework is spread out sensibly." },
+          { "speaker": "Ben", "text": "I agree, if the deadlines are planned across all modules so they don't all fall in the same week." }
+        ],
+        "key_points_zh": ["Anna：用平时考核代替期末考试，一次考试压力大、不能反映整个学期", "Ben：平时考核意味着频繁截止日期，可能一直有压力", "Chloe：折中——保留较短的期末考试，作业占一半成绩", "结论：大家基本同意折中方案，前提是截止日期在各门课之间合理分散"],
+        "model_answer": "The group discussed whether to replace final exams. Anna argued for continuous assessment because a single exam is stressful and unrepresentative. Ben worried that frequent deadlines would keep students stressed all term. Chloe suggested a compromise: a shorter final exam with coursework counting for half the grade. In the end, Anna and Ben agreed, provided deadlines are spread sensibly across modules."
+      }
+    },
+    {
+      "id": "pte-sw-sgd-02", "task": "sw_summarize_group_discussion", "difficulty": 3, "title_zh": "办公室要不要四天工作制",
+      "content": {
+        "script": [
+          { "speaker": "David", "text": "The trial of a four-day week went really well. Our productivity stayed the same and people took fewer sick days." },
+          { "speaker": "Emma", "text": "That's true for our team, but customer service had problems. Customers expect someone to answer the phone five days a week." },
+          { "speaker": "Farid", "text": "We could keep the four-day week but use a rota, so different people take different days off and we're still open every day." },
+          { "speaker": "Emma", "text": "A rota would solve the phone problem, but it makes team meetings harder to schedule." },
+          { "speaker": "David", "text": "Then let's set one fixed day when everyone works, just for meetings." }
+        ],
+        "key_points_zh": ["David：四天工作制试行很成功，效率不变、病假更少", "Emma：客服部门有问题，客户希望一周五天都有人接电话", "Farid：建议轮班，每人休不同的日子，每天都有人上班", "Emma：轮班解决电话问题，但开会难安排", "David：定一个所有人都上班的固定日子用来开会"],
+        "model_answer": "The discussion was about keeping a four-day week. David said the trial was successful, with the same productivity and fewer sick days. Emma pointed out that customer service struggled because clients expect five-day coverage. Farid proposed a rota so the office stays open daily, and when Emma noted meetings would be harder, David suggested one fixed day when everyone works."
+      }
+    },
+    {
+      "id": "pte-sw-sgd-03", "task": "sw_summarize_group_discussion", "difficulty": 4, "title_zh": "校园里禁不禁塑料瓶",
+      "content": {
+        "script": [
+          { "speaker": "Grace", "text": "I'd like the university to ban the sale of plastic water bottles on campus. It's a simple step that would cut a lot of waste." },
+          { "speaker": "Henry", "text": "A ban alone might just push students to buy drinks in other plastic containers. Unless there are enough water fountains, it won't change much." },
+          { "speaker": "Isla", "text": "Other universities that banned bottles also installed refill stations and gave every new student a reusable bottle. Waste dropped noticeably." },
+          { "speaker": "Henry", "text": "If refill stations come first, I'd support it." },
+          { "speaker": "Grace", "text": "Agreed. We could propose refill stations this term and the ban next year." }
+        ],
+        "key_points_zh": ["Grace：建议学校禁止卖塑料水瓶，减少垃圾", "Henry：只禁止可能让学生改买其他塑料包装的饮料，需要足够的饮水机", "Isla：其他大学同时装了加水站、发可重复使用的水瓶，垃圾明显减少", "结论：先装加水站，下一年再禁售"],
+        "model_answer": "Grace proposed banning plastic water bottles on campus to reduce waste. Henry argued that a ban alone might shift students to other plastic drinks unless there were enough water fountains. Isla said universities that combined bans with refill stations and free reusable bottles saw clear reductions. They agreed to propose refill stations this term and the ban next year."
+      }
+    },
+    {
+      "id": "pte-sw-rts-01", "task": "sw_respond_situation", "difficulty": 2, "title_zh": "请同事帮忙",
+      "content": {
+        "situation": "You are working on a report that is due tomorrow, but your computer has stopped working. A colleague, Sam, has a spare laptop. Ask Sam if you can borrow it and explain why.",
+        "key_points_zh": ["礼貌地开头（Hi Sam / Sorry to bother you）", "说明原因：电脑坏了、报告明天要交", "明确请求借用备用电脑，并说明多久", "表示感谢，可以提出归还时间或回报"],
+        "register_zh": "同事之间：友好、礼貌，不用太正式。",
+        "model_answer": "Hi Sam, sorry to bother you. My computer has just stopped working and I have to finish a report that's due tomorrow. I heard you have a spare laptop. Would you mind if I borrowed it until tomorrow afternoon? I'll take good care of it and bring it back as soon as I've sent the report. Thanks so much."
+      }
+    },
+    {
+      "id": "pte-sw-rts-02", "task": "sw_respond_situation", "difficulty": 3, "title_zh": "向房东反映问题",
+      "content": {
+        "situation": "The heating in your rented flat has not worked for three days, and it is very cold. You call your landlord, Mrs Patel. Explain the problem and ask her to arrange a repair as soon as possible.",
+        "key_points_zh": ["礼貌地打招呼并说明身份", "说明问题：暖气三天不工作、很冷", "请求尽快安排维修，可以提出方便的时间", "保持礼貌，但表达问题的紧迫"],
+        "register_zh": "对房东：礼貌、清楚，略正式。",
+        "model_answer": "Hello Mrs Patel, this is Lin from flat four. I'm calling because the heating hasn't worked for three days, and it's getting very cold in the flat. Could you please arrange for someone to repair it as soon as possible? I'm at home every evening after six, so any time after that would suit me. Thank you for your help."
+      }
+    },
+    {
+      "id": "pte-sw-rts-03", "task": "sw_respond_situation", "difficulty": 4, "title_zh": "婉拒老板的请求",
+      "content": {
+        "situation": "Your manager asks you to lead a new project starting next week. You are already working on two urgent tasks and cannot take on more without risking the quality of your work. Respond to your manager politely and suggest an alternative.",
+        "key_points_zh": ["感谢邀请、表示有兴趣", "说明现有两个紧急任务，再接会影响质量", "提出替代方案：推迟开始时间、减少其他任务，或推荐同事", "语气礼貌、专业，不生硬拒绝"],
+        "register_zh": "对上级：礼貌、专业、正式一些。",
+        "model_answer": "Thank you for thinking of me for the new project, I'd really like to be involved. At the moment, though, I'm working on two urgent tasks, and I'm worried that taking on another would affect the quality of my work. Would it be possible to start the project in two weeks, once these are finished? Alternatively, I could support the project lead in a smaller role for now."
+      }
+    },
+    {
+      "id": "pte-sw-swt-01", "task": "sw_summarize_written_text", "difficulty": 3, "title_zh": "四天工作制",
+      "content": {
+        "passage": "Several companies have recently experimented with a four-day working week, in which employees work fewer hours for the same pay. Early results are encouraging. Many firms report that productivity has stayed the same or even improved, as employees concentrate better and waste less time in unnecessary meetings. Workers say they feel less tired and have more time for family and hobbies, and some companies have found it easier to attract new staff. However, the model does not suit every industry. Businesses that must serve customers every day, such as hospitals and shops, find it harder to reduce working days without hiring more people, which increases costs. Critics also warn that some employees simply squeeze five days of work into four, which can increase stress. Supporters reply that these problems can be solved with careful planning, such as staggered schedules. Overall, the four-day week appears promising, but its success depends on the type of work and how it is introduced.",
+        "key_points_zh": ["一些公司试行四天工作制（工时少、工资不变）", "好处：效率不变或提高，员工不那么累，更容易招人", "问题：每天要服务客户的行业难实行，成本增加；可能把五天的工作压到四天，压力更大", "结论：有前景，但取决于工作类型和实施方式"],
+        "model_answer": "Trials of a four-day week suggest that productivity can be maintained while employees feel less tired and recruitment becomes easier, but because it is harder for businesses that serve customers every day and may increase stress, its success depends on the type of work and how it is introduced."
+      }
+    },
+    {
+      "id": "pte-sw-swt-02", "task": "sw_summarize_written_text", "difficulty": 3, "title_zh": "城市里的树",
+      "content": {
+        "passage": "Trees are often seen as decoration in cities, but research shows they provide important services. Shade from trees can lower street temperatures by several degrees during hot weather, reducing the need for air conditioning and protecting vulnerable people from heat. Trees also absorb rainwater, which reduces the risk of flooding, and their roots help to stabilise soil. Studies have linked green streets with better mental health and more physical activity, as people are more likely to walk in pleasant surroundings. Nevertheless, urban trees face many challenges. They have little space for roots, they suffer from pollution, and young trees often die within a few years if they are not watered. Many cities therefore now choose species that can survive dry and polluted conditions and include maintenance budgets in their planting plans. Without such care, planting campaigns may produce impressive numbers but few mature trees.",
+        "key_points_zh": ["城市树木不只是装饰，提供重要服务", "好处：遮阴降温、吸收雨水防洪、稳固土壤、有益心理健康和运动", "挑战：根系空间小、污染、小树缺水易死", "对策：选耐旱耐污染的树种、预留养护经费，否则种了也长不大"],
+        "model_answer": "Urban trees cool streets, reduce flooding and support mental and physical health, but because they struggle with limited space, pollution and lack of water, cities need to choose hardy species and fund maintenance, or planting campaigns will produce few mature trees."
+      }
+    },
+    {
+      "id": "pte-sw-swt-03", "task": "sw_summarize_written_text", "difficulty": 4, "title_zh": "二手经济",
+      "content": {
+        "passage": "The market for second-hand goods has grown rapidly in recent years, driven largely by online platforms that make it easy to buy and sell used clothes, furniture and electronics. For consumers, the attraction is partly financial: second-hand items are usually much cheaper than new ones. Environmental concerns also play a role, since extending the life of a product reduces the energy and raw materials needed to make new ones. Some well-known brands have responded by launching their own resale services, hoping to keep customers loyal and to benefit from a trend they cannot ignore. Yet the second-hand economy is not without problems. Delivery of individual items can create additional transport emissions, and the quality of goods can be difficult to judge online. Furthermore, if cheap second-hand purchases simply encourage people to buy more, the environmental benefit may be smaller than expected. The overall impact therefore depends on whether second-hand goods replace new purchases or add to them.",
+        "key_points_zh": ["二手市场因网络平台快速增长", "原因：便宜、环保（延长产品寿命）；品牌也推出转卖服务", "问题：单件配送增加运输排放、网上难判断质量、可能让人买得更多", "结论：影响取决于二手是替代新品还是额外购买"],
+        "model_answer": "Online platforms have fuelled a fast-growing second-hand market that appeals to consumers for financial and environmental reasons and has prompted brands to offer resale services, although delivery emissions, uncertain quality and extra buying mean its real benefit depends on whether used goods replace new purchases."
+      }
+    },
+    {
+      "id": "pte-sw-we-01", "task": "sw_write_essay", "difficulty": 3, "title_zh": "大学免费是否应该",
+      "content": {
+        "topic": "Some people believe that university education should be free for all students. Others think students should pay at least part of the cost. Discuss both views and give your own opinion.",
+        "ideas_zh": ["支持免费：机会平等、社会受益（更多受教育人口）", "支持付费：财政压力、学生更重视学习、受益者付费", "可能的折中：按收入资助、毕业后按收入还款"]
+      }
+    },
+    {
+      "id": "pte-sw-we-02", "task": "sw_write_essay", "difficulty": 3, "title_zh": "科技让人更孤独吗",
+      "content": {
+        "topic": "Modern technology has made it easier to communicate, but some people say it has made us more isolated. To what extent do you agree or disagree?",
+        "ideas_zh": ["同意：面对面交流减少、社交媒体带来比较和焦虑", "不同意：和远方的人保持联系、找到兴趣相同的群体", "关键在于怎么用：线上交流补充而不是取代线下"]
+      }
+    },
+    {
+      "id": "pte-sw-we-03", "task": "sw_write_essay", "difficulty": 4, "title_zh": "城市应不应该限制私家车",
+      "content": {
+        "topic": "Many cities are considering banning private cars from their centres. What are the advantages and disadvantages of this policy? Support your answer with reasons and examples.",
+        "ideas_zh": ["好处：空气更好、更安全、步行和骑车空间多", "坏处：行动不便的人、送货和商家受影响、需要足够的公共交通", "实施条件：分阶段、例外情况、先改善公交"]
+      }
+    }
+  ]
+}

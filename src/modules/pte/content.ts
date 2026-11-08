@@ -5,6 +5,7 @@ import { z } from "zod";
 import versionsFile from "../../content/pte/exam-versions.json" with { type: "json" };
 import listeningFile from "../../content/pte/prompts/listening.json" with { type: "json" };
 import readingFile from "../../content/pte/prompts/reading.json" with { type: "json" };
+import speakingWritingFile from "../../content/pte/prompts/speaking-writing.json" with { type: "json" };
 
 /**
  * PTE Academic content (spec §5.13, §8.8): exam versions with their official
@@ -102,7 +103,34 @@ const promptContent = {
   l_smw: z.object({ script, options, answer: z.number().int().min(0), explanation_zh: why }),
   l_hiw: z.object({ transcript: text, explanation_zh: why }),
   l_wfd: z.object({ sentence: text }),
+  sw_read_aloud: z.object({ text }),
+  sw_repeat_sentence: z.object({ sentence: text }),
+  sw_describe_image: z.object({ chart: z.lazy(() => chartSchema), key_features_zh: z.array(text).min(2), model_answer: text }),
+  sw_retell_lecture: z.object({ script, key_points_zh: z.array(text).min(2), model_answer: text }),
+  sw_answer_short_question: z.object({ script, answers: z.array(text).min(1), explanation_zh: why }),
+  sw_summarize_group_discussion: z.object({ script, key_points_zh: z.array(text).min(2), model_answer: text }),
+  sw_respond_situation: z.object({ situation: text, key_points_zh: z.array(text).min(2), register_zh: text, model_answer: text }),
+  sw_summarize_written_text: z.object({ passage: text, key_points_zh: z.array(text).min(2), model_answer: text }),
+  sw_write_essay: z.object({ topic: text, ideas_zh: z.array(text).min(1) }),
 } as const;
+
+/** A simple original chart for "Describe Image" (rendered as SVG; one series). */
+export const chartSchema = z
+  .object({
+    type: z.enum(["bar", "line"]),
+    title: text,
+    y_label: text,
+    unit: z.string().max(4),
+    categories: z.array(text).min(3).max(8),
+    values: z.array(z.number().min(0)).min(3).max(8),
+  })
+  .refine((c) => c.categories.length === c.values.length, "categories and values must match");
+export type Chart = z.infer<typeof chartSchema>;
+
+/** Task types answered by speaking (recorded and transcribed) or by writing a text. */
+export const SPOKEN_CODES = ["sw_read_aloud", "sw_repeat_sentence", "sw_describe_image", "sw_retell_lecture", "sw_answer_short_question", "sw_summarize_group_discussion", "sw_respond_situation"] as const;
+export const WRITTEN_CODES = ["sw_summarize_written_text", "sw_write_essay", "l_sst"] as const;
+export const isSpoken = (code: string) => (SPOKEN_CODES as readonly string[]).includes(code);
 export type PracticeTaskCode = keyof typeof promptContent;
 export const PRACTICE_CODES = Object.keys(promptContent) as PracticeTaskCode[];
 
@@ -160,9 +188,32 @@ function checkContent(p: PromptContent, problems: string[], id: string) {
     case "l_hiw":
       if ([...p.content.transcript.matchAll(HIW)].length < 2) bad("at least two [shown|spoken] differences");
       break;
+    case "sw_read_aloud":
+      if (words(p.content.text) > 60) bad("text over 60 words");
+      break;
+    case "sw_summarize_group_discussion":
+      if (new Set(p.content.script.map((s) => s.speaker)).size < 3 || p.content.script.some((s) => !s.speaker)) bad("needs three named speakers");
+      break;
+    case "sw_respond_situation":
+      if (words(p.content.situation) > 60) bad("situation over 60 words");
+      break;
+    case "sw_summarize_written_text": {
+      if (words(p.content.passage) > 300) bad("passage over 300 words");
+      const n = words(p.content.model_answer);
+      if (n < 5 || n > 75 || sentenceCount(p.content.model_answer) !== 1) bad("model answer must be one sentence of 5–75 words");
+      break;
+    }
     default:
       break;
   }
+}
+
+/** Sentences = full stops / question / exclamation marks that end a sentence (decimals and abbreviations aside). */
+export function sentenceCount(s: string) {
+  const t = s.trim();
+  if (!t) return 0;
+  const ends = t.match(/[.!?](?=\s+[A-Z]|\s*$)/g)?.length ?? 0;
+  return Math.max(1, ends);
 }
 
 export function words(s: string) {
@@ -183,7 +234,7 @@ export function loadPte() {
   }
 
   const prompts: Prompt[] = [];
-  for (const file of [readingFile, listeningFile]) {
+  for (const file of [readingFile, listeningFile, speakingWritingFile]) {
     const parsed = promptFileSchema.parse(file);
     for (const raw of parsed.prompts) {
       const content = promptContent[raw.task].safeParse(raw.content);
@@ -269,7 +320,14 @@ export type LearnerView =
   | { task: "l_mcma" | "l_mcsa"; audio: true; question: string; options: string[] }
   | { task: "l_hcs" | "l_smw"; audio: true; options: string[] }
   | { task: "l_fib_type"; audio: true; parts: TextPart[] }
-  | { task: "l_hiw"; audio: true; tokens: { text: string; word: boolean }[] };
+  | { task: "l_hiw"; audio: true; tokens: { text: string; word: boolean }[] }
+  | { task: "sw_read_aloud"; text: string }
+  | { task: "sw_repeat_sentence" | "sw_retell_lecture" | "sw_answer_short_question"; audio: true }
+  | { task: "sw_describe_image"; chart: Chart }
+  | { task: "sw_summarize_group_discussion"; audio: true; speakers: string[] }
+  | { task: "sw_respond_situation"; audio: true; situation: string }
+  | { task: "sw_summarize_written_text"; passage: string }
+  | { task: "sw_write_essay"; topic: string };
 
 export function learnerView(p: Prompt): LearnerView {
   switch (p.task) {
@@ -299,6 +357,22 @@ export function learnerView(p: Prompt): LearnerView {
       return { task: p.task, audio: true, parts: gapParts(p.content.transcript, TYPED) };
     case "l_hiw":
       return { task: p.task, audio: true, tokens: hiwTokens(p.content.transcript).tokens };
+    case "sw_read_aloud":
+      return { task: p.task, text: p.content.text };
+    case "sw_repeat_sentence":
+    case "sw_retell_lecture":
+    case "sw_answer_short_question":
+      return { task: p.task, audio: true };
+    case "sw_describe_image":
+      return { task: p.task, chart: p.content.chart };
+    case "sw_summarize_group_discussion":
+      return { task: p.task, audio: true, speakers: [...new Set(p.content.script.map((s) => s.speaker!))] };
+    case "sw_respond_situation":
+      return { task: p.task, audio: true, situation: p.content.situation };
+    case "sw_summarize_written_text":
+      return { task: p.task, passage: p.content.passage };
+    case "sw_write_essay":
+      return { task: p.task, topic: p.content.topic };
   }
 }
 
@@ -316,7 +390,16 @@ export function audioScript(p: Prompt): string | null {
     case "l_hiw":
       return hiwTokens(p.content.transcript).spoken;
     case "l_wfd":
+    case "sw_repeat_sentence":
       return p.content.sentence;
+    case "sw_retell_lecture":
+    case "sw_answer_short_question":
+      return p.content.script.map((s) => s.text).join(" ");
+    case "sw_summarize_group_discussion":
+      // One synthetic voice: the names make clear who is speaking.
+      return p.content.script.map((s) => `${s.speaker}: ${s.text}`).join(" ");
+    case "sw_respond_situation":
+      return p.content.situation;
     default:
       return null;
   }

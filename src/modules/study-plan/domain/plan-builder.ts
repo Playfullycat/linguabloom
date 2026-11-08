@@ -54,10 +54,18 @@ export type PlanFacts = {
   remediation: RemediationRef | null;
   /** Placement estimate used for the recommendation text, if any. */
   startingLevelLabel: string | null;
+  /** The learner prepares for PTE (goal "exam"): one short practice of the weakest task type. */
+  pte?: PteRef | null;
 };
 
+export type PteRef = { taskCode: string; nameZh: string; avgShare: number | null };
+
+/** PTE is a side track (spec §5.13): only in sessions of this length or longer, and only a few minutes. */
+export const PTE_MIN_SESSION = 25;
+const PTE_MINUTES = 6;
+
 export type PlannedTask = {
-  kind: "review" | "lesson" | "remediation" | "input" | "output";
+  kind: "review" | "lesson" | "remediation" | "input" | "output" | "pte";
   title: string;
   href: string;
   minutes: number;
@@ -206,6 +214,26 @@ export function buildPlan(facts: PlanFacts): PlannedTask[] {
           : `这个错误（${r.categoryLabel}）已经出现 ${r.count} 次。做 3 道针对练习，通过后明天换个语境再测。`,
       targetId: r.itemId,
     });
+  }
+
+  // PTE practice (goal "exam"): a few minutes taken from the longest task, at the end.
+  if (facts.pte && minutes >= PTE_MIN_SESSION) {
+    const p = facts.pte;
+    const donor = [...tasks].filter((t) => t.kind !== "review" && t.kind !== "remediation").sort((a, b) => b.minutes - a.minutes)[0];
+    if (donor && donor.minutes - PTE_MINUTES >= 5) {
+      donor.minutes -= PTE_MINUTES;
+      tasks.push({
+        kind: "pte",
+        title: `PTE 练习：${p.nameZh}`,
+        href: `/pte/${p.taskCode}`,
+        minutes: PTE_MINUTES,
+        reason:
+          p.avgShare === null
+            ? "你的目标里有考试准备：今天试一个还没练过的 PTE 题型，先熟悉题型和时间。"
+            : `你的目标里有考试准备：这个题型目前的平均得分率是 ${Math.round(p.avgShare * 100)}%，是你最需要加强的一类。PTE 只占几分钟，主线学习仍然优先。`,
+        targetId: p.taskCode,
+      });
+    }
   }
 
   // Leftover minutes go to the lesson (or review) so the plan matches the chosen length.

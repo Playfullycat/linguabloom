@@ -9,11 +9,26 @@
       "reviewed_on": "2026-11-08",
       "is_current": true,
       "sources": [
-        { "title": "PTE Academic Test Format", "url": "https://www.pearsonpte.com/pte-academic/test-format/" },
-        { "title": "Speaking & Writing", "url": "https://www.pearsonpte.com/pte-academic/test-format/speaking-writing/" },
-        { "title": "Reading", "url": "https://www.pearsonpte.com/pte-academic/test-format/reading/" },
-        { "title": "Listening", "url": "https://www.pearsonpte.com/pte-academic/test-format/listening/" },
-        { "title": "PTE Academic Scoring", "url": "https://www.pearsonpte.com/pte-academic/scoring" }
+        {
+          "title": "PTE Academic Test Format",
+          "url": "https://www.pearsonpte.com/pte-academic/test-format/"
+        },
+        {
+          "title": "Speaking & Writing",
+          "url": "https://www.pearsonpte.com/pte-academic/test-format/speaking-writing/"
+        },
+        {
+          "title": "Reading",
+          "url": "https://www.pearsonpte.com/pte-academic/test-format/reading/"
+        },
+        {
+          "title": "Listening",
+          "url": "https://www.pearsonpte.com/pte-academic/test-format/listening/"
+        },
+        {
+          "title": "PTE Academic Scoring",
+          "url": "https://www.pearsonpte.com/pte-academic/scoring"
+        }
       ],
       "notes_zh": [
         "2026-11-08 核对官方题型页：口语与写作 9 类（76–84 分钟），阅读 5 类（23–30 分钟），听力 8 类（31–39 分钟），共 22 类；总分 10–90。",
@@ -23,223 +38,656 @@
       ],
       "task_types": [
         {
-          "code": "sw_read_aloud", "section": "speaking_writing", "order": 1,
-          "name_en": "Read Aloud", "name_zh": "朗读",
-          "skills": ["speaking", "reading"],
-          "timing": { "prep_seconds": [30, 40], "recordings": 1, "text_words_max": 60 },
-          "scoring": { "official_zh": "按内容、发音、口语流利度评分。", "method": "ai_traits", "partial_credit": true, "negative_marking": false },
+          "code": "sw_read_aloud",
+          "section": "speaking_writing",
+          "order": 1,
+          "name_en": "Read Aloud",
+          "name_zh": "朗读",
+          "skills": [
+            "speaking",
+            "reading"
+          ],
+          "timing": {
+            "prep_seconds": [
+              30,
+              40
+            ],
+            "recordings": 1,
+            "text_words_max": 60,
+            "suggested_response_seconds": 40
+          },
+          "scoring": {
+            "official_zh": "按内容、发音、口语流利度评分。",
+            "method": "ai_traits",
+            "partial_credit": true,
+            "negative_marking": false
+          },
           "description_zh": "屏幕上出现一段不超过 60 词的文字，准备 30–40 秒后朗读出来，只能录一次。",
-          "tips_zh": ["准备时先找出长单词和停顿的位置。", "读错一个词不要停下来重读，继续往下读。"],
-          "practice": false
+          "tips_zh": [
+            "准备时先找出长单词和停顿的位置。",
+            "读错一个词不要停下来重读，继续往下读。"
+          ],
+          "practice": true
         },
         {
-          "code": "sw_repeat_sentence", "section": "speaking_writing", "order": 2,
-          "name_en": "Repeat Sentence", "name_zh": "复述句子",
-          "skills": ["listening", "speaking"],
-          "timing": { "audio_seconds": [3, 9], "response_seconds": 15, "recordings": 1, "replay": false },
-          "scoring": { "official_zh": "按内容、发音、口语流利度评分，有部分得分。", "method": "ai_traits", "partial_credit": true, "negative_marking": false },
+          "code": "sw_repeat_sentence",
+          "section": "speaking_writing",
+          "order": 2,
+          "name_en": "Repeat Sentence",
+          "name_zh": "复述句子",
+          "skills": [
+            "listening",
+            "speaking"
+          ],
+          "timing": {
+            "audio_seconds": [
+              3,
+              9
+            ],
+            "response_seconds": 15,
+            "recordings": 1,
+            "replay": false
+          },
+          "scoring": {
+            "official_zh": "按内容、发音、口语流利度评分，有部分得分。",
+            "method": "ai_traits",
+            "partial_credit": true,
+            "negative_marking": false
+          },
           "description_zh": "听一句 3–9 秒的话，然后尽量原样复述，录音不能重放。",
-          "tips_zh": ["抓意群而不是逐词记。", "记不全时，先说出记住的部分。"],
-          "practice": false
+          "tips_zh": [
+            "抓意群而不是逐词记。",
+            "记不全时，先说出记住的部分。"
+          ],
+          "practice": true
         },
         {
-          "code": "sw_describe_image", "section": "speaking_writing", "order": 3,
-          "name_en": "Describe Image", "name_zh": "看图描述",
-          "skills": ["speaking"],
-          "timing": { "prep_seconds": 25, "response_seconds": 40, "recordings": 1 },
-          "scoring": { "official_zh": "按内容、发音、口语流利度评分，有部分得分；内容由 AI 评分并有专家复核。", "method": "ai_traits", "partial_credit": true, "negative_marking": false },
+          "code": "sw_describe_image",
+          "section": "speaking_writing",
+          "order": 3,
+          "name_en": "Describe Image",
+          "name_zh": "看图描述",
+          "skills": [
+            "speaking"
+          ],
+          "timing": {
+            "prep_seconds": 25,
+            "response_seconds": 40,
+            "recordings": 1
+          },
+          "scoring": {
+            "official_zh": "按内容、发音、口语流利度评分，有部分得分；内容由 AI 评分并有专家复核。",
+            "method": "ai_traits",
+            "partial_credit": true,
+            "negative_marking": false
+          },
           "description_zh": "看一张图（图表、地图、流程图、照片等），准备 25 秒，用自己的话详细描述 40 秒。",
-          "tips_zh": ["先说图的主题，再说最大 / 最小或最明显的变化，最后给一个结论。"],
-          "practice": false
+          "tips_zh": [
+            "先说图的主题，再说最大 / 最小或最明显的变化，最后给一个结论。"
+          ],
+          "practice": true
         },
         {
-          "code": "sw_retell_lecture", "section": "speaking_writing", "order": 4,
-          "name_en": "Retell Lecture", "name_zh": "复述讲座",
-          "skills": ["listening", "speaking"],
-          "timing": { "audio_seconds_max": 90, "prep_seconds": 10, "response_seconds": 40, "recordings": 1 },
-          "scoring": { "official_zh": "按内容、发音、口语流利度评分，有部分得分。", "method": "ai_traits", "partial_credit": true, "negative_marking": false },
+          "code": "sw_retell_lecture",
+          "section": "speaking_writing",
+          "order": 4,
+          "name_en": "Retell Lecture",
+          "name_zh": "复述讲座",
+          "skills": [
+            "listening",
+            "speaking"
+          ],
+          "timing": {
+            "audio_seconds_max": 90,
+            "prep_seconds": 10,
+            "response_seconds": 40,
+            "recordings": 1
+          },
+          "scoring": {
+            "official_zh": "按内容、发音、口语流利度评分，有部分得分。",
+            "method": "ai_traits",
+            "partial_credit": true,
+            "negative_marking": false
+          },
           "description_zh": "听或看一段不超过 90 秒的讲座，准备 10 秒，用自己的话复述要点 40 秒。",
-          "tips_zh": ["边听边记关键词和逻辑词（first, however, as a result）。"],
-          "practice": false
+          "tips_zh": [
+            "边听边记关键词和逻辑词（first, however, as a result）。"
+          ],
+          "practice": true
         },
         {
-          "code": "sw_answer_short_question", "section": "speaking_writing", "order": 5,
-          "name_en": "Answer Short Question", "name_zh": "简短回答",
-          "skills": ["listening"],
-          "timing": { "start_within_seconds": 3 },
-          "scoring": { "official_zh": "只分对错。", "method": "binary", "partial_credit": false, "negative_marking": false },
+          "code": "sw_answer_short_question",
+          "section": "speaking_writing",
+          "order": 5,
+          "name_en": "Answer Short Question",
+          "name_zh": "简短回答",
+          "skills": [
+            "listening"
+          ],
+          "timing": {
+            "start_within_seconds": 3,
+            "suggested_response_seconds": 10
+          },
+          "scoring": {
+            "official_zh": "只分对错。",
+            "method": "binary",
+            "partial_credit": false,
+            "negative_marking": false
+          },
           "description_zh": "听一个问题，用一个或几个词回答，要在大约 3 秒内开口。",
-          "tips_zh": ["只说答案本身，不用说完整句子。"],
-          "practice": false
+          "tips_zh": [
+            "只说答案本身，不用说完整句子。"
+          ],
+          "practice": true
         },
         {
-          "code": "sw_summarize_group_discussion", "section": "speaking_writing", "order": 6,
-          "name_en": "Summarize Group Discussion", "name_zh": "小组讨论总结",
-          "skills": ["listening", "speaking"],
-          "timing": { "audio_seconds_max": 180, "speakers": 3, "prep_seconds": 10, "response_seconds": 120, "recordings": 1 },
-          "scoring": { "official_zh": "按内容、发音、口语流利度评分，有部分得分；要说清楚哪个观点是谁说的。", "method": "ai_traits", "partial_credit": true, "negative_marking": false },
+          "code": "sw_summarize_group_discussion",
+          "section": "speaking_writing",
+          "order": 6,
+          "name_en": "Summarize Group Discussion",
+          "name_zh": "小组讨论总结",
+          "skills": [
+            "listening",
+            "speaking"
+          ],
+          "timing": {
+            "audio_seconds_max": 180,
+            "speakers": 3,
+            "prep_seconds": 10,
+            "response_seconds": 120,
+            "recordings": 1
+          },
+          "scoring": {
+            "official_zh": "按内容、发音、口语流利度评分，有部分得分；要说清楚哪个观点是谁说的。",
+            "method": "ai_traits",
+            "partial_credit": true,
+            "negative_marking": false
+          },
           "description_zh": "听一段三人讨论（最长 3 分钟），准备 10 秒，用 2 分钟总结讨论内容，并说明观点分别来自谁。",
-          "tips_zh": ["按人记笔记：A 认为……，B 不同意因为……，C 提出……。"],
-          "practice": false
+          "tips_zh": [
+            "按人记笔记：A 认为……，B 不同意因为……，C 提出……。"
+          ],
+          "practice": true
         },
         {
-          "code": "sw_respond_situation", "section": "speaking_writing", "order": 7,
-          "name_en": "Respond to a Situation", "name_zh": "情景回应",
-          "skills": ["speaking"],
-          "timing": { "situation_words_max": 60, "prep_seconds": 10, "response_seconds": 40, "recordings": 1 },
-          "scoring": { "official_zh": "按内容（相关、准确、语气场合合适）、发音、口语流利度评分，有部分得分。", "method": "ai_traits", "partial_credit": true, "negative_marking": false },
+          "code": "sw_respond_situation",
+          "section": "speaking_writing",
+          "order": 7,
+          "name_en": "Respond to a Situation",
+          "name_zh": "情景回应",
+          "skills": [
+            "speaking"
+          ],
+          "timing": {
+            "situation_words_max": 60,
+            "prep_seconds": 10,
+            "response_seconds": 40,
+            "recordings": 1
+          },
+          "scoring": {
+            "official_zh": "按内容（相关、准确、语气场合合适）、发音、口语流利度评分，有部分得分。",
+            "method": "ai_traits",
+            "partial_credit": true,
+            "negative_marking": false
+          },
           "description_zh": "读并听一段工作或日常情景（不超过 60 词），准备 10 秒，用合适的语气口头回应 40 秒。",
-          "tips_zh": ["先判断说话对象，再决定正式程度。"],
-          "practice": false
+          "tips_zh": [
+            "先判断说话对象，再决定正式程度。"
+          ],
+          "practice": true
         },
         {
-          "code": "sw_summarize_written_text", "section": "speaking_writing", "order": 8,
-          "name_en": "Summarize Written Text", "name_zh": "写作摘要",
-          "skills": ["reading", "writing"],
-          "timing": { "response_minutes": 10, "text_words_max": 300, "answer_words": [5, 75], "sentences": 1 },
-          "scoring": { "official_zh": "按内容、形式（5–75 词的一句话）、语法、词汇评分；歪曲原文或不符合形式要求为 0 分。", "method": "ai_traits", "partial_credit": true, "negative_marking": false },
+          "code": "sw_summarize_written_text",
+          "section": "speaking_writing",
+          "order": 8,
+          "name_en": "Summarize Written Text",
+          "name_zh": "写作摘要",
+          "skills": [
+            "reading",
+            "writing"
+          ],
+          "timing": {
+            "response_minutes": 10,
+            "text_words_max": 300,
+            "answer_words": [
+              5,
+              75
+            ],
+            "sentences": 1
+          },
+          "scoring": {
+            "official_zh": "按内容、形式（5–75 词的一句话）、语法、词汇评分；歪曲原文或不符合形式要求为 0 分。",
+            "method": "ai_traits",
+            "partial_credit": true,
+            "negative_marking": false
+          },
           "description_zh": "读一段不超过 300 词的文章，在 10 分钟内写一句话概括它。",
-          "tips_zh": ["用一个主句 + 从句或分号把两三个要点连起来。"],
-          "practice": false
+          "tips_zh": [
+            "用一个主句 + 从句或分号把两三个要点连起来。"
+          ],
+          "practice": true
         },
         {
-          "code": "sw_write_essay", "section": "speaking_writing", "order": 9,
-          "name_en": "Write Essay", "name_zh": "作文",
-          "skills": ["writing"],
-          "timing": { "response_minutes": 20, "answer_words": [200, 300], "zero_outside_words": [120, 380] },
-          "scoring": { "official_zh": "按内容、展开与结构连贯、形式、语言范围、语法、词汇范围、拼写七项评分；跑题或少于 120 / 多于 380 词为 0 分。", "method": "ai_traits", "partial_credit": true, "negative_marking": false },
+          "code": "sw_write_essay",
+          "section": "speaking_writing",
+          "order": 9,
+          "name_en": "Write Essay",
+          "name_zh": "作文",
+          "skills": [
+            "writing"
+          ],
+          "timing": {
+            "response_minutes": 20,
+            "answer_words": [
+              200,
+              300
+            ],
+            "zero_outside_words": [
+              120,
+              380
+            ]
+          },
+          "scoring": {
+            "official_zh": "按内容、展开与结构连贯、形式、语言范围、语法、词汇范围、拼写七项评分；跑题或少于 120 / 多于 380 词为 0 分。",
+            "method": "ai_traits",
+            "partial_credit": true,
+            "negative_marking": false
+          },
           "description_zh": "就一个题目写一篇 200–300 词的议论文，时间 20 分钟。",
-          "tips_zh": ["开头表明立场，两段论证各一个理由加例子，结尾总结。"],
-          "practice": false
+          "tips_zh": [
+            "开头表明立场，两段论证各一个理由加例子，结尾总结。"
+          ],
+          "practice": true
         },
         {
-          "code": "r_fib_dropdown", "section": "reading", "order": 10,
-          "name_en": "Reading & Writing: Fill in the Blanks", "name_zh": "阅读填空（下拉选择）",
-          "skills": ["reading", "writing"],
-          "timing": { "text_words_max": 200, "per_item": null, "suggested_seconds": 150 },
-          "scoring": { "official_zh": "全部填对得满分，有填错的按部分得分。", "method": "per_blank", "partial_credit": true, "negative_marking": false, "rule_zh": "每空 1 分。" },
+          "code": "r_fib_dropdown",
+          "section": "reading",
+          "order": 10,
+          "name_en": "Reading & Writing: Fill in the Blanks",
+          "name_zh": "阅读填空（下拉选择）",
+          "skills": [
+            "reading",
+            "writing"
+          ],
+          "timing": {
+            "text_words_max": 200,
+            "per_item": null,
+            "suggested_seconds": 150
+          },
+          "scoring": {
+            "official_zh": "全部填对得满分，有填错的按部分得分。",
+            "method": "per_blank",
+            "partial_credit": true,
+            "negative_marking": false,
+            "rule_zh": "每空 1 分。"
+          },
           "description_zh": "一段不超过 200 词的文字里有几个空，每个空从下拉列表里选一个词。",
-          "tips_zh": ["先看空前后的搭配和词性，再看整句意思。"],
+          "tips_zh": [
+            "先看空前后的搭配和词性，再看整句意思。"
+          ],
           "practice": true
         },
         {
-          "code": "r_mcma", "section": "reading", "order": 11,
-          "name_en": "Multiple Choice, Multiple Answers", "name_zh": "阅读多选",
-          "skills": ["reading"],
-          "timing": { "text_words_max": 350, "per_item": null, "suggested_seconds": 150 },
-          "scoring": { "official_zh": "选对得分，选错扣分；全选来碰运气会丢分。", "method": "mcma", "partial_credit": true, "negative_marking": true, "rule_zh": "每个选对的选项 +1，每个选错的选项 −1，最低 0 分。" },
+          "code": "r_mcma",
+          "section": "reading",
+          "order": 11,
+          "name_en": "Multiple Choice, Multiple Answers",
+          "name_zh": "阅读多选",
+          "skills": [
+            "reading"
+          ],
+          "timing": {
+            "text_words_max": 350,
+            "per_item": null,
+            "suggested_seconds": 150
+          },
+          "scoring": {
+            "official_zh": "选对得分，选错扣分；全选来碰运气会丢分。",
+            "method": "mcma",
+            "partial_credit": true,
+            "negative_marking": true,
+            "rule_zh": "每个选对的选项 +1，每个选错的选项 −1，最低 0 分。"
+          },
           "description_zh": "读一段不超过 350 词的文字，回答一个问题；正确答案不止一个，要全部选出来。",
-          "tips_zh": ["没把握的选项宁可不选：选错会扣分。"],
+          "tips_zh": [
+            "没把握的选项宁可不选：选错会扣分。"
+          ],
           "practice": true
         },
         {
-          "code": "r_reorder", "section": "reading", "order": 12,
-          "name_en": "Re-order Paragraphs", "name_zh": "段落排序",
-          "skills": ["reading"],
-          "timing": { "text_words_max": 110, "per_item": null, "suggested_seconds": 120 },
-          "scoring": { "official_zh": "全部顺序正确得满分，有放错的按部分得分。", "method": "adjacent_pairs", "partial_credit": true, "negative_marking": false, "rule_zh": "每一对相邻且顺序正确的句子得 1 分（本应用采用的规则，官方未公开具体公式）。", "unconfirmed": true },
+          "code": "r_reorder",
+          "section": "reading",
+          "order": 12,
+          "name_en": "Re-order Paragraphs",
+          "name_zh": "段落排序",
+          "skills": [
+            "reading"
+          ],
+          "timing": {
+            "text_words_max": 110,
+            "per_item": null,
+            "suggested_seconds": 120
+          },
+          "scoring": {
+            "official_zh": "全部顺序正确得满分，有放错的按部分得分。",
+            "method": "adjacent_pairs",
+            "partial_credit": true,
+            "negative_marking": false,
+            "rule_zh": "每一对相邻且顺序正确的句子得 1 分（本应用采用的规则，官方未公开具体公式）。",
+            "unconfirmed": true
+          },
           "description_zh": "几个文本框顺序被打乱了，把它们排回原来的顺序。全文不超过 110 词。",
-          "tips_zh": ["先找开头句（通常不含 this / it / however 等指代和转折）。", "再找成对的句子：一句提出，下一句解释。"],
+          "tips_zh": [
+            "先找开头句（通常不含 this / it / however 等指代和转折）。",
+            "再找成对的句子：一句提出，下一句解释。"
+          ],
           "practice": true
         },
         {
-          "code": "r_fib_drag", "section": "reading", "order": 13,
-          "name_en": "Reading: Fill in the Blanks", "name_zh": "阅读填空（拖放）",
-          "skills": ["reading"],
-          "timing": { "text_words_max": 80, "per_item": null, "suggested_seconds": 90 },
-          "scoring": { "official_zh": "全部填对得满分，有填错的按部分得分。", "method": "per_blank", "partial_credit": true, "negative_marking": false, "rule_zh": "每空 1 分；词框里的词比空多。" },
+          "code": "r_fib_drag",
+          "section": "reading",
+          "order": 13,
+          "name_en": "Reading: Fill in the Blanks",
+          "name_zh": "阅读填空（拖放）",
+          "skills": [
+            "reading"
+          ],
+          "timing": {
+            "text_words_max": 80,
+            "per_item": null,
+            "suggested_seconds": 90
+          },
+          "scoring": {
+            "official_zh": "全部填对得满分，有填错的按部分得分。",
+            "method": "per_blank",
+            "partial_credit": true,
+            "negative_marking": false,
+            "rule_zh": "每空 1 分；词框里的词比空多。"
+          },
           "description_zh": "把词框里的词拖进一段不超过 80 词的文字的空里；词比空多，有的词用不上。",
-          "tips_zh": ["先填最有把握的空，剩下的词更少就更好判断。"],
+          "tips_zh": [
+            "先填最有把握的空，剩下的词更少就更好判断。"
+          ],
           "practice": true
         },
         {
-          "code": "r_mcsa", "section": "reading", "order": 14,
-          "name_en": "Multiple Choice, Single Answer", "name_zh": "阅读单选",
-          "skills": ["reading"],
-          "timing": { "text_words_max": 110, "per_item": null, "suggested_seconds": 90 },
-          "scoring": { "official_zh": "只分对错，答错或不答不得分。", "method": "binary", "partial_credit": false, "negative_marking": false },
+          "code": "r_mcsa",
+          "section": "reading",
+          "order": 14,
+          "name_en": "Multiple Choice, Single Answer",
+          "name_zh": "阅读单选",
+          "skills": [
+            "reading"
+          ],
+          "timing": {
+            "text_words_max": 110,
+            "per_item": null,
+            "suggested_seconds": 90
+          },
+          "scoring": {
+            "official_zh": "只分对错，答错或不答不得分。",
+            "method": "binary",
+            "partial_credit": false,
+            "negative_marking": false
+          },
           "description_zh": "读一段不超过 110 词的文字，选一个正确答案。",
-          "tips_zh": ["先读题目，再带着问题读文字。"],
+          "tips_zh": [
+            "先读题目，再带着问题读文字。"
+          ],
           "practice": true
         },
         {
-          "code": "l_sst", "section": "listening", "order": 15,
-          "name_en": "Summarize Spoken Text", "name_zh": "听写摘要",
-          "skills": ["listening", "writing"],
-          "timing": { "audio_seconds": [60, 90], "response_minutes": 10, "answer_words": [50, 70], "zero_outside_words": [40, 100] },
-          "scoring": { "official_zh": "按内容、形式、语法、词汇、拼写部分得分；歪曲主题或少于 40 / 多于 100 词为 0 分。", "method": "ai_traits", "partial_credit": true, "negative_marking": false, "rule_zh": "词数由程序检查；其余是 AI 辅助反馈，不给分数。" },
+          "code": "l_sst",
+          "section": "listening",
+          "order": 15,
+          "name_en": "Summarize Spoken Text",
+          "name_zh": "听写摘要",
+          "skills": [
+            "listening",
+            "writing"
+          ],
+          "timing": {
+            "audio_seconds": [
+              60,
+              90
+            ],
+            "response_minutes": 10,
+            "answer_words": [
+              50,
+              70
+            ],
+            "zero_outside_words": [
+              40,
+              100
+            ]
+          },
+          "scoring": {
+            "official_zh": "按内容、形式、语法、词汇、拼写部分得分；歪曲主题或少于 40 / 多于 100 词为 0 分。",
+            "method": "ai_traits",
+            "partial_credit": true,
+            "negative_marking": false,
+            "rule_zh": "词数由程序检查；其余是 AI 辅助反馈，不给分数。"
+          },
           "description_zh": "听一段 60–90 秒的录音，在 10 分钟内（含听的时间）写 50–70 词的摘要。",
-          "tips_zh": ["按“主题 → 两三个要点 → 结论”记笔记。", "写完检查词数和拼写。"],
+          "tips_zh": [
+            "按“主题 → 两三个要点 → 结论”记笔记。",
+            "写完检查词数和拼写。"
+          ],
           "practice": true
         },
         {
-          "code": "l_mcma", "section": "listening", "order": 16,
-          "name_en": "Multiple Choice, Multiple Answers", "name_zh": "听力多选",
-          "skills": ["listening"],
-          "timing": { "audio_seconds": [80, 120], "per_item": null, "suggested_seconds": 150 },
-          "scoring": { "official_zh": "选错的选项会被扣分，按部分得分。", "method": "mcma", "partial_credit": true, "negative_marking": true, "rule_zh": "每个选对的选项 +1，每个选错的选项 −1，最低 0 分。" },
+          "code": "l_mcma",
+          "section": "listening",
+          "order": 16,
+          "name_en": "Multiple Choice, Multiple Answers",
+          "name_zh": "听力多选",
+          "skills": [
+            "listening"
+          ],
+          "timing": {
+            "audio_seconds": [
+              80,
+              120
+            ],
+            "per_item": null,
+            "suggested_seconds": 150
+          },
+          "scoring": {
+            "official_zh": "选错的选项会被扣分，按部分得分。",
+            "method": "mcma",
+            "partial_credit": true,
+            "negative_marking": true,
+            "rule_zh": "每个选对的选项 +1，每个选错的选项 −1，最低 0 分。"
+          },
           "description_zh": "听一段录音，回答关于内容或语气的问题，选出所有正确选项。",
-          "tips_zh": ["听之前先看问题和选项。"],
+          "tips_zh": [
+            "听之前先看问题和选项。"
+          ],
           "practice": true
         },
         {
-          "code": "l_fib_type", "section": "listening", "order": 17,
-          "name_en": "Fill in the Blanks", "name_zh": "听力填空",
-          "skills": ["listening", "writing"],
-          "timing": { "audio_seconds": [30, 60], "per_item": null, "suggested_seconds": 90 },
-          "scoring": { "official_zh": "每个拼写正确的词得 1 分，按部分得分。", "method": "per_blank_typed", "partial_credit": true, "negative_marking": false, "rule_zh": "每空 1 分，拼写必须正确（不区分大小写）。" },
+          "code": "l_fib_type",
+          "section": "listening",
+          "order": 17,
+          "name_en": "Fill in the Blanks",
+          "name_zh": "听力填空",
+          "skills": [
+            "listening",
+            "writing"
+          ],
+          "timing": {
+            "audio_seconds": [
+              30,
+              60
+            ],
+            "per_item": null,
+            "suggested_seconds": 90
+          },
+          "scoring": {
+            "official_zh": "每个拼写正确的词得 1 分，按部分得分。",
+            "method": "per_blank_typed",
+            "partial_credit": true,
+            "negative_marking": false,
+            "rule_zh": "每空 1 分，拼写必须正确（不区分大小写）。"
+          },
           "description_zh": "一边听，一边在文字稿的空里打出听到的词。",
-          "tips_zh": ["先记下首字母，录音结束后再补全。"],
+          "tips_zh": [
+            "先记下首字母，录音结束后再补全。"
+          ],
           "practice": true
         },
         {
-          "code": "l_hcs", "section": "listening", "order": 18,
-          "name_en": "Highlight Correct Summary", "name_zh": "选择正确摘要",
-          "skills": ["listening", "reading"],
-          "timing": { "audio_seconds": [30, 90], "per_item": null, "suggested_seconds": 120 },
-          "scoring": { "official_zh": "只分对错，没有部分得分。", "method": "binary", "partial_credit": false, "negative_marking": false },
+          "code": "l_hcs",
+          "section": "listening",
+          "order": 18,
+          "name_en": "Highlight Correct Summary",
+          "name_zh": "选择正确摘要",
+          "skills": [
+            "listening",
+            "reading"
+          ],
+          "timing": {
+            "audio_seconds": [
+              30,
+              90
+            ],
+            "per_item": null,
+            "suggested_seconds": 120
+          },
+          "scoring": {
+            "official_zh": "只分对错，没有部分得分。",
+            "method": "binary",
+            "partial_credit": false,
+            "negative_marking": false
+          },
           "description_zh": "听一段录音，从几段文字里选出最能概括录音内容的一段。",
-          "tips_zh": ["排除只说了细节、或说了录音里没有的内容的选项。"],
+          "tips_zh": [
+            "排除只说了细节、或说了录音里没有的内容的选项。"
+          ],
           "practice": true
         },
         {
-          "code": "l_mcsa", "section": "listening", "order": 19,
-          "name_en": "Multiple Choice, Single Answer", "name_zh": "听力单选",
-          "skills": ["listening"],
-          "timing": { "audio_seconds": [30, 60], "per_item": null, "suggested_seconds": 90 },
-          "scoring": { "official_zh": "只分对错。", "method": "binary", "partial_credit": false, "negative_marking": false },
+          "code": "l_mcsa",
+          "section": "listening",
+          "order": 19,
+          "name_en": "Multiple Choice, Single Answer",
+          "name_zh": "听力单选",
+          "skills": [
+            "listening"
+          ],
+          "timing": {
+            "audio_seconds": [
+              30,
+              60
+            ],
+            "per_item": null,
+            "suggested_seconds": 90
+          },
+          "scoring": {
+            "official_zh": "只分对错。",
+            "method": "binary",
+            "partial_credit": false,
+            "negative_marking": false
+          },
           "description_zh": "听一段录音，从几个选项里选出一个正确答案。",
-          "tips_zh": ["注意说话人的态度和最后的结论。"],
+          "tips_zh": [
+            "注意说话人的态度和最后的结论。"
+          ],
           "practice": true
         },
         {
-          "code": "l_smw", "section": "listening", "order": 20,
-          "name_en": "Select Missing Word", "name_zh": "补全录音结尾",
-          "skills": ["listening"],
-          "timing": { "audio_seconds": [20, 70], "options": [3, 5], "per_item": null, "suggested_seconds": 60 },
-          "scoring": { "official_zh": "只分对错。", "method": "binary", "partial_credit": false, "negative_marking": false },
+          "code": "l_smw",
+          "section": "listening",
+          "order": 20,
+          "name_en": "Select Missing Word",
+          "name_zh": "补全录音结尾",
+          "skills": [
+            "listening"
+          ],
+          "timing": {
+            "audio_seconds": [
+              20,
+              70
+            ],
+            "options": [
+              3,
+              5
+            ],
+            "per_item": null,
+            "suggested_seconds": 60
+          },
+          "scoring": {
+            "official_zh": "只分对错。",
+            "method": "binary",
+            "partial_credit": false,
+            "negative_marking": false
+          },
           "description_zh": "录音最后一个词或短语被“哔”声代替，选出最合适的补全。",
-          "tips_zh": ["跟着录音的逻辑预测结尾。"],
+          "tips_zh": [
+            "跟着录音的逻辑预测结尾。"
+          ],
           "practice": true
         },
         {
-          "code": "l_hiw", "section": "listening", "order": 21,
-          "name_en": "Highlight Incorrect Words", "name_zh": "找出不同的词",
-          "skills": ["listening", "reading"],
-          "timing": { "audio_seconds": [15, 50], "per_item": null, "suggested_seconds": 60 },
-          "scoring": { "official_zh": "每个选中的词判对错，有部分得分；每选错一个扣 1 分。", "method": "hiw", "partial_credit": true, "negative_marking": true, "rule_zh": "选对的词 +1，选错的词 −1，最低 0 分。" },
+          "code": "l_hiw",
+          "section": "listening",
+          "order": 21,
+          "name_en": "Highlight Incorrect Words",
+          "name_zh": "找出不同的词",
+          "skills": [
+            "listening",
+            "reading"
+          ],
+          "timing": {
+            "audio_seconds": [
+              15,
+              50
+            ],
+            "per_item": null,
+            "suggested_seconds": 60
+          },
+          "scoring": {
+            "official_zh": "每个选中的词判对错，有部分得分；每选错一个扣 1 分。",
+            "method": "hiw",
+            "partial_credit": true,
+            "negative_marking": true,
+            "rule_zh": "选对的词 +1，选错的词 −1，最低 0 分。"
+          },
           "description_zh": "一边听一边看文字稿，点出文字稿里和录音不一样的词。",
-          "tips_zh": ["手指跟着文字走，听到不一样马上点。"],
+          "tips_zh": [
+            "手指跟着文字走，听到不一样马上点。"
+          ],
           "practice": true
         },
         {
-          "code": "l_wfd", "section": "listening", "order": 22,
-          "name_en": "Write from Dictation", "name_zh": "听写句子",
-          "skills": ["listening", "writing"],
-          "timing": { "audio_seconds": [3, 5], "per_item": null, "suggested_seconds": 60 },
-          "scoring": { "official_zh": "每个拼写正确的词得 1 分，按部分得分。", "method": "per_word", "partial_credit": true, "negative_marking": false, "rule_zh": "原句里的每个词，只要你写出来并且拼对就得 1 分（不看大小写和标点）。" },
+          "code": "l_wfd",
+          "section": "listening",
+          "order": 22,
+          "name_en": "Write from Dictation",
+          "name_zh": "听写句子",
+          "skills": [
+            "listening",
+            "writing"
+          ],
+          "timing": {
+            "audio_seconds": [
+              3,
+              5
+            ],
+            "per_item": null,
+            "suggested_seconds": 60
+          },
+          "scoring": {
+            "official_zh": "每个拼写正确的词得 1 分，按部分得分。",
+            "method": "per_word",
+            "partial_credit": true,
+            "negative_marking": false,
+            "rule_zh": "原句里的每个词，只要你写出来并且拼对就得 1 分（不看大小写和标点）。"
+          },
           "description_zh": "听一个短句，把它一字不差地打出来。",
-          "tips_zh": ["先写下记得的实词，再补介词和冠词。"],
+          "tips_zh": [
+            "先写下记得的实词，再补介词和冠词。"
+          ],
           "practice": true
         }
       ],
@@ -249,11 +697,198 @@
           "task_code": "l_sst",
           "rubric_version": "pte-sst-v1",
           "traits": [
-            { "key": "content", "name_zh": "内容", "description_zh": "有没有抓住录音的主题和主要观点，有没有歪曲。" },
-            { "key": "form", "name_zh": "形式", "description_zh": "词数是否在 50–70 之间（程序检查）。" },
-            { "key": "grammar", "name_zh": "语法", "description_zh": "句子结构是否正确。" },
-            { "key": "vocabulary", "name_zh": "词汇", "description_zh": "用词是否准确、恰当。" },
-            { "key": "spelling", "name_zh": "拼写", "description_zh": "拼写错误的数量。" }
+            {
+              "key": "content",
+              "name_zh": "内容",
+              "description_zh": "有没有抓住录音的主题和主要观点，有没有歪曲。"
+            },
+            {
+              "key": "form",
+              "name_zh": "形式",
+              "description_zh": "词数是否在 50–70 之间（程序检查）。"
+            },
+            {
+              "key": "grammar",
+              "name_zh": "语法",
+              "description_zh": "句子结构是否正确。"
+            },
+            {
+              "key": "vocabulary",
+              "name_zh": "词汇",
+              "description_zh": "用词是否准确、恰当。"
+            },
+            {
+              "key": "spelling",
+              "name_zh": "拼写",
+              "description_zh": "拼写错误的数量。"
+            }
+          ]
+        },
+        {
+          "id": "pte-academic-2025.sw_describe_image.v1",
+          "task_code": "sw_describe_image",
+          "rubric_version": "pte-sw-describe-image-v1",
+          "traits": [
+            {
+              "key": "content",
+              "name_zh": "内容",
+              "description_zh": "有没有说到图 / 录音 / 情景里的要点，有没有说错。"
+            },
+            {
+              "key": "grammar",
+              "name_zh": "语法",
+              "description_zh": "句子结构是否正确（根据转写）。"
+            },
+            {
+              "key": "vocabulary",
+              "name_zh": "词汇",
+              "description_zh": "用词是否准确、恰当。"
+            }
+          ]
+        },
+        {
+          "id": "pte-academic-2025.sw_retell_lecture.v1",
+          "task_code": "sw_retell_lecture",
+          "rubric_version": "pte-sw-retell-lecture-v1",
+          "traits": [
+            {
+              "key": "content",
+              "name_zh": "内容",
+              "description_zh": "有没有说到图 / 录音 / 情景里的要点，有没有说错。"
+            },
+            {
+              "key": "grammar",
+              "name_zh": "语法",
+              "description_zh": "句子结构是否正确（根据转写）。"
+            },
+            {
+              "key": "vocabulary",
+              "name_zh": "词汇",
+              "description_zh": "用词是否准确、恰当。"
+            }
+          ]
+        },
+        {
+          "id": "pte-academic-2025.sw_summarize_group_discussion.v1",
+          "task_code": "sw_summarize_group_discussion",
+          "rubric_version": "pte-sw-summarize-group-discussion-v1",
+          "traits": [
+            {
+              "key": "content",
+              "name_zh": "内容",
+              "description_zh": "有没有说到图 / 录音 / 情景里的要点，有没有说错。"
+            },
+            {
+              "key": "grammar",
+              "name_zh": "语法",
+              "description_zh": "句子结构是否正确（根据转写）。"
+            },
+            {
+              "key": "vocabulary",
+              "name_zh": "词汇",
+              "description_zh": "用词是否准确、恰当。"
+            },
+            {
+              "key": "attribution",
+              "name_zh": "观点归属",
+              "description_zh": "是否说清楚哪个观点是谁提出的。"
+            }
+          ]
+        },
+        {
+          "id": "pte-academic-2025.sw_respond_situation.v1",
+          "task_code": "sw_respond_situation",
+          "rubric_version": "pte-sw-respond-situation-v1",
+          "traits": [
+            {
+              "key": "content",
+              "name_zh": "内容",
+              "description_zh": "有没有说到图 / 录音 / 情景里的要点，有没有说错。"
+            },
+            {
+              "key": "grammar",
+              "name_zh": "语法",
+              "description_zh": "句子结构是否正确（根据转写）。"
+            },
+            {
+              "key": "vocabulary",
+              "name_zh": "词汇",
+              "description_zh": "用词是否准确、恰当。"
+            },
+            {
+              "key": "register",
+              "name_zh": "语气与场合",
+              "description_zh": "说话对象和场合是否合适（正式程度）。"
+            }
+          ]
+        },
+        {
+          "id": "pte-academic-2025.sw_summarize_written_text.v1",
+          "task_code": "sw_summarize_written_text",
+          "rubric_version": "pte-sw-summarize-written-text-v1",
+          "traits": [
+            {
+              "key": "content",
+              "name_zh": "内容",
+              "description_zh": "有没有抓住要点，有没有歪曲原文。"
+            },
+            {
+              "key": "form",
+              "name_zh": "形式",
+              "description_zh": "字数和句子数是否符合要求（程序检查）。"
+            },
+            {
+              "key": "grammar",
+              "name_zh": "语法",
+              "description_zh": "句子结构是否正确。"
+            },
+            {
+              "key": "vocabulary",
+              "name_zh": "词汇",
+              "description_zh": "用词是否准确、恰当。"
+            },
+            {
+              "key": "spelling",
+              "name_zh": "拼写",
+              "description_zh": "拼写错误的数量。"
+            }
+          ]
+        },
+        {
+          "id": "pte-academic-2025.sw_write_essay.v1",
+          "task_code": "sw_write_essay",
+          "rubric_version": "pte-sw-write-essay-v1",
+          "traits": [
+            {
+              "key": "content",
+              "name_zh": "内容",
+              "description_zh": "有没有抓住要点，有没有歪曲原文。"
+            },
+            {
+              "key": "form",
+              "name_zh": "形式",
+              "description_zh": "字数和句子数是否符合要求（程序检查）。"
+            },
+            {
+              "key": "grammar",
+              "name_zh": "语法",
+              "description_zh": "句子结构是否正确。"
+            },
+            {
+              "key": "vocabulary",
+              "name_zh": "词汇",
+              "description_zh": "用词是否准确、恰当。"
+            },
+            {
+              "key": "development",
+              "name_zh": "展开与连贯",
+              "description_zh": "观点是否有理由和例子，段落之间是否连贯。"
+            },
+            {
+              "key": "spelling",
+              "name_zh": "拼写",
+              "description_zh": "拼写错误的数量。"
+            }
           ]
         }
       ]

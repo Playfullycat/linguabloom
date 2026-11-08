@@ -3,7 +3,7 @@ import { Check, Info, X } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { FormMessage } from "@/components/ui/form-message";
 import { cn } from "@/lib/utils";
-import type { PteWrittenFeedback } from "@/modules/pte/domain/feedback";
+import { SPOKEN_NOTE, type PteWrittenFeedback } from "@/modules/pte/domain/feedback";
 import type { ItemMark } from "@/modules/pte/domain/scoring";
 import type { Reveal } from "@/modules/pte/services/pte";
 
@@ -11,17 +11,16 @@ export type ResultData = {
   score: number | null;
   maxScore: number | null;
   marks: ItemMark[];
-  form: { words: number; status: "ok" | "outside_target" | "zero" } | null;
+  form: { words: number; sentences?: number; status: "ok" | "outside_target" | "zero"; noteZh?: string } | null;
   feedback: PteWrittenFeedback | null;
   feedbackMessage: string | null;
   reveal: Reveal;
+  /** What a spoken answer was transcribed as (scoring and feedback are based on it). */
+  transcript?: string | null;
 };
 
-const FORM_TEXT = {
-  ok: { tone: "mint", text: "词数符合要求（50–70）" },
-  outside_target: { tone: "yellow", text: "词数不在 50–70 之间：官方会扣“形式”分" },
-  zero: { tone: "coral", text: "词数少于 40 或多于 100：按官方规则这篇会得 0 分" },
-} as const;
+const FORM_TONE = { ok: "mint", outside_target: "yellow", zero: "coral" } as const;
+const FORM_FALLBACK = { ok: "符合要求", outside_target: "不在建议的字数范围内", zero: "按官方规则会得 0 分" } as const;
 
 /**
  * The outcome of one attempt. Objective points come from the official rule
@@ -66,10 +65,19 @@ export function ResultView({ result, scoringRule }: { result: ResultData; scorin
         </ul>
       ) : null}
 
+      {result.transcript !== undefined && result.transcript !== null ? (
+        <div className="text-sm" data-testid="pte-spoken-transcript">
+          <p className="font-medium text-ink">转写出的你的回答</p>
+          <p lang="en" className="text-muted">
+            {result.transcript || "（没有识别到内容）"}
+          </p>
+        </div>
+      ) : null}
+
       {result.form ? (
-        <div className="flex flex-wrap items-center gap-2">
-          <Badge tone={FORM_TEXT[result.form.status].tone}>{result.form.words} 个词</Badge>
-          <span className="text-sm text-ink">{FORM_TEXT[result.form.status].text}</span>
+        <div className="flex flex-wrap items-center gap-2" data-testid="pte-form">
+          <Badge tone={FORM_TONE[result.form.status]}>{result.form.words} 个词</Badge>
+          <span className="text-sm text-ink">{result.form.noteZh ?? FORM_FALLBACK[result.form.status]}</span>
         </div>
       ) : null}
 
@@ -80,6 +88,7 @@ export function ResultView({ result, scoringRule }: { result: ResultData; scorin
             <Badge tone="outline">把握：{{ low: "低", medium: "中", high: "高" }[result.feedback.confidence]}</Badge>
           </h3>
           <p className="text-xs text-muted">{result.feedback.not_official_zh}</p>
+          {result.feedback.spoken ? <p className="text-xs text-muted">{SPOKEN_NOTE}</p> : null}
           {result.feedback.content.misrepresents ? <FormMessage tone="error">AI 认为这篇摘要和录音的意思不符；按官方规则，歪曲主题会得 0 分。</FormMessage> : null}
           <dl className="grid gap-2 text-sm">
             <div>
@@ -103,12 +112,20 @@ export function ResultView({ result, scoringRule }: { result: ResultData; scorin
               <dt className="font-medium text-ink">词汇</dt>
               <dd className="text-muted">{result.feedback.vocabulary.comment_zh}</dd>
             </div>
-            <div>
-              <dt className="font-medium text-ink">拼写</dt>
-              <dd className="text-muted">
-                {result.feedback.spelling.errors.length === 0 ? "没有发现拼写错误。" : result.feedback.spelling.errors.map((e) => `${e.wrong} → ${e.right}`).join("，")}
-              </dd>
-            </div>
+            {(result.feedback.extra ?? []).map((x) => (
+              <div key={x.key}>
+                <dt className="font-medium text-ink">{x.name_zh}</dt>
+                <dd className="text-muted">{x.comment_zh}</dd>
+              </div>
+            ))}
+            {result.feedback.spoken ? null : (
+              <div>
+                <dt className="font-medium text-ink">拼写</dt>
+                <dd className="text-muted">
+                  {result.feedback.spelling.errors.length === 0 ? "没有发现拼写错误。" : result.feedback.spelling.errors.map((e) => `${e.wrong} → ${e.right}`).join("，")}
+                </dd>
+              </div>
+            )}
           </dl>
           <p className="text-sm text-ink">{result.feedback.overall_zh}</p>
           {result.feedback.limitations.length ? <p className="text-xs text-muted">{result.feedback.limitations.join(" ")}</p> : null}
@@ -124,7 +141,7 @@ export function ResultView({ result, scoringRule }: { result: ResultData; scorin
       ) : null}
       {reveal.keyPointsZh.length > 0 ? (
         <div className="text-sm">
-          <p className="font-medium text-ink">录音要点</p>
+          <p className="font-medium text-ink">要点</p>
           <ul className="list-disc pl-5 text-muted">
             {reveal.keyPointsZh.map((k) => (
               <li key={k}>{k}</li>
