@@ -1,0 +1,1223 @@
+{
+  "content_schema_version": 1,
+  "source_type": "first_party",
+  "review_status": "pending_owner_review",
+  "unit": {
+    "id": "b1-u06-opinions",
+    "level": "b1",
+    "order": 6,
+    "status": "published",
+    "title_en": "In My Opinion",
+    "title_zh": "我的看法",
+    "summary_zh": "表达观点、给出理由和例子、礼貌地同意或不同意，并用 because、so、although、however 把想法连起来。学完后，你能参加一段关于日常话题的讨论，也能写一段有理有据的短评。",
+    "can_do": [
+      {
+        "id": "b1.si.opinions",
+        "skill": "spoken_interaction",
+        "en": "Can give and ask for opinions in a discussion, and agree or disagree politely.",
+        "zh": "能在讨论中表达和询问观点，并礼貌地表示同意或不同意。"
+      },
+      {
+        "id": "b1.gr.linkers",
+        "skill": "grammar",
+        "en": "Can link reasons, results, contrasts and examples with because, so, although, however and for example.",
+        "zh": "能用 because、so、although、however、for example 连接原因、结果、转折和例子。"
+      },
+      {
+        "id": "b1.l.discussion",
+        "skill": "listening",
+        "en": "Can follow the main points of a discussion on a familiar topic and tell who thinks what.",
+        "zh": "能听懂关于熟悉话题的讨论要点，并分辨谁持什么观点。"
+      }
+    ],
+    "grammar_points": [
+      {
+        "id": "b1.linking-ideas",
+        "title_en": "Linking ideas: because, so, although, however",
+        "title_zh": "连接观点：because、so、although、however",
+        "pattern": "I save time because I don't commute. / I don't commute, so I save time.\nAlthough it's expensive, it's popular.\nIt's expensive. However, it's popular.\nThere are many benefits. For example, ...",
+        "explanation_zh": "because 引出原因，so 引出结果。although 和后面的句子构成一个完整的句子，表示“虽然”，主句前不再加 but。however 连接两个独立的句子，表示“然而”，常放在第二句句首，后面加逗号。for example 用来举例。",
+        "examples": [
+          {
+            "en": "The streets are narrow, so the traffic is terrible.",
+            "zh": "街道很窄，所以交通很糟。"
+          },
+          {
+            "en": "Although I agree about the traffic, I'm worried about the shops.",
+            "zh": "虽然交通的问题我同意，但我担心那些商店。"
+          },
+          {
+            "en": "The tickets were expensive. However, we had a great time.",
+            "zh": "票很贵。不过我们玩得很开心。"
+          }
+        ],
+        "common_errors": [
+          {
+            "wrong": "Although it was late, but we kept working.",
+            "right": "Although it was late, we kept working.",
+            "why_zh": "although 和 but 不能同时用，选一个就够了。"
+          },
+          {
+            "wrong": "It was expensive, however we bought it.",
+            "right": "It was expensive. However, we bought it.",
+            "why_zh": "however 连接两个句子，前面用句号（或分号），后面加逗号。"
+          },
+          {
+            "wrong": "Because it was raining. We stayed at home.",
+            "right": "Because it was raining, we stayed at home.",
+            "why_zh": "because 从句不能单独成句，要和主句连在一起。"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "key": "in-my-opinion",
+        "text": "in my opinion",
+        "pos": "phrase",
+        "ipa": "/ɪn maɪ əˈpɪnjən/",
+        "zh": "在我看来",
+        "example_en": "In my opinion, it's a great idea.",
+        "example_zh": "在我看来，这是个好主意。"
+      },
+      {
+        "key": "personally",
+        "text": "personally",
+        "pos": "adverb",
+        "ipa": "/ˈpɜːsənəli/",
+        "zh": "就我个人而言",
+        "example_en": "Personally, I prefer the office.",
+        "example_zh": "就我个人而言，我更喜欢办公室。"
+      },
+      {
+        "key": "i-see-your-point",
+        "text": "I see your point",
+        "pos": "phrase",
+        "ipa": "/aɪ siː jɔː pɔɪnt/",
+        "zh": "我明白你的意思（但……）",
+        "example_en": "I see your point, but I'm not sure.",
+        "example_zh": "我明白你的意思，不过我不太确定。"
+      },
+      {
+        "key": "commute",
+        "text": "commute",
+        "pos": "verb",
+        "ipa": "/kəˈmjuːt/",
+        "zh": "通勤",
+        "example_en": "I commute two hours a day.",
+        "example_zh": "我每天通勤两小时。"
+      },
+      {
+        "key": "although",
+        "text": "although",
+        "pos": "conjunction",
+        "ipa": "/ɔːlˈðəʊ/",
+        "zh": "虽然；尽管",
+        "example_en": "Although it's small, the flat is bright.",
+        "example_zh": "公寓虽然小，但很亮堂。"
+      },
+      {
+        "key": "however",
+        "text": "however",
+        "pos": "adverb",
+        "ipa": "/haʊˈevə/",
+        "zh": "然而；不过",
+        "example_en": "It's cheap. However, it's far away.",
+        "example_zh": "它很便宜，不过离得远。"
+      },
+      {
+        "key": "for-example",
+        "text": "for example",
+        "pos": "phrase",
+        "ipa": "/fər ɪɡˈzɑːmpl/",
+        "zh": "例如",
+        "example_en": "More people will walk, for example tourists.",
+        "example_zh": "会有更多人步行，比如游客。"
+      },
+      {
+        "key": "fair-point",
+        "text": "That's a fair point.",
+        "pos": "phrase",
+        "ipa": "/ðæts ə feə pɔɪnt/",
+        "zh": "这话有道理。",
+        "example_en": "That's a fair point. I hadn't thought of that.",
+        "example_zh": "有道理，我之前没想到。"
+      },
+      {
+        "key": "i-completely-agree",
+        "text": "I completely agree.",
+        "pos": "phrase",
+        "ipa": "/aɪ kəmˈpliːtli əˈɡriː/",
+        "zh": "我完全同意。",
+        "example_en": "I completely agree. Half an hour is enough.",
+        "example_zh": "我完全同意，半小时足够了。"
+      },
+      {
+        "key": "im-not-sure",
+        "text": "I'm not sure about that.",
+        "pos": "phrase",
+        "ipa": "/aɪm nɒt ʃʊər əˈbaʊt ðæt/",
+        "zh": "这个我不太确定。（委婉地不同意）",
+        "example_en": "I'm not sure about that. It might be too short.",
+        "example_zh": "这个我不太确定，可能太短了。"
+      },
+      {
+        "key": "on-the-other-hand",
+        "text": "on the other hand",
+        "pos": "phrase",
+        "ipa": "/ɒn ði ˈʌðə hænd/",
+        "zh": "另一方面",
+        "example_en": "On the other hand, we need time to share ideas.",
+        "example_zh": "另一方面，我们也需要时间交流想法。"
+      },
+      {
+        "key": "exactly",
+        "text": "Exactly.",
+        "pos": "adverb",
+        "ipa": "/ɪɡˈzæktli/",
+        "zh": "正是如此。（表示赞同）",
+        "example_en": "Exactly. That's what I mean.",
+        "example_zh": "没错，我就是这个意思。"
+      }
+    ],
+    "lessons": [
+      {
+        "id": "b1-u06-opinions-l1",
+        "order": 1,
+        "kind": "core",
+        "title_en": "What Do You Think?",
+        "title_zh": "你怎么看？",
+        "estimated_minutes": 11,
+        "objectives": [
+          {
+            "en": "Ask for and give opinions with natural phrases.",
+            "zh": "能用自然的说法询问和表达观点。"
+          },
+          {
+            "en": "Agree or partly agree with someone.",
+            "zh": "能表示同意或部分同意。"
+          }
+        ],
+        "can_do_ids": [
+          "b1.si.opinions",
+          "b1.l.discussion"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "spoken_interaction",
+            "title_zh": "这节课学什么",
+            "body_zh": "只会说 I think 也能表达观点，但讨论时多几种说法会自然得多：In my opinion、Personally、What do you think about ...?。这节课从一段关于居家办公的午饭闲聊开始。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Working from home",
+            "instructions_zh": "先听。注意他们怎么问观点、怎么回答。",
+            "scene_zh": "午饭时间，Lin 和 Sam 在公司食堂聊天。",
+            "lines": [
+              {
+                "speaker": "Sam",
+                "en": "What do you think about working from home?",
+                "zh": "你怎么看居家办公？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "In my opinion, it's great. I don't have to commute, so I save two hours a day.",
+                "zh": "在我看来很好。不用通勤，每天能省两小时。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "I see your point. But don't you feel lonely?",
+                "zh": "我明白。可你不觉得孤单吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Sometimes. What about you? How do you feel about it?",
+                "zh": "有时候会。你呢？你觉得怎么样？"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Personally, I prefer the office. It's easier to ask quick questions.",
+                "zh": "我个人更喜欢办公室，有问题随时能问。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "That's true. I guess the best thing is a mix of both.",
+                "zh": "这倒是。我觉得最好是两者结合。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "I agree. Two or three days at home would be perfect.",
+                "zh": "同意。在家两三天就最好了。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "in-my-opinion",
+              "personally",
+              "i-see-your-point",
+              "commute"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "notice",
+            "role": "notice",
+            "skill": "spoken_interaction",
+            "question_zh": "哪些句子在问观点，哪些在给观点？",
+            "examples": [
+              {
+                "en": "What do you think about working from home?",
+                "zh": "你怎么看居家办公？",
+                "highlight": [
+                  "What do you think about"
+                ]
+              },
+              {
+                "en": "How do you feel about it?",
+                "zh": "你对此感觉怎么样？",
+                "highlight": [
+                  "How do you feel about"
+                ]
+              },
+              {
+                "en": "In my opinion, it's great.",
+                "zh": "在我看来，它很好。",
+                "highlight": [
+                  "In my opinion"
+                ]
+              },
+              {
+                "en": "Personally, I prefer the office.",
+                "zh": "我个人更喜欢办公室。",
+                "highlight": [
+                  "Personally"
+                ]
+              }
+            ],
+            "takeaway_zh": "问观点：What do you think about / How do you feel about + 名词或 -ing。给观点：In my opinion, ... / Personally, ... / I think ...。In my opinion 本身就是“我认为”，后面不再加 I think。"
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "spoken_interaction",
+            "prompt_zh": "哪一句最自然？",
+            "options": [
+              "In my opinion, it's a good idea.",
+              "In my opinion, I think it's a good idea.",
+              "My opinion is think it's good."
+            ],
+            "answer": 0,
+            "explanation_zh": "In my opinion 已经是“我认为”，不用再加 I think。"
+          },
+          {
+            "id": "s06",
+            "type": "match",
+            "role": "guided_practice",
+            "skill": "spoken_interaction",
+            "instructions_zh": "把用途和说法配对。",
+            "pairs": [
+              {
+                "left": "问别人的看法",
+                "right": "What do you think about ...?"
+              },
+              {
+                "left": "说自己的看法",
+                "right": "Personally, I think ..."
+              },
+              {
+                "left": "表示同意",
+                "right": "That's true."
+              },
+              {
+                "left": "部分同意，接着提出不同看法",
+                "right": "I see your point, but ..."
+              }
+            ]
+          },
+          {
+            "id": "s07",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "补全问句。",
+            "sentence_en": "What do you think ___ online classes?",
+            "translation_zh": "你怎么看网课？",
+            "answers": [
+              "about",
+              "of"
+            ],
+            "explanation_zh": "What do you think about / of ...? 都可以。"
+          },
+          {
+            "id": "s08",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，说话人为什么喜欢办公室？",
+            "audio_en": "Personally, I prefer the office. It's easier to ask quick questions.",
+            "options": [
+              "有问题能随时问",
+              "离家近",
+              "午饭好吃"
+            ],
+            "answer": 0,
+            "explanation_zh": "It's easier to ask quick questions：随时问问题更方便。"
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：居家办公每天能帮 Lin 省多少时间？",
+            "options": [
+              "两小时",
+              "一小时",
+              "三小时"
+            ],
+            "answer": 0,
+            "explanation_zh": "I save two hours a day."
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：最后两个人都同意什么？",
+            "options": [
+              "最好两者结合",
+              "最好全部居家",
+              "最好全在办公室"
+            ],
+            "answer": 0,
+            "explanation_zh": "the best thing is a mix of both — I agree."
+          },
+          {
+            "id": "s11",
+            "type": "order",
+            "role": "exit_ticket",
+            "skill": "spoken_interaction",
+            "instructions_zh": "排成问句。",
+            "translation_zh": "你觉得居家办公怎么样？",
+            "tokens": [
+              "feel",
+              "How",
+              "about",
+              "do",
+              "working",
+              "you",
+              "from",
+              "home?"
+            ],
+            "answers": [
+              "How do you feel about working from home?"
+            ],
+            "explanation_zh": "How do you feel about + -ing？"
+          },
+          {
+            "id": "s12",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "spoken_interaction",
+            "prompt_zh": "哪一句是礼貌地部分同意？",
+            "options": [
+              "I see your point, but I'm not sure.",
+              "No. You're wrong.",
+              "In my opinion, I think yes."
+            ],
+            "answer": 0,
+            "explanation_zh": "先承认对方有道理，再用 but 说保留意见。"
+          }
+        ]
+      },
+      {
+        "id": "b1-u06-opinions-l2",
+        "order": 2,
+        "kind": "core",
+        "title_en": "Although It's Expensive...",
+        "title_zh": "虽然……但是……",
+        "estimated_minutes": 13,
+        "objectives": [
+          {
+            "en": "Link reasons and results with because and so.",
+            "zh": "能用 because 和 so 连接原因和结果。"
+          },
+          {
+            "en": "Show contrast with although and however, and give examples.",
+            "zh": "能用 although 和 however 表示转折，并举例。"
+          }
+        ],
+        "can_do_ids": [
+          "b1.gr.linkers",
+          "b1.l.discussion",
+          "b1.wp.argument"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "grammar",
+            "title_zh": "这节课学什么",
+            "body_zh": "观点要有说服力，得把理由、例子和反面意见连起来说。这节课学五个连接词：because、so、although、however、for example。要特别注意中文的“虽然……但是……”在英语里只能用一半。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Cars in the old town",
+            "instructions_zh": "先听。注意 so、although、however、for example 后面说的是什么。",
+            "scene_zh": "Lin 和朋友 Mia 在看一条本地新闻：老城区可能禁止汽车进入。",
+            "lines": [
+              {
+                "speaker": "Mia",
+                "en": "The city wants to close the old town to cars. Do you think that's a good idea?",
+                "zh": "市里想让老城区禁止汽车通行。你觉得这主意好吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Yes, I do. The streets are narrow, so the traffic is terrible.",
+                "zh": "我觉得好。那里街道窄，所以交通特别糟。"
+              },
+              {
+                "speaker": "Mia",
+                "en": "Although I agree about the traffic, I'm worried about the shops.",
+                "zh": "交通这点我同意，可我担心那些商店。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Why? More people will walk there, for example tourists and families.",
+                "zh": "为什么？会有更多人去那儿散步，比如游客和一家老小。"
+              },
+              {
+                "speaker": "Mia",
+                "en": "Maybe. However, older people need to drive to the doctor's.",
+                "zh": "也许吧。不过老年人得开车去看病。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "That's a fair point. They could allow taxis and buses, though.",
+                "zh": "这话有道理。不过可以允许出租车和公交进去。"
+              },
+              {
+                "speaker": "Mia",
+                "en": "Hmm, I hadn't thought of that. That might work.",
+                "zh": "嗯，这我倒没想到，可能行得通。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "although",
+              "however",
+              "for-example",
+              "fair-point"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "teach",
+            "role": "teach",
+            "skill": "grammar",
+            "title_zh": "五个连接词",
+            "explanation_zh": "because 引出原因，so 引出结果：I don't commute, so I save time. = I save time because I don't commute.。although 引导的从句和主句合成一句话，表示“虽然”，主句前不加 but。however 连接两个独立的句子，放在第二句句首，后面加逗号。for example 用来举例，可以放在句首，也可以放在要举的例子前面。",
+            "pattern": "Although + 句子, 句子。\n句子。 However, 句子。\n句子, so 句子。 / 句子 because 句子。",
+            "examples": [
+              {
+                "en": "Although the flat is small, it's very bright.",
+                "zh": "公寓虽然小，但很亮堂。"
+              },
+              {
+                "en": "The flat is small. However, it's very bright.",
+                "zh": "公寓很小。不过很亮堂。"
+              },
+              {
+                "en": "There are good things about it. For example, it's quiet.",
+                "zh": "它有不少优点，比如很安静。"
+              }
+            ],
+            "tips_zh": [
+              "中文“虽然……但是……”成对出现，英语只用 although 或只用 but，不能两个一起用。",
+              "however 比 but 更正式，写作里很常用；口语里常用 but。"
+            ]
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_en": "___ the flat is small, it's very bright.",
+            "prompt_zh": "选出正确的词：",
+            "options": [
+              "Although",
+              "However",
+              "But"
+            ],
+            "answer": 0,
+            "explanation_zh": "一个句子里表示“虽然”，用 Although。However 要连接两个独立的句子。"
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_en": "The tickets were expensive. ___, we had a great time.",
+            "prompt_zh": "选出正确的词：",
+            "options": [
+              "However",
+              "Although",
+              "So"
+            ],
+            "answer": 0,
+            "explanation_zh": "两个句子之间表示转折，用 However，后面加逗号。"
+          },
+          {
+            "id": "s07",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "It was raining, ___ we stayed at home.",
+            "translation_zh": "下雨了，所以我们待在家里。",
+            "answers": [
+              "so"
+            ],
+            "explanation_zh": "so 引出结果。"
+          },
+          {
+            "id": "s08",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "prompt_zh": "哪一句是对的？",
+            "options": [
+              "Although it was late, but we kept working.",
+              "Although it was late, we kept working.",
+              "Although it was late. We kept working."
+            ],
+            "answer": 1,
+            "explanation_zh": "although 不和 but 连用；although 从句也不能单独成句。"
+          },
+          {
+            "id": "s09",
+            "type": "order",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "排成句子。",
+            "translation_zh": "虽然我同意，但我担心那些商店。",
+            "tokens": [
+              "Although",
+              "I",
+              "agree,",
+              "I'm",
+              "worried",
+              "about",
+              "the",
+              "shops."
+            ],
+            "answers": [
+              "Although I agree, I'm worried about the shops.",
+              "I'm worried about the shops, although I agree."
+            ],
+            "explanation_zh": "Although + 句子, 主句。although 从句也可以放在后面。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，说话人担心谁？",
+            "audio_en": "However, older people need to drive to the doctor's.",
+            "options": [
+              "老年人",
+              "游客",
+              "店主"
+            ],
+            "answer": 0,
+            "explanation_zh": "older people need to drive to the doctor's：老年人要开车去看病。"
+          },
+          {
+            "id": "s11",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：谁从一开始就支持禁止汽车进入老城？",
+            "options": [
+              "Lin",
+              "Mia",
+              "两个人都不支持"
+            ],
+            "answer": 0,
+            "explanation_zh": "Lin 说 Yes, I do. Mia 有顾虑，最后才觉得可能行得通。"
+          },
+          {
+            "id": "s12",
+            "type": "write",
+            "role": "communicative_task",
+            "skill": "written_production",
+            "task_zh": "写 4–5 句：你支持在城市中心禁止汽车吗？说出你的观点、两个理由（because / so / for example），再提一个反面看法（although / however）。",
+            "model_answers": [
+              "In my opinion, closing the city centre to cars is a good idea. The air will be cleaner, so it will be healthier for everyone. More people will walk and cycle, for example office workers at lunchtime. However, some shops might lose customers, so the city should add more bus routes."
+            ],
+            "checklist_zh": [
+              "第一句说清楚了你的观点",
+              "至少两个理由，用了 because / so / for example",
+              "用 although 或 however 提到了反面看法",
+              "although 没有和 but 一起用；however 后面有逗号"
+            ]
+          },
+          {
+            "id": "s13",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "I like my job. ___, the hours are very long.",
+            "translation_zh": "我喜欢我的工作。不过工作时间很长。",
+            "answers": [
+              "However"
+            ],
+            "explanation_zh": "两个句子之间表示转折，用 However，后面加逗号。"
+          },
+          {
+            "id": "s14",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_en": "She was tired, ___ she went to bed early.",
+            "prompt_zh": "选出正确的词：",
+            "options": [
+              "so",
+              "although",
+              "however"
+            ],
+            "answer": 0,
+            "explanation_zh": "累了是原因，早睡是结果，用 so。"
+          }
+        ]
+      },
+      {
+        "id": "b1-u06-opinions-l3",
+        "order": 3,
+        "kind": "core",
+        "title_en": "I See What You Mean, But...",
+        "title_zh": "我明白，不过……",
+        "estimated_minutes": 12,
+        "objectives": [
+          {
+            "en": "Show how strongly you agree or disagree.",
+            "zh": "能表达不同程度的同意和不同意。"
+          },
+          {
+            "en": "Disagree politely and bring in the other side of an argument.",
+            "zh": "能礼貌地提出不同意见，并引出另一方面的看法。"
+          }
+        ],
+        "can_do_ids": [
+          "b1.si.opinions",
+          "b1.l.discussion"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "spoken_interaction",
+            "title_zh": "这节课学什么",
+            "body_zh": "开会讨论时，直接说 No 或 You're wrong 会显得很冲。英语里常见的做法是先承认对方有道理，再说自己的看法。这节课学同意和不同意的“强弱档”，以及 On the other hand 这种引出另一面的说法。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "A shorter meeting?",
+            "instructions_zh": "先听。注意每个人对这个提议是什么态度。",
+            "scene_zh": "周会上，同事 Kate 提议把每周例会缩短。",
+            "lines": [
+              {
+                "speaker": "Kate",
+                "en": "I think we should make our weekly meeting shorter. One hour is too long.",
+                "zh": "我觉得周会应该缩短，一小时太长了。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "I completely agree. Half an hour would be enough.",
+                "zh": "我完全同意，半小时就够了。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "I'm not sure about that. Sometimes we need time to discuss problems properly.",
+                "zh": "这个我不太确定。有时候我们需要时间把问题好好讨论清楚。"
+              },
+              {
+                "speaker": "Kate",
+                "en": "I see what you mean. But we often talk about things that only affect two people.",
+                "zh": "我明白你的意思。不过我们经常讨论只和两个人有关的事。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "That's true. Maybe those people could meet separately afterwards.",
+                "zh": "这倒是。也许那两个人可以会后单独碰一下。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Exactly. On the other hand, we shouldn't lose the chance to share ideas.",
+                "zh": "没错。另一方面，我们也不该失去交流想法的机会。"
+              },
+              {
+                "speaker": "Kate",
+                "en": "Good point. So, thirty minutes, and extra meetings when we need them?",
+                "zh": "说得好。那就三十分钟，需要时再加开小会？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Sounds good to me.",
+                "zh": "我觉得可以。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "i-completely-agree",
+              "im-not-sure",
+              "on-the-other-hand",
+              "exactly"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "notice",
+            "role": "notice",
+            "skill": "spoken_interaction",
+            "question_zh": "这些句子从“完全同意”到“不同意”，强弱有什么不同？",
+            "examples": [
+              {
+                "en": "I completely agree.",
+                "zh": "我完全同意。",
+                "highlight": [
+                  "completely agree"
+                ]
+              },
+              {
+                "en": "That's true, but we need time too.",
+                "zh": "这倒是，不过我们也需要时间。",
+                "highlight": [
+                  "That's true, but"
+                ]
+              },
+              {
+                "en": "I see what you mean, but it might be too short.",
+                "zh": "我明白你的意思，不过可能太短了。",
+                "highlight": [
+                  "I see what you mean, but"
+                ]
+              },
+              {
+                "en": "I'm not sure about that.",
+                "zh": "这个我不太确定。",
+                "highlight": [
+                  "I'm not sure about that"
+                ]
+              }
+            ],
+            "takeaway_zh": "不同意时，先承认对方的观点（That's true / I see what you mean），再用 but 说你的看法。I'm not sure about that 是很委婉的“不同意”。I totally disagree 语气很强，在工作场合要慎用。"
+          },
+          {
+            "id": "s05",
+            "type": "match",
+            "role": "guided_practice",
+            "skill": "spoken_interaction",
+            "instructions_zh": "把说法和它表达的态度配对。",
+            "pairs": [
+              {
+                "left": "I completely agree.",
+                "right": "完全同意"
+              },
+              {
+                "left": "That's true, but ...",
+                "right": "部分同意"
+              },
+              {
+                "left": "I'm not sure about that.",
+                "right": "委婉地不同意"
+              },
+              {
+                "left": "I totally disagree.",
+                "right": "强烈反对"
+              }
+            ]
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "spoken_interaction",
+            "prompt_zh": "你不赞成同事的提议，但想说得礼貌一些：",
+            "options": [
+              "I'm not sure that's the best idea.",
+              "That's a stupid idea.",
+              "No."
+            ],
+            "answer": 0,
+            "explanation_zh": "I'm not sure ... 委婉表达不同意，不会让对方难堪。"
+          },
+          {
+            "id": "s07",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，说话人是什么态度？",
+            "audio_en": "I see what you mean. But we often talk about things that only affect two people.",
+            "options": [
+              "先部分同意，再提出不同看法",
+              "完全同意",
+              "完全反对"
+            ],
+            "answer": 0,
+            "explanation_zh": "I see what you mean（我明白）+ But ...（不过……）。"
+          },
+          {
+            "id": "s08",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：谁一开始不同意缩短会议？",
+            "options": [
+              "Lin",
+              "Sam",
+              "Kate"
+            ],
+            "answer": 0,
+            "explanation_zh": "Lin 说 I'm not sure about that. Kate 提议，Sam 完全同意。"
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：最后的决定是什么？",
+            "options": [
+              "开三十分钟，需要时加开小会",
+              "一小时不变",
+              "取消周会"
+            ],
+            "answer": 0,
+            "explanation_zh": "So, thirty minutes, and extra meetings when we need them? — Sounds good to me."
+          },
+          {
+            "id": "s10",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "spoken_interaction",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "I see what you ___, but I still think it's too expensive.",
+            "translation_zh": "我明白你的意思，不过我还是觉得太贵了。",
+            "answers": [
+              "mean"
+            ],
+            "explanation_zh": "I see what you mean = 我明白你的意思。"
+          },
+          {
+            "id": "s11",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_interaction",
+            "task_zh": "朋友认为孩子 12 岁前就该有智能手机。回应他：先说你的观点和一个理由，再回应他的看法（I see your point, but ... 或 On the other hand, ...），最后提一个折中办法。",
+            "prompt_en": "I think kids today need a smartphone for safety. What do you think?",
+            "model_answers": [
+              "I see your point, because parents want to call their kids. On the other hand, smartphones can be really distracting, so I'm not sure about that. Personally, I think a simple phone without the internet is a better idea until they're older."
+            ],
+            "checklist_zh": [
+              "清楚地说出了自己的观点",
+              "用 I see your point / That's true 承认了对方的看法",
+              "用 but 或 On the other hand 提出另一面",
+              "至少一个 because 或 so 给出理由"
+            ]
+          },
+          {
+            "id": "s12",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "spoken_interaction",
+            "prompt_zh": "哪个说法用来引出问题的另一个方面？",
+            "options": [
+              "On the other hand, ...",
+              "For example, ...",
+              "Exactly."
+            ],
+            "answer": 0,
+            "explanation_zh": "On the other hand = 另一方面。For example 是举例，Exactly 表示赞同。"
+          },
+          {
+            "id": "s13",
+            "type": "order",
+            "role": "exit_ticket",
+            "skill": "spoken_interaction",
+            "instructions_zh": "排成句子。",
+            "translation_zh": "这个我不太确定。",
+            "tokens": [
+              "sure",
+              "I'm",
+              "that.",
+              "not",
+              "about"
+            ],
+            "answers": [
+              "I'm not sure about that."
+            ],
+            "explanation_zh": "I'm not sure about that. 委婉地表示不同意。"
+          }
+        ]
+      },
+      {
+        "id": "b1-u06-opinions-l4",
+        "order": 4,
+        "kind": "review",
+        "title_en": "Unit Review: Let's Discuss",
+        "title_zh": "单元复习：一起讨论",
+        "estimated_minutes": 13,
+        "objectives": [
+          {
+            "en": "Follow a discussion and tell who thinks what.",
+            "zh": "能听懂一段讨论，分辨谁持什么观点。"
+          },
+          {
+            "en": "Give a supported opinion in speech and in writing.",
+            "zh": "能在口头和书面上表达有理由支撑的观点。"
+          }
+        ],
+        "can_do_ids": [
+          "b1.l.discussion",
+          "b1.si.opinions",
+          "b1.gr.linkers",
+          "b1.wp.argument"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "listening",
+            "title_zh": "单元复习",
+            "body_zh": "先听一期播客，两位主持人讨论社交媒体对友谊的影响。听懂各自的观点后，复习连接词，最后你也说一说、写一写自己的看法。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Is social media good for friendships?",
+            "instructions_zh": "听两遍。第一遍听两人总体的态度，第二遍注意理由和例子。",
+            "scene_zh": "一档英语播客，主持人 Jack 和 Mia 在讨论本期话题。",
+            "lines": [
+              {
+                "speaker": "Jack",
+                "en": "Today's question: is social media good for friendships? Mia, what do you think?",
+                "zh": "今天的问题：社交媒体对友谊有好处吗？Mia，你怎么看？"
+              },
+              {
+                "speaker": "Mia",
+                "en": "In my opinion, it helps. For example, I still talk to friends from university because of it.",
+                "zh": "在我看来有帮助。比如，正是因为它，我还和大学同学保持着联系。"
+              },
+              {
+                "speaker": "Jack",
+                "en": "That's true. However, I think we see a lot of friends online but rarely meet them.",
+                "zh": "这倒是。不过我觉得我们在网上看到很多朋友，却很少见面。"
+              },
+              {
+                "speaker": "Mia",
+                "en": "I see your point. Although we meet less, at least we stay in touch.",
+                "zh": "我明白你的意思。虽然见得少了，但至少还保持联系。"
+              },
+              {
+                "speaker": "Jack",
+                "en": "Maybe. But a like isn't the same as a real conversation.",
+                "zh": "也许吧。但点个赞和真正的聊天不一样。"
+              },
+              {
+                "speaker": "Mia",
+                "en": "Exactly, so I always try to call people too, not just send messages.",
+                "zh": "没错，所以我总是尽量也打打电话，而不只是发消息。"
+              },
+              {
+                "speaker": "Jack",
+                "en": "On the other hand, some people feel lonely when they compare their lives with others online.",
+                "zh": "另一方面，有些人在网上和别人比较生活时会感到孤独。"
+              },
+              {
+                "speaker": "Mia",
+                "en": "I completely agree. That's a real problem. So, it depends how you use it.",
+                "zh": "完全同意，这是个真问题。所以说，关键在于你怎么用。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "Mia 总体上怎么看社交媒体对友谊的影响？",
+            "options": [
+              "总体有帮助",
+              "总体有害",
+              "没有明确看法"
+            ],
+            "answer": 0,
+            "explanation_zh": "In my opinion, it helps."
+          },
+          {
+            "id": "s04",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "Jack 担心的是什么？",
+            "options": [
+              "网上常看到朋友，却很少见面",
+              "太花钱",
+              "隐私泄露"
+            ],
+            "answer": 0,
+            "explanation_zh": "we see a lot of friends online but rarely meet them."
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "两人最后的结论是什么？",
+            "options": [
+              "关键在于怎么用",
+              "应该少用社交媒体",
+              "只用来发消息"
+            ],
+            "answer": 0,
+            "explanation_zh": "So, it depends how you use it."
+          },
+          {
+            "id": "s06",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "把连接词和它的作用配对。",
+            "pairs": [
+              {
+                "left": "because",
+                "right": "给出原因"
+              },
+              {
+                "left": "so",
+                "right": "引出结果"
+              },
+              {
+                "left": "although",
+                "right": "在同一句里表示转折"
+              },
+              {
+                "left": "for example",
+                "right": "举例"
+              }
+            ]
+          },
+          {
+            "id": "s07",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "___ it was cheap, the hotel was very clean.",
+            "translation_zh": "那家酒店虽然便宜，但很干净。",
+            "answers": [
+              "Although"
+            ],
+            "explanation_zh": "一句话里表示“虽然”，用 Although，主句前不加 but。"
+          },
+          {
+            "id": "s08",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_interaction",
+            "task_zh": "用大约 1 分钟回答：网购比去实体店好吗？说出观点、两个理由、一个例子，并提一个反面看法。",
+            "prompt_en": "Do you think online shopping is better than going to real shops?",
+            "model_answers": [
+              "Personally, I think online shopping is better for most things. It saves time, because I don't have to travel. It's also easy to compare prices, for example when I buy electronics. On the other hand, I still prefer real shops for clothes, so I can try them on first."
+            ],
+            "checklist_zh": [
+              "开头清楚地说出观点（Personally / In my opinion）",
+              "两个理由，用了 because 或 so",
+              "用 for example 举了一个例子",
+              "用 On the other hand / However / Although 提到另一面"
+            ]
+          },
+          {
+            "id": "s09",
+            "type": "write",
+            "role": "communicative_task",
+            "skill": "written_production",
+            "task_zh": "社区论坛在讨论：图书馆是否应该开到午夜？写一段回帖（5–6 句），说出你的观点、理由和例子，并回应一个反对意见。",
+            "model_answers": [
+              "In my opinion, the library should stay open until midnight. Many people work long hours, so they can only study late in the evening. For example, my neighbour is a nurse and often finishes at nine. Although it will cost more money, the city could open just a few days a week at first. However, it should be safe for people going home late, so the street lights near the library need to be better."
+            ],
+            "checklist_zh": [
+              "第一句说明观点",
+              "至少两个理由和一个例子",
+              "回应了一个反对意见（although / however）",
+              "although 没有和 but 一起用；however 后面有逗号"
+            ]
+          },
+          {
+            "id": "s10",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "spoken_interaction",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "I see your ___, but I disagree.",
+            "translation_zh": "我明白你的意思，不过我不同意。",
+            "answers": [
+              "point"
+            ],
+            "explanation_zh": "I see your point = 我明白你的意思（但……）。"
+          },
+          {
+            "id": "s11",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_zh": "哪一句是对的？",
+            "options": [
+              "However, it was expensive, we bought it.",
+              "It was expensive. However, we bought it.",
+              "It was expensive, however we bought it."
+            ],
+            "answer": 1,
+            "explanation_zh": "however 连接两个独立的句子：前面用句号，后面加逗号。"
+          }
+        ]
+      }
+    ]
+  }
+}

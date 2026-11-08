@@ -3,6 +3,7 @@ import { z } from "zod";
 import preA1 from "../../content/materials/pre-a1.json" with { type: "json" };
 import a1 from "../../content/materials/a1.json" with { type: "json" };
 import a2 from "../../content/materials/a2.json" with { type: "json" };
+import b1 from "../../content/materials/b1.json" with { type: "json" };
 import { CEFR_LEVELS } from "../curriculum/domain/cefr";
 
 import { containsPhrase, words } from "./domain/text";
@@ -101,6 +102,7 @@ export const rawMaterialFiles: Record<string, unknown> = {
   "materials/pre-a1.json": preA1,
   "materials/a1.json": a1,
   "materials/a2.json": a2,
+  "materials/b1.json": b1,
 };
 
 export function loadMaterials(): (Material & { file: Omit<MaterialFile, "materials"> })[] {

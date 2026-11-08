@@ -32,6 +32,8 @@
     { "id": "a2.med.summarise", "level": "a2", "skill": "mediation", "en": "Can summarise the main points of a short, simple text or conversation.", "zh": "能概括一段简短文字或对话的要点。", "prerequisites": ["a1.med.relay-simple"] },
     { "id": "a2.ph.clear", "level": "a2", "skill": "phonology", "en": "Can repeat and say short sentences clearly, with mostly natural word stress.", "zh": "能清楚地复述和说出短句，单词重音大体自然。", "prerequisites": ["a1.ph.intelligible"] },
 
+    { "id": "b1.r.main-points", "level": "b1", "skill": "reading", "en": "Can understand the main points and important details of clear texts on familiar topics, such as articles, blog posts and work emails.", "zh": "能读懂熟悉话题的清楚文章（如报道、博客、工作邮件）的要点和重要细节。", "prerequisites": ["a2.r.everyday-texts"] },
+    { "id": "b1.l.main-points", "level": "b1", "skill": "listening", "en": "Can understand the main points of clear speech on familiar matters at work, school or in free time.", "zh": "能听懂工作、学习或休闲中熟悉话题的清楚讲话的要点。", "prerequisites": ["a2.l.conversations"] },
     { "id": "b1.wp.argument", "level": "b1", "skill": "written_production", "en": "Can write a short text that gives an opinion and supports it with reasons and examples.", "zh": "能写一篇短文表达观点，并用理由和例子支持。", "prerequisites": ["a2.wp.connected"] },
     { "id": "b1.wi.complaint", "level": "b1", "skill": "written_interaction", "en": "Can write a clear email explaining a problem and what they would like to happen.", "zh": "能写一封清楚的邮件说明问题和希望怎么解决。", "prerequisites": ["a2.wi.email"] }
   ]

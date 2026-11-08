@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "source_type": "first_party",
+  "review_status": "pending_owner_review",
+  "points": [
+    {
+      "id": "past-simple",
+      "order": 14,
+      "level": "a2",
+      "can_do_ids": ["a2.gr.past-simple", "a2.sp.past-events"],
+      "title_en": "Past simple",
+      "title_zh": "一般过去时",
+      "status": "published",
+      "topics": ["verbs", "tenses"],
+      "prerequisites": ["present-simple"],
+      "unit_grammar_ids": ["a2.past-simple"],
+      "default_error_category": "tense",
+      "summary_zh": "说过去发生并结束的事：规则动词加 -ed，常用不规则动词单独记，否定和提问用 did。",
+      "explanation_zh": "说过去某个时间发生、现在已经结束的事，用一般过去时，常和 yesterday、last week、two days ago、in 2020 这类时间词一起用。规则动词加 -ed（work → worked，study → studied，stop → stopped）；常用不规则动词要单独记（go → went，see → saw，have → had）。所有人称形式相同。否定和提问请 did 帮忙，动词回到原形：I didn't go. / Did you go?。中文靠“了”“过”或时间词表示过去，动词本身不变，所以中文学习者最常见的问题是忘了变动词。",
+      "structure": ["主语 + 动词过去式 + ……", "主语 + didn't + 动词原形 + ……", "(疑问词 +) Did + 主语 + 动词原形 + ……?"],
+      "usage_zh": ["讲经历和故事：We went to the seaside and saw some dolphins.", "说过去某个时间的事：I started this job two years ago.", "问别人做了什么：What did you do last weekend?"],
+      "examples": [
+        { "en": "I stayed at home on Saturday.", "zh": "我周六待在家里。" },
+        { "en": "She bought some postcards.", "zh": "她买了几张明信片。" },
+        { "en": "We didn't have time for lunch.", "zh": "我们没时间吃午饭。" },
+        { "en": "Did you see the match last night?", "zh": "你昨晚看比赛了吗？" }
+      ],
+      "breakdowns": [
+        { "zh": "我们上周末去看望了祖父母。", "parts": [ { "text": "We", "role": "subject" }, { "text": "visited", "role": "verb" }, { "text": "our grandparents", "role": "object" }, { "text": "last weekend", "role": "time" } ] },
+        { "zh": "你昨天去上班了吗？", "parts": [ { "text": "Did", "role": "other" }, { "text": "you", "role": "subject" }, { "text": "go", "role": "verb" }, { "text": "to work", "role": "place" }, { "text": "yesterday", "role": "time" } ] }
+      ],
+      "common_errors": [
+        { "wrong": "Yesterday I go to the cinema.", "right": "Yesterday I went to the cinema.", "why_zh": "有了 yesterday，动词也要用过去式。" },
+        { "wrong": "I didn't went to work.", "right": "I didn't go to work.", "why_zh": "didn't 后面用动词原形。" },
+        { "wrong": "Did you saw it?", "right": "Did you see it?", "why_zh": "Did 提问时动词用原形。" },
+        { "wrong": "He studyed English.", "right": "He studied English.", "why_zh": "辅音字母 + y 结尾，变 y 为 i 再加 -ed。" }
+      ],
+      "contrast": {
+        "title_zh": "中文的“了”和英语的过去式",
+        "items": [
+          { "en": "I bought a new phone last week.", "zh": "我上周买了一部新手机。", "note_zh": "中文用“了”，英语把动词 buy 变成 bought。" },
+          { "en": "I didn't buy anything.", "zh": "我什么都没买。", "note_zh": "中文“没”+ 动词；英语 didn't + 动词原形，不说 didn't bought。" }
+        ]
+      },
+      "limits_zh": ["和现在有关的经历（Have you ever ...?）用现在完成时，见 A2 “Have You Ever...?” 单元。", "过去某一时刻正在进行的动作用过去进行时（I was cooking when ...）。"],
+      "exercises": [
+        { "id": "e1", "type": "choice", "difficulty": 1, "prompt_en": "Last Sunday we ___ tennis.", "prompt_zh": "选出正确的形式：", "options": ["play", "played", "plays"], "answer": 1, "explanation_zh": "Last Sunday 是过去，用 played。" },
+        { "id": "e2", "type": "choice", "difficulty": 2, "prompt_en": "I ___ my keys this morning.", "prompt_zh": "选出正确的形式：", "options": ["lose", "losed", "lost"], "answer": 2, "explanation_zh": "lose 是不规则动词，过去式是 lost。" },
+        { "id": "e3", "type": "cloze", "difficulty": 2, "instructions_zh": "用括号里的动词补全。", "sentence_en": "She ___ (meet) her husband at university.", "translation_zh": "她在大学里认识了她丈夫。", "answers": ["met"], "explanation_zh": "meet → met。" },
+        { "id": "e4", "type": "cloze", "difficulty": 2, "instructions_zh": "用括号里的提示补全。", "sentence_en": "We ___ (not / see) the film.", "translation_zh": "我们没看那部电影。", "answers": ["didn't see", "did not see"], "explanation_zh": "否定：didn't + 动词原形。" },
+        { "id": "e5", "type": "order", "difficulty": 2, "translation_zh": "你昨晚做了什么？", "tokens": ["you", "What", "last", "do", "night", "did"], "answers": ["What did you do last night?"], "explanation_zh": "疑问词 + did + 主语 + 动词原形 + 时间？" },
+        { "id": "e6", "type": "correction", "difficulty": 2, "wrong_en": "I didn't went to the party.", "translation_zh": "我没去聚会。", "answers": ["I didn't go to the party.", "I did not go to the party."], "explanation_zh": "didn't 后面用原形 go。" },
+        { "id": "e7", "type": "correction", "difficulty": 3, "wrong_en": "Did she bought a new car?", "translation_zh": "她买新车了吗？", "answers": ["Did she buy a new car?"], "explanation_zh": "Did 提问时动词用原形 buy。" },
+        { "id": "e8", "type": "choice", "difficulty": 3, "prompt_zh": "哪一个拼写是对的？", "options": ["stoped", "stopped", "stopt"], "answer": 1, "explanation_zh": "重读闭音节结尾，双写最后一个辅音字母再加 -ed：stop → stopped。" },
+        { "id": "e9", "type": "build", "difficulty": 3, "task_zh": "用 3 句话说说你上个周末做了什么，至少用一个不规则动词和一个否定句。", "model_answers": ["On Saturday I went to the market and bought some fruit. In the afternoon I cleaned my flat. I didn't go out in the evening."], "checklist_zh": ["动词都是过去式", "至少一个不规则动词", "至少一句 didn't + 动词原形"] }
+      ]
+    },
+    {
+      "id": "future-forms",
+      "order": 15,
+      "level": "a2",
+      "can_do_ids": ["a2.gr.future"],
+      "title_en": "Future: going to and will",
+      "title_zh": "将来的表达：be going to 和 will",
+      "status": "published",
+      "topics": ["verbs", "tenses"],
+      "prerequisites": ["present-continuous"],
+      "unit_grammar_ids": ["a2.future-going-to-will"],
+      "default_error_category": "tense",
+      "summary_zh": "已经打算好的事用 be going to，临时决定、预测和承诺常用 will。",
+      "explanation_zh": "be going to + 动词原形：说话之前就已经打算好的事，以及根据眼前迹象做出的判断（Look at the clouds! It's going to rain.）。will + 动词原形：说话这一刻才做的决定、主动提出帮忙、答应别人，以及对将来的看法和预测（常和 I think、probably 一起用）。will 所有人称都一样，后面直接跟动词原形，否定是 won't。",
+      "structure": ["主语 + am / is / are + going to + 动词原形", "主语 + will ('ll) + 动词原形", "主语 + won't + 动词原形"],
+      "usage_zh": ["说计划：I'm going to visit my cousin this weekend.", "当下决定、主动帮忙：The phone's ringing. I'll get it.", "预测：I think it'll be sunny tomorrow."],
+      "examples": [
+        { "en": "We're going to paint the kitchen.", "zh": "我们打算刷厨房。" },
+        { "en": "Don't worry, I'll help you.", "zh": "别担心，我来帮你。" },
+        { "en": "It'll probably be cold.", "zh": "很可能会冷。" },
+        { "en": "I don't think he'll come.", "zh": "我觉得他不会来。" }
+      ],
+      "breakdowns": [
+        { "zh": "我这个周末打算去看表妹。", "parts": [ { "text": "I'm going to", "role": "other" }, { "text": "visit", "role": "verb" }, { "text": "my cousin", "role": "object" }, { "text": "this weekend", "role": "time" } ] },
+        { "zh": "我晚点给你发消息。", "parts": [ { "text": "I", "role": "subject" }, { "text": "'ll text", "role": "verb" }, { "text": "you", "role": "object" }, { "text": "later", "role": "time" } ] }
+      ],
+      "common_errors": [
+        { "wrong": "I going to visit my cousin.", "right": "I'm going to visit my cousin.", "why_zh": "be going to 里的 be 不能省。" },
+        { "wrong": "It will rains.", "right": "It will rain.", "why_zh": "will 后面用动词原形。" },
+        { "wrong": "I will to call you.", "right": "I'll call you.", "why_zh": "will 后面不加 to。" },
+        { "wrong": "I think it won't rain.", "right": "I don't think it'll rain.", "why_zh": "英语习惯把否定放在 think 上。" }
+      ],
+      "contrast": {
+        "title_zh": "早有计划还是现在决定？",
+        "items": [
+          { "en": "I'm going to cook dinner for her.", "zh": "我打算给她做晚饭。", "note_zh": "早就打算好：be going to。" },
+          { "en": "I'll buy the drinks, then.", "zh": "那饮料我来买。", "note_zh": "说话时才决定：will。" }
+        ]
+      },
+      "limits_zh": ["已经约好时间地点的安排也常用现在进行时（I'm meeting Tom at six.）。", "很多情况下 will 和 going to 都可以用，区别只是语气；这里只练最清楚的几种。"],
+      "exercises": [
+        { "id": "e1", "type": "choice", "difficulty": 1, "prompt_en": "She ___ going to start a new job.", "prompt_zh": "选出正确的词：", "options": ["is", "are", "will"], "answer": 0, "explanation_zh": "主语 she 用 is going to。" },
+        { "id": "e2", "type": "choice", "difficulty": 2, "prompt_en": "\"I'm cold.\" \"___ close the window.\"", "prompt_zh": "当场主动帮忙：", "options": ["I'll", "I'm going", "I"], "answer": 0, "explanation_zh": "说话时决定、主动帮忙用 I'll。" },
+        { "id": "e3", "type": "cloze", "difficulty": 2, "instructions_zh": "补全句子。", "sentence_en": "Look at those clouds! It's going ___ rain.", "translation_zh": "看那些云！要下雨了。", "answers": ["to"], "explanation_zh": "be going to + 动词原形。" },
+        { "id": "e4", "type": "cloze", "difficulty": 2, "instructions_zh": "补全句子。", "sentence_en": "I think you ___ love this film.", "translation_zh": "我觉得你会喜欢这部电影。", "answers": ["will", "'ll"], "explanation_zh": "I think + will：表示看法和预测。" },
+        { "id": "e5", "type": "order", "difficulty": 2, "translation_zh": "你打算怎么去那儿？", "tokens": ["going", "How", "get", "you", "to", "are", "there"], "answers": ["How are you going to get there?"], "explanation_zh": "疑问词 + are + 主语 + going to + 动词原形？" },
+        { "id": "e6", "type": "correction", "difficulty": 2, "wrong_en": "We going to stay at home.", "translation_zh": "我们打算待在家。", "answers": ["We're going to stay at home.", "We are going to stay at home."], "explanation_zh": "be going to 里的 are 不能省。" },
+        { "id": "e7", "type": "correction", "difficulty": 3, "wrong_en": "It will probably rains tomorrow.", "translation_zh": "明天很可能下雨。", "answers": ["It will probably rain tomorrow.", "It'll probably rain tomorrow."], "explanation_zh": "will 后面用动词原形 rain。" },
+        { "id": "e8", "type": "build", "difficulty": 3, "task_zh": "写 3 句：一个你下周的计划（going to），一个对天气的预测（will / probably），一个主动帮朋友的提议（I'll ...）。", "model_answers": ["I'm going to start a yoga class next week. It'll probably be sunny on Saturday. If you need help with your move, I'll bring some boxes."], "checklist_zh": ["一句 be going to 说计划", "一句 will 预测", "一句 I'll 主动帮忙"] }
+      ]
+    },
+    {
+      "id": "conditionals",
+      "order": 19,
+      "level": "b1",
+      "can_do_ids": ["b1.gr.conditionals"],
+      "title_en": "Zero, first and second conditionals",
+      "title_zh": "零条件句、第一和第二条件句",
+      "status": "published",
+      "topics": ["sentence", "tenses"],
+      "prerequisites": ["past-simple", "future-forms"],
+      "unit_grammar_ids": ["b1.conditionals"],
+      "default_error_category": "tense",
+      "summary_zh": "If + 现在时说规律和可能的将来；If + 过去时 + would 说想象的情况。",
+      "explanation_zh": "零条件句：If + 一般现在时, 一般现在时，说每次都成立的事实和规律（If you heat ice, it melts.）。第一条件句：If + 一般现在时, will + 动词原形，说将来很可能发生的情况和结果；if 从句里不用 will（If it rains, we'll stay in.）。第二条件句：If + 一般过去时, would + 动词原形，说现在或将来不真实、不太可能的情况；用过去式表示“和现实有距离”，而不是说过去（If I had a car, I'd drive.）。if 从句在前时后面加逗号，在后时不加。",
+      "structure": ["If + 一般现在时, 一般现在时（规律）", "If + 一般现在时, will + 动词原形（可能的将来）", "If + 一般过去时, would + 动词原形（想象）"],
+      "usage_zh": ["说明规律和操作结果：If you press this button, the machine stops.", "提醒、建议和打算：Unless you hurry, you'll miss the bus.", "想象和建议：If I were you, I'd talk to your manager."],
+      "examples": [
+        { "en": "If water reaches zero degrees, it freezes.", "zh": "水到零度就会结冰。" },
+        { "en": "If I get the job, I'll buy you dinner.", "zh": "我要是拿到这份工作，就请你吃饭。" },
+        { "en": "If I won the lottery, I'd travel around the world.", "zh": "要是我中了彩票，我会环游世界。" },
+        { "en": "I'd help you if I had time.", "zh": "我要是有时间就帮你了。" }
+      ],
+      "breakdowns": [
+        { "zh": "明天要是下雨，我们就待在家。", "parts": [ { "text": "If it rains tomorrow,", "role": "other" }, { "text": "we", "role": "subject" }, { "text": "'ll stay", "role": "verb" }, { "text": "at home", "role": "place" } ] },
+        { "zh": "如果我是你，我会接受这份工作。", "parts": [ { "text": "If I were you,", "role": "other" }, { "text": "I", "role": "subject" }, { "text": "'d take", "role": "verb" }, { "text": "the job", "role": "object" } ] }
+      ],
+      "common_errors": [
+        { "wrong": "If it will rain, we'll stay in.", "right": "If it rains, we'll stay in.", "why_zh": "第一条件句的 if 从句用一般现在时，不用 will。" },
+        { "wrong": "If I would have time, I'd help.", "right": "If I had time, I'd help.", "why_zh": "would 只放在结果部分。" },
+        { "wrong": "If I won the lottery, I will buy a house.", "right": "If I won the lottery, I'd buy a house.", "why_zh": "想象的情况，结果部分用 would。" },
+        { "wrong": "Unless you don't hurry, you'll be late.", "right": "Unless you hurry, you'll be late.", "why_zh": "unless 已经是“如果不”，后面不再用否定。" }
+      ],
+      "contrast": {
+        "title_zh": "可能发生还是只是想象？",
+        "items": [
+          { "en": "If I finish early, I'll call you.", "zh": "我要是早点做完，就给你打电话。", "note_zh": "很可能发生：第一条件句。" },
+          { "en": "If I finished early, I'd call you.", "zh": "要是我能早点做完，就给你打电话了。", "note_zh": "说话人觉得不太可能：第二条件句。" }
+        ]
+      },
+      "limits_zh": ["说过去没有发生的事（If I had known, I would have ...）是第三条件句，在 B2 学。", "if 从句里 should、could、might 等也能出现，这里只练最常见的形式。"],
+      "exercises": [
+        { "id": "e1", "type": "choice", "difficulty": 2, "prompt_en": "If you ___ ice, it melts.", "prompt_zh": "选出正确的形式：", "options": ["heat", "will heat", "heated"], "answer": 0, "explanation_zh": "规律：If + 一般现在时, 一般现在时。" },
+        { "id": "e2", "type": "choice", "difficulty": 2, "prompt_en": "If it ___ tomorrow, we'll cancel the picnic.", "prompt_zh": "选出正确的形式：", "options": ["will rain", "rains", "rained"], "answer": 1, "explanation_zh": "第一条件句，if 从句用一般现在时。" },
+        { "id": "e3", "type": "choice", "difficulty": 3, "prompt_en": "If I ___ you, I'd apologise.", "prompt_zh": "选出正确的形式：", "options": ["am", "were", "will be"], "answer": 1, "explanation_zh": "If I were you, I'd ...：给建议的固定说法。" },
+        { "id": "e4", "type": "cloze", "difficulty": 2, "instructions_zh": "用括号里的动词补全。", "sentence_en": "If you study hard, you ___ (pass) the exam.", "translation_zh": "你努力学习就会通过考试。", "answers": ["will pass", "'ll pass"], "explanation_zh": "结果部分用 will + 动词原形。" },
+        { "id": "e5", "type": "cloze", "difficulty": 3, "instructions_zh": "用括号里的动词补全。", "sentence_en": "If I ___ (have) more money, I'd buy a bigger flat.", "translation_zh": "要是我有更多钱，我会买套大点的房子。", "answers": ["had"], "explanation_zh": "想象的情况：If + 过去式 had。" },
+        { "id": "e6", "type": "order", "difficulty": 3, "translation_zh": "除非你快点，否则你会错过火车。", "tokens": ["you", "Unless", "hurry", "you'll", "miss", "the", "train"], "answers": ["Unless you hurry, you'll miss the train."], "explanation_zh": "Unless + 一般现在时, will + 动词原形。" },
+        { "id": "e7", "type": "correction", "difficulty": 3, "wrong_en": "If it will be sunny, we'll go to the beach.", "translation_zh": "要是天晴，我们就去海边。", "answers": ["If it is sunny, we'll go to the beach.", "If it's sunny, we'll go to the beach.", "If it is sunny, we will go to the beach.", "If it's sunny, we will go to the beach."], "explanation_zh": "if 从句里不用 will。" },
+        { "id": "e8", "type": "correction", "difficulty": 4, "wrong_en": "If I would live by the sea, I'd swim every day.", "translation_zh": "要是我住在海边，我会天天游泳。", "answers": ["If I lived by the sea, I'd swim every day.", "If I lived by the sea, I would swim every day."], "explanation_zh": "第二条件句的 if 从句用过去式 lived，不用 would。" },
+        { "id": "e9", "type": "build", "difficulty": 3, "task_zh": "各写一句：一个规律（零条件句）、一个可能的将来（第一条件句）、一个想象的情况（第二条件句）。", "model_answers": ["If I drink coffee after six, I can't sleep. If I finish work early today, I'll go to the gym. If I could speak five languages, I'd work for the United Nations."], "checklist_zh": ["零条件句两部分都是一般现在时", "第一条件句的 if 从句没有 will", "第二条件句用了 If + 过去式, would ..."] }
+      ]
+    },
+    {
+      "id": "linking-ideas",
+      "order": 20,
+      "level": "b1",
+      "can_do_ids": ["b1.gr.linkers", "b1.wp.argument"],
+      "title_en": "Linking ideas: because, so, although, however",
+      "title_zh": "连接观点：because、so、although、however",
+      "status": "published",
+      "topics": ["sentence"],
+      "prerequisites": ["conjunctions"],
+      "unit_grammar_ids": ["b1.linking-ideas"],
+      "default_error_category": "word_order",
+      "summary_zh": "用 because / so 连接原因和结果，用 although / however 表示转折，用 for example 举例。",
+      "explanation_zh": "because 引出原因，so 引出结果，两者方向相反：I'm tired because I worked late. = I worked late, so I'm tired.。although 引导的从句和主句合成一句，表示“虽然”，主句前不再加 but。however 是副词，连接两个独立的句子，常放在第二句句首，前面用句号或分号，后面加逗号。for example 用来举例，可以放在句首，也可以放在例子前面。",
+      "structure": ["句子 + because + 句子", "句子, so + 句子", "Although + 句子, 句子", "句子. However, 句子", "句子. For example, 句子"],
+      "usage_zh": ["给观点加理由：In my opinion, it's a good idea because the air will be cleaner.", "承认反面意见：Although it's expensive, it's worth it.", "写作里转折：The plan is cheap. However, it will take ten years."],
+      "examples": [
+        { "en": "The streets are narrow, so the traffic is terrible.", "zh": "街道很窄，所以交通很糟。" },
+        { "en": "Although the flat is small, it's very bright.", "zh": "公寓虽然小，但很亮堂。" },
+        { "en": "I like my job. However, the hours are long.", "zh": "我喜欢我的工作。不过工作时间很长。" },
+        { "en": "More people will walk there, for example tourists.", "zh": "会有更多人去那儿散步，比如游客。" }
+      ],
+      "breakdowns": [
+        { "zh": "虽然天很晚了，我们还是继续工作。", "parts": [ { "text": "Although it was late,", "role": "other" }, { "text": "we", "role": "subject" }, { "text": "kept", "role": "verb" }, { "text": "working", "role": "object" } ] },
+        { "zh": "下雨了，所以我们待在家。", "parts": [ { "text": "It was raining,", "role": "other" }, { "text": "so", "role": "other" }, { "text": "we", "role": "subject" }, { "text": "stayed", "role": "verb" }, { "text": "at home", "role": "place" } ] }
+      ],
+      "common_errors": [
+        { "wrong": "Although it was late, but we kept working.", "right": "Although it was late, we kept working.", "why_zh": "although 和 but 只能用一个。" },
+        { "wrong": "It was expensive, however we bought it.", "right": "It was expensive. However, we bought it.", "why_zh": "however 连接两个句子，前面用句号，后面加逗号。" },
+        { "wrong": "Because it was raining. We stayed at home.", "right": "Because it was raining, we stayed at home.", "why_zh": "because 从句不能单独成句。" },
+        { "wrong": "I was tired, because I went to bed early.", "right": "I was tired, so I went to bed early.", "why_zh": "早睡是累的结果，用 so，不用 because。" }
+      ],
+      "contrast": {
+        "title_zh": "“虽然……但是……”在英语里只用一半",
+        "items": [
+          { "en": "Although it's cheap, it's very good.", "zh": "虽然便宜，但是很好。", "note_zh": "只用 although。" },
+          { "en": "It's cheap, but it's very good.", "zh": "虽然便宜，但是很好。", "note_zh": "只用 but。" }
+        ]
+      },
+      "limits_zh": ["whereas、despite、in spite of、on the contrary 等更正式的连接词在 B2 学。", "口语里 though 常放在句末表示“不过”（They could allow taxis, though.）。"],
+      "exercises": [
+        { "id": "e1", "type": "choice", "difficulty": 2, "prompt_en": "___ it was cold, we went swimming.", "prompt_zh": "选出正确的词：", "options": ["Although", "However", "So"], "answer": 0, "explanation_zh": "一句话里表示“虽然”，用 Although。" },
+        { "id": "e2", "type": "choice", "difficulty": 2, "prompt_en": "I missed the bus, ___ I was late.", "prompt_zh": "选出正确的词：", "options": ["because", "so", "although"], "answer": 1, "explanation_zh": "迟到是错过公交的结果，用 so。" },
+        { "id": "e3", "type": "cloze", "difficulty": 2, "instructions_zh": "补全句子。", "sentence_en": "The hotel was great. ___, it was very far from the centre.", "translation_zh": "酒店很好。不过离市中心很远。", "answers": ["However"], "explanation_zh": "两个句子之间表示转折：However,。" },
+        { "id": "e4", "type": "cloze", "difficulty": 2, "instructions_zh": "补全句子。", "sentence_en": "I'm learning English ___ I want to work abroad.", "translation_zh": "我学英语是因为想去国外工作。", "answers": ["because"], "explanation_zh": "后半句是原因，用 because。" },
+        { "id": "e5", "type": "order", "difficulty": 3, "translation_zh": "虽然它很贵，但很受欢迎。", "tokens": ["Although", "it's", "expensive", "it's", "popular"], "answers": ["Although it's expensive, it's popular."], "explanation_zh": "Although + 句子, 主句。" },
+        { "id": "e6", "type": "correction", "difficulty": 3, "wrong_en": "Although the film was long, but it was interesting.", "translation_zh": "那部电影虽然很长，但很有意思。", "answers": ["Although the film was long, it was interesting.", "The film was long, but it was interesting."], "explanation_zh": "although 和 but 只能用一个。" },
+        { "id": "e7", "type": "correction", "difficulty": 3, "wrong_en": "She was hungry, because she made a sandwich.", "translation_zh": "她饿了，所以做了个三明治。", "answers": ["She was hungry, so she made a sandwich."], "explanation_zh": "做三明治是饿的结果，用 so。" },
+        { "id": "e8", "type": "build", "difficulty": 3, "task_zh": "就“学生应该穿校服吗”写 3 句：一个观点加原因（because），一个例子（for example），一个反面看法（although 或 however）。", "model_answers": ["I think students should wear uniforms because it saves time in the morning. For example, my nephew doesn't have to choose clothes every day. However, uniforms can be expensive for some families."], "checklist_zh": ["用了 because 或 so", "用了 for example", "用了 although 或 however，且没有和 but 连用"] }
+      ]
+    }
+  ]
+}

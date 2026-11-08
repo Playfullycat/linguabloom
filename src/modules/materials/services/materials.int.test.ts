@@ -52,7 +52,7 @@ describe("material lists", () => {
   it("lists built-in materials with a difficulty hint for this learner", async () => {
     const { materials, learner } = await listMaterials(db, userA, "reading");
     expect(learner.level).toBe("pre_a1");
-    expect(materials).toHaveLength(6);
+    expect(materials).toHaveLength(8);
     expect(materials.find((m) => m.id === MIA)).toMatchObject({ fit: "right", completed: false, newWords: 9 });
     expect(materials.find((m) => m.level === "a1")!.fit).toBe("stretch");
     expect(materials.find((m) => m.level === "a2")!.fit).toBe("hard");

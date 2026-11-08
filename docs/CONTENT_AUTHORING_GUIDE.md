@@ -102,7 +102,24 @@ src/content/
 - 只有真实可学习、有练习、有答案或评分说明、有来源的内容才能标为 `published`。
 - 只有标题的单元保持 `planned`，也就是目录里不加 `file`。
 - 从文件里删掉的课时和步骤，seed 会把它们**归档**而不是删除，学习记录因此得以保留。
-- 首批 6 个单元由 Claude 原创，状态为 `published` + `pending_owner_review`：可以学习，但等待你审核。
+- 首批 6 个单元由 Claude 原创，状态为 `published` + `pending_owner_review`：可以学习，但等待你审核。Phase 5.1 又加了 A2、B1 各 2 个单元，状态相同。
+
+### 发布质量门槛（Phase 5.1）
+
+标为 `published` 的单元必须通过 `src/modules/curriculum/content/quality.ts` 的检查。不通过时，校验和 seed 都会报错并列出全部问题（以 `publish gate:` 开头）。`draft` 单元不检查，可以先写一部分。
+
+| 检查 | 规则 |
+|---|---|
+| 结构 | 至少 3 节核心课 + 1 节单元复习课 |
+| 意义输入 | 单元里有对话；每节核心课至少一个 `role: "input"` 的步骤 |
+| 听力和输出 | 单元里有听力活动；复习课必须有口语或写作任务（`communicative_task`） |
+| 真正的练习 | 每节课至少 3 个自动判分的步骤（choice / cloze / order / match） |
+| 答案正确可用 | choice 选项不重复；cloze 答案不重复；order 的每个答案只用给出的词块 |
+| 难度 | 对话每句的词数不超过该等级上限：Pre-A1 12、A1 15、A2 20、B1 25、B2 30、C1 35、C2 40 |
+| 承诺的都教了 | 单元的每条 can-do 至少有一节课在练；词表里的每个词都出现在某个 vocab 步骤里 |
+| 来源 | `licensed` / `public_domain` 内容必须写 `source`（`title`、`license`，可选 `url`） |
+
+课时的 `can_do_ids` 除了本单元的 can-do，也可以引用同等级的全局能力描述（`src/content/can-do/catalog.json`，例如 `a2.sp.past-events`）。这样课程练习也能为这些能力提供证据。每节课至少要有一条本单元自己的 can-do。
 
 ## 7. 来源类型 `source_type`
 

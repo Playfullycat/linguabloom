@@ -140,4 +140,22 @@ describe("read models are scoped to the learner", () => {
     expect(preA1.lessonCount).toBeGreaterThanOrEqual(4);
     expect(levels.find((l) => l.code === "c2")!.publishedUnitCount).toBe(0);
   });
+
+  it("A2 and B1 units are seeded as learnable lessons, and their scored steps score on the server (Phase 5.1)", async () => {
+    const levels = await listLevels(db, userA);
+    for (const code of ["a2", "b1"] as const) {
+      const level = levels.find((l) => l.code === code)!;
+      expect(level.publishedUnitCount, code).toBe(2);
+      expect(level.lessonCount, code).toBe(8);
+    }
+    const lessonId = "b1-u02-conditionals-l2";
+    const lesson = await getLessonForPlayer(db, userA, lessonId);
+    expect(lesson?.steps.length).toBeGreaterThanOrEqual(10);
+    // s05: "If it ___ tomorrow, we'll stay at home." — rains (index 0).
+    const right = await recordStepAttempt(db, userA, { lessonId, stepKey: "s05", response: { choice: 0 }, clientRequestId: randomUUID() });
+    const wrong = await recordStepAttempt(db, userA, { lessonId, stepKey: "s13", response: { choice: 0 }, clientRequestId: randomUUID() });
+    expect(right.isCorrect).toBe(true);
+    expect(wrong.isCorrect).toBe(false);
+    expect(await getUnit(db, userA, "a2-u02-while-when")).toMatchObject({ status: "planned", lessons: [] });
+  });
 });

@@ -1,0 +1,1227 @@
+{
+  "content_schema_version": 1,
+  "source_type": "first_party",
+  "review_status": "pending_owner_review",
+  "unit": {
+    "id": "a2-u01-past-stories",
+    "level": "a2",
+    "order": 1,
+    "status": "published",
+    "title_en": "Past Stories",
+    "title_zh": "过去的故事",
+    "summary_zh": "用一般过去时讲已经发生的事：规则动词加 -ed，常用不规则动词单独记，否定和提问用 did。学完后，你能用 First / Then / After that / In the end 讲一段自己的经历。",
+    "can_do": [
+      {
+        "id": "a2.gr.past-simple",
+        "skill": "grammar",
+        "en": "Can use the past simple of regular and common irregular verbs in positive, negative and question forms.",
+        "zh": "能用一般过去时的肯定、否定和疑问形式，包括规则动词和常用不规则动词。"
+      },
+      {
+        "id": "a2.l.past-stories",
+        "skill": "listening",
+        "en": "Can follow a short spoken account of a past event when it is told slowly and clearly.",
+        "zh": "对方说得慢而清楚时，能听懂一段讲过去事情的简短叙述。"
+      },
+      {
+        "id": "a2.sp.weekend-story",
+        "skill": "spoken_production",
+        "en": "Can tell a short story about a weekend or a trip in a few linked sentences.",
+        "zh": "能用几句连贯的话讲讲一个周末或一次出行。"
+      }
+    ],
+    "grammar_points": [
+      {
+        "id": "a2.past-simple",
+        "title_en": "Past simple",
+        "title_zh": "一般过去时",
+        "pattern": "I visited my grandparents. (regular: + -ed)\nWe went to the seaside. (irregular: go → went)\nI didn't go. / Did you go? — Yes, I did.",
+        "explanation_zh": "说过去某个时间发生并已经结束的事用一般过去时。规则动词加 -ed（visit → visited），常用不规则动词要单独记（go → went，see → saw）。所有人称形式都一样，没有“三单”变化。否定用 didn't + 动词原形，提问用 Did + 主语 + 动词原形，这两种情况下动词都回到原形。",
+        "examples": [
+          {
+            "en": "I stayed at home last weekend.",
+            "zh": "上周末我待在家里。"
+          },
+          {
+            "en": "We saw some dolphins.",
+            "zh": "我们看到了几只海豚。"
+          },
+          {
+            "en": "Did you wait for the next bus? — Yes, I did.",
+            "zh": "你等下一班车了吗？——等了。"
+          }
+        ],
+        "common_errors": [
+          {
+            "wrong": "I goed to the cinema.",
+            "right": "I went to the cinema.",
+            "why_zh": "go 是不规则动词，过去式是 went。"
+          },
+          {
+            "wrong": "I didn't went to work.",
+            "right": "I didn't go to work.",
+            "why_zh": "didn't 后面用动词原形。"
+          },
+          {
+            "wrong": "Did you saw the match?",
+            "right": "Did you see the match?",
+            "why_zh": "Did 提问时，动词用原形。"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "key": "yesterday",
+        "text": "yesterday",
+        "pos": "adverb",
+        "ipa": "/ˈjestədeɪ/",
+        "zh": "昨天",
+        "example_en": "I cooked dinner yesterday.",
+        "example_zh": "我昨天做了晚饭。"
+      },
+      {
+        "key": "last-weekend",
+        "text": "last weekend",
+        "pos": "phrase",
+        "ipa": "/lɑːst ˌwiːkˈend/",
+        "zh": "上个周末",
+        "example_en": "What did you do last weekend?",
+        "example_zh": "你上个周末做了什么？"
+      },
+      {
+        "key": "ago",
+        "text": "ago",
+        "pos": "adverb",
+        "ipa": "/əˈɡəʊ/",
+        "zh": "……以前",
+        "example_en": "I visited my aunt two days ago.",
+        "example_zh": "我两天前去看望了姑姑。"
+      },
+      {
+        "key": "stayed",
+        "text": "stayed",
+        "pos": "verb",
+        "ipa": "/steɪd/",
+        "zh": "待；停留（stay 的过去式）",
+        "example_en": "I stayed at home on Saturday.",
+        "example_zh": "我周六待在家里。"
+      },
+      {
+        "key": "visited",
+        "text": "visited",
+        "pos": "verb",
+        "ipa": "/ˈvɪzɪtɪd/",
+        "zh": "拜访；参观（visit 的过去式）",
+        "example_en": "We visited a museum.",
+        "example_zh": "我们参观了一家博物馆。"
+      },
+      {
+        "key": "went",
+        "text": "went",
+        "pos": "verb",
+        "ipa": "/went/",
+        "zh": "去（go 的过去式）",
+        "example_en": "She went to the seaside.",
+        "example_zh": "她去了海边。"
+      },
+      {
+        "key": "saw",
+        "text": "saw",
+        "pos": "verb",
+        "ipa": "/sɔː/",
+        "zh": "看见（see 的过去式）",
+        "example_en": "I saw Tom at the station.",
+        "example_zh": "我在车站看见了汤姆。"
+      },
+      {
+        "key": "had",
+        "text": "had",
+        "pos": "verb",
+        "ipa": "/hæd/",
+        "zh": "有；吃（have 的过去式）",
+        "example_en": "We had breakfast in a café.",
+        "example_zh": "我们在一家咖啡馆吃了早饭。"
+      },
+      {
+        "key": "took",
+        "text": "took",
+        "pos": "verb",
+        "ipa": "/tʊk/",
+        "zh": "乘坐；拍（take 的过去式）",
+        "example_en": "I took lots of photos.",
+        "example_zh": "我拍了很多照片。"
+      },
+      {
+        "key": "bought",
+        "text": "bought",
+        "pos": "verb",
+        "ipa": "/bɔːt/",
+        "zh": "买（buy 的过去式）",
+        "example_en": "He bought some postcards.",
+        "example_zh": "他买了几张明信片。"
+      },
+      {
+        "key": "met",
+        "text": "met",
+        "pos": "verb",
+        "ipa": "/met/",
+        "zh": "遇见；见面（meet 的过去式）",
+        "example_en": "I met an old friend.",
+        "example_zh": "我遇到了一个老朋友。"
+      },
+      {
+        "key": "missed",
+        "text": "missed",
+        "pos": "verb",
+        "ipa": "/mɪst/",
+        "zh": "错过（miss 的过去式）",
+        "example_en": "I missed the bus.",
+        "example_zh": "我错过了公交车。"
+      },
+      {
+        "key": "then",
+        "text": "then",
+        "pos": "adverb",
+        "ipa": "/ðen/",
+        "zh": "然后",
+        "example_en": "We had lunch. Then we went home.",
+        "example_zh": "我们吃了午饭，然后回家了。"
+      },
+      {
+        "key": "after-that",
+        "text": "after that",
+        "pos": "phrase",
+        "ipa": "/ˈɑːftə ðæt/",
+        "zh": "那之后",
+        "example_en": "After that, my phone died.",
+        "example_zh": "那之后，我的手机没电了。"
+      },
+      {
+        "key": "in-the-end",
+        "text": "in the end",
+        "pos": "phrase",
+        "ipa": "/ɪn ði end/",
+        "zh": "最后",
+        "example_en": "In the end, I walked home.",
+        "example_zh": "最后，我走回了家。"
+      }
+    ],
+    "lessons": [
+      {
+        "id": "a2-u01-past-stories-l1",
+        "order": 1,
+        "kind": "core",
+        "title_en": "How Was Your Weekend?",
+        "title_zh": "周末过得怎么样？",
+        "estimated_minutes": 10,
+        "objectives": [
+          {
+            "en": "Use regular verbs in the past simple (+ -ed).",
+            "zh": "能用规则动词的一般过去时（加 -ed）。"
+          },
+          {
+            "en": "Use past time words: yesterday, last weekend, two days ago.",
+            "zh": "能用 yesterday、last weekend、two days ago 这类过去的时间词。"
+          }
+        ],
+        "can_do_ids": [
+          "a2.gr.past-simple",
+          "a2.l.past-stories"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "grammar",
+            "title_zh": "这节课学什么",
+            "body_zh": "周一上班，同事最常问的就是 How was your weekend?。回答时要说已经过去的事，英语用一般过去时。这节课先学最简单的一类：规则动词在后面加 -ed，比如 visit → visited，stay → stayed。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "How was your weekend?",
+            "instructions_zh": "先听。注意动词后面的 -ed。",
+            "scene_zh": "周一早上，Lin 在办公室遇到同事 Sam。",
+            "lines": [
+              {
+                "speaker": "Lin",
+                "en": "Hi Sam. How was your weekend?",
+                "zh": "嗨，Sam。周末过得怎么样？"
+              },
+              {
+                "speaker": "Sam",
+                "en": "It was great, thanks. I visited my grandparents in the country.",
+                "zh": "很棒，谢谢。我去乡下看望了祖父母。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "That sounds nice. What did you do there?",
+                "zh": "听起来不错。你们在那儿做了什么？"
+              },
+              {
+                "speaker": "Sam",
+                "en": "We walked by the river and I cooked dinner for them. What about you?",
+                "zh": "我们在河边散步，我还给他们做了晚饭。你呢？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "I stayed at home on Saturday. I cleaned my flat and watched a film.",
+                "zh": "我周六待在家里，打扫了公寓，看了一部电影。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "And on Sunday?",
+                "zh": "那周日呢？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "I played badminton with my sister. I'm a bit tired today!",
+                "zh": "我和妹妹打了羽毛球。今天有点累！"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。注意过去的时间词放在句末。",
+            "items": [
+              "yesterday",
+              "last-weekend",
+              "ago",
+              "stayed",
+              "visited"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "notice",
+            "role": "notice",
+            "skill": "grammar",
+            "question_zh": "这些动词说的是现在还是过去？它们有什么共同点？",
+            "examples": [
+              {
+                "en": "I visited my grandparents.",
+                "zh": "我去看望了祖父母。",
+                "highlight": [
+                  "visited"
+                ]
+              },
+              {
+                "en": "She stayed at home.",
+                "zh": "她待在家里。",
+                "highlight": [
+                  "stayed"
+                ]
+              },
+              {
+                "en": "We watched a film.",
+                "zh": "我们看了一部电影。",
+                "highlight": [
+                  "watched"
+                ]
+              },
+              {
+                "en": "They played badminton.",
+                "zh": "他们打了羽毛球。",
+                "highlight": [
+                  "played"
+                ]
+              }
+            ],
+            "takeaway_zh": "说过去的事，规则动词加 -ed。I、she、we、they 都用同一个形式，没有“三单”变化。-ed 有三种读法：watched /t/，played /d/，visited /ɪd/。"
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_en": "Last Saturday I ___ my flat.",
+            "prompt_zh": "选出正确的词：",
+            "options": [
+              "clean",
+              "cleaned",
+              "cleans"
+            ],
+            "answer": 1,
+            "explanation_zh": "Last Saturday 是过去，用过去式 cleaned。"
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，说话人什么时候去看望了姑姑？",
+            "audio_en": "I visited my aunt two days ago.",
+            "options": [
+              "两天前",
+              "两天后",
+              "每两天一次"
+            ],
+            "answer": 0,
+            "explanation_zh": "two days ago = 两天前。ago 放在时间段后面。"
+          },
+          {
+            "id": "s07",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "用括号里的动词补全句子。",
+            "sentence_en": "We ___ (walk) by the river yesterday.",
+            "translation_zh": "我们昨天在河边散步。",
+            "answers": [
+              "walked"
+            ],
+            "explanation_zh": "yesterday 表示过去，walk 加 -ed。"
+          },
+          {
+            "id": "s08",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "把动词和它的过去式配对。注意拼写变化。",
+            "pairs": [
+              {
+                "left": "stop",
+                "right": "stopped"
+              },
+              {
+                "left": "study",
+                "right": "studied"
+              },
+              {
+                "left": "like",
+                "right": "liked"
+              },
+              {
+                "left": "play",
+                "right": "played"
+              }
+            ]
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：Lin 周六做了什么？",
+            "options": [
+              "去看望了祖父母",
+              "在家打扫并看了电影",
+              "和妹妹打羽毛球"
+            ],
+            "answer": 1,
+            "explanation_zh": "I stayed at home on Saturday. I cleaned my flat and watched a film. 打羽毛球是周日。"
+          },
+          {
+            "id": "s10",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "I ___ my grandparents last weekend.",
+            "translation_zh": "我上周末去看望了祖父母。",
+            "answers": [
+              "visited"
+            ],
+            "explanation_zh": "last weekend 是过去，visit → visited。"
+          },
+          {
+            "id": "s11",
+            "type": "order",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "排成句子。",
+            "translation_zh": "我昨晚看了一部电影。",
+            "tokens": [
+              "watched",
+              "a",
+              "film",
+              "I",
+              "last",
+              "night"
+            ],
+            "answers": [
+              "I watched a film last night.",
+              "Last night I watched a film."
+            ],
+            "explanation_zh": "主语 + 过去式 + 宾语 + 时间；时间也可以放在句首。"
+          }
+        ]
+      },
+      {
+        "id": "a2-u01-past-stories-l2",
+        "order": 2,
+        "kind": "core",
+        "title_en": "Went, Saw, Had",
+        "title_zh": "不规则动词",
+        "estimated_minutes": 11,
+        "objectives": [
+          {
+            "en": "Use common irregular past forms: went, saw, had, took, bought, met.",
+            "zh": "能用常见不规则动词的过去式：went、saw、had、took、bought、met。"
+          },
+          {
+            "en": "Say what you did on a day out in a few sentences.",
+            "zh": "能用几句话说说出去玩的一天做了什么。"
+          }
+        ],
+        "can_do_ids": [
+          "a2.gr.past-simple",
+          "a2.sp.weekend-story",
+          "a2.sp.past-events"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "grammar",
+            "title_zh": "这节课学什么",
+            "body_zh": "英语里最常用的一些动词偏偏不加 -ed，而是变成另一个词：go → went，see → saw。它们没有规律，但数量不多，而且天天都用。这节课学讲出游时最常用的六个。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "A day at the seaside",
+            "instructions_zh": "先听。找一找哪些过去式不是加 -ed 的。",
+            "scene_zh": "Lin 休了一天假，回来后朋友 Mia 问她去哪儿了。",
+            "lines": [
+              {
+                "speaker": "Mia",
+                "en": "You look happy! Did you have a good day off?",
+                "zh": "你看起来很开心！休息日过得好吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Yes! I went to the seaside with two friends.",
+                "zh": "很好！我和两个朋友去了海边。"
+              },
+              {
+                "speaker": "Mia",
+                "en": "Lovely. How did you get there?",
+                "zh": "真好。你们怎么去的？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "We took the early train. Then we had breakfast in a little café by the beach.",
+                "zh": "我们坐了早班火车，然后在海边一家小咖啡馆吃了早饭。"
+              },
+              {
+                "speaker": "Mia",
+                "en": "Did you swim?",
+                "zh": "你们游泳了吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "No, the water was too cold. But we saw some dolphins! I took lots of photos.",
+                "zh": "没有，水太冷了。不过我们看到了几只海豚！我拍了很多照片。"
+              },
+              {
+                "speaker": "Mia",
+                "en": "Wow. Did you buy anything?",
+                "zh": "哇。你买东西了吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "I bought some postcards. And I met an old school friend at the station!",
+                "zh": "我买了几张明信片。还在车站碰到了一个老同学！"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。每个过去式都和原形一起记。",
+            "items": [
+              "went",
+              "saw",
+              "had",
+              "took",
+              "bought",
+              "met"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "teach",
+            "role": "teach",
+            "skill": "grammar",
+            "title_zh": "不规则动词：要单独记",
+            "explanation_zh": "不规则动词的过去式不加 -ed，要一个一个记。好消息是：和规则动词一样，所有人称都用同一个形式（I went，she went，they went）。be 动词有两个过去式：I / he / she / it 用 was，you / we / they 用 were。",
+            "pattern": "go → went, see → saw, have → had, take → took, buy → bought, meet → met",
+            "examples": [
+              {
+                "en": "We took the early train.",
+                "zh": "我们坐了早班火车。"
+              },
+              {
+                "en": "The water was too cold.",
+                "zh": "水太冷了。"
+              },
+              {
+                "en": "My friends were at the station.",
+                "zh": "我的朋友们在车站。"
+              }
+            ],
+            "tips_zh": [
+              "记的时候把原形和过去式连起来读：go–went，see–saw，读几遍就有感觉了。",
+              "take 可以搭配很多词：take a train（坐火车）、take a photo（拍照）。"
+            ]
+          },
+          {
+            "id": "s05",
+            "type": "match",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "instructions_zh": "把动词原形和过去式配对。",
+            "pairs": [
+              {
+                "left": "go",
+                "right": "went"
+              },
+              {
+                "left": "see",
+                "right": "saw"
+              },
+              {
+                "left": "buy",
+                "right": "bought"
+              },
+              {
+                "left": "meet",
+                "right": "met"
+              },
+              {
+                "left": "take",
+                "right": "took"
+              }
+            ]
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_en": "We ___ some dolphins.",
+            "prompt_zh": "选出正确的过去式：",
+            "options": [
+              "see",
+              "saw",
+              "seed"
+            ],
+            "answer": 1,
+            "explanation_zh": "see 是不规则动词，过去式是 saw。"
+          },
+          {
+            "id": "s07",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "用括号里的动词补全句子。",
+            "sentence_en": "I ___ (buy) some postcards.",
+            "translation_zh": "我买了几张明信片。",
+            "answers": [
+              "bought"
+            ],
+            "explanation_zh": "buy 的过去式是 bought，不是 buyed。"
+          },
+          {
+            "id": "s08",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，他们在哪儿吃的早饭？",
+            "audio_en": "We took the early train and had breakfast by the beach.",
+            "options": [
+              "火车上",
+              "海边",
+              "家里"
+            ],
+            "answer": 1,
+            "explanation_zh": "had breakfast by the beach：在海边吃了早饭。"
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：Lin 为什么没有游泳？",
+            "options": [
+              "水太冷了",
+              "没带泳衣",
+              "下雨了"
+            ],
+            "answer": 0,
+            "explanation_zh": "the water was too cold：水太冷了。"
+          },
+          {
+            "id": "s10",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_production",
+            "task_zh": "说说你最近一次出去玩：去了哪里、怎么去的、看到了什么、买了什么。说 4–5 句，至少用 3 个不规则动词。",
+            "prompt_en": "Did you go anywhere nice recently?",
+            "model_answers": [
+              "Yes, I went to Hangzhou last month. I took the fast train with my mum. We saw the West Lake and had lunch by the water. I bought some tea for my dad."
+            ],
+            "checklist_zh": [
+              "说了去哪里和什么时候（last month / two weeks ago）",
+              "至少 3 个不规则过去式（went、took、saw、had、bought、met）",
+              "没有把 go 说成 goed",
+              "句子之间用了 and 或 then 连起来"
+            ]
+          },
+          {
+            "id": "s11",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "用括号里的动词补全句子。",
+            "sentence_en": "Yesterday I ___ (go) to the cinema.",
+            "translation_zh": "我昨天去看电影了。",
+            "answers": [
+              "went"
+            ],
+            "explanation_zh": "go 的过去式是 went。"
+          },
+          {
+            "id": "s12",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_zh": "哪一句是对的？",
+            "options": [
+              "I goed to work by bus.",
+              "I went to work by bus.",
+              "I go to work by bus yesterday."
+            ],
+            "answer": 1,
+            "explanation_zh": "过去的事用过去式 went；有 yesterday 时不能用 go。"
+          }
+        ]
+      },
+      {
+        "id": "a2-u01-past-stories-l3",
+        "order": 3,
+        "kind": "core",
+        "title_en": "Did You...? I Didn't...",
+        "title_zh": "过去时的否定和提问",
+        "estimated_minutes": 11,
+        "objectives": [
+          {
+            "en": "Make negatives and questions with didn't and did.",
+            "zh": "能用 didn't 和 did 构成否定句和疑问句。"
+          },
+          {
+            "en": "Order a story with first, then, after that and in the end.",
+            "zh": "能用 first、then、after that、in the end 给故事排序。"
+          }
+        ],
+        "can_do_ids": [
+          "a2.gr.past-simple",
+          "a2.l.past-stories",
+          "a2.wp.connected"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "grammar",
+            "title_zh": "这节课学什么",
+            "body_zh": "过去时的否定和提问有个省事的规律：都请 did 来帮忙，动词回到原形。I didn't go.，Did you see it?。另外学四个讲故事的顺序词，让你的经历听起来有头有尾。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Why are you so late?",
+            "instructions_zh": "先听。注意 did 和 didn't 后面的动词。",
+            "scene_zh": "朋友聚餐，Jack 迟到了快一个小时。",
+            "lines": [
+              {
+                "speaker": "Lin",
+                "en": "Jack! What happened? Did you get lost?",
+                "zh": "Jack！怎么了？你迷路了吗？"
+              },
+              {
+                "speaker": "Jack",
+                "en": "No, I didn't. First, I missed the bus.",
+                "zh": "没有。先是我错过了公交车。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Oh no. Did you wait for the next one?",
+                "zh": "哎呀。那你等下一班了吗？"
+              },
+              {
+                "speaker": "Jack",
+                "en": "Yes, I did. Then it didn't come for forty minutes.",
+                "zh": "等了。结果它四十分钟都没来。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Why didn't you call me?",
+                "zh": "你为什么不给我打电话？"
+              },
+              {
+                "speaker": "Jack",
+                "en": "After that, my phone died. I didn't have my charger.",
+                "zh": "那之后我手机没电了，我没带充电器。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "So how did you get here?",
+                "zh": "那你是怎么来的？"
+              },
+              {
+                "speaker": "Jack",
+                "en": "In the end, I walked. Did you start dinner without me?",
+                "zh": "最后我走过来的。你们没等我就开吃了吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "No, we didn't. Come and sit down!",
+                "zh": "没有。快来坐吧！"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。顺序词后面常加逗号。",
+            "items": [
+              "missed",
+              "then",
+              "after-that",
+              "in-the-end"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "notice",
+            "role": "notice",
+            "skill": "grammar",
+            "question_zh": "did 和 didn't 后面的动词是什么形式？",
+            "examples": [
+              {
+                "en": "Did you wait for the next one? — Yes, I did.",
+                "zh": "你等下一班了吗？——等了。",
+                "highlight": [
+                  "Did",
+                  "wait"
+                ]
+              },
+              {
+                "en": "It didn't come for forty minutes.",
+                "zh": "它四十分钟都没来。",
+                "highlight": [
+                  "didn't",
+                  "come"
+                ]
+              },
+              {
+                "en": "Why didn't you call me?",
+                "zh": "你为什么没给我打电话？",
+                "highlight": [
+                  "didn't",
+                  "call"
+                ]
+              },
+              {
+                "en": "How did you get here?",
+                "zh": "你是怎么来的？",
+                "highlight": [
+                  "did",
+                  "get"
+                ]
+              }
+            ],
+            "takeaway_zh": "否定：didn't + 动词原形；提问：(疑问词 +) Did + 主语 + 动词原形。过去的意思已经由 did 表达了，所以动词不再加 -ed，也不用 went、saw。简略回答：Yes, I did. / No, I didn't."
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_en": "___ you see the match last night?",
+            "prompt_zh": "选出正确的词：",
+            "options": [
+              "Do",
+              "Did",
+              "Were"
+            ],
+            "answer": 1,
+            "explanation_zh": "last night 是过去，普通动词 see 的问句用 Did。"
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_zh": "哪一句是对的？",
+            "options": [
+              "I didn't went to work.",
+              "I didn't go to work.",
+              "I not went to work."
+            ],
+            "answer": 1,
+            "explanation_zh": "didn't 后面用原形 go。"
+          },
+          {
+            "id": "s07",
+            "type": "order",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "排成问句。",
+            "translation_zh": "你错过公交车了吗？",
+            "tokens": [
+              "miss",
+              "Did",
+              "the",
+              "you",
+              "bus"
+            ],
+            "answers": [
+              "Did you miss the bus?"
+            ],
+            "explanation_zh": "Did + 主语 + 动词原形 + 其他？"
+          },
+          {
+            "id": "s08",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "补全简略回答。",
+            "sentence_en": "\"Did you have breakfast?\" \"No, I ___.\"",
+            "translation_zh": "“你吃早饭了吗？”“没吃。”",
+            "answers": [
+              "didn't",
+              "did not"
+            ],
+            "explanation_zh": "Did you ...? 用 Yes, I did. / No, I didn't. 回答。"
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，选出最合适的回答。",
+            "audio_en": "Why didn't you call me?",
+            "options": [
+              "Because my phone died.",
+              "Yes, I did.",
+              "I call you tomorrow."
+            ],
+            "answer": 0,
+            "explanation_zh": "Why 问原因，用 Because ... 回答。"
+          },
+          {
+            "id": "s10",
+            "type": "write",
+            "role": "communicative_task",
+            "skill": "written_production",
+            "task_zh": "写 4 句话，讲一次不太顺利的出行（迟到、迷路、东西忘带了都可以）。分别用 First、Then、After that、In the end 开头，至少有一句否定句（didn't）。",
+            "model_answers": [
+              "First, I got up late. Then I missed the train. After that, I didn't have time for lunch. In the end, I arrived at the meeting ten minutes late."
+            ],
+            "checklist_zh": [
+              "四句分别用 First / Then / After that / In the end 开头",
+              "动词都是过去式",
+              "至少一句 didn't + 动词原形",
+              "顺序词后面加了逗号"
+            ]
+          },
+          {
+            "id": "s11",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "用括号里的提示补全句子。",
+            "sentence_en": "She ___ (not / come) to the party.",
+            "translation_zh": "她没来聚会。",
+            "answers": [
+              "didn't come",
+              "did not come"
+            ],
+            "explanation_zh": "否定：didn't + 动词原形 come。"
+          },
+          {
+            "id": "s12",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "listening",
+            "prompt_zh": "回想对话：Jack 最后是怎么来的？",
+            "options": [
+              "坐出租车",
+              "走路",
+              "坐下一班公交"
+            ],
+            "answer": 1,
+            "explanation_zh": "In the end, I walked.：最后我走过来的。"
+          }
+        ]
+      },
+      {
+        "id": "a2-u01-past-stories-l4",
+        "order": 4,
+        "kind": "review",
+        "title_en": "Unit Review: A Story to Tell",
+        "title_zh": "单元复习：讲一段经历",
+        "estimated_minutes": 12,
+        "objectives": [
+          {
+            "en": "Understand a friend's story about a past trip.",
+            "zh": "能听懂朋友讲的一次过去的旅行。"
+          },
+          {
+            "en": "Tell and write your own story with past forms and sequence words.",
+            "zh": "能用过去式和顺序词讲出、写出自己的经历。"
+          }
+        ],
+        "can_do_ids": [
+          "a2.sp.weekend-story",
+          "a2.sp.past-events",
+          "a2.l.past-stories",
+          "a2.gr.past-simple"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "listening",
+            "title_zh": "单元复习",
+            "body_zh": "先听 Lin 讲她的西安之行，回答几个问题；再复习规则和不规则过去式；最后轮到你讲、写一段自己的经历。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "A trip to Xi'an",
+            "instructions_zh": "听两遍。第一遍只听大意，第二遍注意细节。",
+            "scene_zh": "假期结束，Sam 问 Lin 去了哪里。",
+            "lines": [
+              {
+                "speaker": "Sam",
+                "en": "Where did you go for the holiday?",
+                "zh": "你假期去哪儿了？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "I went to Xi'an with my parents. We stayed there for five days.",
+                "zh": "我和爸妈去了西安，在那儿待了五天。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Did you see the Terracotta Warriors?",
+                "zh": "你们看兵马俑了吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Yes, we did! We took a bus there on the second day. It was amazing.",
+                "zh": "看了！第二天我们坐公交去的，太震撼了。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "What did you eat?",
+                "zh": "你们吃了什么？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "We had noodles every day. My dad loved them.",
+                "zh": "我们天天吃面，我爸特别喜欢。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Did anything go wrong?",
+                "zh": "有没有出什么状况？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Well, on the last day we missed our train. In the end, we got the next one.",
+                "zh": "嗯，最后一天我们错过了火车，最后坐了下一班。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Did you buy any presents?",
+                "zh": "你买礼物了吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "I bought you this! It's a small warrior.",
+                "zh": "给你买了这个！一个小兵马俑。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "Lin 一家在西安待了几天？",
+            "options": [
+              "三天",
+              "五天",
+              "七天"
+            ],
+            "answer": 1,
+            "explanation_zh": "We stayed there for five days.：待了五天。"
+          },
+          {
+            "id": "s04",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "最后一天发生了什么？",
+            "options": [
+              "错过了火车",
+              "丢了行李",
+              "下雨了"
+            ],
+            "answer": 0,
+            "explanation_zh": "on the last day we missed our train：最后一天错过了火车。"
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "Lin 给 Sam 带了什么？",
+            "options": [
+              "一张明信片",
+              "一个小兵马俑",
+              "一盒面条"
+            ],
+            "answer": 1,
+            "explanation_zh": "It's a small warrior.：一个小兵马俑。"
+          },
+          {
+            "id": "s06",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "把动词和过去式配对，规则和不规则的都有。",
+            "pairs": [
+              {
+                "left": "stay",
+                "right": "stayed"
+              },
+              {
+                "left": "take",
+                "right": "took"
+              },
+              {
+                "left": "have",
+                "right": "had"
+              },
+              {
+                "left": "buy",
+                "right": "bought"
+              },
+              {
+                "left": "miss",
+                "right": "missed"
+              }
+            ]
+          },
+          {
+            "id": "s07",
+            "type": "order",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "排成问句。",
+            "translation_zh": "你买礼物了吗？",
+            "tokens": [
+              "buy",
+              "presents",
+              "you",
+              "any",
+              "Did"
+            ],
+            "answers": [
+              "Did you buy any presents?"
+            ],
+            "explanation_zh": "Did + 主语 + 动词原形 + 其他？"
+          },
+          {
+            "id": "s08",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_production",
+            "task_zh": "讲一次你记得的旅行或假期，说 5–6 句：去了哪里、和谁、做了什么、出了什么状况、最后怎么样。用上 First / Then / After that / In the end。",
+            "prompt_en": "Tell me about a trip you remember.",
+            "model_answers": [
+              "Two years ago I went to Qingdao with my friends. First, we took the train and stayed in a small hotel near the sea. Then we swam and had seafood every night. After that, it rained for two days, so we visited a museum. In the end, it was a really fun trip."
+            ],
+            "checklist_zh": [
+              "说了时间（two years ago / last summer）",
+              "用了至少 3 个顺序词",
+              "规则和不规则过去式都有",
+              "有一个小状况或转折，故事有结尾"
+            ]
+          },
+          {
+            "id": "s09",
+            "type": "write",
+            "role": "communicative_task",
+            "skill": "written_interaction",
+            "task_zh": "给朋友发一条消息（3–4 句）：说说你上周末做了什么，最后问对方一个 Did you ...? 问题。",
+            "model_answers": [
+              "Hi Mia! Last weekend I visited my aunt in Suzhou. We walked in a beautiful garden and I bought some silk for my mum. Did you go to the concert on Saturday?"
+            ],
+            "checklist_zh": [
+              "有打招呼",
+              "至少两句用过去式讲周末",
+              "最后一句是 Did you + 动词原形 ...?",
+              "问句里的动词没有用过去式"
+            ]
+          },
+          {
+            "id": "s10",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "用括号里的提示补全句子。",
+            "sentence_en": "We ___ (not / have) time to visit the museum.",
+            "translation_zh": "我们没时间去博物馆了。",
+            "answers": [
+              "didn't have",
+              "did not have"
+            ],
+            "explanation_zh": "否定：didn't + 原形 have。"
+          },
+          {
+            "id": "s11",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_en": "Where ___ you go last summer?",
+            "prompt_zh": "选出正确的词：",
+            "options": [
+              "did",
+              "do",
+              "were"
+            ],
+            "answer": 0,
+            "explanation_zh": "last summer 是过去，Where + did + 主语 + 动词原形？"
+          }
+        ]
+      }
+    ]
+  }
+}

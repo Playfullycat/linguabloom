@@ -1,0 +1,1168 @@
+{
+  "content_schema_version": 1,
+  "source_type": "first_party",
+  "review_status": "pending_owner_review",
+  "unit": {
+    "id": "a2-u03-future",
+    "level": "a2",
+    "order": 3,
+    "status": "published",
+    "title_en": "Plans and Predictions",
+    "title_zh": "计划与预测",
+    "summary_zh": "早就打算好的事用 be going to，临时决定和主动帮忙用 will，对将来的猜测用 will 和 probably。学完后，你能和朋友约好周末做什么。",
+    "can_do": [
+      {
+        "id": "a2.gr.future",
+        "skill": "grammar",
+        "en": "Can use be going to for plans and will for quick decisions, offers and predictions.",
+        "zh": "能用 be going to 说计划，用 will 说临时决定、主动提议和预测。"
+      },
+      {
+        "id": "a2.si.plans",
+        "skill": "spoken_interaction",
+        "en": "Can ask about and discuss plans for the weekend or holidays, and make simple arrangements.",
+        "zh": "能询问和讨论周末或假期的计划，并约定简单的安排。"
+      },
+      {
+        "id": "a2.l.plans",
+        "skill": "listening",
+        "en": "Can understand simple spoken information about plans, times and arrangements.",
+        "zh": "能听懂关于计划、时间和安排的简单口头信息。"
+      }
+    ],
+    "grammar_points": [
+      {
+        "id": "a2.future-going-to-will",
+        "title_en": "Future: be going to and will",
+        "title_zh": "将来的表达：be going to 和 will",
+        "pattern": "I'm going to visit my cousin. (plan)\nI'll make the cake! (decision now / offer)\nIt'll probably rain. (prediction)",
+        "explanation_zh": "be going to + 动词原形：说话之前就已经打算好的事。will + 动词原形（口语常缩写成 'll）：说话的这一刻才决定的事、主动提出帮忙、承诺，以及对将来的看法和猜测。看到眼前的迹象做判断时，常用 be going to（Look at those clouds! It's going to rain.）。",
+        "examples": [
+          {
+            "en": "We're going to paint the kitchen this weekend.",
+            "zh": "我们这个周末打算刷厨房。"
+          },
+          {
+            "en": "Don't worry, I'll help you.",
+            "zh": "别担心，我来帮你。"
+          },
+          {
+            "en": "I think it'll be sunny tomorrow.",
+            "zh": "我觉得明天会是晴天。"
+          }
+        ],
+        "common_errors": [
+          {
+            "wrong": "I going to visit my cousin.",
+            "right": "I'm going to visit my cousin.",
+            "why_zh": "be going to 里的 be（am / is / are）不能省。"
+          },
+          {
+            "wrong": "It will rains tomorrow.",
+            "right": "It will rain tomorrow.",
+            "why_zh": "will 后面用动词原形。"
+          },
+          {
+            "wrong": "I will to call you.",
+            "right": "I'll call you.",
+            "why_zh": "will 后面直接跟动词，不加 to。"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "key": "this-weekend",
+        "text": "this weekend",
+        "pos": "phrase",
+        "ipa": "/ðɪs ˌwiːkˈend/",
+        "zh": "这个周末",
+        "example_en": "What are you doing this weekend?",
+        "example_zh": "你这个周末做什么？"
+      },
+      {
+        "key": "tomorrow",
+        "text": "tomorrow",
+        "pos": "adverb",
+        "ipa": "/təˈmɒrəʊ/",
+        "zh": "明天",
+        "example_en": "I'm going to start early tomorrow.",
+        "example_zh": "我明天打算早点开始。"
+      },
+      {
+        "key": "next-week",
+        "text": "next week",
+        "pos": "phrase",
+        "ipa": "/nekst wiːk/",
+        "zh": "下周",
+        "example_en": "She's going to start a new job next week.",
+        "example_zh": "她下周要开始新工作了。"
+      },
+      {
+        "key": "be-going-to",
+        "text": "be going to",
+        "pos": "phrase",
+        "ipa": "/bi ˈɡəʊɪŋ tə/",
+        "zh": "打算；将要",
+        "example_en": "I'm going to visit my cousin.",
+        "example_zh": "我打算去看我表妹。"
+      },
+      {
+        "key": "free",
+        "text": "free",
+        "pos": "adjective",
+        "ipa": "/friː/",
+        "zh": "有空的",
+        "example_en": "Are you free on Saturday?",
+        "example_zh": "你周六有空吗？"
+      },
+      {
+        "key": "i-will",
+        "text": "I'll",
+        "pos": "phrase",
+        "ipa": "/aɪl/",
+        "zh": "我会；我来（I will 的缩写）",
+        "example_en": "I'll make the cake.",
+        "example_zh": "蛋糕我来做。"
+      },
+      {
+        "key": "invite",
+        "text": "invite",
+        "pos": "verb",
+        "ipa": "/ɪnˈvaɪt/",
+        "zh": "邀请",
+        "example_en": "Let's invite Jack too.",
+        "example_zh": "我们也请 Jack 吧。"
+      },
+      {
+        "key": "book",
+        "text": "book",
+        "pos": "verb",
+        "ipa": "/bʊk/",
+        "zh": "预订",
+        "example_en": "I'll book a table for six.",
+        "example_zh": "我来订一张六人桌。"
+      },
+      {
+        "key": "pick-up",
+        "text": "pick (someone) up",
+        "pos": "phrasal verb",
+        "ipa": "/pɪk ʌp/",
+        "zh": "（开车）接某人",
+        "example_en": "I'll pick you up at seven.",
+        "example_zh": "我七点来接你。"
+      },
+      {
+        "key": "forecast",
+        "text": "forecast",
+        "pos": "noun",
+        "ipa": "/ˈfɔːkɑːst/",
+        "zh": "（天气）预报",
+        "example_en": "The forecast says it'll rain.",
+        "example_zh": "天气预报说会下雨。"
+      },
+      {
+        "key": "probably",
+        "text": "probably",
+        "pos": "adverb",
+        "ipa": "/ˈprɒbəbli/",
+        "zh": "很可能；大概",
+        "example_en": "It'll probably be cold.",
+        "example_zh": "很可能会冷。"
+      },
+      {
+        "key": "maybe",
+        "text": "maybe",
+        "pos": "adverb",
+        "ipa": "/ˈmeɪbi/",
+        "zh": "也许",
+        "example_en": "Maybe it'll be fine in the afternoon.",
+        "example_zh": "也许下午就好了。"
+      }
+    ],
+    "lessons": [
+      {
+        "id": "a2-u03-future-l1",
+        "order": 1,
+        "kind": "core",
+        "title_en": "I'm Going to...",
+        "title_zh": "我打算……",
+        "estimated_minutes": 10,
+        "objectives": [
+          {
+            "en": "Talk about plans with be going to.",
+            "zh": "能用 be going to 说自己的计划。"
+          },
+          {
+            "en": "Ask about other people's plans.",
+            "zh": "能询问别人的计划。"
+          }
+        ],
+        "can_do_ids": [
+          "a2.gr.future",
+          "a2.si.plans",
+          "a2.l.plans"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "grammar",
+            "title_zh": "这节课学什么",
+            "body_zh": "周五下午，大家都在聊周末打算做什么。已经想好、安排好的事，英语常用 be going to + 动词原形：I'm going to visit my cousin.。这节课学怎么说自己的计划，也学怎么问别人。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Any plans for the weekend?",
+            "instructions_zh": "先听。注意 going to 前面的 am / is / are。",
+            "scene_zh": "周五下午，Lin 和同事 Sam 在收拾东西准备下班。",
+            "lines": [
+              {
+                "speaker": "Sam",
+                "en": "Any plans for the weekend, Lin?",
+                "zh": "Lin，周末有什么安排吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Yes. I'm going to visit my cousin in Hangzhou.",
+                "zh": "有。我打算去杭州看我表妹。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Nice! How are you going to get there?",
+                "zh": "不错！你打算怎么去？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "I'm going to take the fast train on Saturday morning.",
+                "zh": "我打算周六上午坐高铁去。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Are you going to stay with her?",
+                "zh": "你住她那儿吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Yes, for one night. What about you? Are you free this weekend?",
+                "zh": "嗯，住一晚。你呢？这个周末有空吗？"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Not really. I'm going to paint my kitchen. It's going to take all weekend!",
+                "zh": "不太有空。我要刷厨房，得花整个周末！"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "be-going-to",
+              "this-weekend",
+              "tomorrow",
+              "next-week",
+              "free"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "notice",
+            "role": "notice",
+            "skill": "grammar",
+            "question_zh": "going to 前面总有什么词？后面的动词是什么形式？",
+            "examples": [
+              {
+                "en": "I'm going to visit my cousin.",
+                "zh": "我打算去看表妹。",
+                "highlight": [
+                  "'m going to",
+                  "visit"
+                ]
+              },
+              {
+                "en": "Sam is going to paint his kitchen.",
+                "zh": "Sam 打算刷厨房。",
+                "highlight": [
+                  "is going to",
+                  "paint"
+                ]
+              },
+              {
+                "en": "Are you going to stay with her?",
+                "zh": "你打算住她那儿吗？",
+                "highlight": [
+                  "Are",
+                  "going to",
+                  "stay"
+                ]
+              },
+              {
+                "en": "We aren't going to drive.",
+                "zh": "我们不打算开车。",
+                "highlight": [
+                  "aren't going to",
+                  "drive"
+                ]
+              }
+            ],
+            "takeaway_zh": "am / is / are + going to + 动词原形。be 动词随主语变（I'm，he's，we're），不能省。提问把 be 提到主语前，否定在 be 后面加 not。"
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_en": "I ___ going to visit my cousin.",
+            "prompt_zh": "选出正确的词：",
+            "options": [
+              "am",
+              "is",
+              "are"
+            ],
+            "answer": 0,
+            "explanation_zh": "主语 I 用 am：I am (I'm) going to ..."
+          },
+          {
+            "id": "s06",
+            "type": "cloze",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "We're going ___ paint the kitchen.",
+            "translation_zh": "我们打算刷厨房。",
+            "answers": [
+              "to"
+            ],
+            "explanation_zh": "be going to + 动词原形，to 不能少。"
+          },
+          {
+            "id": "s07",
+            "type": "order",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "排成问句。",
+            "translation_zh": "你打算住她那儿吗？",
+            "tokens": [
+              "going",
+              "with",
+              "Are",
+              "to",
+              "her",
+              "you",
+              "stay"
+            ],
+            "answers": [
+              "Are you going to stay with her?"
+            ],
+            "explanation_zh": "Are + 主语 + going to + 动词原形？"
+          },
+          {
+            "id": "s08",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，说话人什么时候开始新工作？",
+            "audio_en": "I'm going to start a new job next week.",
+            "options": [
+              "下周",
+              "明天",
+              "这个周末"
+            ],
+            "answer": 0,
+            "explanation_zh": "next week = 下周。"
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：Lin 周六怎么去杭州？",
+            "options": [
+              "坐高铁",
+              "开车",
+              "坐飞机"
+            ],
+            "answer": 0,
+            "explanation_zh": "I'm going to take the fast train：坐高铁。"
+          },
+          {
+            "id": "s10",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "补全回答。",
+            "sentence_en": "\"What are you going to do this weekend?\" \"I ___ going to see a film.\"",
+            "translation_zh": "“你这周末打算做什么？”“我打算去看电影。”",
+            "answers": [
+              "am"
+            ],
+            "explanation_zh": "I + am + going to ...，口语里常缩写成 I'm。"
+          },
+          {
+            "id": "s11",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_en": "They ___ going to buy a car.",
+            "prompt_zh": "选出正确的词：",
+            "options": [
+              "is",
+              "are",
+              "am"
+            ],
+            "answer": 1,
+            "explanation_zh": "主语 they 用 are。"
+          }
+        ]
+      },
+      {
+        "id": "a2-u03-future-l2",
+        "order": 2,
+        "kind": "core",
+        "title_en": "I'll Do It!",
+        "title_zh": "我来！",
+        "estimated_minutes": 11,
+        "objectives": [
+          {
+            "en": "Use will for decisions made now and for offers.",
+            "zh": "能用 will 说当下的决定和主动提出的帮忙。"
+          },
+          {
+            "en": "Choose between be going to (planned) and will (decided now).",
+            "zh": "能区分 be going to（早有计划）和 will（现在才决定）。"
+          }
+        ],
+        "can_do_ids": [
+          "a2.gr.future",
+          "a2.si.plans"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "grammar",
+            "title_zh": "这节课学什么",
+            "body_zh": "朋友说“蛋糕还没着落呢”，你马上接一句“我来做！”——这种说话当下才做的决定、主动帮忙，英语用 will：I'll make one!。这节课学 will 的这种用法，并和上节课的 be going to 对比。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "A birthday dinner",
+            "instructions_zh": "先听。注意谁用了 going to，谁用了 I'll。",
+            "scene_zh": "Lin 和室友 Kate 在商量给朋友 Mia 过生日。",
+            "lines": [
+              {
+                "speaker": "Kate",
+                "en": "It's Mia's birthday on Friday. Are you going to do anything?",
+                "zh": "周五是 Mia 的生日。你打算做点什么吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Yes, I'm going to cook dinner for her. But I need a cake.",
+                "zh": "嗯，我打算给她做顿晚饭。不过还缺个蛋糕。"
+              },
+              {
+                "speaker": "Kate",
+                "en": "Don't worry. I'll make one! I love baking.",
+                "zh": "别担心，我来做！我很喜欢烘焙。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Really? Thanks! I'll buy the drinks, then.",
+                "zh": "真的吗？谢谢！那饮料我来买。"
+              },
+              {
+                "speaker": "Kate",
+                "en": "Should we invite Jack too?",
+                "zh": "要不要也请 Jack？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Good idea. I'll text him now.",
+                "zh": "好主意，我现在就给他发消息。"
+              },
+              {
+                "speaker": "Kate",
+                "en": "And I'll book a karaoke room for after dinner.",
+                "zh": "我再订个 KTV 包间，吃完饭去。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "i-will",
+              "invite",
+              "book",
+              "pick-up"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "teach",
+            "role": "teach",
+            "skill": "grammar",
+            "title_zh": "will：现在决定、主动帮忙",
+            "explanation_zh": "说话之前就打算好的事用 be going to；说话这一刻才决定的事、主动提出帮忙、答应别人，用 will。口语里 I will 几乎总说成 I'll。will 后面直接跟动词原形，所有人称都一样，不加 to，也不加 -s。否定是 won't（will not）。",
+            "pattern": "I'll + 动词原形：I'll make one. / I'll text him now.",
+            "examples": [
+              {
+                "en": "I'm going to cook dinner for her. (planned)",
+                "zh": "我打算给她做晚饭。（早就打算好）"
+              },
+              {
+                "en": "I'll buy the drinks, then. (decided now)",
+                "zh": "那饮料我来买。（当下决定）"
+              },
+              {
+                "en": "That bag looks heavy. I'll carry it.",
+                "zh": "那个包看着很重，我来拿吧。"
+              }
+            ],
+            "tips_zh": [
+              "听到 Don't worry、Good idea、then 后面接 I'll，通常是当场做决定。",
+              "won't 读作 /wəʊnt/，和 want 的读音不一样。"
+            ]
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_en": "\"This bag is really heavy.\"",
+            "prompt_zh": "朋友这么说，你想主动帮忙：",
+            "options": [
+              "I'll carry it for you.",
+              "I carried it for you tomorrow.",
+              "I carry it for you last night."
+            ],
+            "answer": 0,
+            "explanation_zh": "当下主动提出帮忙用 I'll + 动词原形。"
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_zh": "你上个月就决定暑假去云南，票也买好了。朋友问 What are your plans for the summer?，最合适的回答是：",
+            "options": [
+              "I'm going to travel to Yunnan.",
+              "I'll travel to Yunnan.",
+              "I travelled to Yunnan next summer."
+            ],
+            "answer": 0,
+            "explanation_zh": "早就决定好的计划用 be going to。I'll travel ... 听起来像是你刚刚才决定。"
+          },
+          {
+            "id": "s07",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "spoken_interaction",
+            "instructions_zh": "把朋友说的话和你的回应配对。",
+            "pairs": [
+              {
+                "left": "I'm cold.",
+                "right": "I'll close the window."
+              },
+              {
+                "left": "I'm hungry.",
+                "right": "I'll make you a sandwich."
+              },
+              {
+                "left": "The phone's ringing.",
+                "right": "I'll get it."
+              },
+              {
+                "left": "We need milk.",
+                "right": "I'll buy some on the way home."
+              }
+            ]
+          },
+          {
+            "id": "s08",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "Don't worry, I ___ help you.",
+            "translation_zh": "别担心，我会帮你的。",
+            "answers": [
+              "will"
+            ],
+            "explanation_zh": "答应别人用 will（口语常说 I'll help you）。"
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，说话人要买什么？",
+            "audio_en": "Thanks! I'll buy the drinks, then.",
+            "options": [
+              "饮料",
+              "蛋糕",
+              "鲜花"
+            ],
+            "answer": 0,
+            "explanation_zh": "I'll buy the drinks：饮料我来买。"
+          },
+          {
+            "id": "s10",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_interaction",
+            "task_zh": "朋友周六要搬家，事情很多。主动提出 3 种帮忙，每种都用 I'll ... 开头。",
+            "prompt_en": "I'm moving flat on Saturday and I have so much to do!",
+            "model_answers": [
+              "Don't worry, I'll help you! I'll bring some boxes on Friday. I'll pick you up at nine on Saturday. And I'll buy lunch for everyone."
+            ],
+            "checklist_zh": [
+              "至少 3 句 I'll + 动词原形",
+              "will 后面没有加 to",
+              "用了 Don't worry 或类似的话安慰对方"
+            ]
+          },
+          {
+            "id": "s11",
+            "type": "order",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "排成句子。",
+            "translation_zh": "我晚点给你发消息。",
+            "tokens": [
+              "text",
+              "later",
+              "I'll",
+              "you"
+            ],
+            "answers": [
+              "I'll text you later."
+            ],
+            "explanation_zh": "I'll + 动词原形 + 宾语 + 时间。"
+          },
+          {
+            "id": "s12",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "listening",
+            "prompt_zh": "回想对话：谁来做蛋糕？",
+            "options": [
+              "Kate",
+              "Lin",
+              "Jack"
+            ],
+            "answer": 0,
+            "explanation_zh": "Kate 说 I'll make one! I love baking."
+          }
+        ]
+      },
+      {
+        "id": "a2-u03-future-l3",
+        "order": 3,
+        "kind": "core",
+        "title_en": "It'll Probably Rain",
+        "title_zh": "很可能会下雨",
+        "estimated_minutes": 12,
+        "objectives": [
+          {
+            "en": "Make predictions with will, probably and I think.",
+            "zh": "能用 will、probably、I think 对将来做预测。"
+          },
+          {
+            "en": "Use be going to when you can see something is about to happen.",
+            "zh": "能在看到眼前的迹象时用 be going to 做判断。"
+          }
+        ],
+        "can_do_ids": [
+          "a2.gr.future",
+          "a2.l.plans",
+          "a2.wi.email"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "grammar",
+            "title_zh": "这节课学什么",
+            "body_zh": "约人出去玩，总要先看看天气。对将来的看法和猜测，英语常用 will，再加上 probably（很可能）、I think（我觉得）让语气更自然。要是已经看到乌云压顶，就用 be going to：It's going to rain!"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Picnic on Sunday?",
+            "instructions_zh": "先听。注意他们对天气的猜测。",
+            "scene_zh": "Lin 和 Sam 在公园散步，商量周末去野餐。",
+            "lines": [
+              {
+                "speaker": "Sam",
+                "en": "Let's have a picnic here on Sunday.",
+                "zh": "我们周日来这儿野餐吧。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Hmm. The forecast says it'll rain on Sunday.",
+                "zh": "嗯……天气预报说周日会下雨。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Really? I think it'll be fine in the afternoon.",
+                "zh": "真的吗？我觉得下午会好的。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Maybe. But it'll probably be cold.",
+                "zh": "也许吧。但很可能会冷。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "OK, let's go on Saturday, then. Saturday will be sunny.",
+                "zh": "好吧，那就周六去。周六会是晴天。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Great. Oh, look at those dark clouds! It's going to rain now.",
+                "zh": "太好了。哎，看那些乌云！马上要下雨了。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Quick, let's go inside!",
+                "zh": "快，我们进去吧！"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "forecast",
+              "probably",
+              "maybe"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "notice",
+            "role": "notice",
+            "skill": "grammar",
+            "question_zh": "哪些句子是“我觉得会……”，哪一句是“眼看就要……”？",
+            "examples": [
+              {
+                "en": "I think it'll be fine in the afternoon.",
+                "zh": "我觉得下午会好的。",
+                "highlight": [
+                  "I think",
+                  "'ll be"
+                ]
+              },
+              {
+                "en": "It'll probably be cold.",
+                "zh": "很可能会冷。",
+                "highlight": [
+                  "'ll probably be"
+                ]
+              },
+              {
+                "en": "I don't think it'll rain.",
+                "zh": "我觉得不会下雨。",
+                "highlight": [
+                  "don't think",
+                  "'ll rain"
+                ]
+              },
+              {
+                "en": "Look at those clouds! It's going to rain.",
+                "zh": "看那些云！要下雨了。",
+                "highlight": [
+                  "going to rain"
+                ]
+              }
+            ],
+            "takeaway_zh": "预测和看法用 will（常和 I think、probably 一起）。probably 放在 will 后面、won't 前面：It'll probably rain. / It probably won't rain.。“我觉得不会”英语习惯说 I don't think it'll ...。已经看到眼前的迹象时，用 be going to。"
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_en": "I think she ___ the job.",
+            "prompt_zh": "选出正确的形式：",
+            "options": [
+              "will get",
+              "gets yesterday",
+              "going to gets"
+            ],
+            "answer": 0,
+            "explanation_zh": "I think + will + 动词原形：表示看法和预测。"
+          },
+          {
+            "id": "s06",
+            "type": "cloze",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "It ___ probably be cold tomorrow.",
+            "translation_zh": "明天很可能会冷。",
+            "answers": [
+              "will"
+            ],
+            "explanation_zh": "will + probably + 动词原形，也可以缩写成 It'll probably be cold."
+          },
+          {
+            "id": "s07",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "prompt_en": "Look at the sky! It ___ rain.",
+            "prompt_zh": "天已经全黑了，乌云密布。选出最合适的：",
+            "options": [
+              "is going to",
+              "goes to",
+              "will probably to"
+            ],
+            "answer": 0,
+            "explanation_zh": "看到眼前的迹象做判断，用 be going to。"
+          },
+          {
+            "id": "s08",
+            "type": "order",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "排成句子。",
+            "translation_zh": "我觉得不会下雨。",
+            "tokens": [
+              "think",
+              "rain",
+              "I",
+              "it'll",
+              "don't"
+            ],
+            "answers": [
+              "I don't think it'll rain."
+            ],
+            "explanation_zh": "英语习惯把否定放在 think 上：I don't think it'll ..."
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，明天天气怎么样？",
+            "audio_en": "The forecast says it'll be windy and cold tomorrow.",
+            "options": [
+              "有风，很冷",
+              "晴朗，暖和",
+              "会下雪"
+            ],
+            "answer": 0,
+            "explanation_zh": "windy and cold：有风，很冷。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：他们最后决定哪天去野餐？",
+            "options": [
+              "周六",
+              "周日",
+              "不去了"
+            ],
+            "answer": 0,
+            "explanation_zh": "let's go on Saturday, then. Saturday will be sunny."
+          },
+          {
+            "id": "s11",
+            "type": "write",
+            "role": "communicative_task",
+            "skill": "written_interaction",
+            "task_zh": "给朋友写一条消息（4–5 句），约她周末一起做一件事：说你的计划（be going to），说说你对天气或人多不多的预测（will / probably），最后问她要不要来。",
+            "model_answers": [
+              "Hi Anna! I'm going to walk up Purple Mountain on Saturday morning. The forecast says it'll be sunny, but it'll probably be busy, so I'm going to leave early. Do you want to come with me?"
+            ],
+            "checklist_zh": [
+              "至少一句 be going to 说计划",
+              "至少一句 will / probably 做预测",
+              "will 和 going to 后面都是动词原形",
+              "最后有一个邀请的问题"
+            ]
+          },
+          {
+            "id": "s12",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "I don't think he ___ come.",
+            "translation_zh": "我觉得他不会来。",
+            "answers": [
+              "will"
+            ],
+            "explanation_zh": "I don't think + 主语 + will + 动词原形。"
+          },
+          {
+            "id": "s13",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_zh": "哪一句是对的？",
+            "options": [
+              "It will rains tomorrow.",
+              "It will rain tomorrow.",
+              "It wills rain tomorrow."
+            ],
+            "answer": 1,
+            "explanation_zh": "will 后面用动词原形，will 本身也不加 -s。"
+          }
+        ]
+      },
+      {
+        "id": "a2-u03-future-l4",
+        "order": 4,
+        "kind": "review",
+        "title_en": "Unit Review: Making Plans",
+        "title_zh": "单元复习：约个时间",
+        "estimated_minutes": 12,
+        "objectives": [
+          {
+            "en": "Understand times and arrangements in a phone call.",
+            "zh": "能听懂电话里的时间和安排。"
+          },
+          {
+            "en": "Make an arrangement with a friend using going to and will.",
+            "zh": "能用 going to 和 will 和朋友约好一件事。"
+          }
+        ],
+        "can_do_ids": [
+          "a2.si.plans",
+          "a2.l.plans",
+          "a2.gr.future",
+          "a2.l.conversations"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "listening",
+            "title_zh": "单元复习",
+            "body_zh": "先听 Lin 和 Mia 打电话约周六，抓住时间和谁负责什么；然后分清 going to 和 will 的用法；最后轮到你约朋友。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Are you free on Saturday?",
+            "instructions_zh": "听两遍。注意时间和谁要做什么。",
+            "scene_zh": "周四晚上，Mia 给 Lin 打电话。",
+            "lines": [
+              {
+                "speaker": "Mia",
+                "en": "Hi Lin! Are you free on Saturday?",
+                "zh": "嗨 Lin！你周六有空吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "In the morning I'm going to help my mum. But I'm free after two.",
+                "zh": "上午我要帮我妈做事，不过两点以后有空。"
+              },
+              {
+                "speaker": "Mia",
+                "en": "Great. There's a new art show in the city centre. Do you want to come?",
+                "zh": "太好了。市中心有个新的艺术展，你想去吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "I'd love to. How are we going to get there?",
+                "zh": "很想去。我们怎么去？"
+              },
+              {
+                "speaker": "Mia",
+                "en": "I'll drive. I'll pick you up at half past two.",
+                "zh": "我开车，两点半来接你。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Perfect. Will it be busy?",
+                "zh": "太好了。人会多吗？"
+              },
+              {
+                "speaker": "Mia",
+                "en": "Probably. It's the first weekend. I'll book tickets online tonight.",
+                "zh": "很可能会，这是第一个周末。我今晚在网上订票。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Thanks! I'll buy us coffee after the show.",
+                "zh": "谢谢！看完展我请你喝咖啡。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "Lin 周六上午要做什么？",
+            "options": [
+              "帮妈妈做事",
+              "去看展",
+              "上班"
+            ],
+            "answer": 0,
+            "explanation_zh": "In the morning I'm going to help my mum."
+          },
+          {
+            "id": "s04",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "Mia 几点来接 Lin？",
+            "options": [
+              "两点",
+              "两点半",
+              "三点半"
+            ],
+            "answer": 1,
+            "explanation_zh": "half past two = 两点半。"
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，Mia 今晚要做什么？",
+            "audio_en": "I'll book tickets online tonight.",
+            "options": [
+              "在网上订票",
+              "买咖啡",
+              "去看展"
+            ],
+            "answer": 0,
+            "explanation_zh": "book tickets online：在网上订票。"
+          },
+          {
+            "id": "s06",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "这些句子分别是哪种用法？",
+            "pairs": [
+              {
+                "left": "I'm going to help my mum.",
+                "right": "早就定好的计划"
+              },
+              {
+                "left": "I'll drive.",
+                "right": "当下决定或主动提出"
+              },
+              {
+                "left": "It'll probably be busy.",
+                "right": "对将来的猜测"
+              },
+              {
+                "left": "Look at the clouds! It's going to rain.",
+                "right": "根据眼前的迹象判断"
+              }
+            ]
+          },
+          {
+            "id": "s07",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "补全问句。",
+            "sentence_en": "How ___ we going to get there?",
+            "translation_zh": "我们打算怎么去？",
+            "answers": [
+              "are"
+            ],
+            "explanation_zh": "主语 we 用 are：How are we going to ...?"
+          },
+          {
+            "id": "s08",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_interaction",
+            "task_zh": "朋友问你这个周末做什么。说说你的计划（going to），约对方一起做一件事，主动提出负责一部分（I'll ...），再猜一猜天气或人多不多（will / probably）。",
+            "prompt_en": "Hey, what are you doing this weekend?",
+            "model_answers": [
+              "I'm going to visit the new bookshop on Sunday. Do you want to come? I'll pick you up at ten. It'll probably be busy, so let's go early."
+            ],
+            "checklist_zh": [
+              "用 going to 说了计划",
+              "发出了邀请（Do you want to come?）",
+              "用 I'll 主动提出做一件事",
+              "用 will / probably 做了一个预测"
+            ]
+          },
+          {
+            "id": "s09",
+            "type": "write",
+            "role": "communicative_task",
+            "skill": "written_interaction",
+            "task_zh": "朋友发邮件请你周六去她家吃饭。写一封简短的回信（3–4 句）：接受邀请，说你会带什么（I'll bring ...），并问一个关于时间或地点的问题。",
+            "model_answers": [
+              "Hi Jenny, thanks for the invitation! I'd love to come on Saturday. I'll bring a dessert. What time are you going to start dinner?"
+            ],
+            "checklist_zh": [
+              "感谢并接受了邀请",
+              "用 I'll bring ... 说你会带什么",
+              "问了一个关于时间或地点的问题",
+              "有开头称呼"
+            ]
+          },
+          {
+            "id": "s10",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "I think the show ___ be great.",
+            "translation_zh": "我觉得展览会很棒。",
+            "answers": [
+              "will"
+            ],
+            "explanation_zh": "I think + will：表示看法和预测。"
+          },
+          {
+            "id": "s11",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_en": "\"Oh no, I left my wallet at home!\"",
+            "prompt_zh": "朋友没带钱包，你最自然的回应是：",
+            "options": [
+              "Don't worry, I'll pay.",
+              "Don't worry, I'm paying yesterday.",
+              "Don't worry, I pay last week."
+            ],
+            "answer": 0,
+            "explanation_zh": "当场主动提出帮忙：I'll pay."
+          }
+        ]
+      }
+    ]
+  }
+}

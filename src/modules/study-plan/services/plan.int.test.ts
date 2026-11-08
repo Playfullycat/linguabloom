@@ -161,7 +161,9 @@ describe("today plan", () => {
     await completeAssessment(db, userA, sessionId);
     const plan = await getTodayPlan(db, userA);
     const lesson = plan.tasks.find((t) => t.kind === "lesson")!;
-    expect(lesson.href).toMatch(/^\/lesson\/a1-/);
+    // Every vocabulary and grammar item was answered correctly, so the estimate is B1,
+    // and since 5.1 there are published B1 units to start from.
+    expect(lesson.href).toBe("/lesson/b1-u02-conditionals-l1");
     expect(lesson.reason).toContain("初步估计");
   });
 

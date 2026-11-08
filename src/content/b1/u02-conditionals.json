@@ -1,0 +1,1248 @@
+{
+  "content_schema_version": 1,
+  "source_type": "first_party",
+  "review_status": "pending_owner_review",
+  "unit": {
+    "id": "b1-u02-conditionals",
+    "level": "b1",
+    "order": 2,
+    "status": "published",
+    "title_en": "If...",
+    "title_zh": "如果……",
+    "summary_zh": "三种最常用的条件句：总是成立的规律（零条件句）、很可能发生的将来（第一条件句）、想象中的情况（第二条件句）。学完后，你能给出带条件的建议，也能聊“如果……你会怎么做”。",
+    "can_do": [
+      {
+        "id": "b1.gr.conditionals",
+        "skill": "grammar",
+        "en": "Can use zero, first and second conditionals to talk about facts, likely results and imaginary situations.",
+        "zh": "能用零条件句、第一和第二条件句谈论规律、可能的结果和想象的情况。"
+      },
+      {
+        "id": "b1.si.hypothetical",
+        "skill": "spoken_interaction",
+        "en": "Can discuss what they would do in an imaginary situation and give reasons.",
+        "zh": "能讨论在想象的情况下自己会怎么做，并说明理由。"
+      },
+      {
+        "id": "b1.l.conditions",
+        "skill": "listening",
+        "en": "Can follow advice, warnings and plans that depend on a condition.",
+        "zh": "能听懂带条件的建议、提醒和计划。"
+      }
+    ],
+    "grammar_points": [
+      {
+        "id": "b1.conditionals",
+        "title_en": "Zero, first and second conditionals",
+        "title_zh": "零条件句、第一和第二条件句",
+        "pattern": "Zero: If you heat ice, it melts.\nFirst: If it rains, we'll stay in.\nSecond: If I won the lottery, I'd quit my job.",
+        "explanation_zh": "零条件句（If + 现在时, 现在时）说总是成立的事实和规律。第一条件句（If + 现在时, will + 动词原形）说将来很可能发生的情况和结果，if 从句里不用 will。第二条件句（If + 过去时, would + 动词原形）说现在或将来不真实、不太可能的情况，虽然用了过去式，说的却不是过去。If I were you, I'd ... 是给建议的固定说法。",
+        "examples": [
+          {
+            "en": "If you leave the screen on, the battery dies quickly.",
+            "zh": "屏幕一直开着，电池就掉得快。"
+          },
+          {
+            "en": "If I get the job, I'll buy you dinner.",
+            "zh": "如果我拿到这份工作，就请你吃饭。"
+          },
+          {
+            "en": "If I had more time, I'd learn the piano.",
+            "zh": "要是我有更多时间，我会学钢琴。"
+          }
+        ],
+        "common_errors": [
+          {
+            "wrong": "If it will rain, we'll stay in.",
+            "right": "If it rains, we'll stay in.",
+            "why_zh": "第一条件句的 if 从句用现在时表示将来，不用 will。"
+          },
+          {
+            "wrong": "If I would have time, I'd help.",
+            "right": "If I had time, I'd help.",
+            "why_zh": "第二条件句的 if 从句用过去式，would 只放在结果部分。"
+          },
+          {
+            "wrong": "If I won the lottery, I will travel.",
+            "right": "If I won the lottery, I'd travel.",
+            "why_zh": "想象的情况，结果部分用 would，不用 will。"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "key": "battery",
+        "text": "battery",
+        "pos": "noun",
+        "ipa": "/ˈbætəri/",
+        "zh": "电池",
+        "example_en": "My phone battery is low.",
+        "example_zh": "我手机快没电了。"
+      },
+      {
+        "key": "run-out",
+        "text": "run out",
+        "pos": "phrasal verb",
+        "ipa": "/rʌn ˈaʊt/",
+        "zh": "用完；耗尽",
+        "example_en": "The battery runs out so fast.",
+        "example_zh": "电池耗得太快了。"
+      },
+      {
+        "key": "charge",
+        "text": "charge",
+        "pos": "verb",
+        "ipa": "/tʃɑːdʒ/",
+        "zh": "充电",
+        "example_en": "I charge my phone overnight.",
+        "example_zh": "我晚上给手机充电。"
+      },
+      {
+        "key": "melt",
+        "text": "melt",
+        "pos": "verb",
+        "ipa": "/melt/",
+        "zh": "融化",
+        "example_en": "If you heat ice, it melts.",
+        "example_zh": "冰受热就会融化。"
+      },
+      {
+        "key": "freeze",
+        "text": "freeze",
+        "pos": "verb",
+        "ipa": "/friːz/",
+        "zh": "结冰；冻住",
+        "example_en": "Water freezes at zero degrees.",
+        "example_zh": "水在零度结冰。"
+      },
+      {
+        "key": "prepare",
+        "text": "prepare",
+        "pos": "verb",
+        "ipa": "/prɪˈpeə/",
+        "zh": "准备",
+        "example_en": "You'll be fine if you prepare.",
+        "example_zh": "准备好了就没问题。"
+      },
+      {
+        "key": "unless",
+        "text": "unless",
+        "pos": "conjunction",
+        "ipa": "/ənˈles/",
+        "zh": "除非；如果不",
+        "example_en": "Unless you hurry, you'll miss the bus.",
+        "example_zh": "你不快点就会错过公交。"
+      },
+      {
+        "key": "as-soon-as",
+        "text": "as soon as",
+        "pos": "conjunction",
+        "ipa": "/əz ˈsuːn əz/",
+        "zh": "一……就……",
+        "example_en": "Text me as soon as you finish.",
+        "example_zh": "一结束就给我发消息。"
+      },
+      {
+        "key": "weakness",
+        "text": "weakness",
+        "pos": "noun",
+        "ipa": "/ˈwiːknəs/",
+        "zh": "弱点；不足",
+        "example_en": "What's your biggest weakness?",
+        "example_zh": "你最大的不足是什么？"
+      },
+      {
+        "key": "win-the-lottery",
+        "text": "win the lottery",
+        "pos": "phrase",
+        "ipa": "/wɪn ðə ˈlɒtəri/",
+        "zh": "中彩票",
+        "example_en": "If I won the lottery, I'd travel.",
+        "example_zh": "要是我中了彩票，我会去旅行。"
+      },
+      {
+        "key": "quit",
+        "text": "quit",
+        "pos": "verb",
+        "ipa": "/kwɪt/",
+        "zh": "辞（职）；放弃",
+        "example_en": "She quit her job last year.",
+        "example_zh": "她去年辞职了。"
+      },
+      {
+        "key": "afford",
+        "text": "afford",
+        "pos": "verb",
+        "ipa": "/əˈfɔːd/",
+        "zh": "买得起；负担得起",
+        "example_en": "I can't afford a car right now.",
+        "example_zh": "我现在买不起车。"
+      },
+      {
+        "key": "if-i-were-you",
+        "text": "If I were you, I'd ...",
+        "pos": "phrase",
+        "ipa": "/ɪf aɪ wɜː juː aɪd/",
+        "zh": "如果我是你，我会……（给建议）",
+        "example_en": "If I were you, I'd talk to your manager.",
+        "example_zh": "如果我是你，我会先和经理谈谈。"
+      }
+    ],
+    "lessons": [
+      {
+        "id": "b1-u02-conditionals-l1",
+        "order": 1,
+        "kind": "core",
+        "title_en": "If You Heat Ice...",
+        "title_zh": "规律与事实",
+        "estimated_minutes": 11,
+        "objectives": [
+          {
+            "en": "Use the zero conditional for facts and things that always happen.",
+            "zh": "能用零条件句说事实和总会发生的事。"
+          },
+          {
+            "en": "Understand simple cause-and-result explanations.",
+            "zh": "能听懂简单的“如果……就……”的原因和结果说明。"
+          }
+        ],
+        "can_do_ids": [
+          "b1.gr.conditionals",
+          "b1.l.conditions"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "grammar",
+            "title_zh": "这节课学什么",
+            "body_zh": "“冰一加热就会化”“手机一冷就关机”——这类每次都成立的规律，英语用零条件句：If + 现在时, 现在时。这里的 if 意思接近 when（每当）。这节课从一段关于手机电池的对话开始。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "My battery runs out so fast",
+            "instructions_zh": "先听。注意每个 if 句子里两部分用的都是什么时态。",
+            "scene_zh": "午休时，Lin 向懂技术的同事 Sam 抱怨手机。",
+            "lines": [
+              {
+                "speaker": "Lin",
+                "en": "My phone battery runs out so fast these days.",
+                "zh": "我手机最近电池掉得特别快。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "If you leave the screen on all day, the battery dies quickly.",
+                "zh": "屏幕要是一整天开着，电池就掉得快。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "I know, but I need it for work.",
+                "zh": "我知道，可我工作要用。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Try this. If you turn on battery saver, the phone uses less power.",
+                "zh": "试试这个。打开省电模式，手机就耗电少。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "And what happens if I charge it overnight?",
+                "zh": "那我整晚充电会怎么样？"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Nothing bad, usually. If it reaches a hundred percent, it stops charging.",
+                "zh": "一般没事。充到百分之百它就停止充电了。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Good. Oh, and if it gets really cold, it switches off. That happened to me in Harbin!",
+                "zh": "好。对了，天特别冷时它会关机。我在哈尔滨就遇到过！"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Yes, batteries don't like the cold. If you keep it in your pocket, it stays warm.",
+                "zh": "对，电池怕冷。放在口袋里就能保暖。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "battery",
+              "run-out",
+              "charge",
+              "melt",
+              "freeze"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "notice",
+            "role": "notice",
+            "skill": "grammar",
+            "question_zh": "这些句子说的是某一次，还是每次都这样？两部分各用了什么时态？",
+            "examples": [
+              {
+                "en": "If you heat ice, it melts.",
+                "zh": "冰受热就会融化。",
+                "highlight": [
+                  "heat",
+                  "melts"
+                ]
+              },
+              {
+                "en": "If water reaches zero degrees, it freezes.",
+                "zh": "水到零度就会结冰。",
+                "highlight": [
+                  "reaches",
+                  "freezes"
+                ]
+              },
+              {
+                "en": "If it gets really cold, my phone switches off.",
+                "zh": "天一很冷，我的手机就关机。",
+                "highlight": [
+                  "gets",
+                  "switches off"
+                ]
+              },
+              {
+                "en": "When I drink coffee late, I can't sleep.",
+                "zh": "我一晚喝咖啡就睡不着。",
+                "highlight": [
+                  "When",
+                  "drink",
+                  "can't sleep"
+                ]
+              }
+            ],
+            "takeaway_zh": "零条件句：If + 一般现在时, 一般现在时。说的是每次都成立的规律，所以 if 常可以换成 when。if 从句可以放前面（后面加逗号），也可以放后面（不加逗号）：It melts if you heat it."
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_en": "If you mix red and blue, you ___ purple.",
+            "prompt_zh": "选出正确的形式：",
+            "options": [
+              "get",
+              "will got",
+              "got"
+            ],
+            "answer": 0,
+            "explanation_zh": "总是成立的规律，两部分都用一般现在时。"
+          },
+          {
+            "id": "s06",
+            "type": "cloze",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "instructions_zh": "用括号里的动词补全句子。",
+            "sentence_en": "If water ___ (reach) zero degrees, it freezes.",
+            "translation_zh": "水到零度就会结冰。",
+            "answers": [
+              "reaches"
+            ],
+            "explanation_zh": "一般现在时，主语 water 是第三人称单数，reach 加 -es。"
+          },
+          {
+            "id": "s07",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "把条件和结果配对。",
+            "pairs": [
+              {
+                "left": "If you heat ice,",
+                "right": "it melts."
+              },
+              {
+                "left": "If you don't water plants,",
+                "right": "they die."
+              },
+              {
+                "left": "If you press this button,",
+                "right": "the machine stops."
+              },
+              {
+                "left": "If I drink coffee late,",
+                "right": "I can't sleep."
+              }
+            ]
+          },
+          {
+            "id": "s08",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，什么情况下电池掉得快？",
+            "audio_en": "If you leave the screen on all day, the battery dies quickly.",
+            "options": [
+              "屏幕一整天开着",
+              "整晚充电",
+              "天气很冷"
+            ],
+            "answer": 0,
+            "explanation_zh": "leave the screen on all day：屏幕一整天开着。"
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：手机充到百分之百会怎样？",
+            "options": [
+              "自动停止充电",
+              "电池会坏",
+              "手机会发烫"
+            ],
+            "answer": 0,
+            "explanation_zh": "If it reaches a hundred percent, it stops charging."
+          },
+          {
+            "id": "s10",
+            "type": "order",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "排成句子。",
+            "translation_zh": "我一吃得晚就睡不好。",
+            "tokens": [
+              "If",
+              "I",
+              "eat",
+              "late,",
+              "I",
+              "sleep",
+              "badly."
+            ],
+            "answers": [
+              "If I eat late, I sleep badly.",
+              "I sleep badly if I eat late."
+            ],
+            "explanation_zh": "If + 现在时, 现在时。if 从句放后面时不加逗号。"
+          },
+          {
+            "id": "s11",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "用括号里的提示补全句子。",
+            "sentence_en": "If you ___ (not / charge) it, the battery dies.",
+            "translation_zh": "你不充电，电池就会没电。",
+            "answers": [
+              "don't charge",
+              "do not charge"
+            ],
+            "explanation_zh": "一般现在时的否定：don't + 动词原形。"
+          },
+          {
+            "id": "s12",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_zh": "哪一句说的是一个普遍规律，而且形式正确？",
+            "options": [
+              "If you heat metal, it expands.",
+              "If you heat metal, it expanded.",
+              "If you heated metal, it expands."
+            ],
+            "answer": 0,
+            "explanation_zh": "规律用零条件句，两部分都用一般现在时。"
+          }
+        ]
+      },
+      {
+        "id": "b1-u02-conditionals-l2",
+        "order": 2,
+        "kind": "core",
+        "title_en": "If I Get the Job...",
+        "title_zh": "如果我拿到这份工作……",
+        "estimated_minutes": 12,
+        "objectives": [
+          {
+            "en": "Use the first conditional for likely future results.",
+            "zh": "能用第一条件句说将来可能的结果。"
+          },
+          {
+            "en": "Use unless and as soon as about the future.",
+            "zh": "能用 unless 和 as soon as 谈将来。"
+          }
+        ],
+        "can_do_ids": [
+          "b1.gr.conditionals",
+          "b1.l.conditions",
+          "b1.si.hypothetical"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "grammar",
+            "title_zh": "这节课学什么",
+            "body_zh": "明天要面试，朋友给你打气：“准备好了就不会有问题”“拿到工作就请你吃饭”。这些是将来很可能发生的情况和结果，英语用第一条件句：If + 现在时, will + 动词原形。中文学习者最容易犯的错，是在 if 后面也加 will。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "The night before the interview",
+            "instructions_zh": "先听。注意 if 和 unless 后面用的是什么时态。",
+            "scene_zh": "面试前一天晚上，Lin 和朋友 Mia 打视频电话。",
+            "lines": [
+              {
+                "speaker": "Mia",
+                "en": "Your interview is tomorrow, right? Are you nervous?",
+                "zh": "你明天面试，对吧？紧张吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "A bit. If I don't sleep well tonight, I'll be terrible.",
+                "zh": "有点。要是今晚睡不好，我明天肯定表现很糟。"
+              },
+              {
+                "speaker": "Mia",
+                "en": "You'll be fine if you prepare a few answers now.",
+                "zh": "现在准备几个回答，你就没问题。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "OK. What if they ask about my weaknesses?",
+                "zh": "好。那他们要是问我的不足呢？"
+              },
+              {
+                "speaker": "Mia",
+                "en": "Be honest, but give an example. If you show you're improving, they'll like it.",
+                "zh": "诚实说，但要举个例子。你要是表现出自己在进步，他们会喜欢的。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Good advice. And unless the trains are late, I'll get there early.",
+                "zh": "好建议。只要火车不晚点，我会早点到。"
+              },
+              {
+                "speaker": "Mia",
+                "en": "Great. Text me as soon as you finish!",
+                "zh": "很好。一结束就给我发消息！"
+              },
+              {
+                "speaker": "Lin",
+                "en": "I will. If I get the job, I'll buy you dinner.",
+                "zh": "一定。要是拿到工作，我请你吃饭。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "prepare",
+              "weakness",
+              "unless",
+              "as-soon-as"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "teach",
+            "role": "teach",
+            "skill": "grammar",
+            "title_zh": "第一条件句：可能的将来",
+            "explanation_zh": "第一条件句说将来很可能发生的情况和它的结果：If + 一般现在时, will + 动词原形。虽然说的是将来，if 从句里也用一般现在时，will 只出现在结果部分。unless 的意思是“如果不”：Unless you hurry = If you don't hurry。as soon as（一……就……）、when 后面说将来时，也用一般现在时。",
+            "pattern": "If + 一般现在时, will + 动词原形\nUnless / As soon as / When + 一般现在时, will + 动词原形",
+            "examples": [
+              {
+                "en": "If it rains tomorrow, we'll stay at home.",
+                "zh": "明天要是下雨，我们就待在家。"
+              },
+              {
+                "en": "Unless you hurry, you'll miss the bus.",
+                "zh": "你不快点就会错过公交。"
+              },
+              {
+                "en": "I'll call you as soon as I arrive.",
+                "zh": "我一到就给你打电话。"
+              }
+            ],
+            "tips_zh": [
+              "中文“明天要是下雨”里没有“将要”的标记，英语 if 从句也一样，不加 will。",
+              "unless 本身已经有否定意思，后面通常不再用 not。"
+            ]
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_en": "If it ___ tomorrow, we'll stay at home.",
+            "prompt_zh": "选出正确的形式：",
+            "options": [
+              "rains",
+              "will rain",
+              "rained"
+            ],
+            "answer": 0,
+            "explanation_zh": "if 从句用一般现在时表示将来，不用 will。"
+          },
+          {
+            "id": "s06",
+            "type": "cloze",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "instructions_zh": "用括号里的动词补全句子。",
+            "sentence_en": "If you leave now, you ___ (catch) the train.",
+            "translation_zh": "你现在走就能赶上火车。",
+            "answers": [
+              "will catch"
+            ],
+            "explanation_zh": "结果部分用 will + 动词原形（口语里常缩写成 you'll catch）。"
+          },
+          {
+            "id": "s07",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "prompt_en": "Unless you hurry, you'll miss the bus.",
+            "prompt_zh": "这句话的意思是：",
+            "options": [
+              "你如果不快点，就会错过公交",
+              "你如果快点，就会错过公交",
+              "你快不快都会错过公交"
+            ],
+            "answer": 0,
+            "explanation_zh": "unless = if ... not：Unless you hurry = If you don't hurry。"
+          },
+          {
+            "id": "s08",
+            "type": "order",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "排成句子。",
+            "translation_zh": "我一到就给你打电话。",
+            "tokens": [
+              "as",
+              "I'll",
+              "arrive.",
+              "you",
+              "soon",
+              "as",
+              "I",
+              "call"
+            ],
+            "answers": [
+              "I'll call you as soon as I arrive.",
+              "As soon as I arrive, I'll call you."
+            ],
+            "explanation_zh": "as soon as 后面用一般现在时 arrive，不用 will arrive。"
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，什么情况下说话人会晚到？",
+            "audio_en": "Unless the trains are late, I'll get there early.",
+            "options": [
+              "火车晚点的时候",
+              "火车准点的时候",
+              "她睡过头的时候"
+            ],
+            "answer": 0,
+            "explanation_zh": "只要火车不晚点就会早到，所以只有火车晚点时她才会晚到。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：Lin 拿到工作后会做什么？",
+            "options": [
+              "请 Mia 吃饭",
+              "去旅行",
+              "早点去上班"
+            ],
+            "answer": 0,
+            "explanation_zh": "If I get the job, I'll buy you dinner."
+          },
+          {
+            "id": "s11",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_interaction",
+            "task_zh": "朋友明天要考驾照，很紧张。给他建议和鼓励：至少用 3 个 If ..., ... will ... 句子和 1 个 unless 句子。",
+            "prompt_en": "I've got my driving test tomorrow and I'm so nervous.",
+            "model_answers": [
+              "Don't worry! If you go to bed early, you'll feel fresh tomorrow. If you drive slowly and check your mirrors, you'll be fine. Unless you panic, you'll pass. And if you pass, we'll celebrate!"
+            ],
+            "checklist_zh": [
+              "至少 3 个第一条件句",
+              "if 和 unless 后面没有用 will",
+              "用了一次 unless",
+              "语气是鼓励的"
+            ]
+          },
+          {
+            "id": "s12",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "We won't go out ___ the rain stops.",
+            "translation_zh": "除非雨停了，否则我们不出去。",
+            "answers": [
+              "unless"
+            ],
+            "explanation_zh": "unless = if ... not：如果雨不停，我们就不出去。"
+          },
+          {
+            "id": "s13",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_zh": "哪一句是对的？",
+            "options": [
+              "If you will come, I'll cook.",
+              "If you come, I'll cook.",
+              "If you come, I cook tomorrow."
+            ],
+            "answer": 1,
+            "explanation_zh": "If + 现在时, will + 动词原形。"
+          }
+        ]
+      },
+      {
+        "id": "b1-u02-conditionals-l3",
+        "order": 3,
+        "kind": "core",
+        "title_en": "If I Won the Lottery...",
+        "title_zh": "要是我中了彩票……",
+        "estimated_minutes": 13,
+        "objectives": [
+          {
+            "en": "Use the second conditional for imaginary or unlikely situations.",
+            "zh": "能用第二条件句说想象的或不太可能的情况。"
+          },
+          {
+            "en": "Give advice with If I were you, I'd ...",
+            "zh": "能用 If I were you, I'd ... 给建议。"
+          }
+        ],
+        "can_do_ids": [
+          "b1.gr.conditionals",
+          "b1.si.hypothetical",
+          "b1.wp.argument"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "grammar",
+            "title_zh": "这节课学什么",
+            "body_zh": "“要是我中了五千万……”这种想象中、不太可能的情况，英语用第二条件句：If + 过去式, would + 动词原形。用过去式不是因为说过去，而是表示“和现实有距离”。这节课还学一个给建议的好用句型：If I were you, I'd ..."
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "What would you do?",
+            "instructions_zh": "先听。注意 If 后面的动词和 I'd。",
+            "scene_zh": "午饭时，Sam 看到一条新闻。",
+            "lines": [
+              {
+                "speaker": "Sam",
+                "en": "Did you see the news? Someone in our city won fifty million yuan.",
+                "zh": "看新闻了吗？我们市有人中了五千万。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Wow. If I won that much, I'd quit my job tomorrow.",
+                "zh": "哇。要是我中那么多，明天就辞职。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Really? I wouldn't. I'd get bored at home.",
+                "zh": "真的吗？我不会，在家我会无聊的。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Not me! I'd travel around the world for a year.",
+                "zh": "我不会！我会环游世界一年。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Well, I'd buy a flat. I can't afford one at the moment.",
+                "zh": "嗯，我会买套房，我现在买不起。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Seriously, though, I'm thinking about changing jobs.",
+                "zh": "说正经的，我在考虑换工作。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "If I were you, I'd talk to your manager first.",
+                "zh": "如果我是你，我会先和经理谈谈。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Good point. I'd feel bad if I left without telling her.",
+                "zh": "有道理。要是一声不吭就走，我会过意不去。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "win-the-lottery",
+              "quit",
+              "afford",
+              "if-i-were-you"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "notice",
+            "role": "notice",
+            "skill": "grammar",
+            "question_zh": "这些事真的发生了吗？If 后面是什么时态？结果部分用了哪个词？",
+            "examples": [
+              {
+                "en": "If I won that much, I'd quit my job.",
+                "zh": "要是我中那么多，我就辞职。",
+                "highlight": [
+                  "won",
+                  "'d quit"
+                ]
+              },
+              {
+                "en": "If I had more time, I would learn the piano.",
+                "zh": "要是我有更多时间，我会学钢琴。",
+                "highlight": [
+                  "had",
+                  "would learn"
+                ]
+              },
+              {
+                "en": "If I were you, I'd talk to your manager.",
+                "zh": "如果我是你，我会和经理谈谈。",
+                "highlight": [
+                  "were",
+                  "'d talk"
+                ]
+              },
+              {
+                "en": "I wouldn't quit. I'd get bored.",
+                "zh": "我不会辞职，我会无聊的。",
+                "highlight": [
+                  "wouldn't",
+                  "'d get"
+                ]
+              }
+            ],
+            "takeaway_zh": "第二条件句：If + 过去式, would ('d) + 动词原形。说的是现在或将来不真实、不太可能的情况。If I had a car = 我其实没有车。be 动词在这里常用 were（If I were you），口语里 If I was ... 也很常见。"
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_en": "If I ___ more money, I'd buy a car.",
+            "prompt_zh": "选出正确的形式：",
+            "options": [
+              "had",
+              "have",
+              "will have"
+            ],
+            "answer": 0,
+            "explanation_zh": "想象的情况：If + 过去式 had, would + 原形。"
+          },
+          {
+            "id": "s06",
+            "type": "cloze",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "If she lived nearer, we ___ see her more often.",
+            "translation_zh": "要是她住得近一点，我们就能常见到她。",
+            "answers": [
+              "would"
+            ],
+            "explanation_zh": "结果部分用 would + 动词原形。"
+          },
+          {
+            "id": "s07",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_en": "If I had a car, I'd drive to work.",
+            "prompt_zh": "说话人现在有车吗？",
+            "options": [
+              "没有",
+              "有",
+              "听不出来"
+            ],
+            "answer": 0,
+            "explanation_zh": "第二条件句说的是不真实的情况：If I had a car 说明其实没有车。"
+          },
+          {
+            "id": "s08",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "prompt_zh": "哪一句说的是想象中、不太可能的情况？",
+            "options": [
+              "If I see Tom, I'll tell him.",
+              "If I were taller, I'd play basketball.",
+              "If it rains, we'll stay in."
+            ],
+            "answer": 1,
+            "explanation_zh": "If + 过去式, would ...：想象的情况。另外两句是第一条件句，说的是可能发生的事。"
+          },
+          {
+            "id": "s09",
+            "type": "order",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "排成句子。",
+            "translation_zh": "如果我是你，我会和经理谈谈。",
+            "tokens": [
+              "If",
+              "I",
+              "were",
+              "you,",
+              "I'd",
+              "talk",
+              "to",
+              "your",
+              "manager."
+            ],
+            "answers": [
+              "If I were you, I'd talk to your manager.",
+              "I'd talk to your manager if I were you."
+            ],
+            "explanation_zh": "If I were you, I'd + 动词原形：给建议。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，说话人为什么不会辞职？",
+            "audio_en": "I wouldn't quit. I'd get bored at home.",
+            "options": [
+              "在家会无聊",
+              "喜欢他的经理",
+              "需要钱"
+            ],
+            "answer": 0,
+            "explanation_zh": "I'd get bored at home：在家会无聊。"
+          },
+          {
+            "id": "s11",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：Sam 要是中了彩票会做什么？",
+            "options": [
+              "买一套房",
+              "环游世界",
+              "马上辞职"
+            ],
+            "answer": 0,
+            "explanation_zh": "Well, I'd buy a flat. 环游世界和辞职是 Lin 说的。"
+          },
+          {
+            "id": "s12",
+            "type": "write",
+            "role": "communicative_task",
+            "skill": "written_production",
+            "task_zh": "写一段 4–5 句的短文：If I could live anywhere in the world, ... 说说你会住在哪里、为什么、你会每天做什么、会想念家乡的什么。",
+            "model_answers": [
+              "If I could live anywhere in the world, I'd live in a small town in New Zealand. I'd choose it because the air is clean and people are friendly. I'd go hiking every weekend and I'd learn to surf. But I'd miss my family and my mum's cooking, so I'd fly home every year."
+            ],
+            "checklist_zh": [
+              "用了 4 句以上 would / I'd + 动词原形",
+              "至少一个 because 给理由",
+              "If 后面用的是过去式（could / were / had）",
+              "提到了一个缺点或会想念的东西"
+            ]
+          },
+          {
+            "id": "s13",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "用括号里的动词补全句子。",
+            "sentence_en": "If I ___ (be) you, I'd take the job.",
+            "translation_zh": "如果我是你，我会接受这份工作。",
+            "answers": [
+              "were",
+              "was"
+            ],
+            "explanation_zh": "If I were you 是标准说法；口语里 If I was you 也很常见。"
+          },
+          {
+            "id": "s14",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_zh": "哪一句是对的？",
+            "options": [
+              "If I would have time, I'd help.",
+              "If I had time, I'd help.",
+              "If I had time, I'll help."
+            ],
+            "answer": 1,
+            "explanation_zh": "If + 过去式, would + 原形；would 不放在 if 从句里。"
+          }
+        ]
+      },
+      {
+        "id": "b1-u02-conditionals-l4",
+        "order": 4,
+        "kind": "review",
+        "title_en": "Unit Review: What Would You Do?",
+        "title_zh": "单元复习：你会怎么做？",
+        "estimated_minutes": 13,
+        "objectives": [
+          {
+            "en": "Follow plans and warnings that depend on conditions.",
+            "zh": "能听懂带条件的计划和提醒。"
+          },
+          {
+            "en": "Choose the right conditional for facts, likely events and imaginary situations.",
+            "zh": "能根据事实、可能的事和想象的情况选用合适的条件句。"
+          }
+        ],
+        "can_do_ids": [
+          "b1.gr.conditionals",
+          "b1.l.conditions",
+          "b1.si.hypothetical"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "listening",
+            "title_zh": "单元复习",
+            "body_zh": "Lin 和 Sam 计划去爬山，对话里三种条件句都有。先听懂他们的安排和提醒，再分清三种条件句，最后用它们说一说、写一写。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Planning a hike",
+            "instructions_zh": "听两遍。注意每个 if 句说的是规律、可能的将来，还是想象。",
+            "scene_zh": "周五晚上，Lin 和 Sam 在看周六爬山的路线。",
+            "lines": [
+              {
+                "speaker": "Sam",
+                "en": "If we leave at seven, we'll reach the top before lunch.",
+                "zh": "我们七点出发，午饭前就能登顶。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "OK. But if it rains, the path gets really slippery.",
+                "zh": "好。不过一下雨，山路就特别滑。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "True. Unless the forecast changes, it'll be dry until three.",
+                "zh": "没错。只要预报不变，三点前都不会下雨。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "What would you do if we got lost?",
+                "zh": "要是我们迷路了，你会怎么办？"
+              },
+              {
+                "speaker": "Sam",
+                "en": "I'd call the park office. Their number is on the map.",
+                "zh": "我会打给景区办公室，号码印在地图上。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "You're so organised. If I were you, I'd become a tour guide!",
+                "zh": "你真有条理。要是我是你，我就去当导游了！"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Ha! If I didn't love my job, I might.",
+                "zh": "哈！要不是我喜欢现在的工作，说不定真会。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "And if you get tired, tell me. We'll stop for a break.",
+                "zh": "还有，你要是累了就说，我们停下来歇会儿。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "他们几点出发才能在午饭前登顶？",
+            "options": [
+              "七点",
+              "三点",
+              "午饭后"
+            ],
+            "answer": 0,
+            "explanation_zh": "If we leave at seven, we'll reach the top before lunch."
+          },
+          {
+            "id": "s04",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "下雨时山路会怎么样？",
+            "options": [
+              "很滑",
+              "会封闭",
+              "更好走"
+            ],
+            "answer": 0,
+            "explanation_zh": "if it rains, the path gets really slippery：一下雨路就很滑。"
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "如果迷路了，Sam 会怎么做？",
+            "options": [
+              "给景区办公室打电话",
+              "看手机地图",
+              "原路返回"
+            ],
+            "answer": 0,
+            "explanation_zh": "I'd call the park office."
+          },
+          {
+            "id": "s06",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "这些句子分别是哪一种？",
+            "pairs": [
+              {
+                "left": "If you heat ice, it melts.",
+                "right": "总是成立的规律"
+              },
+              {
+                "left": "If it rains, we'll stay in.",
+                "right": "很可能发生的将来"
+              },
+              {
+                "left": "If I were rich, I'd travel.",
+                "right": "想象中的情况"
+              },
+              {
+                "left": "If I were you, I'd rest.",
+                "right": "给别人建议"
+              }
+            ]
+          },
+          {
+            "id": "s07",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "用括号里的动词补全句子。",
+            "sentence_en": "If you ___ (see) Mia tomorrow, tell her I said hi.",
+            "translation_zh": "你明天要是见到 Mia，替我问声好。",
+            "answers": [
+              "see"
+            ],
+            "explanation_zh": "可能发生的将来，if 从句用一般现在时。"
+          },
+          {
+            "id": "s08",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_interaction",
+            "task_zh": "回答这个想象的问题，说 3–4 句：你会做什么、为什么（If I ..., I'd ... because ...），再说一件你不会做的事（I wouldn't ...）。",
+            "prompt_en": "What would you do if you could take a year off work?",
+            "model_answers": [
+              "If I could take a year off, I'd learn Spanish in Spain, because I've always wanted to speak it. I'd also cook more and visit my grandparents. I wouldn't stay at home all the time, because I'd get bored."
+            ],
+            "checklist_zh": [
+              "至少 3 个 I'd / would + 动词原形",
+              "至少一个 because 给理由",
+              "用了一次 I wouldn't ...",
+              "If 后面用的是过去式"
+            ]
+          },
+          {
+            "id": "s09",
+            "type": "write",
+            "role": "communicative_task",
+            "skill": "written_interaction",
+            "task_zh": "朋友下周第一次来你的城市。给她写一条消息（4–5 句），用第一条件句给一些实用提醒，例如 If you take the metro, ...、Unless you ..., ...、As soon as you arrive, ...",
+            "model_answers": [
+              "Hi Emma! I can't wait to see you next week. If you take the airport metro, you'll get to the city centre in forty minutes. Unless you book early, the good restaurants will be full. Text me as soon as you land and I'll meet you at the station."
+            ],
+            "checklist_zh": [
+              "至少 2 个 If ..., ... will ... 句子",
+              "用了 unless 或 as soon as",
+              "if / unless / as soon as 后面没有用 will",
+              "有开头称呼和结尾"
+            ]
+          },
+          {
+            "id": "s10",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "用括号里的动词补全句子。",
+            "sentence_en": "If I ___ (know) the answer, I'd tell you.",
+            "translation_zh": "我要是知道答案，就告诉你了。",
+            "answers": [
+              "knew"
+            ],
+            "explanation_zh": "想象的情况（其实不知道），If + 过去式 knew。"
+          },
+          {
+            "id": "s11",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_en": "I'll call you if I ___ any news.",
+            "prompt_zh": "选出正确的形式：",
+            "options": [
+              "hear",
+              "will hear",
+              "heard"
+            ],
+            "answer": 0,
+            "explanation_zh": "第一条件句，if 从句用一般现在时。"
+          }
+        ]
+      }
+    ]
+  }
+}

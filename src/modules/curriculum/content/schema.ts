@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 import { CEFR_LEVELS } from "../domain/cefr";
+import { publishProblems } from "./quality";
 
 /**
  * Versioned course content schema (content_schema_version 1).
@@ -264,6 +265,8 @@ export const unitFileSchema = z
   .object({
     content_schema_version: z.literal(CONTENT_SCHEMA_VERSION),
     source_type: z.enum(["first_party", "licensed", "public_domain"]),
+    /** Required for licensed / public-domain content (publish gate). */
+    source: z.object({ title: text, url: z.url().optional(), license: text }).optional(),
     review_status: z.enum(REVIEW_STATUSES),
     unit: z.object({
       id: slug,
@@ -292,8 +295,16 @@ export const unitFileSchema = z
       if (!lesson.id.startsWith(`${unit.id}-`)) {
         ctx.addIssue({ code: "custom", path: ["unit", "lessons", li, "id"], message: `lesson ids must start with "${unit.id}-"` });
       }
+      // A lesson may also give evidence for a level-wide statement from
+      // src/content/can-do/catalog.json ("a2.sp.past-events"); those ids are
+      // checked when the can-do statements are loaded.
       for (const id of lesson.can_do_ids) {
-        if (!canDoIds.has(id)) ctx.addIssue({ code: "custom", path: ["unit", "lessons", li], message: `unknown can-do id ${id}` });
+        if (!canDoIds.has(id) && !id.startsWith(`${unit.level.replace("_", "-")}.`)) {
+          ctx.addIssue({ code: "custom", path: ["unit", "lessons", li], message: `unknown can-do id ${id}` });
+        }
+      }
+      if (!lesson.can_do_ids.some((id) => canDoIds.has(id))) {
+        ctx.addIssue({ code: "custom", path: ["unit", "lessons", li], message: "each lesson needs at least one of the unit's own can-do statements" });
       }
       for (const [si, step] of lesson.steps.entries()) {
         if (step.type !== "vocab") continue;
@@ -306,14 +317,7 @@ export const unitFileSchema = z
     }
 
     if (unit.status === "published") {
-      // Spec §15.2: published units need ≥3 lessons, a review, listening and output.
-      const lessons = unit.lessons;
-      const steps = lessons.flatMap((l) => l.steps);
-      if (lessons.filter((l) => l.kind === "core").length < 3) ctx.addIssue({ code: "custom", message: "published units need at least 3 core lessons" });
-      if (!lessons.some((l) => l.kind === "review")) ctx.addIssue({ code: "custom", message: "published units need a unit review lesson" });
-      if (!steps.some((s) => s.skill === "listening")) ctx.addIssue({ code: "custom", message: "published units need a listening activity" });
-      if (!steps.some((s) => s.type === "speak" || s.type === "write")) ctx.addIssue({ code: "custom", message: "published units need an output task" });
-      if (!steps.some((s) => s.type === "dialogue")) ctx.addIssue({ code: "custom", message: "published units need meaning-focused input" });
+      for (const message of publishProblems(file)) ctx.addIssue({ code: "custom", message: `publish gate: ${message}` });
     }
   });
 export type UnitFile = z.infer<typeof unitFileSchema>;

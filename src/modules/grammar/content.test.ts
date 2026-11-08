@@ -8,7 +8,7 @@ describe("grammar map", () => {
     const points = loadGrammar();
     expect(points.map((p) => p.order)).toEqual(points.map((_, i) => i + 1));
     const published = points.filter((p) => p.status === "published");
-    expect(published).toHaveLength(12);
+    expect(published).toHaveLength(16);
     for (const p of published) {
       expect(p.exercises.filter((e) => SCORED_TYPES.includes(e.type)).length).toBeGreaterThanOrEqual(5);
     }

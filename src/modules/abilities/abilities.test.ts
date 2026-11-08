@@ -13,8 +13,12 @@ describe("can-do content", () => {
   it("merges unit objectives and the level catalog with unique ids and known prerequisites", () => {
     const ids = statements.map((s) => s.id);
     expect(new Set(ids).size).toBe(ids.length);
-    expect(statements.filter((s) => s.origin.startsWith("unit:")).length).toBe(18);
+    expect(statements.filter((s) => s.origin.startsWith("unit:")).length).toBe(30);
     expect(statements.some((s) => s.origin === "catalog" && s.level === "a2")).toBe(true);
+    // Units also give evidence for level-wide catalog statements (Phase 5.1).
+    const pastEvents = statements.find((s) => s.id === "a2.sp.past-events")!;
+    expect(pastEvents.origin).toBe("catalog");
+    expect(pastEvents.routes.some((r) => r.href === "/lesson/a2-u01-past-stories-l2")).toBe(true);
     for (const s of statements) {
       expect(SKILLS).toContain(s.skill);
       for (const p of s.prerequisites) expect(ids).toContain(p);

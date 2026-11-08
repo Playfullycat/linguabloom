@@ -7,8 +7,8 @@ import { checkDictation, difficultyOf, tokenize } from "./domain/text";
 describe("built-in materials", () => {
   it("all validate, with every glossary word present in the text", () => {
     const materials = loadMaterials();
-    expect(materials.length).toBe(12);
-    for (const level of ["pre_a1", "a1", "a2"]) {
+    expect(materials.length).toBe(16);
+    for (const level of ["pre_a1", "a1", "a2", "b1"]) {
       for (const type of ["reading", "listening"]) {
         expect(materials.filter((m) => m.level === level && m.type === type).length).toBeGreaterThanOrEqual(2);
       }

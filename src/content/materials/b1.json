@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "source_type": "first_party",
+  "copyright_status": "first_party_original",
+  "review_status": "pending_owner_review",
+  "materials": [
+    {
+      "id": "rd-b1-repair-cafe",
+      "type": "reading",
+      "level": "b1",
+      "can_do_ids": ["b1.r.main-points"],
+      "topic": "community",
+      "title_en": "Don't Throw It Away — Fix It",
+      "title_zh": "别扔，修一修",
+      "summary_zh": "一篇社区报道：小区里的“修理咖啡馆”每月开一次，志愿者免费帮居民修东西。（虚构报道）",
+      "segments": [
+        { "en": "On the first Saturday of every month, the community centre on Elm Road turns into a repair café.", "zh": "每个月的第一个周六，榆树路的社区中心都会变成一家“修理咖啡馆”。" },
+        { "en": "Local people bring broken things, such as lamps, toasters, bikes and torn jackets.", "zh": "附近的居民把坏了的东西带来，比如台灯、烤面包机、自行车和破了的夹克。" },
+        { "en": "Volunteers with useful skills try to fix them for free, while visitors drink tea and wait.", "zh": "有一技之长的志愿者免费帮忙修理，来访的人一边喝茶一边等。" },
+        { "en": "The café started two years ago, when a retired engineer called Peter Hall noticed how much his neighbours threw away.", "zh": "这家咖啡馆两年前开办。当时，一位名叫 Peter Hall 的退休工程师注意到邻居们扔掉的东西实在太多了。" },
+        { "en": "\"Most things only need a small repair,\" he says. \"However, people think it's easier to buy something new.\"", "zh": "“大多数东西只需要小修一下，”他说，“可是人们觉得买个新的更省事。”" },
+        { "en": "Last year the volunteers repaired more than six hundred items, and about seventy percent of them worked again.", "zh": "去年，志愿者修了六百多件东西，其中大约七成修好后又能用了。" },
+        { "en": "Visitors are also encouraged to watch and learn, so next time they can do the repair themselves.", "zh": "来访的人也被鼓励在旁边看、跟着学，这样下次就能自己修了。" },
+        { "en": "Although the repairs are free, many people leave a small donation to pay for tools and spare parts.", "zh": "虽然修理是免费的，很多人还是会留下一点捐款，用来买工具和零件。" },
+        { "en": "Not everything can be saved, of course, and some modern devices are almost impossible to open.", "zh": "当然，并不是所有东西都能修好，有些新式电子设备几乎打不开。" },
+        { "en": "Still, Peter believes the café does more than fix objects: \"People talk, share skills and make friends here.\"", "zh": "不过，Peter 认为咖啡馆的意义不止是修东西：“人们在这里聊天、分享手艺、交朋友。”" }
+      ],
+      "glossary": [
+        { "key": "community-centre", "text": "community centre", "pos": "noun", "ipa": "/kəˈmjuːnəti ˌsentə/", "zh": "社区中心" },
+        { "key": "turn-into", "text": "turns into", "pos": "phrasal verb", "ipa": "/tɜːnz ˈɪntuː/", "zh": "变成" },
+        { "key": "broken", "text": "broken", "pos": "adjective", "ipa": "/ˈbrəʊkən/", "zh": "坏了的；破损的" },
+        { "key": "torn", "text": "torn", "pos": "adjective", "ipa": "/tɔːn/", "zh": "撕破的（tear 的过去分词）" },
+        { "key": "volunteer", "text": "volunteers", "pos": "noun", "ipa": "/ˌvɒlənˈtɪəz/", "zh": "志愿者（复数）" },
+        { "key": "fix", "text": "fix", "forms": ["fix", "Fix"], "pos": "verb", "ipa": "/fɪks/", "zh": "修理" },
+        { "key": "retired", "text": "retired", "pos": "adjective", "ipa": "/rɪˈtaɪəd/", "zh": "退休的" },
+        { "key": "engineer", "text": "engineer", "pos": "noun", "ipa": "/ˌendʒɪˈnɪə/", "zh": "工程师" },
+        { "key": "throw-away", "text": "throw away", "forms": ["threw away", "Throw It Away"], "pos": "phrasal verb", "ipa": "/θrəʊ əˈweɪ/", "zh": "扔掉", "note_zh": "threw 是 throw 的过去式。" },
+        { "key": "repair", "text": "repair", "forms": ["repair", "repaired", "repairs"], "pos": "noun / verb", "ipa": "/rɪˈpeə/", "zh": "修理" },
+        { "key": "item", "text": "items", "pos": "noun", "ipa": "/ˈaɪtəmz/", "zh": "物品；件（复数）" },
+        { "key": "encourage", "text": "encouraged", "pos": "verb", "ipa": "/ɪnˈkʌrɪdʒd/", "zh": "被鼓励（encourage 的过去分词）", "note_zh": "be encouraged to do = 被鼓励做某事" },
+        { "key": "donation", "text": "donation", "pos": "noun", "ipa": "/dəʊˈneɪʃn/", "zh": "捐款；捐赠" },
+        { "key": "spare-parts", "text": "spare parts", "pos": "noun", "ipa": "/speə pɑːts/", "zh": "零件；备件" },
+        { "key": "device", "text": "devices", "pos": "noun", "ipa": "/dɪˈvaɪsɪz/", "zh": "设备；装置（复数）" },
+        { "key": "still", "text": "Still", "pos": "adverb", "ipa": "/stɪl/", "zh": "（放句首）尽管如此；不过" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "修理咖啡馆多久开一次？", "options": ["每周一次", "每月一次", "每年一次"], "answer": 1, "explanation_zh": "原文：On the first Saturday of every month ...", "segment": 0 },
+        { "id": "q2", "type": "choice", "prompt_zh": "Peter Hall 为什么办这家咖啡馆？", "options": ["他想赚点钱", "他发现邻居扔掉的东西太多", "社区中心请他来帮忙"], "answer": 1, "explanation_zh": "原文：noticed how much his neighbours threw away.", "segment": 3 },
+        { "id": "q3", "type": "choice", "prompt_zh": "去年修的东西里，大约有多少修好了？", "options": ["约三成", "约一半", "约七成"], "answer": 2, "explanation_zh": "原文：about seventy percent of them worked again.", "segment": 5 },
+        { "id": "q4", "type": "choice", "prompt_zh": "捐款主要用来做什么？", "options": ["给志愿者发工资", "买工具和零件", "买茶和点心"], "answer": 1, "explanation_zh": "原文：to pay for tools and spare parts.", "segment": 7 },
+        { "id": "q5", "type": "choice", "prompt_zh": "Peter 认为这家咖啡馆最重要的意义还有什么？", "options": ["让人们交流、分享手艺、交朋友", "让新设备更容易打开", "帮商店卖出更多东西"], "answer": 0, "explanation_zh": "原文：People talk, share skills and make friends here.", "segment": 9 }
+      ]
+    },
+    {
+      "id": "rd-b1-learning-at-forty",
+      "type": "reading",
+      "level": "b1",
+      "can_do_ids": ["b1.r.main-points", "b1.wp.argument"],
+      "topic": "learning",
+      "title_en": "Learning a Language at Forty",
+      "title_zh": "四十岁学外语",
+      "summary_zh": "一篇个人博客：作者四十岁开始学西班牙语，讲她遇到的困难、找到的办法，以及她对“年纪大了学不好”的看法。（虚构博客）",
+      "segments": [
+        { "en": "When I turned forty, I decided to learn Spanish, and many friends told me it was too late.", "zh": "四十岁那年，我决定学西班牙语，很多朋友都说我太晚了。" },
+        { "en": "In my opinion, they were wrong, although the first months were harder than I expected.", "zh": "在我看来他们错了，尽管头几个月比我想象的难。" },
+        { "en": "My memory isn't as quick as it was at school, so new words disappeared from my head overnight.", "zh": "我的记性没有上学时那么好，新单词过一夜就忘了。" },
+        { "en": "However, I soon found that adults have some advantages too.", "zh": "不过，我很快发现成年人也有一些优势。" },
+        { "en": "For example, I know exactly why I'm learning, and I can plan my time much better than a teenager.", "zh": "比如，我很清楚自己为什么学，安排时间的能力也比青少年强得多。" },
+        { "en": "I also stopped trying to learn everything at once.", "zh": "我也不再试图一下子什么都学。" },
+        { "en": "Instead, I study for twenty minutes every morning and review old words before I learn new ones.", "zh": "相反，我每天早上学二十分钟，学新单词之前先复习旧的。" },
+        { "en": "The biggest change came when I started speaking, even though I made lots of mistakes.", "zh": "最大的变化发生在我开始开口说的时候，尽管我犯了很多错。" },
+        { "en": "A teacher told me that if I waited until I was perfect, I would never speak at all.", "zh": "一位老师对我说，要是等到完美再开口，我就永远不会开口了。" },
+        { "en": "Two years later, I can chat with my neighbours in Valencia and follow most of the news.", "zh": "两年后，我能和瓦伦西亚的邻居聊天，也能听懂大部分新闻了。" },
+        { "en": "So, is it too late at forty? I don't think so, but you need patience and a plan.", "zh": "那么，四十岁学太晚吗？我不这么认为，不过你需要耐心和计划。" }
+      ],
+      "glossary": [
+        { "key": "turned-forty", "text": "turned forty", "pos": "phrase", "ipa": "/tɜːnd ˈfɔːti/", "zh": "满四十岁", "note_zh": "turn + 年龄 = 到了……岁" },
+        { "key": "expected", "text": "expected", "pos": "verb", "ipa": "/ɪkˈspektɪd/", "zh": "预料；预想（expect 的过去式）" },
+        { "key": "memory", "text": "memory", "pos": "noun", "ipa": "/ˈmeməri/", "zh": "记忆力" },
+        { "key": "disappeared", "text": "disappeared", "pos": "verb", "ipa": "/ˌdɪsəˈpɪəd/", "zh": "消失（disappear 的过去式）" },
+        { "key": "overnight", "text": "overnight", "pos": "adverb", "ipa": "/ˌəʊvəˈnaɪt/", "zh": "一夜之间" },
+        { "key": "advantage", "text": "advantages", "pos": "noun", "ipa": "/ədˈvɑːntɪdʒɪz/", "zh": "优势；好处（复数）" },
+        { "key": "teenager", "text": "teenager", "pos": "noun", "ipa": "/ˈtiːneɪdʒə/", "zh": "青少年（13–19 岁）" },
+        { "key": "at-once", "text": "at once", "pos": "phrase", "ipa": "/ət wʌns/", "zh": "同时；一下子" },
+        { "key": "instead", "text": "Instead", "pos": "adverb", "ipa": "/ɪnˈsted/", "zh": "相反；改为" },
+        { "key": "review", "text": "review", "pos": "verb", "ipa": "/rɪˈvjuː/", "zh": "复习" },
+        { "key": "even-though", "text": "even though", "pos": "conjunction", "ipa": "/ˈiːvn ðəʊ/", "zh": "尽管；即使", "note_zh": "比 although 语气更强。" },
+        { "key": "mistake", "text": "mistakes", "pos": "noun", "ipa": "/mɪˈsteɪks/", "zh": "错误（复数）" },
+        { "key": "perfect", "text": "perfect", "pos": "adjective", "ipa": "/ˈpɜːfɪkt/", "zh": "完美的" },
+        { "key": "chat", "text": "chat", "pos": "verb", "ipa": "/tʃæt/", "zh": "聊天" },
+        { "key": "patience", "text": "patience", "pos": "noun", "ipa": "/ˈpeɪʃns/", "zh": "耐心" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "作者的朋友们一开始怎么看她学西班牙语？", "options": ["觉得太晚了", "觉得很有意思", "想和她一起学"], "answer": 0, "explanation_zh": "原文：many friends told me it was too late.", "segment": 0 },
+        { "id": "q2", "type": "choice", "prompt_zh": "作者认为成年人学语言有什么优势？", "options": ["记性更好", "清楚学习目的，会安排时间", "有更多空闲时间"], "answer": 1, "explanation_zh": "原文：I know exactly why I'm learning, and I can plan my time much better ...", "segment": 4 },
+        { "id": "q3", "type": "choice", "prompt_zh": "作者现在每天怎么学？", "options": ["晚上学两小时", "早上学二十分钟，先复习再学新的", "周末集中学一整天"], "answer": 1, "explanation_zh": "原文：I study for twenty minutes every morning and review old words before I learn new ones.", "segment": 6 },
+        { "id": "q4", "type": "choice", "prompt_zh": "老师给了作者什么建议？", "options": ["等说得完美了再开口", "不要怕犯错，早点开口说", "多看新闻"], "answer": 1, "explanation_zh": "原文：if I waited until I was perfect, I would never speak at all.", "segment": 8 },
+        { "id": "q5", "type": "choice", "prompt_zh": "作者的结论是什么？", "options": ["四十岁学太晚了", "不晚，但需要耐心和计划", "只有住在国外才能学好"], "answer": 1, "explanation_zh": "原文：I don't think so, but you need patience and a plan.", "segment": 10 }
+      ]
+    },
+    {
+      "id": "ls-b1-first-week",
+      "type": "listening",
+      "level": "b1",
+      "can_do_ids": ["b1.l.main-points", "b1.l.conditions"],
+      "topic": "work",
+      "title_en": "Your First Week at a New Job",
+      "title_zh": "新工作的第一周",
+      "summary_zh": "一档职场播客：主持人请一位人事经理谈谈入职第一周该注意什么。（虚构节目）",
+      "segments": [
+        { "speaker": "Host", "en": "Welcome back to Work Talk. Today Grace, an HR manager, is here with advice for your first week in a new job.", "zh": "欢迎回到《职场谈》。今天人事经理 Grace 来给大家讲讲新工作第一周的建议。" },
+        { "speaker": "Grace", "en": "Thanks for having me. My first tip is simple: arrive a little early, especially on the first day.", "zh": "谢谢邀请。我的第一条建议很简单：早点到，尤其是第一天。" },
+        { "speaker": "Host", "en": "Why does that matter so much?", "zh": "这为什么那么重要？" },
+        { "speaker": "Grace", "en": "If you arrive early, you'll have time to find the right office and calm down before you meet everyone.", "zh": "早点到的话，你有时间找到办公室，见大家之前也能平静下来。" },
+        { "speaker": "Host", "en": "What about all the new names? I always forget them.", "zh": "那么多新名字怎么办？我总是记不住。" },
+        { "speaker": "Grace", "en": "Most people do. Write them down with a short note, for example 'Tom, design, loves cycling'.", "zh": "大多数人都记不住。把名字写下来，加一句简短的备注，比如“Tom，设计部，喜欢骑车”。" },
+        { "speaker": "Grace", "en": "And don't be afraid to ask questions. Nobody expects you to know everything in week one.", "zh": "还有，别怕提问。没人指望你第一周就什么都懂。" },
+        { "speaker": "Host", "en": "But some people worry that questions make them look weak.", "zh": "可有些人担心提问会显得自己能力不够。" },
+        { "speaker": "Grace", "en": "Actually, it's the opposite. Unless you ask, your manager won't know where you need help.", "zh": "其实恰恰相反。你不问，经理就不知道你哪里需要帮助。" },
+        { "speaker": "Host", "en": "Any advice about lunch? That can feel awkward.", "zh": "午饭方面有什么建议吗？那有时挺尴尬的。" },
+        { "speaker": "Grace", "en": "If someone invites you, say yes, even if you're busy. Lunch is where you really get to know the team.", "zh": "要是有人邀请你，即使忙也答应。午饭才是真正了解团队的时候。" },
+        { "speaker": "Host", "en": "Great tips. Thanks, Grace.", "zh": "很棒的建议。谢谢你，Grace。" }
+      ],
+      "glossary": [
+        { "key": "hr-manager", "text": "HR manager", "pos": "noun", "ipa": "/ˌeɪtʃ ˈɑː ˌmænɪdʒə/", "zh": "人力资源经理；人事经理" },
+        { "key": "tip", "text": "tip", "forms": ["tip", "tips"], "pos": "noun", "ipa": "/tɪp/", "zh": "建议；小窍门" },
+        { "key": "especially", "text": "especially", "pos": "adverb", "ipa": "/ɪˈspeʃəli/", "zh": "尤其；特别" },
+        { "key": "matter", "text": "matter", "pos": "verb", "ipa": "/ˈmætə/", "zh": "要紧；有关系" },
+        { "key": "calm-down", "text": "calm down", "pos": "phrasal verb", "ipa": "/kɑːm daʊn/", "zh": "平静下来" },
+        { "key": "write-down", "text": "Write them down", "pos": "phrasal verb", "ipa": "/raɪt ðəm daʊn/", "zh": "把它们写下来", "note_zh": "write something down = 写下来、记下来" },
+        { "key": "afraid", "text": "afraid", "pos": "adjective", "ipa": "/əˈfreɪd/", "zh": "害怕的", "note_zh": "be afraid to do = 不敢做" },
+        { "key": "expects", "text": "expects", "pos": "verb", "ipa": "/ɪkˈspekts/", "zh": "期望；指望" },
+        { "key": "weak", "text": "weak", "pos": "adjective", "ipa": "/wiːk/", "zh": "弱的；能力差的" },
+        { "key": "opposite", "text": "opposite", "pos": "noun", "ipa": "/ˈɒpəzɪt/", "zh": "相反的情况" },
+        { "key": "unless", "text": "Unless", "pos": "conjunction", "ipa": "/ənˈles/", "zh": "除非；如果不" },
+        { "key": "awkward", "text": "awkward", "pos": "adjective", "ipa": "/ˈɔːkwəd/", "zh": "尴尬的；别扭的" },
+        { "key": "get-to-know", "text": "get to know", "pos": "phrase", "ipa": "/ɡet tə nəʊ/", "zh": "逐渐了解；认识" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "Grace 的第一条建议是什么？", "options": ["早点到", "多带点午饭", "穿正装"], "answer": 0, "explanation_zh": "原文：arrive a little early, especially on the first day.", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "怎样更容易记住同事的名字？", "options": ["加他们的社交账号", "写下来并加一句备注", "每天叫一遍"], "answer": 1, "explanation_zh": "原文：Write them down with a short note ...", "segment": 5 },
+        { "id": "q3", "type": "choice", "prompt_zh": "Grace 认为提问会让人显得怎样？", "options": ["显得能力不够", "恰恰相反，不是坏事", "显得不礼貌"], "answer": 1, "explanation_zh": "原文：Actually, it's the opposite. Unless you ask, your manager won't know where you need help.", "segment": 8 },
+        { "id": "q4", "type": "choice", "prompt_zh": "有人约你吃午饭，而你很忙，Grace 建议怎么做？", "options": ["礼貌拒绝，改天再说", "还是答应", "只喝杯咖啡"], "answer": 1, "explanation_zh": "原文：If someone invites you, say yes, even if you're busy.", "segment": 10 }
+      ]
+    },
+    {
+      "id": "ls-b1-bike-lane",
+      "type": "listening",
+      "level": "b1",
+      "can_do_ids": ["b1.l.main-points", "b1.l.discussion"],
+      "topic": "city life",
+      "title_en": "A New Bike Lane?",
+      "title_zh": "要不要修自行车道？",
+      "summary_zh": "两位邻居讨论小区门口要修的自行车道：一个支持，一个担心停车问题，最后找到了共同点。（虚构对话）",
+      "segments": [
+        { "speaker": "Ben", "en": "Did you read the letter from the council? They want to build a bike lane on our street.", "zh": "你看到市政府的信了吗？他们想在我们这条街上修自行车道。" },
+        { "speaker": "Rosa", "en": "Yes, and I think it's a great idea. I cycle to work, and the traffic here is really dangerous.", "zh": "看到了，我觉得这主意很好。我骑车上班，这里的交通真的很危险。" },
+        { "speaker": "Ben", "en": "I see your point. But they're going to remove twenty parking spaces.", "zh": "我明白你的意思。可他们要拆掉二十个停车位。" },
+        { "speaker": "Rosa", "en": "That's true. Where will people park, then?", "zh": "这倒是。那大家停在哪儿呢？" },
+        { "speaker": "Ben", "en": "Exactly. My mum visits every weekend, and she can't walk far.", "zh": "就是啊。我妈每个周末都来，她走不了远路。" },
+        { "speaker": "Rosa", "en": "Although parking will be harder, I think fewer people will need cars if cycling feels safe.", "zh": "虽然停车会更难，但我觉得如果骑车让人觉得安全，需要开车的人就会变少。" },
+        { "speaker": "Ben", "en": "Maybe in the long term. However, that won't help my mum next month.", "zh": "长远来看也许吧。不过这对我妈下个月来没什么帮助。" },
+        { "speaker": "Rosa", "en": "Fair point. What if we asked the council for a few spaces for older and disabled drivers?", "zh": "有道理。要是我们请市政府留几个给老年人和残障司机的车位呢？" },
+        { "speaker": "Ben", "en": "That would solve my main problem. I'd support the lane if they did that.", "zh": "那就解决了我最大的问题。要是他们这么做，我就支持修车道。" },
+        { "speaker": "Rosa", "en": "Great. Let's write to them together this week.", "zh": "太好了。我们这周一起给他们写信吧。" }
+      ],
+      "glossary": [
+        { "key": "council", "text": "council", "pos": "noun", "ipa": "/ˈkaʊnsl/", "zh": "（地方）市政府；议会" },
+        { "key": "bike-lane", "text": "bike lane", "forms": ["bike lane", "Bike Lane"], "pos": "noun", "ipa": "/baɪk leɪn/", "zh": "自行车道" },
+        { "key": "cycle", "text": "cycle", "forms": ["cycle", "cycling"], "pos": "verb", "ipa": "/ˈsaɪkl/", "zh": "骑自行车" },
+        { "key": "dangerous", "text": "dangerous", "pos": "adjective", "ipa": "/ˈdeɪndʒərəs/", "zh": "危险的" },
+        { "key": "remove", "text": "remove", "pos": "verb", "ipa": "/rɪˈmuːv/", "zh": "移除；拆掉" },
+        { "key": "parking-space", "text": "parking spaces", "pos": "noun", "ipa": "/ˈpɑːkɪŋ ˌspeɪsɪz/", "zh": "停车位（复数）" },
+        { "key": "park", "text": "park", "pos": "verb", "ipa": "/pɑːk/", "zh": "停车" },
+        { "key": "in-the-long-term", "text": "in the long term", "pos": "phrase", "ipa": "/ɪn ðə lɒŋ tɜːm/", "zh": "从长远来看" },
+        { "key": "disabled", "text": "disabled", "pos": "adjective", "ipa": "/dɪsˈeɪbld/", "zh": "残障的" },
+        { "key": "solve", "text": "solve", "pos": "verb", "ipa": "/sɒlv/", "zh": "解决" },
+        { "key": "support", "text": "support", "pos": "verb", "ipa": "/səˈpɔːt/", "zh": "支持" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "Rosa 为什么支持修自行车道？", "options": ["她骑车上班，觉得现在的交通很危险", "她没有车", "她想让街道更漂亮"], "answer": 0, "explanation_zh": "原文：I cycle to work, and the traffic here is really dangerous.", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "Ben 一开始担心什么？", "options": ["车道太窄", "会少二十个停车位", "施工太吵"], "answer": 1, "explanation_zh": "原文：they're going to remove twenty parking spaces.", "segment": 2 },
+        { "id": "q3", "type": "choice", "prompt_zh": "Rosa 提出了什么折中办法？", "options": ["只在周末开放车道", "留几个给老年人和残障司机的车位", "把车道修到别的街上"], "answer": 1, "explanation_zh": "原文：a few spaces for older and disabled drivers.", "segment": 7 },
+        { "id": "q4", "type": "choice", "prompt_zh": "最后 Ben 的态度是什么？", "options": ["仍然反对", "如果留了车位就支持", "不在乎"], "answer": 1, "explanation_zh": "原文：I'd support the lane if they did that.", "segment": 8 }
+      ]
+    }
+  ]
+}
