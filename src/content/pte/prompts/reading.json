@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "source_type": "first_party",
+  "review_status": "pending_owner_review",
+  "prompts": [
+    {
+      "id": "pte-r-fib-dd-01", "task": "r_fib_dropdown", "difficulty": 2, "title_zh": "城市里的屋顶花园",
+      "content": {
+        "text": "In many large cities, empty rooftops are being {1} into small gardens. These green spaces help to keep buildings cooler in summer, which {2} the amount of energy needed for air conditioning. They also give birds and insects a place to live in areas where nature is {3}. Some gardens are run by local residents, who grow vegetables and share the {4} with their neighbours.",
+        "blanks": [
+          { "options": ["turned", "taken", "made up", "brought"], "answer": 0 },
+          { "options": ["raises", "reduces", "returns", "repeats"], "answer": 1 },
+          { "options": ["plenty", "rare", "common", "rapid"], "answer": 1 },
+          { "options": ["harvest", "harbour", "habit", "handle"], "answer": 0 }
+        ],
+        "explanation_zh": "turn A into B 是固定搭配；凉快 → 用电“减少”；城市里自然环境“稀少”；分享的是收成 harvest。"
+      }
+    },
+    {
+      "id": "pte-r-fib-dd-02", "task": "r_fib_dropdown", "difficulty": 3, "title_zh": "睡眠与记忆",
+      "content": {
+        "text": "Scientists have long suspected that sleep plays an important role in learning. Recent studies {1} this idea: people who sleep after studying new material remember more of it the next day than those who stay awake. During deep sleep, the brain appears to {2} the day's experiences, moving important information into long-term memory. A lack of sleep, {3}, makes it harder to concentrate and to form new memories. For students, this suggests that staying up all night before an exam may be less {4} than getting a full night's rest.",
+        "blanks": [
+          { "options": ["support", "suggest", "suppose", "survive"], "answer": 0 },
+          { "options": ["replay", "remove", "refuse", "reply"], "answer": 0 },
+          { "options": ["therefore", "on the other hand", "for example", "as a result"], "answer": 1 },
+          { "options": ["effective", "expensive", "extensive", "excessive"], "answer": 0 }
+        ],
+        "explanation_zh": "研究“支持”这个想法；大脑在深睡时“回放”经历；前面讲睡眠的好处，后面讲缺觉的坏处，用 on the other hand；熬夜复习“没那么有效”。"
+      }
+    },
+    {
+      "id": "pte-r-fib-dd-03", "task": "r_fib_dropdown", "difficulty": 4, "title_zh": "城市自行车共享",
+      "content": {
+        "text": "Bike-sharing schemes have spread {1} across cities around the world over the past two decades. Supporters argue that they ease traffic and encourage healthier habits, while critics point to bikes left blocking pavements. Evidence on their environmental {2} is mixed: when shared bikes replace car journeys, emissions fall, but when they replace walking or public transport, the benefit is small. Planners are therefore paying closer attention to {3} the bikes are placed, putting stations near train stops so that cycling {4} public transport rather than competing with it.",
+        "blanks": [
+          { "options": ["rapidly", "rarely", "roughly", "readily"], "answer": 0 },
+          { "options": ["impact", "import", "impulse", "instinct"], "answer": 0 },
+          { "options": ["where", "whether", "which", "while"], "answer": 0 },
+          { "options": ["completes", "complements", "compliments", "competes"], "answer": 1 }
+        ],
+        "explanation_zh": "过去二十年“迅速”扩张；对环境的“影响” impact；关注把车放在“哪里” where；骑车和公共交通“互补” complements（不是 compliments“称赞”）。"
+      }
+    },
+    {
+      "id": "pte-r-mcma-01", "task": "r_mcma", "difficulty": 2, "title_zh": "学一门乐器的好处",
+      "content": {
+        "passage": "Learning to play a musical instrument is often seen simply as a hobby, but researchers have found that it brings a range of other benefits. Children who take music lessons tend to show better attention and memory, possibly because reading music and playing at the same time trains the brain to handle several tasks at once. Adults also benefit: older people who play an instrument report feeling less lonely, especially when they play in a group. However, the studies do not show that music lessons make people more intelligent in general, and the benefits seem to depend on regular practice over many months.",
+        "question": "According to the passage, which of the following are benefits of learning an instrument?",
+        "options": ["Better attention and memory in children", "A general increase in intelligence", "Feeling less lonely, especially when playing with others", "Results after only a few lessons", "Training the brain to handle several tasks at once"],
+        "answers": [0, 2, 4],
+        "explanation_zh": "文中说孩子注意力和记忆更好、能同时处理多项任务、老人一起演奏更不孤独；明确说不能提高总体智力，而且需要好几个月的练习。"
+      }
+    },
+    {
+      "id": "pte-r-mcma-02", "task": "r_mcma", "difficulty": 3, "title_zh": "远程办公",
+      "content": {
+        "passage": "Since many companies moved to remote working, researchers have tried to measure its effects. Surveys show that employees value the time saved by not commuting, and many say they can focus better at home without office interruptions. Companies, for their part, have been able to reduce the cost of office space. On the other hand, managers report that new employees learn more slowly when they cannot watch experienced colleagues at work, and some workers say that the line between work time and personal time has become unclear. As a result, many organisations now use a mixed model, asking staff to come to the office on certain days for training and team meetings.",
+        "question": "Which problems of remote working are mentioned in the passage?",
+        "options": ["New employees learn more slowly", "Higher office costs for companies", "Work time and personal time are harder to separate", "Longer commuting times", "More interruptions at home"],
+        "answers": [0, 2],
+        "explanation_zh": "提到的问题是新员工学得慢、工作和私人时间界限模糊。办公成本是降低了；不用通勤是好处；文中说在家干扰更少。"
+      }
+    },
+    {
+      "id": "pte-r-mcma-03", "task": "r_mcma", "difficulty": 4, "title_zh": "城市洪水与“海绵城市”",
+      "content": {
+        "passage": "As cities grow, more land is covered with concrete and asphalt, surfaces that do not absorb water. During heavy rain, water runs quickly into drains, which can overflow and cause flooding. The idea of the 'sponge city' is to design urban areas that hold and use rainwater instead of sending it away as fast as possible. This can involve green roofs, parks that are allowed to flood temporarily, and pavements that let water pass through to the ground below. Supporters say these measures also cool cities and improve water quality. Critics accept the benefits but warn that the approach is expensive to retrofit in older districts and cannot by itself protect against the most extreme storms.",
+        "question": "Which statements about sponge cities are supported by the passage?",
+        "options": ["They aim to keep and use rainwater rather than remove it quickly", "They can protect cities from all storms", "They may include parks that flood for a short time", "Critics deny that they have any benefits", "Adding them to older districts can be costly"],
+        "answers": [0, 2, 4],
+        "explanation_zh": "海绵城市的目标是留住和利用雨水，包括可以短时间被淹的公园；批评者承认好处，但说旧城区改造贵，也挡不住最极端的暴雨。"
+      }
+    },
+    {
+      "id": "pte-r-reorder-01", "task": "r_reorder", "difficulty": 2, "title_zh": "图书馆的变化",
+      "content": {
+        "items": [
+          "Public libraries were once places mainly for borrowing books.",
+          "Today, however, they offer much more than that.",
+          "Many now run computer classes, homework clubs and job-search workshops.",
+          "These services make libraries an important meeting point for the whole community."
+        ],
+        "explanation_zh": "第一句给出背景（过去）；however 引出变化；第三句举例说明“更多”服务；These services 指代前面的例子，所以放最后。"
+      }
+    },
+    {
+      "id": "pte-r-reorder-02", "task": "r_reorder", "difficulty": 3, "title_zh": "蜜蜂的舞蹈",
+      "content": {
+        "items": [
+          "Honeybees have a remarkable way of sharing information.",
+          "When a bee finds a good source of flowers, it returns to the hive and performs a special dance.",
+          "The direction of the dance shows the other bees which way to fly, while its length indicates the distance.",
+          "Using this information, other members of the colony can find the flowers quickly."
+        ],
+        "explanation_zh": "先总说蜜蜂会分享信息；再讲找到花后回巢跳舞；接着解释舞蹈的方向和长度表示什么；最后说其他蜜蜂利用这些信息。"
+      }
+    },
+    {
+      "id": "pte-r-reorder-03", "task": "r_reorder", "difficulty": 4, "title_zh": "复利",
+      "content": {
+        "items": [
+          "Compound interest is often described as interest earned on interest.",
+          "With simple interest, you only earn money on the amount you originally saved.",
+          "With compound interest, by contrast, the interest you earn each year is added to your savings.",
+          "As a result, the following year's interest is calculated on a larger amount, and growth speeds up over time."
+        ],
+        "explanation_zh": "先给定义；再讲对比的单利；by contrast 引出复利的做法；As a result 说明结果，放最后。"
+      }
+    },
+    {
+      "id": "pte-r-fib-drag-01", "task": "r_fib_drag", "difficulty": 2, "title_zh": "早餐",
+      "content": {
+        "text": "Many nutrition experts say that breakfast gives the body {1} after a long night without food. People who eat a healthy breakfast often find it easier to {2} at school or work, and they are less likely to {3} on snacks later in the day.",
+        "bank": ["energy", "concentrate", "rely", "argue", "weather", "decide"],
+        "answers": ["energy", "concentrate", "rely"],
+        "explanation_zh": "give the body energy；find it easier to concentrate；rely on snacks（依赖零食）是固定搭配。"
+      }
+    },
+    {
+      "id": "pte-r-fib-drag-02", "task": "r_fib_drag", "difficulty": 3, "title_zh": "珊瑚礁",
+      "content": {
+        "text": "Coral reefs cover less than one per cent of the ocean floor, yet they {1} about a quarter of all marine species. Rising sea temperatures cause corals to lose the algae that give them colour, a process {2} as bleaching. If the water stays warm for too long, the corals may not {3}.",
+        "bank": ["support", "known", "recover", "described", "remove", "suppose"],
+        "answers": ["support", "known", "recover"],
+        "explanation_zh": "珊瑚礁“养育/支撑”了四分之一的海洋物种；a process known as …（被称为）；水温一直高，珊瑚可能无法“恢复”。"
+      }
+    },
+    {
+      "id": "pte-r-fib-drag-03", "task": "r_fib_drag", "difficulty": 4, "title_zh": "语言的消失",
+      "content": {
+        "text": "Linguists estimate that around half of the world's languages could {1} by the end of the century. When the last fluent speakers of a language die, a unique way of {2} the world is lost. Recording projects try to {3} these languages before it is too late.",
+        "bank": ["disappear", "describing", "document", "decline", "delivering", "divide"],
+        "answers": ["disappear", "describing", "document"],
+        "explanation_zh": "could disappear（可能消失）；a way of describing the world；记录项目要“记录、存档” document 这些语言。decline 是不及物动词“下降”，放在第一空意思不完整。"
+      }
+    },
+    {
+      "id": "pte-r-mcsa-01", "task": "r_mcsa", "difficulty": 2, "title_zh": "植物与音乐",
+      "content": {
+        "passage": "Some gardeners claim that playing music to plants helps them grow. A few small experiments have reported faster growth, but these studies often had very few plants and did not control other factors such as light and water. Larger and more careful studies have so far found no clear effect.",
+        "question": "What is the main point of the passage?",
+        "options": ["Music clearly helps plants grow faster.", "There is not yet good evidence that music affects plant growth.", "Light and water are less important than music.", "Gardeners should stop playing music."],
+        "answer": 1,
+        "explanation_zh": "小实验不严谨，更大更严谨的研究没有发现明显效果，所以“目前还没有可靠证据”。"
+      }
+    },
+    {
+      "id": "pte-r-mcsa-02", "task": "r_mcsa", "difficulty": 3, "title_zh": "排队的心理学",
+      "content": {
+        "passage": "Waiting in a queue feels longer when people have nothing to do. For this reason, some airports moved baggage collection further from the arrival gates. Passengers now spend more time walking and less time standing still, and complaints about waiting fell, even though the total time before they got their bags did not change.",
+        "question": "Why did complaints fall?",
+        "options": ["Bags arrived more quickly.", "Passengers spent less time waiting without doing anything.", "The airport added more staff.", "Passengers walked to a different terminal."],
+        "answer": 1,
+        "explanation_zh": "总时间没变，只是站着干等的时间少了，所以抱怨变少。"
+      }
+    },
+    {
+      "id": "pte-r-mcsa-03", "task": "r_mcsa", "difficulty": 4, "title_zh": "城市热岛",
+      "content": {
+        "passage": "Cities are often several degrees warmer than the surrounding countryside, an effect known as the urban heat island. Dark roads and roofs absorb sunlight during the day and release the heat at night, while the lack of trees means there is little shade or cooling from plants. Painting roofs white and planting street trees are among the cheapest ways to reduce the effect.",
+        "question": "According to the passage, what is one cause of the urban heat island?",
+        "options": ["Cities have more rain than the countryside.", "Dark surfaces store heat and release it at night.", "White roofs absorb more sunlight.", "Trees release heat during the day."],
+        "answer": 1,
+        "explanation_zh": "深色的路面和屋顶白天吸热、夜里放热，是原因之一。"
+      }
+    }
+  ]
+}

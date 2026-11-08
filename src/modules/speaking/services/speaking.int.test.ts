@@ -344,10 +344,11 @@ describe("recordings, deletion and privacy", () => {
 });
 
 describe("speech and activity", () => {
-  it("synthesizes speech (cached) and refuses empty or long text", async () => {
+  it("synthesizes speech once into a cached file and refuses empty or long text", async () => {
     const a = await synthesize(db, userA, "（模拟）Hello there!", false, mock);
-    expect(a.mimeType).toBe("audio/wav");
-    await synthesize(db, userA, "Hello there!", false, mock);
+    expect(a).toMatchObject({ mimeType: "audio/wav", generated: true });
+    expect(existsSync(path.join(storage, a.relativePath))).toBe(true);
+    expect(await synthesize(db, userA, "Hello there!", false, mock)).toMatchObject({ generated: false });
     const usage = await db.select().from(aiUsage).where(and(eq(aiUsage.userId, userA), eq(aiUsage.task, "speech")));
     expect(usage).toHaveLength(1);
     await expect(synthesize(db, userA, "   ", false, mock)).rejects.toThrow(SpeakingRejectedError);

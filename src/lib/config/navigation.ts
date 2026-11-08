@@ -242,6 +242,7 @@ const practiceChildren: Feature[] = [
     icon: GraduationCap,
     summary: "基础打牢后再开启的 PTE Academic 专项训练。",
     phase: 4,
+    available: true,
     highlights: [
       "按官方题型分类训练，带计时",
       "客观题精确判分；口语和写作只提供 AI 辅助反馈，不等同官方成绩",

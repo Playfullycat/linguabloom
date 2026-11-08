@@ -149,3 +149,11 @@ src/content/
   - id 写成 `<等级>.<技能缩写>.<主题>`，例如 `a2.sp.opinion`；全部内容里不能重复。已上线的 id 不要改，删掉的会被归档，学习者的证据仍然指向它。
   - **练习要说明它证明哪条能力**：内置材料、语法点、口语任务、写作题目都可以写 `can_do_ids`（最多 6 个），课时用已有的 `can_do_ids`。只有写了 `can_do_ids` 的练习才会产生能力证据；课时步骤只算给技能维度相同的那几条。写错 id 时 `npm run test` 和种子都会报错。
   - 通过标准不用写：按技能维度自动设定（见决定 D79），“证据类型”也由引用它的内容自动算出。
+- `src/content/pte/exam-versions.json`：**PTE 考试版本**（规格 §5.13、§8.8），由 `src/modules/pte/content.ts` 校验，`pte` 种子写入数据库。
+  - 每个版本：`id`、名称、`effective_from`（官方没写就填 `null`，不要猜）、`reviewed_on`（核对官方页面的日期）、官方来源链接、说明，以及 22 类题型。只能有一个 `is_current: true`。
+  - Pearson 改了题型或规则时，**新增一个版本**，不要改旧版本：旧的作答记录绑定的是旧版本。题型 `code`（如 `r_fib_dropdown`）在各版本之间保持不变。
+  - 每类题型：官方时间和限制（`timing`）、官方评分描述（`scoring.official_zh`）、本应用的判分方法（`scoring.method`）。官方没公开的规则要写 `"unconfirmed": true`，并在 `rule_zh` 里说明。说明文字用自己的话转述官方页面，不要整段照抄。
+- `src/content/pte/prompts/*.json`：**原创 PTE 练习题**。每题 `id`（`pte-…`）、`task`（题型 code）、`difficulty`（1–5）、`title_zh`、`content`（格式见 `src/modules/pte/content.ts` 的 `promptContent`）。
+  - 阅读填空用 `{1}`、`{2}` 标出空；听力填空直接把答案写在花括号里，可接受的其他写法用 `/` 分开（例如 `{analysed/analyzed}`）；“找出不同的词”写成 `[文字稿里的词|录音里的词]`。
+  - 听力题写 `script`（录音的文字，用语音合成朗读）；文字长度按官方上限（阅读填空 200 词、多选 350 词、排序和单选 110 词、拖放 80 词）。
+  - 改动已上线的题目时，种子会自动升 `content_version`，旧作答仍显示当时的内容。题目全部原创，不要改写真题或第三方题库。

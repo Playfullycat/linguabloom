@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "source_type": "first_party",
+  "review_status": "pending_owner_review",
+  "prompts": [
+    {
+      "id": "pte-l-sst-01", "task": "l_sst", "difficulty": 3, "title_zh": "城市养蜂",
+      "content": {
+        "script": [{ "text": "Today I want to talk about urban beekeeping, which has become surprisingly popular in many cities. You might think that bees need large fields of flowers, but cities can actually offer a rich variety of plants in parks, gardens and along streets. In some cases, city bees produce more honey than bees in the countryside, where farms often grow just one crop and use chemicals that harm insects. However, there are concerns. If too many hives are placed in one area, there may not be enough flowers for all of them, and honeybees can compete with wild bees for food. So the key message is balance: urban beekeeping can help, but only if we also plant more flowers and protect wild species." }],
+        "key_points_zh": ["城市养蜂越来越流行", "城市植物种类多，有时比农村产蜜还多（农村单一作物、农药）", "蜂箱太多会花不够、和野生蜜蜂抢食", "结论：要平衡，同时多种花、保护野生物种"],
+        "model_summary": "The speaker explains that urban beekeeping is increasingly popular because cities offer a wide variety of plants, so city bees can even produce more honey than rural bees, which suffer from single crops and chemicals. However, too many hives can lead to a shortage of flowers and competition with wild bees, so the speaker concludes that beekeeping must be balanced with planting flowers and protecting wild species."
+      }
+    },
+    {
+      "id": "pte-l-sst-02", "task": "l_sst", "difficulty": 3, "title_zh": "间隔重复",
+      "content": {
+        "script": [{ "text": "Let's look at a learning technique called spaced repetition. Most students study by reading the same material many times in one long session, especially just before an exam. This feels productive, but research shows that much of what we learn this way is forgotten within days. Spaced repetition works differently. You review information several times, but with increasing gaps between reviews: perhaps after one day, then three days, then a week. Each time you have to work a little to remember, and this effort strengthens the memory. Many language apps now use this method automatically. The main challenge is patience, because the benefits only appear over weeks rather than in a single evening." }],
+        "key_points_zh": ["学生常一次反复读（考前突击），但很快会忘", "间隔重复：复习间隔越来越长（1 天、3 天、1 周）", "每次努力回忆会加强记忆；很多学语言的应用自动使用", "难点是要有耐心，效果要几周才出现"],
+        "model_summary": "The lecture contrasts cramming, where students reread material in one long session and soon forget most of it, with spaced repetition, in which information is reviewed at gradually increasing intervals. The effort needed to recall each time strengthens memory, and many language apps use the method, although learners need patience because the benefits appear only over several weeks."
+      }
+    },
+    {
+      "id": "pte-l-sst-03", "task": "l_sst", "difficulty": 4, "title_zh": "快时尚",
+      "content": {
+        "script": [{ "text": "Fast fashion refers to clothing that is designed, produced and sold very quickly and cheaply, so that shops can offer new styles every few weeks. For consumers, the attraction is obvious: fashionable clothes at low prices. But the environmental cost is high. Producing clothes uses large amounts of water and energy, and because the garments are cheap, many people wear them only a few times before throwing them away. Most of these clothes end up in landfill rather than being recycled. Some brands now offer repair services or take back old clothes, and second-hand shopping is growing among young people. Still, experts argue that the most effective change would be simply to buy fewer, better-quality items." }],
+        "key_points_zh": ["快时尚：快速、便宜地设计生产销售，几周就换新款", "对消费者有吸引力：便宜又时髦", "环境代价：耗水耗能，衣服穿几次就扔，大多进填埋场", "一些品牌提供修补、回收，二手消费增长；专家认为最有效的是少买、买质量好的"],
+        "model_summary": "The speaker defines fast fashion as cheap clothing produced and sold quickly with frequent new styles, which appeals to consumers but has a high environmental cost, since production uses much water and energy and clothes are soon thrown into landfill. Although repair, take-back schemes and second-hand shopping are growing, experts believe buying fewer, better-quality items would be most effective."
+      }
+    },
+    {
+      "id": "pte-l-mcma-01", "task": "l_mcma", "difficulty": 2, "title_zh": "图书馆新规",
+      "content": {
+        "script": [{ "text": "Good morning, everyone. I'd like to explain a few changes at the university library this term. First, the library will now be open twenty-four hours a day during the exam period, from the first of May until the end of June. Second, you can book group study rooms online for up to three hours at a time. Please note that food is still not allowed on the upper floors, but you can now bring drinks in closed cups. Finally, we have added more charging points for laptops on every floor." }],
+        "question": "Which changes at the library are mentioned?",
+        "options": ["Twenty-four-hour opening during exams", "Food allowed on all floors", "Online booking of group study rooms", "Free laptops for students", "More charging points for laptops"],
+        "answers": [0, 2, 4],
+        "explanation_zh": "提到考试期间 24 小时开放、网上预约小组学习室、增加充电口。楼上仍然不能带食物；没有提到免费笔记本电脑。"
+      }
+    },
+    {
+      "id": "pte-l-mcma-02", "task": "l_mcma", "difficulty": 3, "title_zh": "城市为什么种树",
+      "content": {
+        "script": [{ "text": "Why are so many cities now planting trees along their streets? There are several reasons. Trees provide shade, which can lower street temperatures by several degrees on hot days. Their leaves catch some dust from the air, although the effect on overall air quality is smaller than many people think. Studies have also found that people walk more in streets with trees, and that shops on green streets attract more customers. The main challenges are the cost of looking after the trees and choosing species that can survive dry summers and polluted air." }],
+        "question": "According to the speaker, what are the benefits of street trees?",
+        "options": ["They lower street temperatures", "They solve the problem of air pollution", "People walk more in tree-lined streets", "Shops on green streets get more customers", "They need very little care"],
+        "answers": [0, 2, 3],
+        "explanation_zh": "好处：降温、人们更愿意步行、商店顾客更多。对空气质量的作用“比很多人想的小”，不能说解决污染；维护成本是挑战之一。"
+      }
+    },
+    {
+      "id": "pte-l-mcma-03", "task": "l_mcma", "difficulty": 4, "title_zh": "说话人对电动滑板车的态度",
+      "content": {
+        "script": [{ "text": "Electric scooters arrived in our city two years ago, and opinion is still divided. I'll be honest: I was sceptical at first. I saw scooters left on pavements and riders going far too fast. But I've changed my mind to some extent. For short trips of two or three kilometres, they're genuinely useful, and they've reduced the number of car journeys in the city centre. What still worries me is safety. We need proper lanes for scooters, and riders under sixteen shouldn't be allowed to use them. With those rules, I think they could be a positive part of city transport." }],
+        "question": "Which statements describe the speaker's opinion?",
+        "options": ["The speaker was doubtful about scooters at first", "The speaker thinks scooters are useful for short trips", "The speaker wants scooters banned completely", "The speaker is concerned about safety", "The speaker has never used public transport"],
+        "answers": [0, 1, 3],
+        "explanation_zh": "说话人一开始持怀疑态度（sceptical），现在认为短途很有用，但仍担心安全，要求专用道和年龄限制；并没有要求全面禁止。"
+      }
+    },
+    {
+      "id": "pte-l-fib-01", "task": "l_fib_type", "difficulty": 2, "title_zh": "课程安排",
+      "content": {
+        "transcript": "Welcome to the course. Lectures take place every {Tuesday} morning in the main {hall}. You will also have a weekly seminar in a smaller {group}, where you can discuss the {reading} and ask questions.",
+        "explanation_zh": "注意 Tuesday 首字母大写不影响判分，但拼写要对；hall、group、reading 都是常见词。"
+      }
+    },
+    {
+      "id": "pte-l-fib-02", "task": "l_fib_type", "difficulty": 3, "title_zh": "气候与农业",
+      "content": {
+        "transcript": "Changes in the {climate} are already affecting farmers in many regions. Longer dry periods reduce the {amount} of water available for crops, while heavy rain can {damage} young plants. Some farmers are responding by growing more {resistant} varieties.",
+        "explanation_zh": "climate、amount、damage、resistant 都容易拼错，尤其是 resistant（不是 resistent）。"
+      }
+    },
+    {
+      "id": "pte-l-fib-03", "task": "l_fib_type", "difficulty": 4, "title_zh": "研究方法",
+      "content": {
+        "transcript": "In the first {stage} of the study, researchers interviewed forty participants. The results were then {analysed/analyzed} to identify common themes. Although the sample was {relatively} small, the findings provide a useful starting point for a larger {survey}.",
+        "explanation_zh": "analysed 英式拼法（analyzed 美式拼法也算对）；relatively 注意双 l 前的 -ly。"
+      }
+    },
+    {
+      "id": "pte-l-hcs-01", "task": "l_hcs", "difficulty": 2, "title_zh": "午睡",
+      "content": {
+        "script": [{ "text": "A short nap in the afternoon can be surprisingly helpful. Studies show that sleeping for about twenty minutes can improve alertness and mood without making people feel heavy afterwards. Longer naps, however, may lead to deep sleep, and waking up from deep sleep often leaves people feeling worse for a while. They can also make it harder to fall asleep at night." }],
+        "options": [
+          "Naps are always harmful and should be avoided.",
+          "Short naps can improve alertness and mood, but long naps may leave people tired and affect night-time sleep.",
+          "Most people need at least two hours of sleep in the afternoon.",
+          "Napping only helps people who work at night."
+        ],
+        "answer": 1,
+        "explanation_zh": "录音说短午睡有好处，长午睡可能让人更难受、影响夜间睡眠。其他选项要么太绝对，要么录音里没说。"
+      }
+    },
+    {
+      "id": "pte-l-hcs-02", "task": "l_hcs", "difficulty": 3, "title_zh": "博物馆的数字化",
+      "content": {
+        "script": [{ "text": "Many museums have started to photograph and scan their collections so that people can view them online. This allows researchers in other countries to study objects without travelling, and it protects fragile items that cannot be handled often. Some museum directors feared that online collections would mean fewer visitors, but the opposite seems to be true: people who discover objects online often want to see the real thing." }],
+        "options": [
+          "Museums are closing because people prefer to view collections online.",
+          "Scanning objects is too expensive for most museums.",
+          "Putting collections online helps research and protects fragile objects, and it may even encourage more visits.",
+          "Researchers no longer need to visit museums at all."
+        ],
+        "answer": 2,
+        "explanation_zh": "录音讲了两个好处（方便研究、保护脆弱文物），并说线上展示反而让人更想去现场。"
+      }
+    },
+    {
+      "id": "pte-l-hcs-03", "task": "l_hcs", "difficulty": 4, "title_zh": "选择的悖论",
+      "content": {
+        "script": [{ "text": "We usually assume that more choice is better. Yet in one well-known experiment, shoppers who were offered twenty-four kinds of jam were less likely to buy any than those offered just six. Psychologists suggest that when there are too many options, people find it harder to decide and worry more about making the wrong choice. Later studies have shown that the effect is not always so strong, but it seems to matter most when options are hard to compare." }],
+        "options": [
+          "Shops should always offer as many products as possible.",
+          "Too much choice can make decisions harder, although the effect varies and is strongest when options are difficult to compare.",
+          "People never buy jam when there are more than six kinds.",
+          "Later studies proved that choice has no effect on decisions."
+        ],
+        "answer": 1,
+        "explanation_zh": "核心：选择太多可能让人难以决定；后来的研究发现效果不总是那么强，在难以比较时最明显。"
+      }
+    },
+    {
+      "id": "pte-l-mcsa-01", "task": "l_mcsa", "difficulty": 2, "title_zh": "交作业",
+      "content": {
+        "script": [{ "text": "Just a reminder about your essays. The deadline was originally Friday, but because the library system was down this week, I've decided to give everyone until Monday at noon. Please submit your work online, not on paper." }],
+        "question": "What is the new deadline for the essays?",
+        "options": ["Friday", "Monday at noon", "Monday evening", "Next Friday"],
+        "answer": 1,
+        "explanation_zh": "原来是周五，因为图书馆系统故障延到周一中午。"
+      }
+    },
+    {
+      "id": "pte-l-mcsa-02", "task": "l_mcsa", "difficulty": 3, "title_zh": "城市噪音",
+      "content": {
+        "script": [{ "text": "Noise is often treated as a minor annoyance, but long-term exposure to traffic noise has been linked to poor sleep, stress and even heart problems. That's why some cities are now creating quiet zones, lowering speed limits at night and using road surfaces that absorb sound. These measures are not expensive compared with the health costs they can prevent." }],
+        "question": "What is the speaker's main point?",
+        "options": ["Traffic noise is only a small annoyance.", "Reducing noise can protect health at a reasonable cost.", "Cities should ban cars at night.", "Quiet zones are too expensive."],
+        "answer": 1,
+        "explanation_zh": "说话人认为长期噪音危害健康，而减噪措施和省下的健康成本相比并不贵。"
+      }
+    },
+    {
+      "id": "pte-l-mcsa-03", "task": "l_mcsa", "difficulty": 4, "title_zh": "科学报道",
+      "content": {
+        "script": [{ "text": "When you read a headline saying that a food 'causes' or 'prevents' a disease, it's worth looking more closely. Often the original study only found that two things tend to occur together, which doesn't prove that one causes the other. Before changing your diet, check whether the study involved people or just animals, and how large it was." }],
+        "question": "What does the speaker advise listeners to do?",
+        "options": ["Ignore all scientific research about food.", "Look carefully at the study behind a health headline.", "Only trust studies about animals.", "Change their diet whenever a new study appears."],
+        "answer": 1,
+        "explanation_zh": "建议看健康新闻时仔细看原研究：是相关还是因果、对象是人还是动物、样本多大。"
+      }
+    },
+    {
+      "id": "pte-l-smw-01", "task": "l_smw", "difficulty": 2, "title_zh": "天气预报",
+      "content": {
+        "script": [{ "text": "Tomorrow will start cloudy, with some light rain in the morning. By the afternoon the clouds will clear, and temperatures will rise to around twenty-two degrees. So if you are planning to go to the beach, the best time will be in the" }],
+        "options": ["morning", "afternoon", "night", "winter"],
+        "answer": 1,
+        "explanation_zh": "上午有雨，下午放晴升温，所以去海边最好在下午。"
+      }
+    },
+    {
+      "id": "pte-l-smw-02", "task": "l_smw", "difficulty": 3, "title_zh": "储蓄的建议",
+      "content": {
+        "script": [{ "text": "Many people try to save whatever money is left at the end of the month, and they usually find that nothing is left. A better approach is to move a fixed amount into a savings account as soon as you are paid. In other words, you should pay yourself" }],
+        "options": ["later", "first", "less", "back"],
+        "answer": 1,
+        "explanation_zh": "发工资马上存一笔，即“先付给自己”：pay yourself first。"
+      }
+    },
+    {
+      "id": "pte-l-smw-03", "task": "l_smw", "difficulty": 4, "title_zh": "实验结论",
+      "content": {
+        "script": [{ "text": "The new drug performed well in the laboratory, but the trial involved only thirty patients and lasted just six weeks. Before doctors can recommend it widely, larger and longer studies will be needed. For now, the results should be seen as promising but" }],
+        "options": ["final", "preliminary", "harmful", "expensive"],
+        "answer": 1,
+        "explanation_zh": "样本小、时间短，结果只能算“初步的” preliminary。"
+      }
+    },
+    {
+      "id": "pte-l-hiw-01", "task": "l_hiw", "difficulty": 2, "title_zh": "校园咖啡馆",
+      "content": {
+        "transcript": "The new campus café opens at [eight|seven] every morning and closes at six in the evening. Students can get a ten per cent [reduction|discount] if they bring their own cup. The café also sells [frozen|fresh] sandwiches and fruit.",
+        "explanation_zh": "录音说 seven、discount、fresh；文字稿写成了 eight、reduction、frozen。"
+      }
+    },
+    {
+      "id": "pte-l-hiw-02", "task": "l_hiw", "difficulty": 3, "title_zh": "鸟类迁徙",
+      "content": {
+        "transcript": "Every autumn, millions of birds [fly|travel] south to spend the winter in warmer regions. Many of them use the position of the sun and stars to [guide|find] their way. Scientists believe some species can also sense the Earth's [electric|magnetic] field.",
+        "explanation_zh": "录音说 travel、find、magnetic；文字稿写成了 fly、guide、electric。注意 fly 和 travel 意思接近，要靠耳朵而不是意思判断。"
+      }
+    },
+    {
+      "id": "pte-l-hiw-03", "task": "l_hiw", "difficulty": 4, "title_zh": "城市规划",
+      "content": {
+        "transcript": "Urban planners increasingly [design|plan] neighbourhoods where shops, schools and parks are within a fifteen-minute walk. The aim is to reduce car use and make daily life more [comfortable|convenient]. Critics argue, however, that the idea is [expensive|difficult] to apply in large, spread-out cities.",
+        "explanation_zh": "录音说 plan、convenient、difficult；文字稿写成了 design、comfortable、expensive。"
+      }
+    },
+    {
+      "id": "pte-l-wfd-01", "task": "l_wfd", "difficulty": 2, "title_zh": "听写 1",
+      "content": { "sentence": "The library will be closed on Sunday for repairs." }
+    },
+    {
+      "id": "pte-l-wfd-02", "task": "l_wfd", "difficulty": 3, "title_zh": "听写 2",
+      "content": { "sentence": "Students must submit their assignments before the end of the month." }
+    },
+    {
+      "id": "pte-l-wfd-03", "task": "l_wfd", "difficulty": 4, "title_zh": "听写 3",
+      "content": { "sentence": "Research suggests that regular exercise improves both memory and concentration." }
+    }
+  ]
+}

@@ -61,6 +61,7 @@ export class MockProvider implements AIProvider {
     if (user.includes("[mock:invalid]")) text = "{ not json";
     else if (input.task === "writing_feedback") text = JSON.stringify(mockWritingFeedback(input.system, user, level));
     else if (input.task === "speaking_feedback") text = JSON.stringify(mockSpeakingFeedback(user));
+    else if (input.task === "pte_feedback") text = JSON.stringify(mockPteFeedback(user));
     else if (input.task === "speaking_reply") text = mockSpeakingReply(user, level);
     else if (input.task === "definition") text = JSON.stringify(mockDefinition(user));
     else if (input.task === "generation") text = JSON.stringify(mockGeneration(mode, user, level));
@@ -192,6 +193,26 @@ function mockSpeakingFeedback(user: string) {
   };
 }
 
+
+/** PTE written-answer feedback from the "SUMMARY:" part of the message. */
+function mockPteFeedback(user: string) {
+  const summary = user.split(/^SUMMARY:\s*/m).pop() ?? "";
+  const misspelled = [...summary.matchAll(/\b(recieve|beleive|enviroment|goverment|definately|seperate)\b/gi)].map((m) => m[1]!);
+  const fixes: Record<string, string> = { recieve: "receive", beleive: "believe", enviroment: "environment", goverment: "government", definately: "definitely", seperate: "separate" };
+  const grammar = sentencesOf(summary).flatMap((s) => {
+    const r = RULES.find((x) => x.test.test(s));
+    return r ? [{ original: s, corrected: r.fix(s) }] : [];
+  });
+  return {
+    content: { comment_zh: "（模拟反馈）抓住了主题。", covered: ["主题"], missing: ["结论"], misrepresents: false },
+    grammar: { comment_zh: grammar.length ? "（模拟反馈）有一处主谓一致的问题。" : "（模拟反馈）句子结构基本正确。", issues: grammar },
+    vocabulary: { comment_zh: "（模拟反馈）用词基本准确。" },
+    spelling: { errors: misspelled.map((w) => ({ wrong: w, right: fixes[w.toLowerCase()]! })) },
+    overall_zh: "（模拟反馈）先补上结论，再检查拼写。",
+    confidence: "high",
+    limitations: ["这是模拟 AI 的反馈，只用于测试界面。"],
+  };
+}
 
 // ------------------------------------------------- other mock tasks ----
 

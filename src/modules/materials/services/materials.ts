@@ -142,6 +142,8 @@ export type ClientQuestion = Omit<MaterialQuestion, "answer" | "explanation_zh">
 };
 
 export type ClientSegment = {
+  /** Segment id (generated speech is fetched per sentence). */
+  id: string;
   sequence: number;
   speaker: string | null;
   /** Real timestamps (imported subtitles) or null. */
@@ -223,6 +225,7 @@ export async function getMaterialForReader(db: DbExecutor, userId: string, conte
     segments: segments.map((s) => {
       const tokens = tokenize(s.textEn, glossary);
       return {
+        id: s.id,
         sequence: s.sequence,
         speaker: s.speaker,
         startMs: s.startMs,
@@ -536,3 +539,13 @@ export async function pickInputMaterial(db: DbExecutor, userId: string, preferTy
   };
 }
 
+
+/** One sentence of a material the learner can see (built-in or their own), for speech synthesis. */
+export async function getSegmentText(db: DbExecutor, userId: string, segmentId: string): Promise<string | null> {
+  const [row] = await db
+    .select({ text: transcriptSegments.textEn })
+    .from(transcriptSegments)
+    .innerJoin(learningContents, eq(learningContents.id, transcriptSegments.contentId))
+    .where(and(eq(transcriptSegments.id, segmentId), or(isNull(learningContents.ownerUserId), eq(learningContents.ownerUserId, userId))));
+  return row?.text ?? null;
+}

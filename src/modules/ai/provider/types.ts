@@ -16,7 +16,8 @@ export type AITask =
   | "speaking_reply"
   | "speaking_realtime"
   | "transcription"
-  | "speech";
+  | "speech"
+  | "pte_feedback";
 
 export type TextGenerationInput = {
   task: AITask;

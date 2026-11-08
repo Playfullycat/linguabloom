@@ -31,10 +31,11 @@ type Practice = "questions" | "dictation" | "keyword";
 /**
  * Listening Studio (spec §2.5, §5.7): listen first, then read. Sentence-by-
  * sentence playback, loops and speed control. Built-in materials have no
- * recorded audio yet, so the browser reads each sentence; there are no fake
- * word-level timestamps.
+ * recorded audio: with a speech model each sentence is generated once and
+ * cached as a file; otherwise the browser reads it (the page says which).
+ * There are no fake word-level timestamps.
  */
-export function ListeningStudio({ material, aiAvailable }: { material: ReaderMaterial; aiAvailable: boolean }) {
+export function ListeningStudio({ material, aiAvailable, ttsAvailable = false }: { material: ReaderMaterial; aiAvailable: boolean; ttsAvailable?: boolean }) {
   useStudyTime(material.id);
   const supported = useSpeechSupported();
   const [rate, setRate] = useState<number>(1);
@@ -61,9 +62,40 @@ export function ListeningStudio({ material, aiAvailable }: { material: ReaderMat
   const currentRef = useRef<number | null>(null);
   const [ab, setAb] = useState<{ a: number | null; b: number | null }>({ a: null, b: null });
   const abRef = useRef(ab);
-  const canPlay = timed || supported;
+  // Generated speech per sentence; falls back to the browser voice if it fails once.
+  const ttsRef = useRef<HTMLAudioElement | null>(null);
+  const [ttsFailed, setTtsFailed] = useState(false);
+  const useTts = ttsAvailable && !ttsFailed && !hasAudio;
+  const canPlay = timed || supported || useTts;
 
-  useEffect(() => () => stopSpeaking(), []);
+  /** Say one sentence and resolve when it has finished (or was stopped). */
+  const saySentence = (i: number, rate: number): Promise<void> => {
+    if (!useTts) return speak(segments[i]!.en, rate);
+    return new Promise((resolve) => {
+      const audio = ttsRef.current ?? new Audio();
+      ttsRef.current = audio;
+      audio.src = `/api/tts/segment/${segments[i]!.id}`;
+      audio.playbackRate = rate;
+      audio.onended = () => resolve();
+      audio.onpause = () => resolve();
+      audio.onerror = () => {
+        setTtsFailed(true);
+        void speak(segments[i]!.en, rate).then(resolve);
+      };
+      audio.play().catch(() => {
+        setTtsFailed(true);
+        void speak(segments[i]!.en, rate).then(resolve);
+      });
+    });
+  };
+
+  useEffect(
+    () => () => {
+      stopSpeaking();
+      ttsRef.current?.pause();
+    },
+    [],
+  );
 
   const notePlay = (seq: number) => {
     const n = (plays.current.get(seq) ?? 0) + 1;
@@ -128,7 +160,7 @@ export function ListeningStudio({ material, aiAvailable }: { material: ReaderMat
     while (i < segments.length && run.current === id) {
       setCurrent(i);
       notePlay(i);
-      await speak(segments[i]!.en, rateRef.current);
+      await saySentence(i, rateRef.current);
       if (run.current !== id) return;
       if (loopRef.current) {
         await new Promise((r) => setTimeout(r, 600));
@@ -143,6 +175,7 @@ export function ListeningStudio({ material, aiAvailable }: { material: ReaderMat
   const stop = () => {
     run.current += 1;
     stopSpeaking();
+    ttsRef.current?.pause();
     audioRef.current?.pause();
     stopAtRef.current = null;
     setPlaying(false);
@@ -163,7 +196,7 @@ export function ListeningStudio({ material, aiAvailable }: { material: ReaderMat
   /** For dictation: one sentence from the recording, or read aloud. */
   const playOne = (seq: number) => {
     if (timed) void play(seq, true);
-    else void speak(segments[seq]!.en, rateRef.current);
+    else void saySentence(seq, rateRef.current);
   };
 
   const changeSubtitles = (v: Subtitles) => {
@@ -185,6 +218,7 @@ export function ListeningStudio({ material, aiAvailable }: { material: ReaderMat
                 {FIT_LABELS[material.fit]}（你约 {material.learnerLevelLabel}）
               </Badge>
               <Badge>{segments.length} 句</Badge>
+              {!hasAudio ? <Badge tone="outline">{useTts ? "AI 朗读（生成后缓存）" : "浏览器朗读"}</Badge> : null}
             </div>
 
             {!canPlay ? (

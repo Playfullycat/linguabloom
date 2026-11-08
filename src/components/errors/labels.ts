@@ -16,4 +16,5 @@ export const SOURCE_LABELS: Record<string, string> = {
   listening: "听力",
   writing: "写作",
   speaking: "口语",
+  pte: "PTE 练习",
 };

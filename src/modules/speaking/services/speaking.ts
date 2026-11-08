@@ -4,6 +4,7 @@ import type { Database, DbExecutor } from "@/db/connection";
 import { learningContents, mediaAssets, speakingAttempts, transcriptSegments, type ErrorCategory, type SpeakingTranscriptEntry } from "@/db/schema";
 import { getEnv, type Env } from "@/lib/config/env";
 import { removeStored, storeAudio } from "@/lib/storage";
+import { cachedSpeech } from "@/modules/audio/tts-cache";
 import { getAIProvider } from "@/modules/ai/provider";
 import { AIError } from "@/modules/ai/provider/errors";
 import type { AIProvider } from "@/modules/ai/provider/types";
@@ -267,26 +268,13 @@ export async function speakingTurn(db: Database, userId: string, attemptId: stri
   return { learnerText, silent: false, aiText, replyError, comparison, final, audioAssetId };
 }
 
-/** Text for speech synthesis, cached per process (repeat-sentence items are heard many times). */
-const speechCache = new Map<string, { audio: Uint8Array; mimeType: string }>();
-const SPEECH_CACHE_SIZE = 64;
-
+/** The teacher's line (or a sentence to repeat) as speech, from the shared file cache (heard many times, paid once). */
 export async function synthesize(db: DbExecutor, userId: string, text: string, slow: boolean, provider?: AIProvider | null, env: Env = getEnv()) {
   const clean = text.replace(/（模拟）/g, "").replace(/\s+/g, " ").trim();
   if (!clean || clean.length > MAX_SPEECH_TEXT) throw new SpeakingRejectedError("要朗读的文字太长或为空。");
   const p = resolveProvider(provider, env);
   if (!p.voice.speech) throw new SpeakingRejectedError("语音合成没有配置（需要 AI_TTS_MODEL）。");
-  const key = `${p.name}|${env.AI_TTS_MODEL ?? ""}|${env.AI_VOICE}|${slow ? 1 : 0}|${clean}`;
-  const hit = speechCache.get(key);
-  if (hit) return hit;
-  const { profile } = await getLearnerSettings(db, userId);
-  const { value } = await runAI({ db, userId, task: "speech", timeZone: profile.timezone, provider: p, env, unpriced: true }, async (ai) => {
-    const r = await ai.synthesizeSpeech({ text: clean, voice: env.AI_VOICE, slow });
-    return { value: { audio: r.audio, mimeType: r.mimeType }, usage: r.usage, model: r.model };
-  });
-  speechCache.set(key, value);
-  if (speechCache.size > SPEECH_CACHE_SIZE) speechCache.delete(speechCache.keys().next().value!);
-  return value;
+  return cachedSpeech(db, userId, clean, { slow }, p, env);
 }
 
 export type EndInput = {
