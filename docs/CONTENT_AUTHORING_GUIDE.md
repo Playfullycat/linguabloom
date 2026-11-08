@@ -143,3 +143,9 @@ src/content/
   - 练习：`choice`、`cloze`（一个 `___`）、`order`（`tokens` 必须正好是第一个答案里的词）、`correction`（`wrong_en` + 可接受的改法）、`build`（`task_zh` + `model_answers` + 1–4 条 `checklist_zh`，学习者自评）。至少 5 道自动判分题、至少 3 种题型（补救用 3 道、再测再用 2 道不同的）。单题可以用 `error_category` 覆盖默认类别。
   - 练习 id 写成 `e1`、`e2`……，入库后是 `<语法点 id>.<e1>`。已上线的题不要改题意，要换就用新 id。
 - `src/content/writing/prompts.json`：写作题目（规格 §5.11），由 `src/modules/writing/content.ts` 校验。每题有 `id`（`w-…`）、`type`（rewrite / diary / email / opinion / summary）、`level`、中英标题和要求、`min_words` / `max_words`、1–4 条自查清单，摘要题可以用 `source_material` 指向一篇阅读材料。
+- `src/content/speaking/tasks.json`：口语任务（规格 §5.10），由 `src/modules/speaking/content.ts` 校验。每题有 `id`（`sp-…`）、`type`（read_aloud / repeat_sentence / short_answer / guided_conversation / roleplay / retelling / opinion）、`level`、中英标题、目标、说明、能力目标。朗读和跟读要有 `items`（逐句）；对话类要有 `opening_en`（老师的第一句），可选 `questions`、`setup_en`（角色 / 场景，写给 AI）、`key_phrases`、`max_turns`；故事复述要用 `source_material` 指向一篇内置材料。
+- `src/content/can-do/catalog.json`：**能力描述**（规格 §2.1），和各单元文件里的 `can_do` 合在一起，由 `src/modules/abilities/content.ts` 校验，`can-do` 种子写入 `can_do_statements`。
+  - 单元的 `can_do` 是课程目标；`catalog.json` 补充整个等级的描述（每条：`id`、`level`、`skill`（十个技能维度之一）、`en`、`zh`、可选 `prerequisites`）。用自己的话写，和 CEFR 等级对齐，不要照抄 CEFR Companion Volume 的原文。
+  - id 写成 `<等级>.<技能缩写>.<主题>`，例如 `a2.sp.opinion`；全部内容里不能重复。已上线的 id 不要改，删掉的会被归档，学习者的证据仍然指向它。
+  - **练习要说明它证明哪条能力**：内置材料、语法点、口语任务、写作题目都可以写 `can_do_ids`（最多 6 个），课时用已有的 `can_do_ids`。只有写了 `can_do_ids` 的练习才会产生能力证据；课时步骤只算给技能维度相同的那几条。写错 id 时 `npm run test` 和种子都会报错。
+  - 通过标准不用写：按技能维度自动设定（见决定 D79），“证据类型”也由引用它的内容自动算出。

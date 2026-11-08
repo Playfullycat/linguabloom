@@ -1,4 +1,4 @@
-import { and, asc, desc, eq, isNull, sql } from "drizzle-orm";
+import { and, asc, desc, eq, inArray, isNull, sql } from "drizzle-orm";
 
 import type { Database, DbExecutor } from "@/db/connection";
 import { assessmentAttempts, assessmentItems, assessmentSessions, skillEstimates } from "@/db/schema";
@@ -81,6 +81,7 @@ function computeState(
   session: typeof assessmentSessions.$inferSelect,
   items: ItemRow[],
   attempts: Awaited<ReturnType<typeof loadAttempts>>,
+  avoid: ReadonlySet<string> = new Set(),
 ): { state: AssessmentState; next: ItemRow | null } {
   const start = startLevel(session.selfReportedLevel);
   const skipped = new Set(session.skippedSkills);
@@ -92,7 +93,7 @@ function computeState(
     const pool = items.filter((i) => i.skill === skill);
     const max = Math.min(MAX_ITEMS[skill], pool.length);
     if (skipped.has(skill)) return { skill, answered: mine.length, max, status: "skipped" };
-    const candidate = session.status === "completed" ? null : nextItem(skill, mine, pool, start);
+    const candidate = session.status === "completed" ? null : nextItem(skill, mine, pool, start, avoid);
     if (!candidate) return { skill, answered: mine.length, max, status: "done" };
     if (!current) {
       current = { skill, item: toClientItem(candidate), index: mine.length + 1, max };
@@ -148,10 +149,23 @@ export async function startOrResumeAssessment(db: Database, userId: string, self
   });
 }
 
+/** Items answered in the learner's previous completed diagnostic (a retake prefers other items). */
+async function previousItemIds(db: DbExecutor, userId: string, session: typeof assessmentSessions.$inferSelect): Promise<Set<string>> {
+  const [prev] = await db
+    .select({ id: assessmentSessions.id })
+    .from(assessmentSessions)
+    .where(and(eq(assessmentSessions.userId, userId), eq(assessmentSessions.status, "completed"), sql`${assessmentSessions.startedAt} < ${session.startedAt.toISOString()}`))
+    .orderBy(desc(assessmentSessions.startedAt))
+    .limit(1);
+  if (!prev) return new Set();
+  const rows = await db.select({ itemId: assessmentAttempts.itemId }).from(assessmentAttempts).where(eq(assessmentAttempts.sessionId, prev.id));
+  return new Set(rows.map((r) => r.itemId));
+}
+
 export async function getAssessmentState(db: DbExecutor, userId: string, sessionId: string): Promise<AssessmentState> {
   const session = await getOwnedSession(db, userId, sessionId);
-  const [items, attempts] = await Promise.all([loadItems(db, session.bankVersion), loadAttempts(db, sessionId)]);
-  return computeState(session, items, attempts).state;
+  const [items, attempts, avoid] = await Promise.all([loadItems(db, session.bankVersion), loadAttempts(db, sessionId), previousItemIds(db, userId, session)]);
+  return computeState(session, items, attempts, avoid).state;
 }
 
 export type AnswerItemInput = {
@@ -185,6 +199,7 @@ export async function answerAssessmentItem(db: Database, userId: string, input: 
     const items = await loadItems(tx, session.bankVersion);
     const item = items.find((i) => i.id === input.itemId);
     if (!item) throw new AssessmentItemRejectedError(`Unknown item ${input.itemId}`);
+    const avoid = await previousItemIds(tx, userId, session);
 
     const [existing] = await tx
       .select()
@@ -198,12 +213,12 @@ export async function answerAssessmentItem(db: Database, userId: string, input: 
         explanationZh: item.explanation_zh,
         correctAnswer: displayAnswer(item),
         duplicate: true,
-        state: computeState(session, items, attempts).state,
+        state: computeState(session, items, attempts, avoid).state,
       };
     }
 
     if (session.status !== "in_progress") throw new AssessmentItemRejectedError("Session already completed");
-    const before = computeState(session, items, await loadAttempts(tx, session.id));
+    const before = computeState(session, items, await loadAttempts(tx, session.id), avoid);
     if (before.next?.id !== item.id) throw new AssessmentItemRejectedError(`Item ${item.id} is not the current item`);
 
     const isCorrect = scoreItem(item, { choice: input.choice, text: input.text });
@@ -222,7 +237,7 @@ export async function answerAssessmentItem(db: Database, userId: string, input: 
       explanationZh: item.explanation_zh,
       correctAnswer: displayAnswer(item),
       duplicate: false,
-      state: computeState(session, items, attempts).state,
+      state: computeState(session, items, attempts, avoid).state,
     };
   });
 }
@@ -324,4 +339,42 @@ export async function getCurrentEstimates(db: DbExecutor, userId: string): Promi
     .where(eq(skillEstimates.userId, userId))
     .orderBy(skillEstimates.skill, desc(skillEstimates.createdAt));
   return rows.map(({ details, ...r }) => ({ ...r, mayBeHigher: Boolean((details as { mayBeHigher?: boolean } | null)?.mayBeHigher) }));
+}
+
+export type AssessmentHistoryEntry = {
+  sessionId: string;
+  completedAt: Date;
+  skipped: string[];
+  estimates: { skill: string; level: string; confidence: string; evidenceCount: number }[];
+};
+
+/** Every completed diagnostic with its per-skill results, newest first (spec Phase 4: assessment history). */
+export async function listAssessmentHistory(db: DbExecutor, userId: string): Promise<AssessmentHistoryEntry[]> {
+  const sessions = await db
+    .select({ id: assessmentSessions.id, completedAt: assessmentSessions.completedAt, skipped: assessmentSessions.skippedSkills })
+    .from(assessmentSessions)
+    .where(and(eq(assessmentSessions.userId, userId), eq(assessmentSessions.status, "completed")))
+    .orderBy(desc(assessmentSessions.completedAt));
+  if (sessions.length === 0) return [];
+  const rows = await db
+    .select({ source: skillEstimates.source, skill: skillEstimates.skill, level: skillEstimates.estimatedLevel, confidence: skillEstimates.confidence, evidenceCount: skillEstimates.evidenceCount })
+    .from(skillEstimates)
+    .where(and(eq(skillEstimates.userId, userId), inArray(skillEstimates.source, sessions.map((s) => `assessment:${s.id}`))));
+  return sessions.map((s) => ({
+    sessionId: s.id,
+    completedAt: s.completedAt!,
+    skipped: s.skipped,
+    estimates: rows.filter((r) => r.source === `assessment:${s.id}`).map(({ source: _s, ...r }) => (void _s, r)),
+  }));
+}
+
+export type EstimatePoint = { skill: string; level: string; confidence: string; evidenceCount: number; source: string; createdAt: Date };
+
+/** The full history of skill estimates (diagnostics, practice, AI writing), oldest first. */
+export async function getEstimateHistory(db: DbExecutor, userId: string): Promise<EstimatePoint[]> {
+  return db
+    .select({ skill: skillEstimates.skill, level: skillEstimates.estimatedLevel, confidence: skillEstimates.confidence, evidenceCount: skillEstimates.evidenceCount, source: skillEstimates.source, createdAt: skillEstimates.createdAt })
+    .from(skillEstimates)
+    .where(eq(skillEstimates.userId, userId))
+    .orderBy(asc(skillEstimates.createdAt));
 }

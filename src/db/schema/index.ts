@@ -9,3 +9,4 @@ export * from "./imports";
 export * from "./ai";
 export * from "./writing";
 export * from "./speaking";
+export * from "./abilities";

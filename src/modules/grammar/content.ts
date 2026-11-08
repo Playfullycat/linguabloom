@@ -50,6 +50,8 @@ export const grammarPointSchema = z
     id: slug,
     order: z.number().int().min(1),
     level: z.enum(CEFR_LEVELS),
+    /** Can-do statements this content gives evidence for (see src/content/can-do and the unit files). */
+    can_do_ids: z.array(z.string().regex(/^[a-z0-9]+(?:[-.][a-z0-9]+)*$/)).max(6).default([]),
     title_en: text,
     title_zh: text,
     status: z.enum(["published", "planned"]),

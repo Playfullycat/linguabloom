@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "source_type": "first_party",
+  "review_status": "pending_owner_review",
+  "note": "Level-wide can-do statements, written for LinguaBloom and aligned with the CEFR levels (not quoted from the CEFR Companion Volume). Unit can-do statements live in the unit files; both are merged when seeding.",
+  "statements": [
+    { "id": "pre-a1.r.words-signs", "level": "pre_a1", "skill": "reading", "en": "Can recognise familiar words and very short phrases about people and everyday things, with pictures or help.", "zh": "能在图片或提示的帮助下，认出关于人和日常物品的熟悉单词和很短的词组。", "prerequisites": [] },
+    { "id": "pre-a1.gr.pronouns", "level": "pre_a1", "skill": "grammar", "en": "Can use I, you, he, she, it, we and they in memorised phrases.", "zh": "能在熟记的短句里使用 I / you / he / she / it / we / they。", "prerequisites": [] },
+    { "id": "pre-a1.ph.familiar", "level": "pre_a1", "skill": "phonology", "en": "Can say familiar greetings and words clearly enough to be understood by a patient listener.", "zh": "能把熟悉的问候语和单词说清楚，耐心的听者能听懂。", "prerequisites": [] },
+    { "id": "pre-a1.w.personal-details", "level": "pre_a1", "skill": "written_production", "en": "Can write their name, numbers and very simple personal details.", "zh": "能写出自己的名字、数字和很简单的个人信息。", "prerequisites": [] },
+
+    { "id": "a1.r.messages", "level": "a1", "skill": "reading", "en": "Can understand short, simple messages and notes about familiar everyday matters.", "zh": "能看懂关于日常熟悉事情的简短留言和便条。", "prerequisites": ["pre-a1.r.words-signs"] },
+    { "id": "a1.l.everyday", "level": "a1", "skill": "listening", "en": "Can follow slow, clear speech about everyday situations such as shopping.", "zh": "能听懂语速慢、清楚的日常场景对话，比如购物。", "prerequisites": ["pre-a1.l.greetings"] },
+    { "id": "a1.si.simple-transactions", "level": "a1", "skill": "spoken_interaction", "en": "Can order food and drink and ask about prices using simple phrases.", "zh": "能用简单的句子点餐点饮料、问价格。", "prerequisites": ["pre-a1.si.greet"] },
+    { "id": "a1.si.answer-personal", "level": "a1", "skill": "spoken_interaction", "en": "Can answer simple questions about themselves, their family and their free time.", "zh": "能回答关于自己、家人和空闲时间的简单问题。", "prerequisites": ["pre-a1.si.introduce"] },
+    { "id": "a1.wp.simple-sentences", "level": "a1", "skill": "written_production", "en": "Can write simple sentences about themselves and their daily life.", "zh": "能用简单句写自己和日常生活。", "prerequisites": ["pre-a1.w.personal-details"] },
+    { "id": "a1.wi.short-message", "level": "a1", "skill": "written_interaction", "en": "Can write a short, simple message or invitation to a friend.", "zh": "能给朋友写一条简短的消息或邀请。", "prerequisites": [] },
+    { "id": "a1.gr.present-simple", "level": "a1", "skill": "grammar", "en": "Can use the present simple, including the he/she/it -s form and frequency words, to talk about routines.", "zh": "能用一般现在时（包括第三人称单数 -s 和频率副词）谈论日常习惯。", "prerequisites": ["a1.gr.be"] },
+    { "id": "a1.gr.nouns-articles", "level": "a1", "skill": "grammar", "en": "Can use plural nouns, a/an/the and possessives in simple sentences.", "zh": "能在简单句里正确使用名词复数、a / an / the 和所有格。", "prerequisites": ["pre-a1.gr.pronouns"] },
+    { "id": "a1.gr.there-prepositions", "level": "a1", "skill": "grammar", "en": "Can say what there is and where things are with there is / there are and basic prepositions.", "zh": "能用 there is / there are 和基本介词说明有什么、在哪里。", "prerequisites": ["a1.gr.be"] },
+    { "id": "a1.gr.can", "level": "a1", "skill": "grammar", "en": "Can talk about ability and permission with can and can't.", "zh": "能用 can / can't 谈论能力和许可。", "prerequisites": ["a1.gr.word-order"] },
+    { "id": "a1.ph.intelligible", "level": "a1", "skill": "phonology", "en": "Can say familiar sentences clearly enough to be understood, though an accent is evident.", "zh": "能把熟悉的句子说得让人听懂（有口音没关系）。", "prerequisites": ["pre-a1.ph.familiar"] },
+    { "id": "a1.med.relay-simple", "level": "a1", "skill": "mediation", "en": "Can pass on the main points of a very short, simple text in their own simple words.", "zh": "能用自己的简单句子转述一段很短的文字的要点。", "prerequisites": ["a1.r.short-sentences"] },
+
+    { "id": "a2.r.everyday-texts", "level": "a2", "skill": "reading", "en": "Can understand short everyday texts such as notices, simple stories and personal messages.", "zh": "能看懂通知、简单故事和私人消息等日常短文。", "prerequisites": ["a1.r.messages"] },
+    { "id": "a2.l.conversations", "level": "a2", "skill": "listening", "en": "Can follow short conversations about plans and everyday problems when people speak clearly.", "zh": "说话清楚时，能听懂关于计划和日常问题的简短对话。", "prerequisites": ["a1.l.everyday"] },
+    { "id": "a2.sp.past-events", "level": "a2", "skill": "spoken_production", "en": "Can describe past events and experiences in simple connected sentences.", "zh": "能用连贯的简单句讲述过去的事情和经历。", "prerequisites": ["a1.sp.routine-simple"] },
+    { "id": "a2.sp.opinion", "level": "a2", "skill": "spoken_production", "en": "Can give a simple opinion and a reason for it.", "zh": "能表达简单的观点并说出理由。", "prerequisites": [] },
+    { "id": "a2.si.services", "level": "a2", "skill": "spoken_interaction", "en": "Can handle common everyday services, such as checking in at a hotel or asking the way.", "zh": "能应对常见的日常服务场景，比如酒店入住、问路。", "prerequisites": ["a1.si.simple-transactions"] },
+    { "id": "a2.wp.connected", "level": "a2", "skill": "written_production", "en": "Can write a short connected text about experiences or opinions, using and, but and because.", "zh": "能用 and / but / because 写一段连贯的短文，讲经历或观点。", "prerequisites": ["a1.wp.simple-sentences"] },
+    { "id": "a2.wi.email", "level": "a2", "skill": "written_interaction", "en": "Can write a short email to ask for or give simple information.", "zh": "能写一封简短的邮件询问或提供简单信息。", "prerequisites": ["a1.wi.short-message"] },
+    { "id": "a2.med.summarise", "level": "a2", "skill": "mediation", "en": "Can summarise the main points of a short, simple text or conversation.", "zh": "能概括一段简短文字或对话的要点。", "prerequisites": ["a1.med.relay-simple"] },
+    { "id": "a2.ph.clear", "level": "a2", "skill": "phonology", "en": "Can repeat and say short sentences clearly, with mostly natural word stress.", "zh": "能清楚地复述和说出短句，单词重音大体自然。", "prerequisites": ["a1.ph.intelligible"] },
+
+    { "id": "b1.wp.argument", "level": "b1", "skill": "written_production", "en": "Can write a short text that gives an opinion and supports it with reasons and examples.", "zh": "能写一篇短文表达观点，并用理由和例子支持。", "prerequisites": ["a2.wp.connected"] },
+    { "id": "b1.wi.complaint", "level": "b1", "skill": "written_interaction", "en": "Can write a clear email explaining a problem and what they would like to happen.", "zh": "能写一封清楚的邮件说明问题和希望怎么解决。", "prerequisites": ["a2.wi.email"] }
+  ]
+}

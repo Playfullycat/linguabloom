@@ -51,6 +51,8 @@ export const materialSchema = z
     id: z.string().regex(/^(rd|ls)-[a-z0-9]+(?:-[a-z0-9]+)*$/),
     type: z.enum(MATERIAL_TYPES),
     level: z.enum(CEFR_LEVELS),
+    /** Can-do statements this content gives evidence for (see src/content/can-do and the unit files). */
+    can_do_ids: z.array(z.string().regex(/^[a-z0-9]+(?:[-.][a-z0-9]+)*$/)).max(6).default([]),
     topic: text,
     title_en: text,
     title_zh: text,

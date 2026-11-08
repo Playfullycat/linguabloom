@@ -23,6 +23,8 @@ export const writingPromptSchema = z
     id: z.string().regex(/^w-[a-z0-9]+(?:-[a-z0-9]+)*$/),
     type: z.enum(WRITING_TYPES),
     level: z.enum(CEFR_LEVELS),
+    /** Can-do statements this content gives evidence for (see src/content/can-do and the unit files). */
+    can_do_ids: z.array(z.string().regex(/^[a-z0-9]+(?:[-.][a-z0-9]+)*$/)).max(6).default([]),
     title_zh: text,
     title_en: text,
     task_zh: text,

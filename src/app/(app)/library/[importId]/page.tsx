@@ -8,6 +8,7 @@ import { ImportConfirm } from "@/components/library/import-review";
 import { PageHeader } from "@/components/layout/page-header";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { FormMessage } from "@/components/ui/form-message";
 import { LoadingSkeleton } from "@/components/ui/skeleton";
 import { getDb } from "@/db";
 import { requireOwner } from "@/lib/auth/session";
@@ -82,6 +83,12 @@ async function Loader({ params }: Pick<PageProps<"/library/[importId]">, "params
               {nothing ? <p className="mt-3 text-sm text-muted">没有可以导入的新内容。</p> : null}
             </CardContent>
           </Card>
+        ) : p.kind === "words" ? (
+          // Stays after the page refreshes (the confirm form, and its message, are gone once imported).
+          <FormMessage tone="success">
+            已加入词汇库 {p.items.filter((w) => w.status !== "already").length} 个词
+            {p.items.some((w) => w.status === "already") ? `，跳过 ${p.items.filter((w) => w.status === "already").length} 个已有的词` : ""}，会出现在复习里。
+          </FormMessage>
         ) : null}
 
         {p.kind === "segments" ? (

@@ -20,6 +20,7 @@ import {
   getAssessmentState,
   getCurrentEstimates,
   getLatestCompletedSession,
+  listAssessmentHistory,
 } from "@/modules/assessment/services/assessment";
 import { CEFR_LEVEL_LABELS, isCefrLevel } from "@/modules/curriculum/domain/cefr";
 import { getLearnerSettings } from "@/modules/learner/services/profile";
@@ -28,6 +29,7 @@ import { placementLevel } from "@/modules/study-plan/services/plan";
 export const metadata: Metadata = { title: "Placement check" };
 
 const CONFIDENCE_LABELS: Record<string, string> = { low: "把握较低", medium: "把握中等", high: "把握较高" };
+const CEFR_ORDER: readonly string[] = ["pre_a1", "a1", "a2", "b1", "b2", "c1", "c2"];
 
 export default function AssessmentPage({ searchParams }: PageProps<"/assessment">) {
   return (
@@ -89,7 +91,7 @@ async function AssessmentLoader({ searchParams }: { searchParams: PageProps<"/as
     );
   }
 
-  const estimates = await getCurrentEstimates(db, user.id);
+  const [estimates, history] = await Promise.all([getCurrentEstimates(db, user.id), listAssessmentHistory(db, user.id)]);
   const fromThisSession = estimates.filter((e) => e.source === `assessment:${completed.id}`);
   const placement = placementLevel(fromThisSession);
   const label = (level: string) => (isCefrLevel(level) ? CEFR_LEVEL_LABELS[level] : level);
@@ -151,6 +153,54 @@ async function AssessmentLoader({ searchParams }: { searchParams: PageProps<"/as
               <Link href={fromOnboarding ? "/onboarding" : "/today"}>{fromOnboarding ? "看看第一周计划" : "回到今日"}</Link>
             </Button>
             <StartAssessmentButton label="重新诊断" variant="outline" />
+          </div>
+          <p className="text-xs text-muted">建议学习几周后再诊断一次。重新诊断会优先出上次没做过的题（题库还不大，难免有重复），历次结果都会保留。</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>评估历史</CardTitle>
+          <CardDescription>每一次诊断的结果都保留，箭头是和上一次相比的变化。练习带来的估计变化见“进度”页。</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[28rem] text-left text-sm" data-testid="assessment-history">
+              <thead className="text-muted">
+                <tr>
+                  <th className="py-1.5 pr-3 font-medium">日期</th>
+                  {DIAGNOSTIC_SKILLS.map((skill) => (
+                    <th key={skill} className="py-1.5 pr-3 font-medium">
+                      {DIAGNOSTIC_SKILL_LABELS[skill]}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {history.map((h, i) => {
+                  const older = history[i + 1];
+                  return (
+                    <tr key={h.sessionId} className="border-t border-border">
+                      <td className="py-1.5 pr-3 tabular-nums text-ink">{h.completedAt.toLocaleDateString("zh-CN", { timeZone: profile.timezone })}</td>
+                      {DIAGNOSTIC_SKILLS.map((skill) => {
+                        const e = h.estimates.find((x) => x.skill === skill);
+                        const prev = older?.estimates.find((x) => x.skill === skill);
+                        if (!e) return <td key={skill} className="py-1.5 pr-3 text-muted">跳过</td>;
+                        const diff = prev ? CEFR_ORDER.indexOf(e.level) - CEFR_ORDER.indexOf(prev.level) : 0;
+                        return (
+                          <td key={skill} className="py-1.5 pr-3">
+                            <span className="font-medium text-ink">{label(e.level)}</span>
+                            {prev ? <span className="ml-1 text-xs text-muted">{diff > 0 ? "↑ 提高" : diff < 0 ? "↓ 降低" : "→ 持平"}</span> : null}
+                            <span className="block text-xs text-muted">
+                              {CONFIDENCE_LABELS[e.confidence] ?? e.confidence} · {e.evidenceCount} 题
+                            </span>
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
           </div>
         </CardContent>
       </Card>

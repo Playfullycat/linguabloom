@@ -51,7 +51,12 @@ const levelIndex = (level: string) => Math.max(0, PLACEMENT_LEVELS.indexOf(level
  * Next item for one skill: up one level after a correct answer, down one
  * after a wrong one. Returns null when the skill is finished.
  */
-export function nextItem<T extends ItemLike>(skill: DiagnosticSkill, attempts: AttemptLike[], items: T[], start: PlacementLevel): T | null {
+/**
+ * `avoid`: items used in the learner's previous diagnostic. They are only
+ * chosen when nothing else is left at a suitable level, so a retake isn't the
+ * same test again.
+ */
+export function nextItem<T extends ItemLike>(skill: DiagnosticSkill, attempts: AttemptLike[], items: T[], start: PlacementLevel, avoid: ReadonlySet<string> = new Set()): T | null {
   if (attempts.length >= MAX_ITEMS[skill]) return null;
   const seen = new Set(attempts.map((a) => a.itemId));
   const unseen = items.filter((i) => !seen.has(i.id));
@@ -67,6 +72,9 @@ export function nextItem<T extends ItemLike>(skill: DiagnosticSkill, attempts: A
     const da = Math.abs(levelIndex(a.level) - target);
     const db = Math.abs(levelIndex(b.level) - target);
     if (da !== db) return da - db;
+    const aa = avoid.has(a.id) ? 1 : 0;
+    const ab = avoid.has(b.id) ? 1 : 0;
+    if (aa !== ab) return aa - ab;
     const sa = Math.sign(levelIndex(a.level) - target) === direction ? 0 : 1;
     const sb = Math.sign(levelIndex(b.level) - target) === direction ? 0 : 1;
     if (sa !== sb) return sa - sb;
