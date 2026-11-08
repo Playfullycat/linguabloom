@@ -3,6 +3,7 @@ import { z } from "zod";
 import a1Basics from "../../content/grammar/a1-basics.json" with { type: "json" };
 import a1More from "../../content/grammar/a1-more.json" with { type: "json" };
 import a2B1 from "../../content/grammar/a2-b1.json" with { type: "json" };
+import b2C2 from "../../content/grammar/b2-c2.json" with { type: "json" };
 import planned from "../../content/grammar/planned.json" with { type: "json" };
 import { ERROR_CATEGORIES } from "../../db/schema/grammar";
 import { CEFR_LEVELS } from "../curriculum/domain/cefr";
@@ -111,6 +112,7 @@ export const rawGrammarFiles: Record<string, unknown> = {
   "grammar/a1-basics.json": a1Basics,
   "grammar/a1-more.json": a1More,
   "grammar/a2-b1.json": a2B1,
+  "grammar/b2-c2.json": b2C2,
   "grammar/planned.json": planned,
 };
 

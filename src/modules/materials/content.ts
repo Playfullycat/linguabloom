@@ -4,6 +4,9 @@ import preA1 from "../../content/materials/pre-a1.json" with { type: "json" };
 import a1 from "../../content/materials/a1.json" with { type: "json" };
 import a2 from "../../content/materials/a2.json" with { type: "json" };
 import b1 from "../../content/materials/b1.json" with { type: "json" };
+import b2 from "../../content/materials/b2.json" with { type: "json" };
+import c1 from "../../content/materials/c1.json" with { type: "json" };
+import c2 from "../../content/materials/c2.json" with { type: "json" };
 import { CEFR_LEVELS } from "../curriculum/domain/cefr";
 
 import { containsPhrase, words } from "./domain/text";
@@ -15,6 +18,9 @@ import { containsPhrase, words } from "./domain/text";
  */
 
 export const MATERIAL_SCHEMA_VERSION = 1;
+
+/** Longest sentence (in words) a graded material may use at each level (Phase 5.2). */
+export const MAX_SEGMENT_WORDS: Record<(typeof CEFR_LEVELS)[number], number> = { pre_a1: 12, a1: 16, a2: 20, b1: 26, b2: 32, c1: 38, c2: 45 };
 export const MATERIAL_TYPES = ["reading", "listening"] as const;
 export type MaterialType = (typeof MATERIAL_TYPES)[number];
 
@@ -81,8 +87,9 @@ export const materialSchema = z
     for (const q of m.questions) {
       if (q.segment !== undefined && q.segment >= m.segments.length) ctx.addIssue({ code: "custom", message: `${m.id}.${q.id}: segment out of range` });
     }
+    const limit = MAX_SEGMENT_WORDS[m.level];
     for (const s of m.segments) {
-      if (words(s.en).length > 30) ctx.addIssue({ code: "custom", message: `${m.id}: sentence too long for graded material: "${s.en.slice(0, 40)}…"` });
+      if (words(s.en).length > limit) ctx.addIssue({ code: "custom", message: `${m.id}: sentence longer than ${limit} words for ${m.level}: "${s.en.slice(0, 40)}…"` });
     }
   });
 
@@ -103,6 +110,9 @@ export const rawMaterialFiles: Record<string, unknown> = {
   "materials/a1.json": a1,
   "materials/a2.json": a2,
   "materials/b1.json": b1,
+  "materials/b2.json": b2,
+  "materials/c1.json": c1,
+  "materials/c2.json": c2,
 };
 
 export function loadMaterials(): (Material & { file: Omit<MaterialFile, "materials"> })[] {

@@ -1,0 +1,1275 @@
+{
+  "content_schema_version": 1,
+  "source_type": "first_party",
+  "review_status": "pending_owner_review",
+  "unit": {
+    "id": "b2-u01-discourse",
+    "level": "b2",
+    "order": 1,
+    "status": "published",
+    "title_en": "Linking Ideas",
+    "title_zh": "衔接与连贯",
+    "summary_zh": "用 whereas、nevertheless、as a result、furthermore 这类话语标记，把对比、让步、因果、补充和总结说清楚。学完后，你能跟上一段论证的思路，也能写出层次分明的段落。",
+    "can_do": [
+      {
+        "id": "b2.gr.discourse",
+        "skill": "grammar",
+        "en": "Can use a range of linking words to mark clearly the relationships between ideas: contrast, concession, cause, result, addition and summary.",
+        "zh": "能用多种连接词清楚地标出观点之间的关系：对比、让步、原因、结果、补充和总结。"
+      },
+      {
+        "id": "b2.l.argument",
+        "skill": "listening",
+        "en": "Can follow the line of argument in a talk or discussion by noticing discourse markers.",
+        "zh": "能借助话语标记，跟上讲话或讨论中的论证思路。"
+      },
+      {
+        "id": "b2.wp.coherent",
+        "skill": "written_production",
+        "en": "Can write clear, well-organised paragraphs that link ideas logically.",
+        "zh": "能写出清楚、有条理、观点衔接合理的段落。"
+      }
+    ],
+    "grammar_points": [
+      {
+        "id": "b2.discourse-markers",
+        "title_en": "Discourse markers",
+        "title_zh": "话语标记",
+        "pattern": "Contrast: A, whereas B. / Concession: A. Nevertheless, B.\nCause: Due to + noun / Result: A. As a result, B.\nAddition: Furthermore, ... / In addition to + -ing\nSummary: Overall, ... / To sum up, ...",
+        "explanation_zh": "话语标记告诉听者或读者下一句和上一句是什么关系。whereas / while 在一个句子里对比两件事；nevertheless / even so 表示“尽管如此”，放在新句子开头；on the other hand 引出同一问题的另一面，on the contrary 则是否定前面的说法、说“恰恰相反”。due to / because of 后面接名词，as a result / consequently 放在句首引出结果。furthermore / moreover 补充论点，比 also 正式；in addition to 后面接名词或 -ing。overall / to sum up 用来总结。",
+        "examples": [
+          {
+            "en": "Anna has ten years' experience, whereas Ben graduated last year.",
+            "zh": "Anna 有十年经验，而 Ben 去年才毕业。"
+          },
+          {
+            "en": "Due to the drought, the harvest was smaller. As a result, flour prices rose.",
+            "zh": "由于干旱，收成减少了。结果面粉涨价了。"
+          },
+          {
+            "en": "In addition to saving money, the scheme would improve morale.",
+            "zh": "这个计划除了省钱，还能提振士气。"
+          }
+        ],
+        "common_errors": [
+          {
+            "wrong": "The city is busy. On the contrary, the countryside is quiet.",
+            "right": "The city is busy, whereas the countryside is quiet.",
+            "why_zh": "on the contrary 是否定前一句的说法；单纯对比两件事用 whereas 或 by contrast。"
+          },
+          {
+            "wrong": "Due to it was raining, we stayed in.",
+            "right": "Because it was raining, we stayed in.",
+            "why_zh": "due to / because of 后面接名词，接句子用 because。"
+          },
+          {
+            "wrong": "In addition to reduce costs, ...",
+            "right": "In addition to reducing costs, ...",
+            "why_zh": "in addition to 里的 to 是介词，后面用 -ing。"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "key": "whereas",
+        "text": "whereas",
+        "pos": "conjunction",
+        "ipa": "/weərˈæz/",
+        "zh": "而；然而（对比两件事）",
+        "example_en": "Some people love the city, whereas others prefer the countryside.",
+        "example_zh": "有人喜欢城市，而有人更喜欢乡村。"
+      },
+      {
+        "key": "nevertheless",
+        "text": "nevertheless",
+        "pos": "adverb",
+        "ipa": "/ˌnevəðəˈles/",
+        "zh": "尽管如此；不过",
+        "example_en": "It was expensive. Nevertheless, we bought it.",
+        "example_zh": "它很贵。尽管如此，我们还是买了。"
+      },
+      {
+        "key": "even-so",
+        "text": "even so",
+        "pos": "phrase",
+        "ipa": "/ˈiːvn səʊ/",
+        "zh": "即便如此",
+        "example_en": "He was tired. Even so, he finished the report.",
+        "example_zh": "他很累，即便如此，还是把报告写完了。"
+      },
+      {
+        "key": "on-the-contrary",
+        "text": "on the contrary",
+        "pos": "phrase",
+        "ipa": "/ɒn ðə ˈkɒntrəri/",
+        "zh": "恰恰相反",
+        "example_en": "\"Was it boring?\" \"On the contrary, it was fascinating.\"",
+        "example_zh": "“无聊吗？”“恰恰相反，非常有意思。”"
+      },
+      {
+        "key": "due-to",
+        "text": "due to",
+        "pos": "preposition",
+        "ipa": "/ˈdjuː tə/",
+        "zh": "由于；因为（+ 名词）",
+        "example_en": "The flight was delayed due to fog.",
+        "example_zh": "航班因大雾延误。"
+      },
+      {
+        "key": "as-a-result",
+        "text": "as a result",
+        "pos": "phrase",
+        "ipa": "/əz ə rɪˈzʌlt/",
+        "zh": "结果；因此",
+        "example_en": "The factory closed. As a result, many people lost their jobs.",
+        "example_zh": "工厂关闭了，结果很多人失业了。"
+      },
+      {
+        "key": "consequently",
+        "text": "consequently",
+        "pos": "adverb",
+        "ipa": "/ˈkɒnsɪkwəntli/",
+        "zh": "因此；所以（较正式）",
+        "example_en": "Demand fell. Consequently, prices dropped.",
+        "example_zh": "需求下降，因此价格也降了。"
+      },
+      {
+        "key": "furthermore",
+        "text": "furthermore",
+        "pos": "adverb",
+        "ipa": "/ˌfɜːðəˈmɔː/",
+        "zh": "此外；而且（较正式）",
+        "example_en": "The plan is cheap. Furthermore, it's easy to set up.",
+        "example_zh": "这个方案便宜，而且容易实施。"
+      },
+      {
+        "key": "moreover",
+        "text": "moreover",
+        "pos": "adverb",
+        "ipa": "/mɔːrˈəʊvə/",
+        "zh": "而且；此外（较正式）",
+        "example_en": "The hotel was central. Moreover, the staff were very helpful.",
+        "example_zh": "酒店位置居中，而且员工很热心。"
+      },
+      {
+        "key": "in-addition-to",
+        "text": "in addition to",
+        "pos": "phrase",
+        "ipa": "/ɪn əˈdɪʃn tə/",
+        "zh": "除……之外（还）",
+        "example_en": "In addition to the salary, there's a yearly bonus.",
+        "example_zh": "除了工资之外，还有年终奖。"
+      },
+      {
+        "key": "overall",
+        "text": "overall",
+        "pos": "adverb",
+        "ipa": "/ˌəʊvərˈɔːl/",
+        "zh": "总的来说",
+        "example_en": "Overall, the trip was a success.",
+        "example_zh": "总的来说，这次出行很成功。"
+      },
+      {
+        "key": "to-sum-up",
+        "text": "to sum up",
+        "pos": "phrase",
+        "ipa": "/tə sʌm ʌp/",
+        "zh": "总而言之",
+        "example_en": "To sum up, we need more time and more staff.",
+        "example_zh": "总而言之，我们需要更多时间和人手。"
+      }
+    ],
+    "lessons": [
+      {
+        "id": "b2-u01-discourse-l1",
+        "order": 1,
+        "kind": "core",
+        "title_en": "Whereas and Nevertheless",
+        "title_zh": "对比与让步",
+        "estimated_minutes": 12,
+        "objectives": [
+          {
+            "en": "Compare two things with whereas and while.",
+            "zh": "能用 whereas 和 while 对比两件事。"
+          },
+          {
+            "en": "Tell apart nevertheless, on the other hand and on the contrary.",
+            "zh": "能分清 nevertheless、on the other hand 和 on the contrary。"
+          }
+        ],
+        "can_do_ids": [
+          "b2.gr.discourse",
+          "b2.l.argument"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "grammar",
+            "title_zh": "这节课学什么",
+            "body_zh": "B1 学过 although 和 however。到了 B2，讨论会更细：有时是在对比两个人或两样东西（whereas），有时是“虽然如此，但还是……”（nevertheless），有时是“恰恰相反”（on the contrary）。这几个词中文都可能译成“但是”，用错了会让人误解你的意思。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Choosing a candidate",
+            "instructions_zh": "先听。注意每个连接词后面，说话人的意思是怎么转的。",
+            "scene_zh": "面试结束后，Kate、Sam 和 Lin 讨论该录用哪位候选人。",
+            "lines": [
+              {
+                "speaker": "Kate",
+                "en": "So, who should we hire, Anna or Ben?",
+                "zh": "那么，我们录用谁，Anna 还是 Ben？"
+              },
+              {
+                "speaker": "Sam",
+                "en": "It's tough. Anna has ten years' experience, whereas Ben only graduated last year.",
+                "zh": "很难选。Anna 有十年经验，而 Ben 去年才毕业。"
+              },
+              {
+                "speaker": "Kate",
+                "en": "True. Nevertheless, Ben's interview was by far the stronger of the two.",
+                "zh": "没错。尽管如此，Ben 的面试表现要好得多。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Was he nervous at all?",
+                "zh": "他紧张吗？"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Not at all. On the contrary, he seemed completely at ease.",
+                "zh": "一点也不。恰恰相反，他看上去非常从容。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "While Anna clearly knows the industry, she didn't ask a single question about the team.",
+                "zh": "虽然 Anna 显然很懂这个行业，但她一个关于团队的问题都没问。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "That worried me too. Even so, experience counts for a lot in this role.",
+                "zh": "这点我也担心。即便如此，这个岗位很看重经验。"
+              },
+              {
+                "speaker": "Kate",
+                "en": "On the other hand, Ben could grow into the job, and he'd cost us less.",
+                "zh": "另一方面，Ben 可以在工作中成长，而且成本更低。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Why don't we invite them both back for a short practical task? Then we'd compare what they can do, not just what they say.",
+                "zh": "不如请他们俩回来做个简短的实操任务？这样比较的就是他们能做什么，而不只是说了什么。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "whereas",
+              "nevertheless",
+              "even-so",
+              "on-the-contrary"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "teach",
+            "role": "teach",
+            "skill": "grammar",
+            "title_zh": "四个“但是”，意思各不相同",
+            "explanation_zh": "whereas / while：在同一个句子里把两件事并排对比（A 是这样，而 B 是那样）。nevertheless / even so：承认前面说的事实，然后说“尽管如此，结果还是……”，放在新句子开头，后面加逗号。on the other hand：引出同一个问题的另一面，常和 on the one hand 呼应。on the contrary：否定前面的说法或猜测，表示“事实正好相反”，前面通常有一个否定或被否定的说法。",
+            "pattern": "A, whereas B.\nA. Nevertheless / Even so, B.\nOn the one hand, A. On the other hand, B.\n\"Was it X?\" \"No. On the contrary, it was Y.\"",
+            "examples": [
+              {
+                "en": "My brother loves crowds, whereas I prefer quiet places.",
+                "zh": "我哥哥喜欢热闹，而我喜欢安静的地方。"
+              },
+              {
+                "en": "The risks are high. Nevertheless, we've decided to go ahead.",
+                "zh": "风险很高。尽管如此，我们决定继续推进。"
+              },
+              {
+                "en": "\"I hope I'm not disturbing you.\" \"On the contrary, I'm glad you called.\"",
+                "zh": "“希望没打扰你。”“恰恰相反，你打来我很高兴。”"
+              }
+            ],
+            "tips_zh": [
+              "中文“相反”有时只是“对比”，英语里那种情况要用 whereas / by contrast，不能用 on the contrary。",
+              "nevertheless 比 however 更强调“尽管有前面的情况，结果仍然如此”。"
+            ]
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_en": "Anna has ten years' experience, ___ Ben graduated last year.",
+            "prompt_zh": "选出正确的连接词：",
+            "options": [
+              "whereas",
+              "nevertheless",
+              "on the contrary"
+            ],
+            "answer": 0,
+            "explanation_zh": "同一句里对比两个人：whereas。"
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_en": "\"Was the hotel noisy?\" \"Not at all. ___, it was the quietest place I've ever stayed.\"",
+            "prompt_zh": "选出正确的连接词：",
+            "options": [
+              "On the contrary",
+              "On the other hand",
+              "Whereas"
+            ],
+            "answer": 0,
+            "explanation_zh": "否定对方的猜测（noisy），说事实正好相反：On the contrary。"
+          },
+          {
+            "id": "s07",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "补全句子（填一个表示“尽管如此”的词或短语）。",
+            "sentence_en": "The flat is expensive. ___, we've decided to take it.",
+            "translation_zh": "这套公寓很贵。尽管如此，我们还是决定租下来。",
+            "answers": [
+              "Nevertheless",
+              "Even so",
+              "However"
+            ],
+            "explanation_zh": "承认前面的事实，结果仍然如此：Nevertheless / Even so（However 也可以）。"
+          },
+          {
+            "id": "s08",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "把连接词和它的作用配对。",
+            "pairs": [
+              {
+                "left": "whereas",
+                "right": "并排对比两件事"
+              },
+              {
+                "left": "nevertheless",
+                "right": "尽管如此，结果仍然……"
+              },
+              {
+                "left": "on the other hand",
+                "right": "引出同一问题的另一面"
+              },
+              {
+                "left": "on the contrary",
+                "right": "否定前面的说法：恰恰相反"
+              }
+            ]
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，说话人对 Anna 有什么保留意见？",
+            "audio_en": "While Anna clearly knows the industry, she didn't ask a single question about the team.",
+            "options": [
+              "她没问任何关于团队的问题",
+              "她不了解这个行业",
+              "她面试时太紧张"
+            ],
+            "answer": 0,
+            "explanation_zh": "While ...（虽然她懂行业），she didn't ask a single question about the team。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：他们最后打算怎么做？",
+            "options": [
+              "请两人回来做一个简短的实操任务",
+              "直接录用 Anna",
+              "直接录用 Ben"
+            ],
+            "answer": 0,
+            "explanation_zh": "Why don't we invite them both back for a short practical task?"
+          },
+          {
+            "id": "s11",
+            "type": "order",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "排成句子。",
+            "translation_zh": "尽管如此，他的面试表现要好得多。",
+            "tokens": [
+              "Nevertheless,",
+              "his",
+              "interview",
+              "was",
+              "much",
+              "stronger."
+            ],
+            "answers": [
+              "Nevertheless, his interview was much stronger."
+            ],
+            "explanation_zh": "Nevertheless 放句首，后面加逗号。"
+          },
+          {
+            "id": "s12",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_zh": "哪一句里的 on the contrary 用得对？",
+            "options": [
+              "\"You must be exhausted.\" \"On the contrary, I feel full of energy.\"",
+              "The city is busy. On the contrary, the countryside is quiet.",
+              "I like tea. On the contrary, my sister likes coffee."
+            ],
+            "answer": 0,
+            "explanation_zh": "on the contrary 否定对方的说法（exhausted）。后两句只是对比，应该用 whereas / by contrast / while。"
+          }
+        ]
+      },
+      {
+        "id": "b2-u01-discourse-l2",
+        "order": 2,
+        "kind": "core",
+        "title_en": "As a Result",
+        "title_zh": "原因与结果",
+        "estimated_minutes": 13,
+        "objectives": [
+          {
+            "en": "Give causes with due to and because of + noun.",
+            "zh": "能用 due to、because of + 名词说明原因。"
+          },
+          {
+            "en": "Link results with as a result, consequently and which means.",
+            "zh": "能用 as a result、consequently、which means 连接结果。"
+          }
+        ],
+        "can_do_ids": [
+          "b2.gr.discourse",
+          "b2.l.argument",
+          "b2.wp.coherent"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "grammar",
+            "title_zh": "这节课学什么",
+            "body_zh": "解释一个问题时，常常要把一串原因和结果连起来：干旱 → 减产 → 面粉涨价 → 面包店成本上升。这节课学因果链里最常用的表达，重点是：哪些后面接名词，哪些后面接句子。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "A dry summer",
+            "instructions_zh": "先听。把对话里的原因和结果按顺序理一理。",
+            "scene_zh": "本地电台记者采访一位农场主 Helen，谈今年夏天的干旱。",
+            "lines": [
+              {
+                "speaker": "Reporter",
+                "en": "The town has had almost no rain since May. How has that affected your farm?",
+                "zh": "这里从五月起几乎没下过雨。这对你的农场有什么影响？"
+              },
+              {
+                "speaker": "Helen",
+                "en": "Badly. Due to the drought, our wheat harvest is about forty percent smaller than usual.",
+                "zh": "影响很大。由于干旱，我们的小麦收成比往年少了大约四成。"
+              },
+              {
+                "speaker": "Reporter",
+                "en": "That must hit your income hard.",
+                "zh": "这对你的收入打击一定很大。"
+              },
+              {
+                "speaker": "Helen",
+                "en": "It does. As a result, we've had to delay buying new equipment.",
+                "zh": "是的。结果我们只好推迟购买新设备。"
+              },
+              {
+                "speaker": "Reporter",
+                "en": "Have prices in the shops gone up as well?",
+                "zh": "商店里的价格也涨了吗？"
+              },
+              {
+                "speaker": "Helen",
+                "en": "Yes. Because of the shortage, flour costs more, which means bakeries are paying more too.",
+                "zh": "涨了。因为短缺，面粉更贵了，这意味着面包店的成本也上升了。"
+              },
+              {
+                "speaker": "Reporter",
+                "en": "Is there anything farmers can do?",
+                "zh": "农民们能做些什么吗？"
+              },
+              {
+                "speaker": "Helen",
+                "en": "Some of us are switching to crops that need less water. Consequently, the landscape here may look quite different in ten years.",
+                "zh": "我们有些人正在改种需水少的作物。因此，十年后这里的景观可能会大不一样。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "due-to",
+              "as-a-result",
+              "consequently"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "notice",
+            "role": "notice",
+            "skill": "grammar",
+            "question_zh": "哪些表达后面接名词？哪些后面接完整的句子？",
+            "examples": [
+              {
+                "en": "Due to the drought, the harvest is smaller.",
+                "zh": "由于干旱，收成减少了。",
+                "highlight": [
+                  "Due to",
+                  "the drought"
+                ]
+              },
+              {
+                "en": "Because of the shortage, flour costs more.",
+                "zh": "因为短缺，面粉更贵了。",
+                "highlight": [
+                  "Because of",
+                  "the shortage"
+                ]
+              },
+              {
+                "en": "Our income fell. As a result, we delayed buying equipment.",
+                "zh": "收入减少了，结果我们推迟了购买设备。",
+                "highlight": [
+                  "As a result,"
+                ]
+              },
+              {
+                "en": "Flour costs more, which means bakeries are paying more.",
+                "zh": "面粉更贵了，这意味着面包店的成本也更高。",
+                "highlight": [
+                  "which means"
+                ]
+              }
+            ],
+            "takeaway_zh": "due to / because of + 名词（短语）；because + 句子。as a result / consequently / therefore 引出结果，常放在第二句开头，后加逗号。“, which means (that) + 句子”用一个句子同时说结果，口语和写作都常用。"
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_en": "___ the heavy snow, all flights were cancelled.",
+            "prompt_zh": "选出正确的表达：",
+            "options": [
+              "Due to",
+              "Because",
+              "As a result"
+            ],
+            "answer": 0,
+            "explanation_zh": "后面是名词短语 the heavy snow，用 Due to（或 Because of）。"
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_en": "The factory closed. ___, two hundred people lost their jobs.",
+            "prompt_zh": "选出正确的表达：",
+            "options": [
+              "As a result",
+              "Due to",
+              "Because of"
+            ],
+            "answer": 0,
+            "explanation_zh": "第二句说结果，句首用 As a result,。"
+          },
+          {
+            "id": "s07",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "The trains were on strike, ___ means most people worked from home.",
+            "translation_zh": "火车罢工，这意味着大多数人在家办公。",
+            "answers": [
+              "which"
+            ],
+            "explanation_zh": ", which means ...：which 指代前面整件事。"
+          },
+          {
+            "id": "s08",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "prompt_zh": "哪一句是对的？",
+            "options": [
+              "Because of it was raining, we stayed in.",
+              "Because it was raining, we stayed in.",
+              "Due to it was raining, we stayed in."
+            ],
+            "answer": 1,
+            "explanation_zh": "后面是句子（it was raining），用 because；because of / due to 后面接名词。"
+          },
+          {
+            "id": "s09",
+            "type": "order",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "排成句子。",
+            "translation_zh": "结果，价格上涨了。",
+            "tokens": [
+              "As",
+              "a",
+              "result,",
+              "prices",
+              "have",
+              "gone",
+              "up."
+            ],
+            "answers": [
+              "As a result, prices have gone up."
+            ],
+            "explanation_zh": "As a result 放句首，后面加逗号。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，小麦收成减少了多少？",
+            "audio_en": "Due to the drought, our wheat harvest is about forty percent smaller than usual.",
+            "options": [
+              "约四成",
+              "约一成",
+              "约一半"
+            ],
+            "answer": 0,
+            "explanation_zh": "about forty percent smaller：少了大约百分之四十。"
+          },
+          {
+            "id": "s11",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：一些农民正在采取什么措施？",
+            "options": [
+              "改种需水少的作物",
+              "购买新设备",
+              "提高面粉价格"
+            ],
+            "answer": 0,
+            "explanation_zh": "Some of us are switching to crops that need less water."
+          },
+          {
+            "id": "s12",
+            "type": "write",
+            "role": "communicative_task",
+            "skill": "written_production",
+            "task_zh": "写一段 4–5 句的短文：说明你所在城市最近的一个变化（例如新地铁线、房价上涨、外卖越来越多）带来的一连串结果。due to / because of、as a result / consequently、which means 各至少用一次。",
+            "model_answers": [
+              "Due to the new metro line, getting to the city centre now takes half the time. As a result, more people are moving to our district, which means rents have risen quickly. Consequently, some long-time residents can no longer afford to stay. Overall, the change has brought both convenience and new problems."
+            ],
+            "checklist_zh": [
+              "due to / because of 后面接的是名词",
+              "用了 as a result 或 consequently，后面有逗号",
+              "用了 , which means ...",
+              "原因和结果的顺序清楚，形成一条链"
+            ]
+          },
+          {
+            "id": "s13",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "补全句子（两个词）。",
+            "sentence_en": "The road was closed ___ an accident.",
+            "translation_zh": "这条路因一起事故被封闭了。",
+            "answers": [
+              "due to",
+              "because of"
+            ],
+            "explanation_zh": "后面是名词 an accident：due to / because of。"
+          },
+          {
+            "id": "s14",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_en": "She missed the deadline; ___, she lost the contract.",
+            "prompt_zh": "选出正确的连接词：",
+            "options": [
+              "consequently",
+              "due to",
+              "whereas"
+            ],
+            "answer": 0,
+            "explanation_zh": "错过截止日期是原因，丢了合同是结果：consequently。"
+          }
+        ]
+      },
+      {
+        "id": "b2-u01-discourse-l3",
+        "order": 3,
+        "kind": "core",
+        "title_en": "What's More",
+        "title_zh": "补充与总结",
+        "estimated_minutes": 13,
+        "objectives": [
+          {
+            "en": "Add points formally with furthermore, moreover and in addition to.",
+            "zh": "能用 furthermore、moreover、in addition to 正式地补充论点。"
+          },
+          {
+            "en": "Signal a conclusion with overall and to sum up.",
+            "zh": "能用 overall 和 to sum up 引出总结。"
+          }
+        ],
+        "can_do_ids": [
+          "b2.gr.discourse",
+          "b2.l.argument"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "grammar",
+            "title_zh": "这节课学什么",
+            "body_zh": "做提案、写报告时，听众需要知道“又一个理由来了”和“下面是结论”。and、also 在正式场合显得单薄，这节课学 furthermore、moreover、in addition to，以及收尾用的 overall、to sum up。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "A mentoring scheme",
+            "instructions_zh": "先听。数一数 Lin 一共给出了几个理由，各用什么词引出。",
+            "scene_zh": "部门会议上，Lin 提议为新员工设立导师计划，主管 Kate 在听。",
+            "lines": [
+              {
+                "speaker": "Lin",
+                "en": "I'd like to propose a mentoring scheme for new staff. First of all, it would help people settle in faster.",
+                "zh": "我想提议为新员工设一个导师计划。首先，它能帮助大家更快适应。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Furthermore, experienced staff would get a chance to develop their leadership skills.",
+                "zh": "此外，有经验的员工也能借此锻炼领导能力。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "In addition to helping individuals, it could reduce staff turnover, which costs us a lot every year.",
+                "zh": "除了帮助个人，它还可能降低员工流失率，而这每年让我们损失不少。"
+              },
+              {
+                "speaker": "Kate",
+                "en": "Would it take up a lot of people's time, though?",
+                "zh": "不过，这会不会占用大家很多时间？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Only about an hour a week, and people could choose when.",
+                "zh": "每周只要一小时左右，时间也可以自己选。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Overall, I think the benefits far outweigh the costs.",
+                "zh": "总的来说，我认为好处远大于成本。"
+              },
+              {
+                "speaker": "Kate",
+                "en": "So, to sum up: faster settling in, better leaders and fewer people leaving?",
+                "zh": "那么总结一下：适应更快、领导力更强、离职的人更少？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Exactly. Moreover, we could run a three-month trial before committing to anything.",
+                "zh": "没错。而且，我们可以先试行三个月，再决定是否正式推行。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "furthermore",
+              "moreover",
+              "in-addition-to",
+              "overall",
+              "to-sum-up"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "notice",
+            "role": "notice",
+            "skill": "grammar",
+            "question_zh": "这些补充和总结的词放在句子什么位置？in addition to 后面接什么？",
+            "examples": [
+              {
+                "en": "Furthermore, staff would develop their leadership skills.",
+                "zh": "此外，员工还能锻炼领导能力。",
+                "highlight": [
+                  "Furthermore,"
+                ]
+              },
+              {
+                "en": "In addition to helping individuals, it could reduce staff turnover.",
+                "zh": "除了帮助个人，它还可能降低员工流失率。",
+                "highlight": [
+                  "In addition to helping"
+                ]
+              },
+              {
+                "en": "Moreover, we could run a three-month trial.",
+                "zh": "而且，我们可以先试行三个月。",
+                "highlight": [
+                  "Moreover,"
+                ]
+              },
+              {
+                "en": "Overall, the benefits far outweigh the costs.",
+                "zh": "总的来说，好处远大于成本。",
+                "highlight": [
+                  "Overall,"
+                ]
+              }
+            ],
+            "takeaway_zh": "furthermore 和 moreover 用法几乎一样，放句首、加逗号，比 also 正式（口语里常说 what's more）。in addition to 里的 to 是介词，后面接名词或 -ing，不接句子。overall、to sum up 放在最后一段或最后一句，引出总结。"
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_en": "In addition to ___ costs, the scheme would improve morale.",
+            "prompt_zh": "选出正确的形式：",
+            "options": [
+              "reduce",
+              "reducing",
+              "reduced"
+            ],
+            "answer": 1,
+            "explanation_zh": "in addition to + -ing。"
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_zh": "在正式报告里补充一个论点，哪一句最合适？",
+            "options": [
+              "Furthermore, the plan is inexpensive.",
+              "Plus, the plan's cheap.",
+              "And also the plan is cheap."
+            ],
+            "answer": 0,
+            "explanation_zh": "Furthermore 正式；Plus 很口语；And also 放句首不规范。"
+          },
+          {
+            "id": "s07",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "补全句子（填一个补充论点的词或短语）。",
+            "sentence_en": "The course is free. ___, it's available online.",
+            "translation_zh": "这门课是免费的。而且，它可以在网上学。",
+            "answers": [
+              "Furthermore",
+              "Moreover",
+              "In addition",
+              "What's more"
+            ],
+            "explanation_zh": "补充论点：Furthermore / Moreover / In addition / What's more。"
+          },
+          {
+            "id": "s08",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "把作用和说法配对。",
+            "pairs": [
+              {
+                "left": "补充一个论点",
+                "right": "Furthermore, ..."
+              },
+              {
+                "left": "在……之外还",
+                "right": "In addition to + -ing"
+              },
+              {
+                "left": "给出整体判断",
+                "right": "Overall, ..."
+              },
+              {
+                "left": "概括前面的要点",
+                "right": "To sum up, ..."
+              }
+            ]
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，除了帮助个人，这个计划还能带来什么？",
+            "audio_en": "In addition to helping individuals, it could reduce staff turnover, which costs us a lot every year.",
+            "options": [
+              "降低员工流失率",
+              "提高工资",
+              "增加招聘人数"
+            ],
+            "answer": 0,
+            "explanation_zh": "reduce staff turnover：降低员工流失率。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：导师计划每周大约要花多少时间？",
+            "options": [
+              "一小时左右",
+              "半天",
+              "三小时"
+            ],
+            "answer": 0,
+            "explanation_zh": "Only about an hour a week."
+          },
+          {
+            "id": "s11",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：Lin 最后建议先怎么做？",
+            "options": [
+              "先试行三个月",
+              "马上全面推行",
+              "先请示总部"
+            ],
+            "answer": 0,
+            "explanation_zh": "we could run a three-month trial before committing to anything."
+          },
+          {
+            "id": "s12",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_production",
+            "task_zh": "做一段大约 1 分钟的提案：向团队或家人提议一件事（例如每周一次无手机晚餐）。用 First of all、Furthermore、In addition to ...、Overall 把结构说清楚。",
+            "prompt_en": "You have one minute. What would you like to propose?",
+            "model_answers": [
+              "I'd like to propose a phone-free dinner once a week. First of all, it would give us time to really talk to each other. Furthermore, we'd probably eat more slowly and enjoy the food more. In addition to improving our conversations, it might help us sleep better, because we'd spend less time on screens in the evening. Overall, I think it's a small change with big benefits."
+            ],
+            "checklist_zh": [
+              "开头清楚说明提议是什么",
+              "至少两个理由，用了 First of all / Furthermore",
+              "in addition to 后面接了 -ing",
+              "用 Overall 或 To sum up 收尾"
+            ]
+          },
+          {
+            "id": "s13",
+            "type": "order",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "排成句子。",
+            "translation_zh": "总的来说，好处大于成本。",
+            "tokens": [
+              "Overall,",
+              "the",
+              "benefits",
+              "outweigh",
+              "the",
+              "costs."
+            ],
+            "answers": [
+              "Overall, the benefits outweigh the costs."
+            ],
+            "explanation_zh": "Overall 放句首，后面加逗号。"
+          },
+          {
+            "id": "s14",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_en": "In addition ___ the price, we need to think about delivery.",
+            "prompt_zh": "选出正确的介词：",
+            "options": [
+              "to",
+              "of",
+              "for"
+            ],
+            "answer": 0,
+            "explanation_zh": "固定说法 in addition to。"
+          }
+        ]
+      },
+      {
+        "id": "b2-u01-discourse-l4",
+        "order": 4,
+        "kind": "review",
+        "title_en": "Unit Review: Following an Argument",
+        "title_zh": "单元复习：跟上论证思路",
+        "estimated_minutes": 14,
+        "objectives": [
+          {
+            "en": "Follow a discussion by noticing how each point is introduced.",
+            "zh": "能通过话语标记跟上一段讨论的思路。"
+          },
+          {
+            "en": "Present a linked argument in speech and in writing.",
+            "zh": "能在口头和书面上做一段衔接清楚的论证。"
+          }
+        ],
+        "can_do_ids": [
+          "b2.l.argument",
+          "b2.gr.discourse",
+          "b2.wp.coherent"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "listening",
+            "title_zh": "单元复习",
+            "body_zh": "一档访谈节目在讨论：历史古镇是否应该限制游客数量。先听懂嘉宾的论证结构，再复习连接词，最后你也用它们说一段、写一段。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Too many tourists?",
+            "instructions_zh": "听两遍。第一遍听嘉宾的立场，第二遍注意每个理由和让步是怎么引出的。",
+            "scene_zh": "电台节目主持人 Grace 采访城市规划研究者 Tom。",
+            "lines": [
+              {
+                "speaker": "Grace",
+                "en": "Today's question: should historic towns limit tourist numbers? Tom, you're in favour?",
+                "zh": "今天的问题：历史古镇是否应该限制游客数量？Tom，你是支持的？"
+              },
+              {
+                "speaker": "Tom",
+                "en": "I am. Tourism brings money. Nevertheless, in some places it's pushing local residents out.",
+                "zh": "是的。旅游能带来收入。尽管如此，在一些地方它正在把本地居民挤走。"
+              },
+              {
+                "speaker": "Grace",
+                "en": "How exactly?",
+                "zh": "具体是怎么回事？"
+              },
+              {
+                "speaker": "Tom",
+                "en": "Due to short-term rentals, rents have doubled. As a result, many families can no longer afford the old centre.",
+                "zh": "由于短租，房租翻了一倍。结果，很多家庭再也住不起老城区了。"
+              },
+              {
+                "speaker": "Grace",
+                "en": "Some would say tourism creates jobs, whereas limits would destroy them.",
+                "zh": "有人会说，旅游创造就业，而限流会毁掉这些工作。"
+              },
+              {
+                "speaker": "Tom",
+                "en": "That's partly true. On the other hand, many of those jobs are seasonal and poorly paid.",
+                "zh": "这有一定道理。另一方面，很多这类工作是季节性的，而且工资很低。"
+              },
+              {
+                "speaker": "Grace",
+                "en": "Wouldn't limits also make trips more expensive for ordinary travellers?",
+                "zh": "限流不也会让普通游客的出行变贵吗？"
+              },
+              {
+                "speaker": "Tom",
+                "en": "Possibly. Even so, fewer visitors who stay longer would benefit the town more.",
+                "zh": "有可能。即便如此，人数更少但停留更久的游客对古镇更有利。"
+              },
+              {
+                "speaker": "Grace",
+                "en": "So, to sum up your view: protect residents first, and aim for quality rather than quantity.",
+                "zh": "那么总结一下你的观点：先保护居民，追求质量而不是数量。"
+              },
+              {
+                "speaker": "Tom",
+                "en": "Exactly. Overall, a careful limit is better than doing nothing.",
+                "zh": "正是。总的来说，谨慎地限流总比什么都不做好。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "Tom 认为游客太多带来的主要问题是什么？",
+            "options": [
+              "本地居民被挤走",
+              "交通拥堵",
+              "环境污染"
+            ],
+            "answer": 0,
+            "explanation_zh": "it's pushing local residents out：把本地居民挤走。"
+          },
+          {
+            "id": "s04",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "老城区房租上涨的原因是什么？",
+            "options": [
+              "短租",
+              "新的工作机会",
+              "物价普遍上涨"
+            ],
+            "answer": 0,
+            "explanation_zh": "Due to short-term rentals, rents have doubled."
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "Tom 怎么回应“旅游创造就业”的说法？",
+            "options": [
+              "部分同意，但指出很多工作季节性强、工资低",
+              "完全同意",
+              "完全否认"
+            ],
+            "answer": 0,
+            "explanation_zh": "That's partly true. On the other hand, many of those jobs are seasonal and poorly paid."
+          },
+          {
+            "id": "s06",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "把对话里的连接词和它的作用配对。",
+            "pairs": [
+              {
+                "left": "whereas",
+                "right": "并排对比两种情况"
+              },
+              {
+                "left": "as a result",
+                "right": "引出结果"
+              },
+              {
+                "left": "even so",
+                "right": "让步：即便如此"
+              },
+              {
+                "left": "to sum up",
+                "right": "概括要点"
+              }
+            ]
+          },
+          {
+            "id": "s07",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "补全句子（填一个表示转折或让步的词或短语）。",
+            "sentence_en": "Tourism creates jobs. ___, many of them are poorly paid.",
+            "translation_zh": "旅游创造了就业。不过，其中很多工作工资很低。",
+            "answers": [
+              "However",
+              "Nevertheless",
+              "Even so",
+              "On the other hand"
+            ],
+            "explanation_zh": "两个句子之间表示转折或让步：However / Nevertheless / Even so / On the other hand。"
+          },
+          {
+            "id": "s08",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_production",
+            "task_zh": "用 1–2 分钟回答这个问题，说明你的立场、两个理由、一个让步，最后总结。至少用 4 种不同的连接词。",
+            "prompt_en": "Should historic towns limit the number of tourists?",
+            "model_answers": [
+              "In my view, historic towns should limit tourist numbers, at least at peak times. First of all, overcrowding damages old buildings and streets. Furthermore, due to rising rents, local people are being forced to move away, and as a result, the towns risk becoming museums with nobody living in them. Admittedly, tourism brings jobs and income. Even so, a smaller number of visitors who stay longer could bring the same money with less damage. Overall, I believe careful limits would protect both the towns and the people who live there."
+            ],
+            "checklist_zh": [
+              "开头清楚表明立场",
+              "用了表示补充、因果的连接词（furthermore / due to / as a result 等）",
+              "用 nevertheless / even so / on the other hand 承认了另一面",
+              "用 overall / to sum up 收尾"
+            ]
+          },
+          {
+            "id": "s09",
+            "type": "write",
+            "role": "communicative_task",
+            "skill": "written_production",
+            "task_zh": "写一段 120–150 词的观点段落，题目：Has remote work been good for cities? 要有清楚的主题句、至少两个理由、一个对比或让步，以及一句总结。",
+            "model_answers": [
+              "Remote work has brought cities both benefits and serious challenges. On the positive side, fewer people commute every day, and as a result, rush-hour traffic and air pollution have fallen in many places. Furthermore, workers who no longer need to live near the office can move to cheaper areas, which means housing pressure in city centres may ease. Nevertheless, the change has hurt businesses that depended on office workers. Due to the drop in daily visitors, many cafés and shops in business districts have closed, whereas suburban high streets have become busier. Overall, remote work has not damaged cities so much as reshaped them, and city planners now need to rethink how central areas are used."
+            ],
+            "checklist_zh": [
+              "第一句是清楚的主题句",
+              "至少两个理由，有表示补充和因果的连接词",
+              "有一个对比（whereas）或让步（nevertheless / even so）",
+              "最后一句用 Overall / To sum up 总结",
+              "due to 后面接名词，in addition to 后面接 -ing"
+            ]
+          },
+          {
+            "id": "s10",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "补全句子（两个词）。",
+            "sentence_en": "___ the rain, the match was cancelled.",
+            "translation_zh": "由于下雨，比赛取消了。",
+            "answers": [
+              "Due to",
+              "Because of"
+            ],
+            "explanation_zh": "后面是名词 the rain：Due to / Because of。"
+          },
+          {
+            "id": "s11",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_en": "Prices rose sharply. ___, sales fell.",
+            "prompt_zh": "选出正确的连接词：",
+            "options": [
+              "Consequently",
+              "Whereas",
+              "In addition to"
+            ],
+            "answer": 0,
+            "explanation_zh": "涨价是原因，销量下降是结果：Consequently。"
+          }
+        ]
+      }
+    ]
+  }
+}

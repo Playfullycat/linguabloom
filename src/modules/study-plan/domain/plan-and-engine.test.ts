@@ -133,7 +133,9 @@ describe("placement diagnostic engine", () => {
   it("starts from the self-report but never trusts it as a level", () => {
     expect(startLevel("beginner")).toBe("pre_a1");
     expect(startLevel("forgot")).toBe("a1");
-    expect(startLevel("daily_conversation")).toBe("a2");
+    expect(startLevel("read_simple")).toBe("a2");
+    expect(startLevel("daily_conversation")).toBe("b1");
+    expect(startLevel("advanced")).toBe("b2");
     expect(startLevel(null)).toBe("a1");
   });
 
@@ -166,7 +168,22 @@ describe("placement diagnostic engine", () => {
     expect(result).toMatchObject({ level: "a2", confidence: "low", evidenceCount: 4 });
     expect(estimateSkill([{ itemId: "1", level: "pre_a1", isCorrect: false }])!.level).toBe("pre_a1");
     const six = Array.from({ length: 6 }, (_, i) => ({ itemId: String(i), level: "b1", isCorrect: true }));
-    expect(estimateSkill(six)).toMatchObject({ level: "b1", confidence: "medium", mayBeHigher: true });
+    // B1 is no longer the top of the bank, so all-correct at B1 doesn't mean "may be higher".
+    expect(estimateSkill(six)).toMatchObject({ level: "b1", confidence: "medium", mayBeHigher: false });
+    const topRight = Array.from({ length: 6 }, (_, i) => ({ itemId: String(i), level: "c2", isCorrect: true }));
+    expect(estimateSkill(topRight)).toMatchObject({ level: "c2", mayBeHigher: true });
+  });
+
+  it("covers every skill at every level up to C2, and an all-correct run can reach C2", () => {
+    for (const skill of ["vocabulary", "grammar", "reading", "listening"] as const) {
+      for (const level of ["b2", "c1", "c2"]) expect(bank.items.some((i) => i.skill === skill && i.level === level), `${skill} ${level}`).toBe(true);
+      const items = bank.items.filter((i) => i.skill === skill);
+      const attempts: { itemId: string; level: string; isCorrect: boolean }[] = [];
+      for (let item = nextItem(skill, attempts, items, startLevel("read_simple")); item; item = nextItem(skill, attempts, items, startLevel("read_simple"))) {
+        attempts.push({ itemId: item.id, level: item.level, isCorrect: true });
+      }
+      expect(estimateSkill(attempts)!.level, skill).toBe("c2");
+    }
   });
 
   it("scores items and never sends answer keys to the browser", () => {

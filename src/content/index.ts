@@ -14,6 +14,12 @@ import a2PastStories from "./a2/u01-past-stories.json" with { type: "json" };
 import a2Future from "./a2/u03-future.json" with { type: "json" };
 import b1Conditionals from "./b1/u02-conditionals.json" with { type: "json" };
 import b1Opinions from "./b1/u06-opinions.json" with { type: "json" };
+import b2Discourse from "./b2/u01-discourse.json" with { type: "json" };
+import b2Hedging from "./b2/u03-hedging.json" with { type: "json" };
+import c1Register from "./c1/u01-register.json" with { type: "json" };
+import c1Argument from "./c1/u03-argument.json" with { type: "json" };
+import c2ImpliedMeaning from "./c2/u01-implied-meaning.json" with { type: "json" };
+import c2Precision from "./c2/u02-precision.json" with { type: "json" };
 import catalog from "./catalog.json" with { type: "json" };
 import preA1Hello from "./pre-a1/u03-hello.json" with { type: "json" };
 import preA1MyNameIs from "./pre-a1/u04-my-name-is.json" with { type: "json" };
@@ -32,4 +38,10 @@ export const rawUnitFiles: Record<string, unknown> = {
   "a2/u03-future.json": a2Future,
   "b1/u02-conditionals.json": b1Conditionals,
   "b1/u06-opinions.json": b1Opinions,
+  "b2/u01-discourse.json": b2Discourse,
+  "b2/u03-hedging.json": b2Hedging,
+  "c1/u01-register.json": c1Register,
+  "c1/u03-argument.json": c1Argument,
+  "c2/u01-implied-meaning.json": c2ImpliedMeaning,
+  "c2/u02-precision.json": c2Precision,
 };

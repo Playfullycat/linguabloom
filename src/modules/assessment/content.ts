@@ -56,7 +56,7 @@ export const itemBankSchema = z
     const ids = b.items.map((i) => i.id);
     if (new Set(ids).size !== ids.length) ctx.addIssue({ code: "custom", message: "duplicate item ids" });
     for (const skill of DIAGNOSTIC_SKILLS) {
-      for (const level of ["pre_a1", "a1", "a2", "b1"] as const) {
+      for (const level of CEFR_LEVELS) {
         if (!b.items.some((i) => i.skill === skill && i.level === level)) {
           ctx.addIssue({ code: "custom", message: `no ${skill} item at ${level}` });
         }

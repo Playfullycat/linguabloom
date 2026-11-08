@@ -1,0 +1,1268 @@
+{
+  "content_schema_version": 1,
+  "source_type": "first_party",
+  "review_status": "pending_owner_review",
+  "unit": {
+    "id": "c2-u02-precision",
+    "level": "c2",
+    "order": 2,
+    "status": "published",
+    "title_en": "Precise Expression",
+    "title_zh": "精确表达",
+    "summary_zh": "在意思相近的词之间做出精准选择：褒贬色彩（frugal 还是 stingy）、程度词与形容词的搭配（absolutely exhausted，而不是 very exhausted），以及用一个准确的词代替模糊的说法（scrutinise、negligible、ostensibly）。学完后，你能修改自己的文字，让它更精确、简洁、分寸得当。",
+    "can_do": [
+      {
+        "id": "c2.v.precision",
+        "skill": "vocabulary",
+        "en": "Can choose between near-synonyms to express fine shades of meaning and attitude precisely.",
+        "zh": "能在近义词之间做出选择，精确表达细微的意思和态度差别。"
+      },
+      {
+        "id": "c2.gr.gradability",
+        "skill": "grammar",
+        "en": "Can combine intensifiers and downtoners with gradable and non-gradable adjectives accurately and for effect.",
+        "zh": "能准确、有效地把程度副词和可分级、不可分级形容词搭配使用。"
+      },
+      {
+        "id": "c2.wp.precise",
+        "skill": "written_production",
+        "en": "Can revise their own writing to make it more precise, concise and well-judged in tone.",
+        "zh": "能修改自己的文字，使其更精确、简洁、语气得当。"
+      }
+    ],
+    "grammar_points": [
+      {
+        "id": "c2.gradability",
+        "title_en": "Gradable and non-gradable adjectives",
+        "title_zh": "可分级与不可分级形容词",
+        "pattern": "gradable: very / extremely / slightly / fairly / highly + good, tired, successful\nnon-gradable: absolutely / utterly / totally / virtually + excellent, exhausted, impossible\nnot: very excellent / slightly enormous",
+        "explanation_zh": "可分级形容词（good、tired、big、successful）可以有程度之分，用 very、extremely、slightly、fairly 修饰，highly 常和 successful、likely、recommended 搭配。不可分级形容词本身已经是极限或绝对的意思（excellent = 非常好、exhausted = 筋疲力尽、enormous = 巨大、impossible），用 absolutely、utterly、totally、truly 修饰，virtually 表示“几乎”。不说 very excellent、slightly enormous。really 两类都可以用；quite 修饰可分级形容词时是“相当”，修饰不可分级形容词时是“完全”。",
+        "examples": [
+          {
+            "en": "The launch was highly successful.",
+            "zh": "这次发布非常成功。"
+          },
+          {
+            "en": "I was absolutely exhausted after the flight.",
+            "zh": "飞行结束后我筋疲力尽。"
+          },
+          {
+            "en": "It's virtually impossible to get a table there on Fridays.",
+            "zh": "周五几乎不可能在那儿订到位子。"
+          }
+        ],
+        "common_errors": [
+          {
+            "wrong": "The results were very excellent.",
+            "right": "The results were excellent. / truly excellent.",
+            "why_zh": "excellent 已经是“非常好”，不能再加 very。"
+          },
+          {
+            "wrong": "The costs were slightly enormous.",
+            "right": "The costs were slightly higher than expected. / The costs were enormous.",
+            "why_zh": "enormous 是极限形容词，不能用 slightly 修饰。"
+          },
+          {
+            "wrong": "The launch was absolutely successful.",
+            "right": "The launch was highly successful.",
+            "why_zh": "successful 是可分级的，常用 highly / very 修饰。"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "key": "frugal",
+        "text": "frugal",
+        "pos": "adjective",
+        "ipa": "/ˈfruːɡl/",
+        "zh": "节俭的（褒义）",
+        "example_en": "He's frugal; he never wastes money.",
+        "example_zh": "他很节俭，从不乱花钱。"
+      },
+      {
+        "key": "stingy",
+        "text": "stingy",
+        "pos": "adjective",
+        "ipa": "/ˈstɪndʒi/",
+        "zh": "吝啬的；小气的（贬义）",
+        "example_en": "Don't be stingy; it's your turn to pay.",
+        "example_zh": "别那么小气，轮到你请客了。"
+      },
+      {
+        "key": "assertive",
+        "text": "assertive",
+        "pos": "adjective",
+        "ipa": "/əˈsɜːtɪv/",
+        "zh": "坚定自信的；敢于表达的（褒义）",
+        "example_en": "She's assertive but always polite.",
+        "example_zh": "她敢于表达，但总是很有礼貌。"
+      },
+      {
+        "key": "pushy",
+        "text": "pushy",
+        "pos": "adjective",
+        "ipa": "/ˈpʊʃi/",
+        "zh": "咄咄逼人的；强人所难的（贬义）",
+        "example_en": "The salesman was really pushy.",
+        "example_zh": "那个推销员很强势。"
+      },
+      {
+        "key": "highly",
+        "text": "highly",
+        "pos": "adverb",
+        "ipa": "/ˈhaɪli/",
+        "zh": "非常；高度地（常与 successful、likely 搭配）",
+        "example_en": "It's highly unlikely to rain.",
+        "example_zh": "下雨的可能性极小。"
+      },
+      {
+        "key": "utterly",
+        "text": "utterly",
+        "pos": "adverb",
+        "ipa": "/ˈʌtəli/",
+        "zh": "完全地；彻底地（修饰极限词）",
+        "example_en": "The idea is utterly ridiculous.",
+        "example_zh": "这个想法荒唐透顶。"
+      },
+      {
+        "key": "marginally",
+        "text": "marginally",
+        "pos": "adverb",
+        "ipa": "/ˈmɑːdʒɪnəli/",
+        "zh": "略微地；稍微",
+        "example_en": "The new version is marginally faster.",
+        "example_zh": "新版本略快一点。"
+      },
+      {
+        "key": "virtually",
+        "text": "virtually",
+        "pos": "adverb",
+        "ipa": "/ˈvɜːtʃuəli/",
+        "zh": "几乎；差不多",
+        "example_en": "It's virtually impossible to park here.",
+        "example_zh": "这里几乎不可能停车。"
+      },
+      {
+        "key": "scrutinise",
+        "text": "scrutinise",
+        "pos": "verb",
+        "ipa": "/ˈskruːtənaɪz/",
+        "zh": "仔细审查；细看",
+        "example_en": "The report scrutinised every item of spending.",
+        "example_zh": "报告逐项审查了每一笔支出。"
+      },
+      {
+        "key": "negligible",
+        "text": "negligible",
+        "pos": "adjective",
+        "ipa": "/ˈneɡlɪdʒəbl/",
+        "zh": "微不足道的；可以忽略的",
+        "example_en": "The effect on prices was negligible.",
+        "example_zh": "对价格的影响微乎其微。"
+      },
+      {
+        "key": "ostensibly",
+        "text": "ostensibly",
+        "pos": "adverb",
+        "ipa": "/ɒˈstensəbli/",
+        "zh": "表面上；名义上（实际可能不同）",
+        "example_en": "The trip was ostensibly for research.",
+        "example_zh": "那次出行名义上是为了调研。"
+      },
+      {
+        "key": "meticulous",
+        "text": "meticulous",
+        "pos": "adjective",
+        "ipa": "/məˈtɪkjələs/",
+        "zh": "一丝不苟的；极其仔细的",
+        "example_en": "She keeps meticulous records.",
+        "example_zh": "她的记录一丝不苟。"
+      }
+    ],
+    "lessons": [
+      {
+        "id": "c2-u02-precision-l1",
+        "order": 1,
+        "kind": "core",
+        "title_en": "Frugal or Stingy?",
+        "title_zh": "褒义还是贬义？",
+        "estimated_minutes": 13,
+        "objectives": [
+          {
+            "en": "Choose between near-synonyms with positive and negative connotations.",
+            "zh": "能在褒义和贬义的近义词之间做出选择。"
+          },
+          {
+            "en": "Describe people fairly in a review or reference.",
+            "zh": "能在评估或推荐中公正地描述一个人。"
+          }
+        ],
+        "can_do_ids": [
+          "c2.v.precision",
+          "c2.wp.precise"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "vocabulary",
+            "title_zh": "这节课学什么",
+            "body_zh": "frugal 和 stingy 都是“不爱花钱”，assertive 和 pushy 都是“很强势”，字面意思几乎一样，但一个是夸奖，一个是批评。写评估、推荐信或评论时，选错一个词，整段话的态度就变了。这节课学辨别近义词的褒贬色彩。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Writing a performance review",
+            "instructions_zh": "先听。注意 Lin 为什么坚持换掉某些词。",
+            "scene_zh": "Lin 和 Sam 在为团队成员 Tom 写年度评估。",
+            "lines": [
+              {
+                "speaker": "Sam",
+                "en": "Let's finish Tom's review. How would you describe his approach to the budget?",
+                "zh": "把 Tom 的评估写完吧。你怎么描述他管理预算的方式？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "I'd call him frugal. He never wastes a penny of the company's money.",
+                "zh": "我会说他很节俭。公司的钱他一分都不浪费。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Frugal sounds positive. Some people in the team would say stingy.",
+                "zh": "frugal 听起来是夸奖。团队里有人会说他小气。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "That's unfair. Stingy suggests he's mean with other people. He's careful, not mean.",
+                "zh": "那不公平。stingy 暗示他对别人小气。他是谨慎，不是小气。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Fair enough. And in meetings? He can be quite forceful.",
+                "zh": "有道理。那开会时呢？他有时挺强势的。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "I'd go with assertive rather than pushy. He states his views clearly, but he does listen.",
+                "zh": "我会用 assertive 而不是 pushy。他表达观点很清楚，但也会倾听。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "And his reports? Fussy seems a bit harsh.",
+                "zh": "那他的报告呢？说 fussy（挑剔）好像有点刻薄。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Thorough, I'd say. Fussy would make attention to detail sound like a fault.",
+                "zh": "我会说 thorough（周全）。fussy 会让注重细节听起来像个缺点。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。成对记：一个褒义，一个贬义。",
+            "items": [
+              "frugal",
+              "stingy",
+              "assertive",
+              "pushy"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "teach",
+            "role": "teach",
+            "skill": "vocabulary",
+            "title_zh": "同一件事，两种态度",
+            "explanation_zh": "很多近义词描述的是同一种行为，区别在于说话人的态度（connotation）：frugal / thrifty（节俭，褒）↔ stingy / mean / cheap（小气，贬）；assertive（敢于表达，褒）↔ pushy / aggressive（咄咄逼人，贬）；thorough / meticulous（周全，褒）↔ fussy / pedantic（挑剔，贬）；curious（好奇，中性偏褒）↔ nosy（爱打听，贬）；slim（苗条，褒）↔ skinny（瘦，偏贬）。用哪个词，就是在表态。在评估、推荐信、新闻报道里，要有意识地选择。",
+            "pattern": "frugal ↔ stingy\nassertive ↔ pushy\nthorough ↔ fussy\ncurious ↔ nosy",
+            "examples": [
+              {
+                "en": "She's frugal, which is why she could afford a flat so young.",
+                "zh": "她很节俭，所以年纪轻轻就买得起房。"
+              },
+              {
+                "en": "He's so stingy that he never buys a round.",
+                "zh": "他小气得从来不请大家喝一轮。"
+              },
+              {
+                "en": "My neighbour is a bit nosy; she always asks where I'm going.",
+                "zh": "我的邻居有点爱打听，总问我去哪儿。"
+              }
+            ],
+            "tips_zh": [
+              "拿不准一个词的褒贬时，看词典例句：例句的语境往往能看出态度。",
+              "同一个人，不同的人会用不同的词描述，这本身就透露了说话人的立场。"
+            ]
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "vocabulary",
+            "prompt_zh": "想夸一个人会省钱，选哪个词？",
+            "options": [
+              "frugal",
+              "stingy",
+              "mean"
+            ],
+            "answer": 0,
+            "explanation_zh": "frugal 是褒义的“节俭”；stingy、mean 是贬义的“小气”。"
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "vocabulary",
+            "prompt_en": "He kept asking about my salary and my love life. He's so ___.",
+            "prompt_zh": "选出最合适的词：",
+            "options": [
+              "curious",
+              "nosy",
+              "inquisitive"
+            ],
+            "answer": 1,
+            "explanation_zh": "打听别人的私事，带贬义：nosy。"
+          },
+          {
+            "id": "s07",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "vocabulary",
+            "instructions_zh": "把褒义词和对应的贬义词配对。",
+            "pairs": [
+              {
+                "left": "frugal",
+                "right": "stingy"
+              },
+              {
+                "left": "assertive",
+                "right": "pushy"
+              },
+              {
+                "left": "thorough",
+                "right": "fussy"
+              },
+              {
+                "left": "curious",
+                "right": "nosy"
+              }
+            ]
+          },
+          {
+            "id": "s08",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "vocabulary",
+            "instructions_zh": "补全句子（一个褒义词）。",
+            "sentence_en": "She's very ___ in meetings: she says what she thinks, but politely.",
+            "translation_zh": "她开会时很敢于表达：有话直说，但很有礼貌。",
+            "answers": [
+              "assertive"
+            ],
+            "explanation_zh": "敢于表达又有礼貌：assertive（褒义）。"
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，Lin 为什么不同意用 stingy？",
+            "audio_en": "Stingy suggests he's mean with other people. He's careful, not mean.",
+            "options": [
+              "stingy 暗示他对别人小气",
+              "stingy 太正式",
+              "stingy 的意思是浪费"
+            ],
+            "answer": 0,
+            "explanation_zh": "Stingy suggests he's mean with other people."
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：Lin 怎么描述 Tom 开会时的表现？",
+            "options": [
+              "assertive：表达清楚，也会倾听",
+              "pushy：咄咄逼人",
+              "很安静"
+            ],
+            "answer": 0,
+            "explanation_zh": "I'd go with assertive rather than pushy. He states his views clearly, but he does listen."
+          },
+          {
+            "id": "s11",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "vocabulary",
+            "instructions_zh": "补全句子（一个贬义词）。",
+            "sentence_en": "Calling him ___ would be unfair; he's generous with friends, just careful with company money.",
+            "translation_zh": "说他小气不公平，他对朋友很大方，只是花公司的钱很谨慎。",
+            "answers": [
+              "stingy",
+              "mean",
+              "cheap"
+            ],
+            "explanation_zh": "“小气”：stingy / mean / cheap（贬义）。"
+          },
+          {
+            "id": "s12",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "vocabulary",
+            "prompt_zh": "哪个词是中性偏褒义的？",
+            "options": [
+              "slim",
+              "skinny",
+              "scrawny"
+            ],
+            "answer": 0,
+            "explanation_zh": "slim 是“苗条”；skinny 偏贬（太瘦）；scrawny 是“骨瘦如柴”。"
+          }
+        ]
+      },
+      {
+        "id": "c2-u02-precision-l2",
+        "order": 2,
+        "kind": "core",
+        "title_en": "Absolutely Exhausted, Slightly Tired",
+        "title_zh": "程度词的搭配",
+        "estimated_minutes": 13,
+        "objectives": [
+          {
+            "en": "Match intensifiers to gradable and non-gradable adjectives.",
+            "zh": "能把程度副词和可分级、不可分级形容词正确搭配。"
+          },
+          {
+            "en": "Edit over-intensified writing so that it sounds credible.",
+            "zh": "能修改过度夸张的文字，使它更可信。"
+          }
+        ],
+        "can_do_ids": [
+          "c2.gr.gradability",
+          "c2.wp.precise"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "grammar",
+            "title_zh": "这节课学什么",
+            "body_zh": "very excellent、slightly enormous、absolutely successful——这些搭配中文读者看着没问题，母语者一看就觉得别扭。原因在于形容词分两类：有程度之分的（good、tired）和本身已经是极限的（excellent、exhausted）。不同的类别搭配不同的程度词。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "A very enthusiastic press release",
+            "instructions_zh": "先听。注意 Lin 指出了哪些搭配问题，又建议怎么改。",
+            "scene_zh": "Lin 在帮同事 Ben 修改一份新闻稿。",
+            "lines": [
+              {
+                "speaker": "Lin",
+                "en": "Ben, I've read the press release. It's good, but it's very... enthusiastic.",
+                "zh": "Ben，新闻稿我看了。写得不错，就是非常……热情。"
+              },
+              {
+                "speaker": "Ben",
+                "en": "Enthusiastic is good, isn't it?",
+                "zh": "热情是好事吧？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Up to a point. You've written that the results were very excellent and the launch was absolutely successful.",
+                "zh": "在一定程度上是。你写了结果 very excellent，发布 absolutely successful。"
+              },
+              {
+                "speaker": "Ben",
+                "en": "Oh. Is that wrong?",
+                "zh": "哦，这样不对吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Excellent already means very good, so very excellent doesn't work. You could say truly excellent, or just excellent.",
+                "zh": "excellent 本身就是“非常好”，所以 very excellent 不行。可以说 truly excellent，或者只说 excellent。"
+              },
+              {
+                "speaker": "Ben",
+                "en": "And absolutely successful?",
+                "zh": "那 absolutely successful 呢？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Successful is gradable, so highly successful sounds more natural. Absolutely goes with words like essential or delighted.",
+                "zh": "successful 是可以分程度的，所以 highly successful 更自然。absolutely 要和 essential、delighted 这类词搭配。"
+              },
+              {
+                "speaker": "Ben",
+                "en": "Got it. What about the costs were slightly enormous?",
+                "zh": "明白了。那 the costs were slightly enormous 呢？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "That one I'd change completely. Either the costs were slightly higher than expected, or they were enormous. They can't be both.",
+                "zh": "这句我会整句改掉。要么是成本比预期略高，要么是成本巨大，不可能两者都是。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "highly",
+              "utterly",
+              "marginally",
+              "virtually"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "teach",
+            "role": "teach",
+            "skill": "grammar",
+            "title_zh": "两类形容词，两套程度词",
+            "explanation_zh": "可分级形容词（good、tired、big、cold、successful）：用 very、extremely、slightly、fairly、a bit 修饰；highly 常与 successful、likely、unlikely、recommended 搭配；marginally 表示“略微”，常和比较级连用（marginally better）。不可分级形容词，即极限词（excellent、exhausted、enormous、freezing、impossible、essential）：用 absolutely、utterly、totally、completely、truly 修饰；virtually / practically 表示“几乎”。really 两类都能用。quite 很特别：quite good = 相当好，quite impossible = 完全不可能。",
+            "pattern": "very / extremely / slightly + tired, good, big\nhighly + successful, likely\nabsolutely / utterly + exhausted, ridiculous\nvirtually + impossible\nmarginally + better / faster",
+            "examples": [
+              {
+                "en": "The view was absolutely stunning.",
+                "zh": "景色美得惊人。"
+              },
+              {
+                "en": "The new version is marginally faster.",
+                "zh": "新版本略快一点。"
+              },
+              {
+                "en": "That's an utterly ridiculous idea.",
+                "zh": "这是个荒唐透顶的想法。"
+              }
+            ],
+            "tips_zh": [
+              "写作里少用程度词反而更有力：一个准确的形容词往往胜过 very + 普通形容词（exhausted 胜过 very tired）。",
+              "能给数字时就给数字：marginally faster 不如 2% faster 具体。"
+            ]
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_en": "The view from the top was ___ stunning.",
+            "prompt_zh": "选出合适的程度词：",
+            "options": [
+              "absolutely",
+              "very",
+              "slightly"
+            ],
+            "answer": 0,
+            "explanation_zh": "stunning 是极限词，用 absolutely 修饰。"
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_en": "The new version is ___ faster, about two percent.",
+            "prompt_zh": "选出合适的程度词：",
+            "options": [
+              "marginally",
+              "utterly",
+              "absolutely"
+            ],
+            "answer": 0,
+            "explanation_zh": "只快了 2%：marginally（略微）+ 比较级。"
+          },
+          {
+            "id": "s07",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "补全句子（一个表示“几乎 / 完全”的副词）。",
+            "sentence_en": "It's ___ impossible to get a table there on Fridays; you need to book weeks ahead.",
+            "translation_zh": "周五几乎不可能在那儿订到位子，得提前好几周预订。",
+            "answers": [
+              "virtually",
+              "almost",
+              "practically",
+              "absolutely",
+              "totally"
+            ],
+            "explanation_zh": "impossible 是极限词：virtually / almost / practically / absolutely。"
+          },
+          {
+            "id": "s08",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "把程度副词和最常见的搭配配对。",
+            "pairs": [
+              {
+                "left": "highly",
+                "right": "successful"
+              },
+              {
+                "left": "utterly",
+                "right": "ridiculous"
+              },
+              {
+                "left": "marginally",
+                "right": "better"
+              },
+              {
+                "left": "virtually",
+                "right": "impossible"
+              }
+            ]
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "prompt_en": "The exam was quite impossible.",
+            "prompt_zh": "这句话的意思是：",
+            "options": [
+              "考试完全不可能做出来",
+              "考试有点难",
+              "考试相当容易"
+            ],
+            "answer": 0,
+            "explanation_zh": "quite + 极限形容词 = 完全。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，为什么不能说 very excellent？",
+            "audio_en": "Excellent already means very good, so very excellent doesn't work.",
+            "options": [
+              "excellent 本身已经是“非常好”",
+              "excellent 是名词",
+              "very 只能修饰动词"
+            ],
+            "answer": 0,
+            "explanation_zh": "Excellent already means very good."
+          },
+          {
+            "id": "s11",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：Lin 建议怎么改 slightly enormous？",
+            "options": [
+              "改成 slightly higher than expected 或 enormous",
+              "改成 very enormous",
+              "保持不变"
+            ],
+            "answer": 0,
+            "explanation_zh": "Either the costs were slightly higher than expected, or they were enormous."
+          },
+          {
+            "id": "s12",
+            "type": "write",
+            "role": "communicative_task",
+            "skill": "written_production",
+            "task_zh": "修改下面这段过度夸张、搭配有误的产品介绍，让它准确、可信：“Our absolutely new app is very perfect and extremely unique. It is slightly amazing how very essential it has become for very busy people.”",
+            "model_answers": [
+              "Our new app is designed for people with demanding schedules. In early trials, it reduced the time users spent planning their week by around a third, and over 80% said they would recommend it. For many busy professionals, it has quickly become an essential tool."
+            ],
+            "checklist_zh": [
+              "去掉了 very perfect、extremely unique、slightly amazing 等错误搭配",
+              "用具体信息或数字代替了空洞的夸张",
+              "保留的程度词和形容词搭配正确",
+              "语气可信，不像广告口号"
+            ]
+          },
+          {
+            "id": "s13",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "补全句子（一个程度副词）。",
+            "sentence_en": "I was ___ exhausted after the flight.",
+            "translation_zh": "飞行结束后我筋疲力尽。",
+            "answers": [
+              "absolutely",
+              "utterly",
+              "completely",
+              "totally",
+              "really"
+            ],
+            "explanation_zh": "exhausted 是极限词：absolutely / utterly / completely。"
+          },
+          {
+            "id": "s14",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_zh": "哪一句是对的？",
+            "options": [
+              "The results were very excellent.",
+              "The results were highly excellent.",
+              "The results were truly excellent."
+            ],
+            "answer": 2,
+            "explanation_zh": "excellent 是极限词，用 truly / absolutely 修饰，不用 very / highly。"
+          }
+        ]
+      },
+      {
+        "id": "c2-u02-precision-l3",
+        "order": 3,
+        "kind": "core",
+        "title_en": "Saying Exactly What You Mean",
+        "title_zh": "用词精准",
+        "estimated_minutes": 13,
+        "objectives": [
+          {
+            "en": "Replace vague phrases with precise words such as scrutinise, negligible and ostensibly.",
+            "zh": "能用 scrutinise、negligible、ostensibly 等精准的词代替模糊的说法。"
+          },
+          {
+            "en": "Make writing more concise and specific with exact figures.",
+            "zh": "能用具体数字让文字更简洁、具体。"
+          }
+        ],
+        "can_do_ids": [
+          "c2.v.precision",
+          "c2.wp.precise"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "vocabulary",
+            "title_zh": "这节课学什么",
+            "body_zh": "looked at、very small、supposedly——意思都对，但不够精确。C2 水平的写作追求“一个词说准”：仔细审查是 scrutinise，小到可以忽略是 negligible，名义上（但实际不是）是 ostensibly。这节课跟着一位编辑学怎么把文章改得更精确。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Editing an article",
+            "instructions_zh": "先听。注意编辑指出了哪些模糊的说法，Lin 换成了什么词。",
+            "scene_zh": "编辑 Ruth 在和记者 Lin 讨论她关于市政府报告的文章。",
+            "lines": [
+              {
+                "speaker": "Ruth",
+                "en": "Your article on the council report is strong, but some phrases are a little vague.",
+                "zh": "你那篇关于市政府报告的文章很有力，但有些地方说得有点模糊。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Such as?",
+                "zh": "比如？"
+              },
+              {
+                "speaker": "Ruth",
+                "en": "You write that the report looked at the spending. Did it simply look, or did it scrutinise every item?",
+                "zh": "你写报告 looked at 了支出。它只是看了看，还是逐项仔细审查了？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "It went through every line, so scrutinise is more accurate.",
+                "zh": "它逐行核查过，所以 scrutinise 更准确。"
+              },
+              {
+                "speaker": "Ruth",
+                "en": "Good. And here: the impact on prices was very small. How small?",
+                "zh": "很好。还有这里：对价格的影响很小。有多小？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Less than half a percent. Would negligible be fair?",
+                "zh": "不到百分之零点五。用 negligible 合适吗？"
+              },
+              {
+                "speaker": "Ruth",
+                "en": "Yes, that's precise and shorter. Now, the scheme was supposedly for local families?",
+                "zh": "合适，精确又简短。再看，这个计划“据说”是给本地家庭的？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Ostensibly, yes. In practice, most of the money went to large developers.",
+                "zh": "名义上是。实际上，大部分钱流向了大开发商。"
+              },
+              {
+                "speaker": "Ruth",
+                "en": "Then say ostensibly, and give the figure. Readers trust writers who are meticulous about details.",
+                "zh": "那就用 ostensibly，再给出数字。读者信任那些对细节一丝不苟的作者。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "scrutinise",
+              "negligible",
+              "ostensibly",
+              "meticulous"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "notice",
+            "role": "notice",
+            "skill": "vocabulary",
+            "question_zh": "模糊的说法换成精准的词以后，意思有什么变化？",
+            "examples": [
+              {
+                "en": "looked at the spending → scrutinised the spending",
+                "zh": "看了看 → 逐项仔细审查",
+                "highlight": [
+                  "scrutinised"
+                ]
+              },
+              {
+                "en": "the impact was very small → the impact was negligible",
+                "zh": "影响很小 → 影响小到可以忽略",
+                "highlight": [
+                  "negligible"
+                ]
+              },
+              {
+                "en": "supposedly for local families → ostensibly for local families",
+                "zh": "据说 → 名义上（暗示实际并非如此）",
+                "highlight": [
+                  "ostensibly"
+                ]
+              },
+              {
+                "en": "very careful about details → meticulous",
+                "zh": "对细节很仔细 → 一丝不苟",
+                "highlight": [
+                  "meticulous"
+                ]
+              }
+            ],
+            "takeaway_zh": "精准的词往往同时更短、更有信息量：scrutinise 不仅是“看”，还说明了看得多仔细；ostensibly 不仅是“据说”，还暗示表象和实际不符。能给数字时给出数字（less than 0.5%），比 very small 更可信。"
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "vocabulary",
+            "prompt_en": "The difference was less than 0.1%, which is ___.",
+            "prompt_zh": "选出最合适的词：",
+            "options": [
+              "negligible",
+              "enormous",
+              "significant"
+            ],
+            "answer": 0,
+            "explanation_zh": "小到可以忽略：negligible。"
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "vocabulary",
+            "prompt_en": "The trip was ___ for research, but they spent most of it on the beach.",
+            "prompt_zh": "选出最合适的词：",
+            "options": [
+              "ostensibly",
+              "meticulously",
+              "negligibly"
+            ],
+            "answer": 0,
+            "explanation_zh": "名义上为了调研，实际在海滩：ostensibly。"
+          },
+          {
+            "id": "s07",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "vocabulary",
+            "instructions_zh": "把模糊的说法和精准的词配对。",
+            "pairs": [
+              {
+                "left": "look at very closely",
+                "right": "scrutinise"
+              },
+              {
+                "left": "so small it doesn't matter",
+                "right": "negligible"
+              },
+              {
+                "left": "extremely careful about details",
+                "right": "meticulous"
+              },
+              {
+                "left": "apparently (but not really)",
+                "right": "ostensibly"
+              }
+            ]
+          },
+          {
+            "id": "s08",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "vocabulary",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "She keeps ___ records of every expense.",
+            "translation_zh": "她对每一笔开支都记得一丝不苟。",
+            "answers": [
+              "meticulous",
+              "detailed",
+              "careful"
+            ],
+            "explanation_zh": "一丝不苟的记录：meticulous records。"
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "vocabulary",
+            "prompt_zh": "哪一句最精确、最简洁？",
+            "options": [
+              "Sales rose by 12% in the third quarter.",
+              "Sales went up quite a lot at some point in the second half of the year.",
+              "Sales were very much better."
+            ],
+            "answer": 0,
+            "explanation_zh": "给出了具体数字和时间，没有多余的词。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，这个计划实际上怎么样？",
+            "audio_en": "Ostensibly, yes. In practice, most of the money went to large developers.",
+            "options": [
+              "名义上为本地家庭，实际钱大多流向了大开发商",
+              "真的帮助了本地家庭",
+              "根本没有花钱"
+            ],
+            "answer": 0,
+            "explanation_zh": "Ostensibly（名义上）... In practice（实际上）..."
+          },
+          {
+            "id": "s11",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：对价格的影响有多大？",
+            "options": [
+              "不到百分之零点五",
+              "大约百分之五",
+              "非常大"
+            ],
+            "answer": 0,
+            "explanation_zh": "Less than half a percent."
+          },
+          {
+            "id": "s12",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_production",
+            "task_zh": "用大约 1 分钟精确地描述一个你了解的变化（例如你的城市、行业或公司过去几年的变化）。要求：至少用三个精准的词（scrutinise、negligible、marginally、virtually、ostensibly 等），至少给出两个具体数字，不用 very + 普通形容词。",
+            "prompt_en": "How has your city changed over the last five years?",
+            "model_answers": [
+              "Over the last five years, the number of cyclists in my city has roughly doubled, mainly because of around forty kilometres of new bike lanes. Ostensibly, the lanes were built to reduce traffic, but the effect on congestion has been negligible, since car use has fallen only marginally. What has changed is safety: serious accidents involving cyclists are down by about a quarter. Finding a parking space in the old town, on the other hand, is now virtually impossible."
+            ],
+            "checklist_zh": [
+              "至少用了三个精准的词",
+              "至少两个具体数字",
+              "没有 very + 普通形容词",
+              "程度词和形容词搭配正确"
+            ]
+          },
+          {
+            "id": "s13",
+            "type": "order",
+            "role": "exit_ticket",
+            "skill": "vocabulary",
+            "instructions_zh": "排成句子。",
+            "translation_zh": "对价格的影响微乎其微。",
+            "tokens": [
+              "on",
+              "The",
+              "was",
+              "negligible.",
+              "prices",
+              "effect"
+            ],
+            "answers": [
+              "The effect on prices was negligible."
+            ],
+            "explanation_zh": "The effect on + 名词 + was negligible。"
+          },
+          {
+            "id": "s14",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "vocabulary",
+            "prompt_en": "ostensibly",
+            "prompt_zh": "最接近的意思是：",
+            "options": [
+              "表面上（实际未必如此）",
+              "显然地",
+              "无论如何"
+            ],
+            "answer": 0,
+            "explanation_zh": "ostensibly = 表面上、名义上，暗示实际情况不同。"
+          }
+        ]
+      },
+      {
+        "id": "c2-u02-precision-l4",
+        "order": 4,
+        "kind": "review",
+        "title_en": "Unit Review: Edit It",
+        "title_zh": "单元复习：改一改",
+        "estimated_minutes": 15,
+        "objectives": [
+          {
+            "en": "Follow an editing discussion about connotation, gradability and precision.",
+            "zh": "能听懂一段关于褒贬、程度搭配和精准用词的修改讨论。"
+          },
+          {
+            "en": "Edit a vague, over-intensified text into precise, credible English.",
+            "zh": "能把一段模糊、夸张的文字改成精确、可信的英语。"
+          }
+        ],
+        "can_do_ids": [
+          "c2.v.precision",
+          "c2.gr.gradability",
+          "c2.wp.precise"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "listening",
+            "title_zh": "单元复习",
+            "body_zh": "Sam 写了一则招聘广告，请 Lin 在发布前看一看。这段对话把本单元的三个重点都用上了：褒贬色彩、程度词搭配、精准用词。听完后，你也来改一段文字。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "A job advert",
+            "instructions_zh": "听两遍。记下 Lin 改了哪些词，以及为什么改。",
+            "scene_zh": "Sam 请 Lin 帮忙看一则招聘广告。",
+            "lines": [
+              {
+                "speaker": "Sam",
+                "en": "Can you look at this job advert before it goes online?",
+                "zh": "这则招聘广告发出去之前，你能帮我看看吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Sure. We're looking for a pushy salesperson? I'd change pushy to assertive. Nobody wants to hire someone pushy.",
+                "zh": "好。“我们在找一位强势的销售”？我会把 pushy 改成 assertive。没人想招一个咄咄逼人的人。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Good point. What about the salary is very excellent?",
+                "zh": "有道理。那“薪资非常优秀”呢？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Excellent is enough. Better still, give the figure. A salary of up to sixty thousand is far more persuasive.",
+                "zh": "用 excellent 就够了。更好的是给出数字。“薪资最高六万”要有说服力得多。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "And the office is slightly huge?",
+                "zh": "那“办公室略微巨大”呢？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Either it's spacious or it's huge. Spacious sounds more attractive, actually.",
+                "zh": "要么是宽敞，要么是巨大。其实 spacious 听起来更吸引人。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "The last line says the role ostensibly involves some travel.",
+                "zh": "最后一句说这个岗位“名义上”需要出差。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Ostensibly suggests it doesn't really. Just say it involves occasional travel within Europe.",
+                "zh": "ostensibly 暗示实际上并不需要。直接写“需要偶尔在欧洲境内出差”。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "You're meticulous, you know that?",
+                "zh": "你真是一丝不苟，你知道吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "I'll take that as a compliment, not as a polite way of calling me fussy!",
+                "zh": "我就当这是夸奖，而不是在委婉地说我挑剔！"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "为什么要把 pushy 改成 assertive？",
+            "options": [
+              "pushy 带贬义",
+              "pushy 太正式",
+              "assertive 更短"
+            ],
+            "answer": 0,
+            "explanation_zh": "Nobody wants to hire someone pushy：pushy 是贬义词。"
+          },
+          {
+            "id": "s04",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "Lin 建议薪资怎么写？",
+            "options": [
+              "给出具体数字",
+              "写 very excellent",
+              "不提薪资"
+            ],
+            "answer": 0,
+            "explanation_zh": "Better still, give the figure."
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "为什么最后一句不能用 ostensibly？",
+            "options": [
+              "它暗示实际上并不需要出差",
+              "它太口语化",
+              "它很难拼写"
+            ],
+            "answer": 0,
+            "explanation_zh": "Ostensibly suggests it doesn't really."
+          },
+          {
+            "id": "s06",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "vocabulary",
+            "instructions_zh": "把广告里的问题和 Lin 的改法配对。",
+            "pairs": [
+              {
+                "left": "a pushy salesperson",
+                "right": "an assertive salesperson"
+              },
+              {
+                "left": "the salary is very excellent",
+                "right": "a salary of up to sixty thousand"
+              },
+              {
+                "left": "the office is slightly huge",
+                "right": "a spacious office"
+              },
+              {
+                "left": "ostensibly involves some travel",
+                "right": "involves occasional travel within Europe"
+              }
+            ]
+          },
+          {
+            "id": "s07",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "vocabulary",
+            "instructions_zh": "补全句子（一个褒义词）。",
+            "sentence_en": "The office is bright and ___.",
+            "translation_zh": "办公室明亮宽敞。",
+            "answers": [
+              "spacious",
+              "roomy"
+            ],
+            "explanation_zh": "spacious = 宽敞的（褒义）。"
+          },
+          {
+            "id": "s08",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_production",
+            "task_zh": "同事请你口头点评他写的一句话：“Our hotel is very unique, slightly perfect for families, and ostensibly close to the beach.” 指出三个问题，说明原因，并给出修改后的版本。",
+            "prompt_en": "What do you think of this line for our website?",
+            "model_answers": [
+              "There are three things I'd change. Unique is non-gradable, so very unique doesn't really work; I'd say something specific instead, like set in a restored eighteenth-century farmhouse. Slightly perfect is contradictory, because perfect can't be a little; ideal for families is clearer. And ostensibly suggests it isn't really close to the beach, which is the opposite of what we want. So: Set in a restored farmhouse, our hotel is ideal for families and just five minutes' walk from the beach."
+            ],
+            "checklist_zh": [
+              "指出了三个问题",
+              "分别说明了原因（不可分级、自相矛盾、褒贬或暗示）",
+              "给出了修改后的完整句子",
+              "修改后的句子更具体（例如有数字或细节）"
+            ]
+          },
+          {
+            "id": "s09",
+            "type": "write",
+            "role": "communicative_task",
+            "skill": "written_production",
+            "task_zh": "把下面这段模糊、夸张的报告改写得精确、简洁、可信（70–100 词）：“The new system was looked at by the team and it was very excellent. Costs went up slightly enormously, but the effect on customers was very very small. The project was supposedly finished on time, and staff were extremely exhausted but absolutely happy.”",
+            "model_answers": [
+              "The team scrutinised the new system and found it excellent overall. Costs rose by 18%, well above the original estimate, but the effect on customers was negligible: complaints fell marginally, from 2.1% to 1.9% of orders. The project was officially completed on schedule, although several features were postponed until the next release. Staff reported being exhausted by the final month, yet most said they were proud of the result."
+            ],
+            "checklist_zh": [
+              "去掉了 very excellent、slightly enormously、very very small、extremely exhausted 等错误或空洞的搭配",
+              "用了至少两个本单元的精准词（scrutinise、negligible、marginally 等）",
+              "用具体数字代替了模糊的程度描述",
+              "改写了 supposedly，使意思准确",
+              "整体简洁，语气客观"
+            ]
+          },
+          {
+            "id": "s10",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "vocabulary",
+            "instructions_zh": "补全句子（一个词）。",
+            "sentence_en": "The cost increase was ___, only 0.2%.",
+            "translation_zh": "成本增幅微不足道，只有 0.2%。",
+            "answers": [
+              "negligible",
+              "marginal",
+              "minimal",
+              "tiny"
+            ],
+            "explanation_zh": "小到可以忽略：negligible / marginal / minimal。"
+          },
+          {
+            "id": "s11",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "vocabulary",
+            "prompt_zh": "哪个词带贬义？",
+            "options": [
+              "fussy",
+              "thorough",
+              "meticulous"
+            ],
+            "answer": 0,
+            "explanation_zh": "fussy（挑剔）是贬义；thorough、meticulous 是褒义。"
+          }
+        ]
+      }
+    ]
+  }
+}

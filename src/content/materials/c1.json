@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "source_type": "first_party",
+  "copyright_status": "first_party_original",
+  "review_status": "pending_owner_review",
+  "materials": [
+    {
+      "id": "rd-c1-multitasking",
+      "type": "reading",
+      "level": "c1",
+      "can_do_ids": ["c1.r.complex"],
+      "topic": "psychology",
+      "title_en": "The Myth of the Multitasker",
+      "title_zh": "多任务处理的神话",
+      "summary_zh": "一篇评论性短文：为什么我们自以为擅长同时做几件事，以及“切换成本”如何悄悄降低效率。作者语气带有一定讽刺。（原创文章）",
+      "segments": [
+        { "en": "Ask a room full of office workers whether they are good at multitasking, and a surprising number will raise their hands with some pride.", "zh": "问一屋子上班族是否擅长同时处理多项任务，会有相当多的人略带自豪地举起手。" },
+        { "en": "Yet what most of us call multitasking is, strictly speaking, something else: rapidly switching our attention from one task to another.", "zh": "然而，我们大多数人所说的“多任务处理”，严格来说是另一回事：把注意力在不同任务之间快速切换。" },
+        { "en": "Each switch carries a cost, however small, as the brain has to set aside one set of rules and reload another.", "zh": "每一次切换都有成本，无论多小，因为大脑必须放下一套规则，再重新装载另一套。" },
+        { "en": "Individually, these costs are barely noticeable; accumulated over a working day, they can add up to a considerable loss of time and accuracy.", "zh": "单看每一次，这些成本几乎察觉不到；但在一个工作日里累积起来，就可能造成相当大的时间和准确度损失。" },
+        { "en": "What makes the habit so persistent is that it feels productive, since a constant stream of small completed tasks gives us a pleasant sense of momentum.", "zh": "这个习惯之所以如此顽固，是因为它让人感觉很高效：源源不断完成的小任务给人一种愉快的推进感。" },
+        { "en": "It is precisely this feeling, rather than any measurable result, that keeps us checking messages in the middle of demanding work.", "zh": "正是这种感觉，而不是任何可衡量的成果，让我们在做费脑子的工作时还不停地查看消息。" },
+        { "en": "Admittedly, some combinations of tasks cause little interference, such as listening to music while running.", "zh": "诚然，有些任务组合几乎不会相互干扰，比如边跑步边听音乐。" },
+        { "en": "The trouble begins when two activities compete for the same mental resources, as writing a report and answering emails inevitably do.", "zh": "问题出在两项活动争夺同一种心理资源的时候，比如写报告和回邮件，这两者必然会相互争夺。" },
+        { "en": "The remedy is unglamorous: protected blocks of time, notifications switched off, and the humility to accept that we are not the exception.", "zh": "解决办法毫不光鲜：留出不被打扰的整块时间，关掉通知，并谦虚地承认我们并不是例外。" }
+      ],
+      "glossary": [
+        { "key": "multitasking", "text": "multitasking", "forms": ["multitasking", "Multitasker"], "pos": "noun", "ipa": "/ˌmʌltiˈtɑːskɪŋ/", "zh": "多任务处理" },
+        { "key": "strictly-speaking", "text": "strictly speaking", "pos": "phrase", "ipa": "/ˈstrɪktli ˈspiːkɪŋ/", "zh": "严格来说" },
+        { "key": "set-aside", "text": "set aside", "pos": "phrasal verb", "ipa": "/set əˈsaɪd/", "zh": "放到一边" },
+        { "key": "reload", "text": "reload", "pos": "verb", "ipa": "/ˌriːˈləʊd/", "zh": "重新装载" },
+        { "key": "barely-noticeable", "text": "barely noticeable", "pos": "phrase", "ipa": "/ˈbeəli ˈnəʊtɪsəbl/", "zh": "几乎察觉不到的" },
+        { "key": "accumulate", "text": "accumulated", "pos": "verb", "ipa": "/əˈkjuːmjəleɪtɪd/", "zh": "累积（accumulate 的过去分词）" },
+        { "key": "considerable", "text": "considerable", "pos": "adjective", "ipa": "/kənˈsɪdərəbl/", "zh": "相当大的" },
+        { "key": "persistent", "text": "persistent", "pos": "adjective", "ipa": "/pəˈsɪstənt/", "zh": "持续的；顽固的" },
+        { "key": "momentum", "text": "momentum", "pos": "noun", "ipa": "/məˈmentəm/", "zh": "势头；推进感" },
+        { "key": "demanding", "text": "demanding", "pos": "adjective", "ipa": "/dɪˈmɑːndɪŋ/", "zh": "费力的；要求高的" },
+        { "key": "interference", "text": "interference", "pos": "noun", "ipa": "/ˌɪntəˈfɪərəns/", "zh": "干扰" },
+        { "key": "inevitably", "text": "inevitably", "pos": "adverb", "ipa": "/ɪnˈevɪtəbli/", "zh": "必然地；不可避免地" },
+        { "key": "remedy", "text": "remedy", "pos": "noun", "ipa": "/ˈremədi/", "zh": "解决办法；补救" },
+        { "key": "unglamorous", "text": "unglamorous", "pos": "adjective", "ipa": "/ʌnˈɡlæmərəs/", "zh": "不光鲜的；平淡无奇的" },
+        { "key": "humility", "text": "humility", "pos": "noun", "ipa": "/hjuːˈmɪləti/", "zh": "谦逊" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "作者认为我们所说的“多任务处理”实际上是什么？", "options": ["在不同任务之间快速切换注意力", "真正同时完成几件事", "把任务交给别人"], "answer": 0, "explanation_zh": "原文：rapidly switching our attention from one task to another.", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "这个习惯为什么这么难改？", "options": ["它让人感觉很高效", "它确实能提高成绩", "老板要求这样做"], "answer": 0, "explanation_zh": "原文：it feels productive ... a pleasant sense of momentum。下一句强调是这种感觉，而不是可衡量的成果。", "segment": 4 },
+        { "id": "q3", "type": "choice", "prompt_zh": "哪种任务组合几乎不会相互干扰？", "options": ["边跑步边听音乐", "边写报告边回邮件", "边开会边做表格"], "answer": 0, "explanation_zh": "原文：such as listening to music while running.", "segment": 6 },
+        { "id": "q4", "type": "choice", "prompt_zh": "“the humility to accept that we are not the exception”暗示了什么？", "options": ["我们大多数人并不比别人更擅长多任务", "我们应该更谦虚地对待同事", "少数人确实擅长多任务"], "answer": 0, "explanation_zh": "承认自己不是例外，即承认自己也会受到切换成本的影响。", "segment": 8 }
+      ]
+    },
+    {
+      "id": "rd-c1-machine-translation",
+      "type": "reading",
+      "level": "c1",
+      "can_do_ids": ["c1.r.complex", "c1.wp.argument"],
+      "topic": "language",
+      "title_en": "What Machine Translation Still Misses",
+      "title_zh": "机器翻译仍然漏掉了什么",
+      "summary_zh": "一篇议论文：机器翻译的进步令人惊叹，但作者认为它在语气、言外之意和文化语境上仍有局限，学习外语依然有价值。（原创文章）",
+      "segments": [
+        { "en": "Not long ago, machine translation was a source of amusement, producing sentences so awkward that they became internet jokes.", "zh": "不久以前，机器翻译还是笑料的来源，翻出的句子别扭到成了网络段子。" },
+        { "en": "Today the jokes are rarer, and it is tempting to conclude that learning a foreign language has become an expensive hobby.", "zh": "如今这样的段子少了，人们很容易就此得出结论：学外语已经成了一种昂贵的爱好。" },
+        { "en": "That conclusion, however, rests on a narrow idea of what translation involves.", "zh": "然而，这个结论建立在对翻译的狭隘理解之上。" },
+        { "en": "Converting the literal meaning of a sentence is only part of the task; the harder part is conveying tone, intention and what is left unsaid.", "zh": "转换句子的字面意思只是任务的一部分；更难的是传达语气、意图以及没有说出口的内容。" },
+        { "en": "Consider a colleague who writes that your proposal is \"certainly ambitious\", which may be warm praise or a polite warning, depending on the relationship.", "zh": "比如一位同事说你的方案“确实很有雄心”，根据你们的关系，这可能是热情的称赞，也可能是礼貌的警告。" },
+        { "en": "A translation can reproduce the words perfectly while missing the warning entirely.", "zh": "翻译可以把词完美地复现出来，却完全漏掉其中的警告。" },
+        { "en": "Granted, the tools are improving at a remarkable pace, and they are invaluable for reading a menu or a train timetable.", "zh": "诚然，这些工具正以惊人的速度进步，在看菜单或火车时刻表时也极其有用。" },
+        { "en": "But negotiation, friendship and humour depend on exactly the subtleties that remain hardest to automate.", "zh": "但谈判、友谊和幽默恰恰依赖于那些最难以自动化的微妙之处。" },
+        { "en": "Moreover, learning a language changes the learner, sharpening their awareness of how meaning is shaped by culture.", "zh": "此外，学习一门语言会改变学习者本身，使他们更敏锐地意识到意义是如何被文化塑造的。" },
+        { "en": "Far from being obsolete, then, language learning may matter more in an age when anyone can produce a fluent but tone-deaf translation in seconds.", "zh": "因此，学外语远没有过时；在任何人都能几秒钟生成流畅却不懂分寸的译文的时代，它可能更加重要。" }
+      ],
+      "glossary": [
+        { "key": "amusement", "text": "amusement", "pos": "noun", "ipa": "/əˈmjuːzmənt/", "zh": "娱乐；笑料" },
+        { "key": "awkward", "text": "awkward", "pos": "adjective", "ipa": "/ˈɔːkwəd/", "zh": "别扭的；笨拙的" },
+        { "key": "tempting", "text": "tempting", "pos": "adjective", "ipa": "/ˈtemptɪŋ/", "zh": "诱人的；让人想要……的" },
+        { "key": "rest-on", "text": "rests on", "pos": "phrasal verb", "ipa": "/rests ɒn/", "zh": "建立在……之上" },
+        { "key": "literal", "text": "literal", "pos": "adjective", "ipa": "/ˈlɪtərəl/", "zh": "字面的" },
+        { "key": "convey", "text": "conveying", "pos": "verb", "ipa": "/kənˈveɪɪŋ/", "zh": "传达" },
+        { "key": "intention", "text": "intention", "pos": "noun", "ipa": "/ɪnˈtenʃn/", "zh": "意图" },
+        { "key": "ambitious", "text": "ambitious", "pos": "adjective", "ipa": "/æmˈbɪʃəs/", "zh": "雄心勃勃的；（计划）规模大、难实现的" },
+        { "key": "reproduce", "text": "reproduce", "pos": "verb", "ipa": "/ˌriːprəˈdjuːs/", "zh": "复制；再现" },
+        { "key": "remarkable", "text": "remarkable", "pos": "adjective", "ipa": "/rɪˈmɑːkəbl/", "zh": "非凡的；惊人的" },
+        { "key": "invaluable", "text": "invaluable", "pos": "adjective", "ipa": "/ɪnˈvæljuəbl/", "zh": "极其宝贵的（不是“没有价值”）" },
+        { "key": "negotiation", "text": "negotiation", "pos": "noun", "ipa": "/nɪˌɡəʊʃiˈeɪʃn/", "zh": "谈判" },
+        { "key": "subtleties", "text": "subtleties", "pos": "noun", "ipa": "/ˈsʌtltiz/", "zh": "微妙之处（复数）" },
+        { "key": "automate", "text": "automate", "pos": "verb", "ipa": "/ˈɔːtəmeɪt/", "zh": "使自动化" },
+        { "key": "obsolete", "text": "obsolete", "pos": "adjective", "ipa": "/ˈɒbsəliːt/", "zh": "过时的；淘汰的" },
+        { "key": "tone-deaf", "text": "tone-deaf", "pos": "adjective", "ipa": "/ˌtəʊn ˈdef/", "zh": "（比喻）不懂分寸的；对语气不敏感的" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "作者认为“学外语已成昂贵爱好”这个结论有什么问题？", "options": ["它对翻译的理解太狭隘", "它低估了学外语的费用", "它高估了机器翻译的速度"], "answer": 0, "explanation_zh": "原文：That conclusion, however, rests on a narrow idea of what translation involves.", "segment": 2 },
+        { "id": "q2", "type": "choice", "prompt_zh": "“certainly ambitious”这个例子说明了什么？", "options": ["同一句话可能是称赞也可能是警告，翻译容易漏掉", "机器翻译经常翻错词", "同事之间应该直接说话"], "answer": 0, "explanation_zh": "原文：may be warm praise or a polite warning ... A translation can reproduce the words perfectly while missing the warning entirely.", "segment": 4 },
+        { "id": "q3", "type": "choice", "prompt_zh": "作者承认机器翻译在什么方面很有用？", "options": ["看菜单或火车时刻表", "商务谈判", "讲笑话"], "answer": 0, "explanation_zh": "原文：they are invaluable for reading a menu or a train timetable.", "segment": 6 },
+        { "id": "q4", "type": "choice", "prompt_zh": "作者的最终观点是什么？", "options": ["学外语没有过时，甚至可能更重要", "学外语已经没有必要", "机器翻译很快会完全取代人工"], "answer": 0, "explanation_zh": "原文：Far from being obsolete, then, language learning may matter more ...", "segment": 9 }
+      ]
+    },
+    {
+      "id": "ls-c1-memory-lecture",
+      "type": "listening",
+      "level": "c1",
+      "can_do_ids": ["c1.l.lectures"],
+      "topic": "learning",
+      "title_en": "Why We Forget",
+      "title_zh": "我们为什么会遗忘",
+      "summary_zh": "一段公开讲座节选：讲者解释遗忘曲线、间隔复习和“提取练习”，并回答听众的问题。（原创讲座）",
+      "segments": [
+        { "speaker": "Lecturer", "en": "Let me start with an uncomfortable fact: within a day, we typically forget a large share of what we've just learned, unless we do something about it.", "zh": "先说一个让人不太舒服的事实：一天之内，我们通常会忘掉刚学内容的很大一部分，除非我们采取措施。" },
+        { "speaker": "Lecturer", "en": "This isn't a flaw in your memory. Forgetting is how the brain decides what is worth keeping.", "zh": "这不是你记忆力的缺陷。遗忘是大脑决定什么值得保留的方式。" },
+        { "speaker": "Lecturer", "en": "What tells the brain that something matters is repeated use, and in particular, use that requires a bit of effort.", "zh": "告诉大脑某样东西重要的，是反复使用，尤其是需要花点力气的使用。" },
+        { "speaker": "Lecturer", "en": "That's why rereading your notes feels reassuring but achieves surprisingly little; the material looks familiar, so you assume you know it.", "zh": "所以重读笔记让人安心，效果却出奇地有限：内容看起来眼熟，你就以为自己会了。" },
+        { "speaker": "Lecturer", "en": "Trying to recall the answer before you look, what researchers call retrieval practice, is far more effective, even when you get it wrong.", "zh": "在看答案之前先尝试回忆，也就是研究者所说的“提取练习”，要有效得多，即使你答错了也是如此。" },
+        { "speaker": "Lecturer", "en": "Timing matters too. Reviewing just as you're about to forget strengthens the memory more than reviewing while it's still fresh.", "zh": "时机也很重要。在快要忘记时复习，比在记忆还新鲜时复习更能巩固记忆。" },
+        { "speaker": "Lecturer", "en": "So the intervals between reviews should grow: a day, then a few days, then a week or more.", "zh": "所以复习的间隔应该逐渐拉长：一天，然后几天，然后一周或更久。" },
+        { "speaker": "Student", "en": "Doesn't that mean you'll get more answers wrong, though?", "zh": "可这样不就会答错更多吗？" },
+        { "speaker": "Lecturer", "en": "It does, and that's rather the point. A slightly difficult review is a productive one; an easy one mostly flatters you.", "zh": "是的，而这恰恰是关键。稍有难度的复习才有成效；太容易的复习大多只是让你自我感觉良好。" },
+        { "speaker": "Lecturer", "en": "The practical lesson is to test yourself little and often, and to treat mistakes as information rather than failure.", "zh": "实际的启示是：少量多次地自我测试，把错误当作信息，而不是失败。" }
+      ],
+      "glossary": [
+        { "key": "uncomfortable", "text": "uncomfortable", "pos": "adjective", "ipa": "/ʌnˈkʌmftəbl/", "zh": "令人不舒服的" },
+        { "key": "share", "text": "share", "pos": "noun", "ipa": "/ʃeə/", "zh": "份额；一部分" },
+        { "key": "flaw", "text": "flaw", "pos": "noun", "ipa": "/flɔː/", "zh": "缺陷" },
+        { "key": "in-particular", "text": "in particular", "pos": "phrase", "ipa": "/ɪn pəˈtɪkjələ/", "zh": "尤其；特别" },
+        { "key": "reassuring", "text": "reassuring", "pos": "adjective", "ipa": "/ˌriːəˈʃʊərɪŋ/", "zh": "令人安心的" },
+        { "key": "familiar", "text": "familiar", "pos": "adjective", "ipa": "/fəˈmɪliə/", "zh": "熟悉的；眼熟的" },
+        { "key": "recall", "text": "recall", "pos": "verb", "ipa": "/rɪˈkɔːl/", "zh": "回忆；想起" },
+        { "key": "retrieval-practice", "text": "retrieval practice", "pos": "noun", "ipa": "/rɪˈtriːvl ˈpræktɪs/", "zh": "提取练习（主动回忆）" },
+        { "key": "interval", "text": "intervals", "pos": "noun", "ipa": "/ˈɪntəvlz/", "zh": "间隔（复数）" },
+        { "key": "productive", "text": "productive", "pos": "adjective", "ipa": "/prəˈdʌktɪv/", "zh": "有成效的" },
+        { "key": "flatter", "text": "flatters", "pos": "verb", "ipa": "/ˈflætəz/", "zh": "奉承；使自我感觉良好" },
+        { "key": "little-and-often", "text": "little and often", "pos": "phrase", "ipa": "/ˈlɪtl ənd ˈɒfn/", "zh": "少量多次" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "讲者怎么看待遗忘？", "options": ["是大脑筛选值得保留的信息的方式", "是记忆力差的表现", "可以完全避免"], "answer": 0, "explanation_zh": "原文：Forgetting is how the brain decides what is worth keeping.", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "为什么重读笔记效果有限？", "options": ["内容看着眼熟，让人误以为已经掌握", "笔记通常有错误", "重读太花时间"], "answer": 0, "explanation_zh": "原文：the material looks familiar, so you assume you know it.", "segment": 3 },
+        { "id": "q3", "type": "choice", "prompt_zh": "什么时候复习效果最好？", "options": ["快要忘记的时候", "刚学完马上复习", "考试前一晚"], "answer": 0, "explanation_zh": "原文：Reviewing just as you're about to forget strengthens the memory more ...", "segment": 5 },
+        { "id": "q4", "type": "choice", "prompt_zh": "讲者怎么回应“这样会答错更多”的问题？", "options": ["承认会，并认为稍有难度的复习才有成效", "否认会答错更多", "建议只复习简单的内容"], "answer": 0, "explanation_zh": "原文：It does, and that's rather the point. A slightly difficult review is a productive one.", "segment": 8 }
+      ]
+    },
+    {
+      "id": "ls-c1-fifteen-minute-city",
+      "type": "listening",
+      "level": "c1",
+      "can_do_ids": ["c1.l.lectures", "c1.si.rebuttal"],
+      "topic": "city life",
+      "title_en": "The Fifteen-Minute City",
+      "title_zh": "“十五分钟城市”",
+      "summary_zh": "一场圆桌讨论：城市规划者和交通经济学家辩论“十五分钟城市”（日常所需都在步行或骑车十五分钟内）是否可行、是否公平。（原创讨论）",
+      "segments": [
+        { "speaker": "Chair", "en": "Our topic tonight is the so-called fifteen-minute city, where shops, schools and doctors are all within a short walk or cycle. Ana, why do you support it?", "zh": "今晚的话题是所谓的“十五分钟城市”：商店、学校和诊所都在步行或骑车很短的距离内。Ana，你为什么支持它？" },
+        { "speaker": "Ana", "en": "Because most of what people need day to day shouldn't require a car. When it doesn't, streets become quieter, safer and frankly more pleasant to live in.", "zh": "因为人们日常所需的大部分东西本不该需要开车。不需要开车时，街道会更安静、更安全，坦白说，也更宜居。" },
+        { "speaker": "Chair", "en": "David, you're more sceptical.", "zh": "David，你比较怀疑。" },
+        { "speaker": "David", "en": "I am. Granted, the idea sounds attractive, and in dense city centres it largely describes how people already live.", "zh": "是的。诚然，这个想法听起来很诱人，而在人口稠密的市中心，它大体上就是人们现有的生活方式。" },
+        { "speaker": "David", "en": "But it doesn't follow that it can be built everywhere. In the suburbs, there simply aren't enough people to support a school and a clinic every few streets.", "zh": "但这并不意味着它能在任何地方实现。在郊区，人口根本不足以支撑每隔几条街就有一所学校和一家诊所。" },
+        { "speaker": "Ana", "en": "That's a fair point about density. However, the answer isn't to give up; it's to allow more homes and small businesses in areas that are currently car-dependent.", "zh": "关于人口密度，这个观点很合理。但答案不是放弃，而是在目前依赖汽车的地区允许建更多住房和小商户。" },
+        { "speaker": "David", "en": "My other concern is fairness. Neighbourhoods that become pleasant and walkable also tend to become expensive, which can push out the very people they were meant to help.", "zh": "我的另一个担忧是公平。变得宜居、适合步行的社区往往也会变贵，这可能把原本想要帮助的人挤出去。" },
+        { "speaker": "Ana", "en": "I don't dispute that risk. Which is precisely why any plan needs affordable housing built in from the start, not added as an afterthought.", "zh": "我不否认这个风险。正因为如此，任何方案都必须从一开始就纳入经济适用房，而不是事后补充。" },
+        { "speaker": "Chair", "en": "So you agree on more than it first appeared?", "zh": "所以你们的共识比一开始看起来要多？" },
+        { "speaker": "David", "en": "On the goal, yes. Where we differ is how quickly, and how universally, it can realistically be achieved.", "zh": "在目标上是的。我们的分歧在于它实际上能多快、多普遍地实现。" }
+      ],
+      "glossary": [
+        { "key": "so-called", "text": "so-called", "pos": "adjective", "ipa": "/ˌsəʊ ˈkɔːld/", "zh": "所谓的" },
+        { "key": "frankly", "text": "frankly", "pos": "adverb", "ipa": "/ˈfræŋkli/", "zh": "坦白说" },
+        { "key": "sceptical", "text": "sceptical", "pos": "adjective", "ipa": "/ˈskeptɪkl/", "zh": "怀疑的" },
+        { "key": "dense", "text": "dense", "pos": "adjective", "ipa": "/dens/", "zh": "稠密的" },
+        { "key": "suburbs", "text": "suburbs", "pos": "noun", "ipa": "/ˈsʌbɜːbz/", "zh": "郊区" },
+        { "key": "density", "text": "density", "pos": "noun", "ipa": "/ˈdensəti/", "zh": "密度" },
+        { "key": "car-dependent", "text": "car-dependent", "pos": "adjective", "ipa": "/ˈkɑː dɪˌpendənt/", "zh": "依赖汽车的" },
+        { "key": "walkable", "text": "walkable", "pos": "adjective", "ipa": "/ˈwɔːkəbl/", "zh": "适合步行的" },
+        { "key": "push-out", "text": "push out", "pos": "phrasal verb", "ipa": "/pʊʃ aʊt/", "zh": "挤走；排挤出去" },
+        { "key": "dispute", "text": "dispute", "pos": "verb", "ipa": "/dɪˈspjuːt/", "zh": "质疑；否认" },
+        { "key": "affordable-housing", "text": "affordable housing", "pos": "noun", "ipa": "/əˈfɔːdəbl ˈhaʊzɪŋ/", "zh": "经济适用房；可负担住房" },
+        { "key": "afterthought", "text": "afterthought", "pos": "noun", "ipa": "/ˈɑːftəθɔːt/", "zh": "事后添加的东西" },
+        { "key": "universally", "text": "universally", "pos": "adverb", "ipa": "/ˌjuːnɪˈvɜːsəli/", "zh": "普遍地" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "Ana 支持“十五分钟城市”的主要理由是什么？", "options": ["日常所需不该依赖汽车，街道会更安静安全", "能降低房价", "能增加政府收入"], "answer": 0, "explanation_zh": "原文：most of what people need day to day shouldn't require a car ... quieter, safer ...", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "David 认为郊区难以实现的原因是什么？", "options": ["人口不够，撑不起密集的学校和诊所", "郊区居民不喜欢步行", "郊区没有空地"], "answer": 0, "explanation_zh": "原文：there simply aren't enough people to support a school and a clinic every few streets.", "segment": 4 },
+        { "id": "q3", "type": "choice", "prompt_zh": "David 的第二个担忧是什么？", "options": ["宜居社区变贵，把原本要帮助的人挤走", "施工期间交通混乱", "商店会倒闭"], "answer": 0, "explanation_zh": "原文：tend to become expensive, which can push out the very people they were meant to help.", "segment": 6 },
+        { "id": "q4", "type": "choice", "prompt_zh": "讨论最后，两人的分歧主要在哪里？", "options": ["能多快、多普遍地实现", "目标本身是否正确", "是否需要经济适用房"], "answer": 0, "explanation_zh": "原文：Where we differ is how quickly, and how universally, it can realistically be achieved.", "segment": 9 }
+      ]
+    }
+  ]
+}

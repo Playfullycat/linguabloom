@@ -73,7 +73,7 @@ async function AssessmentLoader({ searchParams }: { searchParams: PageProps<"/as
       <Card className="mx-auto w-full max-w-2xl">
         <CardHeader>
           <CardTitle>开始前须知</CardTitle>
-          <CardDescription>词汇、语法、阅读、听力四部分，共约 20 题、10–15 分钟。</CardDescription>
+          <CardDescription>词汇、语法、阅读、听力四部分，最多 24 题、约 12–18 分钟，可以估计到 C2。</CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col gap-4">
           <ul className="flex flex-col gap-1.5 text-sm text-ink">

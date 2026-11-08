@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "source_type": "first_party",
+  "copyright_status": "first_party_original",
+  "review_status": "pending_owner_review",
+  "materials": [
+    {
+      "id": "rd-b2-night-trains",
+      "type": "reading",
+      "level": "b2",
+      "can_do_ids": ["b2.r.viewpoints"],
+      "topic": "travel",
+      "title_en": "The Quiet Return of the Night Train",
+      "title_zh": "夜班卧铺列车的悄然回归",
+      "summary_zh": "一篇评论文章：卧铺列车为什么重新受到欢迎，又面临哪些现实困难。作者整体持支持态度，但也承认问题。（虚构文章）",
+      "segments": [
+        { "en": "Ten years ago, sleeper trains seemed to belong to the past, slowly replaced by cheap flights and high-speed rail.", "zh": "十年前，卧铺列车似乎已经属于过去，正被廉价航班和高铁慢慢取代。" },
+        { "en": "Today, however, new overnight routes are opening across Europe, and many of them are selling out weeks in advance.", "zh": "然而如今，欧洲各地都在开通新的夜间线路，其中很多提前几周就售罄。" },
+        { "en": "The most obvious reason is environmental: a night train produces a fraction of the emissions of a short flight.", "zh": "最明显的原因与环保有关：一趟夜班列车的排放只有短途航班的一小部分。" },
+        { "en": "Yet the appeal is not only about carbon, since travellers also gain a full day by sleeping on the move.", "zh": "不过它的吸引力不只在于碳排放，旅客在途中睡觉，还能多出完整的一天。" },
+        { "en": "You board in one capital after dinner and wake up in another, avoiding airport security and long transfers to the city centre.", "zh": "你晚饭后在一个首都上车，醒来就到了另一个，省去了机场安检和进城的漫长换乘。" },
+        { "en": "Nevertheless, the business is far from easy.", "zh": "尽管如此，这门生意绝不容易。" },
+        { "en": "Sleeping carriages are expensive to build, and each one carries far fewer passengers than a normal train.", "zh": "卧铺车厢造价高昂，而每节车厢载客量远少于普通列车。" },
+        { "en": "As a result, tickets often cost more than a flight, which puts off many families on a budget.", "zh": "结果，车票往往比机票还贵，让很多预算有限的家庭望而却步。" },
+        { "en": "Operators also complain that track charges vary wildly from one country to the next, making international routes hard to plan.", "zh": "运营方还抱怨各国的线路使用费差别极大，使国际线路难以规划。" },
+        { "en": "In my view, governments that are serious about climate targets should treat night trains as public infrastructure rather than as a luxury.", "zh": "在我看来，认真对待气候目标的政府应该把夜班列车当作公共基础设施，而不是奢侈品。" },
+        { "en": "If they do, the night train could become an everyday choice, not just a romantic adventure.", "zh": "如果他们这样做，夜班列车可能会成为日常选择，而不只是浪漫的冒险。" }
+      ],
+      "glossary": [
+        { "key": "sleeper-train", "text": "sleeper trains", "pos": "noun", "ipa": "/ˈsliːpə treɪnz/", "zh": "卧铺列车（复数）" },
+        { "key": "overnight", "text": "overnight", "pos": "adjective", "ipa": "/ˌəʊvəˈnaɪt/", "zh": "夜间的；通宵的" },
+        { "key": "sell-out", "text": "selling out", "pos": "phrasal verb", "ipa": "/ˈselɪŋ aʊt/", "zh": "售罄" },
+        { "key": "emissions", "text": "emissions", "pos": "noun", "ipa": "/iˈmɪʃnz/", "zh": "排放（物）" },
+        { "key": "a-fraction-of", "text": "a fraction of", "pos": "phrase", "ipa": "/ə ˈfrækʃn əv/", "zh": "……的一小部分" },
+        { "key": "appeal", "text": "appeal", "pos": "noun", "ipa": "/əˈpiːl/", "zh": "吸引力" },
+        { "key": "board", "text": "board", "pos": "verb", "ipa": "/bɔːd/", "zh": "登上（车、船、飞机）" },
+        { "key": "transfer", "text": "transfers", "pos": "noun", "ipa": "/ˈtrænsfɜːz/", "zh": "换乘；接驳（复数）" },
+        { "key": "far-from", "text": "far from", "pos": "phrase", "ipa": "/fɑː frəm/", "zh": "远非；绝不" },
+        { "key": "carriage", "text": "carriages", "pos": "noun", "ipa": "/ˈkærɪdʒɪz/", "zh": "车厢（复数）" },
+        { "key": "put-off", "text": "puts off", "pos": "phrasal verb", "ipa": "/pʊts ɒf/", "zh": "使失去兴趣；使却步" },
+        { "key": "on-a-budget", "text": "on a budget", "pos": "phrase", "ipa": "/ɒn ə ˈbʌdʒɪt/", "zh": "预算有限" },
+        { "key": "operator", "text": "Operators", "pos": "noun", "ipa": "/ˈɒpəreɪtəz/", "zh": "运营方（复数）" },
+        { "key": "vary-wildly", "text": "vary wildly", "pos": "phrase", "ipa": "/ˈveəri ˈwaɪldli/", "zh": "差别极大" },
+        { "key": "infrastructure", "text": "infrastructure", "pos": "noun", "ipa": "/ˈɪnfrəstrʌktʃə/", "zh": "基础设施" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "作者认为卧铺列车回归最明显的原因是什么？", "options": ["环保：排放比短途航班少得多", "票价比机票便宜", "车厢更豪华"], "answer": 0, "explanation_zh": "原文：The most obvious reason is environmental ...", "segment": 2 },
+        { "id": "q2", "type": "choice", "prompt_zh": "除了环保，卧铺列车还有什么吸引力？", "options": ["在路上睡觉，相当于多出一天", "可以带宠物", "车上有免费晚餐"], "answer": 0, "explanation_zh": "原文：travellers also gain a full day by sleeping on the move.", "segment": 3 },
+        { "id": "q3", "type": "choice", "prompt_zh": "为什么卧铺车票常常比机票贵？", "options": ["卧铺车厢造价高、载客少", "政府收了更多税", "车站服务费高"], "answer": 0, "explanation_zh": "原文：expensive to build ... far fewer passengers ... As a result, tickets often cost more than a flight.", "segment": 6 },
+        { "id": "q4", "type": "choice", "prompt_zh": "作者的立场是什么？", "options": ["政府应把卧铺列车当作公共基础设施来支持", "卧铺列车是浪漫的奢侈品，不必推广", "应该停止发展卧铺列车"], "answer": 0, "explanation_zh": "原文：In my view, governments ... should treat night trains as public infrastructure rather than as a luxury.", "segment": 9 }
+      ]
+    },
+    {
+      "id": "rd-b2-deposit-return",
+      "type": "reading",
+      "level": "b2",
+      "can_do_ids": ["b2.r.viewpoints", "b2.wp.coherent"],
+      "topic": "environment",
+      "title_en": "Should We Pay People to Recycle?",
+      "title_zh": "该花钱鼓励回收吗？",
+      "summary_zh": "一篇正反两方面都有的报道：瓶罐押金回收制度的效果和争议，结尾作者给出谨慎的结论。（虚构报道）",
+      "segments": [
+        { "en": "In several countries, every plastic bottle and drinks can now carries a small deposit, which shoppers get back when they return it.", "zh": "在好几个国家，现在每个塑料瓶和饮料罐都带有一小笔押金，购物者退回时就能拿回来。" },
+        { "en": "Supporters argue that the idea works because it gives an empty bottle a value, however small.", "zh": "支持者认为，这个办法之所以有效，是因为它让空瓶子有了价值，哪怕很小。" },
+        { "en": "Where such schemes exist, return rates tend to be above ninety percent, compared with around half in places without them.", "zh": "在实行这类制度的地方，回收率往往超过百分之九十，而没有这类制度的地方只有一半左右。" },
+        { "en": "Furthermore, less litter ends up on beaches and in parks, which also reduces cleaning costs for local councils.", "zh": "此外，最终散落在海滩和公园里的垃圾也减少了，这也降低了地方政府的清洁成本。" },
+        { "en": "Critics, on the other hand, point out that setting up the collection machines is expensive.", "zh": "另一方面，批评者指出，设置回收机器的成本很高。" },
+        { "en": "Small shops in particular complain that storing returned bottles takes up valuable space.", "zh": "尤其是小商店抱怨，存放退回的瓶子会占用宝贵的空间。" },
+        { "en": "Some also question whether the scheme tackles the real problem, since it encourages recycling rather than using less plastic in the first place.", "zh": "也有人质疑这个制度是否解决了真正的问题，因为它鼓励的是回收，而不是从一开始就少用塑料。" },
+        { "en": "There is some truth in this, as recycling a bottle still uses energy, whereas a refillable bottle can be used dozens of times.", "zh": "这话有一定道理，因为回收一个瓶子仍然消耗能源，而可重复灌装的瓶子能用几十次。" },
+        { "en": "Overall, the evidence suggests that deposit schemes are an effective first step, but they are unlikely to be enough on their own.", "zh": "总的来说，证据表明押金制度是有效的第一步，但仅靠它可能还不够。" }
+      ],
+      "glossary": [
+        { "key": "deposit", "text": "deposit", "pos": "noun", "ipa": "/dɪˈpɒzɪt/", "zh": "押金" },
+        { "key": "scheme", "text": "schemes", "forms": ["schemes", "scheme"], "pos": "noun", "ipa": "/skiːm/", "zh": "计划；制度" },
+        { "key": "return-rate", "text": "return rates", "pos": "noun", "ipa": "/rɪˈtɜːn reɪts/", "zh": "回收率（复数）" },
+        { "key": "litter", "text": "litter", "pos": "noun", "ipa": "/ˈlɪtə/", "zh": "垃圾（尤指乱扔的）" },
+        { "key": "end-up", "text": "ends up", "pos": "phrasal verb", "ipa": "/endz ʌp/", "zh": "最终处于；最后到了" },
+        { "key": "council", "text": "councils", "pos": "noun", "ipa": "/ˈkaʊnslz/", "zh": "地方政府（复数）" },
+        { "key": "critic", "text": "Critics", "pos": "noun", "ipa": "/ˈkrɪtɪks/", "zh": "批评者（复数）" },
+        { "key": "collection-machine", "text": "collection machines", "pos": "noun", "ipa": "/kəˈlekʃn məˈʃiːnz/", "zh": "回收机（复数）" },
+        { "key": "take-up", "text": "takes up", "pos": "phrasal verb", "ipa": "/teɪks ʌp/", "zh": "占用（空间、时间）" },
+        { "key": "tackle", "text": "tackles", "pos": "verb", "ipa": "/ˈtæklz/", "zh": "解决；处理" },
+        { "key": "in-the-first-place", "text": "in the first place", "pos": "phrase", "ipa": "/ɪn ðə fɜːst pleɪs/", "zh": "从一开始；首先" },
+        { "key": "refillable", "text": "refillable", "pos": "adjective", "ipa": "/ˌriːˈfɪləbl/", "zh": "可重复灌装的" },
+        { "key": "on-their-own", "text": "on their own", "pos": "phrase", "ipa": "/ɒn ðeər əʊn/", "zh": "单靠它们自己" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "支持者认为押金制度为什么有效？", "options": ["它让空瓶子有了价值", "它让饮料更便宜", "它禁止使用塑料瓶"], "answer": 0, "explanation_zh": "原文：it gives an empty bottle a value, however small.", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "实行押金制度的地方，回收率大约是多少？", "options": ["百分之九十以上", "一半左右", "不到三成"], "answer": 0, "explanation_zh": "原文：return rates tend to be above ninety percent。一半左右是没有这类制度的地方。", "segment": 2 },
+        { "id": "q3", "type": "choice", "prompt_zh": "小商店的主要抱怨是什么？", "options": ["存放退回的瓶子占空间", "顾客变少了", "押金太低"], "answer": 0, "explanation_zh": "原文：storing returned bottles takes up valuable space.", "segment": 5 },
+        { "id": "q4", "type": "choice", "prompt_zh": "作者最后的结论是什么？", "options": ["押金制度是有效的第一步，但单靠它可能不够", "押金制度完全没用", "押金制度能彻底解决塑料问题"], "answer": 0, "explanation_zh": "原文：an effective first step, but they are unlikely to be enough on their own.", "segment": 8 }
+      ]
+    },
+    {
+      "id": "ls-b2-saying-no",
+      "type": "listening",
+      "level": "b2",
+      "can_do_ids": ["b2.l.extended", "b2.l.stance"],
+      "topic": "work",
+      "title_en": "Learning to Say No at Work",
+      "title_zh": "学会在工作中说“不”",
+      "summary_zh": "一档职场播客：主持人和一位职业教练讨论为什么很多人不敢拒绝工作任务，以及怎样得体地拒绝。（虚构节目）",
+      "segments": [
+        { "speaker": "Host", "en": "Today we're talking about something many of us find surprisingly hard: saying no at work. Maria, why is it so difficult?", "zh": "今天我们谈一件很多人觉得出奇困难的事：在工作中说“不”。Maria，为什么这么难？" },
+        { "speaker": "Maria", "en": "Partly it's fear. People tend to worry that refusing a task will make them look lazy or unambitious.", "zh": "部分原因是害怕。人们往往担心拒绝任务会显得自己懒惰或没有上进心。" },
+        { "speaker": "Host", "en": "And is that fear justified?", "zh": "这种担心有道理吗？" },
+        { "speaker": "Maria", "en": "To some extent. But research suggests that people who never say no are more likely to burn out, and their work often suffers as a result.", "zh": "在某种程度上有。但研究表明，从不拒绝的人更容易精疲力竭，结果工作质量往往也会下降。" },
+        { "speaker": "Host", "en": "So how should you say no without damaging your reputation?", "zh": "那怎样拒绝才不会损害自己的声誉呢？" },
+        { "speaker": "Maria", "en": "First of all, don't answer immediately. Saying you'll check your schedule gives you time to think.", "zh": "首先，不要马上回答。说你要看看日程，能给自己留出思考的时间。" },
+        { "speaker": "Maria", "en": "Then explain what you're already working on, and ask which task should take priority.", "zh": "然后说明你手上正在做什么，并问哪项任务应该优先。" },
+        { "speaker": "Host", "en": "That sounds less like a refusal and more like a conversation.", "zh": "这听起来不太像拒绝，更像是一次沟通。" },
+        { "speaker": "Maria", "en": "Exactly. You're not saying the request is unimportant; you're making the trade-off visible.", "zh": "正是。你并不是说这个请求不重要，而是让取舍变得清晰可见。" },
+        { "speaker": "Host", "en": "Any final advice?", "zh": "最后还有什么建议吗？" },
+        { "speaker": "Maria", "en": "Offer an alternative where you can, such as a later deadline or a colleague who has more time. A thoughtful no is often more useful than a reluctant yes.", "zh": "能提供替代方案时就提供，比如推迟截止日期，或推荐一位更有空的同事。一个深思熟虑的“不”，往往比勉强的“好”更有用。" }
+      ],
+      "glossary": [
+        { "key": "surprisingly", "text": "surprisingly", "pos": "adverb", "ipa": "/səˈpraɪzɪŋli/", "zh": "出人意料地" },
+        { "key": "unambitious", "text": "unambitious", "pos": "adjective", "ipa": "/ˌʌnæmˈbɪʃəs/", "zh": "没有上进心的" },
+        { "key": "justified", "text": "justified", "pos": "adjective", "ipa": "/ˈdʒʌstɪfaɪd/", "zh": "有道理的；合理的" },
+        { "key": "burn-out", "text": "burn out", "pos": "phrasal verb", "ipa": "/bɜːn ˈaʊt/", "zh": "精疲力竭；职业倦怠" },
+        { "key": "suffer", "text": "suffers", "pos": "verb", "ipa": "/ˈsʌfəz/", "zh": "变差；受损" },
+        { "key": "reputation", "text": "reputation", "pos": "noun", "ipa": "/ˌrepjuˈteɪʃn/", "zh": "名声；声誉" },
+        { "key": "take-priority", "text": "take priority", "pos": "phrase", "ipa": "/teɪk praɪˈɒrəti/", "zh": "优先" },
+        { "key": "refusal", "text": "refusal", "pos": "noun", "ipa": "/rɪˈfjuːzl/", "zh": "拒绝" },
+        { "key": "trade-off", "text": "trade-off", "pos": "noun", "ipa": "/ˈtreɪd ɒf/", "zh": "取舍；权衡" },
+        { "key": "alternative", "text": "alternative", "pos": "noun", "ipa": "/ɔːlˈtɜːnətɪv/", "zh": "替代方案" },
+        { "key": "thoughtful", "text": "thoughtful", "pos": "adjective", "ipa": "/ˈθɔːtfl/", "zh": "深思熟虑的；体贴的" },
+        { "key": "reluctant", "text": "reluctant", "pos": "adjective", "ipa": "/rɪˈlʌktənt/", "zh": "不情愿的；勉强的" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "Maria 认为人们不敢拒绝的部分原因是什么？", "options": ["担心显得懒惰或没上进心", "担心被扣工资", "不知道怎么用英语拒绝"], "answer": 0, "explanation_zh": "原文：refusing a task will make them look lazy or unambitious.", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "根据研究，从不拒绝的人会怎么样？", "options": ["更容易精疲力竭，工作质量下降", "升职更快", "更受同事欢迎"], "answer": 0, "explanation_zh": "原文：more likely to burn out, and their work often suffers as a result.", "segment": 3 },
+        { "id": "q3", "type": "choice", "prompt_zh": "Maria 的第一条建议是什么？", "options": ["不要马上回答，先说要看看日程", "直接说不", "马上答应再想办法"], "answer": 0, "explanation_zh": "原文：don't answer immediately. Saying you'll check your schedule gives you time to think.", "segment": 5 },
+        { "id": "q4", "type": "choice", "prompt_zh": "Maria 的最后一句话是什么意思？", "options": ["深思熟虑的拒绝往往比勉强答应更有用", "永远不要答应额外的工作", "答应总比拒绝好"], "answer": 0, "explanation_zh": "原文：A thoughtful no is often more useful than a reluctant yes.", "segment": 10 }
+      ]
+    },
+    {
+      "id": "ls-b2-rooftop-farm",
+      "type": "listening",
+      "level": "b2",
+      "can_do_ids": ["b2.l.extended", "b2.l.argument"],
+      "topic": "city life",
+      "title_en": "A Farm on the Roof",
+      "title_zh": "屋顶上的农场",
+      "summary_zh": "电台记者采访一位在商场屋顶开农场的创业者，谈收益、困难和她对城市农业的看法。（虚构采访）",
+      "segments": [
+        { "speaker": "Reporter", "en": "I'm standing on the roof of a shopping centre, surrounded by tomatoes and lettuce. Jenny, how did this start?", "zh": "我正站在一家商场的屋顶上，周围都是番茄和生菜。Jenny，这是怎么开始的？" },
+        { "speaker": "Jenny", "en": "Five years ago this was just empty concrete. I persuaded the owners to let us try growing vegetables here for one summer.", "zh": "五年前这里只是一片空荡荡的水泥地。我说服业主让我们在这儿试种一个夏天的蔬菜。" },
+        { "speaker": "Reporter", "en": "And now you supply restaurants?", "zh": "现在你们给餐馆供货了？" },
+        { "speaker": "Jenny", "en": "Twelve of them, all within walking distance. Because the food travels a few hundred metres instead of hundreds of kilometres, it arrives fresher.", "zh": "供应十二家，都在步行距离内。因为食物只运几百米，而不是几百公里，送到时更新鲜。" },
+        { "speaker": "Reporter", "en": "Critics say rooftop farms can never feed a city. Is that fair?", "zh": "批评者说屋顶农场永远养活不了一座城市。这么说公平吗？" },
+        { "speaker": "Jenny", "en": "It's true, but it misses the point. We're not trying to replace traditional farms.", "zh": "这是事实，但没抓住重点。我们并不是要取代传统农场。" },
+        { "speaker": "Jenny", "en": "What we do is reconnect people with where food comes from. Schools visit every week, and the children taste things they've never seen growing.", "zh": "我们做的是让人们重新了解食物从哪里来。每周都有学校来参观，孩子们能尝到他们从没见过怎么长出来的东西。" },
+        { "speaker": "Reporter", "en": "What has been the hardest part?", "zh": "最难的是哪部分？" },
+        { "speaker": "Jenny", "en": "Wind, definitely. Up here, a storm can flatten a whole bed of plants in an hour. Consequently, we've had to build shelters everywhere.", "zh": "肯定是风。在这上面，一场暴风雨一小时就能把整片作物刮倒。所以我们到处都得搭防风棚。" },
+        { "speaker": "Reporter", "en": "And the building itself? Isn't the weight a problem?", "zh": "那建筑本身呢？重量不是问题吗？" },
+        { "speaker": "Jenny", "en": "It would be on many roofs, which is why engineers checked this one carefully before we started. Not every building is suitable.", "zh": "在很多屋顶上会是问题，所以开始之前工程师仔细检查过这里。并不是每栋楼都合适。" }
+      ],
+      "glossary": [
+        { "key": "surrounded-by", "text": "surrounded by", "pos": "phrase", "ipa": "/səˈraʊndɪd baɪ/", "zh": "被……环绕" },
+        { "key": "lettuce", "text": "lettuce", "pos": "noun", "ipa": "/ˈletɪs/", "zh": "生菜" },
+        { "key": "concrete", "text": "concrete", "pos": "noun", "ipa": "/ˈkɒŋkriːt/", "zh": "混凝土；水泥地" },
+        { "key": "persuade", "text": "persuaded", "pos": "verb", "ipa": "/pəˈsweɪdɪd/", "zh": "说服（persuade 的过去式）" },
+        { "key": "supply", "text": "supply", "pos": "verb", "ipa": "/səˈplaɪ/", "zh": "供应；供货" },
+        { "key": "within-walking-distance", "text": "within walking distance", "pos": "phrase", "ipa": "/wɪˈðɪn ˈwɔːkɪŋ ˈdɪstəns/", "zh": "在步行距离内" },
+        { "key": "miss-the-point", "text": "misses the point", "pos": "phrase", "ipa": "/ˈmɪsɪz ðə pɔɪnt/", "zh": "没抓住重点" },
+        { "key": "reconnect", "text": "reconnect", "pos": "verb", "ipa": "/ˌriːkəˈnekt/", "zh": "重新联系；重新建立联系" },
+        { "key": "flatten", "text": "flatten", "pos": "verb", "ipa": "/ˈflætn/", "zh": "压平；刮倒" },
+        { "key": "bed", "text": "bed of plants", "pos": "noun", "ipa": "/bed əv plɑːnts/", "zh": "一片（苗床里的）作物" },
+        { "key": "shelter", "text": "shelters", "pos": "noun", "ipa": "/ˈʃeltəz/", "zh": "遮蔽物；防风棚（复数）" },
+        { "key": "suitable", "text": "suitable", "pos": "adjective", "ipa": "/ˈsuːtəbl/", "zh": "合适的" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "屋顶农场的蔬菜为什么更新鲜？", "options": ["只运几百米，而不是几百公里", "用了特殊肥料", "每天采摘两次"], "answer": 0, "explanation_zh": "原文：the food travels a few hundred metres instead of hundreds of kilometres.", "segment": 3 },
+        { "id": "q2", "type": "choice", "prompt_zh": "Jenny 怎么回应“屋顶农场养活不了城市”的批评？", "options": ["承认是事实，但认为没抓住重点", "完全否认", "表示会扩大规模来证明"], "answer": 0, "explanation_zh": "原文：It's true, but it misses the point. We're not trying to replace traditional farms.", "segment": 5 },
+        { "id": "q3", "type": "choice", "prompt_zh": "Jenny 认为她们农场最重要的作用是什么？", "options": ["让人们重新了解食物从哪里来", "降低蔬菜价格", "取代传统农场"], "answer": 0, "explanation_zh": "原文：What we do is reconnect people with where food comes from.", "segment": 6 },
+        { "id": "q4", "type": "choice", "prompt_zh": "最大的困难是什么？", "options": ["风", "缺水", "虫害"], "answer": 0, "explanation_zh": "原文：Wind, definitely.", "segment": 8 }
+      ]
+    }
+  ]
+}

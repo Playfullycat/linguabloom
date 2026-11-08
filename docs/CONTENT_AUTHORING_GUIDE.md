@@ -102,7 +102,7 @@ src/content/
 - 只有真实可学习、有练习、有答案或评分说明、有来源的内容才能标为 `published`。
 - 只有标题的单元保持 `planned`，也就是目录里不加 `file`。
 - 从文件里删掉的课时和步骤，seed 会把它们**归档**而不是删除，学习记录因此得以保留。
-- 首批 6 个单元由 Claude 原创，状态为 `published` + `pending_owner_review`：可以学习，但等待你审核。Phase 5.1 又加了 A2、B1 各 2 个单元，状态相同。
+- 首批 6 个单元由 Claude 原创，状态为 `published` + `pending_owner_review`：可以学习，但等待你审核。Phase 5.1 又加了 A2、B1 各 2 个单元，5.2 加了 B2、C1、C2 各 2 个单元，状态相同。
 
 ### 发布质量门槛（Phase 5.1）
 
@@ -146,13 +146,13 @@ src/content/
 - `src/content/assessment/diagnostic-v1.json`：水平诊断题库（规格 §4.2），由 `src/modules/assessment/content.ts` 校验。
   - 每题必须有 `id`（如 `voc-a1-2`）、`skill`（vocabulary / grammar / reading / listening）、`level`、`difficulty`（1–5）、`discrimination`（0–1）和中文解释 `explanation_zh`。
   - 题型：`choice`（`options` + `answer` 下标，可带阅读短文 `passage_en` 或听力文本 `audio_en`）和 `cloze`（`sentence_en` 里用一个 `___` 标出空格，`answers` 列出可接受的答案）。
-  - 每项技能在 Pre-A1、A1、A2、B1 每一级都至少要有一题，否则校验不通过。题目要比该级的典型能力稍难一点也可以，但不能考生僻知识。
-  - 从文件里删掉的题会被归档（不会删除），旧的作答记录仍然有效。改动已上线的题时，题意不要变；要换成新题就用新的 `id`。
+  - 每项技能在 Pre-A1 到 C2 每一级都至少要有一题，否则校验不通过（B2–C2 在 Phase 5.2 补齐）。题目要比该级的典型能力稍难一点也可以，但不能考生僻知识。
+  - 只新增题目时可以保留同一个 `bank_version`（5.2 就是这样补的 B2–C2），旧的诊断记录照常有效。从文件里删掉的题会被归档（不会删除），旧的作答记录仍然有效。改动已上线的题时，题意不要变；要换成新题就用新的 `id`。
 - 所有 seed 在 `src/db/seed/index.ts` 的 `SEEDS` 中登记，先校验再在事务里做幂等 upsert；用 `npm run db:seed` 运行。Docker 容器每次启动都会自动执行。
 - `src/content/materials/<level>.json`：内置分级阅读和听力材料（规格 §5.6、§5.7），由 `src/modules/materials/content.ts` 校验，在 `rawMaterialFiles` 里登记。
   - 每份材料：`id`（阅读 `rd-…`，听力 `ls-…`）、`type`、`level`、`topic`、中英标题、中文简介、`segments`（每句 `en` + `zh`，听力还要 `speaker`）、`glossary`、2–6 道 `questions`（选择题，可用 `segment` 指向答案所在的句子）。
   - **生词表是查词的唯一来源**（决定 D50）：超出该材料等级的词和短语都要放进去，写清 `zh`，最好有 `ipa`；文中出现的变形写进 `forms`（例如 `book` 的 `forms: ["books"]`）。校验会检查每个变形确实出现在文中。
-  - 句子不超过 30 个词。故事和说明文都是虚构的，简介里要写明“虚构”，不要写真实世界的事实。
+  - 每句的词数不超过该等级上限（`MAX_SEGMENT_WORDS`）：Pre-A1 12、A1 16、A2 20、B1 26、B2 32、C1 38、C2 45。故事和说明文都是虚构的，简介里要写明“虚构”，不要写真实世界的事实。
   - 生词会作为词条导入（id 为 `<材料 id>.<key>`），例句自动取文中第一次出现的那一句。
 - `src/content/grammar/*.json`：语法地图和练习题（规格 §3.6、§3.7、§5.5），由 `src/modules/grammar/content.ts` 校验，在 `rawGrammarFiles` 里登记。
   - 每个语法点：`id`、`order`（教学顺序，全局唯一）、`level`、中英标题、`status`（`published` / `planned`）、`topics`、`prerequisites`（必须排在前面）、`unit_grammar_ids`（对应课程单元里的语法点 id，用来显示“在哪些课学过”，也用来把课程里的错误归到这个语法点）、`default_error_category`（13 类之一）、`summary_zh`。

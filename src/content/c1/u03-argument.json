@@ -1,0 +1,1239 @@
+{
+  "content_schema_version": 1,
+  "source_type": "first_party",
+  "review_status": "pending_owner_review",
+  "unit": {
+    "id": "c1-u03-argument",
+    "level": "c1",
+    "order": 3,
+    "status": "published",
+    "title_en": "Concession and Rebuttal",
+    "title_zh": "让步与反驳",
+    "summary_zh": "先承认对方观点中合理的部分，再有力地反驳：admittedly、granted、that said、despite、however + 形容词、it doesn't follow that、the flaw in that argument。学完后，你能在复杂的讨论和辩论中有理有据地表达立场，也能写出预先回应反方观点的议论文。",
+    "can_do": [
+      {
+        "id": "c1.si.rebuttal",
+        "skill": "spoken_interaction",
+        "en": "Can concede a point and then counter it convincingly in a complex discussion or debate.",
+        "zh": "能在复杂的讨论或辩论中先让步，再有说服力地反驳。"
+      },
+      {
+        "id": "c1.gr.concession",
+        "skill": "grammar",
+        "en": "Can use concessive structures such as admittedly, granted, despite, even though, however + adjective and much as.",
+        "zh": "能使用 admittedly、granted、despite、even though、however + 形容词、much as 等让步结构。"
+      },
+      {
+        "id": "c1.wp.argument",
+        "skill": "written_production",
+        "en": "Can write a well-structured argument that anticipates and answers counter-arguments.",
+        "zh": "能写出结构清晰、预先回应反方观点的议论文。"
+      }
+    ],
+    "grammar_points": [
+      {
+        "id": "c1.concession",
+        "title_en": "Concession: admittedly, despite, however + adjective",
+        "title_zh": "让步结构",
+        "pattern": "Admittedly / Granted, A. That said / Even so, B.\nDespite / In spite of + noun / -ing, ...\nEven though + clause, ...\nHowever + adjective + subject + verb, ...\nMuch as + clause, ...",
+        "explanation_zh": "让步就是先承认一个事实或对方观点中合理的部分，再提出自己的看法，这会让反驳更可信。admittedly / granted / it's true that 用来让步，that said / even so / nevertheless 用来转回自己的观点。despite / in spite of 后面接名词或 -ing（despite 后面不加 of）；even though / although 后面接句子。however + 形容词 / 副词 + 主语 + 动词表示“无论多么……”；much as + 句子表示“尽管很……”，语气较正式。",
+        "examples": [
+          {
+            "en": "Admittedly, the housing shortage is serious. That said, green space is gone for good once we build on it.",
+            "zh": "诚然，住房短缺很严重。话虽如此，绿地一旦建上房子就永远没了。"
+          },
+          {
+            "en": "Despite having said \"never again\", I've signed up for next year.",
+            "zh": "尽管说过“再也不跑了”，我还是报名了明年的比赛。"
+          },
+          {
+            "en": "However hard it got, she didn't stop.",
+            "zh": "不管多艰难，她都没有停下。"
+          }
+        ],
+        "common_errors": [
+          {
+            "wrong": "Despite of the rain, we went out.",
+            "right": "Despite the rain, we went out.",
+            "why_zh": "despite 后面直接接名词；in spite of 才有 of。"
+          },
+          {
+            "wrong": "Despite it was raining, we went out.",
+            "right": "Even though it was raining, we went out.",
+            "why_zh": "despite 后面不接句子；接句子用 even though / although。"
+          },
+          {
+            "wrong": "However I try hard, I can't remember.",
+            "right": "However hard I try, I can't remember.",
+            "why_zh": "However 后面紧跟形容词或副词，再接主语和动词。"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "key": "admittedly",
+        "text": "admittedly",
+        "pos": "adverb",
+        "ipa": "/ədˈmɪtɪdli/",
+        "zh": "诚然；不可否认",
+        "example_en": "Admittedly, the plan is expensive.",
+        "example_zh": "诚然，这个方案很贵。"
+      },
+      {
+        "key": "granted",
+        "text": "granted",
+        "pos": "adverb",
+        "ipa": "/ˈɡrɑːntɪd/",
+        "zh": "就算是这样；我承认",
+        "example_en": "Granted, it's cheaper, but the quality is lower.",
+        "example_zh": "我承认它更便宜，但质量更差。"
+      },
+      {
+        "key": "that-said",
+        "text": "that said",
+        "pos": "phrase",
+        "ipa": "/ðæt sed/",
+        "zh": "话虽如此",
+        "example_en": "The hotel was lovely. That said, it was far too expensive.",
+        "example_zh": "酒店很好。话虽如此，也太贵了。"
+      },
+      {
+        "key": "i-take-your-point",
+        "text": "I take your point",
+        "pos": "phrase",
+        "ipa": "/aɪ teɪk jɔː pɔɪnt/",
+        "zh": "我理解你的观点（并部分接受）",
+        "example_en": "I take your point about cost, but ...",
+        "example_zh": "成本这点我理解，但……"
+      },
+      {
+        "key": "despite",
+        "text": "despite",
+        "pos": "preposition",
+        "ipa": "/dɪˈspaɪt/",
+        "zh": "尽管（+ 名词 / -ing）",
+        "example_en": "Despite the rain, the concert went ahead.",
+        "example_zh": "尽管下雨，音乐会照常进行。"
+      },
+      {
+        "key": "in-spite-of",
+        "text": "in spite of",
+        "pos": "preposition",
+        "ipa": "/ɪn ˈspaɪt əv/",
+        "zh": "尽管（+ 名词 / -ing）",
+        "example_en": "In spite of the delays, we finished on time.",
+        "example_zh": "尽管有延误，我们还是按时完成了。"
+      },
+      {
+        "key": "however-adj",
+        "text": "however + adjective",
+        "pos": "phrase",
+        "ipa": "/haʊˈevə/",
+        "zh": "无论多么……",
+        "example_en": "However hard I try, I can't remember her name.",
+        "example_zh": "无论我多努力，都想不起她的名字。"
+      },
+      {
+        "key": "much-as",
+        "text": "much as",
+        "pos": "conjunction",
+        "ipa": "/ˈmʌtʃ əz/",
+        "zh": "尽管很……（正式）",
+        "example_en": "Much as I wanted to quit, I kept going.",
+        "example_zh": "尽管我很想放弃，还是坚持了下来。"
+      },
+      {
+        "key": "it-doesnt-follow",
+        "text": "it doesn't follow that ...",
+        "pos": "phrase",
+        "ipa": "/ɪt ˈdʌznt ˈfɒləʊ ðæt/",
+        "zh": "由此推不出……",
+        "example_en": "It's popular, but it doesn't follow that it's right.",
+        "example_zh": "它很受欢迎，但不能由此推出它是对的。"
+      },
+      {
+        "key": "outweigh",
+        "text": "outweigh",
+        "pos": "verb",
+        "ipa": "/ˌaʊtˈweɪ/",
+        "zh": "比……更重要；超过",
+        "example_en": "The risks outweigh the benefits.",
+        "example_zh": "风险大于好处。"
+      },
+      {
+        "key": "the-flaw",
+        "text": "the flaw in that argument",
+        "pos": "phrase",
+        "ipa": "/ðə flɔː/",
+        "zh": "那个论证的漏洞",
+        "example_en": "The flaw in that argument is that it assumes everyone agrees.",
+        "example_zh": "那个论证的漏洞在于它假设所有人都同意。"
+      },
+      {
+        "key": "undermine",
+        "text": "undermine",
+        "pos": "verb",
+        "ipa": "/ˌʌndəˈmaɪn/",
+        "zh": "削弱；破坏",
+        "example_en": "That actually undermines your case.",
+        "example_zh": "这其实削弱了你的论点。"
+      }
+    ],
+    "lessons": [
+      {
+        "id": "c1-u03-argument-l1",
+        "order": 1,
+        "kind": "core",
+        "title_en": "Admittedly...",
+        "title_zh": "先让步，再转折",
+        "estimated_minutes": 13,
+        "objectives": [
+          {
+            "en": "Concede a point with admittedly, granted and while.",
+            "zh": "能用 admittedly、granted、while 让步。"
+          },
+          {
+            "en": "Turn back to your argument with that said and even so.",
+            "zh": "能用 that said、even so 转回自己的论点。"
+          }
+        ],
+        "can_do_ids": [
+          "c1.si.rebuttal",
+          "c1.gr.concession"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "spoken_interaction",
+            "title_zh": "这节课学什么",
+            "body_zh": "高水平的讨论里，直接说“你错了”往往最没说服力。更有效的做法是先承认对方说得对的部分（Admittedly ... / Granted ...），再转回自己的观点（That said ... / Even so ...）。这样听众会觉得你考虑周全，你的反驳也更难被驳倒。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Building on green land?",
+            "instructions_zh": "先听。注意两位嘉宾怎么先让步、再提出不同看法。",
+            "scene_zh": "电台辩论节目：为了缓解住房短缺，城市该不该允许在城郊绿地上建房？",
+            "lines": [
+              {
+                "speaker": "Tom",
+                "en": "We simply have to build more homes, and the green belt is the obvious place.",
+                "zh": "我们必须建更多住房，而城郊绿化带是最显而易见的选择。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Admittedly, the housing shortage is serious. That said, once green space is gone, it's gone for good.",
+                "zh": "诚然，住房短缺很严重。话虽如此，绿地一旦没了，就永远没了。"
+              },
+              {
+                "speaker": "Tom",
+                "en": "Granted, but empty fields don't house anyone.",
+                "zh": "我承认，但空地也住不了人。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "While that's true, there are thousands of empty offices in the city centre that could be converted.",
+                "zh": "这话没错，但市中心有成千上万间空置的办公楼可以改造。"
+              },
+              {
+                "speaker": "Tom",
+                "en": "Conversions are expensive, though, and slow.",
+                "zh": "可是改造既昂贵又缓慢。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "They can be. Even so, building on the green belt means new roads, schools and transport, which aren't exactly cheap either.",
+                "zh": "可能是。即便如此，在绿化带上建房就意味着要修新的道路、学校和交通，这些也不便宜。"
+              },
+              {
+                "speaker": "Tom",
+                "en": "I take your point about infrastructure. Nevertheless, people need homes now, not in ten years.",
+                "zh": "基础设施这点我理解。尽管如此，人们现在就需要房子，而不是十年后。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "I don't disagree. My point is simply that we should use brownfield sites first.",
+                "zh": "我并不反对。我只是认为应该先利用已开发过的土地。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "admittedly",
+              "granted",
+              "that-said",
+              "i-take-your-point"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "teach",
+            "role": "teach",
+            "skill": "grammar",
+            "title_zh": "让步 + 转折：两步走",
+            "explanation_zh": "第一步，让步：Admittedly, ... / Granted, ... / It's true that ... / I take your point about ...，或用 While + 句子在同一句里让步。第二步，转折：That said, ... / Even so, ... / Nevertheless, ... / But ...。granted 在口语里可以单独说（Granted.），表示“这点我承认”。让步不等于认输，而是把对方最有力的论据先“收下”，再说明为什么你的结论仍然成立。",
+            "pattern": "Admittedly / Granted, A. That said / Even so, B.\nWhile A, B.\nI take your point about A. Nevertheless, B.",
+            "examples": [
+              {
+                "en": "Admittedly, the plan is expensive. Even so, it will pay for itself within five years.",
+                "zh": "诚然，这个方案很贵。即便如此，五年内就能收回成本。"
+              },
+              {
+                "en": "While I see the appeal, I don't think it's practical.",
+                "zh": "虽然我明白它的吸引力，但我认为它不切实际。"
+              },
+              {
+                "en": "Granted, it's quicker. But is it safe?",
+                "zh": "我承认它更快。但它安全吗？"
+              }
+            ],
+            "tips_zh": [
+              "让步之后一定要转回来，否则听起来像是在同意对方。",
+              "I don't disagree（我并不反对）是很常见的委婉说法，意思是“基本同意，但……”。"
+            ]
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_en": "___, the plan is expensive. However, it will pay for itself within five years.",
+            "prompt_zh": "选出合适的词：",
+            "options": [
+              "Admittedly",
+              "Consequently",
+              "Moreover"
+            ],
+            "answer": 0,
+            "explanation_zh": "先承认缺点（贵），再转折：Admittedly。"
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "spoken_interaction",
+            "prompt_zh": "哪一句是先让步、再反驳？",
+            "options": [
+              "Granted, it's cheaper, but the quality is much lower.",
+              "It's cheaper, so let's buy it.",
+              "No, it isn't cheaper."
+            ],
+            "answer": 0,
+            "explanation_zh": "Granted（承认便宜）+ but（质量差得多）。"
+          },
+          {
+            "id": "s07",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "The hotel was lovely. That ___, it was far too expensive.",
+            "translation_zh": "酒店很好。话虽如此，也太贵了。",
+            "answers": [
+              "said"
+            ],
+            "explanation_zh": "That said = 话虽如此。"
+          },
+          {
+            "id": "s08",
+            "type": "order",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "排成句子。",
+            "translation_zh": "这话没错，但还有其他选择。",
+            "tokens": [
+              "While",
+              "that's",
+              "true,",
+              "there",
+              "are",
+              "other",
+              "options."
+            ],
+            "answers": [
+              "While that's true, there are other options."
+            ],
+            "explanation_zh": "While + 让步的句子, 主句。"
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，Lin 提出的替代方案是什么？",
+            "audio_en": "While that's true, there are thousands of empty offices in the city centre that could be converted.",
+            "options": [
+              "改造市中心空置的办公楼",
+              "在绿地上建房",
+              "修更多的路"
+            ],
+            "answer": 0,
+            "explanation_zh": "empty offices ... that could be converted。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：Tom 接受了 Lin 的哪一点？",
+            "options": [
+              "基础设施的成本",
+              "绿地会永久消失",
+              "办公楼改造很便宜"
+            ],
+            "answer": 0,
+            "explanation_zh": "I take your point about infrastructure."
+          },
+          {
+            "id": "s11",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：Lin 最终的立场是什么？",
+            "options": [
+              "应该先利用已开发过的土地",
+              "应该完全禁止建房",
+              "支持在绿地上建房"
+            ],
+            "answer": 0,
+            "explanation_zh": "My point is simply that we should use brownfield sites first."
+          },
+          {
+            "id": "s12",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "补全句子（填一个表示让步的词）。",
+            "sentence_en": "___, I don't have much experience. But I learn quickly.",
+            "translation_zh": "诚然，我经验不多，但我学得很快。",
+            "answers": [
+              "Admittedly",
+              "Granted"
+            ],
+            "explanation_zh": "先承认缺点：Admittedly / Granted。"
+          },
+          {
+            "id": "s13",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "spoken_interaction",
+            "prompt_en": "I take your point.",
+            "prompt_zh": "这句话的意思是：",
+            "options": [
+              "我理解并部分接受你的观点",
+              "我拿走你的东西",
+              "我完全反对你"
+            ],
+            "answer": 0,
+            "explanation_zh": "I take your point = 我明白你的意思，而且有一定道理（后面常有 but）。"
+          }
+        ]
+      },
+      {
+        "id": "c1-u03-argument-l2",
+        "order": 2,
+        "kind": "core",
+        "title_en": "Despite Everything",
+        "title_zh": "尽管如此",
+        "estimated_minutes": 13,
+        "objectives": [
+          {
+            "en": "Use despite and in spite of with nouns and -ing forms, and even though with clauses.",
+            "zh": "能正确使用 despite / in spite of + 名词或 -ing，以及 even though + 句子。"
+          },
+          {
+            "en": "Use however + adjective and much as for strong concession.",
+            "zh": "能用 however + 形容词、much as 表达较强的让步。"
+          }
+        ],
+        "can_do_ids": [
+          "c1.gr.concession",
+          "c1.wp.argument"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "grammar",
+            "title_zh": "这节课学什么",
+            "body_zh": "“尽管”在英语里有好几种说法，区别主要在后面接什么：despite 后面接名词，even though 后面接句子，however hard 表示“无论多难”，much as 表示“尽管很想……”。这节课通过一次马拉松的经历把它们一次理清。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "The marathon",
+            "instructions_zh": "先听。注意每个“尽管”后面接的是名词、-ing 还是句子。",
+            "scene_zh": "朋友 Mia 刚跑完人生第一个马拉松，Lin 打电话祝贺她。",
+            "lines": [
+              {
+                "speaker": "Mia",
+                "en": "I finished the marathon! Despite the rain, I actually enjoyed most of it.",
+                "zh": "我跑完马拉松了！尽管下雨，大部分时候我还挺享受的。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Congratulations! Even though you hurt your knee last month?",
+                "zh": "恭喜！尽管你上个月伤了膝盖？"
+              },
+              {
+                "speaker": "Mia",
+                "en": "Yes. In spite of all the physio, it still ached after twenty miles.",
+                "zh": "是啊。尽管做了那么多理疗，跑了二十英里后还是疼。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "And however hard it got, you didn't stop?",
+                "zh": "无论多难，你都没停下？"
+              },
+              {
+                "speaker": "Mia",
+                "en": "I walked a bit, I'll admit. Much as I wanted to quit, I kept thinking about the finish line.",
+                "zh": "我承认走了一小段。尽管很想放弃，我一直想着终点线。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "That's impressive. Will you do another one?",
+                "zh": "太厉害了。你还会再跑吗？"
+              },
+              {
+                "speaker": "Mia",
+                "en": "Despite having said never again at mile twenty-three, I've already signed up for next year!",
+                "zh": "尽管在第二十三英里时说过“再也不跑了”，我已经报名了明年的比赛！"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "despite",
+              "in-spite-of",
+              "however-adj",
+              "much-as"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "notice",
+            "role": "notice",
+            "skill": "grammar",
+            "question_zh": "despite、even though、however、much as 后面分别接什么？",
+            "examples": [
+              {
+                "en": "Despite the rain, I enjoyed it.",
+                "zh": "尽管下雨，我还是很享受。",
+                "highlight": [
+                  "Despite",
+                  "the rain"
+                ]
+              },
+              {
+                "en": "Despite having said never again, I've signed up.",
+                "zh": "尽管说过再也不跑，我还是报名了。",
+                "highlight": [
+                  "Despite",
+                  "having said"
+                ]
+              },
+              {
+                "en": "Even though you hurt your knee?",
+                "zh": "尽管你伤了膝盖？",
+                "highlight": [
+                  "Even though",
+                  "you hurt"
+                ]
+              },
+              {
+                "en": "However hard it got, you didn't stop.",
+                "zh": "无论多难，你都没停下。",
+                "highlight": [
+                  "However hard",
+                  "it got"
+                ]
+              },
+              {
+                "en": "Much as I wanted to quit, I kept going.",
+                "zh": "尽管很想放弃，我还是坚持了。",
+                "highlight": [
+                  "Much as",
+                  "I wanted"
+                ]
+              }
+            ],
+            "takeaway_zh": "despite / in spite of + 名词或 -ing（despite 后面不加 of，也不接句子）。even though / although + 句子。However + 形容词 / 副词 + 主语 + 动词 = 无论多么……。Much as + 句子 = 尽管很……，常和 like、want、admire 等表示感情的动词连用，语气偏正式。"
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_en": "___ the rain, the concert went ahead.",
+            "prompt_zh": "选出正确的形式：",
+            "options": [
+              "Despite",
+              "Even though",
+              "Despite of"
+            ],
+            "answer": 0,
+            "explanation_zh": "后面是名词 the rain：Despite（不加 of）。"
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_en": "She went to work ___ she felt ill.",
+            "prompt_zh": "选出正确的形式：",
+            "options": [
+              "even though",
+              "despite",
+              "in spite of"
+            ],
+            "answer": 0,
+            "explanation_zh": "后面是句子 she felt ill：even though。"
+          },
+          {
+            "id": "s07",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "In spite ___ the delays, we finished on time.",
+            "translation_zh": "尽管有延误，我们还是按时完成了。",
+            "answers": [
+              "of"
+            ],
+            "explanation_zh": "in spite of + 名词。"
+          },
+          {
+            "id": "s08",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "prompt_zh": "哪一句是对的？",
+            "options": [
+              "Despite of being tired, he kept going.",
+              "Despite being tired, he kept going.",
+              "Despite he was tired, he kept going."
+            ],
+            "answer": 1,
+            "explanation_zh": "despite + -ing；不加 of，不接句子。"
+          },
+          {
+            "id": "s09",
+            "type": "order",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "排成句子。",
+            "translation_zh": "无论我多努力，都想不起她的名字。",
+            "tokens": [
+              "However",
+              "hard",
+              "I",
+              "try,",
+              "I",
+              "can't",
+              "remember",
+              "her",
+              "name."
+            ],
+            "answers": [
+              "However hard I try, I can't remember her name.",
+              "I can't remember her name, however hard I try."
+            ],
+            "explanation_zh": "However + 形容词 / 副词 + 主语 + 动词, 主句。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，Mia 当时想放弃吗？",
+            "audio_en": "Much as I wanted to quit, I kept thinking about the finish line.",
+            "options": [
+              "很想放弃，但坚持了下来",
+              "从没想过放弃",
+              "中途放弃了"
+            ],
+            "answer": 0,
+            "explanation_zh": "Much as I wanted to quit（尽管很想放弃）, I kept thinking about the finish line。"
+          },
+          {
+            "id": "s11",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：Mia 明年打算怎么样？",
+            "options": [
+              "已经报名再跑一次",
+              "再也不跑了",
+              "改跑半程马拉松"
+            ],
+            "answer": 0,
+            "explanation_zh": "I've already signed up for next year!"
+          },
+          {
+            "id": "s12",
+            "type": "write",
+            "role": "communicative_task",
+            "skill": "written_production",
+            "task_zh": "写 4–5 句，讲一次你在困难下坚持完成的事（考试、项目、旅行都可以）。despite / in spite of、even though、however + 形容词、much as 至少用三种。",
+            "model_answers": [
+              "Last year I finished my first big translation project, despite having very little experience. Even though the deadline was tight, I refused to cut corners. However tired I was, I checked every page twice. Much as I wanted to give up at times, I'm glad I didn't, because the client has since hired me again."
+            ],
+            "checklist_zh": [
+              "至少三种不同的让步结构",
+              "despite / in spite of 后面接的是名词或 -ing",
+              "even though 后面接的是句子",
+              "However 后面紧跟形容词或副词"
+            ]
+          },
+          {
+            "id": "s13",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "___ having lots of money, he isn't happy.",
+            "translation_zh": "尽管很有钱，他并不快乐。",
+            "answers": [
+              "Despite"
+            ],
+            "explanation_zh": "后面是 -ing：Despite having ...（也可以 In spite of）。"
+          },
+          {
+            "id": "s14",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_en": "___ much I like him, I can't agree with him on this.",
+            "prompt_zh": "选出正确的词：",
+            "options": [
+              "However",
+              "Despite",
+              "Although"
+            ],
+            "answer": 0,
+            "explanation_zh": "However much + 主语 + 动词 = 无论多么……"
+          }
+        ]
+      },
+      {
+        "id": "c1-u03-argument-l3",
+        "order": 3,
+        "kind": "core",
+        "title_en": "That Doesn't Follow",
+        "title_zh": "有力地反驳",
+        "estimated_minutes": 13,
+        "objectives": [
+          {
+            "en": "Rebut an argument by challenging its logic or assumptions.",
+            "zh": "能通过质疑逻辑或隐含假设来反驳一个论证。"
+          },
+          {
+            "en": "Weigh benefits against risks and turn evidence against the other side.",
+            "zh": "能权衡利弊，并把对方的证据反过来使用。"
+          }
+        ],
+        "can_do_ids": [
+          "c1.si.rebuttal",
+          "c1.wp.argument"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "spoken_interaction",
+            "title_zh": "这节课学什么",
+            "body_zh": "让步之后，要怎么反驳？这节课学四种常用方法：承认相关但否认结论（it doesn't follow that）、权衡利弊（outweigh）、指出隐含的假设（the flaw in that argument）、把对方的证据反过来用（undermine your case）。重点是反驳观点，而不是攻击对方本人。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Rebuttal practice",
+            "instructions_zh": "先听。注意 Lin 每次反驳用的是哪一种方法。",
+            "scene_zh": "辩论社训练，教练 Kate 扮演正方，Lin 练习反驳。辩题：社交媒体平台应该核实用户的真实身份。",
+            "lines": [
+              {
+                "speaker": "Kate",
+                "en": "OK, I'll argue for identity checks. Online abuse would fall dramatically, because people would no longer be anonymous.",
+                "zh": "好，我来支持实名制。网络暴力会大幅减少，因为人们不再匿名。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "That's a valid point, but it doesn't follow that abuse would disappear. Plenty of people are abusive under their real names.",
+                "zh": "这有道理，但推不出网络暴力会消失。很多人用真名也照样辱骂别人。"
+              },
+              {
+                "speaker": "Kate",
+                "en": "Fewer, though, surely?",
+                "zh": "但肯定会少一些吧？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Perhaps. However, that benefit would be outweighed by the risks. Whistle-blowers and abuse victims rely on anonymity.",
+                "zh": "也许。但这个好处会被风险抵消。举报者和受害者都依赖匿名。"
+              },
+              {
+                "speaker": "Kate",
+                "en": "Couldn't they be protected by special rules?",
+                "zh": "不能用特殊规则保护他们吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "The flaw in that argument is that it assumes companies would apply those rules fairly. Their record suggests otherwise.",
+                "zh": "那个论证的漏洞在于，它假设公司会公平地执行这些规则。而它们过去的表现并非如此。"
+              },
+              {
+                "speaker": "Kate",
+                "en": "Good. And if I say most of the public supports identity checks?",
+                "zh": "很好。那如果我说大多数公众支持实名制呢？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Popularity doesn't make a policy right. In fact, that undermines your case, because popular policies have often had unintended consequences.",
+                "zh": "受欢迎不代表政策正确。事实上这反而削弱了你的论点，因为受欢迎的政策常常带来意想不到的后果。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "it-doesnt-follow",
+              "outweigh",
+              "the-flaw",
+              "undermine"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "teach",
+            "role": "teach",
+            "skill": "spoken_interaction",
+            "title_zh": "四种反驳方法",
+            "explanation_zh": "1）承认相关，否认结论：That's a valid point, but it doesn't follow that ...。2）权衡：The benefits would be outweighed by the risks. / The risks outweigh the benefits.。3）指出隐含假设：The flaw in that argument is that it assumes ...。4）反用证据：That actually undermines your case, because ...。好的反驳针对论证本身，而不是对方的动机或能力（You obviously don't understand ... 是人身攻击，会让你失分）。",
+            "pattern": "That's a valid point, but it doesn't follow that ...\nX is outweighed by Y.\nThe flaw in that argument is that it assumes ...\nThat actually undermines your case, because ...",
+            "examples": [
+              {
+                "en": "It's cheaper, but it doesn't follow that it's better value.",
+                "zh": "它更便宜，但推不出它更划算。"
+              },
+              {
+                "en": "The small savings are outweighed by the risk to safety.",
+                "zh": "这点小小的节省抵不上安全风险。"
+              },
+              {
+                "en": "The flaw in that argument is that it assumes everyone has internet access.",
+                "zh": "那个论证的漏洞在于它假设每个人都能上网。"
+              }
+            ],
+            "tips_zh": [
+              "it doesn't follow that 后面接对方推出的结论，而不是对方的前提。",
+              "outweigh 常用被动：be outweighed by。"
+            ]
+          },
+          {
+            "id": "s05",
+            "type": "match",
+            "role": "guided_practice",
+            "skill": "spoken_interaction",
+            "instructions_zh": "把反驳方法和说法配对。",
+            "pairs": [
+              {
+                "left": "承认相关，但否认结论",
+                "right": "it doesn't follow that ..."
+              },
+              {
+                "left": "权衡利弊",
+                "right": "... is outweighed by ..."
+              },
+              {
+                "left": "指出隐含的假设",
+                "right": "The flaw in that argument is that it assumes ..."
+              },
+              {
+                "left": "把对方的证据反过来用",
+                "right": "That actually undermines your case."
+              }
+            ]
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "spoken_interaction",
+            "prompt_zh": "哪一句是在反驳论证，而不是攻击对方本人？",
+            "options": [
+              "That assumes everyone has internet access, which isn't true.",
+              "You obviously don't understand this topic.",
+              "Only someone with no experience would say that."
+            ],
+            "answer": 0,
+            "explanation_zh": "第一句指出论证里的错误假设；另外两句针对的是人。"
+          },
+          {
+            "id": "s07",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "The advantages are clearly ___ by the costs.",
+            "translation_zh": "这些好处显然抵不上成本。",
+            "answers": [
+              "outweighed"
+            ],
+            "explanation_zh": "be outweighed by = 被……超过、抵不上。"
+          },
+          {
+            "id": "s08",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "spoken_interaction",
+            "prompt_en": "It doesn't follow that ...",
+            "prompt_zh": "这个说法的意思是：",
+            "options": [
+              "由此推不出……",
+              "跟着我说……",
+              "接下来不是……"
+            ],
+            "answer": 0,
+            "explanation_zh": "follow 在这里是“（逻辑上）随之得出”。"
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，Lin 指出对方论证有什么问题？",
+            "audio_en": "The flaw in that argument is that it assumes companies would apply those rules fairly.",
+            "options": [
+              "它假设公司会公平地执行规则",
+              "它的数据过时了",
+              "它的例子太少"
+            ],
+            "answer": 0,
+            "explanation_zh": "it assumes companies would apply those rules fairly：隐含假设有问题。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：Lin 为什么认为匿名很重要？",
+            "options": [
+              "举报者和受害者依赖匿名",
+              "匿名更方便",
+              "公司喜欢匿名"
+            ],
+            "answer": 0,
+            "explanation_zh": "Whistle-blowers and abuse victims rely on anonymity."
+          },
+          {
+            "id": "s11",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_interaction",
+            "task_zh": "反驳这个观点：先承认其中合理的部分，再用至少两种反驳方法回应。",
+            "prompt_en": "Homework should be banned, because children are already exhausted after school.",
+            "model_answers": [
+              "That's a valid point; many children are very tired by the evening. But it doesn't follow that homework should be banned altogether. The flaw in that argument is that it assumes all homework is long and stressful, when a short reading task can actually help children relax. And the benefit of more free time might be outweighed by the loss of regular practice. A better solution would be shorter, more focused homework."
+            ],
+            "checklist_zh": [
+              "先承认了对方观点中合理的部分",
+              "至少用了两种反驳方法",
+              "针对的是论证，而不是对方本人",
+              "最后给出了自己的替代方案"
+            ]
+          },
+          {
+            "id": "s12",
+            "type": "order",
+            "role": "exit_ticket",
+            "skill": "spoken_interaction",
+            "instructions_zh": "排成句子。",
+            "translation_zh": "这未必能推出来。",
+            "tokens": [
+              "necessarily",
+              "That",
+              "follow.",
+              "doesn't"
+            ],
+            "answers": [
+              "That doesn't necessarily follow."
+            ],
+            "explanation_zh": "That doesn't (necessarily) follow. = 这（未必）能推出来。"
+          },
+          {
+            "id": "s13",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "spoken_interaction",
+            "prompt_en": "That actually ___ your argument.",
+            "prompt_zh": "选出合适的动词：",
+            "options": [
+              "undermines",
+              "underlines",
+              "undertakes"
+            ],
+            "answer": 0,
+            "explanation_zh": "undermine = 削弱；underline 是“强调”，undertake 是“承担”。"
+          }
+        ]
+      },
+      {
+        "id": "c1-u03-argument-l4",
+        "order": 4,
+        "kind": "review",
+        "title_en": "Unit Review: The Debate",
+        "title_zh": "单元复习：辩论",
+        "estimated_minutes": 15,
+        "objectives": [
+          {
+            "en": "Follow a formal debate and identify concessions and rebuttals.",
+            "zh": "能听懂一场正式辩论，分辨其中的让步和反驳。"
+          },
+          {
+            "en": "Argue a position in speech and in an essay paragraph that answers the other side.",
+            "zh": "能在口头和书面上论证立场，并回应反方观点。"
+          }
+        ],
+        "can_do_ids": [
+          "c1.si.rebuttal",
+          "c1.gr.concession",
+          "c1.wp.argument"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "listening",
+            "title_zh": "单元复习",
+            "body_zh": "一场正式辩论：雇主是否应该被允许监控员工的电脑？先听懂双方的论证，留意每一次让步和反驳；然后你也参与进来，说一段、写一段。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Should employers monitor staff computers?",
+            "instructions_zh": "听两遍。第一遍听双方立场，第二遍注意让步和反驳的说法。",
+            "scene_zh": "公司内部辩论会，主持人、正方 Anna 和反方 Lin。",
+            "lines": [
+              {
+                "speaker": "Host",
+                "en": "Tonight's motion: employers should be allowed to monitor staff computers. Anna, you're proposing.",
+                "zh": "今晚的辩题：雇主应该被允许监控员工电脑。Anna，你是正方。"
+              },
+              {
+                "speaker": "Anna",
+                "en": "Thank you. Companies are responsible for their data, and monitoring is the only reliable way to prevent leaks.",
+                "zh": "谢谢。公司要对数据负责，而监控是防止泄密唯一可靠的办法。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Admittedly, data security matters. But it doesn't follow that constant monitoring is the answer. Most leaks come from simple mistakes, not bad intentions.",
+                "zh": "诚然，数据安全很重要。但推不出持续监控就是答案。大多数泄密源于简单的失误，而不是恶意。"
+              },
+              {
+                "speaker": "Anna",
+                "en": "Granted, but monitoring catches those mistakes early.",
+                "zh": "我承认，但监控能及早发现这些失误。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Even if it does, the cost to trust is enormous. Despite the promises, staff who feel watched tend to take fewer risks and share fewer ideas.",
+                "zh": "就算能，代价是巨大的信任损失。尽管有种种承诺，感觉被监视的员工往往不敢冒险，也更少分享想法。"
+              },
+              {
+                "speaker": "Anna",
+                "en": "However strongly you feel about privacy, the law requires companies to protect customer data.",
+                "zh": "不管你多重视隐私，法律都要求公司保护客户数据。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Of course. That said, there are less intrusive ways to do it, such as better training and limited access.",
+                "zh": "当然。话虽如此，还有侵扰性更小的办法，比如更好的培训和限制访问权限。"
+              },
+              {
+                "speaker": "Host",
+                "en": "Final words, Lin?",
+                "zh": "Lin，最后总结？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Much as I understand the concern, the flaw in my opponent's case is that it treats every employee as a suspect.",
+                "zh": "尽管我很理解这种担忧，对方论证的漏洞在于，它把每一位员工都当成了嫌疑人。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "Anna 的主要理由是什么？",
+            "options": [
+              "公司要对数据负责，监控是防泄密最可靠的办法",
+              "监控能提高工作效率",
+              "员工愿意被监控"
+            ],
+            "answer": 0,
+            "explanation_zh": "Companies are responsible for their data, and monitoring is the only reliable way to prevent leaks."
+          },
+          {
+            "id": "s04",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "Lin 认为大多数泄密来自哪里？",
+            "options": [
+              "简单的失误",
+              "员工的恶意",
+              "外部黑客"
+            ],
+            "answer": 0,
+            "explanation_zh": "Most leaks come from simple mistakes, not bad intentions."
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "Lin 提出了什么替代办法？",
+            "options": [
+              "更好的培训和限制访问权限",
+              "更严格的监控",
+              "开除犯错的员工"
+            ],
+            "answer": 0,
+            "explanation_zh": "such as better training and limited access。"
+          },
+          {
+            "id": "s06",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "把辩论中的说法和它的作用配对。",
+            "pairs": [
+              {
+                "left": "Admittedly, data security matters.",
+                "right": "让步"
+              },
+              {
+                "left": "it doesn't follow that ...",
+                "right": "否认对方的推论"
+              },
+              {
+                "left": "However strongly you feel about ...",
+                "right": "无论多么……（强让步）"
+              },
+              {
+                "left": "The flaw in my opponent's case is ...",
+                "right": "指出论证的漏洞"
+              }
+            ]
+          },
+          {
+            "id": "s07",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "___ as I understand the concern, I can't support the motion.",
+            "translation_zh": "尽管我很理解这种担忧，我无法支持这个辩题。",
+            "answers": [
+              "Much"
+            ],
+            "explanation_zh": "Much as + 句子 = 尽管很……"
+          },
+          {
+            "id": "s08",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_interaction",
+            "task_zh": "你是反方，回应正方的这段话：先让步，再用至少两种方法反驳，最后用一句话总结你的立场。",
+            "prompt_en": "Remote workers are less productive, so companies should bring everyone back to the office five days a week.",
+            "model_answers": [
+              "Admittedly, some people do find it harder to focus at home. That said, it doesn't follow that everyone is less productive. Several studies suggest the opposite for focused tasks. The flaw in that argument is that it measures productivity by how busy people look, not by what they deliver. And the benefits of full-time office work would be outweighed by the cost of losing experienced staff who value flexibility. Much as I understand the wish to see the team in person, a hybrid model is the more sensible choice."
+            ],
+            "checklist_zh": [
+              "先让步（Admittedly / Granted）",
+              "至少两种反驳方法",
+              "用了至少一种让步结构（despite / however + 形容词 / much as）",
+              "最后一句清楚地总结立场"
+            ]
+          },
+          {
+            "id": "s09",
+            "type": "write",
+            "role": "communicative_task",
+            "skill": "written_production",
+            "task_zh": "写一段 150–200 词的议论文段落，题目：Should employers be allowed to monitor staff computers? 写清楚你的立场，预先提出一个最有力的反方论点并回应它。",
+            "model_answers": [
+              "Employers should be allowed to monitor work computers only in limited and transparent ways. Admittedly, companies are legally responsible for protecting customer data, and a single leak can cause serious damage. It might therefore seem logical to track everything employees do online. However, it does not follow that constant monitoring is the most effective form of protection. Most data breaches result from simple mistakes rather than deliberate wrongdoing, and these are better prevented through training and restricted access to sensitive systems. Moreover, the benefits of blanket surveillance are likely to be outweighed by its costs. Despite assurances that monitoring is purely for security, employees who feel watched tend to become cautious and less willing to share ideas. Much as organisations need to manage risk, they also depend on trust. A policy that monitors specific high-risk activities, with clear rules that staff understand, would protect data without treating every employee as a suspect."
+            ],
+            "checklist_zh": [
+              "开头句清楚地表明立场",
+              "提出了一个有力的反方论点（Admittedly / It might seem ...）",
+              "用至少两种方法回应了这个论点",
+              "至少用了两种让步结构，形式正确",
+              "结尾回到自己的立场"
+            ]
+          },
+          {
+            "id": "s10",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "用括号里的动词补全。",
+            "sentence_en": "Despite ___ (promise) to call, he never did.",
+            "translation_zh": "尽管他答应过会打电话，却始终没打。",
+            "answers": [
+              "promising"
+            ],
+            "explanation_zh": "despite + -ing。"
+          },
+          {
+            "id": "s11",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_en": "Granted, it's quick. ___, it isn't reliable.",
+            "prompt_zh": "选出合适的说法：",
+            "options": [
+              "Even so",
+              "Despite",
+              "Much as"
+            ],
+            "answer": 0,
+            "explanation_zh": "让步之后转回自己的观点：Even so（即便如此）。despite 和 much as 后面不能直接接逗号。"
+          }
+        ]
+      }
+    ]
+  }
+}

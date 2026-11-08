@@ -138,12 +138,13 @@ describe("read models are scoped to the learner", () => {
     const preA1 = levels.find((l) => l.code === "pre_a1")!;
     expect(preA1.unitCount).toBe(8);
     expect(preA1.lessonCount).toBeGreaterThanOrEqual(4);
-    expect(levels.find((l) => l.code === "c2")!.publishedUnitCount).toBe(0);
+    // Units without content stay planned and are not counted as published.
+    expect(levels.find((l) => l.code === "c2")).toMatchObject({ unitCount: 3, publishedUnitCount: 2 });
   });
 
-  it("A2 and B1 units are seeded as learnable lessons, and their scored steps score on the server (Phase 5.1)", async () => {
+  it("A2–C2 units are seeded as learnable lessons, and their scored steps score on the server (Phase 5.1–5.2)", async () => {
     const levels = await listLevels(db, userA);
-    for (const code of ["a2", "b1"] as const) {
+    for (const code of ["a2", "b1", "b2", "c1", "c2"] as const) {
       const level = levels.find((l) => l.code === code)!;
       expect(level.publishedUnitCount, code).toBe(2);
       expect(level.lessonCount, code).toBe(8);

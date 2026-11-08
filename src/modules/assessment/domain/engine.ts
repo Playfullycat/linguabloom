@@ -8,18 +8,19 @@ import type { AssessmentItemContent, DiagnosticSkill } from "../content";
  * about uncertainty — the result is always a "preliminary estimate".
  */
 
-/** Levels covered by the placement bank. */
-export const PLACEMENT_LEVELS = ["pre_a1", "a1", "a2", "b1"] as const satisfies readonly CefrLevel[];
+/** Levels covered by the placement bank (B2–C2 since Phase 5.2). */
+export const PLACEMENT_LEVELS = ["pre_a1", "a1", "a2", "b1", "b2", "c1", "c2"] as const satisfies readonly CefrLevel[];
 export type PlacementLevel = (typeof PLACEMENT_LEVELS)[number];
 
+/** Long enough to climb from the A2 start to C2 and still check the top level. */
 export const MAX_ITEMS: Record<DiagnosticSkill, number> = {
-  vocabulary: 6,
-  grammar: 6,
-  reading: 4,
-  listening: 4,
+  vocabulary: 7,
+  grammar: 7,
+  reading: 5,
+  listening: 5,
 };
 
-export const SELF_REPORTED_LEVELS = ["beginner", "forgot", "read_simple", "daily_conversation"] as const;
+export const SELF_REPORTED_LEVELS = ["beginner", "forgot", "read_simple", "daily_conversation", "advanced"] as const;
 export type SelfReportedLevel = (typeof SELF_REPORTED_LEVELS)[number];
 
 export const SELF_REPORT_LABELS: Record<SelfReportedLevel, string> = {
@@ -27,6 +28,7 @@ export const SELF_REPORT_LABELS: Record<SelfReportedLevel, string> = {
   forgot: "学过，但忘得差不多了",
   read_simple: "能读懂简单的内容",
   daily_conversation: "能进行日常交流",
+  advanced: "能读原版文章、讨论比较复杂的话题",
 };
 
 /** Where the staircase starts. Self-report only picks the first item, it never sets the level. */
@@ -35,8 +37,11 @@ export function startLevel(selfReport: string | null | undefined): PlacementLeve
     case "beginner":
       return "pre_a1";
     case "read_simple":
-    case "daily_conversation":
       return "a2";
+    case "daily_conversation":
+      return "b1";
+    case "advanced":
+      return "b2";
     default:
       return "a1";
   }
@@ -112,13 +117,14 @@ export function estimateSkill(attempts: AttemptLike[]): SkillEstimate | null {
     if (b && b.correct >= 1 && b.correct / b.total >= 0.5) level = candidate;
   }
   const correct = attempts.filter((a) => a.isCorrect).length;
-  const top = byLevel.b1;
+  const topLevel = PLACEMENT_LEVELS.at(-1)!;
+  const top = byLevel[topLevel];
   return {
     level,
     confidence: attempts.length >= 6 ? "medium" : "low",
     evidenceCount: attempts.length,
     correct,
-    mayBeHigher: level === "b1" && Boolean(top && top.correct === top.total),
+    mayBeHigher: level === topLevel && Boolean(top && top.correct === top.total),
     byLevel,
   };
 }

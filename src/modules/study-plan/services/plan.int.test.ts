@@ -119,14 +119,15 @@ describe("placement diagnostic", () => {
 
     const result = await completeAssessment(db, userA, sessionId);
     expect(result.estimates.map((e) => e.skill)).toEqual(["vocabulary", "grammar", "reading"]);
-    expect(result.estimates[0]!.estimate).toMatchObject({ level: "b1", confidence: "medium", evidenceCount: 6, mayBeHigher: true });
+    // All correct: the staircase climbs to the top of the bank (C2 since Phase 5.2).
+    expect(result.estimates[0]!.estimate).toMatchObject({ level: "c2", confidence: "medium", evidenceCount: 7, mayBeHigher: true });
     expect(result.estimates[2]!.estimate).toMatchObject({ confidence: "low", evidenceCount: 1 });
     expect(result.skipped).toEqual(["reading", "listening"]);
 
     await completeAssessment(db, userA, sessionId); // idempotent
     expect(await db.select().from(skillEstimates).where(eq(skillEstimates.userId, userA))).toHaveLength(3);
     const current = await getCurrentEstimates(db, userA);
-    expect(current.find((e) => e.skill === "grammar")).toMatchObject({ level: "b1", source: `assessment:${sessionId}` });
+    expect(current.find((e) => e.skill === "grammar")).toMatchObject({ level: "c2", source: `assessment:${sessionId}` });
     expect(current.every((e) => e.confidence !== "high")).toBe(true);
   });
 
@@ -161,9 +162,9 @@ describe("today plan", () => {
     await completeAssessment(db, userA, sessionId);
     const plan = await getTodayPlan(db, userA);
     const lesson = plan.tasks.find((t) => t.kind === "lesson")!;
-    // Every vocabulary and grammar item was answered correctly, so the estimate is B1,
-    // and since 5.1 there are published B1 units to start from.
-    expect(lesson.href).toBe("/lesson/b1-u02-conditionals-l1");
+    // Every vocabulary and grammar item was answered correctly, so the estimate is C2,
+    // and since 5.2 there are published C2 units to start from.
+    expect(lesson.href).toBe("/lesson/c2-u01-implied-meaning-l1");
     expect(lesson.reason).toContain("初步估计");
   });
 

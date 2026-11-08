@@ -1,0 +1,1271 @@
+{
+  "content_schema_version": 1,
+  "source_type": "first_party",
+  "review_status": "pending_owner_review",
+  "unit": {
+    "id": "c2-u01-implied-meaning",
+    "level": "c2",
+    "order": 1,
+    "status": "published",
+    "title_en": "Reading Between the Lines",
+    "title_zh": "言外之意",
+    "summary_zh": "听懂没有直接说出来的意思：轻描淡写（not exactly ideal）、反讽（Oh, great）、委婉的拒绝（I'll see what I can do），以及推荐信里“明褒暗贬”的写法。学完后，你能根据语境判断说话人的真实意图，也能得体、恰当地使用这些表达。",
+    "can_do": [
+      {
+        "id": "c2.l.implied",
+        "skill": "listening",
+        "en": "Can understand implied meaning, irony and understatement in natural speech, and identify a speaker's real intention.",
+        "zh": "能听懂自然对话中的言外之意、反讽和轻描淡写，判断说话人的真实意图。"
+      },
+      {
+        "id": "c2.si.pragmatic",
+        "skill": "spoken_interaction",
+        "en": "Can use understatement, tact and indirectness appropriately, and respond to what is meant rather than only what is said.",
+        "zh": "能恰当地使用轻描淡写、得体和间接的表达，并回应对方的真实意思而不只是字面意思。"
+      },
+      {
+        "id": "c2.r.subtext",
+        "skill": "reading",
+        "en": "Can recognise what a written text implies but does not state, such as faint praise in a reference or a polite brush-off in an email.",
+        "zh": "能看出书面文字暗示但没有明说的内容，例如推荐信中的明褒暗贬、邮件中的委婉回绝。"
+      }
+    ],
+    "grammar_points": [
+      {
+        "id": "c2.understatement",
+        "title_en": "Understatement and ironic praise",
+        "title_zh": "轻描淡写与反讽",
+        "pattern": "not exactly + positive adjective: It wasn't exactly a success.\nnot the most + adjective: He's not the most reliable person.\na bit of a + noun: It was a bit of a disaster.\nnot un- + adjective (litotes): She's not unfriendly.\nironic praise: Oh, great. / Perfect timing.",
+        "explanation_zh": "轻描淡写是“说得比实际轻”：not exactly a success（其实很失败）、not the most reliable（其实很不靠谱）、a bit of a disaster（其实是一场灾难）。双重否定 not un- 表示有所保留的肯定（not unfriendly = 还算友好，但不热情）。反讽则是用正面的词说负面的情况（Oh, great 打印机又卡纸了）。判断的依据是语境和语气：字面意思和实际情况不符时，往往就是言外之意。",
+        "examples": [
+          {
+            "en": "The hotel wasn't exactly what we'd planned.",
+            "zh": "酒店完全不是我们计划中的样子。"
+          },
+          {
+            "en": "Let's just say I won't be leaving them a glowing review.",
+            "zh": "这么说吧，我不会给他们好评。"
+          },
+          {
+            "en": "Oh, perfect timing. The printer's jammed again.",
+            "zh": "哦，时机真好。打印机又卡纸了。"
+          }
+        ],
+        "common_errors": [
+          {
+            "wrong": "\"The meeting wasn't exactly a success.\" → 会议还算成功。",
+            "right": "→ 会议很失败。",
+            "why_zh": "not exactly + 正面词是轻描淡写，意思接近完全相反。"
+          },
+          {
+            "wrong": "\"She's not unintelligent.\" → 她很笨。",
+            "right": "→ 她其实挺聪明（说话人有所保留）。",
+            "why_zh": "not un- 是有保留的肯定，不是否定。"
+          },
+          {
+            "wrong": "Using \"Oh, great\" sarcastically in a first email to a new client.",
+            "right": "Say what you mean politely and directly.",
+            "why_zh": "书面里没有语气提示，反讽很容易被误解，尤其是对不熟悉的人。"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "key": "not-exactly",
+        "text": "not exactly",
+        "pos": "phrase",
+        "ipa": "/nɒt ɪɡˈzæktli/",
+        "zh": "并不完全是（轻描淡写，常表示“一点也不”）",
+        "example_en": "It wasn't exactly a success.",
+        "example_zh": "它算不上成功。（其实很失败）"
+      },
+      {
+        "key": "a-bit-of-a",
+        "text": "a bit of a ...",
+        "pos": "phrase",
+        "ipa": "/ə bɪt əv ə/",
+        "zh": "有点……（常用来淡化坏事）",
+        "example_en": "The hotel was a bit of a disappointment.",
+        "example_zh": "酒店有点让人失望。（其实很失望）"
+      },
+      {
+        "key": "not-the-most",
+        "text": "not the most ...",
+        "pos": "phrase",
+        "ipa": "/nɒt ðə məʊst/",
+        "zh": "算不上最……的（委婉地批评）",
+        "example_en": "It wasn't the cleanest place I've ever stayed.",
+        "example_zh": "那里算不上我住过最干净的地方。（其实很脏）"
+      },
+      {
+        "key": "could-be-worse",
+        "text": "it could have been worse",
+        "pos": "phrase",
+        "ipa": "/ɪt kʊd əv biːn wɜːs/",
+        "zh": "本来可能更糟（常带自嘲）",
+        "example_en": "It rained all week, but it could have been worse.",
+        "example_zh": "下了一周雨，不过本来可能更糟。"
+      },
+      {
+        "key": "oh-great",
+        "text": "Oh, great.",
+        "pos": "phrase",
+        "ipa": "/əʊ ɡreɪt/",
+        "zh": "哦，太好了。（常为反讽：真糟糕）",
+        "example_en": "Oh, great. The printer's jammed again.",
+        "example_zh": "哦，真好。打印机又卡纸了。"
+      },
+      {
+        "key": "just-what-i-needed",
+        "text": "Just what I needed.",
+        "pos": "phrase",
+        "ipa": "/dʒʌst wɒt aɪ ˈniːdɪd/",
+        "zh": "正是我需要的。（常为反讽）",
+        "example_en": "A flat tyre. Just what I needed.",
+        "example_zh": "爆胎了，真是“正合我意”。"
+      },
+      {
+        "key": "perfect-timing",
+        "text": "Perfect timing.",
+        "pos": "phrase",
+        "ipa": "/ˈpɜːfɪkt ˈtaɪmɪŋ/",
+        "zh": "时机真好。（可真心，也可反讽）",
+        "example_en": "Perfect timing, as always.",
+        "example_zh": "时机一如既往地“好”。"
+      },
+      {
+        "key": "tongue-in-cheek",
+        "text": "tongue-in-cheek",
+        "pos": "adjective",
+        "ipa": "/ˌtʌŋ ɪn ˈtʃiːk/",
+        "zh": "半开玩笑的；调侃的",
+        "example_en": "He left a tongue-in-cheek note for IT.",
+        "example_zh": "他给 IT 部门留了一张调侃的字条。"
+      },
+      {
+        "key": "ill-see-what-i-can-do",
+        "text": "I'll see what I can do.",
+        "pos": "phrase",
+        "ipa": "/aɪl siː wɒt aɪ kən duː/",
+        "zh": "我看看能做些什么。（不作承诺）",
+        "example_en": "I'll see what I can do, but I can't promise anything.",
+        "example_zh": "我看看能做些什么，但不能保证。"
+      },
+      {
+        "key": "interesting-idea",
+        "text": "That's an interesting idea.",
+        "pos": "phrase",
+        "ipa": "/ðæts ən ˈɪntrəstɪŋ aɪˈdɪə/",
+        "zh": "这个想法挺有意思。（常暗示有所保留）",
+        "example_en": "That's an interesting idea. Let me think about it.",
+        "example_zh": "这个想法挺有意思，让我想想。"
+      },
+      {
+        "key": "rather-stretched",
+        "text": "We're rather stretched.",
+        "pos": "phrase",
+        "ipa": "/wɪə ˈrɑːðə stretʃt/",
+        "zh": "我们人手很紧。（常暗示无法帮忙）",
+        "example_en": "We're rather stretched at the moment.",
+        "example_zh": "我们现在人手很紧。"
+      },
+      {
+        "key": "read-between-the-lines",
+        "text": "read between the lines",
+        "pos": "phrase",
+        "ipa": "/riːd bɪˈtwiːn ðə laɪnz/",
+        "zh": "体会言外之意",
+        "example_en": "Reading between the lines, they're not happy.",
+        "example_zh": "体会一下言外之意，他们并不满意。"
+      }
+    ],
+    "lessons": [
+      {
+        "id": "c2-u01-implied-meaning-l1",
+        "order": 1,
+        "kind": "core",
+        "title_en": "Not Exactly Ideal",
+        "title_zh": "轻描淡写",
+        "estimated_minutes": 13,
+        "objectives": [
+          {
+            "en": "Understand understatement such as not exactly, a bit of a and not the most.",
+            "zh": "能听懂 not exactly、a bit of a、not the most 这类轻描淡写。"
+          },
+          {
+            "en": "Describe a bad experience with understatement.",
+            "zh": "能用轻描淡写的方式描述一次糟糕的经历。"
+          }
+        ],
+        "can_do_ids": [
+          "c2.l.implied",
+          "c2.si.pragmatic"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "listening",
+            "title_zh": "这节课学什么",
+            "body_zh": "英语母语者（尤其是英国人）常常“把话说轻”：明明很失败，却说 It wasn't exactly a success；明明是一场灾难，却说 a bit of a disaster。如果只按字面理解，你会完全误判对方的意思。这节课学听懂并恰当使用这种轻描淡写。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "How was the trip?",
+            "instructions_zh": "先听。想一想 Lin 的假期到底怎么样，和她说出来的字面意思一样吗？",
+            "scene_zh": "Lin 度假提前回来，同事 Sam 问她怎么样。",
+            "lines": [
+              {
+                "speaker": "Sam",
+                "en": "How was the trip? You're back early.",
+                "zh": "旅行怎么样？你提前回来了。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "It was... not exactly what we'd planned. The hotel was a bit of a disappointment.",
+                "zh": "嗯……和我们计划的不太一样。酒店有点让人失望。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "In what way?",
+                "zh": "怎么说？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Well, it wasn't the cleanest place I've ever stayed, and the sea view was mostly a car park.",
+                "zh": "嗯，那里算不上我住过最干净的地方，所谓的海景大部分是个停车场。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Oh dear. And the weather?",
+                "zh": "哎呀。那天气呢？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "It rained for six of the seven days, so it could have been worse. We had one sunny afternoon!",
+                "zh": "七天下了六天雨，所以嘛，本来可能更糟。我们还有过一个晴天的下午呢！"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Sounds like a bit of a nightmare, to be honest.",
+                "zh": "说实话，听起来简直是噩梦。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Let's just say I won't be leaving them a glowing review.",
+                "zh": "这么说吧，我不会给他们好评的。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "I'm not surprised. Still, at least you're home in one piece.",
+                "zh": "不奇怪。不过至少你平安回来了。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。注意说这些话时略带无奈的语气。",
+            "items": [
+              "not-exactly",
+              "a-bit-of-a",
+              "not-the-most",
+              "could-be-worse"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "notice",
+            "role": "notice",
+            "skill": "listening",
+            "question_zh": "Lin 说的这些话，真实意思是什么？",
+            "examples": [
+              {
+                "en": "It was not exactly what we'd planned.",
+                "zh": "字面：和计划不完全一样 → 实际：完全不是计划中的样子",
+                "highlight": [
+                  "not exactly"
+                ]
+              },
+              {
+                "en": "The hotel was a bit of a disappointment.",
+                "zh": "字面：有点失望 → 实际：非常失望",
+                "highlight": [
+                  "a bit of a"
+                ]
+              },
+              {
+                "en": "It wasn't the cleanest place I've ever stayed.",
+                "zh": "字面：不是最干净的 → 实际：很脏",
+                "highlight": [
+                  "wasn't the cleanest"
+                ]
+              },
+              {
+                "en": "Let's just say I won't be leaving them a glowing review.",
+                "zh": "字面：不会写热情的好评 → 实际：非常不满",
+                "highlight": [
+                  "Let's just say"
+                ]
+              }
+            ],
+            "takeaway_zh": "轻描淡写的常见形式：not exactly + 正面词、a bit of a + 负面名词、not the most / wasn't the ...-est、Let's just say ...。实际意思通常比字面强得多。说的人往往用自嘲的语气，听的人则用 Oh dear、That sounds awful 之类的回应接住真实的意思。"
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "listening",
+            "prompt_en": "The meeting wasn't exactly a success.",
+            "prompt_zh": "这句话的真实意思是：",
+            "options": [
+              "会议很失败",
+              "会议还算成功",
+              "会议非常成功"
+            ],
+            "answer": 0,
+            "explanation_zh": "not exactly a success 是轻描淡写，意思接近“很失败”。"
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "listening",
+            "prompt_en": "He's not the most reliable person.",
+            "prompt_zh": "这句话的真实意思是：",
+            "options": [
+              "他很不靠谱",
+              "他是最靠谱的人",
+              "他还算靠谱"
+            ],
+            "answer": 0,
+            "explanation_zh": "not the most reliable = 委婉地说“很不靠谱”。"
+          },
+          {
+            "id": "s07",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "instructions_zh": "把轻描淡写的说法和它的真实意思配对。",
+            "pairs": [
+              {
+                "left": "It was a bit of a disaster.",
+                "right": "一场彻底的灾难"
+              },
+              {
+                "left": "She's not unintelligent.",
+                "right": "她其实挺聪明（有所保留）"
+              },
+              {
+                "left": "It could have gone better.",
+                "right": "进行得很糟"
+              },
+              {
+                "left": "I've had better days.",
+                "right": "今天糟透了"
+              }
+            ]
+          },
+          {
+            "id": "s08",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "spoken_interaction",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "Let's just ___ I won't be going back there.",
+            "translation_zh": "这么说吧，我不会再去那儿了。",
+            "answers": [
+              "say"
+            ],
+            "explanation_zh": "Let's just say ...：不想细说时，用来暗示态度。"
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，说话人真正的意思是什么？",
+            "audio_en": "It rained for six of the seven days, so it could have been worse. We had one sunny afternoon!",
+            "options": [
+              "天气糟透了，她在自嘲",
+              "天气还不错",
+              "她喜欢下雨"
+            ],
+            "answer": 0,
+            "explanation_zh": "七天下了六天雨还说 it could have been worse，是在自嘲。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：所谓的“海景”实际上是什么？",
+            "options": [
+              "大部分是停车场",
+              "一片沙滩",
+              "一座山"
+            ],
+            "answer": 0,
+            "explanation_zh": "the sea view was mostly a car park。"
+          },
+          {
+            "id": "s11",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "spoken_interaction",
+            "prompt_zh": "航班延误了三个小时，你想用轻描淡写的方式告诉同事，哪一句最合适？",
+            "options": [
+              "The journey wasn't the smoothest.",
+              "The journey was a total disaster!!!",
+              "The journey was smooth."
+            ],
+            "answer": 0,
+            "explanation_zh": "wasn't the smoothest：轻描淡写，听的人能明白其实很糟。"
+          },
+          {
+            "id": "s12",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "listening",
+            "instructions_zh": "补全句子（一个词）。",
+            "sentence_en": "The food wasn't ___ good; I'd give it two stars at most.",
+            "translation_zh": "那里的菜不怎么样，最多两星。",
+            "answers": [
+              "exactly",
+              "particularly",
+              "that"
+            ],
+            "explanation_zh": "wasn't exactly / particularly / that good = 不怎么样。"
+          },
+          {
+            "id": "s13",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "listening",
+            "prompt_en": "\"How was the exam?\" \"Well, I've had better days.\"",
+            "prompt_zh": "回答者的意思是：",
+            "options": [
+              "考得不好",
+              "考得很好",
+              "考试取消了"
+            ],
+            "answer": 0,
+            "explanation_zh": "I've had better days = 今天不太顺，轻描淡写地说考得不好。"
+          }
+        ]
+      },
+      {
+        "id": "c2-u01-implied-meaning-l2",
+        "order": 2,
+        "kind": "core",
+        "title_en": "Oh, Great",
+        "title_zh": "反讽",
+        "estimated_minutes": 13,
+        "objectives": [
+          {
+            "en": "Tell irony from sincere praise using context and tone.",
+            "zh": "能根据语境和语气分辨反讽和真心的称赞。"
+          },
+          {
+            "en": "Decide when irony is risky and respond appropriately.",
+            "zh": "能判断什么时候用反讽有风险，并恰当回应。"
+          }
+        ],
+        "can_do_ids": [
+          "c2.l.implied",
+          "c2.si.pragmatic"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "listening",
+            "title_zh": "这节课学什么",
+            "body_zh": "Oh, great 可能是真高兴，也可能是“真倒霉”。反讽在英语日常交流里很常见，判断的关键在语境：字面上的正面评价和实际发生的坏事对不上，就要怀疑是反话。这节课也会讨论：在什么场合，反讽最容易被误解。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "The printer strikes again",
+            "instructions_zh": "先听。判断每句话是真心的还是反讽。",
+            "scene_zh": "客户会议前十分钟，办公室的打印机又卡纸了。",
+            "lines": [
+              {
+                "speaker": "Sam",
+                "en": "Oh, great. The printer's jammed again. Just what I needed ten minutes before the client meeting.",
+                "zh": "哦，太好了。打印机又卡纸了。客户会议前十分钟，真是“正合我意”。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Perfect timing, as always. Have you tried turning it off and on again?",
+                "zh": "时机一如既往地“好”。你试过关机再重启吗？"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Ha. Yes, thank you, Lin. That's very original.",
+                "zh": "哈。试过了，谢谢你，Lin。真是“新颖”的建议。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Sorry, I couldn't resist. I'll send the slides to my laptop and we'll present from the screen.",
+                "zh": "抱歉，没忍住。我把幻灯片传到我的笔记本上，我们直接用屏幕演示。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "That would actually be brilliant. I wonder why nobody thought of that before.",
+                "zh": "那真是太好了。奇怪以前怎么没人想到。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Is that sarcasm or a compliment?",
+                "zh": "你这是在讽刺还是在夸我？"
+              },
+              {
+                "speaker": "Sam",
+                "en": "A compliment, I promise! Although I might leave a slightly tongue-in-cheek note for IT.",
+                "zh": "是夸你，我保证！不过我可能会给 IT 部门留一张略带调侃的字条。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "\"Dear IT, thank you for this morning's exciting surprise\"?",
+                "zh": "“亲爱的 IT 部门，感谢今早这个刺激的惊喜”？"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Exactly that.",
+                "zh": "正是这样。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。体会反讽时平淡或夸张的语气。",
+            "items": [
+              "oh-great",
+              "just-what-i-needed",
+              "perfect-timing",
+              "tongue-in-cheek"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "teach",
+            "role": "teach",
+            "skill": "listening",
+            "title_zh": "怎么识别反讽",
+            "explanation_zh": "反讽（irony / sarcasm）是用正面的话说负面的情况。识别信号：1）字面评价和实际情况明显不符（打印机卡纸却说 Oh, great）；2）夸张的称赞（very original、exciting surprise）；3）语气平淡或刻意夸张；4）as always、just what I needed 这类固定说法。同样的话在别的语境里可以是真心的，所以要结合情境判断，拿不准时可以像 Lin 一样直接问。书面交流没有语气提示，对不熟的人、跨文化交流时，反讽很容易被当真或被当成冒犯。",
+            "pattern": "Oh, great. / Just what I needed. / Perfect timing. / Thanks a lot. / That's very original.\n（语境是坏事 → 多半是反讽）",
+            "examples": [
+              {
+                "en": "A flat tyre on the way to the airport. Just what I needed.",
+                "zh": "去机场路上爆胎了，真是“正合我意”。"
+              },
+              {
+                "en": "Thanks a lot. Now I've got coffee all over my shirt.",
+                "zh": "真是谢谢你啊，现在我衬衫上全是咖啡。"
+              },
+              {
+                "en": "Congratulations on the promotion. That's brilliant news!",
+                "zh": "恭喜升职，真是好消息！（真心）"
+              }
+            ],
+            "tips_zh": [
+              "听到反讽，最安全的回应往往是接住真实情绪：That's annoying / Oh no。",
+              "tongue-in-cheek 指半开玩笑、不完全认真的语气，比 sarcastic 温和。"
+            ]
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "listening",
+            "prompt_en": "(The printer has jammed.) \"Oh, great.\"",
+            "prompt_zh": "说话人的意思是：",
+            "options": [
+              "反讽：其实很烦",
+              "真心高兴",
+              "在夸打印机"
+            ],
+            "answer": 0,
+            "explanation_zh": "坏事发生时说 Oh, great，多半是反讽。"
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "listening",
+            "prompt_en": "\"Lovely weather!\"",
+            "prompt_zh": "在哪种情况下，这句话最可能是反讽？",
+            "options": [
+              "外面正下着暴雨",
+              "阳光明媚",
+              "在看天气预报"
+            ],
+            "answer": 0,
+            "explanation_zh": "字面评价和实际情况相反时，就是反讽。"
+          },
+          {
+            "id": "s07",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "instructions_zh": "根据括号里的情境，判断这句话的意思。",
+            "pairs": [
+              {
+                "left": "\"Thanks a lot.\"（对方把咖啡洒在你身上）",
+                "right": "反讽：你可害惨我了"
+              },
+              {
+                "left": "\"That's very original.\"（这个笑话你听了十遍）",
+                "right": "反讽：老掉牙了"
+              },
+              {
+                "left": "\"I can't wait.\"（要去看牙医）",
+                "right": "反讽：一点都不想去"
+              },
+              {
+                "left": "\"Well done!\"（同事拿下了大合同）",
+                "right": "真心祝贺"
+              }
+            ]
+          },
+          {
+            "id": "s08",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "His speech was slightly tongue-in-___; nobody took it too seriously.",
+            "translation_zh": "他的发言有点半开玩笑，没人太当真。",
+            "answers": [
+              "cheek"
+            ],
+            "explanation_zh": "tongue-in-cheek = 半开玩笑的。"
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，说话人的感受是什么？",
+            "audio_en": "Oh, great. The printer's jammed again. Just what I needed ten minutes before the client meeting.",
+            "options": [
+              "很恼火",
+              "很开心",
+              "无所谓"
+            ],
+            "answer": 0,
+            "explanation_zh": "Oh, great 和 Just what I needed 在坏事面前都是反话。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：Lin 提出了什么解决办法？",
+            "options": [
+              "用笔记本电脑在屏幕上演示",
+              "马上修好打印机",
+              "推迟会议"
+            ],
+            "answer": 0,
+            "explanation_zh": "I'll send the slides to my laptop and we'll present from the screen."
+          },
+          {
+            "id": "s11",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：Sam 说 That would actually be brilliant 是真心的吗？",
+            "options": [
+              "是真心称赞，他后来自己说明了",
+              "是反讽",
+              "听不出来"
+            ],
+            "answer": 0,
+            "explanation_zh": "Lin 问 Is that sarcasm or a compliment?，Sam 回答 A compliment, I promise!"
+          },
+          {
+            "id": "s12",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_interaction",
+            "task_zh": "同事开会迟到了一个小时，手里还拿着咖啡，说“Sorry, traffic!”。先用一句反讽的话回应，再换成一句得体、直接的话，最后说明哪种场合用哪一种更合适。",
+            "prompt_en": "Sorry, traffic!",
+            "model_answers": [
+              "Ironic: \"Traffic, of course. And the coffee shop was on the way, I suppose?\" Direct: \"No problem, but we've already covered the first two points. Could you let us know next time if you're running late?\" I'd only use the ironic version with a close colleague who knows I'm joking. In a team meeting, or with someone I don't know well, the direct version is much safer."
+            ],
+            "checklist_zh": [
+              "反讽的一句有清楚的反讽信号",
+              "直接的一句礼貌而清楚",
+              "说明了两种说法分别适合什么场合和关系",
+              "考虑到了反讽可能被误解的风险"
+            ]
+          },
+          {
+            "id": "s13",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "listening",
+            "instructions_zh": "补全反讽的话（一个词）。",
+            "sentence_en": "Oh, ___ timing! The bus left just as we arrived.",
+            "translation_zh": "哦，时机真“好”！我们刚到公交车就开走了。",
+            "answers": [
+              "perfect",
+              "great",
+              "brilliant",
+              "excellent"
+            ],
+            "explanation_zh": "Perfect / Great timing! 在坏事面前是反讽。"
+          },
+          {
+            "id": "s14",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "spoken_interaction",
+            "prompt_zh": "在哪种情况下使用反讽风险最大？",
+            "options": [
+              "第一次给不熟悉的外国客户写邮件",
+              "和老朋友开玩笑",
+              "看喜剧节目时"
+            ],
+            "answer": 0,
+            "explanation_zh": "书面交流没有语气提示，对方又不了解你，反讽很容易被当真或被视为冒犯。"
+          }
+        ]
+      },
+      {
+        "id": "c2-u01-implied-meaning-l3",
+        "order": 3,
+        "kind": "core",
+        "title_en": "I'll See What I Can Do",
+        "title_zh": "委婉的拒绝与暗示",
+        "estimated_minutes": 13,
+        "objectives": [
+          {
+            "en": "Recognise indirect refusals and hints in workplace conversation.",
+            "zh": "能听出职场对话中委婉的拒绝和暗示。"
+          },
+          {
+            "en": "Refuse tactfully but clearly, without being misunderstood.",
+            "zh": "能得体而清楚地拒绝，不让对方误解。"
+          }
+        ],
+        "can_do_ids": [
+          "c2.l.implied",
+          "c2.si.pragmatic",
+          "c2.r.subtext"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "listening",
+            "title_zh": "这节课学什么",
+            "body_zh": "很多“不行”在英语里听起来像“也许可以”：That's an interesting idea、I'll see what I can do、We're rather stretched at the moment。听不出来，就会白白等一个不会来的答复。这节课学识别这些委婉的拒绝，也学自己拒绝时既得体又不含糊。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Can your team help?",
+            "instructions_zh": "先听。Paul 到底有没有答应帮忙？",
+            "scene_zh": "Lin 请另一个部门的 Paul 帮忙测试新应用；之后 Sam 问她结果。",
+            "lines": [
+              {
+                "speaker": "Lin",
+                "en": "Paul, I was wondering if your team could help us test the new app this week.",
+                "zh": "Paul，不知道你们团队这周能不能帮我们测试一下新应用。"
+              },
+              {
+                "speaker": "Paul",
+                "en": "This week? That's an interesting idea. I'll see what I can do.",
+                "zh": "这周？这个想法挺有意思。我看看能做些什么。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Great, thanks! Shall I send you the details?",
+                "zh": "太好了，谢谢！我把详细信息发给你？"
+              },
+              {
+                "speaker": "Paul",
+                "en": "Sure, although we're rather stretched at the moment, with the end-of-year audit.",
+                "zh": "好啊，不过我们现在人手很紧，在忙年终审计。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Ah, I understand. Would next week be any easier?",
+                "zh": "啊，明白。下周会不会好一点？"
+              },
+              {
+                "speaker": "Paul",
+                "en": "Next week would be... less impossible. I'd love to help, but I'd need to check with Rachel first.",
+                "zh": "下周嘛……没那么不可能。我很想帮忙，不过得先问问 Rachel。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Of course. Thanks, Paul, I really appreciate it.",
+                "zh": "当然。谢谢你，Paul，真的很感谢。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "So, is Paul's team helping?",
+                "zh": "那 Paul 的团队会帮忙吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Reading between the lines, I'd say probably not this week, and maybe not at all.",
+                "zh": "体会一下言外之意，我觉得这周大概不会，可能根本不会。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "interesting-idea",
+              "ill-see-what-i-can-do",
+              "rather-stretched",
+              "read-between-the-lines"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "notice",
+            "role": "notice",
+            "skill": "listening",
+            "question_zh": "Paul 的这些话，字面意思和真实意思各是什么？",
+            "examples": [
+              {
+                "en": "That's an interesting idea.",
+                "zh": "字面：想法挺有意思 → 常见的真实意思：我不太看好",
+                "highlight": [
+                  "interesting idea"
+                ]
+              },
+              {
+                "en": "I'll see what I can do.",
+                "zh": "字面：我看看 → 真实意思：不作任何承诺",
+                "highlight": [
+                  "I'll see what I can do"
+                ]
+              },
+              {
+                "en": "We're rather stretched at the moment.",
+                "zh": "字面：人手很紧 → 真实意思：我们帮不了",
+                "highlight": [
+                  "rather stretched"
+                ]
+              },
+              {
+                "en": "I'd love to help, but I'd need to check with Rachel first.",
+                "zh": "字面：很想帮，但要先问 → 真实意思：委婉地推掉",
+                "highlight": [
+                  "I'd love to help, but"
+                ]
+              }
+            ],
+            "takeaway_zh": "委婉拒绝的常见信号：先给正面评价（interesting、I'd love to），然后用 but 引出困难；把决定推给别人（check with ...）；不给具体时间。单独一句可能是真心的，几个信号叠在一起时，基本就是“不行”。"
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "listening",
+            "prompt_en": "I'll see what I can do.",
+            "prompt_zh": "这句话最可能的意思是：",
+            "options": [
+              "不保证能做到",
+              "一定会做",
+              "已经做完了"
+            ],
+            "answer": 0,
+            "explanation_zh": "I'll see what I can do 不是承诺，只是表示会考虑。"
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "listening",
+            "prompt_en": "It might be worth double-checking these figures.",
+            "prompt_zh": "上级这么说，她真正的意思是：",
+            "options": [
+              "这些数字可能有错，你应该检查一下",
+              "数字完全正确",
+              "她会替你检查"
+            ],
+            "answer": 0,
+            "explanation_zh": "这是委婉的指示：数字可能有问题，请你去核对。"
+          },
+          {
+            "id": "s07",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "instructions_zh": "把暗示和它的真实意思配对。",
+            "pairs": [
+              {
+                "left": "We're rather stretched at the moment.",
+                "right": "我们现在忙不过来"
+              },
+              {
+                "left": "That's an interesting idea.",
+                "right": "我对这个想法有保留"
+              },
+              {
+                "left": "I'd love to, but ...",
+                "right": "委婉地拒绝"
+              },
+              {
+                "left": "Is it a bit cold in here?",
+                "right": "请把窗户关上"
+              }
+            ]
+          },
+          {
+            "id": "s08",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "Reading between the ___, I don't think they're very happy.",
+            "translation_zh": "体会一下言外之意，我觉得他们并不太满意。",
+            "answers": [
+              "lines"
+            ],
+            "explanation_zh": "read between the lines = 体会言外之意。"
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，Paul 的真实意思是什么？",
+            "audio_en": "Next week would be... less impossible. I'd love to help, but I'd need to check with Rachel first.",
+            "options": [
+              "下周也很难，这是委婉的拒绝",
+              "下周一定可以",
+              "Rachel 会来帮忙"
+            ],
+            "answer": 0,
+            "explanation_zh": "less impossible（没那么不可能）+ I'd love to, but + 把决定推给别人：几个信号叠加，基本是拒绝。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：Lin 最后的判断是什么？",
+            "options": [
+              "这周大概不会帮，可能根本不会帮",
+              "下周肯定会帮",
+              "Paul 很乐意帮忙"
+            ],
+            "answer": 0,
+            "explanation_zh": "probably not this week, and maybe not at all."
+          },
+          {
+            "id": "s11",
+            "type": "write",
+            "role": "communicative_task",
+            "skill": "written_interaction",
+            "task_zh": "一位你很尊重的前辈邀请你周末参加他组织的徒步活动，你不想去。写一条 3–4 句的消息：得体地拒绝，但要清楚，不让对方以为你下次一定会来。",
+            "model_answers": [
+              "Thank you so much for thinking of me. I'm afraid I won't be able to join the hike this weekend, as I've already got family plans. I hope it goes really well, and I'd love to see the photos!"
+            ],
+            "checklist_zh": [
+              "先感谢了对方的邀请",
+              "用 I'm afraid I won't be able to ... 明确拒绝",
+              "给了简短、真实的理由，没有过度解释",
+              "没有用 maybe / I'll see 这类会让对方误会的模糊说法"
+            ]
+          },
+          {
+            "id": "s12",
+            "type": "order",
+            "role": "exit_ticket",
+            "skill": "spoken_interaction",
+            "instructions_zh": "排成句子。",
+            "translation_zh": "我很想去，但恐怕去不了。",
+            "tokens": [
+              "I'd",
+              "love",
+              "to,",
+              "but",
+              "I'm",
+              "afraid",
+              "I",
+              "can't."
+            ],
+            "answers": [
+              "I'd love to, but I'm afraid I can't."
+            ],
+            "explanation_zh": "I'd love to, but I'm afraid I can't. 得体又明确的拒绝。"
+          },
+          {
+            "id": "s13",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "spoken_interaction",
+            "prompt_zh": "哪一句是得体而且清楚的拒绝？",
+            "options": [
+              "That's kind of you, but I'm afraid I won't be able to make it.",
+              "No.",
+              "Maybe, I'll see."
+            ],
+            "answer": 0,
+            "explanation_zh": "第一句礼貌且明确。No 太生硬；Maybe, I'll see 含糊，可能让对方一直等。"
+          }
+        ]
+      },
+      {
+        "id": "c2-u01-implied-meaning-l4",
+        "order": 4,
+        "kind": "review",
+        "title_en": "Unit Review: What Wasn't Said",
+        "title_zh": "单元复习：没有说出口的话",
+        "estimated_minutes": 15,
+        "objectives": [
+          {
+            "en": "Infer what a reference letter implies from what it says and leaves out.",
+            "zh": "能从推荐信写了什么、没写什么推断出言外之意。"
+          },
+          {
+            "en": "Explain implied meaning to someone who takes it literally, and respond to it in writing.",
+            "zh": "能向只看字面意思的人解释言外之意，并在书面上作出回应。"
+          }
+        ],
+        "can_do_ids": [
+          "c2.l.implied",
+          "c2.r.subtext",
+          "c2.si.pragmatic"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "listening",
+            "title_zh": "单元复习",
+            "body_zh": "两位经理在讨论一封求职者的推荐信。信里每一句都很客气，可她们越读越觉得不对劲。先听她们怎么体会言外之意，再练习自己解读和回应。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "A reference letter",
+            "instructions_zh": "听两遍。注意推荐信里写了什么、没写什么，以及两位经理的推断。",
+            "scene_zh": "总监 Diana 和经理 Kate 在讨论求职者 Mark Foster 的推荐信。",
+            "lines": [
+              {
+                "speaker": "Diana",
+                "en": "Have you seen the reference for Mark Foster?",
+                "zh": "你看过 Mark Foster 的推荐信了吗？"
+              },
+              {
+                "speaker": "Kate",
+                "en": "I have. It's... interesting. They say he's always punctual and has a very relaxed attitude to deadlines.",
+                "zh": "看了。挺……有意思的。信上说他总是很守时，对截止日期的态度非常“放松”。"
+              },
+              {
+                "speaker": "Diana",
+                "en": "Punctual but relaxed about deadlines. That's not exactly a glowing recommendation.",
+                "zh": "守时，但对截止日期很放松。这可算不上热情的推荐。"
+              },
+              {
+                "speaker": "Kate",
+                "en": "No. And there's no mention of his technical skills at all, which is strange for a developer.",
+                "zh": "对。而且完全没提他的技术能力，对一个开发人员来说很奇怪。"
+              },
+              {
+                "speaker": "Diana",
+                "en": "When a reference leaves out the obvious, that usually tells you something.",
+                "zh": "推荐信要是漏掉了最该写的东西，通常就说明了一些问题。"
+              },
+              {
+                "speaker": "Kate",
+                "en": "The last line says they wish him every success in his future career, wherever that may be.",
+                "zh": "最后一句说，祝他在未来的职业生涯中一切顺利，无论去向何方。"
+              },
+              {
+                "speaker": "Diana",
+                "en": "Wherever that may be. I'd say they won't be sorry to see him go.",
+                "zh": "“无论去向何方”。我看他们巴不得他走。"
+              },
+              {
+                "speaker": "Kate",
+                "en": "Still, we shouldn't judge him on one letter. Shall we ask for a second reference?",
+                "zh": "不过，我们也不该凭一封信下结论。要不要再要一封推荐信？"
+              },
+              {
+                "speaker": "Diana",
+                "en": "Good idea. It would be a bit unfair otherwise.",
+                "zh": "好主意。不然有点不公平。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "推荐信里提到了 Mark 的什么优点？",
+            "options": [
+              "守时",
+              "技术能力强",
+              "团队合作好"
+            ],
+            "answer": 0,
+            "explanation_zh": "They say he's always punctual。技术能力完全没提。"
+          },
+          {
+            "id": "s04",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "推荐信没提技术能力，Diana 认为这说明什么？",
+            "options": [
+              "他这方面可能不强",
+              "写信的人忘了",
+              "技术能力不重要"
+            ],
+            "answer": 0,
+            "explanation_zh": "When a reference leaves out the obvious, that usually tells you something."
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "她们最后决定怎么做？",
+            "options": [
+              "再要一封推荐信",
+              "直接拒绝他",
+              "直接录用他"
+            ],
+            "answer": 0,
+            "explanation_zh": "Shall we ask for a second reference? — Good idea."
+          },
+          {
+            "id": "s06",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "reading",
+            "instructions_zh": "把推荐信或对话里的说法和它的言外之意配对。",
+            "pairs": [
+              {
+                "left": "has a very relaxed attitude to deadlines",
+                "right": "经常拖延"
+              },
+              {
+                "left": "wherever that may be",
+                "right": "不在乎他去哪，巴不得他走"
+              },
+              {
+                "left": "not exactly a glowing recommendation",
+                "right": "评价相当负面"
+              },
+              {
+                "left": "It's... interesting.",
+                "right": "有问题，有所保留"
+              }
+            ]
+          },
+          {
+            "id": "s07",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "That's not ___ a glowing recommendation.",
+            "translation_zh": "这可算不上热情的推荐。",
+            "answers": [
+              "exactly"
+            ],
+            "explanation_zh": "not exactly + 正面词 = 轻描淡写的否定。"
+          },
+          {
+            "id": "s08",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_interaction",
+            "task_zh": "朋友在网上看到一套出租房，房东的描述是：“The flat has a lot of character, it's cosy, and it's very convenient for the nightlife.” 朋友觉得很完美。向他解释每一句可能的言外之意，并建议他看房时问哪些问题。",
+            "prompt_en": "This flat sounds perfect, doesn't it?",
+            "model_answers": [
+              "Maybe, but I'd read between the lines a bit. \"A lot of character\" often means it's old and might need repairs. \"Cosy\" usually means small. And \"very convenient for the nightlife\" could mean it's noisy at night. So when you visit, I'd ask how old the heating is, measure the bedroom, and go back in the evening to check the noise."
+            ],
+            "checklist_zh": [
+              "解释了至少三句话的言外之意",
+              "说明是“可能”的含义，没有说得太绝对",
+              "给出了具体可行的看房建议",
+              "语气友好，像在和朋友聊天"
+            ]
+          },
+          {
+            "id": "s09",
+            "type": "write",
+            "role": "communicative_task",
+            "skill": "written_production",
+            "task_zh": "你给一家公司发了合作方案，收到这样的回复：“Thank you for your proposal, which we found very thorough. We will certainly keep it on file and be in touch should a suitable opportunity arise.” 写一段 100–150 词：分析这封回复的言外之意，并说明你下一步会怎么做。",
+            "model_answers": [
+              "Although the reply is polite, it is almost certainly a rejection. Praising the proposal as \"very thorough\" says nothing about whether they liked the idea, and \"we will certainly keep it on file\" is a common way of ending a conversation without saying no. The phrase \"should a suitable opportunity arise\" places the next step entirely in their hands and gives no timescale, which suggests they are not planning to contact us. Rather than waiting, I would send a brief, gracious reply thanking them for their time and asking whether there is anything specific that would make a future proposal more relevant to their needs. That keeps the door open, shows professionalism, and may give us useful feedback for other clients."
+            ],
+            "checklist_zh": [
+              "明确判断出这是委婉的拒绝",
+              "至少分析了两个具体的说法",
+              "给出了有分寸、专业的下一步",
+              "用了 suggests / almost certainly 等表示推断的表达"
+            ]
+          },
+          {
+            "id": "s10",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "listening",
+            "instructions_zh": "补全句子（一个词）。",
+            "sentence_en": "\"How was your day?\" \"I've had ___ days.\"",
+            "translation_zh": "“今天过得怎么样？”“不怎么样。”",
+            "answers": [
+              "better"
+            ],
+            "explanation_zh": "I've had better days = 今天不太顺。"
+          },
+          {
+            "id": "s11",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "listening",
+            "prompt_en": "She's not unfriendly.",
+            "prompt_zh": "这句话的意思是：",
+            "options": [
+              "她还算友好，但不算热情",
+              "她很不友好",
+              "她非常热情"
+            ],
+            "answer": 0,
+            "explanation_zh": "not un- 是有保留的肯定。"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,1215 @@
+{
+  "content_schema_version": 1,
+  "source_type": "first_party",
+  "review_status": "pending_owner_review",
+  "unit": {
+    "id": "b2-u03-hedging",
+    "level": "b2",
+    "order": 3,
+    "status": "published",
+    "title_en": "It Seems That...",
+    "title_zh": "委婉与立场",
+    "summary_zh": "用 seem、tend to、likely、arguably、I'd say 等表达，说清楚自己有多确定，把观点和批评说得有分寸。学完后，你能分辨“证明了”和“表明了”，在讨论和反馈中显得严谨又得体。",
+    "can_do": [
+      {
+        "id": "b2.gr.hedging",
+        "skill": "grammar",
+        "en": "Can use modal verbs, adverbs and expressions such as seem, tend to and be likely to, to show how certain a claim is.",
+        "zh": "能用情态动词、副词以及 seem、tend to、be likely to 等表达说明一个说法有多确定。"
+      },
+      {
+        "id": "b2.si.diplomatic",
+        "skill": "spoken_interaction",
+        "en": "Can soften opinions and criticism to sound appropriately cautious and polite in discussions and feedback.",
+        "zh": "能在讨论和反馈中把观点和批评说得委婉、有分寸。"
+      },
+      {
+        "id": "b2.l.stance",
+        "skill": "listening",
+        "en": "Can recognise how certain a speaker is and tell facts from claims in an interview or discussion.",
+        "zh": "能在访谈或讨论中听出说话人的确定程度，分辨事实和看法。"
+      }
+    ],
+    "grammar_points": [
+      {
+        "id": "b2.hedging",
+        "title_en": "Hedging: showing how certain you are",
+        "title_zh": "委婉语：表达确定程度",
+        "pattern": "It seems that ... / X appears to + verb / X tends to + verb\nIt's (very) likely that ... / X is likely to + verb\nResearch suggests that ... (not: proves)\nArguably, ... / to some extent / may well",
+        "explanation_zh": "英语讨论和写作很在意“你有多确定”。seem / appear + to do（或 It seems that ...）表示“看起来”；tend to do 表示“往往、通常”；may / might / could 和 may well 降低确定性；be likely to do / It's likely that ... 表示“很可能”。suggest / indicate 说研究“表明”，prove 才是“证明”。arguably（可以说）、to some extent（在某种程度上）让观点留有余地。口语里，I'd say ...、I'm not entirely convinced ...、It might be worth + -ing、Wouldn't it be ...? 能把建议和批评说得更委婉。",
+        "examples": [
+          {
+            "en": "Older customers tend to find the app confusing.",
+            "zh": "年纪大一些的用户往往觉得这个应用不好用。"
+          },
+          {
+            "en": "The study suggests a link, but it doesn't prove that coffee causes anything.",
+            "zh": "这项研究表明两者有关联，但并没有证明咖啡会导致什么。"
+          },
+          {
+            "en": "It might be worth testing it with a few users.",
+            "zh": "也许值得找几个用户测试一下。"
+          }
+        ],
+        "common_errors": [
+          {
+            "wrong": "Old people tend find it confusing.",
+            "right": "Older people tend to find it confusing.",
+            "why_zh": "tend 后面要加 to + 动词原形。"
+          },
+          {
+            "wrong": "She is likely get the job.",
+            "right": "She is likely to get the job.",
+            "why_zh": "be likely to + 动词原形。"
+          },
+          {
+            "wrong": "This study proves that sleep may help memory.",
+            "right": "This study suggests that sleep may help memory.",
+            "why_zh": "prove（证明）语气太绝对，和 may 矛盾；说研究结果常用 suggest / indicate。"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "key": "seem",
+        "text": "seem",
+        "pos": "verb",
+        "ipa": "/siːm/",
+        "zh": "似乎；看起来",
+        "example_en": "It seems that most people are happy with it.",
+        "example_zh": "看起来大多数人对它挺满意。"
+      },
+      {
+        "key": "appear",
+        "text": "appear (to)",
+        "pos": "verb",
+        "ipa": "/əˈpɪə/",
+        "zh": "似乎；显得（比 seem 稍正式）",
+        "example_en": "Younger users appear to like it.",
+        "example_zh": "年轻用户似乎很喜欢它。"
+      },
+      {
+        "key": "tend-to",
+        "text": "tend to",
+        "pos": "phrase",
+        "ipa": "/tend tə/",
+        "zh": "往往；倾向于",
+        "example_en": "People tend to spend more at weekends.",
+        "example_zh": "人们往往在周末花得更多。"
+      },
+      {
+        "key": "presumably",
+        "text": "presumably",
+        "pos": "adverb",
+        "ipa": "/prɪˈzjuːməbli/",
+        "zh": "大概；想必",
+        "example_en": "Presumably we'll need a bigger sample.",
+        "example_zh": "想必我们需要更大的样本。"
+      },
+      {
+        "key": "arguably",
+        "text": "arguably",
+        "pos": "adverb",
+        "ipa": "/ˈɑːɡjuəbli/",
+        "zh": "可以说；有理由认为",
+        "example_en": "It's arguably the best film of the year.",
+        "example_zh": "它可以说是今年最好的电影。"
+      },
+      {
+        "key": "to-some-extent",
+        "text": "to some extent",
+        "pos": "phrase",
+        "ipa": "/tə sʌm ɪkˈstent/",
+        "zh": "在某种程度上",
+        "example_en": "I agree with you to some extent.",
+        "example_zh": "我在某种程度上同意你。"
+      },
+      {
+        "key": "likely",
+        "text": "likely",
+        "pos": "adjective",
+        "ipa": "/ˈlaɪkli/",
+        "zh": "很可能的",
+        "example_en": "It's quite likely that the train will be late.",
+        "example_zh": "火车很可能会晚点。"
+      },
+      {
+        "key": "may-well",
+        "text": "may well",
+        "pos": "phrase",
+        "ipa": "/meɪ wel/",
+        "zh": "很可能；完全有可能",
+        "example_en": "It may well be that notifications are the real problem.",
+        "example_zh": "很可能真正的问题在于通知。"
+      },
+      {
+        "key": "id-say",
+        "text": "I'd say ...",
+        "pos": "phrase",
+        "ipa": "/aɪd seɪ/",
+        "zh": "我会说……；我觉得……（语气较委婉）",
+        "example_en": "I'd say it's a big improvement.",
+        "example_zh": "我觉得这是很大的改进。"
+      },
+      {
+        "key": "not-entirely-convinced",
+        "text": "I'm not entirely convinced ...",
+        "pos": "phrase",
+        "ipa": "/aɪm nɒt ɪnˈtaɪəli kənˈvɪnst/",
+        "zh": "我不完全相信……（委婉地质疑）",
+        "example_en": "I'm not entirely convinced the menu is easy to find.",
+        "example_zh": "我不太确定菜单是否容易找到。"
+      },
+      {
+        "key": "might-be-worth",
+        "text": "It might be worth + -ing",
+        "pos": "phrase",
+        "ipa": "/ɪt maɪt bi wɜːθ/",
+        "zh": "也许值得……（委婉地建议）",
+        "example_en": "It might be worth asking the team first.",
+        "example_zh": "也许值得先问问团队。"
+      },
+      {
+        "key": "inclined-to",
+        "text": "I'm inclined to ...",
+        "pos": "phrase",
+        "ipa": "/aɪm ɪnˈklaɪnd tə/",
+        "zh": "我倾向于……",
+        "example_en": "I'm inclined to keep it as it is.",
+        "example_zh": "我倾向于保持原样。"
+      }
+    ],
+    "lessons": [
+      {
+        "id": "b2-u03-hedging-l1",
+        "order": 1,
+        "kind": "core",
+        "title_en": "It Seems That...",
+        "title_zh": "看起来……",
+        "estimated_minutes": 12,
+        "objectives": [
+          {
+            "en": "Report findings cautiously with seem, appear and tend to.",
+            "zh": "能用 seem、appear、tend to 谨慎地描述发现。"
+          },
+          {
+            "en": "Choose suggest rather than prove when evidence is limited.",
+            "zh": "证据有限时能用 suggest 而不是 prove。"
+          }
+        ],
+        "can_do_ids": [
+          "b2.gr.hedging",
+          "b2.l.stance"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "grammar",
+            "title_zh": "这节课学什么",
+            "body_zh": "汇报调查结果时，直接说“用户都喜欢”很容易被追问“你怎么知道？”。英语里常用 seem、appear、tend to、may 给结论留有余地，这并不是没把握，而是表达得严谨。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "The customer survey",
+            "instructions_zh": "先听。注意 Lin 怎么描述调查结果，哪些地方她说得很肯定，哪些地方留有余地。",
+            "scene_zh": "Kate 和 Lin 在讨论一份用户调查报告。",
+            "lines": [
+              {
+                "speaker": "Kate",
+                "en": "Have you looked at the customer survey yet?",
+                "zh": "你看过那份用户调查了吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Yes. Generally speaking, it seems that most people are happy with the app.",
+                "zh": "看过了。总体来说，大多数人似乎对这个应用挺满意。"
+              },
+              {
+                "speaker": "Kate",
+                "en": "What about the new payment feature?",
+                "zh": "那新的支付功能呢？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Younger users appear to like it, whereas older customers tend to find it confusing.",
+                "zh": "年轻用户似乎很喜欢，而年长的用户往往觉得它不好用。"
+              },
+              {
+                "speaker": "Kate",
+                "en": "Is that a big problem?",
+                "zh": "这是个大问题吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "It's hard to say. Only about two hundred people answered, so the results may not be representative.",
+                "zh": "很难说。只有大约两百人回答，所以结果未必有代表性。"
+              },
+              {
+                "speaker": "Kate",
+                "en": "Fair enough. Presumably we'll need a bigger sample before we change anything.",
+                "zh": "有道理。想必在改动之前，我们需要更大的样本。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "I think so. It would seem sensible to run a second survey next month.",
+                "zh": "我也这么想。下个月再做一次调查似乎比较稳妥。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "seem",
+              "appear",
+              "tend-to",
+              "presumably"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "notice",
+            "role": "notice",
+            "skill": "grammar",
+            "question_zh": "这些句子里，哪些词让说法没那么绝对？它们后面接什么形式？",
+            "examples": [
+              {
+                "en": "It seems that most people are happy with the app.",
+                "zh": "看起来大多数人对这个应用挺满意。",
+                "highlight": [
+                  "It seems that"
+                ]
+              },
+              {
+                "en": "Younger users appear to like it.",
+                "zh": "年轻用户似乎很喜欢它。",
+                "highlight": [
+                  "appear to like"
+                ]
+              },
+              {
+                "en": "Older customers tend to find it confusing.",
+                "zh": "年长的用户往往觉得它不好用。",
+                "highlight": [
+                  "tend to find"
+                ]
+              },
+              {
+                "en": "The results may not be representative.",
+                "zh": "结果未必有代表性。",
+                "highlight": [
+                  "may not be"
+                ]
+              }
+            ],
+            "takeaway_zh": "It seems / appears that + 句子，或 主语 + seem / appear + to do：表示“看起来”。tend to do：表示“通常、往往”，说的是倾向而不是绝对。may / might / could 降低确定性。这些词让结论建立在证据上，而不是一口咬定。"
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_en": "Older users ___ find the app confusing.",
+            "prompt_zh": "选出正确的形式：",
+            "options": [
+              "tend to",
+              "tend",
+              "are tending"
+            ],
+            "answer": 0,
+            "explanation_zh": "tend to + 动词原形：往往会……"
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_zh": "调查只问了两百人。哪一句最严谨？",
+            "options": [
+              "The results prove that users love the app.",
+              "The results suggest that most users like the app.",
+              "Everybody loves the app."
+            ],
+            "answer": 1,
+            "explanation_zh": "样本有限，用 suggest（表明）和 most（大多数），而不是 prove 或 everybody。"
+          },
+          {
+            "id": "s07",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "It ___ that the meeting has been cancelled.",
+            "translation_zh": "看起来会议被取消了。",
+            "answers": [
+              "seems",
+              "appears"
+            ],
+            "explanation_zh": "It seems / appears that + 句子。"
+          },
+          {
+            "id": "s08",
+            "type": "order",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "排成句子。",
+            "translation_zh": "年轻用户似乎很喜欢它。",
+            "tokens": [
+              "to",
+              "users",
+              "it.",
+              "Younger",
+              "like",
+              "appear"
+            ],
+            "answers": [
+              "Younger users appear to like it."
+            ],
+            "explanation_zh": "主语 + appear + to do。"
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，说话人为什么对结果有保留？",
+            "audio_en": "Only about two hundred people answered, so the results may not be representative.",
+            "options": [
+              "回答的人太少",
+              "问题设计得不好",
+              "调查做得太早"
+            ],
+            "answer": 0,
+            "explanation_zh": "Only about two hundred people answered：样本太小，所以 may not be representative。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：Lin 建议下一步怎么做？",
+            "options": [
+              "下个月再做一次调查",
+              "马上修改支付功能",
+              "取消新功能"
+            ],
+            "answer": 0,
+            "explanation_zh": "It would seem sensible to run a second survey next month."
+          },
+          {
+            "id": "s11",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "People ___ to spend more online at weekends.",
+            "translation_zh": "人们往往在周末网购花得更多。",
+            "answers": [
+              "tend"
+            ],
+            "explanation_zh": "tend to do：往往。"
+          },
+          {
+            "id": "s12",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_en": "Presumably, the price will go up.",
+            "prompt_zh": "这句话的意思是：",
+            "options": [
+              "说话人推测价格会上涨",
+              "说话人确定价格会上涨",
+              "价格已经上涨了"
+            ],
+            "answer": 0,
+            "explanation_zh": "presumably = 大概、想必，是有根据的推测，不是确定。"
+          }
+        ]
+      },
+      {
+        "id": "b2-u03-hedging-l2",
+        "order": 2,
+        "kind": "core",
+        "title_en": "Likely, Arguably, To Some Extent",
+        "title_zh": "有几分把握？",
+        "estimated_minutes": 13,
+        "objectives": [
+          {
+            "en": "Place claims on a scale of certainty with likely, may well and might.",
+            "zh": "能用 likely、may well、might 等表达不同的确定程度。"
+          },
+          {
+            "en": "Qualify opinions with arguably and to some extent.",
+            "zh": "能用 arguably、to some extent 给观点留余地。"
+          }
+        ],
+        "can_do_ids": [
+          "b2.gr.hedging",
+          "b2.l.stance",
+          "b2.wp.coherent"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "grammar",
+            "title_zh": "这节课学什么",
+            "body_zh": "“手机毁掉了我们的专注力”——这种说法很抓眼球，但太绝对。这节课学一把“确定程度的尺子”：从 definitely 到 unlikely，再加上 arguably、to some extent，让你在同意和不同意之间找到准确的位置。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Are phones ruining our focus?",
+            "instructions_zh": "先听。注意两个人对文章观点同意到什么程度。",
+            "scene_zh": "午休时，Sam 和 Lin 在讨论一篇关于智能手机的文章。",
+            "lines": [
+              {
+                "speaker": "Sam",
+                "en": "This article claims that smartphones have destroyed our ability to concentrate.",
+                "zh": "这篇文章说，智能手机毁掉了我们的专注能力。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "That's a bit strong. They've arguably made it harder, but destroyed is an exaggeration.",
+                "zh": "说得有点过了。可以说手机让专注变难了，但“毁掉”是夸张。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "I agree to some extent. I definitely check my phone more than I'd like.",
+                "zh": "我在某种程度上同意。我确实比自己希望的更频繁地看手机。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Me too. It's quite likely that notifications are the real problem, not the phones themselves.",
+                "zh": "我也是。很可能真正的问题是通知，而不是手机本身。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "So if we turned them off, we'd probably focus better?",
+                "zh": "所以如果我们关掉通知，大概就能更专注？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Possibly. But research suggests that even having a phone on the desk can be distracting.",
+                "zh": "有可能。不过研究表明，哪怕只是把手机放在桌上也会让人分心。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Then it's unlikely that turning off notifications alone will solve it.",
+                "zh": "那光关掉通知不太可能解决问题。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "True. It may well be that we need to put our phones in another room.",
+                "zh": "没错。很可能我们得把手机放到另一个房间去。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "arguably",
+              "to-some-extent",
+              "likely",
+              "may-well"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "teach",
+            "role": "teach",
+            "skill": "grammar",
+            "title_zh": "确定程度的尺子",
+            "explanation_zh": "从最确定到最不确定，大致是：definitely / certainly → (very) likely / probably → may well → may / might / could / possibly → unlikely。likely 有两种用法：It's likely that + 句子，或 主语 + be likely to + 动词原形。arguably 表示“可以这么说（有理由，但别人可能不同意）”。to some extent 表示“在某种程度上”，常用来部分同意。说研究结果时用 suggest / indicate（表明），只有非常确凿时才用 prove / show。",
+            "pattern": "It's (very / quite) likely that + 句子\n主语 + is likely / unlikely to + 动词原形\nIt may well be that + 句子\nArguably, ... / I agree to some extent.",
+            "examples": [
+              {
+                "en": "She's likely to get the job.",
+                "zh": "她很可能拿到这份工作。"
+              },
+              {
+                "en": "It's unlikely that the problem will go away on its own.",
+                "zh": "这个问题不太可能自行消失。"
+              },
+              {
+                "en": "This is arguably the most important decision we'll make this year.",
+                "zh": "这可以说是我们今年要做的最重要的决定。"
+              }
+            ],
+            "tips_zh": [
+              "讨论和学术写作里，always、never、prove、everyone 这类绝对化的词最容易被质疑。",
+              "may well 比 may 更确定，意思接近“很有可能”。"
+            ]
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_en": "There's heavy snow on the line. It's ___ that the train will be late.",
+            "prompt_zh": "选出最合适的词：",
+            "options": [
+              "very likely",
+              "unlikely",
+              "arguably"
+            ],
+            "answer": 0,
+            "explanation_zh": "有大雪，晚点的可能性很高：very likely。"
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_en": "She's likely ___ the job.",
+            "prompt_zh": "选出正确的形式：",
+            "options": [
+              "to get",
+              "getting",
+              "get"
+            ],
+            "answer": 0,
+            "explanation_zh": "be likely to + 动词原形。"
+          },
+          {
+            "id": "s07",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "把表达和它的确定程度配对。",
+            "pairs": [
+              {
+                "left": "It will definitely rain.",
+                "right": "几乎确定"
+              },
+              {
+                "left": "It's very likely to rain.",
+                "right": "很可能"
+              },
+              {
+                "left": "It might rain.",
+                "right": "有可能，但不确定"
+              },
+              {
+                "left": "It's unlikely to rain.",
+                "right": "不太可能"
+              }
+            ]
+          },
+          {
+            "id": "s08",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "I agree with you to some ___.",
+            "translation_zh": "我在某种程度上同意你。",
+            "answers": [
+              "extent",
+              "degree"
+            ],
+            "explanation_zh": "to some extent / degree = 在某种程度上。"
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，说话人对文章观点的态度是什么？",
+            "audio_en": "They've arguably made it harder, but destroyed is an exaggeration.",
+            "options": [
+              "部分同意，但认为说法夸张",
+              "完全同意",
+              "完全反对"
+            ],
+            "answer": 0,
+            "explanation_zh": "arguably made it harder（可以说更难了）+ but ... an exaggeration（但“毁掉”是夸张）。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：研究表明什么会让人分心？",
+            "options": [
+              "桌上放着手机",
+              "通知太少",
+              "关掉手机"
+            ],
+            "answer": 0,
+            "explanation_zh": "even having a phone on the desk can be distracting。"
+          },
+          {
+            "id": "s11",
+            "type": "write",
+            "role": "communicative_task",
+            "skill": "written_production",
+            "task_zh": "回应一个绝对化的说法：“Online learning is always worse than classroom learning.” 写 4–5 句，用 arguably、to some extent、research suggests、likely / unlikely 等表达，让你的观点有分寸。",
+            "model_answers": [
+              "I agree with this claim only to some extent. Classroom learning is arguably better for young children, who need direct contact with teachers. However, research suggests that adults with clear goals can learn just as well online. It's also likely that the quality of the course matters more than where it takes place. So it's unlikely that one format is always worse than the other."
+            ],
+            "checklist_zh": [
+              "没有用 always / never / prove 这类绝对化的词",
+              "至少用了 arguably 或 to some extent",
+              "用 research suggests / indicates 引用证据",
+              "用了 likely / unlikely 表示可能性，形式正确"
+            ]
+          },
+          {
+            "id": "s12",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "It may ___ be that the problem is the software, not the hardware.",
+            "translation_zh": "很可能问题出在软件而不是硬件上。",
+            "answers": [
+              "well"
+            ],
+            "explanation_zh": "It may well be that ...：很有可能……"
+          },
+          {
+            "id": "s13",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_en": "Research ___ that sleep improves memory.",
+            "prompt_zh": "哪个词让说法最有分寸？",
+            "options": [
+              "suggests",
+              "proves",
+              "guarantees"
+            ],
+            "answer": 0,
+            "explanation_zh": "suggest（表明）留有余地；prove、guarantee 太绝对。"
+          }
+        ]
+      },
+      {
+        "id": "b2-u03-hedging-l3",
+        "order": 3,
+        "kind": "core",
+        "title_en": "I'm Not Entirely Convinced",
+        "title_zh": "委婉地提意见",
+        "estimated_minutes": 13,
+        "objectives": [
+          {
+            "en": "Give feedback diplomatically with I'd say, I'm not entirely convinced and It might be worth.",
+            "zh": "能用 I'd say、I'm not entirely convinced、It might be worth 得体地给反馈。"
+          },
+          {
+            "en": "Make suggestions with negative questions such as Wouldn't it be ...?",
+            "zh": "能用 Wouldn't it be ...? 这类否定疑问句提建议。"
+          }
+        ],
+        "can_do_ids": [
+          "b2.si.diplomatic",
+          "b2.gr.hedging",
+          "b2.l.stance"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "spoken_interaction",
+            "title_zh": "这节课学什么",
+            "body_zh": "同事请你评价他的设计。直接说“菜单太难找了，放到上面去”，内容没错，但听起来像命令。这节课学职场里常见的委婉说法：先肯定，再用 I'm not entirely convinced、It might be worth ...、Wouldn't it be ...? 提出意见。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Feedback on a design",
+            "instructions_zh": "先听。注意 Lin 怎么提出批评和建议，Mark 怎么回应。",
+            "scene_zh": "设计师 Mark 请 Lin 看看新的网站首页。",
+            "lines": [
+              {
+                "speaker": "Mark",
+                "en": "So, what do you think of the new homepage design?",
+                "zh": "你觉得新的首页设计怎么样？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Overall, I'd say it's a big improvement. The colours are much fresher.",
+                "zh": "总的来说，我觉得改进很大，颜色清新多了。"
+              },
+              {
+                "speaker": "Mark",
+                "en": "But?",
+                "zh": "但是？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Well, I'm not entirely convinced the menu is easy to find. It might be worth testing it with a few users.",
+                "zh": "嗯，我不太确定菜单是否容易找到。也许值得找几个用户测试一下。"
+              },
+              {
+                "speaker": "Mark",
+                "en": "You think people won't see it?",
+                "zh": "你觉得大家会看不到？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Some might miss it, yes. Wouldn't it be clearer to put it at the top?",
+                "zh": "有些人可能会漏掉。放到顶部会不会更清楚？"
+              },
+              {
+                "speaker": "Mark",
+                "en": "I'm inclined to keep it on the side, but I take your point about testing.",
+                "zh": "我倾向于把它留在侧边，不过测试这点我同意。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "That seems like a fair compromise. Let's see what the users say.",
+                "zh": "这似乎是个合理的折中。看看用户怎么说吧。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "id-say",
+              "not-entirely-convinced",
+              "might-be-worth",
+              "inclined-to"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "notice",
+            "role": "notice",
+            "skill": "spoken_interaction",
+            "question_zh": "Lin 的这些话，如果说得直接，会是什么样？",
+            "examples": [
+              {
+                "en": "I'd say it's a big improvement.",
+                "zh": "我觉得改进很大。",
+                "highlight": [
+                  "I'd say"
+                ]
+              },
+              {
+                "en": "I'm not entirely convinced the menu is easy to find.",
+                "zh": "我不太确定菜单是否容易找到。",
+                "highlight": [
+                  "I'm not entirely convinced"
+                ]
+              },
+              {
+                "en": "It might be worth testing it with a few users.",
+                "zh": "也许值得找几个用户测试一下。",
+                "highlight": [
+                  "It might be worth testing"
+                ]
+              },
+              {
+                "en": "Wouldn't it be clearer to put it at the top?",
+                "zh": "放到顶部会不会更清楚？",
+                "highlight": [
+                  "Wouldn't it be"
+                ]
+              }
+            ],
+            "takeaway_zh": "先肯定（I'd say it's a big improvement），再委婉地质疑（I'm not entirely convinced ...），然后提建议（It might be worth + -ing / Wouldn't it be ...?）。否定疑问句 Wouldn't it be ...? 其实是在提建议，不是在真正提问。"
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "spoken_interaction",
+            "prompt_zh": "你想委婉地告诉同事报告太长了：",
+            "options": [
+              "It might be worth cutting a few pages.",
+              "Your report is too long.",
+              "Nobody will read all this."
+            ],
+            "answer": 0,
+            "explanation_zh": "It might be worth + -ing：委婉的建议。"
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "spoken_interaction",
+            "prompt_en": "Wouldn't it be cheaper to take the train?",
+            "prompt_zh": "说话人的意思是：",
+            "options": [
+              "委婉地建议坐火车",
+              "在问火车票的价格",
+              "反对坐火车"
+            ],
+            "answer": 0,
+            "explanation_zh": "Wouldn't it be ...? 是用否定疑问句提建议。"
+          },
+          {
+            "id": "s07",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "用括号里的动词补全。",
+            "sentence_en": "It might be worth ___ (ask) the team first.",
+            "translation_zh": "也许值得先问问团队。",
+            "answers": [
+              "asking"
+            ],
+            "explanation_zh": "It might be worth + -ing。"
+          },
+          {
+            "id": "s08",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "spoken_interaction",
+            "instructions_zh": "把直接的说法和委婉的说法配对。",
+            "pairs": [
+              {
+                "left": "That's wrong.",
+                "right": "I'm not entirely sure that's right."
+              },
+              {
+                "left": "Change the title.",
+                "right": "It might be worth changing the title."
+              },
+              {
+                "left": "Put it at the top.",
+                "right": "Wouldn't it be clearer at the top?"
+              },
+              {
+                "left": "It's good.",
+                "right": "I'd say it's pretty good."
+              }
+            ]
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，Mark 的态度是什么？",
+            "audio_en": "I'm inclined to keep it on the side, but I take your point about testing.",
+            "options": [
+              "倾向于不改，但同意先测试",
+              "马上把菜单移到顶部",
+              "拒绝做测试"
+            ],
+            "answer": 0,
+            "explanation_zh": "I'm inclined to keep it（倾向于保留）+ I take your point about testing（同意测试）。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：Lin 对新设计的整体评价是什么？",
+            "options": [
+              "改进很大",
+              "不如以前",
+              "没什么变化"
+            ],
+            "answer": 0,
+            "explanation_zh": "Overall, I'd say it's a big improvement."
+          },
+          {
+            "id": "s11",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_interaction",
+            "task_zh": "同事请你评价他的演示文稿。先肯定一点，再委婉地提出两个修改建议（I'd say ...、I'm not entirely convinced ...、It might be worth ...、Wouldn't it be ...?），最后提一个折中的办法。",
+            "prompt_en": "Be honest — what did you think of my slides?",
+            "model_answers": [
+              "I'd say the structure is really clear, and the charts look great. I'm not entirely convinced the opening grabs attention, though. It might be worth starting with a surprising number. And wouldn't it be easier to follow with less text on each slide? Maybe you could keep the details in the notes and just show the key points."
+            ],
+            "checklist_zh": [
+              "先肯定了一个优点",
+              "至少两种委婉表达（I'm not entirely convinced / It might be worth / Wouldn't it be）",
+              "It might be worth 后面接了 -ing",
+              "最后提了一个具体的折中办法"
+            ]
+          },
+          {
+            "id": "s12",
+            "type": "order",
+            "role": "exit_ticket",
+            "skill": "spoken_interaction",
+            "instructions_zh": "排成句子。",
+            "translation_zh": "我不完全相信这会奏效。",
+            "tokens": [
+              "convinced",
+              "I'm",
+              "entirely",
+              "work.",
+              "not",
+              "it",
+              "will"
+            ],
+            "answers": [
+              "I'm not entirely convinced it will work."
+            ],
+            "explanation_zh": "I'm not entirely convinced + 句子：委婉地质疑。"
+          },
+          {
+            "id": "s13",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "spoken_interaction",
+            "prompt_zh": "在会议上不同意上级的方案，哪一句最得体？",
+            "options": [
+              "I'm inclined to disagree, but I can see the advantages.",
+              "You're wrong.",
+              "That's nonsense."
+            ],
+            "answer": 0,
+            "explanation_zh": "I'm inclined to disagree 语气缓和，再承认对方的优点，更容易继续讨论。"
+          }
+        ]
+      },
+      {
+        "id": "b2-u03-hedging-l4",
+        "order": 4,
+        "kind": "review",
+        "title_en": "Unit Review: What Does the Study Really Say?",
+        "title_zh": "单元复习：研究到底说了什么？",
+        "estimated_minutes": 14,
+        "objectives": [
+          {
+            "en": "Tell what an expert is sure about and what she only thinks is likely.",
+            "zh": "能听出专家哪些地方确定，哪些地方只是认为可能。"
+          },
+          {
+            "en": "Rewrite overconfident claims and explain a misleading headline.",
+            "zh": "能改写过于绝对的说法，并解释一个误导性的标题。"
+          }
+        ],
+        "can_do_ids": [
+          "b2.l.stance",
+          "b2.gr.hedging",
+          "b2.si.diplomatic"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "listening",
+            "title_zh": "单元复习",
+            "body_zh": "新闻标题说“喝咖啡让人更长寿”。电台请来一位研究者解释这项研究到底说了什么。听的时候注意她哪里说得肯定，哪里留有余地。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Coffee and a longer life?",
+            "instructions_zh": "听两遍。第一遍听她的总体判断，第二遍注意她用来表示确定程度的词。",
+            "scene_zh": "电台科普节目，主持人采访研究者 Dr Lee。",
+            "lines": [
+              {
+                "speaker": "Host",
+                "en": "A new study links coffee to a longer life. Should we all be drinking more?",
+                "zh": "一项新研究把咖啡和长寿联系在一起。我们都该多喝点吗？"
+              },
+              {
+                "speaker": "Dr Lee",
+                "en": "Not so fast. The study suggests a link, but it doesn't prove that coffee causes anything.",
+                "zh": "别急。这项研究表明两者有关联，但并没有证明咖啡导致了什么。"
+              },
+              {
+                "speaker": "Host",
+                "en": "Why not?",
+                "zh": "为什么？"
+              },
+              {
+                "speaker": "Dr Lee",
+                "en": "Coffee drinkers may well differ in other ways. They tend to be wealthier, for instance, and wealth is itself linked to better health.",
+                "zh": "喝咖啡的人很可能在其他方面也不一样。比如，他们往往更富裕，而财富本身就和更好的健康相关。"
+              },
+              {
+                "speaker": "Host",
+                "en": "So the headlines are misleading?",
+                "zh": "所以那些标题有误导性？"
+              },
+              {
+                "speaker": "Dr Lee",
+                "en": "To some extent, yes. It's likely that moderate coffee drinking is harmless, but saying coffee makes you live longer goes too far.",
+                "zh": "在某种程度上是的。适量喝咖啡很可能无害，但说咖啡让人更长寿就说过头了。"
+              },
+              {
+                "speaker": "Host",
+                "en": "What would you advise listeners?",
+                "zh": "你对听众有什么建议？"
+              },
+              {
+                "speaker": "Dr Lee",
+                "en": "I'd say there's no need to change your habits. If you enjoy a cup or two, that seems perfectly sensible.",
+                "zh": "我觉得没必要改变习惯。如果你喜欢喝一两杯，这完全合理。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "Dr Lee 怎么看这项研究？",
+            "options": [
+              "发现了关联，但不能证明因果",
+              "证明了咖啡能延长寿命",
+              "研究完全错了"
+            ],
+            "answer": 0,
+            "explanation_zh": "The study suggests a link, but it doesn't prove that coffee causes anything."
+          },
+          {
+            "id": "s04",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "为什么喝咖啡的人可能本来就更健康？",
+            "options": [
+              "他们往往更富裕",
+              "他们运动更多",
+              "他们睡得更久"
+            ],
+            "answer": 0,
+            "explanation_zh": "They tend to be wealthier ... wealth is itself linked to better health."
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "她给听众的建议是什么？",
+            "options": [
+              "没必要改变习惯，喜欢的话喝一两杯就好",
+              "每天多喝几杯",
+              "最好不要喝咖啡"
+            ],
+            "answer": 0,
+            "explanation_zh": "I'd say there's no need to change your habits. If you enjoy a cup or two, that seems perfectly sensible."
+          },
+          {
+            "id": "s06",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "把表达和它的确定程度配对。",
+            "pairs": [
+              {
+                "left": "The study proves ...",
+                "right": "确定的结论"
+              },
+              {
+                "left": "The study suggests ...",
+                "right": "有证据，但不确定"
+              },
+              {
+                "left": "They may well ...",
+                "right": "很有可能"
+              },
+              {
+                "left": "It seems that ...",
+                "right": "根据观察，看起来如此"
+              }
+            ]
+          },
+          {
+            "id": "s07",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "补全句子（一个动词）。",
+            "sentence_en": "The study doesn't ___ that coffee causes a longer life.",
+            "translation_zh": "这项研究并没有证明咖啡能让人更长寿。",
+            "answers": [
+              "prove",
+              "show"
+            ],
+            "explanation_zh": "doesn't prove / show = 没有证明。"
+          },
+          {
+            "id": "s08",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_interaction",
+            "task_zh": "朋友转给你一个标题：“Video games make children smarter.” 向他解释这个标题为什么可能夸大，用上 suggest、may well、tend to、to some extent 等表达，最后给一个有分寸的结论。",
+            "prompt_en": "Look at this headline! So video games are good for kids after all?",
+            "model_answers": [
+              "Well, to some extent, maybe. The research probably suggests a link between some games and certain skills, like problem-solving. But it may well be that children who are already good at problem-solving tend to enjoy those games. So I'd say the headline goes too far. It's more likely that some games help some skills, not that games make children smarter in general."
+            ],
+            "checklist_zh": [
+              "指出了关联不等于因果",
+              "至少用了 3 个表示确定程度的表达",
+              "没有用 prove / always 这类绝对的词",
+              "最后给了一个有分寸的结论"
+            ]
+          },
+          {
+            "id": "s09",
+            "type": "write",
+            "role": "communicative_task",
+            "skill": "written_production",
+            "task_zh": "把下面三句过于绝对的说法改写得有分寸：1) Everyone hates working on Mondays. 2) This diet will make you lose ten kilos. 3) Remote work destroys team spirit.",
+            "model_answers": [
+              "1) Many people seem to find Mondays harder than other days. 2) This diet may help some people lose weight, although results are likely to vary. 3) Remote work can arguably make it harder to build team spirit, at least to some extent."
+            ],
+            "checklist_zh": [
+              "三句都去掉了 everyone / will / destroys 这类绝对化的说法",
+              "用了 seem / tend to / may / likely 等表达",
+              "至少一句用了 arguably 或 to some extent",
+              "改写后的意思仍然清楚"
+            ]
+          },
+          {
+            "id": "s10",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "Wealthier people ___ to live longer.",
+            "translation_zh": "更富裕的人往往寿命更长。",
+            "answers": [
+              "tend"
+            ],
+            "explanation_zh": "tend to do：往往。"
+          },
+          {
+            "id": "s11",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_en": "It's unlikely that the shop will open on Sunday.",
+            "prompt_zh": "这句话的意思是：",
+            "options": [
+              "商店周日不太可能开门",
+              "商店周日肯定不开门",
+              "商店周日很可能开门"
+            ],
+            "answer": 0,
+            "explanation_zh": "unlikely = 不太可能，不等于“肯定不”。"
+          }
+        ]
+      }
+    ]
+  }
+}

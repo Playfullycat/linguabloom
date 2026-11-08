@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "source_type": "first_party",
+  "copyright_status": "first_party_original",
+  "review_status": "pending_owner_review",
+  "materials": [
+    {
+      "id": "rd-c2-novel-review",
+      "type": "reading",
+      "level": "c2",
+      "can_do_ids": ["c2.r.any", "c2.r.subtext"],
+      "topic": "literature",
+      "title_en": "Review: The Lighthouse Keeper's Daughter",
+      "title_zh": "书评：《灯塔看守人的女儿》",
+      "summary_zh": "一篇带讽刺口吻的书评，评论一部虚构的畅销小说。字面上有不少称赞，读懂言外之意才能知道评论者真正的态度。（原创书评，小说为虚构）",
+      "segments": [
+        { "en": "There is no denying that The Lighthouse Keeper's Daughter is a book of considerable length, and its author has clearly never met an adjective she did not like.", "zh": "不可否认，《灯塔看守人的女儿》篇幅可观，而作者显然从来没有遇到过她不喜欢的形容词。" },
+        { "en": "The sea, we are told on page three, is \"restless, brooding and eternally grey\", a description that will be repeated, with minor variations, roughly every twenty pages.", "zh": "第三页告诉我们，大海“躁动、阴郁、永远灰暗”，这个描写会以细微的变化，大约每二十页重复一次。" },
+        { "en": "The heroine, Clara, spends much of the novel gazing out of windows, an activity the author evidently finds more absorbing than some readers will.", "zh": "女主人公 Clara 在小说的大部分时间里都在凝望窗外，作者显然觉得这件事比某些读者觉得的更引人入胜。" },
+        { "en": "To be fair, the final hundred pages pick up considerably, once a long-buried family secret finally surfaces.", "zh": "公平地说，最后一百页节奏明显加快，因为一个埋藏多年的家族秘密终于浮出水面。" },
+        { "en": "Whether this reward justifies the four hundred pages that precede it is a question each reader must answer for themselves.", "zh": "这份回报是否值得读完前面那四百页，每位读者只能自己回答。" },
+        { "en": "The novel has already sold extraordinarily well, which suggests that my reservations are not universally shared.", "zh": "这部小说已经卖得极好，这说明我的保留意见并非人人认同。" },
+        { "en": "Readers who enjoy atmosphere for its own sake, and who are untroubled by a plot that moves at the pace of the tide, may well find it deeply satisfying.", "zh": "喜欢为氛围而氛围、并且不在意情节像潮水一样缓慢推进的读者，很可能会觉得它非常令人满足。" },
+        { "en": "Others may wish that the author's editor had been rather less generous with her time, and rather more generous with a red pen.", "zh": "其他读者也许会希望作者的编辑少慷慨地给她时间，多慷慨地动用红笔。" }
+      ],
+      "glossary": [
+        { "key": "there-is-no-denying", "text": "There is no denying", "pos": "phrase", "ipa": "/ðeər ɪz nəʊ dɪˈnaɪɪŋ/", "zh": "不可否认" },
+        { "key": "of-considerable-length", "text": "of considerable length", "pos": "phrase", "ipa": "/əv kənˈsɪdərəbl leŋθ/", "zh": "篇幅可观的（此处暗讽太长）" },
+        { "key": "restless", "text": "restless", "pos": "adjective", "ipa": "/ˈrestləs/", "zh": "躁动不安的" },
+        { "key": "brooding", "text": "brooding", "pos": "adjective", "ipa": "/ˈbruːdɪŋ/", "zh": "阴郁的；沉闷压抑的" },
+        { "key": "eternally", "text": "eternally", "pos": "adverb", "ipa": "/ɪˈtɜːnəli/", "zh": "永远地" },
+        { "key": "variation", "text": "variations", "pos": "noun", "ipa": "/ˌveəriˈeɪʃnz/", "zh": "变化；变体（复数）" },
+        { "key": "gaze", "text": "gazing", "pos": "verb", "ipa": "/ˈɡeɪzɪŋ/", "zh": "凝视" },
+        { "key": "evidently", "text": "evidently", "pos": "adverb", "ipa": "/ˈevɪdəntli/", "zh": "显然" },
+        { "key": "absorbing", "text": "absorbing", "pos": "adjective", "ipa": "/əbˈzɔːbɪŋ/", "zh": "引人入胜的" },
+        { "key": "pick-up", "text": "pick up", "pos": "phrasal verb", "ipa": "/pɪk ʌp/", "zh": "（节奏）加快；好转" },
+        { "key": "surface", "text": "surfaces", "pos": "verb", "ipa": "/ˈsɜːfɪsɪz/", "zh": "浮出水面；显露" },
+        { "key": "precede", "text": "precede", "pos": "verb", "ipa": "/prɪˈsiːd/", "zh": "在……之前" },
+        { "key": "reservations", "text": "reservations", "pos": "noun", "ipa": "/ˌrezəˈveɪʃnz/", "zh": "保留意见；疑虑（复数）" },
+        { "key": "for-its-own-sake", "text": "for its own sake", "pos": "phrase", "ipa": "/fər ɪts əʊn seɪk/", "zh": "为了它本身" },
+        { "key": "untroubled", "text": "untroubled", "pos": "adjective", "ipa": "/ʌnˈtrʌbld/", "zh": "不受困扰的；不在意的" },
+        { "key": "red-pen", "text": "red pen", "pos": "noun", "ipa": "/red pen/", "zh": "红笔（比喻删改）" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "“its author has clearly never met an adjective she did not like”暗示什么？", "options": ["作者用了太多形容词", "作者的用词非常精准", "作者不喜欢形容词"], "answer": 0, "explanation_zh": "字面是“遇到的形容词她都喜欢”，言外之意是形容词用得过多。", "segment": 0 },
+        { "id": "q2", "type": "choice", "prompt_zh": "评论者对女主人公常常凝望窗外的态度是什么？", "options": ["觉得这些段落很沉闷", "认为这是全书最精彩的部分", "没有态度"], "answer": 0, "explanation_zh": "an activity the author evidently finds more absorbing than some readers will：暗示读者会觉得无聊。", "segment": 2 },
+        { "id": "q3", "type": "choice", "prompt_zh": "评论者承认小说的哪个优点？", "options": ["最后一百页节奏明显加快", "前四百页非常紧凑", "语言简洁"], "answer": 0, "explanation_zh": "原文：To be fair, the final hundred pages pick up considerably ...", "segment": 3 },
+        { "id": "q4", "type": "choice", "prompt_zh": "最后一句关于编辑的话是什么意思？", "options": ["这本书本该大幅删减", "编辑很尽职", "作者应该换一位编辑"], "answer": 0, "explanation_zh": "less generous with her time, more generous with a red pen：希望编辑多删改，即书太长、太冗余。", "segment": 7 }
+      ]
+    },
+    {
+      "id": "rd-c2-boredom",
+      "type": "reading",
+      "level": "c2",
+      "can_do_ids": ["c2.r.any"],
+      "topic": "society",
+      "title_en": "In Praise of Boredom",
+      "title_zh": "为无聊辩护",
+      "summary_zh": "一篇思辨性随笔：在随时可以刷手机的时代，作者认为无聊并非需要消灭的问题，而是创造力和自我反思的条件。（原创随笔）",
+      "segments": [
+        { "en": "Boredom has acquired a reputation as a minor modern affliction, something to be eliminated as swiftly and efficiently as a headache.", "zh": "无聊已经被视为一种轻微的现代病，像头痛一样需要被迅速而高效地消除。" },
+        { "en": "And eliminate it we have: the queue, the bus journey and the waiting room, once the natural habitats of boredom, are now lit by the glow of a thousand screens.", "zh": "而我们也确实消除了它：排队、坐公交、候诊室，这些曾经是无聊的天然栖息地，如今都被成千上万块屏幕的光照亮。" },
+        { "en": "It is worth asking, however, what we have lost in the process, since boredom is not merely the absence of stimulation but a signal that something is missing.", "zh": "然而值得一问的是，我们在这个过程中失去了什么，因为无聊不仅仅是缺乏刺激，更是一种“缺少了什么”的信号。" },
+        { "en": "Left unanswered for long enough, that signal tends to send the mind wandering, and a wandering mind is remarkably good at making unexpected connections.", "zh": "如果足够长时间不去回应这个信号，思绪往往就会游离，而游离的头脑非常擅长建立意想不到的联系。" },
+        { "en": "Many people report that their best ideas arrive not at their desks but in the shower or on a long walk, precisely when nothing in particular is demanding their attention.", "zh": "很多人说，他们最好的想法不是在办公桌前出现的，而是在洗澡或长时间散步时，恰恰是在没有任何特别的事情需要他们关注的时候。" },
+        { "en": "None of this is to romanticise tedium; there is nothing ennobling about a four-hour delay at an airport.", "zh": "这么说并不是要美化乏味；在机场延误四个小时没有任何高尚可言。" },
+        { "en": "The point is rather that a life in which every empty moment is instantly filled leaves little room for the slow, unstructured thinking from which reflection grows.", "zh": "关键在于，如果生活中每个空闲时刻都被立刻填满，那么那种缓慢的、无结构的思考就几乎没有空间，而反思正是从这种思考中生长出来的。" },
+        { "en": "Perhaps, then, the most radical thing one can do on the next train journey is to leave the phone in one's pocket and simply look out of the window.", "zh": "那么，也许下次坐火车时，一个人能做的最激进的事，就是把手机留在口袋里，只是看着窗外。" }
+      ],
+      "glossary": [
+        { "key": "acquire", "text": "acquired", "pos": "verb", "ipa": "/əˈkwaɪəd/", "zh": "获得；得到（acquire 的过去分词）" },
+        { "key": "affliction", "text": "affliction", "pos": "noun", "ipa": "/əˈflɪkʃn/", "zh": "折磨；病痛" },
+        { "key": "eliminate", "text": "eliminated", "forms": ["eliminated", "eliminate"], "pos": "verb", "ipa": "/ɪˈlɪmɪneɪt/", "zh": "消除" },
+        { "key": "swiftly", "text": "swiftly", "pos": "adverb", "ipa": "/ˈswɪftli/", "zh": "迅速地" },
+        { "key": "habitat", "text": "habitats", "pos": "noun", "ipa": "/ˈhæbɪtæts/", "zh": "栖息地（复数）" },
+        { "key": "glow", "text": "glow", "pos": "noun", "ipa": "/ɡləʊ/", "zh": "光亮；微光" },
+        { "key": "stimulation", "text": "stimulation", "pos": "noun", "ipa": "/ˌstɪmjuˈleɪʃn/", "zh": "刺激" },
+        { "key": "wander", "text": "wandering", "pos": "adjective / verb", "ipa": "/ˈwɒndərɪŋ/", "zh": "游离的；漫游" },
+        { "key": "romanticise", "text": "romanticise", "pos": "verb", "ipa": "/rəʊˈmæntɪsaɪz/", "zh": "美化；浪漫化" },
+        { "key": "tedium", "text": "tedium", "pos": "noun", "ipa": "/ˈtiːdiəm/", "zh": "乏味；单调" },
+        { "key": "ennobling", "text": "ennobling", "pos": "adjective", "ipa": "/ɪˈnəʊblɪŋ/", "zh": "使人高尚的" },
+        { "key": "unstructured", "text": "unstructured", "pos": "adjective", "ipa": "/ʌnˈstrʌktʃəd/", "zh": "无结构的；不受约束的" },
+        { "key": "reflection", "text": "reflection", "pos": "noun", "ipa": "/rɪˈflekʃn/", "zh": "反思；沉思" },
+        { "key": "radical", "text": "radical", "pos": "adjective", "ipa": "/ˈrædɪkl/", "zh": "激进的；彻底的" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "第二句“eliminate it we have”说明了什么？", "options": ["我们已经用屏幕把无聊的时刻都填满了", "我们还没有找到消除无聊的办法", "公共场所禁止使用手机"], "answer": 0, "explanation_zh": "排队、坐车、候诊这些无聊时刻 now lit by the glow of a thousand screens。", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "作者认为无聊有什么价值？", "options": ["让思绪游离，产生意想不到的联系", "让人更专注于工作", "帮助人更快入睡"], "answer": 0, "explanation_zh": "原文：a wandering mind is remarkably good at making unexpected connections.", "segment": 3 },
+        { "id": "q3", "type": "choice", "prompt_zh": "“None of this is to romanticise tedium”这句话的作用是什么？", "options": ["预先回应“作者在美化无聊”的质疑", "转而反对无聊", "引出一个新的例子"], "answer": 0, "explanation_zh": "作者承认机场延误这种无聊并不美好，以免观点被理解成对乏味的美化。", "segment": 5 },
+        { "id": "q4", "type": "choice", "prompt_zh": "作者最后的建议带有什么语气？", "options": ["略带幽默地夸大：把普通的事说成“最激进的事”", "严肃的命令", "悲观的警告"], "answer": 0, "explanation_zh": "the most radical thing ... is to leave the phone in one's pocket：用夸张制造幽默，同时表达观点。", "segment": 7 }
+      ]
+    },
+    {
+      "id": "ls-c2-radio-column",
+      "type": "listening",
+      "level": "c2",
+      "can_do_ids": ["c2.l.any", "c2.l.implied"],
+      "topic": "society",
+      "title_en": "A Modest Complaint About Smart Homes",
+      "title_zh": "关于智能家居的一点小小抱怨",
+      "summary_zh": "一段电台幽默专栏：主持人用反讽和轻描淡写讲述自己被“智能”家电折腾的一周。（原创节目）",
+      "segments": [
+        { "speaker": "Presenter", "en": "This week I finally joined the twenty-first century and made my home smart. I can now report that it is considerably smarter than I am.", "zh": "这周我终于跟上了二十一世纪，把家变成了智能家居。现在可以报告：它比我聪明得多。" },
+        { "speaker": "Presenter", "en": "The fridge, for instance, now sends me a message whenever we run low on milk, which is thoughtful, if slightly accusatory at six in the morning.", "zh": "比如冰箱，现在每当牛奶快没了就给我发消息，很贴心，虽然早上六点收到时略带指责的意味。" },
+        { "speaker": "Presenter", "en": "The lights respond to my voice, provided I speak in the calm, clear tone of a newsreader, which is not how I tend to speak when I've just stubbed my toe.", "zh": "灯会响应我的声音，前提是我用新闻播音员那种冷静清晰的语气说话，而刚踢到脚趾时我一般可不这么说话。" },
+        { "speaker": "Presenter", "en": "On Tuesday, the heating decided, entirely on its own initiative, that I would prefer the house at twenty-eight degrees. It was not entirely wrong, if I'd been a tropical plant.", "zh": "周二，暖气完全自作主张，认定我更喜欢家里二十八度。如果我是一株热带植物，它倒也不算全错。" },
+        { "speaker": "Presenter", "en": "The doorbell camera has been a particular joy. It now alerts me to every passing cat, delivery van and, on one memorable occasion, a leaf.", "zh": "门铃摄像头尤其令人“愉快”。它现在会提醒我每一只路过的猫、每一辆送货车，有一次令人难忘，还提醒了一片树叶。" },
+        { "speaker": "Presenter", "en": "My teenage son, naturally, set the whole thing up in about ten minutes and has been quietly enjoying my struggles ever since.", "zh": "我那十几岁的儿子，理所当然地，十分钟左右就把整套系统装好了，从那以后一直在默默欣赏我的挣扎。" },
+        { "speaker": "Presenter", "en": "I don't want to sound ungrateful. The technology is genuinely impressive, and I'm told it will save energy in the long run.", "zh": "我不想显得不知感恩。这项技术确实令人印象深刻，而且据说长远来看能省能源。" },
+        { "speaker": "Presenter", "en": "But last night, as I stood in the dark asking a speaker to please, please turn on the kitchen light, I did wonder who was really in charge.", "zh": "但昨晚，当我站在黑暗中求一台音箱“拜托，拜托把厨房灯打开”时，我确实忍不住想：到底谁说了算？" }
+      ],
+      "glossary": [
+        { "key": "modest", "text": "Modest", "pos": "adjective", "ipa": "/ˈmɒdɪst/", "zh": "小小的；不大的（此处为反讽的谦辞）" },
+        { "key": "considerably", "text": "considerably", "pos": "adverb", "ipa": "/kənˈsɪdərəbli/", "zh": "相当地；大大地" },
+        { "key": "run-low", "text": "run low", "pos": "phrase", "ipa": "/rʌn ləʊ/", "zh": "快用完" },
+        { "key": "accusatory", "text": "accusatory", "pos": "adjective", "ipa": "/əˈkjuːzətəri/", "zh": "带指责意味的" },
+        { "key": "provided", "text": "provided", "pos": "conjunction", "ipa": "/prəˈvaɪdɪd/", "zh": "只要；前提是" },
+        { "key": "newsreader", "text": "newsreader", "pos": "noun", "ipa": "/ˈnjuːzriːdə/", "zh": "新闻播音员" },
+        { "key": "stub-toe", "text": "stubbed my toe", "pos": "phrase", "ipa": "/stʌbd maɪ təʊ/", "zh": "踢到了脚趾" },
+        { "key": "on-its-own-initiative", "text": "on its own initiative", "pos": "phrase", "ipa": "/ɒn ɪts əʊn ɪˈnɪʃətɪv/", "zh": "自作主张；主动地" },
+        { "key": "tropical", "text": "tropical", "pos": "adjective", "ipa": "/ˈtrɒpɪkl/", "zh": "热带的" },
+        { "key": "alert", "text": "alerts", "pos": "verb", "ipa": "/əˈlɜːts/", "zh": "提醒；警示" },
+        { "key": "memorable", "text": "memorable", "pos": "adjective", "ipa": "/ˈmemərəbl/", "zh": "难忘的" },
+        { "key": "ungrateful", "text": "ungrateful", "pos": "adjective", "ipa": "/ʌnˈɡreɪtfl/", "zh": "不知感恩的" },
+        { "key": "in-charge", "text": "in charge", "pos": "phrase", "ipa": "/ɪn tʃɑːdʒ/", "zh": "负责；说了算" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "主持人说家“considerably smarter than I am”，语气是什么？", "options": ["自嘲", "炫耀", "生气"], "answer": 0, "explanation_zh": "说家比自己聪明，是在自嘲被智能设备弄得手忙脚乱。", "segment": 0 },
+        { "id": "q2", "type": "choice", "prompt_zh": "暖气“not entirely wrong, if I'd been a tropical plant”是什么意思？", "options": ["二十八度对人来说太热了", "二十八度刚刚好", "他想养热带植物"], "answer": 0, "explanation_zh": "只有热带植物才喜欢这么热，反讽地说温度设得太高。", "segment": 3 },
+        { "id": "q3", "type": "choice", "prompt_zh": "“The doorbell camera has been a particular joy”是真心的吗？", "options": ["不是，它提醒太多，连树叶都报警，很烦人", "是，他很喜欢这个摄像头", "听不出来"], "answer": 0, "explanation_zh": "a particular joy 是反讽：它连路过的猫和一片树叶都要提醒。", "segment": 4 },
+        { "id": "q4", "type": "choice", "prompt_zh": "主持人最后真正想表达的是什么？", "options": ["他怀疑自己反而被智能设备控制了", "智能家居毫无用处", "他想退掉所有设备"], "answer": 0, "explanation_zh": "I did wonder who was really in charge：他觉得自己反倒受设备摆布。他也承认技术确实令人印象深刻。", "segment": 7 }
+      ]
+    },
+    {
+      "id": "ls-c2-ai-art-debate",
+      "type": "listening",
+      "level": "c2",
+      "can_do_ids": ["c2.l.any"],
+      "topic": "culture",
+      "title_en": "Who Is the Artist?",
+      "title_zh": "谁是艺术家？",
+      "summary_zh": "一场关于 AI 生成图像的讨论：一位策展人和一位版权律师辩论作者身份、原创性和对艺术家的公平问题。（原创讨论）",
+      "segments": [
+        { "speaker": "Host", "en": "An image generated almost entirely by software has just won a regional art prize. Leila, as a curator, were you troubled by that?", "zh": "一幅几乎完全由软件生成的图像刚刚赢得了一个地区性艺术奖。Leila，作为策展人，你对此感到不安吗？" },
+        { "speaker": "Leila", "en": "Less by the image than by the silence around it. The entrant didn't disclose how it was made until after the judges had decided.", "zh": "让我不安的与其说是图像本身，不如说是围绕它的沉默。参赛者直到评委做出决定后才透露它是怎么做出来的。" },
+        { "speaker": "Host", "en": "So your objection is to the lack of transparency, not to the technology itself?", "zh": "所以你反对的是缺乏透明度，而不是技术本身？" },
+        { "speaker": "Leila", "en": "Largely. Artists have always used tools, from the camera onwards. What matters is being honest about which decisions were yours.", "zh": "基本上是。艺术家一直在使用工具，从照相机开始就是如此。重要的是诚实说明哪些决定是你自己做的。" },
+        { "speaker": "Host", "en": "Marcus, from a legal point of view, who actually owns an image like this?", "zh": "Marcus，从法律角度看，这样一幅图像到底归谁所有？" },
+        { "speaker": "Marcus", "en": "That depends heavily on where you are, and in many places the law simply hasn't caught up. Copyright traditionally assumes a human author.", "zh": "这在很大程度上取决于你在哪里，而在很多地方，法律根本还没跟上。传统上，版权以人类作者为前提。" },
+        { "speaker": "Marcus", "en": "There's also the uncomfortable question of the millions of existing works these systems learned from, mostly without their creators' consent.", "zh": "还有一个令人不安的问题：这些系统学习过的数以百万计的现有作品，大多没有经过创作者同意。" },
+        { "speaker": "Leila", "en": "Which is, to my mind, the real issue. A prize is trivial by comparison with whether working artists can still earn a living.", "zh": "在我看来，这才是真正的问题。和职业艺术家还能不能靠创作谋生相比，一个奖项微不足道。" },
+        { "speaker": "Marcus", "en": "I wouldn't call it trivial. Prizes shape careers. But I take the point that the economic question dwarfs the ceremonial one.", "zh": "我不会说它微不足道，奖项会影响职业生涯。但我同意，经济问题远比仪式性的问题重大。" },
+        { "speaker": "Host", "en": "So, a qualified yes to the tools, and a firm no to secrecy?", "zh": "那么，对工具是有条件的认可，对隐瞒则是坚决反对？" },
+        { "speaker": "Leila", "en": "That would be a fair summary, provided the people whose work trained these systems aren't forgotten.", "zh": "这个总结很公允，前提是不要忘了那些作品被用来训练这些系统的人。" }
+      ],
+      "glossary": [
+        { "key": "curator", "text": "curator", "pos": "noun", "ipa": "/kjʊəˈreɪtə/", "zh": "策展人" },
+        { "key": "entrant", "text": "entrant", "pos": "noun", "ipa": "/ˈentrənt/", "zh": "参赛者" },
+        { "key": "disclose", "text": "disclose", "pos": "verb", "ipa": "/dɪsˈkləʊz/", "zh": "透露；披露" },
+        { "key": "objection", "text": "objection", "pos": "noun", "ipa": "/əbˈdʒekʃn/", "zh": "反对；异议" },
+        { "key": "transparency", "text": "transparency", "pos": "noun", "ipa": "/trænsˈpærənsi/", "zh": "透明度" },
+        { "key": "caught-up", "text": "caught up", "pos": "phrasal verb", "ipa": "/kɔːt ʌp/", "zh": "赶上；跟上（catch up 的过去分词）" },
+        { "key": "copyright", "text": "Copyright", "pos": "noun", "ipa": "/ˈkɒpiraɪt/", "zh": "版权" },
+        { "key": "consent", "text": "consent", "pos": "noun", "ipa": "/kənˈsent/", "zh": "同意；许可" },
+        { "key": "trivial", "text": "trivial", "pos": "adjective", "ipa": "/ˈtrɪviəl/", "zh": "微不足道的" },
+        { "key": "dwarf", "text": "dwarfs", "pos": "verb", "ipa": "/dwɔːfs/", "zh": "使相形见绌" },
+        { "key": "ceremonial", "text": "ceremonial", "pos": "adjective", "ipa": "/ˌserɪˈməʊniəl/", "zh": "仪式性的" },
+        { "key": "qualified", "text": "qualified", "pos": "adjective", "ipa": "/ˈkwɒlɪfaɪd/", "zh": "有保留的；有条件的" },
+        { "key": "secrecy", "text": "secrecy", "pos": "noun", "ipa": "/ˈsiːkrəsi/", "zh": "保密；隐瞒" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "Leila 最不满的是什么？", "options": ["参赛者在评委决定后才透露作品的制作方式", "图像质量太差", "评委不懂技术"], "answer": 0, "explanation_zh": "原文：Less by the image than by the silence around it ... didn't disclose how it was made until after the judges had decided.", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "Marcus 认为版权问题为什么复杂？", "options": ["很多地方法律没跟上，传统版权以人类作者为前提", "软件公司拥有所有作品", "版权法已经明确规定归 AI 所有"], "answer": 0, "explanation_zh": "原文：the law simply hasn't caught up. Copyright traditionally assumes a human author.", "segment": 5 },
+        { "id": "q3", "type": "choice", "prompt_zh": "Leila 认为真正的问题是什么？", "options": ["职业艺术家还能不能靠创作谋生", "谁该得奖", "软件的价格"], "answer": 0, "explanation_zh": "原文：A prize is trivial by comparison with whether working artists can still earn a living.", "segment": 7 },
+        { "id": "q4", "type": "choice", "prompt_zh": "Marcus 怎么回应 Leila 说奖项“微不足道”？", "options": ["不同意奖项微不足道，但同意经济问题更重大", "完全同意", "认为奖项是唯一重要的问题"], "answer": 0, "explanation_zh": "原文：I wouldn't call it trivial ... But I take the point that the economic question dwarfs the ceremonial one.", "segment": 8 }
+      ]
+    }
+  ]
+}

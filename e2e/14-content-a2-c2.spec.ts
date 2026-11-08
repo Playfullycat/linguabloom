@@ -2,7 +2,7 @@ import { expect, test, type Page } from "@playwright/test";
 
 import { ensureSignedIn } from "./fixtures";
 
-// Phase 5 / step 5.1: A2 and B1 units are really learnable (spec §13 Phase 5
+// Phase 5 / steps 5.1–5.2: A2–C2 units are really learnable (spec §13 Phase 5
 // acceptance), with grammar points and B1 materials; units without content
 // stay "planned".
 
@@ -18,7 +18,10 @@ test("A2 and B1 levels list learnable units next to planned ones", async ({ page
   await page.goto("/learn/path");
   await expect(page.getByText("2 / 7 个单元可学")).toBeVisible();
   await expect(page.getByText("2 / 6 个单元可学")).toBeVisible();
-  await expect(page.getByText("计划中 · 5 个单元")).toBeVisible(); // B2
+  // Phase 5.2: B2 (2 of 5), C1 and C2 (2 of 3 each) are learnable too; nothing is only "planned" any more.
+  await expect(page.getByText("2 / 5 个单元可学")).toBeVisible();
+  await expect(page.getByText("2 / 3 个单元可学")).toHaveCount(2);
+  await expect(page.getByText(/^计划中 · /)).toHaveCount(0);
 
   await page.goto("/learn/levels/b1");
   const opinions = page.getByRole("link", { name: /In My Opinion/ });
@@ -63,4 +66,24 @@ test("B1 grammar point and reading are available", async ({ page }) => {
   await page.goto("/reading/rd-b1-repair-cafe");
   await expect(page.getByText("Don't Throw It Away — Fix It").first()).toBeVisible();
   await page.screenshot({ path: shots("reading-b1"), fullPage: true });
+});
+
+test("C2 unit, lesson, grammar point and reading are available (Phase 5.2)", async ({ page }) => {
+  await ensureSignedIn(page);
+  await page.goto("/learn/levels/c2");
+  await page.getByRole("link", { name: /Reading Between the Lines/ }).click();
+  await expect(page).toHaveURL(/\/learn\/units\/c2-u01-implied-meaning$/);
+  await expect(page.getByText("能听懂自然对话中的言外之意、反讽和轻描淡写，判断说话人的真实意图。")).toBeVisible();
+  await page.getByRole("link", { name: "开始学习" }).click();
+  await expect(page).toHaveURL(/\/lesson\/c2-u01-implied-meaning-l1$/);
+  await expect(page.getByText("1 / 13")).toBeVisible();
+  await page.getByRole("button", { name: /^继续/ }).click();
+  await expect(page.getByText("How was the trip?").first()).toBeVisible();
+  await page.screenshot({ path: shots("lesson-c2-dialogue"), fullPage: true });
+
+  await page.goto("/grammar/gradable-adjectives");
+  await expect(page.getByRole("heading", { name: /可分级与不可分级形容词/ })).toBeVisible();
+  await page.goto("/reading/rd-c2-novel-review");
+  await expect(page.getByText("Review: The Lighthouse Keeper's Daughter").first()).toBeVisible();
+  await page.screenshot({ path: shots("reading-c2"), fullPage: true });
 });

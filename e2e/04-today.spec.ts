@@ -40,24 +40,24 @@ test("onboarding → diagnostic → today plan → progress", async ({ page }) =
 
   // Diagnostic: starts at A1 for "forgot", answers are scored on the server.
   await page.getByRole("button", { name: "开始诊断" }).click();
-  await expect(page.getByText("词汇 · 第 1 / 6 题")).toBeVisible();
+  await expect(page.getByText("词汇 · 第 1 / 7 题")).toBeVisible();
   await page.screenshot({ path: shots("assessment-item"), fullPage: true });
   await page.getByRole("button", { name: "不会" }).click();
   await expect(page.getByText(/正确答案：/)).toBeVisible();
   await page.getByRole("button", { name: "下一题" }).click();
-  await expect(page.getByText("词汇 · 第 2 / 6 题")).toBeVisible();
+  await expect(page.getByText("词汇 · 第 2 / 7 题")).toBeVisible();
 
   // Pause and resume the diagnostic.
   await page.getByRole("link", { name: "暂停，稍后继续" }).click();
   await expect(page).toHaveURL(/\/onboarding$/);
   await page.getByRole("link", { name: "继续诊断" }).click();
-  await expect(page.getByText("词汇 · 第 2 / 6 题")).toBeVisible();
+  await expect(page.getByText("词汇 · 第 2 / 7 题")).toBeVisible();
 
-  for (let i = 2; i <= 6; i++) {
+  for (let i = 2; i <= 7; i++) {
     await page.getByRole("button", { name: "不会" }).click();
     await page.getByRole("button", { name: "下一题" }).click();
   }
-  await expect(page.getByText("语法 · 第 1 / 6 题")).toBeVisible();
+  await expect(page.getByText("语法 · 第 1 / 7 题")).toBeVisible();
   for (const part of ["语法", "阅读", "听力"]) {
     await page.getByRole("button", { name: `跳过${part}部分` }).click();
   }
@@ -67,7 +67,7 @@ test("onboarding → diagnostic → today plan → progress", async ({ page }) =
 
   await expect(page.getByRole("heading", { name: "初步结果" })).toBeVisible();
   await expect(page.getByText("约 Pre-A1")).toBeVisible();
-  await expect(page.getByText("依据 6 题")).toBeVisible();
+  await expect(page.getByText("依据 7 题")).toBeVisible();
   await expect(page.getByText("这部分跳过了，暂无估计。")).toHaveCount(3);
   await expect(page.getByText(/不是官方 CEFR 认证/)).toBeVisible();
   await page.screenshot({ path: shots("assessment-result"), fullPage: true });
@@ -76,7 +76,7 @@ test("onboarding → diagnostic → today plan → progress", async ({ page }) =
   await page.getByRole("link", { name: "看看第一周计划" }).click();
   await expect(page.getByRole("heading", { name: "你的第一周" })).toBeVisible();
   await expect(page.getByText("每周 4 天，每次 40 分钟")).toBeVisible();
-  await expect(page.getByText(/词汇 Pre-A1 · 依据 6 题/)).toBeVisible();
+  await expect(page.getByText(/词汇 Pre-A1 · 依据 7 题/)).toBeVisible();
   await page.screenshot({ path: shots("onboarding-summary"), fullPage: true });
   await page.getByRole("button", { name: "开始今天的学习" }).click();
 
@@ -127,7 +127,7 @@ test("onboarding → diagnostic → today plan → progress", async ({ page }) =
   // Progress: estimates with evidence, lessons, vocabulary, study time.
   await page.goto("/progress");
   await expect(page.getByText("约 Pre-A1")).toBeVisible();
-  await expect(page.getByText("依据 6 题")).toBeVisible();
+  await expect(page.getByText("依据 7 题")).toBeVisible();
   await expect(page.getByText(/不是官方 CEFR 认证/)).toBeVisible();
   await expect(page.getByText(/已完成 1 \/ \d+ 节已发布的课/)).toBeVisible();
   await expect(page.getByText("看得懂（被动）")).toBeVisible();

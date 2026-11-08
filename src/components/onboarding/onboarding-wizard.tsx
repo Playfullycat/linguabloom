@@ -275,7 +275,7 @@ export function OnboardingWizard({ data }: { data: OnboardingData }) {
                 做一个简短的水平诊断
               </h2>
               <p className="mt-3 text-[0.9375rem] leading-relaxed text-muted">
-                词汇、语法、阅读、听力四部分，共约 20 题、10–15 分钟。题目会根据你的回答变难或变简单。
+                词汇、语法、阅读、听力四部分，最多 24 题、约 12–18 分钟，可以估计到 C2。题目会根据你的回答变难或变简单。
                 不会的题可以直接点“不会”，任何一部分都能跳过，中途离开下次可以继续。
               </p>
               {data.diagnostic === "completed" ? (

@@ -51,7 +51,7 @@ const item = async (user: string, id: string) => (await getAbilityMap(db, user, 
 describe("can-do statements", () => {
   it("are seeded from the units and the catalog with pass rules and evidence types", async () => {
     const rows = await db.select().from(canDoStatements);
-    expect(rows.length).toBe(59);
+    expect(rows.length).toBe(83);
     const be = rows.find((r) => r.id === "a1.gr.be")!;
     expect(be).toMatchObject({ level: "a1", skill: "grammar", origin: "unit:a1-u01-pronouns-be" });
     expect(be.evidenceTypes).toEqual(expect.arrayContaining(["lesson", "exercise"]));

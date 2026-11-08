@@ -1,0 +1,1258 @@
+{
+  "content_schema_version": 1,
+  "source_type": "first_party",
+  "review_status": "pending_owner_review",
+  "unit": {
+    "id": "c1-u01-register",
+    "level": "c1",
+    "order": 1,
+    "status": "published",
+    "title_en": "Register and Tone",
+    "title_zh": "语域与语气",
+    "summary_zh": "同一件事，写给客户、上级和朋友，用词和语气都不一样。学会在正式和非正式表达之间切换，用强调句控制信息的重点，并把请求说得得体。学完后，你能根据读者和目的调整语气。",
+    "can_do": [
+      {
+        "id": "c1.wi.register",
+        "skill": "written_interaction",
+        "en": "Can adjust register and tone to suit the reader and purpose, for example in a formal reminder, a request to a senior colleague or a note to a friend.",
+        "zh": "能根据读者和目的调整语域和语气，例如正式的催款信、给上级的请求、给朋友的便条。"
+      },
+      {
+        "id": "c1.gr.emphasis",
+        "skill": "grammar",
+        "en": "Can use cleft sentences and other structures to highlight information and correct misunderstandings.",
+        "zh": "能用强调句等结构突出信息、纠正误解。"
+      },
+      {
+        "id": "c1.l.tone",
+        "skill": "listening",
+        "en": "Can recognise shifts in register and the attitude behind a speaker's choice of words.",
+        "zh": "能听出语域的变化，以及说话人用词背后的态度。"
+      }
+    ],
+    "grammar_points": [
+      {
+        "id": "c1.cleft-sentences",
+        "title_en": "Cleft sentences for emphasis",
+        "title_zh": "强调句（分裂句）",
+        "pattern": "It was the payment provider that caused the delay.\nWhat we need is a clear deadline.\nAll they asked for was earlier feedback.\nThe reason why they were late is that ...",
+        "explanation_zh": "强调句把一个普通句子拆成两部分，让重点更突出。It + be + 重点 + that / who + 其余部分：常用来纠正误解（It wasn't the designers that ..., it was ...）。What + 主语 + 动词 + be + 重点：先制造期待，再给出要点。All + 主语 + 动词 + be ...：强调“只不过、仅仅”。The reason why ... is that ...：突出原因。",
+        "examples": [
+          {
+            "en": "It wasn't the designers that caused the delay. It was the payment provider.",
+            "zh": "造成延误的不是设计师，而是支付服务商。"
+          },
+          {
+            "en": "What really held us up was the security review.",
+            "zh": "真正拖慢我们的是安全审查。"
+          },
+          {
+            "en": "All I want is a quiet weekend.",
+            "zh": "我只想过一个安静的周末。"
+          }
+        ],
+        "common_errors": [
+          {
+            "wrong": "What we need it is more time.",
+            "right": "What we need is more time.",
+            "why_zh": "What 从句本身就是主语，后面直接接 is，不再加 it。"
+          },
+          {
+            "wrong": "It was the weather what caused the delay.",
+            "right": "It was the weather that caused the delay.",
+            "why_zh": "It-强调句用 that（指人时也可以用 who），不用 what。"
+          },
+          {
+            "wrong": "The reason why I called is because I need advice.",
+            "right": "The reason why I called is that I need advice.",
+            "why_zh": "reason 已经表示原因，正式写作里后面用 that，避免重复 because。"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "key": "regarding",
+        "text": "regarding",
+        "pos": "preposition",
+        "ipa": "/rɪˈɡɑːdɪŋ/",
+        "zh": "关于（正式）",
+        "example_en": "I am writing regarding your recent order.",
+        "example_zh": "我写信是关于您最近的订单。"
+      },
+      {
+        "key": "outstanding",
+        "text": "outstanding",
+        "pos": "adjective",
+        "ipa": "/aʊtˈstændɪŋ/",
+        "zh": "未付的；未解决的（也有“杰出的”意思）",
+        "example_en": "There is still an outstanding balance of £200.",
+        "example_zh": "还有 200 英镑的余款未付。"
+      },
+      {
+        "key": "require",
+        "text": "require",
+        "pos": "verb",
+        "ipa": "/rɪˈkwaɪə/",
+        "zh": "需要（正式）",
+        "example_en": "Please let us know if you require anything further.",
+        "example_zh": "如有其他需要，请告知我们。"
+      },
+      {
+        "key": "assistance",
+        "text": "assistance",
+        "pos": "noun",
+        "ipa": "/əˈsɪstəns/",
+        "zh": "帮助；协助（正式）",
+        "example_en": "Thank you for your assistance.",
+        "example_zh": "感谢您的协助。"
+      },
+      {
+        "key": "what-we-need-is",
+        "text": "What we need is ...",
+        "pos": "phrase",
+        "ipa": "/wɒt wi niːd ɪz/",
+        "zh": "我们需要的是……（强调）",
+        "example_en": "What we need is a clear deadline.",
+        "example_zh": "我们需要的是一个明确的截止日期。"
+      },
+      {
+        "key": "it-was-that",
+        "text": "It was ... that ...",
+        "pos": "phrase",
+        "ipa": "/ɪt wɒz ... ðæt/",
+        "zh": "正是……（强调句）",
+        "example_en": "It was the payment provider that caused the delay.",
+        "example_zh": "造成延误的正是支付服务商。"
+      },
+      {
+        "key": "the-reason-why",
+        "text": "The reason why ... is that ...",
+        "pos": "phrase",
+        "ipa": "/ðə ˈriːzn waɪ ... ɪz ðæt/",
+        "zh": "……的原因是……",
+        "example_en": "The reason why they were late is that our comments arrived on Friday.",
+        "example_zh": "他们晚了的原因是我们的意见周五才给到。"
+      },
+      {
+        "key": "all-i-want-is",
+        "text": "All (I want) is ...",
+        "pos": "phrase",
+        "ipa": "/ɔːl aɪ wɒnt ɪz/",
+        "zh": "（我）只想要……",
+        "example_en": "All they asked for was earlier feedback.",
+        "example_zh": "他们只是希望早点得到反馈。"
+      },
+      {
+        "key": "i-was-wondering-if",
+        "text": "I was wondering if ...",
+        "pos": "phrase",
+        "ipa": "/aɪ wəz ˈwʌndərɪŋ ɪf/",
+        "zh": "不知道能否……（委婉的请求）",
+        "example_en": "I was wondering if it would be possible to extend the deadline.",
+        "example_zh": "不知道能否延长截止日期。"
+      },
+      {
+        "key": "i-would-appreciate-it",
+        "text": "I would appreciate it if ...",
+        "pos": "phrase",
+        "ipa": "/aɪ wʊd əˈpriːʃieɪt ɪt ɪf/",
+        "zh": "如果……我将不胜感激",
+        "example_en": "I would appreciate it if you could reply by Friday.",
+        "example_zh": "如果您能在周五前回复，我将不胜感激。"
+      },
+      {
+        "key": "earliest-convenience",
+        "text": "at your earliest convenience",
+        "pos": "phrase",
+        "ipa": "/ət jɔːr ˈɜːliɪst kənˈviːniəns/",
+        "zh": "在您方便时尽早（有时显得催促）",
+        "example_en": "Please reply at your earliest convenience.",
+        "example_zh": "请您尽早回复。"
+      },
+      {
+        "key": "apologies-for",
+        "text": "Apologies for ...",
+        "pos": "phrase",
+        "ipa": "/əˈpɒlədʒiz fə/",
+        "zh": "抱歉……（书面）",
+        "example_en": "Apologies for the short notice.",
+        "example_zh": "抱歉通知得这么晚。"
+      }
+    ],
+    "lessons": [
+      {
+        "id": "c1-u01-register-l1",
+        "order": 1,
+        "kind": "core",
+        "title_en": "Formal or Informal?",
+        "title_zh": "正式还是随意？",
+        "estimated_minutes": 13,
+        "objectives": [
+          {
+            "en": "Choose formal or informal words and phrases to suit the reader.",
+            "zh": "能根据读者选择正式或非正式的用词。"
+          },
+          {
+            "en": "Rewrite a casual message in a formal register.",
+            "zh": "能把一段随意的话改写成正式的语体。"
+          }
+        ],
+        "can_do_ids": [
+          "c1.wi.register",
+          "c1.l.tone"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "written_interaction",
+            "title_zh": "这节课学什么",
+            "body_zh": "到了 C1，问题往往不是“对不对”，而是“合不合适”。Hi guys, just wanted to ask about the money 语法没错，但发给第一次催款的客户就显得随便；反过来，给朋友写 Please do not hesitate to contact me 又显得冷冰冰。这节课学正式和非正式表达的主要区别。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Checking an email",
+            "instructions_zh": "先听。注意 Lin 把哪些随意的说法改成了正式的说法。",
+            "scene_zh": "Sam 请 Lin 在发出前看看他写给客户的催款邮件。",
+            "lines": [
+              {
+                "speaker": "Sam",
+                "en": "Can you check this email to the client before I send it?",
+                "zh": "我发给客户之前，你能帮我看看这封邮件吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Sure. \"Hi guys, just wanted to ask about the money you owe us.\" That's a bit casual for a first reminder.",
+                "zh": "好。“嗨各位，就想问问你们欠我们的钱。”作为第一次催款，这有点太随意了。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Too casual? What would you say instead?",
+                "zh": "太随意？那你会怎么写？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Something like: \"I am writing regarding the outstanding payment for invoice two one four.\"",
+                "zh": "大概是：“来函是关于 214 号发票的未付款项。”"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Isn't \"regarding\" a bit stiff?",
+                "zh": "regarding 是不是有点生硬？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Not in a formal email. And instead of \"get the money\", you could say \"receive payment\".",
+                "zh": "在正式邮件里不会。还有，get the money 可以改成 receive payment。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "OK. And \"let me know if you need help\"?",
+                "zh": "好。那“需要帮忙就说一声”呢？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "\"Please do not hesitate to contact us if you require any further assistance.\" It's polite without being cold.",
+                "zh": "“如需进一步协助，请随时与我们联系。”礼貌，但不冷淡。"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Right. I'd never write like that to a friend, though.",
+                "zh": "明白。不过我绝不会这样给朋友写信。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Of course not. To a friend, \"Shout if you need anything!\" is perfect.",
+                "zh": "当然不会。给朋友的话，“有事喊我！”就很好。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "regarding",
+              "outstanding",
+              "require",
+              "assistance"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "teach",
+            "role": "teach",
+            "skill": "written_interaction",
+            "title_zh": "正式和非正式：差在哪里",
+            "explanation_zh": "正式语体通常：用单个、偏书面的动词代替短语动词（find out → discover，put off → postpone，ask about → enquire about）；用 receive、require、assistance、regarding 这类词代替 get、need、help、about；少用缩写（I am 而不是 I'm）；语气更客观，常用被动或以“我们 / 公司”为主语。非正式语体则多用缩写、短语动词、口语词（Shout if ...、Any chance ...?）。没有哪一种“更高级”，关键是和读者、目的相匹配。",
+            "pattern": "get → receive / obtain\nneed → require\nhelp → assistance\nask about → enquire about\nput off → postpone",
+            "examples": [
+              {
+                "en": "I am writing regarding the outstanding payment.",
+                "zh": "来函是关于未付款项。（正式）"
+              },
+              {
+                "en": "Just checking in about the money.",
+                "zh": "就问问钱的事。（随意）"
+              },
+              {
+                "en": "We would like to postpone the meeting until next week.",
+                "zh": "我们希望将会议推迟到下周。（正式）"
+              }
+            ],
+            "tips_zh": [
+              "正式不等于啰嗦：一句清楚的 Please find the invoice attached. 比一长串客套话更专业。",
+              "给同一位客户写信，第一封正式，熟悉之后可以逐渐放松，但对方先放松时再跟进更稳妥。"
+            ]
+          },
+          {
+            "id": "s05",
+            "type": "match",
+            "role": "guided_practice",
+            "skill": "written_interaction",
+            "instructions_zh": "把非正式说法和对应的正式说法配对。",
+            "pairs": [
+              {
+                "left": "get",
+                "right": "receive"
+              },
+              {
+                "left": "need",
+                "right": "require"
+              },
+              {
+                "left": "ask about",
+                "right": "enquire about"
+              },
+              {
+                "left": "put off",
+                "right": "postpone"
+              }
+            ]
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "written_interaction",
+            "prompt_zh": "正式投诉邮件的第一句，哪一句最合适？",
+            "options": [
+              "I am writing regarding the delay to my order.",
+              "Just wanted to moan about my order.",
+              "Where's my stuff?!"
+            ],
+            "answer": 0,
+            "explanation_zh": "I am writing regarding ...：正式邮件的标准开头。"
+          },
+          {
+            "id": "s07",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "written_interaction",
+            "prompt_zh": "发给好朋友的消息，哪一句最自然？",
+            "options": [
+              "Shout if you need anything!",
+              "Please do not hesitate to contact me should you require assistance.",
+              "Your request has been received."
+            ],
+            "answer": 0,
+            "explanation_zh": "给朋友用口语化的 Shout if you need anything!；另外两句对朋友来说太正式、太冷淡。"
+          },
+          {
+            "id": "s08",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "written_interaction",
+            "instructions_zh": "补全正式邮件的结尾。",
+            "sentence_en": "Please do not hesitate to contact us if you require any further ___.",
+            "translation_zh": "如需进一步协助，请随时与我们联系。",
+            "answers": [
+              "assistance",
+              "information",
+              "help"
+            ],
+            "explanation_zh": "正式结尾常用 any further assistance / information。"
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，这封邮件的目的是什么？",
+            "audio_en": "I am writing regarding the outstanding payment for invoice two one four.",
+            "options": [
+              "催付一笔未付的款项",
+              "为延误道歉",
+              "询问价格"
+            ],
+            "answer": 0,
+            "explanation_zh": "outstanding payment = 未付款项。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：Lin 认为 Sam 的初稿有什么问题？",
+            "options": [
+              "作为第一次催款，太随意了",
+              "太正式了",
+              "太长了"
+            ],
+            "answer": 0,
+            "explanation_zh": "That's a bit casual for a first reminder."
+          },
+          {
+            "id": "s11",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "written_interaction",
+            "instructions_zh": "用一个正式的动词代替 put off。",
+            "sentence_en": "We would like to ___ the meeting until next week.",
+            "translation_zh": "我们希望将会议推迟到下周。",
+            "answers": [
+              "postpone",
+              "delay",
+              "defer"
+            ],
+            "explanation_zh": "put off（口语）→ postpone（正式）。"
+          },
+          {
+            "id": "s12",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "written_interaction",
+            "prompt_zh": "find out 比较正式的说法是：",
+            "options": [
+              "discover",
+              "find",
+              "see out"
+            ],
+            "answer": 0,
+            "explanation_zh": "find out → discover / establish（正式）。"
+          }
+        ]
+      },
+      {
+        "id": "c1-u01-register-l2",
+        "order": 2,
+        "kind": "core",
+        "title_en": "What Really Matters Is...",
+        "title_zh": "强调句",
+        "estimated_minutes": 13,
+        "objectives": [
+          {
+            "en": "Correct a misunderstanding with It wasn't ... that ..., it was ...",
+            "zh": "能用 It wasn't ... that ..., it was ... 纠正误解。"
+          },
+          {
+            "en": "Highlight the key point with What ... is ... and All ... is ...",
+            "zh": "能用 What ... is ... 和 All ... is ... 突出重点。"
+          }
+        ],
+        "can_do_ids": [
+          "c1.gr.emphasis",
+          "c1.l.tone"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "grammar",
+            "title_zh": "这节课学什么",
+            "body_zh": "中文常用“是……的”“真正……的是……”来强调。英语也有类似的结构，叫强调句（分裂句）：It was the payment provider that caused the delay. / What we need is a clear deadline.。它们在复盘、汇报、纠正误解时特别有用。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "What went wrong?",
+            "instructions_zh": "先听。注意 Lin 用哪些句型来纠正 Kate 的理解、突出重点。",
+            "scene_zh": "产品上线推迟后，团队开复盘会。",
+            "lines": [
+              {
+                "speaker": "Kate",
+                "en": "So the launch was delayed because the designers were late, right?",
+                "zh": "所以上线推迟是因为设计师交晚了，对吧？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Actually, it wasn't the designers that caused the delay. It was the payment provider.",
+                "zh": "其实造成延误的不是设计师，而是支付服务商。"
+              },
+              {
+                "speaker": "Kate",
+                "en": "Really? I thought the designs came in late.",
+                "zh": "真的吗？我以为设计稿交晚了。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "They were a day late, but what really held us up was the payment provider's security review.",
+                "zh": "他们是晚了一天，但真正拖慢我们的是支付服务商的安全审查。"
+              },
+              {
+                "speaker": "Kate",
+                "en": "I see. So what do we need to change next time?",
+                "zh": "明白了。那下次我们要改什么？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "What we need is a clear deadline for every external partner.",
+                "zh": "我们需要的是给每个外部合作方定一个明确的截止日期。"
+              },
+              {
+                "speaker": "Kate",
+                "en": "And the designers?",
+                "zh": "那设计师呢？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "All they asked for was earlier feedback. The reason why they were late is that our comments arrived on the Friday.",
+                "zh": "他们只是希望早点得到反馈。他们晚了的原因是我们的意见周五才给到。"
+              },
+              {
+                "speaker": "Kate",
+                "en": "Fair enough. It's the process we need to fix, not the people.",
+                "zh": "有道理。我们要改的是流程，而不是人。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "it-was-that",
+              "what-we-need-is",
+              "all-i-want-is",
+              "the-reason-why"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "notice",
+            "role": "notice",
+            "skill": "grammar",
+            "question_zh": "这些句子如果不用强调句，会怎么说？强调的部分在哪里？",
+            "examples": [
+              {
+                "en": "It wasn't the designers that caused the delay.",
+                "zh": "造成延误的不是设计师。",
+                "highlight": [
+                  "It wasn't",
+                  "that"
+                ]
+              },
+              {
+                "en": "What really held us up was the security review.",
+                "zh": "真正拖慢我们的是安全审查。",
+                "highlight": [
+                  "What really held us up was"
+                ]
+              },
+              {
+                "en": "All they asked for was earlier feedback.",
+                "zh": "他们只是希望早点得到反馈。",
+                "highlight": [
+                  "All they asked for was"
+                ]
+              },
+              {
+                "en": "It's the process we need to fix, not the people.",
+                "zh": "我们要改的是流程，而不是人。",
+                "highlight": [
+                  "It's the process"
+                ]
+              }
+            ],
+            "takeaway_zh": "It + be + 重点 + that / who ...：把重点放在中间，常用来纠正（It wasn't X, it was Y）。What ... is / was + 重点：先说“……的是”，最后揭晓重点。All ... is / was ...：强调“仅仅、只不过”。口语里 that 有时可以省略（It's the process we need to fix）。"
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_en": "\"Did the designers cause the delay?\" \"No. ___ the payment provider that caused it.\"",
+            "prompt_zh": "选出正确的说法：",
+            "options": [
+              "It was",
+              "There was",
+              "What was"
+            ],
+            "answer": 0,
+            "explanation_zh": "纠正误解：It was + 重点 + that ...。"
+          },
+          {
+            "id": "s06",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "grammar",
+            "prompt_en": "What we need ___ a clear deadline.",
+            "prompt_zh": "选出正确的形式：",
+            "options": [
+              "is",
+              "are",
+              "it's"
+            ],
+            "answer": 0,
+            "explanation_zh": "What 从句作主语，后面直接接 is。"
+          },
+          {
+            "id": "s07",
+            "type": "order",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "排成句子。",
+            "translation_zh": "真正重要的是用户体验。",
+            "tokens": [
+              "matters",
+              "What",
+              "the",
+              "is",
+              "really",
+              "experience.",
+              "user"
+            ],
+            "answers": [
+              "What really matters is the user experience."
+            ],
+            "explanation_zh": "What + (really) + 动词 + is + 重点。"
+          },
+          {
+            "id": "s08",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "补全强调句。",
+            "sentence_en": "It wasn't me ___ broke the printer!",
+            "translation_zh": "弄坏打印机的不是我！",
+            "answers": [
+              "who",
+              "that"
+            ],
+            "explanation_zh": "强调人时用 who 或 that。"
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "prompt_zh": "把 I just want a quiet weekend. 改成强调句，哪一句对？",
+            "options": [
+              "All I want is a quiet weekend.",
+              "All I want a quiet weekend is.",
+              "What I want it is a quiet weekend."
+            ],
+            "answer": 0,
+            "explanation_zh": "All + 主语 + 动词 + is + 重点。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，造成延误的是谁？",
+            "audio_en": "Actually, it wasn't the designers that caused the delay. It was the payment provider.",
+            "options": [
+              "支付服务商",
+              "设计师",
+              "测试团队"
+            ],
+            "answer": 0,
+            "explanation_zh": "It wasn't the designers ... It was the payment provider."
+          },
+          {
+            "id": "s11",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：设计师为什么晚了？",
+            "options": [
+              "团队的意见周五才给到他们",
+              "他们人手不够",
+              "需求改了很多次"
+            ],
+            "answer": 0,
+            "explanation_zh": "The reason why they were late is that our comments arrived on the Friday."
+          },
+          {
+            "id": "s12",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_production",
+            "task_zh": "朋友误以为是你提议取消旅行的。纠正他：至少用两个强调句（It wasn't ... that ...、What I said was ...、All I wanted was ...）。",
+            "prompt_en": "So you're the one who suggested cancelling the trip, right?",
+            "model_answers": [
+              "No, actually it wasn't me who suggested cancelling it. It was Tom. What I said was that we should check the weather first. All I wanted was a backup plan in case it rained."
+            ],
+            "checklist_zh": [
+              "用 It wasn't ... that / who ... 纠正了误解",
+              "至少还有一个 What ... was ... 或 All ... was ...",
+              "What 从句后面没有多加 it",
+              "语气是解释，不是指责"
+            ]
+          },
+          {
+            "id": "s13",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "补全强调句。",
+            "sentence_en": "___ I like about this city is the food.",
+            "translation_zh": "我喜欢这座城市的是它的美食。",
+            "answers": [
+              "What"
+            ],
+            "explanation_zh": "What I like ... is ...。"
+          },
+          {
+            "id": "s14",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "prompt_en": "The reason why I called ___ that I need your advice.",
+            "prompt_zh": "选出最规范的形式：",
+            "options": [
+              "is",
+              "is because",
+              "because"
+            ],
+            "answer": 0,
+            "explanation_zh": "The reason why ... is that ...；is because 在口语里常见，但正式写作里通常避免。"
+          }
+        ]
+      },
+      {
+        "id": "c1-u01-register-l3",
+        "order": 3,
+        "kind": "core",
+        "title_en": "Getting the Tone Right",
+        "title_zh": "把请求说得得体",
+        "estimated_minutes": 13,
+        "objectives": [
+          {
+            "en": "Make requests to senior people with distancing language.",
+            "zh": "能用委婉的“距离感”表达向上级提出请求。"
+          },
+          {
+            "en": "Recognise phrases that can sound pushy, such as at your earliest convenience.",
+            "zh": "能识别听起来可能有压迫感的说法，例如 at your earliest convenience。"
+          }
+        ],
+        "can_do_ids": [
+          "c1.wi.register",
+          "c1.l.tone"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "written_interaction",
+            "title_zh": "这节课学什么",
+            "body_zh": "请求越大、对方地位越高，英语越需要“距离感”：用过去时（I was wondering）、进行时、would / could，把请求包装得不那么直接。这节课还会讲到，一些看起来礼貌的套话（at your earliest convenience）其实可能显得在催人。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "Asking for an extension",
+            "instructions_zh": "先听。注意 Lin 的初稿和修改稿有什么不同。",
+            "scene_zh": "Lin 要向总监 Diana 申请延期，请 Sam 帮她看邮件。",
+            "lines": [
+              {
+                "speaker": "Lin",
+                "en": "I need to ask Diana for an extension on the report. Does this sound OK? \"I need more time. Please reply ASAP.\"",
+                "zh": "我得向 Diana 申请报告延期。这样写行吗？“我需要更多时间，请尽快回复。”"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Hmm, it sounds a bit like an order. She's the director, after all.",
+                "zh": "嗯，听起来有点像命令。毕竟她是总监。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Fair point. How about: \"I was wondering if it would be possible to extend the deadline to Friday.\"",
+                "zh": "有道理。这样呢：“不知道能否把截止日期延到周五。”"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Much better. You might explain why, too.",
+                "zh": "好多了。也许还可以说明原因。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "\"Due to a delay in receiving the sales data, I would appreciate it if I could have two more days.\"",
+                "zh": "“由于销售数据收到得晚，如果能再给我两天时间，我将不胜感激。”"
+              },
+              {
+                "speaker": "Sam",
+                "en": "Good. And instead of ASAP?",
+                "zh": "很好。那 ASAP 换成什么？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "\"At your earliest convenience\"?",
+                "zh": "“请您尽早”？"
+              },
+              {
+                "speaker": "Sam",
+                "en": "That can still sound a little pushy. \"I'd be grateful for your thoughts when you have a moment\" is softer.",
+                "zh": "那还是可能显得有点催。“您有空时，期待听到您的意见”会更柔和。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Great. And I'll start with \"Apologies for the short notice.\"",
+                "zh": "太好了。我再在开头加一句“抱歉通知得这么晚”。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "vocab",
+            "role": "input",
+            "skill": "vocabulary",
+            "instructions_zh": "听一听，跟读。",
+            "items": [
+              "i-was-wondering-if",
+              "i-would-appreciate-it",
+              "earliest-convenience",
+              "apologies-for"
+            ]
+          },
+          {
+            "id": "s04",
+            "type": "notice",
+            "role": "notice",
+            "skill": "written_interaction",
+            "question_zh": "这些请求说的是现在的事，为什么用了过去时或 would？",
+            "examples": [
+              {
+                "en": "I was wondering if it would be possible to extend the deadline.",
+                "zh": "不知道能否延长截止日期。",
+                "highlight": [
+                  "I was wondering if",
+                  "would be possible"
+                ]
+              },
+              {
+                "en": "I would appreciate it if I could have two more days.",
+                "zh": "如果能再给我两天时间，我将不胜感激。",
+                "highlight": [
+                  "I would appreciate it if",
+                  "could"
+                ]
+              },
+              {
+                "en": "I'd be grateful for your thoughts when you have a moment.",
+                "zh": "您有空时，期待听到您的意见。",
+                "highlight": [
+                  "I'd be grateful for"
+                ]
+              },
+              {
+                "en": "Please reply at your earliest convenience.",
+                "zh": "请您尽早回复。",
+                "highlight": [
+                  "at your earliest convenience"
+                ]
+              }
+            ],
+            "takeaway_zh": "过去时（I was wondering）、would / could 并不表示过去，而是拉开距离，让对方更容易拒绝，所以显得礼貌。请求越大、对方越资深，越需要这种距离。at your earliest convenience 字面很客气，实际是“请尽快”，对上级使用时要小心。"
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "guided_practice",
+            "skill": "written_interaction",
+            "prompt_zh": "给总监写邮件请周五的假，哪一句最得体？",
+            "options": [
+              "I was wondering if I could take Friday off.",
+              "I want Friday off.",
+              "Give me Friday off, please."
+            ],
+            "answer": 0,
+            "explanation_zh": "I was wondering if I could ...：对上级的委婉请求。"
+          },
+          {
+            "id": "s06",
+            "type": "cloze",
+            "role": "guided_practice",
+            "skill": "written_interaction",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "I would appreciate ___ if you could send the file today.",
+            "translation_zh": "如果您今天能发来文件，我将不胜感激。",
+            "answers": [
+              "it"
+            ],
+            "explanation_zh": "固定说法 I would appreciate it if ...，it 不能省。"
+          },
+          {
+            "id": "s07",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "written_interaction",
+            "instructions_zh": "把场合和最合适的说法配对。",
+            "pairs": [
+              {
+                "left": "第一次向陌生客户提出请求",
+                "right": "Would it be possible to ...?"
+              },
+              {
+                "left": "请上级批准一件事",
+                "right": "I was wondering if I could ..."
+              },
+              {
+                "left": "为临时通知道歉",
+                "right": "Apologies for the short notice."
+              },
+              {
+                "left": "给好朋友发消息",
+                "right": "Any chance you could ...?"
+              }
+            ]
+          },
+          {
+            "id": "s08",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "written_interaction",
+            "prompt_zh": "哪一句最可能让上级觉得你在催？",
+            "options": [
+              "Please reply at your earliest convenience.",
+              "I'd be grateful for your thoughts when you have a moment.",
+              "No rush, whenever suits you."
+            ],
+            "answer": 0,
+            "explanation_zh": "at your earliest convenience = 请尽快，带有催促意味。"
+          },
+          {
+            "id": "s09",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "听录音，Lin 为什么需要延期？",
+            "audio_en": "Due to a delay in receiving the sales data, I would appreciate it if I could have two more days.",
+            "options": [
+              "销售数据收到得晚",
+              "她生病了",
+              "报告要求改了"
+            ],
+            "answer": 0,
+            "explanation_zh": "Due to a delay in receiving the sales data。"
+          },
+          {
+            "id": "s10",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "回想对话：Sam 为什么觉得初稿不合适？",
+            "options": [
+              "听起来像在下命令",
+              "太长了",
+              "有拼写错误"
+            ],
+            "answer": 0,
+            "explanation_zh": "it sounds a bit like an order. She's the director, after all."
+          },
+          {
+            "id": "s11",
+            "type": "write",
+            "role": "communicative_task",
+            "skill": "written_interaction",
+            "task_zh": "写一封 80–100 词的邮件给一位你不太熟的上级，请求把下周的会议改期。说明原因，为带来的不便道歉，语气要得体。",
+            "model_answers": [
+              "Dear Ms Turner,\n\nApologies for the short notice. I was wondering if it would be possible to move our meeting on Tuesday to later in the week. Unfortunately, I have been asked to attend a client visit in Shenzhen that morning, which was only confirmed yesterday. I would be happy to meet on Thursday or Friday at any time that suits you. I'm sorry for any inconvenience this may cause, and I'd be grateful for your thoughts when you have a moment.\n\nKind regards,\nLin Zhang"
+            ],
+            "checklist_zh": [
+              "开头称呼和结尾署名都是正式的",
+              "请求用了 I was wondering if / Would it be possible",
+              "说明了原因并道歉",
+              "提供了替代时间，没有用 ASAP 或命令语气"
+            ]
+          },
+          {
+            "id": "s12",
+            "type": "order",
+            "role": "exit_ticket",
+            "skill": "written_interaction",
+            "instructions_zh": "排成句子。",
+            "translation_zh": "不知道您能否帮我一下。",
+            "tokens": [
+              "could",
+              "if",
+              "I",
+              "help",
+              "was",
+              "you",
+              "me.",
+              "wondering"
+            ],
+            "answers": [
+              "I was wondering if you could help me."
+            ],
+            "explanation_zh": "I was wondering if + 主语 + could ...。"
+          },
+          {
+            "id": "s13",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "written_interaction",
+            "prompt_en": "Would it be possible ___ the deadline?",
+            "prompt_zh": "选出正确的形式：",
+            "options": [
+              "to extend",
+              "extending",
+              "extend"
+            ],
+            "answer": 0,
+            "explanation_zh": "Would it be possible + to do？"
+          }
+        ]
+      },
+      {
+        "id": "c1-u01-register-l4",
+        "order": 4,
+        "kind": "review",
+        "title_en": "Unit Review: Same Problem, Different Readers",
+        "title_zh": "单元复习：同一件事，不同的读者",
+        "estimated_minutes": 15,
+        "objectives": [
+          {
+            "en": "Follow a formal workplace conversation and notice emphasis and tone.",
+            "zh": "能听懂一段正式的工作对话，注意其中的强调和语气。"
+          },
+          {
+            "en": "Report the same problem to a senior colleague, a client and a friend.",
+            "zh": "能把同一个问题分别讲给上级、客户和朋友。"
+          }
+        ],
+        "can_do_ids": [
+          "c1.l.tone",
+          "c1.gr.emphasis",
+          "c1.wi.register"
+        ],
+        "steps": [
+          {
+            "id": "s01",
+            "type": "orientation",
+            "role": "orientation",
+            "skill": "listening",
+            "title_zh": "单元复习",
+            "body_zh": "Lin 要向总监汇报一个客户问题。先听她怎么用强调句说清责任、用委婉的方式提出请求；然后轮到你，把同一件事分别讲给上级、客户和朋友。"
+          },
+          {
+            "id": "s02",
+            "type": "dialogue",
+            "role": "input",
+            "skill": "listening",
+            "title_en": "A problem with a client",
+            "instructions_zh": "听两遍。第一遍听发生了什么，第二遍注意 Lin 的强调句和请求方式。",
+            "scene_zh": "总监 Diana 请 Lin 到办公室，了解一个大客户的问题。",
+            "lines": [
+              {
+                "speaker": "Diana",
+                "en": "Lin, thanks for coming. I gather there's been a problem with the Hartley account.",
+                "zh": "Lin，谢谢你过来。听说 Hartley 那个客户出了点问题。"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Yes, I'm afraid so. It was our invoice, not their payment, that caused the confusion.",
+                "zh": "是的，恐怕是。引起混乱的是我们的发票，而不是他们的付款。"
+              },
+              {
+                "speaker": "Diana",
+                "en": "I see. What exactly went wrong?",
+                "zh": "明白了。具体出了什么问题？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "The invoice went to their old address. What we should have done is confirm their details after they moved.",
+                "zh": "发票寄到了他们的旧地址。我们本应该在他们搬家后确认一下信息。"
+              },
+              {
+                "speaker": "Diana",
+                "en": "And how have they reacted?",
+                "zh": "他们是什么反应？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "Their finance manager was rather frustrated, understandably. I've apologised and sent it again.",
+                "zh": "他们的财务经理相当不满，这可以理解。我已经道歉并重新寄出了。"
+              },
+              {
+                "speaker": "Diana",
+                "en": "Good. Is there anything you need from me?",
+                "zh": "很好。需要我做什么吗？"
+              },
+              {
+                "speaker": "Lin",
+                "en": "I was wondering if you could call their director. All they really want is reassurance that it won't happen again.",
+                "zh": "不知道您能否给他们的总监打个电话。他们其实只是想要一个保证，确保不会再发生。"
+              },
+              {
+                "speaker": "Diana",
+                "en": "Of course. I'd be happy to.",
+                "zh": "当然，我很乐意。"
+              }
+            ]
+          },
+          {
+            "id": "s03",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "引起混乱的原因是什么？",
+            "options": [
+              "发票寄到了客户的旧地址",
+              "客户没有付款",
+              "发票金额写错了"
+            ],
+            "answer": 0,
+            "explanation_zh": "The invoice went to their old address."
+          },
+          {
+            "id": "s04",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "Lin 希望 Diana 做什么？",
+            "options": [
+              "给客户的总监打个电话",
+              "重新开一张发票",
+              "给客户打折"
+            ],
+            "answer": 0,
+            "explanation_zh": "I was wondering if you could call their director."
+          },
+          {
+            "id": "s05",
+            "type": "choice",
+            "role": "retrieval_practice",
+            "skill": "listening",
+            "prompt_zh": "客户其实最想要什么？",
+            "options": [
+              "保证不会再发生",
+              "经济赔偿",
+              "换一位负责人"
+            ],
+            "answer": 0,
+            "explanation_zh": "All they really want is reassurance that it won't happen again."
+          },
+          {
+            "id": "s06",
+            "type": "match",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "把 Lin 说的话和它的作用配对。",
+            "pairs": [
+              {
+                "left": "It was our invoice, not their payment, that ...",
+                "right": "纠正可能的误解"
+              },
+              {
+                "left": "What we should have done is ...",
+                "right": "突出本该做的事"
+              },
+              {
+                "left": "All they really want is ...",
+                "right": "强调“只是”"
+              },
+              {
+                "left": "I was wondering if you could ...",
+                "right": "委婉地向上级请求"
+              }
+            ]
+          },
+          {
+            "id": "s07",
+            "type": "cloze",
+            "role": "retrieval_practice",
+            "skill": "grammar",
+            "instructions_zh": "补全句子。",
+            "sentence_en": "What we should have ___ is confirm their details.",
+            "translation_zh": "我们本应该确认他们的信息。",
+            "answers": [
+              "done"
+            ],
+            "explanation_zh": "What we should have done is + 动词原形。"
+          },
+          {
+            "id": "s08",
+            "type": "speak",
+            "role": "communicative_task",
+            "skill": "spoken_production",
+            "task_zh": "你负责的一批货晚到了三天。用 1 分钟向上级口头汇报：说明真正的原因（用 It wasn't ... that ...）、你已经做了什么、需要上级做什么（用委婉的请求）。",
+            "prompt_en": "I heard the Lee order arrived late. What happened?",
+            "model_answers": [
+              "Yes, I'm afraid it was three days late. It wasn't the warehouse that caused the delay; it was a customs check at the port. What I've done so far is call the client to explain and offer free delivery on their next order. I was wondering if you could send them a short note as well. All they really want is to know we're taking it seriously."
+            ],
+            "checklist_zh": [
+              "用强调句说明了真正的原因",
+              "说清了已经采取的措施",
+              "用委婉的方式向上级提出请求",
+              "语气冷静、客观，没有推卸责任"
+            ]
+          },
+          {
+            "id": "s09",
+            "type": "write",
+            "role": "communicative_task",
+            "skill": "written_interaction",
+            "task_zh": "同一件事（货物晚到三天）写两次：1）给客户的正式道歉邮件（80–100 词）；2）给好朋友的一条消息（2–3 句），吐槽这周有多忙乱。注意两者用词和语气的差别。",
+            "model_answers": [
+              "1) Dear Mr Lee,\n\nI am writing regarding your recent order, which I understand arrived three days later than promised. Please accept our sincere apologies for the inconvenience. The delay was caused by an unexpected customs inspection, and we have since reviewed our shipping schedule to prevent it happening again. As a gesture of goodwill, we would like to offer free delivery on your next order. Please do not hesitate to contact me if you require any further assistance.\n\nKind regards,\nLin Zhang\n\n2) What a week! A shipment got stuck at customs and I've spent three days apologising to everyone. Drinks on Friday? I need one!"
+            ],
+            "checklist_zh": [
+              "正式邮件用了 regarding / require / assistance 等正式用词，没有缩写",
+              "正式邮件道了歉、说明了原因和补救措施",
+              "给朋友的消息用了口语化的表达和缩写",
+              "两段写的是同一件事，语气差别明显"
+            ]
+          },
+          {
+            "id": "s10",
+            "type": "cloze",
+            "role": "exit_ticket",
+            "skill": "grammar",
+            "instructions_zh": "补全强调句。",
+            "sentence_en": "It was the weather ___ caused the delay.",
+            "translation_zh": "造成延误的是天气。",
+            "answers": [
+              "that",
+              "which"
+            ],
+            "explanation_zh": "It was + 重点 + that ...。"
+          },
+          {
+            "id": "s11",
+            "type": "choice",
+            "role": "exit_ticket",
+            "skill": "written_interaction",
+            "prompt_en": "We regret to inform you that your application has been unsuccessful.",
+            "prompt_zh": "这句话最可能出现在什么场合？",
+            "options": [
+              "正式地通知坏消息",
+              "和朋友聊天",
+              "庆祝成功"
+            ],
+            "answer": 0,
+            "explanation_zh": "We regret to inform you that ...：正式通知坏消息的固定说法。"
+          }
+        ]
+      }
+    ]
+  }
+}

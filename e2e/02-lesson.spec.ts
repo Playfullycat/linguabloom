@@ -24,7 +24,8 @@ test("learning path, unit page and lesson flow with resume and summary", async (
   // Learning path comes from the database (7 levels, planned levels marked).
   await page.goto("/learn/path");
   await expect(page.getByRole("heading", { name: "建立英语声音、文字和最基础表达的对应关系" })).toBeVisible();
-  await expect(page.getByText("计划中 · 3 个单元").first()).toBeVisible();
+  // Every level now has learnable units (Phase 5.2); C1 and C2 have 2 of 3.
+  await expect(page.getByText("2 / 3 个单元可学").first()).toBeVisible();
   await page.screenshot({ path: shots("path"), fullPage: true });
 
   await page.goto("/learn/levels/pre_a1");

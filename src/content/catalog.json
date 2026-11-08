@@ -53,18 +53,18 @@
     { "id": "b1-u05-reported-speech", "level": "b1", "order": 5, "title_en": "She Said That...", "title_zh": "转述", "summary_zh": "间接引语基础：转述别人说的话。" },
     { "id": "b1-u06-opinions", "level": "b1", "order": 6, "title_en": "In My Opinion", "title_zh": "表达观点", "summary_zh": "表达观点、给出理由、礼貌地不同意。", "file": "b1/u06-opinions.json" },
 
-    { "id": "b2-u01-discourse", "level": "b2", "order": 1, "title_en": "Linking Ideas", "title_zh": "衔接与连贯", "summary_zh": "however / whereas / as a result 等话语标记。" },
+    { "id": "b2-u01-discourse", "level": "b2", "order": 1, "title_en": "Linking Ideas", "title_zh": "衔接与连贯", "summary_zh": "however / whereas / as a result 等话语标记。", "file": "b2/u01-discourse.json" },
     { "id": "b2-u02-collocations", "level": "b2", "order": 2, "title_en": "Words That Go Together", "title_zh": "词汇搭配", "summary_zh": "常见动名搭配和形名搭配，让表达更自然。" },
-    { "id": "b2-u03-hedging", "level": "b2", "order": 3, "title_en": "It Seems That...", "title_zh": "委婉与立场", "summary_zh": "hedging：表达不确定、立场和保留意见。" },
+    { "id": "b2-u03-hedging", "level": "b2", "order": 3, "title_en": "It Seems That...", "title_zh": "委婉与立场", "summary_zh": "hedging：表达不确定、立场和保留意见。", "file": "b2/u03-hedging.json" },
     { "id": "b2-u04-presentations", "level": "b2", "order": 4, "title_en": "Presenting", "title_zh": "做演示", "summary_zh": "组织一次短演示：开场、过渡、总结和回答问题。" },
     { "id": "b2-u05-lectures", "level": "b2", "order": 5, "title_en": "Lectures and Notes", "title_zh": "讲座与笔记", "summary_zh": "听长篇讲座、记笔记并写总结。" },
 
-    { "id": "c1-u01-register", "level": "c1", "order": 1, "title_en": "Register and Tone", "title_zh": "语域与语气", "summary_zh": "正式与非正式表达的选择，信息结构与强调。" },
+    { "id": "c1-u01-register", "level": "c1", "order": 1, "title_en": "Register and Tone", "title_zh": "语域与语气", "summary_zh": "正式与非正式表达的选择，信息结构与强调。", "file": "c1/u01-register.json" },
     { "id": "c1-u02-academic-writing", "level": "c1", "order": 2, "title_en": "Academic Writing", "title_zh": "学术写作", "summary_zh": "论证结构、引用与综合多篇材料。" },
-    { "id": "c1-u03-argument", "level": "c1", "order": 3, "title_en": "Concession and Rebuttal", "title_zh": "让步与反驳", "summary_zh": "承认对方观点再提出反驳，进行复杂论证。" },
+    { "id": "c1-u03-argument", "level": "c1", "order": 3, "title_en": "Concession and Rebuttal", "title_zh": "让步与反驳", "summary_zh": "承认对方观点再提出反驳，进行复杂论证。", "file": "c1/u03-argument.json" },
 
-    { "id": "c2-u01-implied-meaning", "level": "c2", "order": 1, "title_en": "Reading Between the Lines", "title_zh": "言外之意", "summary_zh": "隐含意义、反讽和语用推断。" },
-    { "id": "c2-u02-precision", "level": "c2", "order": 2, "title_en": "Precise Expression", "title_zh": "精确表达", "summary_zh": "细微的近义词差别和高度精确的用词。" },
+    { "id": "c2-u01-implied-meaning", "level": "c2", "order": 1, "title_en": "Reading Between the Lines", "title_zh": "言外之意", "summary_zh": "隐含意义、反讽和语用推断。", "file": "c2/u01-implied-meaning.json" },
+    { "id": "c2-u02-precision", "level": "c2", "order": 2, "title_en": "Precise Expression", "title_zh": "精确表达", "summary_zh": "细微的近义词差别和高度精确的用词。", "file": "c2/u02-precision.json" },
     { "id": "c2-u03-literature-debate", "level": "c2", "order": 3, "title_en": "Literature and Debate", "title_zh": "文学与辩论", "summary_zh": "文学文本、专业辩论和复杂写作。" }
   ]
 }

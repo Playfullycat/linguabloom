@@ -13,7 +13,7 @@ test("grammar studio: map, point page, five exercise types, errors into the note
   // Map in teaching order, with filters and planned points.
   await page.goto("/grammar");
   await expect(page.getByRole("link", { name: /be 动词 am \/ is \/ are/ })).toBeVisible();
-  await expect(page.getByRole("link", { name: /比较级/ })).toContainText("规划中");
+  await expect(page.getByRole("link", { name: /比较级/ }).filter({ hasNotText: "可分级" })).toContainText("规划中");
   await page.getByRole("navigation", { name: "按等级筛选" }).getByRole("link", { name: "A2" }).click();
   await expect(page.getByRole("link", { name: /be 动词/ })).toHaveCount(0);
   await expect(page.getByRole("link", { name: /一般过去时/ })).toBeVisible();

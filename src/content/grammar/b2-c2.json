@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "source_type": "first_party",
+  "review_status": "pending_owner_review",
+  "points": [
+    {
+      "id": "discourse-markers",
+      "order": 21,
+      "level": "b2",
+      "can_do_ids": ["b2.gr.discourse", "b2.wp.coherent"],
+      "title_en": "Discourse markers",
+      "title_zh": "话语标记：对比、让步、因果、补充、总结",
+      "status": "published",
+      "topics": ["sentence", "discourse"],
+      "prerequisites": ["linking-ideas"],
+      "unit_grammar_ids": ["b2.discourse-markers"],
+      "default_error_category": "collocation",
+      "summary_zh": "whereas、nevertheless、due to、as a result、furthermore、in addition to、overall：标出观点之间的关系。",
+      "explanation_zh": "话语标记告诉读者下一句和上一句是什么关系。对比：whereas / while（同一句里对比两件事）。让步：nevertheless / even so（承认前面的事实，结果仍然如此，放在新句子开头）。另一面：on the other hand；否定前面的说法：on the contrary。原因：due to / because of + 名词。结果：as a result / consequently + 句子，或“, which means ...”。补充：furthermore / moreover（正式），in addition to + 名词或 -ing。总结：overall / to sum up。最常见的错误是“后面接什么”用错：due to 不接句子，in addition to 后面用 -ing。",
+      "structure": ["A, whereas B.", "A. Nevertheless / Even so, B.", "Due to + 名词, 句子。", "A. As a result / Consequently, B.", "In addition to + -ing, 句子。", "Overall / To sum up, 句子。"],
+      "usage_zh": ["比较两种情况：Anna has ten years' experience, whereas Ben graduated last year.", "解释因果链：Due to the drought, the harvest was smaller. As a result, flour prices rose.", "组织提案或议论文：Furthermore, ... Overall, ..."],
+      "examples": [
+        { "en": "Some people love crowds, whereas others prefer quiet places.", "zh": "有人喜欢热闹，而有人喜欢安静。" },
+        { "en": "The risks are high. Nevertheless, we've decided to go ahead.", "zh": "风险很高。尽管如此，我们决定继续推进。" },
+        { "en": "The factory closed. As a result, two hundred people lost their jobs.", "zh": "工厂关闭了，结果两百人失业。" },
+        { "en": "In addition to saving money, the scheme would improve morale.", "zh": "这个计划除了省钱，还能提振士气。" }
+      ],
+      "breakdowns": [
+        { "zh": "由于大雾，所有航班都取消了。", "parts": [ { "text": "Due to the fog,", "role": "other" }, { "text": "all flights", "role": "subject" }, { "text": "were cancelled", "role": "verb" } ] },
+        { "zh": "尽管如此，他的面试表现要好得多。", "parts": [ { "text": "Nevertheless,", "role": "other" }, { "text": "his interview", "role": "subject" }, { "text": "was", "role": "verb" }, { "text": "much stronger", "role": "complement" } ] }
+      ],
+      "common_errors": [
+        { "wrong": "Due to it was raining, we stayed in.", "right": "Because it was raining, we stayed in.", "why_zh": "due to 后面接名词；接句子用 because。" },
+        { "wrong": "The city is busy. On the contrary, the countryside is quiet.", "right": "The city is busy, whereas the countryside is quiet.", "why_zh": "单纯对比用 whereas / by contrast；on the contrary 是否定前面的说法。" },
+        { "wrong": "In addition to reduce costs, it saves time.", "right": "In addition to reducing costs, it saves time.", "why_zh": "in addition to 里的 to 是介词，后面接 -ing。" },
+        { "wrong": "Furthermore the plan is cheap.", "right": "Furthermore, the plan is cheap.", "why_zh": "放在句首的话语标记后面通常加逗号。" }
+      ],
+      "contrast": {
+        "title_zh": "on the other hand 还是 on the contrary？",
+        "items": [
+          { "en": "It's expensive. On the other hand, it will last for years.", "zh": "它很贵。另一方面，它能用很多年。", "note_zh": "同一个问题的另一面。" },
+          { "en": "\"Was it boring?\" \"On the contrary, it was fascinating.\"", "zh": "“无聊吗？”“恰恰相反，非常有意思。”", "note_zh": "否定对方的说法。" }
+        ]
+      },
+      "limits_zh": ["口语里 but、so、and 依然最常用；furthermore、consequently 更适合正式写作和演讲。", "一段话里不要堆砌话语标记，每句都加反而显得生硬。"],
+      "exercises": [
+        { "id": "e1", "type": "choice", "difficulty": 3, "prompt_en": "My brother loves crowds, ___ I prefer quiet places.", "prompt_zh": "选出正确的连接词：", "options": ["whereas", "nevertheless", "furthermore"], "answer": 0, "explanation_zh": "同一句里对比两个人：whereas。" },
+        { "id": "e2", "type": "choice", "difficulty": 3, "prompt_en": "___ the strike, all trains were cancelled.", "prompt_zh": "选出正确的表达：", "options": ["Due to", "As a result", "Because"], "answer": 0, "explanation_zh": "后面是名词 the strike：Due to。" },
+        { "id": "e3", "type": "cloze", "difficulty": 3, "instructions_zh": "补全句子（一个表示结果的词或短语）。", "sentence_en": "Demand fell sharply. ___, prices dropped.", "translation_zh": "需求大幅下降，因此价格也跌了。", "answers": ["Consequently", "As a result", "Therefore"], "explanation_zh": "引出结果：Consequently / As a result / Therefore。" },
+        { "id": "e4", "type": "cloze", "difficulty": 3, "instructions_zh": "用括号里的动词补全。", "sentence_en": "In addition to ___ (save) money, the plan reduces waste.", "translation_zh": "这个方案除了省钱，还能减少浪费。", "answers": ["saving"], "explanation_zh": "in addition to + -ing。" },
+        { "id": "e5", "type": "order", "difficulty": 3, "translation_zh": "结果，很多人失业了。", "tokens": ["As", "a", "result", "many", "people", "lost", "their", "jobs"], "answers": ["As a result, many people lost their jobs."], "explanation_zh": "As a result 放句首，后面加逗号。" },
+        { "id": "e6", "type": "correction", "difficulty": 4, "wrong_en": "Due to the traffic was heavy, we arrived late.", "translation_zh": "因为交通拥堵，我们迟到了。", "answers": ["Because the traffic was heavy, we arrived late.", "Due to the heavy traffic, we arrived late.", "Because of the heavy traffic, we arrived late."], "explanation_zh": "due to 不接句子：改用 because，或改成 due to + 名词短语。" },
+        { "id": "e7", "type": "correction", "difficulty": 4, "wrong_en": "I like the city. On the contrary, my sister prefers the countryside.", "translation_zh": "我喜欢城市，而我姐姐更喜欢乡村。", "answers": ["I like the city, whereas my sister prefers the countryside.", "I like the city. By contrast, my sister prefers the countryside.", "I like the city, while my sister prefers the countryside."], "explanation_zh": "单纯对比用 whereas / while / by contrast。" },
+        { "id": "e8", "type": "build", "difficulty": 4, "task_zh": "就“城市应该修更多自行车道吗”写 4 句，依次用上 whereas、due to、as a result、overall。", "model_answers": ["Some people cycle to work every day, whereas others would never risk it in heavy traffic. Due to the lack of safe lanes, many potential cyclists stay in their cars. As a result, roads remain congested and polluted. Overall, more bike lanes would benefit drivers as well as cyclists."], "checklist_zh": ["whereas 用于同一句内的对比", "due to 后面接名词", "As a result 和 Overall 后面有逗号"] }
+      ]
+    },
+    {
+      "id": "hedging",
+      "order": 22,
+      "level": "b2",
+      "can_do_ids": ["b2.gr.hedging"],
+      "title_en": "Hedging: seem, tend to, likely",
+      "title_zh": "委婉语：表达确定程度",
+      "status": "published",
+      "topics": ["verbs", "modality"],
+      "prerequisites": ["future-forms"],
+      "unit_grammar_ids": ["b2.hedging"],
+      "default_error_category": "word_form",
+      "summary_zh": "用 seem / appear to、tend to、be likely to、may well、suggest 说清楚你有多确定。",
+      "explanation_zh": "英语讨论和写作很在意“你有多确定”。seem / appear + to do，或 It seems / appears that + 句子：看起来如此。tend to do：往往、通常。be likely / unlikely to do，或 It's likely that + 句子：很可能 / 不太可能。may / might / could 降低确定性；may well 比 may 更确定。说研究结果用 suggest / indicate（表明），不轻易说 prove（证明）。arguably、to some extent 让观点留有余地。",
+      "structure": ["主语 + seem / appear + to do", "It seems / appears that + 句子", "主语 + tend to + 动词原形", "主语 + is likely / unlikely to + 动词原形", "It may well be that + 句子"],
+      "usage_zh": ["汇报数据：Younger users appear to like the feature.", "描述趋势：People tend to spend more at weekends.", "引用研究：Research suggests that sleep improves memory."],
+      "examples": [
+        { "en": "It seems that most customers are satisfied.", "zh": "看起来大多数顾客都满意。" },
+        { "en": "Older users tend to find the app confusing.", "zh": "年长的用户往往觉得这个应用不好用。" },
+        { "en": "She's likely to get the job.", "zh": "她很可能拿到这份工作。" },
+        { "en": "It may well be that notifications are the real problem.", "zh": "很可能真正的问题是通知。" }
+      ],
+      "breakdowns": [
+        { "zh": "年轻用户似乎很喜欢它。", "parts": [ { "text": "Younger users", "role": "subject" }, { "text": "appear to like", "role": "verb" }, { "text": "it", "role": "object" } ] },
+        { "zh": "人们往往在周末花得更多。", "parts": [ { "text": "People", "role": "subject" }, { "text": "tend to spend", "role": "verb" }, { "text": "more", "role": "object" }, { "text": "at weekends", "role": "time" } ] }
+      ],
+      "common_errors": [
+        { "wrong": "People tend spend more at weekends.", "right": "People tend to spend more at weekends.", "why_zh": "tend 后面要加 to。" },
+        { "wrong": "She is likely get the job.", "right": "She is likely to get the job.", "why_zh": "be likely to + 动词原形。" },
+        { "wrong": "It seems that he seems tired.", "right": "He seems tired. / It seems that he is tired.", "why_zh": "两种结构选一种，不要重复。" },
+        { "wrong": "This study proves that coffee may help.", "right": "This study suggests that coffee may help.", "why_zh": "prove 太绝对，和 may 矛盾。" }
+      ],
+      "contrast": {
+        "title_zh": "suggest 还是 prove？",
+        "items": [
+          { "en": "The study suggests a link between coffee and health.", "zh": "这项研究表明咖啡和健康之间有关联。", "note_zh": "有证据，但不是定论。" },
+          { "en": "The experiment proved that the drug was safe.", "zh": "这项实验证明了这种药是安全的。", "note_zh": "确凿的结论，要慎用。" }
+        ]
+      },
+      "limits_zh": ["委婉也要适度：一句话里堆上 may、perhaps、possibly、to some extent，反而让人看不出你的观点。", "日常闲聊里不需要这么严谨，这些表达更多用于讨论、汇报和写作。"],
+      "exercises": [
+        { "id": "e1", "type": "choice", "difficulty": 3, "prompt_en": "Children ___ learn languages faster than adults.", "prompt_zh": "选出正确的形式：", "options": ["tend to", "tend", "are tending"], "answer": 0, "explanation_zh": "tend to + 动词原形。" },
+        { "id": "e2", "type": "choice", "difficulty": 3, "prompt_en": "The survey only asked fifty people. The results ___ that the plan is popular.", "prompt_zh": "选出最严谨的动词：", "options": ["suggest", "prove", "guarantee"], "answer": 0, "explanation_zh": "样本小，只能说 suggest。" },
+        { "id": "e3", "type": "cloze", "difficulty": 3, "instructions_zh": "补全句子。", "sentence_en": "He's very likely ___ win the election.", "translation_zh": "他很可能赢得选举。", "answers": ["to"], "explanation_zh": "be likely to + 动词原形。" },
+        { "id": "e4", "type": "cloze", "difficulty": 3, "instructions_zh": "补全句子（一个动词）。", "sentence_en": "It ___ that the meeting has been moved to Friday.", "translation_zh": "看起来会议改到周五了。", "answers": ["seems", "appears"], "explanation_zh": "It seems / appears that + 句子。" },
+        { "id": "e5", "type": "order", "difficulty": 3, "translation_zh": "年长的用户往往觉得它不好用。", "tokens": ["users", "Older", "to", "find", "it", "tend", "confusing"], "answers": ["Older users tend to find it confusing."], "explanation_zh": "主语 + tend to + 动词原形。" },
+        { "id": "e6", "type": "correction", "difficulty": 4, "wrong_en": "Prices are likely rise next year.", "translation_zh": "明年价格很可能上涨。", "answers": ["Prices are likely to rise next year."], "explanation_zh": "be likely to + 动词原形。" },
+        { "id": "e7", "type": "correction", "difficulty": 4, "wrong_en": "Everyone hates working on Mondays.", "translation_zh": "很多人似乎觉得周一上班更难。", "answers": ["Many people seem to find Mondays difficult.", "Many people tend to find Mondays harder.", "Many people seem to dislike working on Mondays."], "explanation_zh": "去掉绝对化的 everyone，用 many people + seem / tend to。" },
+        { "id": "e8", "type": "build", "difficulty": 4, "task_zh": "用 3 句话谨慎地描述一个你观察到的趋势（比如年轻人的阅读习惯），分别用 seem / appear、tend to、be likely to。", "model_answers": ["Young people seem to read fewer printed books than before. They tend to read on their phones in short bursts. As a result, long novels are likely to become less popular with this group."], "checklist_zh": ["用了 seem / appear", "用了 tend to + 动词原形", "用了 be likely to + 动词原形"] }
+      ]
+    },
+    {
+      "id": "cleft-sentences",
+      "order": 23,
+      "level": "c1",
+      "can_do_ids": ["c1.gr.emphasis"],
+      "title_en": "Cleft sentences for emphasis",
+      "title_zh": "强调句（分裂句）",
+      "status": "published",
+      "topics": ["sentence", "emphasis"],
+      "prerequisites": ["discourse-markers"],
+      "unit_grammar_ids": ["c1.cleft-sentences"],
+      "default_error_category": "word_order",
+      "summary_zh": "It was X that ...、What we need is ...、All I want is ...：把重点放在最显眼的位置。",
+      "explanation_zh": "强调句把一个句子拆成两部分，突出其中一个成分。It + be + 重点 + that / who + 其余部分：把重点放在中间，常用来纠正误解（It wasn't the designers that caused the delay; it was the payment provider.）。What + 主语 + 动词 + be + 重点：先说“……的是”，最后揭晓重点（What we need is a clear deadline.）。All + 主语 + 动词 + be ...：强调“只不过”（All I want is a quiet weekend.）。The reason why ... is that ...：突出原因。",
+      "structure": ["It + be + 重点 + that / who + 其余部分", "What + 主语 + 动词 + be + 重点", "All + 主语 + 动词 + be + 重点", "The reason why + 句子 + is that + 句子"],
+      "usage_zh": ["纠正误解：It wasn't me who broke it. It was the cat.", "汇报重点：What really held us up was the security review.", "表达简单的愿望：All they asked for was earlier feedback."],
+      "examples": [
+        { "en": "It was the payment provider that caused the delay.", "zh": "造成延误的是支付服务商。" },
+        { "en": "What really matters is the user experience.", "zh": "真正重要的是用户体验。" },
+        { "en": "All I want is a quiet weekend.", "zh": "我只想过一个安静的周末。" },
+        { "en": "The reason why they were late is that our comments arrived on Friday.", "zh": "他们晚了的原因是我们的意见周五才给到。" }
+      ],
+      "breakdowns": [
+        { "zh": "造成延误的是支付服务商。", "parts": [ { "text": "It was", "role": "other" }, { "text": "the payment provider", "role": "subject" }, { "text": "that caused", "role": "verb" }, { "text": "the delay", "role": "object" } ] },
+        { "zh": "我们需要的是一个明确的截止日期。", "parts": [ { "text": "What we need", "role": "subject" }, { "text": "is", "role": "verb" }, { "text": "a clear deadline", "role": "complement" } ] }
+      ],
+      "common_errors": [
+        { "wrong": "What we need it is more time.", "right": "What we need is more time.", "why_zh": "What 从句本身就是主语，后面不再加 it。" },
+        { "wrong": "It was the weather what caused the delay.", "right": "It was the weather that caused the delay.", "why_zh": "It-强调句用 that / who，不用 what。" },
+        { "wrong": "All I want it is some sleep.", "right": "All I want is some sleep.", "why_zh": "All 从句作主语，后面直接接 is。" },
+        { "wrong": "The reason why I left is because I was tired.", "right": "The reason why I left is that I was tired.", "why_zh": "正式写作里 reason ... is that，避免重复 because。" }
+      ],
+      "contrast": {
+        "title_zh": "普通句和强调句",
+        "items": [
+          { "en": "The payment provider caused the delay.", "zh": "支付服务商造成了延误。", "note_zh": "普通陈述，没有特别强调。" },
+          { "en": "It was the payment provider that caused the delay, not the designers.", "zh": "造成延误的是支付服务商，不是设计师。", "note_zh": "强调并纠正：重点落在 the payment provider。" }
+        ]
+      },
+      "limits_zh": ["强调句是“重音”，用得太多会显得夸张；只在真正需要突出或纠正时使用。", "口语里 It's the process we need to fix 中的 that 可以省略。"],
+      "exercises": [
+        { "id": "e1", "type": "choice", "difficulty": 4, "prompt_en": "\"Did Tom break the window?\" \"No, ___ his brother who broke it.\"", "prompt_zh": "选出正确的说法：", "options": ["it was", "what was", "there was"], "answer": 0, "explanation_zh": "纠正：It was + 重点 + who ...。" },
+        { "id": "e2", "type": "choice", "difficulty": 4, "prompt_en": "What I need ___ a long holiday.", "prompt_zh": "选出正确的形式：", "options": ["is", "it is", "are"], "answer": 0, "explanation_zh": "What 从句作主语，后面直接接 is。" },
+        { "id": "e3", "type": "cloze", "difficulty": 4, "instructions_zh": "补全强调句。", "sentence_en": "It was in Paris ___ they first met.", "translation_zh": "他们是在巴黎初次相遇的。", "answers": ["that", "where"], "explanation_zh": "强调地点：It was in Paris that ...。" },
+        { "id": "e4", "type": "cloze", "difficulty": 4, "instructions_zh": "补全强调句。", "sentence_en": "___ I really want to know is why nobody told me.", "translation_zh": "我真正想知道的是为什么没人告诉我。", "answers": ["What"], "explanation_zh": "What I really want to know is ...。" },
+        { "id": "e5", "type": "order", "difficulty": 4, "translation_zh": "我们需要的是一个明确的截止日期。", "tokens": ["What", "we", "need", "is", "a", "clear", "deadline"], "answers": ["What we need is a clear deadline."], "explanation_zh": "What + 主语 + 动词 + is + 重点。" },
+        { "id": "e6", "type": "correction", "difficulty": 4, "wrong_en": "It was the noise what kept me awake.", "translation_zh": "让我睡不着的是噪音。", "answers": ["It was the noise that kept me awake.", "It was the noise which kept me awake."], "explanation_zh": "It-强调句用 that，不用 what。" },
+        { "id": "e7", "type": "correction", "difficulty": 4, "wrong_en": "All she wanted it was a chance to explain.", "translation_zh": "她只是想要一个解释的机会。", "answers": ["All she wanted was a chance to explain."], "explanation_zh": "All 从句作主语，后面直接接 was。" },
+        { "id": "e8", "type": "build", "difficulty": 4, "task_zh": "同事以为项目失败是因为预算不够。用两个强调句纠正他：一个 It wasn't ... that ...，一个 What ... was ...。", "model_answers": ["It wasn't the budget that caused the problem; it was the unclear timeline. What we really lacked was someone to coordinate the teams."], "checklist_zh": ["一个 It wasn't ... that ... 纠正误解", "一个 What ... was ... 突出真正的原因", "What 从句后面没有多加 it"] }
+      ]
+    },
+    {
+      "id": "gradable-adjectives",
+      "order": 24,
+      "level": "c2",
+      "can_do_ids": ["c2.gr.gradability"],
+      "title_en": "Gradable and non-gradable adjectives",
+      "title_zh": "可分级与不可分级形容词",
+      "status": "published",
+      "topics": ["adjectives", "adverbs"],
+      "prerequisites": ["comparatives"],
+      "unit_grammar_ids": ["c2.gradability"],
+      "default_error_category": "collocation",
+      "summary_zh": "very tired，absolutely exhausted；不说 very excellent、slightly enormous。",
+      "explanation_zh": "可分级形容词（good、tired、big、cold、successful）可以有程度之分，用 very、extremely、slightly、fairly、a bit 修饰；highly 常和 successful、likely、recommended 搭配；marginally（略微）常和比较级连用。不可分级形容词，即极限词（excellent、exhausted、enormous、freezing、impossible、essential、unique），本身就是极限或绝对的意思，用 absolutely、utterly、totally、completely、truly 修饰，virtually / practically 表示“几乎”。really 两类都能用。quite 修饰可分级形容词是“相当”，修饰极限词是“完全”。",
+      "structure": ["very / extremely / slightly / fairly + 可分级形容词", "highly + successful / likely / recommended", "absolutely / utterly / totally + 极限形容词", "virtually / practically + impossible / identical", "marginally + 比较级"],
+      "usage_zh": ["准确描述程度：The new version is marginally faster.", "强调极端情况：I was absolutely exhausted after the flight.", "修改夸张的文字：very excellent → excellent / truly excellent"],
+      "examples": [
+        { "en": "The launch was highly successful.", "zh": "这次发布非常成功。" },
+        { "en": "The view was absolutely stunning.", "zh": "景色美得惊人。" },
+        { "en": "It's virtually impossible to park here.", "zh": "这里几乎不可能停车。" },
+        { "en": "The exam was quite impossible.", "zh": "那场考试根本做不出来。" }
+      ],
+      "breakdowns": [
+        { "zh": "飞行结束后我筋疲力尽。", "parts": [ { "text": "I", "role": "subject" }, { "text": "was", "role": "verb" }, { "text": "absolutely exhausted", "role": "complement" }, { "text": "after the flight", "role": "time" } ] },
+        { "zh": "新版本略快一点。", "parts": [ { "text": "The new version", "role": "subject" }, { "text": "is", "role": "verb" }, { "text": "marginally faster", "role": "complement" } ] }
+      ],
+      "common_errors": [
+        { "wrong": "The results were very excellent.", "right": "The results were excellent. / The results were truly excellent.", "why_zh": "excellent 已经是“非常好”，不能再加 very。" },
+        { "wrong": "The costs were slightly enormous.", "right": "The costs were slightly higher than expected.", "why_zh": "enormous 是极限词，不能用 slightly。" },
+        { "wrong": "It's a very unique opportunity.", "right": "It's a unique opportunity. / It's a truly unique opportunity.", "why_zh": "unique 意为“独一无二”，正式写作里避免 very unique。" },
+        { "wrong": "The launch was absolutely successful.", "right": "The launch was highly successful.", "why_zh": "successful 是可分级的，常用 highly / very。" }
+      ],
+      "contrast": {
+        "title_zh": "quite 的两种意思",
+        "items": [
+          { "en": "The film was quite good.", "zh": "这部电影还挺好的。", "note_zh": "quite + 可分级形容词 = 相当、还算。" },
+          { "en": "You're quite right.", "zh": "你完全正确。", "note_zh": "quite + 不可分级形容词 = 完全。" }
+        ]
+      },
+      "limits_zh": ["口语里 really 可以修饰几乎所有形容词，比较随意；这里练的是写作和正式场合的准确搭配。", "有些形容词两种用法都有（例如 dead tired 是口语的强调），以词典的例句为准。"],
+      "exercises": [
+        { "id": "e1", "type": "choice", "difficulty": 4, "prompt_en": "I was ___ exhausted after the hike.", "prompt_zh": "选出合适的程度词：", "options": ["absolutely", "very", "slightly"], "answer": 0, "explanation_zh": "exhausted 是极限词：absolutely。" },
+        { "id": "e2", "type": "choice", "difficulty": 4, "prompt_en": "The film was ___ successful.", "prompt_zh": "选出最自然的搭配：", "options": ["highly", "utterly", "absolutely"], "answer": 0, "explanation_zh": "highly successful 是固定搭配。" },
+        { "id": "e3", "type": "cloze", "difficulty": 4, "instructions_zh": "补全句子（一个表示“略微”的副词）。", "sentence_en": "The second hotel was ___ cheaper, by about five euros a night.", "translation_zh": "第二家酒店略便宜一点，每晚大约五欧元。", "answers": ["marginally", "slightly", "a bit"], "explanation_zh": "略微 + 比较级：marginally / slightly cheaper。" },
+        { "id": "e4", "type": "cloze", "difficulty": 4, "instructions_zh": "补全句子（一个表示“几乎”的副词）。", "sentence_en": "The two designs are ___ identical.", "translation_zh": "这两个设计几乎一模一样。", "answers": ["virtually", "almost", "practically", "nearly"], "explanation_zh": "identical 是极限词：virtually / almost identical。" },
+        { "id": "e5", "type": "order", "difficulty": 4, "translation_zh": "这个想法荒唐透顶。", "tokens": ["idea", "The", "is", "utterly", "ridiculous"], "answers": ["The idea is utterly ridiculous."], "explanation_zh": "utterly + 极限形容词 ridiculous。" },
+        { "id": "e6", "type": "correction", "difficulty": 4, "wrong_en": "The food was very delicious and very perfect.", "translation_zh": "食物美味极了，完美无缺。", "answers": ["The food was absolutely delicious and perfect.", "The food was delicious and absolutely perfect.", "The food was absolutely delicious and absolutely perfect."], "explanation_zh": "delicious、perfect 是极限词，用 absolutely，或者不加程度词。" },
+        { "id": "e7", "type": "correction", "difficulty": 5, "wrong_en": "The difference is slightly huge.", "translation_zh": "差别略大。", "answers": ["The difference is slightly bigger.", "The difference is slightly larger.", "The difference is fairly big."], "explanation_zh": "huge 是极限词，不能用 slightly；改成可分级的 big / larger。" },
+        { "id": "e8", "type": "build", "difficulty": 5, "task_zh": "写 3 句描述一次旅行，分别用上：一个可分级形容词 + very / slightly、一个极限形容词 + absolutely / utterly、一个 virtually + 极限词。", "model_answers": ["The hostel was slightly noisy at night. The view from the mountain, however, was absolutely breathtaking. Getting a taxi back to the station was virtually impossible."], "checklist_zh": ["可分级形容词用了 very / slightly / fairly", "极限形容词用了 absolutely / utterly", "virtually 修饰的是极限词"] }
+      ]
+    }
+  ]
+}

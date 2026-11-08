@@ -19,9 +19,9 @@ describe("course content files", () => {
     for (const level of CEFR_LEVELS) expect(count(level), level).toBeGreaterThan(0);
   });
 
-  it("has two published units each for A2 and B1 (Phase 5.1); everything else without a file stays planned", () => {
+  it("has at least two published units at every level from A2 to C2 (Phase 5.1–5.2); everything else without a file stays planned", () => {
     const { catalog, units } = loadContent();
-    for (const level of ["a2", "b1"] as const) {
+    for (const level of ["a2", "b1", "b2", "c1", "c2"] as const) {
       const published = [...units.values()].filter((f) => f.unit.level === level && f.unit.status === "published");
       expect(published.length, level).toBeGreaterThanOrEqual(2);
     }
