@@ -23,6 +23,8 @@ const ROUTES = [
   "/listening",
   "/listening/ls-b2-saying-no",
   "/pronunciation",
+  "/fluency",
+  "/fluency/speed_reading/rd-c1-machine-translation",
   "/speaking",
   "/writing",
   "/tutor",

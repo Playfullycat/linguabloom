@@ -197,11 +197,13 @@ describe("assessment history", () => {
   it("keeps every diagnostic; a retake prefers items not seen last time", async () => {
     const first = await runDiagnostic(1);
     const second = await runDiagnostic();
-    // Same start level, but the item seen last time is passed over. (The bank is small —
-    // 2–3 items per skill and level — so repeats can't always be avoided.)
-    expect(first).toEqual(["voc-a1-1"]);
-    expect(second[0]).not.toBe("voc-a1-1");
+    // Same start level, but the item seen last time is passed over (and each session
+    // draws its own order among the items of a level).
+    expect(first).toHaveLength(1);
+    expect(first[0]).toMatch(/^voc-a1-/);
+    expect(second[0]).not.toBe(first[0]);
     expect(second[0]).toMatch(/^voc-a1-/);
+    // The same session always shows the same next item: answering is what moves it on.
 
     const history = await listAssessmentHistory(db, userA);
     expect(history).toHaveLength(2);

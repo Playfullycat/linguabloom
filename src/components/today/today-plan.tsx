@@ -6,6 +6,7 @@ import {
   ArrowUp,
   BookOpen,
   CircleCheck,
+  Gauge,
   GraduationCap,
   MessageCircle,
   RotateCcw,
@@ -32,6 +33,7 @@ const KIND: Record<TodayTask["kind"], { icon: LucideIcon; label: string; accent:
   remediation: { icon: Wrench, label: "补救", accent: "bg-coral-soft text-coral-ink" },
   input: { icon: BookOpen, label: "输入", accent: "bg-blue-soft text-blue-ink" },
   output: { icon: MessageCircle, label: "输出", accent: "bg-mint-soft text-mint-ink" },
+  fluency: { icon: Gauge, label: "流利度", accent: "bg-yellow-soft text-yellow-ink" },
   pte: { icon: GraduationCap, label: "PTE", accent: "bg-surface-soft text-ink" },
 };
 

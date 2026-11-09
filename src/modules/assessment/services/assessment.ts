@@ -93,7 +93,7 @@ function computeState(
     const pool = items.filter((i) => i.skill === skill);
     const max = Math.min(MAX_ITEMS[skill], pool.length);
     if (skipped.has(skill)) return { skill, answered: mine.length, max, status: "skipped" };
-    const candidate = session.status === "completed" ? null : nextItem(skill, mine, pool, start, avoid);
+    const candidate = session.status === "completed" ? null : nextItem(skill, mine, pool, start, avoid, session.id);
     if (!candidate) return { skill, answered: mine.length, max, status: "done" };
     if (!current) {
       current = { skill, item: toClientItem(candidate), index: mine.length + 1, max };

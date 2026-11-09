@@ -19,7 +19,7 @@ import { checkDictation, tokenize, words, type DictationWord, type GlossaryEntry
 
 export class MaterialNotFoundError extends Error {}
 
-type StoredContent = { glossary: GlossaryEntry[]; questions: MaterialQuestion[] };
+export type StoredContent = { glossary: GlossaryEntry[]; questions: MaterialQuestion[] };
 
 const visibleTo = (userId: string) =>
   and(
@@ -27,7 +27,7 @@ const visibleTo = (userId: string) =>
     or(isNull(learningContents.ownerUserId), eq(learningContents.ownerUserId, userId)),
   );
 
-async function getVisibleMaterial(db: DbExecutor, userId: string, contentId: string) {
+export async function getVisibleMaterial(db: DbExecutor, userId: string, contentId: string) {
   const [row] = await db
     .select()
     .from(learningContents)

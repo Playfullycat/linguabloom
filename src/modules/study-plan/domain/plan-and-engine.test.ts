@@ -2,7 +2,7 @@
 import { describe, expect, it } from "vitest";
 
 import { loadItemBank } from "../../assessment/content";
-import { MAX_ITEMS, estimateSkill, nextItem, scoreItem, startLevel, toClientItem } from "../../assessment/domain/engine";
+import { MAX_ITEMS, PLACEMENT_LEVELS, estimateSkill, nextItem, scoreItem, startLevel, toClientItem } from "../../assessment/domain/engine";
 import { buildPlan, isComeback, type LessonRef, type PlanFacts } from "./plan-builder";
 
 const lesson = (over: Partial<LessonRef> = {}): LessonRef => ({
@@ -109,6 +109,29 @@ describe("buildPlan", () => {
     expect(buildPlan(facts({ pte: { ...pte, avgShare: null } })).at(-1)!.reason).toContain("还没练过");
   });
 
+  it("adds a 5-minute fluency task on an easy text, keeping the total and the main task (fluency)", () => {
+    const fluency = { kind: "speed_reading" as const, contentId: "rd-a1-my-morning", titleEn: "My Morning", titleZh: "我的早晨", levelLabel: "A1", why: "completed" as const, weekMinutes: 3, weekTarget: 10 };
+    const plan = buildPlan(facts({ fluency }));
+    expect(plan.map((t) => t.kind)).toEqual(["review", "lesson", "fluency"]);
+    expect(plan.at(-1)).toMatchObject({ href: "/fluency/speed_reading/rd-a1-my-morning", minutes: 5, targetId: "rd-a1-my-morning" });
+    expect(plan.at(-1)!.title).toContain("快速阅读");
+    expect(plan.at(-1)!.reason).toContain("读完过");
+    expect(plan.at(-1)!.reason).toContain("已练 3 分钟，目标约 10 分钟");
+    expect(plan.reduce((s, t) => s + t.minutes, 0)).toBe(25);
+    // Not in 15-minute sessions; not when it would squeeze the lesson below 8 minutes (25 min + remediation).
+    expect(buildPlan(facts({ fluency, sessionMinutes: 15 })).some((t) => t.kind === "fluency")).toBe(false);
+    const remediation = { itemId: "e1", title: "be 动词", categoryLabel: "语法", count: 3, mode: "remediation" as const };
+    expect(buildPlan(facts({ fluency, remediation, dueReviews: 25 })).some((t) => t.kind === "fluency")).toBe(false);
+    expect(buildPlan(facts({ fluency, remediation })).some((t) => t.kind === "fluency")).toBe(true); // a short review leaves the lesson room
+    // In a 60-minute session it fits next to PTE, and PTE never takes time from it.
+    const pte = { taskCode: "r_mcma", nameZh: "阅读多选", avgShare: 0.4 };
+    const long = buildPlan(facts({ fluency, pte, sessionMinutes: 60, inputMaterial: null, outputLesson: lesson({ id: "x", hasOutputTask: true }) }));
+    expect(long.find((t) => t.kind === "fluency")!.minutes).toBe(5);
+    expect(long.some((t) => t.kind === "pte")).toBe(true);
+    expect(long.reduce((s, t) => s + t.minutes, 0)).toBe(60);
+    expect(buildPlan(facts({ fluency: { ...fluency, why: "easier" } })).at(-1)!.reason).toContain("比你现在的水平简单");
+  });
+
   it("on a heavy review day gives review more time, shortens the lesson and explains why (Phase 5.3)", () => {
     // 50 due cards ≈ 20 minutes: more than half of a 25-minute session.
     const plan = buildPlan(facts({ dueReviews: 50, newCardsAvailable: 10 }));
@@ -154,8 +177,38 @@ describe("placement diagnostic engine", () => {
   const bank = loadItemBank();
   const grammar = bank.items.filter((i) => i.skill === "grammar");
 
-  it("item bank covers every skill at every placement level", () => {
-    expect(bank.items.length).toBeGreaterThanOrEqual(40);
+  it("item bank covers every skill at every placement level, with room for retakes", () => {
+    expect(bank.items).toHaveLength(126);
+    for (const level of PLACEMENT_LEVELS) {
+      for (const [skill, min] of [["vocabulary", 5], ["grammar", 5], ["reading", 4], ["listening", 4]] as const) {
+        expect(bank.items.filter((i) => i.skill === skill && i.level === level).length, `${skill} ${level}`).toBeGreaterThanOrEqual(min);
+      }
+    }
+  });
+
+  it("every item is answerable: distinct options, distinct prompts, non-empty cloze answers", () => {
+    for (const item of bank.items) {
+      if (item.type === "choice") {
+        expect(new Set(item.options).size, item.id).toBe(item.options.length);
+      } else {
+        expect(item.answers.every((a) => a.trim().length > 0), item.id).toBe(true);
+      }
+    }
+    const prompts = bank.items.map((i) => (i.type === "choice" ? `${i.skill}|${i.passage_en ?? i.audio_en ?? i.prompt_en}|${i.prompt_zh}` : `${i.skill}|${i.sentence_en}`));
+    expect(new Set(prompts).size).toBe(prompts.length);
+  });
+
+  it("draws a per-session order among equally suitable items, stable within a session", () => {
+    const vocab = bank.items.filter((i) => i.skill === "vocabulary");
+    const first = (seed?: string) => nextItem("vocabulary", [], vocab, "a1", new Set(), seed)!.id;
+    expect(first()).toBe("voc-a1-1"); // no seed: easiest first
+    expect(first("session-1")).toBe(first("session-1"));
+    const drawn = new Set(Array.from({ length: 30 }, (_, i) => first(`session-${i}`)));
+    expect(drawn.size).toBeGreaterThanOrEqual(3);
+    expect([...drawn].every((id) => id.startsWith("voc-a1-"))).toBe(true);
+    // Items from the previous diagnostic still lose to unseen ones, whatever the seed.
+    const avoid = new Set(vocab.filter((i) => i.level === "a1" && i.id !== "voc-a1-4").map((i) => i.id));
+    for (let i = 0; i < 10; i++) expect(nextItem("vocabulary", [], vocab, "a1", avoid, `s${i}`)!.id).toBe("voc-a1-4");
   });
 
   it("starts from the self-report but never trusts it as a level", () => {

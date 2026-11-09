@@ -2,7 +2,7 @@ import { SESSION_LENGTHS, getSessionTemplate, type SessionLength } from "./sessi
 
 /**
  * Today's plan (spec §4.3, §4.4, §5.1). Priority: due reviews → current
- * lesson → meaning-focused input → output. Every task says why it is there.
+ * lesson → meaning-focused input → output → fluency. Every task says why it is there.
  * Pure function: the service gathers the facts, this decides.
  */
 
@@ -62,16 +62,35 @@ export type PlanFacts = {
   startingLevelLabel: string | null;
   /** The learner prepares for PTE (goal "exam"): one short practice of the weakest task type. */
   pte?: PteRef | null;
+  /** This week is short of fluency practice: an easy text and the activity to do on it. */
+  fluency?: FluencyPlanRef | null;
 };
 
 export type PteRef = { taskCode: string; nameZh: string; avgShare: number | null };
+
+export type FluencyPlanRef = {
+  kind: "speed_reading" | "repeated_reading" | "timed_retell";
+  contentId: string;
+  titleEn: string;
+  titleZh: string;
+  levelLabel: string;
+  why: "completed" | "easier";
+  weekMinutes: number;
+  weekTarget: number;
+};
+
+/** Fluency (spec §2.2): a short block in sessions of this length or longer, never squeezing the main task below FLUENCY_DONOR_MIN. */
+export const FLUENCY_MIN_SESSION = 25;
+const FLUENCY_MINUTES = 5;
+const FLUENCY_DONOR_MIN = 8;
+const FLUENCY_KIND_ZH: Record<FluencyPlanRef["kind"], string> = { speed_reading: "快速阅读", repeated_reading: "重复朗读", timed_retell: "限时复述" };
 
 /** PTE is a side track (spec §5.13): only in sessions of this length or longer, and only a few minutes. */
 export const PTE_MIN_SESSION = 25;
 const PTE_MINUTES = 6;
 
 export type PlannedTask = {
-  kind: "review" | "lesson" | "remediation" | "input" | "output" | "pte";
+  kind: "review" | "lesson" | "remediation" | "input" | "output" | "fluency" | "pte";
   title: string;
   href: string;
   minutes: number;
@@ -249,10 +268,28 @@ export function buildPlan(facts: PlanFacts): PlannedTask[] {
     });
   }
 
+  // Fluency: an easy, already-known text done faster and more smoothly; 5 minutes from the longest task.
+  if (facts.fluency && minutes >= FLUENCY_MIN_SESSION) {
+    const f = facts.fluency;
+    const donor = [...tasks].filter((t) => t.kind !== "review" && t.kind !== "remediation").sort((a, b) => b.minutes - a.minutes)[0];
+    if (donor && donor.minutes - FLUENCY_MINUTES >= FLUENCY_DONOR_MIN) {
+      donor.minutes -= FLUENCY_MINUTES;
+      const known = f.why === "completed" ? "你已经读完过这篇" : `这篇是 ${f.levelLabel}，比你现在的水平简单`;
+      tasks.push({
+        kind: "fluency",
+        title: `流利度 · ${FLUENCY_KIND_ZH[f.kind]}：${f.titleEn}（${f.titleZh}）`,
+        href: `/fluency/${f.kind}/${f.contentId}`,
+        minutes: FLUENCY_MINUTES,
+        reason: `流利度练习不学新东西，只把会的内容练得更快、更顺。${known}，正合适。这周已练 ${Math.round(f.weekMinutes)} 分钟，目标约 ${f.weekTarget} 分钟。`,
+        targetId: f.contentId,
+      });
+    }
+  }
+
   // PTE practice (goal "exam"): a few minutes taken from the longest task, at the end.
   if (facts.pte && minutes >= PTE_MIN_SESSION) {
     const p = facts.pte;
-    const donor = [...tasks].filter((t) => t.kind !== "review" && t.kind !== "remediation").sort((a, b) => b.minutes - a.minutes)[0];
+    const donor = [...tasks].filter((t) => t.kind !== "review" && t.kind !== "remediation" && t.kind !== "fluency").sort((a, b) => b.minutes - a.minutes)[0];
     if (donor && donor.minutes - PTE_MINUTES >= 5) {
       donor.minutes -= PTE_MINUTES;
       tasks.push({

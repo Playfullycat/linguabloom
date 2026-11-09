@@ -170,7 +170,15 @@ async function TodayLoader() {
                   </div>
                 ))}
               </dl>
-              {week.byStrand.fluency_development === 0 ? <p className="text-xs text-muted">流利度练习（限时复述、快速阅读）在后续阶段加入。</p> : null}
+              {week.byStrand.fluency_development === 0 ? (
+                <p className="text-xs text-muted">
+                  这周还没有流利度练习：用读过的短文做一次
+                  <Link href="/fluency" className="inline-flex min-h-6 items-center font-medium text-primary-ink underline-offset-2 hover:underline">
+                    快速阅读、重复朗读或限时复述
+                  </Link>
+                  。
+                </p>
+              ) : null}
             </CardContent>
           </Card>
 

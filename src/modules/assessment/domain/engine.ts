@@ -52,16 +52,34 @@ export type ItemLike = { id: string; level: string; difficulty: number };
 
 const levelIndex = (level: string) => Math.max(0, PLACEMENT_LEVELS.indexOf(level as PlacementLevel));
 
+/** Stable 32-bit hash (FNV-1a): the same session always gets the same order. */
+function hash(text: string): number {
+  let h = 2166136261;
+  for (let i = 0; i < text.length; i += 1) h = Math.imul(h ^ text.charCodeAt(i), 16777619) >>> 0;
+  return h;
+}
+
 /**
  * Next item for one skill: up one level after a correct answer, down one
  * after a wrong one. Returns null when the skill is finished.
- */
-/**
+ *
  * `avoid`: items used in the learner's previous diagnostic. They are only
  * chosen when nothing else is left at a suitable level, so a retake isn't the
  * same test again.
+ *
+ * `seed` (the session id): among equally suitable items the order is shuffled
+ * per session, so different diagnostics draw different items at a level, while
+ * the same session always shows the same next item (reloading changes nothing).
+ * Without a seed the easier, then the lower id, comes first.
  */
-export function nextItem<T extends ItemLike>(skill: DiagnosticSkill, attempts: AttemptLike[], items: T[], start: PlacementLevel, avoid: ReadonlySet<string> = new Set()): T | null {
+export function nextItem<T extends ItemLike>(
+  skill: DiagnosticSkill,
+  attempts: AttemptLike[],
+  items: T[],
+  start: PlacementLevel,
+  avoid: ReadonlySet<string> = new Set(),
+  seed?: string,
+): T | null {
   if (attempts.length >= MAX_ITEMS[skill]) return null;
   const seen = new Set(attempts.map((a) => a.itemId));
   const unseen = items.filter((i) => !seen.has(i.id));
@@ -83,6 +101,7 @@ export function nextItem<T extends ItemLike>(skill: DiagnosticSkill, attempts: A
     const sa = Math.sign(levelIndex(a.level) - target) === direction ? 0 : 1;
     const sb = Math.sign(levelIndex(b.level) - target) === direction ? 0 : 1;
     if (sa !== sb) return sa - sb;
+    if (seed) return hash(`${seed}:${a.id}`) - hash(`${seed}:${b.id}`) || a.id.localeCompare(b.id);
     return a.difficulty - b.difficulty || a.id.localeCompare(b.id);
   });
   return ranked[0] ?? null;

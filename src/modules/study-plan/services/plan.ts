@@ -17,7 +17,7 @@ import {
   studyPlans,
   units,
 } from "@/db/schema";
-import { localDateString, startOfLocalDay } from "@/lib/time";
+import { localDateString, startOfLocalDay, startOfLocalWeek } from "@/lib/time";
 import { loadCanDo } from "@/modules/abilities/content";
 import { syncCanDoEvidence } from "@/modules/abilities/services/abilities";
 import { getCurrentEstimates } from "@/modules/assessment/services/assessment";
@@ -25,6 +25,7 @@ import { CEFR_LEVELS } from "@/modules/curriculum/domain/cefr";
 import { PLACEMENT_LEVELS } from "@/modules/assessment/domain/engine";
 import { getLearnerSettings } from "@/modules/learner/services/profile";
 import { errorSummary } from "@/modules/errors/services/errors";
+import { fluencyDoneSince, pickFluencyTask } from "@/modules/fluency/services/fluency";
 import { ERROR_CATEGORY_LABELS } from "@/modules/grammar/content";
 import { pickInputMaterial } from "@/modules/materials/services/materials";
 import { getCurrentVersion, listTaskTypes, taskStats } from "@/modules/pte/services/pte";
@@ -132,6 +133,8 @@ async function lastActivityBefore(db: DbExecutor, userId: string, before: Date):
       select max(created_at) from lesson_step_attempts where user_id = ${userId} and created_at < ${iso}::timestamptz
       union all
       select max(created_at) from content_interactions where user_id = ${userId} and kind <> 'open' and created_at < ${iso}::timestamptz
+      union all
+      select max(created_at) from fluency_attempts where user_id = ${userId} and created_at < ${iso}::timestamptz
       union all
       select max(a.created_at) from assessment_attempts a join assessment_sessions s on s.id = a.session_id
         where s.user_id = ${userId} and a.created_at < ${iso}::timestamptz
@@ -256,6 +259,10 @@ async function gatherFacts(
     outputLesson: output ? { ...toRef(output), gapZh: outputGap } : null,
     startingLevelLabel: !started && placed ? placed.levelLabel : null,
     pte: ctx.goals.includes("exam") && mode === "normal" ? await pickPteTask(db, userId) : null,
+    fluency:
+      mode === "normal"
+        ? await pickFluencyTask(db, userId, { now, weekStart: startOfLocalWeek(now, ctx.timeZone), dayStart: ctx.dayStart, level: placement })
+        : null,
   };
 }
 
@@ -504,6 +511,8 @@ export async function getTodayPlan(db: Database, userId: string, now = new Date(
           .from(errorItems)
           .where(and(eq(errorItems.userId, userId), inArray(errorItems.id, remediationIds))),
   ]);
+  const fluencyIds = rows.filter((t) => t.kind === "fluency" && t.targetId).map((t) => t.targetId!);
+  const fluencyToday = await fluencyDoneSince(db, userId, fluencyIds, ctx.dayStart);
   const pteToday = rows.some((t) => t.kind === "pte")
     ? await db
         .select({ taskCode: pteAttempts.taskCode, at: pteAttempts.createdAt })
@@ -534,6 +543,8 @@ export async function getTodayPlan(db: Database, userId: string, now = new Date(
       }
       case "output":
         return practisedToday.some((p) => p.lessonId === t.targetId && OUTPUT_SKILLS.includes(p.skill) && p.at >= t.createdAt);
+      case "fluency":
+        return fluencyToday.some((f) => f.contentId === t.targetId && f.at >= t.createdAt);
       case "pte":
         return pteToday.some((p) => p.taskCode === t.targetId && p.at >= t.createdAt);
       default:
