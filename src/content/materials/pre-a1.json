@@ -149,6 +149,132 @@
         { "id": "q2", "type": "choice", "prompt_zh": "萨姆的号码最后一个数字是什么？", "options": ["五", "零", "一"], "answer": 1, "explanation_zh": "原文：three, seven, one, five, zero —— zero 是零。", "segment": 5 },
         { "id": "q3", "type": "choice", "prompt_zh": "莉莉为什么说 Sorry？", "options": ["她打错电话了", "她想让萨姆再说一遍", "她要走了"], "answer": 1, "explanation_zh": "原文：Sorry, can you say it again? 请对方重复。", "segment": 6 }
       ]
+    },
+    {
+      "id": "rd-pa1-my-room",
+      "type": "reading",
+      "level": "pre_a1",
+      "can_do_ids": ["pre-a1.r.words-signs"],
+      "topic": "home",
+      "title_en": "My Room",
+      "title_zh": "我的房间",
+      "summary_zh": "一个孩子介绍自己的房间：床、窗户、书桌，还有爱睡在床上的猫。",
+      "segments": [
+        { "en": "This is my room.", "zh": "这是我的房间。" },
+        { "en": "It is small, but I like it.", "zh": "它很小，但我喜欢它。" },
+        { "en": "My bed is next to the window.", "zh": "我的床在窗户旁边。" },
+        { "en": "The walls are blue.", "zh": "墙是蓝色的。" },
+        { "en": "I have a desk and a chair.", "zh": "我有一张书桌和一把椅子。" },
+        { "en": "My books are on the desk.", "zh": "我的书在书桌上。" },
+        { "en": "My cat sleeps on my bed!", "zh": "我的猫睡在我的床上！" }
+      ],
+      "glossary": [
+        { "key": "next-to", "text": "next to", "pos": "phrase", "ipa": "/nekst tuː/", "zh": "在……旁边" },
+        { "key": "wall", "text": "wall", "forms": ["walls"], "pos": "noun", "ipa": "/wɔːl/", "zh": "墙" },
+        { "key": "desk", "text": "desk", "pos": "noun", "ipa": "/desk/", "zh": "书桌" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "房间大不大？", "options": ["很大", "和客厅一样大", "很小"], "answer": 2, "explanation_zh": "原文：It is small, but I like it.", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "墙是什么颜色？", "options": ["白色", "黄色", "蓝色"], "answer": 2, "explanation_zh": "原文：The walls are blue.", "segment": 3 },
+        { "id": "q3", "type": "choice", "prompt_zh": "猫睡在哪里？", "options": ["书桌上", "床上", "椅子上"], "answer": 1, "explanation_zh": "原文：My cat sleeps on my bed!", "segment": 6 }
+      ]
+    },
+    {
+      "id": "rd-pa1-birthday-card",
+      "type": "reading",
+      "level": "pre_a1",
+      "can_do_ids": ["pre-a1.r.words-signs"],
+      "topic": "celebrations",
+      "title_en": "Happy Birthday, Leo!",
+      "title_zh": "生日快乐，利奥！",
+      "summary_zh": "奶奶写给七岁孙子的生日卡片：礼物是什么，周六一起做什么。",
+      "segments": [
+        { "en": "Dear Leo,", "zh": "亲爱的利奥：" },
+        { "en": "Happy birthday! You are seven today.", "zh": "生日快乐！你今天七岁了。" },
+        { "en": "This is a present from me.", "zh": "这是我送你的礼物。" },
+        { "en": "It is a red ball.", "zh": "是一个红色的球。" },
+        { "en": "Let's play football in the park on Saturday.", "zh": "我们周六去公园踢足球吧。" },
+        { "en": "Have a great day with your friends.", "zh": "和朋友们玩得开心！" },
+        { "en": "See you soon!", "zh": "回头见！" },
+        { "en": "Love, Grandma", "zh": "爱你的奶奶" }
+      ],
+      "glossary": [
+        { "key": "present", "text": "present", "pos": "noun", "ipa": "/ˈpreznt/", "zh": "礼物" },
+        { "key": "lets", "text": "Let's", "pos": "phrase", "zh": "我们……吧", "note_zh": "Let's play = 我们一起玩吧" },
+        { "key": "football", "text": "football", "pos": "noun", "ipa": "/ˈfʊtbɔːl/", "zh": "足球" },
+        { "key": "see-you-soon", "text": "See you soon", "pos": "phrase", "zh": "回头见；很快再见" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "利奥今天几岁？", "options": ["七岁", "六岁", "八岁"], "answer": 0, "explanation_zh": "原文：You are seven today.", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "礼物是什么？", "options": ["一个红色的球", "一本书", "一只小猫"], "answer": 0, "explanation_zh": "原文：It is a red ball.", "segment": 3 },
+        { "id": "q3", "type": "choice", "prompt_zh": "奶奶想周六做什么？", "options": ["去奶奶家吃饭", "去商店买球", "在公园踢足球"], "answer": 2, "explanation_zh": "原文：Let's play football in the park on Saturday.", "segment": 4 }
+      ]
+    },
+    {
+      "id": "rd-pa1-lunch-menu",
+      "type": "reading",
+      "level": "pre_a1",
+      "can_do_ids": ["pre-a1.r.words-signs"],
+      "topic": "food",
+      "title_en": "School Lunch Menu",
+      "title_zh": "学校午餐菜单",
+      "summary_zh": "学校一周的午餐菜单：每天吃什么，几点吃午饭。",
+      "segments": [
+        { "en": "School lunch this week", "zh": "本周学校午餐" },
+        { "en": "Monday: chicken, rice and carrots", "zh": "周一：鸡肉、米饭和胡萝卜" },
+        { "en": "Tuesday: fish, potatoes and peas", "zh": "周二：鱼、土豆和豌豆" },
+        { "en": "Wednesday: pizza and salad", "zh": "周三：比萨和沙拉" },
+        { "en": "Thursday: soup and bread", "zh": "周四：汤和面包" },
+        { "en": "Friday: pasta with tomato sauce", "zh": "周五：番茄酱意大利面" },
+        { "en": "Every day: fruit, and milk or water", "zh": "每天：水果，还有牛奶或水" },
+        { "en": "Lunch is at half past twelve.", "zh": "午饭时间是十二点半。" }
+      ],
+      "glossary": [
+        { "key": "peas", "text": "peas", "pos": "noun", "ipa": "/piːz/", "zh": "豌豆" },
+        { "key": "salad", "text": "salad", "pos": "noun", "ipa": "/ˈsæləd/", "zh": "沙拉" },
+        { "key": "pasta", "text": "pasta", "pos": "noun", "ipa": "/ˈpæstə/", "zh": "意大利面" },
+        { "key": "sauce", "text": "sauce", "pos": "noun", "ipa": "/sɔːs/", "zh": "酱汁" },
+        { "key": "half-past", "text": "half past", "pos": "phrase", "zh": "……点半", "note_zh": "half past twelve = 十二点半" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "周三吃什么？", "options": ["比萨和沙拉", "汤和面包", "鱼和土豆"], "answer": 0, "explanation_zh": "原文：Wednesday: pizza and salad", "segment": 3 },
+        { "id": "q2", "type": "choice", "prompt_zh": "哪一天有鱼？", "options": ["周二", "周一", "周五"], "answer": 0, "explanation_zh": "原文：Tuesday: fish, potatoes and peas", "segment": 2 },
+        { "id": "q3", "type": "choice", "prompt_zh": "几点吃午饭？", "options": ["十二点", "一点半", "十二点半"], "answer": 2, "explanation_zh": "原文：Lunch is at half past twelve.", "segment": 7 }
+      ]
+    },
+    {
+      "id": "rd-pa1-at-the-zoo",
+      "type": "reading",
+      "level": "pre_a1",
+      "can_do_ids": ["pre-a1.r.words-signs"],
+      "topic": "animals",
+      "title_en": "At the Zoo",
+      "title_zh": "在动物园",
+      "summary_zh": "一家人在动物园：大象、猴子、狮子和企鹅，“我”最喜欢哪种动物？",
+      "segments": [
+        { "en": "Today we are at the zoo.", "zh": "今天我们在动物园。" },
+        { "en": "I can see two big elephants.", "zh": "我能看到两头大象。" },
+        { "en": "They are grey and very tall.", "zh": "它们是灰色的，非常高。" },
+        { "en": "The monkeys are funny.", "zh": "猴子们很好笑。" },
+        { "en": "They jump and play in the trees.", "zh": "它们在树上跳来跳去地玩。" },
+        { "en": "My little brother likes the lions.", "zh": "我弟弟喜欢狮子。" },
+        { "en": "I like the penguins best.", "zh": "我最喜欢企鹅。" },
+        { "en": "They are black and white.", "zh": "它们是黑白色的。" }
+      ],
+      "glossary": [
+        { "key": "zoo", "text": "zoo", "pos": "noun", "ipa": "/zuː/", "zh": "动物园" },
+        { "key": "elephant", "text": "elephant", "forms": ["elephants"], "pos": "noun", "ipa": "/ˈelɪfənt/", "zh": "大象" },
+        { "key": "monkey", "text": "monkey", "forms": ["monkeys"], "pos": "noun", "ipa": "/ˈmʌŋki/", "zh": "猴子" },
+        { "key": "funny", "text": "funny", "pos": "adjective", "ipa": "/ˈfʌni/", "zh": "好笑的" },
+        { "key": "lion", "text": "lion", "forms": ["lions"], "pos": "noun", "ipa": "/ˈlaɪən/", "zh": "狮子" },
+        { "key": "penguin", "text": "penguin", "forms": ["penguins"], "pos": "noun", "ipa": "/ˈpeŋɡwɪn/", "zh": "企鹅" },
+        { "key": "like-best", "text": "best", "pos": "adverb", "zh": "最", "note_zh": "like … best = 最喜欢……" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "大象是什么颜色？", "options": ["黑白色", "灰色", "棕色"], "answer": 1, "explanation_zh": "原文：They are grey and very tall.", "segment": 2 },
+        { "id": "q2", "type": "choice", "prompt_zh": "猴子在做什么？", "options": ["在树上跳着玩", "在睡觉", "在吃东西"], "answer": 0, "explanation_zh": "原文：They jump and play in the trees.", "segment": 4 },
+        { "id": "q3", "type": "choice", "prompt_zh": "“我”最喜欢什么动物？", "options": ["狮子", "大象", "企鹅"], "answer": 2, "explanation_zh": "原文：I like the penguins best.", "segment": 6 }
+      ]
     }
   ]
 }

@@ -1,4 +1,4 @@
-import { and, asc, desc, eq, isNull, or, sql } from "drizzle-orm";
+import { and, asc, desc, eq, inArray, isNull, notInArray, or, sql } from "drizzle-orm";
 
 import type { Database, DbExecutor } from "@/db/connection";
 import { contentInteractions, learningContents, transcriptSegments, userContentState, userVocabulary, vocabularyEntries } from "@/db/schema";
@@ -9,6 +9,8 @@ import { recordError } from "@/modules/errors/services/errors";
 import { addEntriesForUser } from "@/modules/review/services/vocabulary";
 
 import type { MaterialQuestion, MaterialType } from "../content";
+import { COVERAGE_BAND_LABELS, levelLexicon, textCoverage, withWords, type CoverageBand, type LexiconSource } from "../domain/coverage";
+import { loadWordBands } from "../wordlist";
 import { checkDictation, tokenize, words, type DictationWord, type GlossaryEntry, type Token } from "../domain/text";
 
 /**
@@ -75,6 +77,85 @@ async function knownGlossaryTexts(db: DbExecutor, userId: string): Promise<Set<s
   return new Set(rows.map((r) => r.text.toLowerCase()));
 }
 
+// -------------------------------------------------------------- coverage ----
+
+/** Built-in texts and course words as lexicon sources, cached until the seeded content changes. */
+let sourceCache: { key: string; sources: LexiconSource[]; byLevel: Map<string, Set<string>> } | null = null;
+
+async function builtInLexicon(db: DbExecutor, level: CefrLevel): Promise<Set<string>> {
+  const [stamp] = await db.execute<{ key: string }>(sql`
+    select concat((select count(*) from learning_contents where owner_user_id is null), ':',
+                  (select max(updated_at) from learning_contents where owner_user_id is null), ':',
+                  (select count(*) from vocabulary_entries)) as key
+  `);
+  const key = stamp?.key ?? "";
+  if (sourceCache?.key !== key) {
+    const [contents, segments, vocab] = await Promise.all([
+      db
+        .select({ id: learningContents.id, level: learningContents.cefrLevel, content: learningContents.content })
+        .from(learningContents)
+        .where(and(isNull(learningContents.ownerUserId), eq(learningContents.status, "published"))),
+      db
+        .select({ contentId: transcriptSegments.contentId, text: transcriptSegments.textEn })
+        .from(transcriptSegments)
+        .innerJoin(learningContents, eq(learningContents.id, transcriptSegments.contentId))
+        .where(isNull(learningContents.ownerUserId)),
+      db.select({ level: vocabularyEntries.cefrLevel, text: vocabularyEntries.text, example: vocabularyEntries.exampleEn }).from(vocabularyEntries),
+    ]);
+    const byContent = new Map<string, string[]>();
+    for (const x of segments) byContent.set(x.contentId, [...(byContent.get(x.contentId) ?? []), x.text]);
+    const sources: LexiconSource[] = contents.map((c) => ({
+      level: c.level,
+      texts: byContent.get(c.id) ?? [],
+      glossary: (c.content as StoredContent).glossary.flatMap((g) => [g.text, ...(g.forms ?? [])]),
+    }));
+    // A course word is new at its own level (like a glossary word); its example sentence is at that level.
+    for (const v of vocab) sources.push({ level: v.level, texts: [v.example], glossary: [v.text] });
+    sourceCache = { key, sources, byLevel: new Map() };
+  }
+  let lexicon = sourceCache.byLevel.get(level);
+  if (!lexicon) {
+    lexicon = levelLexicon(sourceCache.sources, level, loadWordBands());
+    sourceCache.byLevel.set(level, lexicon);
+  }
+  return lexicon;
+}
+
+/**
+ * Words the learner probably knows at this level, plus the words they have
+ * studied (a word only collected and not yet studied doesn't count).
+ */
+export async function learnerLexicon(db: DbExecutor, userId: string, level: CefrLevel): Promise<Set<string>> {
+  const [base, studied] = await Promise.all([
+    builtInLexicon(db, level),
+    db
+      .select({ text: vocabularyEntries.text })
+      .from(userVocabulary)
+      .innerJoin(vocabularyEntries, eq(vocabularyEntries.id, userVocabulary.entryId))
+      .where(and(eq(userVocabulary.userId, userId), notInArray(userVocabulary.status, ["new", "suspended"]))),
+  ]);
+  return studied.length === 0 ? base : withWords(base, studied.map((r) => r.text));
+}
+
+async function segmentTexts(db: DbExecutor, contentIds: string[]): Promise<Map<string, string[]>> {
+  const map = new Map<string, string[]>();
+  if (contentIds.length === 0) return map;
+  const rows = await db
+    .select({ contentId: transcriptSegments.contentId, text: transcriptSegments.textEn })
+    .from(transcriptSegments)
+    .where(inArray(transcriptSegments.contentId, contentIds))
+    .orderBy(asc(transcriptSegments.contentId), asc(transcriptSegments.sequence));
+  for (const r of rows) map.set(r.contentId, [...(map.get(r.contentId) ?? []), r.text]);
+  return map;
+}
+
+export type CoverageInfo = { ratio: number; band: CoverageBand; label: string };
+
+function coverageInfo(texts: string[], lexicon: ReadonlySet<string>): CoverageInfo {
+  const c = textCoverage(texts, lexicon);
+  return { ratio: c.ratio, band: c.band, label: COVERAGE_BAND_LABELS[c.band] };
+}
+
 // ----------------------------------------------------------------- lists ----
 
 export type MaterialSummary = {
@@ -91,6 +172,8 @@ export type MaterialSummary = {
   newWords: number;
   glossaryCount: number;
   fit: LevelFit;
+  /** Estimated share of running words the learner knows. */
+  coverage: CoverageInfo;
   completed: boolean;
   favorite: boolean;
   imported: boolean;
@@ -107,6 +190,7 @@ export async function listMaterials(db: DbExecutor, userId: string, type: Materi
     knownGlossaryTexts(db, userId),
     learnerInputLevel(db, userId, type),
   ]);
+  const [lexicon, texts] = await Promise.all([learnerLexicon(db, userId, learner.level), segmentTexts(db, rows.map((r) => r.content.id))]);
   const order = (l: string) => CEFR_LEVELS.indexOf(l as CefrLevel);
   const materials = rows
     .map(({ content: c, state }): MaterialSummary => {
@@ -126,6 +210,7 @@ export async function listMaterials(db: DbExecutor, userId: string, type: Materi
         glossaryCount: stored.glossary.length,
         newWords: stored.glossary.filter((g) => !known.has(g.text.toLowerCase())).length,
         fit: levelFit(c.cefrLevel, learner.level),
+        coverage: coverageInfo(texts.get(c.id) ?? [], lexicon),
         completed: Boolean(state?.completedAt),
         favorite: Boolean(state?.favorite),
         imported: c.ownerUserId !== null,
@@ -164,6 +249,7 @@ export type ReaderMaterial = {
   summaryZh: string;
   levelLabel: string;
   fit: LevelFit;
+  coverage: CoverageInfo;
   learnerLevelLabel: string;
   titleTokens: Token[];
   segments: ClientSegment[];
@@ -211,6 +297,7 @@ export async function getMaterialForReader(db: DbExecutor, userId: string, conte
   ]);
   const { glossary, questions } = m.stored;
   const singleWordKeys = new Set(glossary.map((g) => g.key));
+  const lexicon = await learnerLexicon(db, userId, learner.level);
 
   return {
     id: m.id,
@@ -220,6 +307,7 @@ export async function getMaterialForReader(db: DbExecutor, userId: string, conte
     summaryZh: m.summaryZh,
     levelLabel: isCefrLevel(m.cefrLevel) ? CEFR_LEVEL_LABELS[m.cefrLevel] : m.cefrLevel,
     fit: levelFit(m.cefrLevel, learner.level),
+    coverage: coverageInfo(segments.map((s) => s.textEn), lexicon),
     learnerLevelLabel: CEFR_LEVEL_LABELS[learner.level],
     titleTokens: tokenize(m.titleEn, glossary),
     segments: segments.map((s) => {
@@ -539,10 +627,17 @@ export async function pickInputMaterial(db: DbExecutor, userId: string, options:
   // Skill gap: the lower estimate gets the input today; equal levels alternate by day.
   const preferType: MaterialType = gap > 0 ? "listening" : gap < 0 ? "reading" : options.fallbackType;
   const firstEvidence = (id: string) => (options.materialCanDo?.get(id) ?? []).find((c) => !options.passedCanDo?.has(c));
+  const [lexicons, texts] = await Promise.all([
+    Promise.all([learnerLexicon(db, userId, levels.reading.level), learnerLexicon(db, userId, levels.listening.level)]),
+    segmentTexts(db, candidates.map((c) => c.id)),
+  ]);
+  const coverageOf = new Map(candidates.map((c) => [c.id, coverageInfo(texts.get(c.id) ?? [], lexicons[c.type === "reading" ? 0 : 1])]));
   const score = (c: (typeof candidates)[number]) => {
     const fit = levelFit(c.level, levels[c.type as MaterialType].level);
     const fitScore = { right: 0, easier: 1, stretch: 2, hard: 9 }[fit];
-    return fitScore * 10 + (c.type === preferType ? 0 : 4) + (firstEvidence(c.id) ? 0 : 2);
+    // Too many unknown words for input: only if nothing better is left.
+    const coverageScore = coverageOf.get(c.id)!.band === "hard" ? 15 : 0;
+    return fitScore * 10 + coverageScore + (c.type === preferType ? 0 : 4) + (firstEvidence(c.id) ? 0 : 2);
   };
   const best = [...candidates].sort((a, b) => score(a) - score(b) || a.id.localeCompare(b.id))[0]!;
   if (score(best) >= 90) return null;
@@ -553,6 +648,8 @@ export async function pickInputMaterial(db: DbExecutor, userId: string, options:
     const label = (t: MaterialType) => `${t === "reading" ? "阅读" : "听力"}（${CEFR_LEVEL_LABELS[levels[t].level]}）`;
     reasons.push(`你的${label(type)}低于${label(type === "reading" ? "listening" : "reading")}，今天先补这一项`);
   }
+  const coverage = coverageOf.get(best.id)!;
+  reasons.push(`估计你认识其中约 ${Math.floor(coverage.ratio * 100)}% 的词（${coverage.label}）`);
   const canDo = firstEvidence(best.id);
   if (canDo && options.canDoZh?.get(canDo)) reasons.push(`做完理解题能为“${options.canDoZh.get(canDo)}”提供第一份证据`);
   return {

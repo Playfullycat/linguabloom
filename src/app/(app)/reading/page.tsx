@@ -1,9 +1,11 @@
-import { BookOpen } from "lucide-react";
+import { BookMarked, BookOpen } from "lucide-react";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Suspense } from "react";
 
 import { PageHeader } from "@/components/layout/page-header";
 import { MaterialList } from "@/components/materials/material-list";
+import { Button } from "@/components/ui/button";
 import { LoadingSkeleton } from "@/components/ui/skeleton";
 import { getDb } from "@/db";
 import { requireOwner } from "@/lib/auth/session";
@@ -24,6 +26,14 @@ export default function ReadingPage() {
         title="Reading"
         titleZh="阅读"
         description="略高于当前水平、但能读懂的分级阅读。点任意单词查义，自己决定要不要加入词汇库。"
+        actions={
+          <Button asChild variant="outline">
+            <Link href="/reading/books">
+              <BookMarked aria-hidden="true" />
+              书单推荐
+            </Link>
+          </Button>
+        }
       />
       <Suspense fallback={<LoadingSkeleton label="正在加载材料…" />}>
         <ReadingList />

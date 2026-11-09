@@ -174,6 +174,181 @@
         { "id": "q3", "type": "choice", "prompt_zh": "Leila 认为真正的问题是什么？", "options": ["职业艺术家还能不能靠创作谋生", "谁该得奖", "软件的价格"], "answer": 0, "explanation_zh": "原文：A prize is trivial by comparison with whether working artists can still earn a living.", "segment": 7 },
         { "id": "q4", "type": "choice", "prompt_zh": "Marcus 怎么回应 Leila 说奖项“微不足道”？", "options": ["不同意奖项微不足道，但同意经济问题更重大", "完全同意", "认为奖项是唯一重要的问题"], "answer": 0, "explanation_zh": "原文：I wouldn't call it trivial ... But I take the point that the economic question dwarfs the ceremonial one.", "segment": 8 }
       ]
+    },
+    {
+      "id": "rd-c2-nostalgia",
+      "type": "reading",
+      "level": "c2",
+      "can_do_ids": ["c2.r.any"],
+      "topic": "culture",
+      "title_en": "The Good Old Days, Revisited",
+      "title_zh": "重访“美好的旧时光”",
+      "summary_zh": "一篇随笔：每代人都怀念过去；怀旧作为私人慰藉有其价值，变成公共政策时却需要警惕。",
+      "segments": [
+        { "en": "Every generation, it seems, is convinced that it grew up at the precise moment when things began to go downhill: when music lost its soul, children lost their manners and conversation gave way to whatever device happened to be fashionable.", "zh": "似乎每一代人都坚信，自己恰好成长在一切开始走下坡路的那一刻：音乐失去了灵魂，孩子失去了礼貌，交谈让位给了当时恰好流行的某种设备。" },
+        { "en": "The complaint is so reliable that one could almost set a calendar by it.", "zh": "这种抱怨如此准时，几乎可以拿它来校准日历。" },
+        { "en": "Nostalgia is not, of course, simply a failure of memory.", "zh": "当然，怀旧并不只是记忆出了问题。" },
+        { "en": "Psychologists suggest that it serves a genuine purpose, lending a sense of continuity to lives that might otherwise feel fragmented, and that people who indulge in it occasionally report feeling less lonely afterwards.", "zh": "心理学家认为，它确有其用：为可能显得支离破碎的人生带来一种延续感；偶尔沉浸其中的人事后会觉得没那么孤独。" },
+        { "en": "The trouble begins when this private comfort is promoted to public policy.", "zh": "麻烦始于这种私人的慰藉被提升为公共政策的时候。" },
+        { "en": "Politicians who promise to restore a lost golden age are rarely specific about which year they have in mind, and for good reason.", "zh": "那些承诺恢复失落黄金时代的政客，很少具体说明他们指的是哪一年，而且理由很充分。" },
+        { "en": "Closer inspection tends to reveal that the golden age was considerably less golden for anyone who was not young, healthy and comfortably off at the time.", "zh": "仔细一看就会发现，对于当时不年轻、不健康、不宽裕的人来说，那个黄金时代远没有那么金光闪闪。" },
+        { "en": "None of this means the past has nothing to teach us.", "zh": "这一切并不意味着过去没有什么可教我们的。" },
+        { "en": "But a past worth learning from has to be remembered accurately, inconvenient details included, rather than curated like a museum gift shop.", "zh": "但值得借鉴的过去必须被准确地记住，包括那些令人不快的细节，而不是像博物馆礼品店那样精心挑选陈列。" }
+      ],
+      "glossary": [
+        { "key": "go-downhill", "text": "go downhill", "pos": "phrase", "zh": "走下坡路" },
+        { "key": "manners", "text": "manners", "pos": "noun", "ipa": "/ˈmænəz/", "zh": "礼貌；礼节" },
+        { "key": "give-way-to", "text": "give way to", "forms": ["gave way to"], "pos": "phrase", "zh": "让位于" },
+        { "key": "set-a-calendar-by", "text": "set a calendar by", "pos": "phrase", "zh": "拿……来校准日历（形容极其准时、可预测）" },
+        { "key": "nostalgia", "text": "Nostalgia", "pos": "noun", "ipa": "/nɒˈstældʒə/", "zh": "怀旧" },
+        { "key": "lend", "text": "lending", "pos": "verb", "zh": "赋予；增添", "note_zh": "lend a sense of … to … = 给……增添一种……感" },
+        { "key": "continuity", "text": "continuity", "pos": "noun", "ipa": "/ˌkɒntɪˈnjuːəti/", "zh": "延续性；连续性" },
+        { "key": "fragmented", "text": "fragmented", "pos": "adjective", "ipa": "/fræɡˈmentɪd/", "zh": "支离破碎的" },
+        { "key": "indulge-in", "text": "indulge in", "pos": "phrase", "zh": "沉溺于；尽情享受" },
+        { "key": "promoted-to", "text": "promoted to", "pos": "phrase", "zh": "被提升为" },
+        { "key": "golden-age", "text": "golden age", "pos": "noun", "zh": "黄金时代" },
+        { "key": "for-good-reason", "text": "for good reason", "pos": "phrase", "zh": "理由很充分" },
+        { "key": "inspection", "text": "inspection", "pos": "noun", "ipa": "/ɪnˈspekʃn/", "zh": "审视；检查" },
+        { "key": "comfortably-off", "text": "comfortably off", "pos": "phrase", "zh": "生活宽裕的" },
+        { "key": "inconvenient", "text": "inconvenient", "pos": "adjective", "ipa": "/ˌɪnkənˈviːniənt/", "zh": "令人不便的；令人不快的" },
+        { "key": "curate", "text": "curate", "forms": ["curated"], "pos": "verb", "ipa": "/kjʊəˈreɪt/", "zh": "精心挑选（陈列）" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "第一段说每一代人都坚信什么？", "options": ["自己的时代最糟糕", "过去比现在更穷", "自己恰好成长在一切开始变糟的时候"], "answer": 2, "explanation_zh": "原文：it grew up at the precise moment when things began to go downhill.", "segment": 0 },
+        { "id": "q2", "type": "choice", "prompt_zh": "心理学家认为怀旧有什么作用？", "options": ["给人生带来延续感，偶尔沉浸其中会减少孤独", "让人记忆力变好", "让人更愿意花钱"], "answer": 0, "explanation_zh": "原文：lending a sense of continuity … people who indulge in it occasionally report feeling less lonely.", "segment": 3 },
+        { "id": "q3", "type": "choice", "prompt_zh": "作者为什么说政客不说明是哪一年“理由很充分”？", "options": ["因为他们记不清了", "仔细看会发现那个时代对很多人并不美好", "因为那一年太遥远"], "answer": 1, "explanation_zh": "原文：the golden age was considerably less golden for anyone who was not young, healthy and comfortably off.", "segment": 6 },
+        { "id": "q4", "type": "choice", "prompt_zh": "作者对怀旧的最终态度是：", "options": ["可以向过去学习，但必须准确记住，包括不光彩的细节", "应该彻底忘记过去", "过去确实比现在好"], "answer": 0, "explanation_zh": "原文：a past worth learning from has to be remembered accurately, inconvenient details included.", "segment": 8 }
+      ]
+    },
+    {
+      "id": "rd-c2-productivity",
+      "type": "reading",
+      "level": "c2",
+      "can_do_ids": ["c2.r.any"],
+      "topic": "work",
+      "title_en": "Confessions of a Productivity Enthusiast",
+      "title_zh": "一个效率狂的自白",
+      "summary_zh": "一篇讽刺专栏：作者读遍效率书、用尽各种方法，最后发现最有效的技巧是说“不”。",
+      "segments": [
+        { "en": "I have read every book on productivity published in the last decade, which, given how many there are, may be the least productive thing I have ever done.", "zh": "过去十年出版的每一本关于效率的书我都读过——考虑到这类书有多少，这可能是我做过的最没效率的事。" },
+        { "en": "I have colour-coded my calendar, batched my emails, eaten the frog first thing in the morning and, on one memorable occasion, scheduled fifteen minutes for spontaneity.", "zh": "我给日历做过颜色分类，把邮件集中处理，一大早先啃最难的骨头，还有一次令人难忘的经历：给“随性而为”安排了十五分钟。" },
+        { "en": "My to-do lists have to-do lists.", "zh": "我的待办清单还有自己的待办清单。" },
+        { "en": "And yet, somewhere between optimising my morning routine and tracking my sleep to the minute, I began to suspect that the systems had become the work.", "zh": "然而，在优化晨间习惯、把睡眠精确记录到分钟的某个时刻，我开始怀疑这些系统本身已经变成了工作。" },
+        { "en": "The industry is built on a flattering premise: that the reason we feel overwhelmed is a lack of technique, rather than the simple fact that we have agreed to do too much.", "zh": "这个行业建立在一个讨人喜欢的前提之上：我们之所以不堪重负，是因为缺乏技巧，而不是因为我们简单地答应了太多事情。" },
+        { "en": "A better app is always easier to sell than a shorter list.", "zh": "一个更好的应用，总比一张更短的清单好卖。" },
+        { "en": "I have not abandoned my calendar, which remains as colourful as ever.", "zh": "我并没有放弃我的日历，它依然五彩缤纷。" },
+        { "en": "But I have started, tentatively, to practise the one technique none of the books recommended with much enthusiasm: saying no, and then doing nothing in particular with the time I have saved.", "zh": "但我已经开始小心翼翼地练习一种没有哪本书热情推荐过的技巧：说“不”，然后用省下来的时间什么特别的事也不做。" },
+        { "en": "So far, the results are promising, although I have not yet found a way to measure them.", "zh": "到目前为止，效果令人满意，尽管我还没找到衡量它的方法。" }
+      ],
+      "glossary": [
+        { "key": "confession", "text": "confession", "forms": ["Confessions"], "pos": "noun", "ipa": "/kənˈfeʃn/", "zh": "自白；坦白" },
+        { "key": "productivity", "text": "productivity", "forms": ["Productivity", "productivity"], "pos": "noun", "ipa": "/ˌprɒdʌkˈtɪvəti/", "zh": "效率；生产力" },
+        { "key": "colour-coded", "text": "colour-coded", "pos": "adjective", "zh": "用颜色分类的" },
+        { "key": "batch", "text": "batch", "forms": ["batched"], "pos": "verb", "ipa": "/bætʃ/", "zh": "分批（集中）处理" },
+        { "key": "eat-the-frog", "text": "eat the frog", "forms": ["eaten the frog"], "pos": "phrase", "zh": "先做最难、最不想做的事" },
+        { "key": "spontaneity", "text": "spontaneity", "pos": "noun", "ipa": "/ˌspɒntəˈneɪəti/", "zh": "随性；自发性" },
+        { "key": "to-do-list", "text": "to-do list", "forms": ["to-do lists"], "pos": "noun", "zh": "待办清单" },
+        { "key": "optimise", "text": "optimise", "forms": ["optimising"], "pos": "verb", "ipa": "/ˈɒptɪmaɪz/", "zh": "优化" },
+        { "key": "to-the-minute", "text": "to the minute", "pos": "phrase", "zh": "精确到分钟" },
+        { "key": "flattering", "text": "flattering", "pos": "adjective", "ipa": "/ˈflætərɪŋ/", "zh": "讨人喜欢的；令人受用的" },
+        { "key": "premise", "text": "premise", "pos": "noun", "ipa": "/ˈpremɪs/", "zh": "前提" },
+        { "key": "overwhelmed", "text": "overwhelmed", "pos": "adjective", "ipa": "/ˌəʊvəˈwelmd/", "zh": "不堪重负的" },
+        { "key": "tentatively", "text": "tentatively", "pos": "adverb", "ipa": "/ˈtentətɪvli/", "zh": "试探性地；小心翼翼地" },
+        { "key": "in-particular", "text": "in particular", "pos": "phrase", "zh": "特别的；尤其" },
+        { "key": "promising", "text": "promising", "pos": "adjective", "ipa": "/ˈprɒmɪsɪŋ/", "zh": "有希望的；令人满意的" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "作者说读完所有效率书“可能是最没效率的事”，这是：", "options": ["抱怨书太难读", "说明他读书很快", "自嘲：这类书太多，读完本身就很浪费时间"], "answer": 2, "explanation_zh": "原文：given how many there are, may be the least productive thing I have ever done.", "segment": 0 },
+        { "id": "q2", "type": "choice", "prompt_zh": "“My to-do lists have to-do lists.”想表达什么？", "options": ["他的计划系统已经复杂到荒谬的程度", "他的清单写得很短", "他喜欢写日记"], "answer": 0, "explanation_zh": "夸张的说法，讽刺自己的计划系统层层叠叠、过于复杂。", "segment": 2 },
+        { "id": "q3", "type": "choice", "prompt_zh": "作者认为效率行业的前提为什么“讨人喜欢”？", "options": ["它让人更有钱", "它把不堪重负归因于缺乏技巧，而不是我们答应了太多事", "它承诺让人更健康"], "answer": 1, "explanation_zh": "原文：the reason we feel overwhelmed is a lack of technique, rather than the simple fact that we have agreed to do too much.", "segment": 4 },
+        { "id": "q4", "type": "choice", "prompt_zh": "作者现在开始练习的“技巧”是什么？", "options": ["学会说不，然后用省下的时间什么也不做", "买更好的效率应用", "每天提前一小时起床"], "answer": 0, "explanation_zh": "原文：saying no, and then doing nothing in particular with the time I have saved.", "segment": 7 }
+      ]
+    },
+    {
+      "id": "rd-c2-untranslatable",
+      "type": "reading",
+      "level": "c2",
+      "can_do_ids": ["c2.r.any"],
+      "topic": "language",
+      "title_en": "The Myth of the Untranslatable Word",
+      "title_zh": "“不可译词”的神话",
+      "summary_zh": "一篇随笔：作者认为“不可译词”清单虽然迷人，却夸大了语言之间的隔阂。",
+      "segments": [
+        { "en": "Few things delight language enthusiasts more than a list of 'untranslatable' words: a German term for the pleasure of someone else's misfortune, a Portuguese word for a longing that may never be satisfied, a Japanese expression for light filtering through leaves.", "zh": "很少有什么比一张“不可译词”清单更让语言爱好者开心的了：一个表示幸灾乐祸的德语词，一个表示也许永远无法满足的思念的葡萄牙语词，一个形容阳光透过树叶洒落的日语表达。" },
+        { "en": "Such lists are charming, and they make a reasonable point: languages carve up experience in different ways, and some concepts are more readily available in one than another.", "zh": "这类清单很迷人，也说出了一个合理的观点：不同语言以不同方式切分经验，有些概念在某种语言中比在另一种语言中更容易表达。" },
+        { "en": "Where they go wrong is in the leap from 'there is no single English word for this' to 'English speakers cannot grasp this feeling'.", "zh": "它们出错的地方在于，从“英语里没有一个单词能表达这个”一下子跳到了“说英语的人无法理解这种感受”。" },
+        { "en": "The very fact that the list can explain each word in a sentence or two rather undermines its own claim.", "zh": "这份清单能用一两句话解释每个词，这一事实本身就相当削弱了它自己的说法。" },
+        { "en": "What is genuinely difficult to translate is rarely an isolated word; it is the web of associations, rhythms and assumptions that surround it, which no dictionary entry, however clever, can fully carry across.", "zh": "真正难以翻译的很少是一个孤立的词，而是围绕着它的那张由联想、节奏和预设织成的网，任何词典词条，无论多么巧妙，都无法完全传达过去。" },
+        { "en": "A translator of poetry knows this intimately, and spends her working life making compromises that no list will ever celebrate.", "zh": "诗歌译者对此再熟悉不过，她的整个职业生涯都在做出一些永远不会被任何清单称颂的妥协。" },
+        { "en": "Perhaps we should retire the word 'untranslatable' and speak instead of the 'not yet translated': a humbler phrase, admittedly, but one that leaves room for the patient work of bringing languages closer together.", "zh": "也许我们应该让“不可译”这个词退休，改说“尚未译出”：诚然，这个说法更谦逊，但它为让语言彼此靠近的耐心工作留出了空间。" }
+      ],
+      "glossary": [
+        { "key": "untranslatable", "text": "untranslatable", "forms": ["Untranslatable", "untranslatable"], "pos": "adjective", "zh": "无法翻译的" },
+        { "key": "delight", "text": "delight", "pos": "verb", "ipa": "/dɪˈlaɪt/", "zh": "使高兴" },
+        { "key": "enthusiast", "text": "enthusiast", "forms": ["enthusiasts"], "pos": "noun", "ipa": "/ɪnˈθjuːziæst/", "zh": "爱好者；热衷者" },
+        { "key": "misfortune", "text": "misfortune", "pos": "noun", "ipa": "/mɪsˈfɔːtʃuːn/", "zh": "不幸" },
+        { "key": "longing", "text": "longing", "pos": "noun", "ipa": "/ˈlɒŋɪŋ/", "zh": "渴望；思念" },
+        { "key": "filter", "text": "filtering", "pos": "verb", "zh": "（光线）透过", "note_zh": "light filtering through leaves = 阳光透过树叶" },
+        { "key": "charming", "text": "charming", "pos": "adjective", "ipa": "/ˈtʃɑːmɪŋ/", "zh": "迷人的" },
+        { "key": "carve-up", "text": "carve up", "pos": "phrasal verb", "zh": "分割；切分" },
+        { "key": "leap", "text": "leap", "pos": "noun", "ipa": "/liːp/", "zh": "跳跃" },
+        { "key": "web-of-associations", "text": "web of associations", "pos": "phrase", "zh": "联想之网" },
+        { "key": "carry-across", "text": "carry across", "pos": "phrasal verb", "zh": "传达过去" },
+        { "key": "intimately", "text": "intimately", "pos": "adverb", "ipa": "/ˈɪntɪmətli/", "zh": "深切地；非常熟悉地" },
+        { "key": "retire", "text": "retire", "pos": "verb", "ipa": "/rɪˈtaɪə/", "zh": "使退役；不再使用", "note_zh": "原意是“退休”" },
+        { "key": "humble", "text": "humbler", "pos": "adjective", "zh": "更谦逊的（humble 的比较级）" },
+        { "key": "admittedly", "text": "admittedly", "pos": "adverb", "ipa": "/ədˈmɪtɪdli/", "zh": "诚然；不可否认" },
+        { "key": "leave-room-for", "text": "leaves room for", "pos": "phrase", "zh": "为……留出空间" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "作者承认“不可译词”清单说出了什么合理的观点？", "options": ["不同语言以不同方式切分经验", "英语的词汇最少", "德语比日语难"], "answer": 0, "explanation_zh": "原文：languages carve up experience in different ways.", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "作者认为这类清单错在哪里？", "options": ["收录的词太少", "从“没有对应单词”推断出“无法理解这种感受”", "翻译得不准确"], "answer": 1, "explanation_zh": "原文：the leap from 'there is no single English word for this' to 'English speakers cannot grasp this feeling'.", "segment": 2 },
+        { "id": "q3", "type": "choice", "prompt_zh": "作者认为真正难翻译的是什么？", "options": ["单个的生僻词", "语法结构", "围绕词语的联想、节奏和预设"], "answer": 2, "explanation_zh": "原文：the web of associations, rhythms and assumptions that surround it.", "segment": 4 },
+        { "id": "q4", "type": "choice", "prompt_zh": "作者建议用什么说法代替“不可译”？", "options": ["“无法理解”", "“尚未译出”", "“只能意会”"], "answer": 1, "explanation_zh": "原文：speak instead of the 'not yet translated'.", "segment": 6 }
+      ]
+    },
+    {
+      "id": "rd-c2-consultation-letter",
+      "type": "reading",
+      "level": "c2",
+      "can_do_ids": ["c2.r.any"],
+      "topic": "civic life",
+      "title_en": "Letter to the Editor: A Thorough Consultation",
+      "title_zh": "致编辑的信：一次“彻底”的意见征询",
+      "summary_zh": "一封读者来信：表面上称赞市政府的公园意见征询，字里行间全是讽刺。（虚构）",
+      "segments": [
+        { "en": "Sir, I was delighted to read that the council's consultation on the future of Hartley Park attracted 'an unprecedented level of engagement'.", "zh": "编辑先生：读到市政府关于哈特利公园未来的意见征询吸引了“前所未有的参与度”，我非常高兴。" },
+        { "en": "As one of the four hundred residents who attended the public meeting, I can confirm that engagement was indeed unprecedented, if by engagement one means people standing in the corridor because the room booked for the occasion held thirty.", "zh": "作为参加公开会议的四百名居民之一，我可以证实参与度确实前所未有——如果所谓“参与”指的是人们站在走廊里，因为为此预订的房间只能容纳三十人的话。" },
+        { "en": "I was particularly impressed by the efficiency of the process.", "zh": "我对整个流程的效率尤其印象深刻。" },
+        { "en": "The consultation opened on a Friday afternoon in August, closed nine days later, and the council's report, published the following morning, concluded that residents broadly supported the plan to sell the eastern half of the park to developers.", "zh": "征询在八月的一个周五下午开始，九天后结束，而市政府的报告在第二天上午就发布了，结论是居民大体支持把公园东半部分卖给开发商的计划。" },
+        { "en": "That the report ran to sixty pages suggests either remarkable diligence or that it had been written somewhat in advance.", "zh": "报告长达六十页，这要么说明了非凡的勤奋，要么说明它是提前写好的。" },
+        { "en": "I would not wish to accuse anyone of predetermining the outcome.", "zh": "我可不想指责任何人预先定好了结果。" },
+        { "en": "I merely note that the questionnaire offered three options, 'strongly support', 'support' and 'support with minor reservations', which some residents felt did not fully capture the range of local opinion.", "zh": "我只是注意到，问卷提供了三个选项——“强烈支持”“支持”和“支持但略有保留”——一些居民认为这并不能完全反映当地意见的范围。" },
+        { "en": "I look forward to the next consultation, and will bring a chair.", "zh": "我期待着下一次征询，并打算自带椅子。" },
+        { "en": "Yours faithfully, M. Okafor", "zh": "M. 奥卡福 谨上" }
+      ],
+      "glossary": [
+        { "key": "consultation", "text": "consultation", "forms": ["Consultation", "consultation"], "pos": "noun", "ipa": "/ˌkɒnslˈteɪʃn/", "zh": "意见征询；咨询" },
+        { "key": "engagement", "text": "engagement", "pos": "noun", "ipa": "/ɪnˈɡeɪdʒmənt/", "zh": "参与" },
+        { "key": "corridor", "text": "corridor", "pos": "noun", "ipa": "/ˈkɒrɪdɔː/", "zh": "走廊" },
+        { "key": "hold", "text": "held", "pos": "verb", "zh": "容纳（hold 的过去式）", "note_zh": "the room held thirty = 房间能容纳三十人" },
+        { "key": "broadly", "text": "broadly", "pos": "adverb", "ipa": "/ˈbrɔːdli/", "zh": "大体上" },
+        { "key": "developer", "text": "developer", "forms": ["developers"], "pos": "noun", "ipa": "/dɪˈveləpə/", "zh": "开发商" },
+        { "key": "run-to", "text": "ran to", "pos": "phrase", "zh": "（篇幅）长达", "note_zh": "run to sixty pages = 长达六十页" },
+        { "key": "diligence", "text": "diligence", "pos": "noun", "ipa": "/ˈdɪlɪdʒəns/", "zh": "勤奋" },
+        { "key": "in-advance", "text": "in advance", "pos": "phrase", "zh": "提前；预先" },
+        { "key": "accuse", "text": "accuse", "pos": "verb", "ipa": "/əˈkjuːz/", "zh": "指责；控告" },
+        { "key": "predetermine", "text": "predetermine", "forms": ["predetermining"], "pos": "verb", "ipa": "/ˌpriːdɪˈtɜːmɪn/", "zh": "预先决定" },
+        { "key": "questionnaire", "text": "questionnaire", "pos": "noun", "ipa": "/ˌkwestʃəˈneə/", "zh": "调查问卷" },
+        { "key": "reservation", "text": "reservation", "forms": ["reservations"], "pos": "noun", "ipa": "/ˌrezəˈveɪʃn/", "zh": "保留意见", "note_zh": "with reservations = 有所保留" },
+        { "key": "yours-faithfully", "text": "Yours faithfully", "pos": "phrase", "zh": "（正式信件结尾）谨上" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "作者说参与度“确实前所未有”，真实意思是：", "options": ["会场太小，很多人只能站在走廊里——在讽刺组织不力", "活动组织得非常好", "来的人很少"], "answer": 0, "explanation_zh": "原文：if by engagement one means people standing in the corridor because the room … held thirty.", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "作者为什么提到报告第二天上午就发布、长达六十页？", "options": ["赞扬市政府工作勤奋", "暗示报告可能是提前写好的，结果早已定好", "说明报告太长没人看"], "answer": 1, "explanation_zh": "原文：suggests either remarkable diligence or that it had been written somewhat in advance.", "segment": 4 },
+        { "id": "q3", "type": "choice", "prompt_zh": "问卷的三个选项说明了什么？", "options": ["问卷设计得很全面", "居民意见非常一致", "所有选项都是“支持”，根本没有反对的选择"], "answer": 2, "explanation_zh": "原文：'strongly support', 'support' and 'support with minor reservations'.", "segment": 6 },
+        { "id": "q4", "type": "choice", "prompt_zh": "“will bring a chair”这句话的言外之意是：", "options": ["他想捐椅子给市政府", "预计下次会场还会不够坐，继续讽刺", "他腿脚不好"], "answer": 1, "explanation_zh": "呼应前文四百人挤在只能容纳三十人的房间里。", "segment": 7 }
+      ]
     }
   ]
 }

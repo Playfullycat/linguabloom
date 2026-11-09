@@ -178,6 +178,191 @@
         { "id": "q3", "type": "choice", "prompt_zh": "David 的第二个担忧是什么？", "options": ["宜居社区变贵，把原本要帮助的人挤走", "施工期间交通混乱", "商店会倒闭"], "answer": 0, "explanation_zh": "原文：tend to become expensive, which can push out the very people they were meant to help.", "segment": 6 },
         { "id": "q4", "type": "choice", "prompt_zh": "讨论最后，两人的分歧主要在哪里？", "options": ["能多快、多普遍地实现", "目标本身是否正确", "是否需要经济适用房"], "answer": 0, "explanation_zh": "原文：Where we differ is how quickly, and how universally, it can realistically be achieved.", "segment": 9 }
       ]
+    },
+    {
+      "id": "rd-c1-urban-trees",
+      "type": "reading",
+      "level": "c1",
+      "can_do_ids": ["c1.r.complex"],
+      "topic": "environment",
+      "title_en": "Trees Are Infrastructure, Too",
+      "title_zh": "树木也是基础设施",
+      "summary_zh": "一篇议论文：城市削减行道树开支是短视的，因为树木的好处真实存在却不在账本上。",
+      "segments": [
+        { "en": "When city budgets are squeezed, street trees are often among the first casualties: planting is postponed, maintenance is cut, and mature trees are felled to make way for wider roads or new developments.", "zh": "城市预算紧张时，行道树往往首当其冲：种植被推迟，养护被削减，成年大树被砍掉，为更宽的道路或新开发项目让路。" },
+        { "en": "This treats trees as decoration, a pleasant extra to be funded once the serious spending has been done.", "zh": "这是把树木当作装饰，一种等正经开支完成后才去出钱的锦上添花。" },
+        { "en": "The evidence suggests otherwise.", "zh": "证据表明并非如此。" },
+        { "en": "A mature tree can lower the surrounding air temperature by several degrees on a hot day, reduce the load on drains during heavy rain, and filter a measurable share of airborne pollution.", "zh": "一棵成年大树在炎热的日子里能让周围气温降低好几度，在暴雨时减轻排水系统的负担，并过滤掉可观比例的空气污染物。" },
+        { "en": "Streets with more trees tend to have lower rates of heat-related illness, and some studies have linked green views to faster recovery in hospital patients.", "zh": "树木较多的街道，与高温相关的疾病发生率往往较低；一些研究还把看得见绿色景观与住院病人恢复得更快联系起来。" },
+        { "en": "None of these benefits appear on a council's balance sheet, which is precisely why they are so easily overlooked.", "zh": "这些好处都不会出现在市政府的资产负债表上，而这恰恰是它们如此容易被忽视的原因。" },
+        { "en": "The comparison with other infrastructure is instructive.", "zh": "与其他基础设施作比较，很有启发意义。" },
+        { "en": "No one would suggest delaying the repair of a bridge because the benefits are hard to see; yet a young tree, unlike a bridge, gains value every year it is allowed to grow.", "zh": "没有人会因为好处不容易看到而建议推迟修桥；然而，与桥不同，一棵小树每多长一年，价值就增加一分。" },
+        { "en": "Cutting it down to save money in the short term is less a saving than a slow and invisible loan taken out against the future.", "zh": "为了短期省钱把它砍掉，与其说是节约，不如说是向未来借了一笔缓慢而看不见的贷款。" }
+      ],
+      "glossary": [
+        { "key": "infrastructure", "text": "infrastructure", "pos": "noun", "ipa": "/ˈɪnfrəstrʌktʃə/", "zh": "基础设施" },
+        { "key": "squeeze", "text": "squeeze", "forms": ["squeezed"], "pos": "verb", "ipa": "/skwiːz/", "zh": "压缩；使紧张" },
+        { "key": "casualty", "text": "casualty", "forms": ["casualties"], "pos": "noun", "ipa": "/ˈkæʒuəlti/", "zh": "受害者；牺牲品" },
+        { "key": "maintenance", "text": "maintenance", "pos": "noun", "ipa": "/ˈmeɪntənəns/", "zh": "维护；养护" },
+        { "key": "mature", "text": "mature", "pos": "adjective", "ipa": "/məˈtʃʊə/", "zh": "成熟的；长成的" },
+        { "key": "fell", "text": "fell", "forms": ["felled"], "pos": "verb", "ipa": "/fel/", "zh": "砍伐（树木）" },
+        { "key": "make-way-for", "text": "make way for", "pos": "phrase", "zh": "为……让路" },
+        { "key": "decoration", "text": "decoration", "pos": "noun", "ipa": "/ˌdekəˈreɪʃn/", "zh": "装饰" },
+        { "key": "fund", "text": "fund", "forms": ["funded"], "pos": "verb", "ipa": "/fʌnd/", "zh": "出钱资助" },
+        { "key": "otherwise", "text": "otherwise", "pos": "adverb", "ipa": "/ˈʌðəwaɪz/", "zh": "并非如此；相反" },
+        { "key": "drain", "text": "drain", "forms": ["drains"], "pos": "noun", "ipa": "/dreɪn/", "zh": "排水管；下水道" },
+        { "key": "airborne", "text": "airborne", "pos": "adjective", "ipa": "/ˈeəbɔːn/", "zh": "空气中的" },
+        { "key": "heat-related", "text": "heat-related", "pos": "adjective", "zh": "与高温相关的" },
+        { "key": "balance-sheet", "text": "balance sheet", "pos": "noun", "zh": "资产负债表" },
+        { "key": "precisely", "text": "precisely", "pos": "adverb", "ipa": "/prɪˈsaɪsli/", "zh": "恰恰；正是" },
+        { "key": "instructive", "text": "instructive", "pos": "adjective", "ipa": "/ɪnˈstrʌktɪv/", "zh": "有启发的" },
+        { "key": "invisible", "text": "invisible", "pos": "adjective", "ipa": "/ɪnˈvɪzəbl/", "zh": "看不见的" },
+        { "key": "take-out-against", "text": "taken out against", "pos": "phrase", "zh": "以……为抵押借出", "note_zh": "take out a loan = 借一笔贷款" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "作者认为预算紧张时城市对待行道树的方式说明了什么？", "options": ["树木最受重视", "把树当作可有可无的装饰", "树木养护费太低"], "answer": 1, "explanation_zh": "原文：This treats trees as decoration, a pleasant extra.", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "文中提到的成年大树的好处不包括哪一项？", "options": ["降低周边气温", "增加城市税收", "在暴雨时减轻排水负担"], "answer": 1, "explanation_zh": "原文列出了降温、减轻排水负担和过滤空气污染，没有提到税收。", "segment": 3 },
+        { "id": "q3", "type": "choice", "prompt_zh": "为什么这些好处容易被忽视？", "options": ["它们不会出现在资产负债表上", "它们太小了", "没有人研究过"], "answer": 0, "explanation_zh": "原文：None of these benefits appear on a council's balance sheet, which is precisely why they are so easily overlooked.", "segment": 5 },
+        { "id": "q4", "type": "choice", "prompt_zh": "作者把砍树省钱比作什么？", "options": ["向未来借的一笔看不见的贷款", "一项明智的投资", "修桥"], "answer": 0, "explanation_zh": "原文：less a saving than a slow and invisible loan taken out against the future.", "segment": 8 }
+      ]
+    },
+    {
+      "id": "rd-c1-open-placebo",
+      "type": "reading",
+      "level": "c1",
+      "can_do_ids": ["c1.r.complex"],
+      "topic": "science",
+      "title_en": "The Placebo That Isn't a Secret",
+      "title_zh": "不是秘密的安慰剂",
+      "summary_zh": "一篇科普文章：明确告知病人的“开放标签”安慰剂试验，研究结果、局限和启示。",
+      "segments": [
+        { "en": "For decades, doctors assumed that a placebo works only if the patient believes it is real medicine.", "zh": "几十年来，医生们一直认为，只有当病人相信那是真药时，安慰剂才会起作用。" },
+        { "en": "Deception, in other words, was thought to be the active ingredient.", "zh": "换句话说，欺骗被认为是其中的“有效成分”。" },
+        { "en": "A growing body of research has complicated that picture.", "zh": "越来越多的研究让这一图景变得复杂起来。" },
+        { "en": "In so-called open-label trials, patients are told plainly that the pills they are taking contain no drug at all, yet many still report a noticeable improvement in symptoms such as chronic pain or fatigue.", "zh": "在所谓的“开放标签”试验中，病人被明确告知他们服用的药片根本不含任何药物，然而许多人仍然报告诸如慢性疼痛或疲劳等症状有明显改善。" },
+        { "en": "Researchers are cautious about what this means.", "zh": "研究人员对这意味着什么持谨慎态度。" },
+        { "en": "The trials are generally small, and the improvements are mostly in self-reported symptoms rather than measurable changes in the body.", "zh": "这些试验规模一般较小，改善大多体现在自我报告的症状上，而不是身体可测量的变化。" },
+        { "en": "It is also hard to separate the effect of the pill from that of the attention and care that come with taking part in a study.", "zh": "而且很难把药片的作用，与参与研究所带来的关注和照顾的作用区分开来。" },
+        { "en": "Still, the findings raise an intriguing possibility: that the ritual of treatment, the act of taking something regularly with the expectation of relief, may matter in its own right.", "zh": "尽管如此，这些发现提出了一个耐人寻味的可能性：治疗的仪式感——带着缓解的期望定期服用某样东西的行为——本身可能就有意义。" },
+        { "en": "If so, the old ethical dilemma of whether doctors may deceive patients for their own good might be partly avoidable.", "zh": "如果是这样，医生能否为了病人好而欺骗病人这个古老的伦理难题，或许在一定程度上是可以避免的。" },
+        { "en": "None of this makes placebos a substitute for effective treatment, but it suggests that how medicine is given may deserve as much attention as what is given.", "zh": "这一切都不能让安慰剂替代有效的治疗，但它表明，药是怎么给的，可能和给的是什么同样值得关注。" }
+      ],
+      "glossary": [
+        { "key": "placebo", "text": "placebo", "forms": ["Placebo", "placebos"], "pos": "noun", "ipa": "/pləˈsiːbəʊ/", "zh": "安慰剂" },
+        { "key": "deception", "text": "Deception", "pos": "noun", "ipa": "/dɪˈsepʃn/", "zh": "欺骗" },
+        { "key": "active-ingredient", "text": "active ingredient", "pos": "noun", "zh": "有效成分" },
+        { "key": "growing-body-of", "text": "A growing body of", "pos": "phrase", "zh": "越来越多的" },
+        { "key": "complicate", "text": "complicate", "forms": ["complicated"], "pos": "verb", "ipa": "/ˈkɒmplɪkeɪt/", "zh": "使复杂化" },
+        { "key": "open-label", "text": "open-label", "pos": "adjective", "zh": "开放标签的（病人知道自己服用的是什么）" },
+        { "key": "plainly", "text": "plainly", "pos": "adverb", "ipa": "/ˈpleɪnli/", "zh": "明白地；直截了当地" },
+        { "key": "pill", "text": "pill", "forms": ["pills", "pill"], "pos": "noun", "ipa": "/pɪl/", "zh": "药片" },
+        { "key": "symptom", "text": "symptom", "forms": ["symptoms"], "pos": "noun", "ipa": "/ˈsɪmptəm/", "zh": "症状" },
+        { "key": "fatigue", "text": "fatigue", "pos": "noun", "ipa": "/fəˈtiːɡ/", "zh": "疲劳" },
+        { "key": "self-reported", "text": "self-reported", "pos": "adjective", "zh": "自我报告的" },
+        { "key": "intriguing", "text": "intriguing", "pos": "adjective", "ipa": "/ɪnˈtriːɡɪŋ/", "zh": "耐人寻味的" },
+        { "key": "ritual", "text": "ritual", "pos": "noun", "ipa": "/ˈrɪtʃuəl/", "zh": "仪式" },
+        { "key": "in-its-own-right", "text": "in its own right", "pos": "phrase", "zh": "本身；就其本身而言" },
+        { "key": "ethical-dilemma", "text": "ethical dilemma", "pos": "noun", "zh": "伦理难题" },
+        { "key": "deceive", "text": "deceive", "pos": "verb", "ipa": "/dɪˈsiːv/", "zh": "欺骗" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "过去医生认为安慰剂起作用的关键是什么？", "options": ["药片的颜色", "病人相信那是真药", "医生的经验"], "answer": 1, "explanation_zh": "原文：a placebo works only if the patient believes it is real medicine.", "segment": 0 },
+        { "id": "q2", "type": "choice", "prompt_zh": "“开放标签”试验的特点是：", "options": ["病人不知道自己在参加试验", "病人被明确告知药片里没有药物", "只给健康人服用"], "answer": 1, "explanation_zh": "原文：patients are told plainly that the pills they are taking contain no drug at all.", "segment": 3 },
+        { "id": "q3", "type": "choice", "prompt_zh": "研究人员为什么持谨慎态度？", "options": ["结果完全相反", "试验费用太高", "试验规模小、改善多为自我报告，且难以排除关注和照顾的作用"], "answer": 2, "explanation_zh": "原文：The trials are generally small … mostly in self-reported symptoms … hard to separate the effect of the pill from that of the attention and care.", "segment": 5 },
+        { "id": "q4", "type": "choice", "prompt_zh": "作者最后的观点是：", "options": ["安慰剂可以替代大多数药物", "医生应该经常欺骗病人", "安慰剂不能替代有效治疗，但给药的方式可能同样值得关注"], "answer": 2, "explanation_zh": "原文：None of this makes placebos a substitute … how medicine is given may deserve as much attention as what is given.", "segment": 9 }
+      ]
+    },
+    {
+      "id": "rd-c1-gig-work",
+      "type": "reading",
+      "level": "c1",
+      "can_do_ids": ["c1.r.complex"],
+      "topic": "work",
+      "title_en": "Flexibility for Whom?",
+      "title_zh": "谁的灵活性？",
+      "summary_zh": "一篇议论文：平台零工的“灵活性”究竟属于谁，作者主张兼顾时间自主和基本保障。",
+      "segments": [
+        { "en": "Platform companies like to describe the people who deliver our food and drive our taxis as independent entrepreneurs who value flexibility above all else.", "zh": "平台公司喜欢把为我们送外卖、开出租车的人描述成把灵活性看得高于一切的独立创业者。" },
+        { "en": "There is some truth in this.", "zh": "这种说法有一定道理。" },
+        { "en": "Surveys consistently show that many workers appreciate being able to choose their own hours, and for students or carers, that freedom can be genuinely valuable.", "zh": "调查一致显示，许多劳动者很看重能自己选择工作时间；对学生或需要照顾家人的人来说，这种自由确实很有价值。" },
+        { "en": "But flexibility is a curious word for an arrangement in which pay can be cut overnight by an algorithm and accounts can be deactivated without explanation.", "zh": "但是，用“灵活”来形容这样一种安排未免奇怪：报酬可能一夜之间被算法削减，账号可能在没有任何解释的情况下被停用。" },
+        { "en": "Nor is there any sick pay when a rider is injured on the job.", "zh": "骑手工作中受伤，也没有病假工资。" },
+        { "en": "In practice, the flexibility often runs in one direction: the company can adjust its demand for labour minute by minute, while the worker absorbs the risk.", "zh": "实际上，这种灵活性往往是单向的：公司可以一分钟一分钟地调整对劳动力的需求，而风险由劳动者承担。" },
+        { "en": "Courts in several countries have begun to question whether such workers are really self-employed at all.", "zh": "好几个国家的法院已经开始质疑，这些劳动者到底算不算真正的自雇者。" },
+        { "en": "The companies warn that treating them as employees would destroy the very freedom they enjoy and push up prices for consumers.", "zh": "这些公司警告说，把他们当作雇员会毁掉他们所享有的那种自由，并推高消费者的价格。" },
+        { "en": "That may be partly true, but it frames the choice too narrowly.", "zh": "这也许有部分道理，但它把选择框得太窄了。" },
+        { "en": "It ought to be possible to design a model that preserves control over one's hours while guaranteeing a basic floor of income and protection.", "zh": "应该有可能设计出一种模式，既保留劳动者对自己工作时间的掌控，又保证最基本的收入和保障底线。" }
+      ],
+      "glossary": [
+        { "key": "entrepreneur", "text": "entrepreneur", "forms": ["entrepreneurs"], "pos": "noun", "ipa": "/ˌɒntrəprəˈnɜː/", "zh": "创业者" },
+        { "key": "above-all-else", "text": "above all else", "pos": "phrase", "zh": "高于一切" },
+        { "key": "consistently", "text": "consistently", "pos": "adverb", "ipa": "/kənˈsɪstəntli/", "zh": "一贯地；一致地" },
+        { "key": "carer", "text": "carer", "forms": ["carers"], "pos": "noun", "ipa": "/ˈkeərə/", "zh": "照顾家人的人" },
+        { "key": "genuinely", "text": "genuinely", "pos": "adverb", "ipa": "/ˈdʒenjuɪnli/", "zh": "真正地；确实" },
+        { "key": "curious", "text": "curious", "pos": "adjective", "ipa": "/ˈkjʊəriəs/", "zh": "奇怪的", "note_zh": "这里不是“好奇的”" },
+        { "key": "arrangement", "text": "arrangement", "pos": "noun", "ipa": "/əˈreɪndʒmənt/", "zh": "安排" },
+        { "key": "algorithm", "text": "algorithm", "pos": "noun", "ipa": "/ˈælɡərɪðəm/", "zh": "算法" },
+        { "key": "deactivate", "text": "deactivate", "forms": ["deactivated"], "pos": "verb", "ipa": "/diˈæktɪveɪt/", "zh": "停用" },
+        { "key": "sick-pay", "text": "sick pay", "pos": "noun", "zh": "病假工资" },
+        { "key": "rider", "text": "rider", "pos": "noun", "ipa": "/ˈraɪdə/", "zh": "骑手" },
+        { "key": "in-practice", "text": "In practice", "pos": "phrase", "zh": "实际上" },
+        { "key": "labour", "text": "labour", "pos": "noun", "ipa": "/ˈleɪbə/", "zh": "劳动力" },
+        { "key": "absorb", "text": "absorb", "forms": ["absorbs"], "pos": "verb", "ipa": "/əbˈzɔːb/", "zh": "承担；吸收" },
+        { "key": "self-employed", "text": "self-employed", "pos": "adjective", "zh": "自雇的；个体经营的" },
+        { "key": "push-up", "text": "push up", "pos": "phrasal verb", "zh": "推高" },
+        { "key": "frame", "text": "frame", "forms": ["frames"], "pos": "verb", "ipa": "/freɪm/", "zh": "框定；表述" },
+        { "key": "narrowly", "text": "narrowly", "pos": "adverb", "ipa": "/ˈnærəʊli/", "zh": "狭隘地" },
+        { "key": "floor", "text": "floor", "pos": "noun", "zh": "底线；最低限度", "note_zh": "a floor of income = 收入底线" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "平台公司如何描述这些劳动者？", "options": ["公司的正式员工", "重视灵活性的独立创业者", "临时志愿者"], "answer": 1, "explanation_zh": "原文：independent entrepreneurs who value flexibility above all else.", "segment": 0 },
+        { "id": "q2", "type": "choice", "prompt_zh": "作者承认这些工作的什么优点？", "options": ["工资很高", "可以自己选择工作时间，对学生和照顾者很有价值", "有完善的保险"], "answer": 1, "explanation_zh": "原文：many workers appreciate being able to choose their own hours.", "segment": 2 },
+        { "id": "q3", "type": "choice", "prompt_zh": "作者为什么说灵活性“往往是单向的”？", "options": ["劳动者只能朝一个方向送货", "公司不能改变价格", "公司可以随时调整用工需求，风险却由劳动者承担"], "answer": 2, "explanation_zh": "原文：the company can adjust its demand for labour minute by minute, while the worker absorbs the risk.", "segment": 5 },
+        { "id": "q4", "type": "choice", "prompt_zh": "作者主张什么？", "options": ["取消所有平台公司", "设计一种既保留时间自主、又保证收入和保障底线的模式", "让劳动者全部成为正式员工"], "answer": 1, "explanation_zh": "原文：a model that preserves control over one's hours while guaranteeing a basic floor of income and protection.", "segment": 9 }
+      ]
+    },
+    {
+      "id": "rd-c1-quiet-carriage",
+      "type": "reading",
+      "level": "c1",
+      "can_do_ids": ["c1.r.complex"],
+      "topic": "society",
+      "title_en": "In Praise of the Quiet Carriage",
+      "title_zh": "赞美安静车厢",
+      "summary_zh": "一篇随笔：火车上的安静车厢为什么难得，它靠什么维持，又说明了什么。",
+      "segments": [
+        { "en": "There is a small, unglamorous institution on many trains that deserves more credit than it gets: the quiet carriage.", "zh": "许多火车上都有一种不起眼的小设施，它值得的赞誉远比它得到的多：安静车厢。" },
+        { "en": "Its rules are modest: no phone calls, no music without headphones, conversation kept to a murmur.", "zh": "它的规定很简单：不打电话，不外放音乐，交谈要压低声音。" },
+        { "en": "Yet it is one of the few public spaces left in which silence is not merely tolerated but actively protected.", "zh": "然而，它是为数不多的、安静不仅被容忍而且被积极保护的公共空间之一。" },
+        { "en": "We rarely notice how much of modern life is designed to capture our attention, from the screens in waiting rooms to the music in shops.", "zh": "我们很少注意到现代生活中有多少东西是为了抓住我们的注意力而设计的，从候诊室里的屏幕到商店里的音乐。" },
+        { "en": "Noise has become the default, and quiet something we must pay for, whether through noise-cancelling headphones or first-class tickets.", "zh": "噪音成了默认状态，而安静则成了我们必须花钱买的东西，无论是通过降噪耳机还是头等座车票。" },
+        { "en": "The quiet carriage is a rare exception: a shared agreement, available to anyone with an ordinary ticket, that for the length of a journey, attention belongs to the passenger.", "zh": "安静车厢是一个罕见的例外：一个任何持普通车票的人都可以享有的共同约定——在旅途中，注意力属于乘客自己。" },
+        { "en": "Of course, the agreement is fragile.", "zh": "当然，这个约定很脆弱。" },
+        { "en": "It depends entirely on strangers being willing to remind one another of the rules, politely and without self-righteousness, which is a surprisingly difficult social skill.", "zh": "它完全依赖陌生人愿意互相提醒规则，而且要礼貌、不自以为是——这是一项出奇难的社交技能。" },
+        { "en": "But perhaps that is precisely its value: in a small way, it shows that a public good can be maintained by nothing more than mutual consideration.", "zh": "但也许这正是它的价值所在：它以一种小小的方式表明，一项公共利益仅靠相互体谅就能维持。" }
+      ],
+      "glossary": [
+        { "key": "in-praise-of", "text": "In Praise of", "pos": "phrase", "zh": "赞美……" },
+        { "key": "unglamorous", "text": "unglamorous", "pos": "adjective", "ipa": "/ʌnˈɡlæmərəs/", "zh": "不起眼的；不光鲜的" },
+        { "key": "credit", "text": "credit", "pos": "noun", "ipa": "/ˈkredɪt/", "zh": "赞誉；认可", "note_zh": "deserve credit = 值得称赞" },
+        { "key": "carriage", "text": "carriage", "forms": ["Carriage", "carriage"], "pos": "noun", "ipa": "/ˈkærɪdʒ/", "zh": "（火车）车厢" },
+        { "key": "modest", "text": "modest", "pos": "adjective", "ipa": "/ˈmɒdɪst/", "zh": "简单的；不高的" },
+        { "key": "murmur", "text": "murmur", "pos": "noun", "ipa": "/ˈmɜːmə/", "zh": "低语" },
+        { "key": "tolerate", "text": "tolerate", "forms": ["tolerated"], "pos": "verb", "ipa": "/ˈtɒləreɪt/", "zh": "容忍" },
+        { "key": "default", "text": "default", "pos": "noun", "ipa": "/dɪˈfɔːlt/", "zh": "默认状态" },
+        { "key": "noise-cancelling", "text": "noise-cancelling", "pos": "adjective", "zh": "降噪的" },
+        { "key": "fragile", "text": "fragile", "pos": "adjective", "ipa": "/ˈfrædʒaɪl/", "zh": "脆弱的" },
+        { "key": "remind-one-another", "text": "remind one another", "pos": "phrase", "zh": "互相提醒" },
+        { "key": "self-righteousness", "text": "self-righteousness", "pos": "noun", "zh": "自以为是" },
+        { "key": "public-good", "text": "public good", "pos": "noun", "zh": "公共利益" },
+        { "key": "mutual-consideration", "text": "mutual consideration", "pos": "noun", "zh": "相互体谅" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "安静车厢的规定包括：", "options": ["禁止看书", "必须买头等座车票", "不打电话、不外放音乐、低声交谈"], "answer": 2, "explanation_zh": "原文：no phone calls, no music without headphones, conversation kept to a murmur.", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "作者认为在现代生活中安静通常是怎样的？", "options": ["随处可得", "受法律保护", "要花钱才能买到"], "answer": 2, "explanation_zh": "原文：quiet [is] something we must pay for.", "segment": 4 },
+        { "id": "q3", "type": "choice", "prompt_zh": "安静车厢的约定为什么脆弱？", "options": ["它完全依赖陌生人愿意礼貌地互相提醒", "车票太贵", "乘客太少"], "answer": 0, "explanation_zh": "原文：It depends entirely on strangers being willing to remind one another of the rules.", "segment": 7 },
+        { "id": "q4", "type": "choice", "prompt_zh": "作者认为安静车厢的价值在于：", "options": ["让火车公司赚更多钱", "帮助乘客睡觉", "表明公共利益仅靠相互体谅就能维持"], "answer": 2, "explanation_zh": "原文：a public good can be maintained by nothing more than mutual consideration.", "segment": 8 }
+      ]
     }
   ]
 }

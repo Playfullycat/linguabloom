@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { EmptyState } from "@/components/ui/empty-state";
 import type { MaterialSummary } from "@/modules/materials/services/materials";
 
-import { FIT_LABELS, FIT_TONES } from "./fit";
+import { COVERAGE_TONES, FIT_LABELS, FIT_TONES, coveragePercent } from "./fit";
 
 /** Material cards grouped by level, with the learner-specific difficulty hint. */
 export function MaterialList({ materials, learnerLabel, basis }: { materials: MaterialSummary[]; learnerLabel: string; basis: string }) {
@@ -17,6 +17,9 @@ export function MaterialList({ materials, learnerLabel, basis }: { materials: Ma
     <div className="flex flex-col gap-6">
       <p className="text-sm text-muted">
         按你的水平（约 {learnerLabel}，依据：{basis}）标注难度。“生词”是文章生词表里你的词汇库还没有的词。
+      </p>
+      <p className="-mt-3 text-sm text-muted">
+        “认识约 x%”是按你的水平和学过的词估计的已知词比例：98% 以上<strong className="font-medium text-ink">适合泛读</strong>（不查词也能顺畅读，适合多读），95%–98% <strong className="font-medium text-ink">适合精读</strong>（借助生词表和中文辅助），更低就是生词偏多。这是估计值，学的词越多越准。
       </p>
       {levels.map((level) => (
         <section key={level} aria-labelledby={`level-${level}`}>
@@ -51,6 +54,9 @@ export function MaterialList({ materials, learnerLabel, basis }: { materials: Ma
                       <div className="mt-auto flex flex-wrap gap-1.5 pt-1">
                         <Badge size="sm" tone={FIT_TONES[m.fit]}>
                           {FIT_LABELS[m.fit]}
+                        </Badge>
+                        <Badge size="sm" tone={COVERAGE_TONES[m.coverage.band]} title={m.coverage.label}>
+                          {coveragePercent(m.coverage.ratio)} · {m.coverage.label}
                         </Badge>
                         <Badge size="sm">
                           {m.type === "reading" ? `${m.wordCount} 词` : `${m.sentenceCount} 句`}

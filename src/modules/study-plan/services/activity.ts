@@ -7,7 +7,7 @@ import type { Strand } from "../domain/session-templates";
 
 /**
  * Study time from real records (spec §2.2, §5.1): lesson step durations,
- * review times, active time on reading / listening materials, Speaking Lab sessions and fluency activities, grouped into the Four Strands. Idle time is capped per
+ * review times, active time on reading / listening materials, Speaking Lab sessions, fluency activities and reported book reading, grouped into the Four Strands. Idle time is capped per
  * record so a tab left open doesn't count as study.
  */
 
@@ -16,6 +16,7 @@ const REVIEW_CAP_MS = 2 * 60_000;
 const TIME_SLICE_CAP_MS = 60_000;
 const SPEAKING_CAP_MS = 15 * 60_000;
 const FLUENCY_CAP_MS = 20 * 60_000;
+const BOOK_LOG_CAP_MS = 180 * 60_000;
 
 export type WeeklyActivity = {
   /** Last 7 local days, oldest first. */
@@ -63,6 +64,11 @@ export function studyRecords(userId: string, since: string) {
     select created_at, least(duration_ms, ${FLUENCY_CAP_MS})::int, 'fluency_development'
     from fluency_attempts
     where user_id = ${userId} and created_at >= ${since}::timestamptz
+    union all
+    -- Reading a book (time reported by the learner): extensive reading is input.
+    select created_at, least(minutes * 60000, ${BOOK_LOG_CAP_MS})::int, 'meaning_focused_input'
+    from book_reading_logs
+    where user_id = ${userId} and created_at >= ${since}::timestamptz
   `;
 }
 
@@ -80,7 +86,8 @@ export async function getWeeklyActivity(db: DbExecutor, userId: string, now: Dat
       (select max(created_at) from lesson_step_attempts where user_id = ${userId}),
       (select max(created_at) from content_interactions where user_id = ${userId} and kind <> 'open'),
       (select max(ended_at) from speaking_attempts where user_id = ${userId}),
-      (select max(created_at) from fluency_attempts where user_id = ${userId})
+      (select max(created_at) from fluency_attempts where user_id = ${userId}),
+      (select max(created_at) from book_reading_logs where user_id = ${userId})
     ) as last
   `);
 

@@ -1,6 +1,7 @@
 import { createDb } from "../connection";
 import { cefrLevelsSeed } from "./cefr-levels";
 import { assessmentSeed } from "./assessment";
+import { booksSeed } from "./books";
 import { canDoSeed } from "./can-do";
 import { curriculumSeed } from "./curriculum";
 import { grammarSeed } from "./grammar";
@@ -9,7 +10,7 @@ import { pteSeed } from "./pte";
 import type { Seed } from "./types";
 
 /** Seeds run in this order. Add new content seeds here. */
-export const SEEDS: Seed[] = [cefrLevelsSeed, curriculumSeed, assessmentSeed, materialsSeed, grammarSeed, canDoSeed, pteSeed];
+export const SEEDS: Seed[] = [cefrLevelsSeed, curriculumSeed, assessmentSeed, materialsSeed, grammarSeed, canDoSeed, pteSeed, booksSeed];
 
 export async function runSeeds(databaseUrl: string, log: (line: string) => void = console.log) {
   const { db, client } = createDb(databaseUrl, { max: 1 });

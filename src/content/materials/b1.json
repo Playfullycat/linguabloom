@@ -183,6 +183,182 @@
         { "id": "q3", "type": "choice", "prompt_zh": "Rosa 提出了什么折中办法？", "options": ["只在周末开放车道", "留几个给老年人和残障司机的车位", "把车道修到别的街上"], "answer": 1, "explanation_zh": "原文：a few spaces for older and disabled drivers.", "segment": 7 },
         { "id": "q4", "type": "choice", "prompt_zh": "最后 Ben 的态度是什么？", "options": ["仍然反对", "如果留了车位就支持", "不在乎"], "answer": 1, "explanation_zh": "原文：I'd support the lane if they did that.", "segment": 8 }
       ]
+    },
+    {
+      "id": "rd-b1-bike-city",
+      "type": "reading",
+      "level": "b1",
+      "can_do_ids": ["b1.r.main-points"],
+      "topic": "city life",
+      "title_en": "The City That Fell in Love with Bikes",
+      "title_zh": "爱上自行车的城市",
+      "summary_zh": "一篇城市报道：里弗顿推出共享单车三年后的变化，以及仍然存在的不满。（虚构报道）",
+      "segments": [
+        { "en": "Three years ago, the city of Riverton introduced a bike-sharing scheme with 500 bikes and 40 stations.", "zh": "三年前，里弗顿市推出了共享单车计划，有 500 辆车和 40 个站点。" },
+        { "en": "Many people expected it to fail, because the city is hilly and it rains a lot.", "zh": "很多人预计它会失败，因为这座城市坡多，而且经常下雨。" },
+        { "en": "However, the scheme has been far more popular than anyone imagined.", "zh": "然而，这个计划比任何人想象的都受欢迎得多。" },
+        { "en": "Today there are 2,000 bikes, and about half of them are electric, which makes the hills much easier.", "zh": "如今有 2000 辆车，大约一半是电动的，上坡轻松多了。" },
+        { "en": "Users pay a small monthly fee and can take a bike from any station for up to 45 minutes.", "zh": "用户每月付一小笔费用，就可以从任何站点借车，每次最长 45 分钟。" },
+        { "en": "According to the council, car traffic in the city centre has fallen by twelve percent.", "zh": "据市政府说，市中心的汽车流量下降了 12%。" },
+        { "en": "Shop owners were worried at first, but most now say that cyclists stop and spend money more often than drivers.", "zh": "店主们起初很担心，但大多数人现在说，骑车的人比开车的人更常停下来消费。" },
+        { "en": "Not everyone is happy, though.", "zh": "不过，并不是每个人都满意。" },
+        { "en": "Some residents complain that bikes are left on pavements, and others say the scheme should reach the suburbs too.", "zh": "一些居民抱怨自行车被乱停在人行道上，还有人说这个计划也应该扩展到郊区。" },
+        { "en": "The council plans to add 30 new stations next year, mostly outside the centre.", "zh": "市政府计划明年新增 30 个站点，大多在市中心以外。" },
+        { "en": "For now, the bikes seem to be here to stay.", "zh": "就目前来看，这些自行车似乎会一直留下来。" }
+      ],
+      "glossary": [
+        { "key": "introduce", "text": "introduce", "forms": ["introduced"], "pos": "verb", "ipa": "/ˌɪntrəˈdjuːs/", "zh": "推出；引进" },
+        { "key": "scheme", "text": "scheme", "pos": "noun", "ipa": "/skiːm/", "zh": "计划；方案" },
+        { "key": "hilly", "text": "hilly", "pos": "adjective", "ipa": "/ˈhɪli/", "zh": "多山坡的" },
+        { "key": "monthly-fee", "text": "monthly fee", "pos": "noun", "zh": "月费" },
+        { "key": "up-to", "text": "up to", "pos": "phrase", "zh": "最多；多达" },
+        { "key": "according-to", "text": "according to", "pos": "phrase", "zh": "根据；据……所说" },
+        { "key": "council", "text": "council", "pos": "noun", "ipa": "/ˈkaʊnsl/", "zh": "市政府；市议会" },
+        { "key": "cyclist", "text": "cyclist", "forms": ["cyclists"], "pos": "noun", "ipa": "/ˈsaɪklɪst/", "zh": "骑自行车的人" },
+        { "key": "resident", "text": "resident", "forms": ["residents"], "pos": "noun", "ipa": "/ˈrezɪdənt/", "zh": "居民" },
+        { "key": "pavement", "text": "pavement", "forms": ["pavements"], "pos": "noun", "ipa": "/ˈpeɪvmənt/", "zh": "人行道" },
+        { "key": "suburb", "text": "suburb", "forms": ["suburbs"], "pos": "noun", "ipa": "/ˈsʌbɜːb/", "zh": "郊区" },
+        { "key": "here-to-stay", "text": "here to stay", "pos": "phrase", "zh": "会一直存在下去" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "一开始很多人为什么认为这个计划会失败？", "options": ["自行车太贵", "城市坡多，而且经常下雨", "没有地方建站点"], "answer": 1, "explanation_zh": "原文：because the city is hilly and it rains a lot.", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "为什么现在上坡变容易了？", "options": ["大约一半的车是电动的", "修了新的平路", "车变轻了"], "answer": 0, "explanation_zh": "原文：about half of them are electric, which makes the hills much easier.", "segment": 3 },
+        { "id": "q3", "type": "choice", "prompt_zh": "市中心的汽车流量有什么变化？", "options": ["上升了 12%", "下降了一半", "下降了 12%"], "answer": 2, "explanation_zh": "原文：car traffic in the city centre has fallen by twelve percent.", "segment": 5 },
+        { "id": "q4", "type": "choice", "prompt_zh": "店主们现在大多怎么看？", "options": ["生意变差了", "骑车的人更常停下来消费", "希望取消这个计划"], "answer": 1, "explanation_zh": "原文：cyclists stop and spend money more often than drivers.", "segment": 6 },
+        { "id": "q5", "type": "choice", "prompt_zh": "有些居民抱怨什么？", "options": ["自行车被乱停在人行道上", "骑车太危险", "费用太高"], "answer": 0, "explanation_zh": "原文：Some residents complain that bikes are left on pavements.", "segment": 8 }
+      ]
+    },
+    {
+      "id": "rd-b1-turtle-volunteer",
+      "type": "reading",
+      "level": "b1",
+      "can_do_ids": ["b1.r.main-points"],
+      "topic": "travel",
+      "title_en": "Two Weeks with the Turtles",
+      "title_zh": "和海龟在一起的两周",
+      "summary_zh": "一篇博客：作者在希腊做保护海龟的志愿者，讲工作内容、辛苦之处和难忘的一刻。",
+      "segments": [
+        { "en": "Last summer, instead of lying on a beach, I spent two weeks protecting one.", "zh": "去年夏天，我没有躺在海滩上度假，而是花了两周去保护一片海滩。" },
+        { "en": "I joined a volunteer project in Greece that looks after sea turtles and their nests.", "zh": "我参加了希腊的一个志愿项目，照顾海龟和它们的巢。" },
+        { "en": "Our day started at six in the morning, before the sand got too hot.", "zh": "我们每天早上六点开始工作，趁沙子还不太烫。" },
+        { "en": "We walked along the beach looking for new turtle tracks, then marked and protected any nests we found.", "zh": "我们沿着海滩寻找新的海龟爬痕，然后标记并保护找到的巢。" },
+        { "en": "In the afternoons, we talked to tourists and explained why they shouldn't leave umbrellas or rubbish on the sand.", "zh": "下午我们和游客交流，解释为什么不应该把遮阳伞或垃圾留在沙滩上。" },
+        { "en": "Most people were interested, and some even came back the next day to help.", "zh": "大多数人很感兴趣，有些人第二天甚至回来帮忙。" },
+        { "en": "The work was harder than I expected, and the accommodation was very basic: a tent and a cold shower.", "zh": "工作比我预想的辛苦，住宿也很简陋：一顶帐篷加冷水淋浴。" },
+        { "en": "But on my last night, I watched about fifty baby turtles come out of a nest and run towards the sea.", "zh": "但在最后一晚，我看着大约五十只小海龟从巢里爬出来，奔向大海。" },
+        { "en": "It was one of the best moments of my life.", "zh": "那是我人生中最美好的时刻之一。" },
+        { "en": "If you are thinking about volunteering, choose a project that is honest about the work and the conditions.", "zh": "如果你在考虑做志愿者，选一个对工作内容和条件说实话的项目。" }
+      ],
+      "glossary": [
+        { "key": "instead-of", "text": "instead of", "pos": "phrase", "zh": "而不是" },
+        { "key": "protect", "text": "protect", "forms": ["protecting", "protected"], "pos": "verb", "ipa": "/prəˈtekt/", "zh": "保护" },
+        { "key": "volunteer", "text": "volunteer", "forms": ["volunteer", "volunteering"], "pos": "noun", "ipa": "/ˌvɒlənˈtɪə/", "zh": "志愿者；志愿的" },
+        { "key": "look-after", "text": "look after", "forms": ["looks after"], "pos": "phrasal verb", "zh": "照顾" },
+        { "key": "turtle", "text": "turtle", "forms": ["turtles", "turtle"], "pos": "noun", "ipa": "/ˈtɜːtl/", "zh": "海龟" },
+        { "key": "nest", "text": "nest", "forms": ["nests", "nest"], "pos": "noun", "ipa": "/nest/", "zh": "巢" },
+        { "key": "sand", "text": "sand", "pos": "noun", "ipa": "/sænd/", "zh": "沙子" },
+        { "key": "track", "text": "track", "forms": ["tracks"], "pos": "noun", "ipa": "/træk/", "zh": "足迹；（动物的）爬痕" },
+        { "key": "accommodation", "text": "accommodation", "pos": "noun", "ipa": "/əˌkɒməˈdeɪʃn/", "zh": "住宿" },
+        { "key": "basic", "text": "basic", "pos": "adjective", "ipa": "/ˈbeɪsɪk/", "zh": "简陋的；基本的", "note_zh": "形容住宿时指条件简单" },
+        { "key": "conditions", "text": "conditions", "pos": "noun", "ipa": "/kənˈdɪʃnz/", "zh": "条件；环境" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "作者去年夏天做了什么？", "options": ["在希腊做保护海龟的志愿者", "在海滩上度假两周", "在希腊学游泳"], "answer": 0, "explanation_zh": "原文：I joined a volunteer project in Greece that looks after sea turtles.", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "为什么每天早上六点就开始工作？", "options": ["趁沙子还不太烫", "游客来之前要打扫", "海龟只在早上出来"], "answer": 0, "explanation_zh": "原文：before the sand got too hot.", "segment": 2 },
+        { "id": "q3", "type": "choice", "prompt_zh": "下午他们主要做什么？", "options": ["睡觉休息", "在海里游泳", "向游客解释不要在沙滩上留遮阳伞和垃圾"], "answer": 2, "explanation_zh": "原文：we talked to tourists and explained why they shouldn't leave umbrellas or rubbish on the sand.", "segment": 4 },
+        { "id": "q4", "type": "choice", "prompt_zh": "作者怎么描述住宿条件？", "options": ["很简陋：帐篷和冷水淋浴", "很舒服的酒店", "和当地家庭住在一起"], "answer": 0, "explanation_zh": "原文：the accommodation was very basic: a tent and a cold shower.", "segment": 6 },
+        { "id": "q5", "type": "choice", "prompt_zh": "作者给想做志愿者的人什么建议？", "options": ["一定要去希腊", "不要去太辛苦的项目", "选择对工作和条件说实话的项目"], "answer": 2, "explanation_zh": "原文：choose a project that is honest about the work and the conditions.", "segment": 9 }
+      ]
+    },
+    {
+      "id": "rd-b1-screens-sleep",
+      "type": "reading",
+      "level": "b1",
+      "can_do_ids": ["b1.r.main-points"],
+      "topic": "health",
+      "title_en": "Phones, Screens and Sleep",
+      "title_zh": "手机、屏幕与睡眠",
+      "summary_zh": "一篇杂志文章：睡前看屏幕为什么影响睡眠，以及几个简单的改善办法。",
+      "segments": [
+        { "en": "Do you check your phone in bed? If so, you are not alone.", "zh": "你在床上看手机吗？如果是，你并不孤单。" },
+        { "en": "In a recent survey, seven out of ten young adults said they use a screen during the last hour before sleep.", "zh": "在最近一项调查中，十个年轻人里有七个说他们在睡前最后一小时会用屏幕。" },
+        { "en": "Doctors say this habit can make it harder to fall asleep, for two main reasons.", "zh": "医生说，这个习惯会让人更难入睡，主要有两个原因。" },
+        { "en": "First, the light from screens tells the brain that it is still daytime.", "zh": "第一，屏幕的光会告诉大脑现在还是白天。" },
+        { "en": "Second, and probably more important, what we read or watch keeps our minds busy.", "zh": "第二，可能也更重要的是，我们读的、看的内容让大脑一直处于忙碌状态。" },
+        { "en": "A worrying email or an exciting video is not the best way to relax.", "zh": "一封让人担心的邮件或一个刺激的视频，可不是放松的好办法。" },
+        { "en": "So what can you do?", "zh": "那该怎么办呢？" },
+        { "en": "Experts suggest putting your phone in another room, or at least out of reach, about an hour before bed.", "zh": "专家建议睡前大约一小时把手机放到另一个房间，或者至少放到够不着的地方。" },
+        { "en": "If you use your phone as an alarm, buy a cheap alarm clock instead.", "zh": "如果你用手机当闹钟，那就买个便宜的闹钟代替。" },
+        { "en": "Reading a paper book or listening to quiet music can help your body prepare for sleep.", "zh": "读纸质书或听轻音乐，能帮助身体为睡眠做准备。" },
+        { "en": "It may feel strange for a few nights, but most people say they sleep better within a week.", "zh": "头几个晚上可能会不习惯，但大多数人说一周之内就睡得更好了。" }
+      ],
+      "glossary": [
+        { "key": "if-so", "text": "If so", "pos": "phrase", "zh": "如果是这样" },
+        { "key": "survey", "text": "survey", "pos": "noun", "ipa": "/ˈsɜːveɪ/", "zh": "调查" },
+        { "key": "habit", "text": "habit", "pos": "noun", "ipa": "/ˈhæbɪt/", "zh": "习惯" },
+        { "key": "fall-asleep", "text": "fall asleep", "pos": "phrase", "zh": "入睡" },
+        { "key": "daytime", "text": "daytime", "pos": "noun", "ipa": "/ˈdeɪtaɪm/", "zh": "白天" },
+        { "key": "worrying", "text": "worrying", "pos": "adjective", "ipa": "/ˈwʌriɪŋ/", "zh": "令人担忧的" },
+        { "key": "expert", "text": "expert", "forms": ["Experts"], "pos": "noun", "ipa": "/ˈekspɜːt/", "zh": "专家" },
+        { "key": "at-least", "text": "at least", "pos": "phrase", "zh": "至少" },
+        { "key": "out-of-reach", "text": "out of reach", "pos": "phrase", "zh": "够不着的地方" },
+        { "key": "alarm-clock", "text": "alarm clock", "pos": "noun", "zh": "闹钟" },
+        { "key": "within", "text": "within", "pos": "preposition", "ipa": "/wɪˈðɪn/", "zh": "在……之内" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "调查发现了什么？", "options": ["十个年轻人里有七个睡前一小时会用屏幕", "大多数年轻人睡前不用手机", "年轻人每天只睡七个小时"], "answer": 0, "explanation_zh": "原文：seven out of ten young adults said they use a screen during the last hour before sleep.", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "屏幕影响睡眠的第一个原因是什么？", "options": ["屏幕太吵", "手机太重", "屏幕的光让大脑以为还是白天"], "answer": 2, "explanation_zh": "原文：the light from screens tells the brain that it is still daytime.", "segment": 3 },
+        { "id": "q3", "type": "choice", "prompt_zh": "作者认为可能更重要的原因是什么？", "options": ["屏幕的颜色", "读的看的内容让大脑一直很忙", "手机的声音"], "answer": 1, "explanation_zh": "原文：Second, and probably more important, what we read or watch keeps our minds busy.", "segment": 4 },
+        { "id": "q4", "type": "choice", "prompt_zh": "用手机当闹钟的人应该怎么做？", "options": ["买一个便宜的闹钟代替", "把手机调成静音", "把闹钟设得晚一点"], "answer": 0, "explanation_zh": "原文：buy a cheap alarm clock instead.", "segment": 8 },
+        { "id": "q5", "type": "choice", "prompt_zh": "按照文章，大多数人多久能睡得更好？", "options": ["一个晚上", "一个月以后", "一周之内"], "answer": 2, "explanation_zh": "原文：most people say they sleep better within a week.", "segment": 10 }
+      ]
+    },
+    {
+      "id": "rd-b1-office-move",
+      "type": "reading",
+      "level": "b1",
+      "can_do_ids": ["b1.r.main-points"],
+      "topic": "work",
+      "title_en": "Email: Our Office Is Moving",
+      "title_zh": "邮件：办公室要搬家了",
+      "summary_zh": "办公室经理发给全体员工的邮件：搬迁的时间、员工要做的准备和新办公室的情况。",
+      "segments": [
+        { "en": "Subject: Office move – what you need to know", "zh": "主题：办公室搬迁——你需要知道的事" },
+        { "en": "Hi everyone,", "zh": "大家好：" },
+        { "en": "As you know, we are moving to our new office on Bridge Street at the end of this month.", "zh": "大家都知道，我们这个月底要搬到桥街的新办公室。" },
+        { "en": "The move will take place over the weekend of the 28th, so the office will be closed on Friday the 27th.", "zh": "搬迁将在 28 号那个周末进行，所以 27 号周五办公室关闭。" },
+        { "en": "Please work from home that day.", "zh": "那天请在家办公。" },
+        { "en": "Before you leave on Thursday, pack your personal things into the boxes that will be delivered on Monday.", "zh": "周四下班前，请把个人物品装进周一会送来的箱子里。" },
+        { "en": "Write your name and desk number clearly on each box.", "zh": "在每个箱子上清楚地写上你的名字和工位号。" },
+        { "en": "IT will move all computers, so you don't need to unplug anything yourself.", "zh": "IT 部门会搬所有电脑，所以你不需要自己拔任何插头。" },
+        { "en": "The new office has more meeting rooms, a bigger kitchen and showers for people who cycle to work.", "zh": "新办公室有更多会议室、更大的厨房，还有供骑车上班的人用的淋浴间。" },
+        { "en": "It is also only five minutes' walk from the station.", "zh": "它离车站也只有五分钟步行路程。" },
+        { "en": "Parking spaces will be limited, so please use public transport if you can.", "zh": "停车位会很有限，所以请尽量乘坐公共交通。" },
+        { "en": "If you have any questions, please contact me before Wednesday.", "zh": "如有任何问题，请在周三之前联系我。" },
+        { "en": "Thanks for your help, Karen (Office Manager)", "zh": "谢谢大家的配合，凯伦（办公室经理）" }
+      ],
+      "glossary": [
+        { "key": "subject", "text": "Subject", "pos": "noun", "ipa": "/ˈsʌbdʒɪkt/", "zh": "（邮件的）主题" },
+        { "key": "take-place", "text": "take place", "pos": "phrase", "zh": "举行；进行" },
+        { "key": "work-from-home", "text": "work from home", "pos": "phrase", "zh": "在家办公" },
+        { "key": "pack", "text": "pack", "pos": "verb", "ipa": "/pæk/", "zh": "打包；装箱" },
+        { "key": "personal", "text": "personal", "pos": "adjective", "ipa": "/ˈpɜːsənl/", "zh": "个人的" },
+        { "key": "deliver", "text": "deliver", "forms": ["delivered"], "pos": "verb", "ipa": "/dɪˈlɪvə/", "zh": "送达" },
+        { "key": "clearly", "text": "clearly", "pos": "adverb", "ipa": "/ˈklɪəli/", "zh": "清楚地" },
+        { "key": "unplug", "text": "unplug", "pos": "verb", "ipa": "/ʌnˈplʌɡ/", "zh": "拔掉插头" },
+        { "key": "cycle", "text": "cycle", "pos": "verb", "ipa": "/ˈsaɪkl/", "zh": "骑自行车" },
+        { "key": "parking-space", "text": "parking space", "forms": ["Parking spaces"], "pos": "noun", "zh": "停车位" },
+        { "key": "limited", "text": "limited", "pos": "adjective", "ipa": "/ˈlɪmɪtɪd/", "zh": "有限的" },
+        { "key": "public-transport", "text": "public transport", "pos": "noun", "zh": "公共交通" },
+        { "key": "contact", "text": "contact", "pos": "verb", "ipa": "/ˈkɒntækt/", "zh": "联系" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "新办公室在哪里？", "options": ["车站里面", "桥街", "原来的大楼里"], "answer": 1, "explanation_zh": "原文：our new office on Bridge Street.", "segment": 2 },
+        { "id": "q2", "type": "choice", "prompt_zh": "27 号周五大家要怎么工作？", "options": ["去新办公室", "在家办公", "放假一天"], "answer": 1, "explanation_zh": "原文：the office will be closed on Friday the 27th. Please work from home that day.", "segment": 4 },
+        { "id": "q3", "type": "choice", "prompt_zh": "员工需要自己做什么？", "options": ["搬电脑", "拔掉所有插头", "把个人物品装箱，写上名字和工位号"], "answer": 2, "explanation_zh": "原文：pack your personal things into the boxes … Write your name and desk number clearly on each box.", "segment": 5 },
+        { "id": "q4", "type": "choice", "prompt_zh": "新办公室有什么新设施？", "options": ["免费停车场", "健身房", "更多会议室、更大的厨房和淋浴间"], "answer": 2, "explanation_zh": "原文：more meeting rooms, a bigger kitchen and showers for people who cycle to work.", "segment": 8 },
+        { "id": "q5", "type": "choice", "prompt_zh": "为什么建议乘坐公共交通？", "options": ["停车位有限", "车站很远", "公司会报销车费"], "answer": 0, "explanation_zh": "原文：Parking spaces will be limited, so please use public transport if you can.", "segment": 10 }
+      ]
     }
   ]
 }

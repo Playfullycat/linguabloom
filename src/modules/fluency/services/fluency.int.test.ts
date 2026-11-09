@@ -54,7 +54,7 @@ describe("fluency texts", () => {
     await db.insert(skillEstimates).values({ userId: userA, skill: "reading", estimatedLevel: "a2", confidence: "medium", evidenceCount: 5, source: "test" });
     const texts = await listFluencyTexts(db, userA);
     expect(texts.every((t) => t.type === "reading" && (t.level === "pre_a1" || t.level === "a1"))).toBe(true);
-    expect(texts).toHaveLength(4);
+    expect(texts).toHaveLength(12);
     expect(texts.find((t) => t.id === MIA)!.why).toBe("completed");
   });
 

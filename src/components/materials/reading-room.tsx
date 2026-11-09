@@ -17,7 +17,7 @@ import type { ReaderMaterial } from "@/modules/materials/services/materials";
 import { EnrichButton } from "@/components/ai/generation-controls";
 
 import { ComprehensionQuestions } from "./comprehension-questions";
-import { FIT_LABELS, FIT_TONES } from "./fit";
+import { COVERAGE_TONES, FIT_LABELS, FIT_TONES, coveragePercent } from "./fit";
 import { ASSIST_OPTIONS, TokenText, defaultAssist, type AssistMode } from "./token-text";
 import { useStudyTime } from "./use-study-time";
 import { WordCard, type WordCardState } from "./word-card";
@@ -171,6 +171,9 @@ export function ReadingRoom({ material, aiAvailable }: { material: ReaderMateria
                 <Badge tone="primary">{material.levelLabel}</Badge>
                 <Badge tone={FIT_TONES[material.fit]}>
                   {FIT_LABELS[material.fit]}（你约 {material.learnerLevelLabel}）
+                </Badge>
+                <Badge tone={COVERAGE_TONES[material.coverage.band]} title="按你的水平和学过的词估计的已知词比例">
+                  {coveragePercent(material.coverage.ratio)} · {material.coverage.label}
                 </Badge>
                 {material.imported ? <Badge tone="outline">我的材料</Badge> : <Badge>生词 {material.newWords} 个</Badge>}
               </div>

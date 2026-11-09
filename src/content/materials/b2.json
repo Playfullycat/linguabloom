@@ -177,6 +177,176 @@
         { "id": "q3", "type": "choice", "prompt_zh": "Jenny 认为她们农场最重要的作用是什么？", "options": ["让人们重新了解食物从哪里来", "降低蔬菜价格", "取代传统农场"], "answer": 0, "explanation_zh": "原文：What we do is reconnect people with where food comes from.", "segment": 6 },
         { "id": "q4", "type": "choice", "prompt_zh": "最大的困难是什么？", "options": ["风", "缺水", "虫害"], "answer": 0, "explanation_zh": "原文：Wind, definitely.", "segment": 8 }
       ]
+    },
+    {
+      "id": "rd-b2-tourist-limits",
+      "type": "reading",
+      "level": "b2",
+      "can_do_ids": ["b2.r.viewpoints"],
+      "topic": "tourism",
+      "title_en": "Should Popular Cities Limit Tourists?",
+      "title_zh": "热门城市应该限制游客吗？",
+      "summary_zh": "一篇评论：欧洲城市限制游客的做法，支持者和批评者各自的理由，以及作者的折中看法。",
+      "segments": [
+        { "en": "Every summer, the same pictures appear: narrow streets so crowded that residents can barely leave their homes, and queues of cruise passengers stretching across historic squares.", "zh": "每年夏天，同样的画面都会出现：狭窄的街道挤得居民几乎出不了门，邮轮游客的长队排满了历史悠久的广场。" },
+        { "en": "In response, several European cities have introduced daily visitor limits, entry fees or bans on new holiday rentals.", "zh": "作为回应，几座欧洲城市推出了每日游客上限、入城费或新增度假出租房禁令。" },
+        { "en": "Supporters argue that these measures protect both local communities and the places tourists come to see.", "zh": "支持者认为，这些措施既保护了当地社区，也保护了游客想看的地方。" },
+        { "en": "Without them, they say, city centres risk becoming theme parks where nobody actually lives.", "zh": "他们说，如果没有这些措施，市中心可能会变成没有人真正居住的主题公园。" },
+        { "en": "Critics, however, point out that tourism pays the wages of many of those same residents.", "zh": "然而，批评者指出，旅游业支付着许多当地居民的工资。" },
+        { "en": "Limits, they argue, mainly punish budget travellers, while wealthy visitors simply pay the fee.", "zh": "他们认为，限制措施主要惩罚的是预算有限的游客，而富有的游客只需付费就行。" },
+        { "en": "There is also a risk that crowds will simply move to the next town, which may be even less prepared to cope.", "zh": "还有一种风险：人群只是转移到下一个城镇，而那里可能更没有能力应对。" },
+        { "en": "The truth probably lies somewhere in between.", "zh": "真相大概介于两者之间。" },
+        { "en": "Caps alone will not solve the problem, but combined with better transport, smarter timing and a fairer share of tourism income for residents, they could make a real difference.", "zh": "仅靠上限解决不了问题，但如果配合更好的交通、更合理的时间安排，以及让居民更公平地分享旅游收入，就可能带来真正的改变。" },
+        { "en": "What matters most is that cities are planned for the people who live in them, not only for those passing through.", "zh": "最重要的是，城市应该为住在里面的人而规划，而不只是为路过的人。" }
+      ],
+      "glossary": [
+        { "key": "barely", "text": "barely", "pos": "adverb", "ipa": "/ˈbeəli/", "zh": "几乎不；勉强" },
+        { "key": "cruise", "text": "cruise", "pos": "noun", "ipa": "/kruːz/", "zh": "邮轮旅行" },
+        { "key": "ban", "text": "ban", "forms": ["bans"], "pos": "noun", "ipa": "/bæn/", "zh": "禁令" },
+        { "key": "holiday-rental", "text": "holiday rental", "forms": ["holiday rentals"], "pos": "noun", "zh": "度假出租房" },
+        { "key": "measure", "text": "measure", "forms": ["measures"], "pos": "noun", "ipa": "/ˈmeʒə/", "zh": "措施" },
+        { "key": "theme-park", "text": "theme park", "forms": ["theme parks"], "pos": "noun", "zh": "主题公园" },
+        { "key": "budget-traveller", "text": "budget traveller", "forms": ["budget travellers"], "pos": "noun", "zh": "预算有限的游客" },
+        { "key": "cope", "text": "cope", "pos": "verb", "ipa": "/kəʊp/", "zh": "应对" },
+        { "key": "cap", "text": "cap", "forms": ["Caps"], "pos": "noun", "ipa": "/kæp/", "zh": "上限" },
+        { "key": "combined-with", "text": "combined with", "pos": "phrase", "zh": "与……结合" },
+        { "key": "pass-through", "text": "passing through", "pos": "phrase", "zh": "路过；经过", "note_zh": "pass through 的 -ing 形式" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "支持者认为限制游客有什么好处？", "options": ["让游客花更多钱", "保护当地社区和名胜本身", "增加城市的工作岗位"], "answer": 1, "explanation_zh": "原文：these measures protect both local communities and the places tourists come to see.", "segment": 2 },
+        { "id": "q2", "type": "choice", "prompt_zh": "批评者的一个观点是：", "options": ["游客太少了", "限制措施主要惩罚预算有限的游客，富人只需付费", "入城费太便宜"], "answer": 1, "explanation_zh": "原文：Limits … mainly punish budget travellers, while wealthy visitors simply pay the fee.", "segment": 5 },
+        { "id": "q3", "type": "choice", "prompt_zh": "文中提到的另一个风险是什么？", "options": ["酒店会倒闭", "居民会搬走", "人群会转移到更没准备的下一个城镇"], "answer": 2, "explanation_zh": "原文：crowds will simply move to the next town, which may be even less prepared to cope.", "segment": 6 },
+        { "id": "q4", "type": "choice", "prompt_zh": "作者自己的看法是：", "options": ["应该完全禁止游客", "单靠上限不够，要配合交通、时间安排和更公平的收入分配", "不需要任何措施"], "answer": 1, "explanation_zh": "原文：Caps alone will not solve the problem, but combined with …", "segment": 8 }
+      ]
+    },
+    {
+      "id": "rd-b2-village-newcomers",
+      "type": "reading",
+      "level": "b2",
+      "can_do_ids": ["b2.r.viewpoints"],
+      "topic": "society",
+      "title_en": "Can Remote Workers Save Empty Villages?",
+      "title_zh": "远程工作者能拯救空心村吗？",
+      "summary_zh": "一篇报道：意大利山村吸引远程工作者的尝试，带来的变化和争议。（虚构报道）",
+      "segments": [
+        { "en": "For decades, young people have left Italy's mountain villages for jobs in the cities, leaving behind empty houses and closed schools.", "zh": "几十年来，年轻人离开意大利的山村去城市找工作，留下了空房子和关闭的学校。" },
+        { "en": "Recently, however, some villages have started offering cheap homes and fast internet to attract remote workers from abroad.", "zh": "不过最近，一些村庄开始提供便宜的房子和高速网络，吸引来自国外的远程工作者。" },
+        { "en": "In one village in Calabria, the population has risen for the first time in forty years, and the primary school has reopened.", "zh": "在卡拉布里亚的一个村子，人口四十年来首次增长，小学也重新开学了。" },
+        { "en": "Local cafés are busier, and a few new businesses have opened.", "zh": "当地咖啡馆更热闹了，还开了几家新店。" },
+        { "en": "Yet not everyone is convinced.", "zh": "然而，并不是每个人都信服。" },
+        { "en": "Some long-term residents feel that the newcomers live in a bubble, working on laptops all day and rarely taking part in village life.", "zh": "一些老居民觉得新来的人活在自己的小圈子里，整天对着笔记本电脑工作，很少参与村里的生活。" },
+        { "en": "Others worry that rising house prices will make it even harder for local young people to stay.", "zh": "另一些人担心房价上涨会让当地年轻人更难留下来。" },
+        { "en": "There is also the question of whether remote workers will remain once the novelty wears off, or when the first hard winter arrives.", "zh": "还有一个问题：新鲜感过去之后，或者第一个难熬的冬天到来时，远程工作者还会不会留下。" },
+        { "en": "The most successful projects seem to be those that treat newcomers as neighbours rather than customers, encouraging them to learn the language and join local associations.", "zh": "最成功的项目似乎是那些把新来者当作邻居而不是顾客的项目，鼓励他们学习当地语言、加入当地协会。" },
+        { "en": "Cheap houses may bring people in; only a sense of belonging will make them stay.", "zh": "便宜的房子也许能把人吸引来，但只有归属感才能让他们留下。" }
+      ],
+      "glossary": [
+        { "key": "leave-behind", "text": "leave behind", "forms": ["leaving behind"], "pos": "phrasal verb", "zh": "留下；抛下" },
+        { "key": "remote-worker", "text": "remote worker", "forms": ["remote workers"], "pos": "noun", "zh": "远程工作者" },
+        { "key": "reopen", "text": "reopen", "forms": ["reopened"], "pos": "verb", "ipa": "/riˈəʊpən/", "zh": "重新开放" },
+        { "key": "convinced", "text": "convinced", "pos": "adjective", "ipa": "/kənˈvɪnst/", "zh": "信服的；确信的" },
+        { "key": "long-term", "text": "long-term", "pos": "adjective", "zh": "长期的" },
+        { "key": "newcomer", "text": "newcomer", "forms": ["newcomers"], "pos": "noun", "ipa": "/ˈnjuːkʌmə/", "zh": "新来的人" },
+        { "key": "bubble", "text": "bubble", "pos": "noun", "ipa": "/ˈbʌbl/", "zh": "封闭的小圈子", "note_zh": "live in a bubble = 活在自己的小世界里" },
+        { "key": "take-part-in", "text": "take part in", "forms": ["taking part in"], "pos": "phrase", "zh": "参加" },
+        { "key": "novelty", "text": "novelty", "pos": "noun", "ipa": "/ˈnɒvlti/", "zh": "新鲜感" },
+        { "key": "wear-off", "text": "wear off", "forms": ["wears off"], "pos": "phrasal verb", "zh": "逐渐消失" },
+        { "key": "association", "text": "association", "forms": ["associations"], "pos": "noun", "ipa": "/əˌsəʊsiˈeɪʃn/", "zh": "协会" },
+        { "key": "sense-of-belonging", "text": "sense of belonging", "pos": "noun", "zh": "归属感" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "这些村庄用什么吸引远程工作者？", "options": ["便宜的房子和高速网络", "免费的工作", "高工资"], "answer": 0, "explanation_zh": "原文：offering cheap homes and fast internet to attract remote workers.", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "卡拉布里亚的那个村子发生了什么变化？", "options": ["人口四十年来首次增长，小学重新开学", "所有房子都卖光了", "年轻人都回来了"], "answer": 0, "explanation_zh": "原文：the population has risen for the first time in forty years, and the primary school has reopened.", "segment": 2 },
+        { "id": "q3", "type": "choice", "prompt_zh": "一些老居民对新来者有什么看法？", "options": ["他们太吵", "他们不付房租", "他们活在自己的圈子里，很少参与村里生活"], "answer": 2, "explanation_zh": "原文：the newcomers live in a bubble … rarely taking part in village life.", "segment": 5 },
+        { "id": "q4", "type": "choice", "prompt_zh": "作者认为最成功的项目是怎样的？", "options": ["把新来者当作邻居，鼓励他们融入当地", "房子最便宜的", "网速最快的"], "answer": 0, "explanation_zh": "原文：treat newcomers as neighbours rather than customers.", "segment": 8 },
+        { "id": "q5", "type": "choice", "prompt_zh": "最后一句的意思是：", "options": ["房子越便宜越好", "人们来了就不会走", "便宜的房子能吸引人来，但归属感才能让人留下"], "answer": 2, "explanation_zh": "原文：Cheap houses may bring people in; only a sense of belonging will make them stay.", "segment": 9 }
+      ]
+    },
+    {
+      "id": "rd-b2-mending",
+      "type": "reading",
+      "level": "b2",
+      "can_do_ids": ["b2.r.viewpoints"],
+      "topic": "consumption",
+      "title_en": "In Defence of Mending",
+      "title_zh": "为缝补辩护",
+      "summary_zh": "一篇评论：衣服越买越多、穿得越来越短，作者认为修补衣服值得重新提倡。",
+      "segments": [
+        { "en": "My grandmother never threw away a jumper with a hole in it; she simply sat down with a needle and wool and fixed it.", "zh": "我外婆从不扔有破洞的毛衣，她只是坐下来，拿起针和毛线把它补好。" },
+        { "en": "Today, many of us would not even think of doing that, partly because new clothes have become so cheap.", "zh": "如今，我们很多人甚至想都不会这么想，部分原因是新衣服变得太便宜了。" },
+        { "en": "On average, people in Europe buy far more clothes than they did twenty years ago, but keep each item for about half as long.", "zh": "平均而言，欧洲人买的衣服比二十年前多得多，但每件衣服保留的时间只有原来的一半左右。" },
+        { "en": "The environmental cost is enormous: producing clothes uses huge amounts of water and energy, and most worn-out garments end up in landfill.", "zh": "环境代价是巨大的：生产衣服消耗大量的水和能源，大多数穿坏的衣服最后进了垃圾填埋场。" },
+        { "en": "I am not suggesting that everyone should learn to sew their own trousers.", "zh": "我并不是说每个人都应该学会自己缝裤子。" },
+        { "en": "But I do think we have lost something by treating clothes as disposable.", "zh": "但我确实认为，把衣服当成一次性用品，让我们失去了一些东西。" },
+        { "en": "Repairing a favourite shirt is not only cheaper and greener than replacing it; it also changes our relationship with the things we own.", "zh": "修补一件心爱的衬衫不仅比换新的更便宜、更环保，还会改变我们与自己所拥有物品之间的关系。" },
+        { "en": "A visible patch tells a story, and a mended coat is harder to throw away.", "zh": "一块显眼的补丁讲述着一个故事，而一件补过的外套也更难被扔掉。" },
+        { "en": "Encouragingly, repair cafés and online tutorials are making these skills popular again, especially among younger people.", "zh": "令人鼓舞的是，修理咖啡馆和网上教程正让这些技能重新流行起来，尤其是在年轻人中。" },
+        { "en": "Perhaps the most radical thing you can do with your wardrobe is simply to keep what you already have.", "zh": "也许你能对衣柜做的最激进的事，就是把已有的衣服留着继续穿。" }
+      ],
+      "glossary": [
+        { "key": "mend", "text": "mend", "forms": ["Mending", "mended"], "pos": "verb", "ipa": "/mend/", "zh": "缝补；修补" },
+        { "key": "jumper", "text": "jumper", "pos": "noun", "ipa": "/ˈdʒʌmpə/", "zh": "（英）毛衣" },
+        { "key": "needle", "text": "needle", "pos": "noun", "ipa": "/ˈniːdl/", "zh": "针" },
+        { "key": "on-average", "text": "On average", "pos": "phrase", "zh": "平均而言" },
+        { "key": "worn-out", "text": "worn-out", "pos": "adjective", "zh": "穿坏的；破旧的" },
+        { "key": "garment", "text": "garment", "forms": ["garments"], "pos": "noun", "ipa": "/ˈɡɑːmənt/", "zh": "衣服；服装" },
+        { "key": "landfill", "text": "landfill", "pos": "noun", "ipa": "/ˈlændfɪl/", "zh": "垃圾填埋场" },
+        { "key": "sew", "text": "sew", "pos": "verb", "ipa": "/səʊ/", "zh": "缝" },
+        { "key": "disposable", "text": "disposable", "pos": "adjective", "ipa": "/dɪˈspəʊzəbl/", "zh": "一次性的" },
+        { "key": "patch", "text": "patch", "pos": "noun", "ipa": "/pætʃ/", "zh": "补丁" },
+        { "key": "encouragingly", "text": "Encouragingly", "pos": "adverb", "zh": "令人鼓舞的是" },
+        { "key": "tutorial", "text": "tutorial", "forms": ["tutorials"], "pos": "noun", "ipa": "/tjuːˈtɔːriəl/", "zh": "教程" },
+        { "key": "wardrobe", "text": "wardrobe", "pos": "noun", "ipa": "/ˈwɔːdrəʊb/", "zh": "衣柜；（一个人的）全部衣服" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "作者外婆遇到破洞的毛衣会怎么做？", "options": ["自己用针线补好", "扔掉买新的", "送去裁缝店"], "answer": 0, "explanation_zh": "原文：she simply sat down with a needle and wool and fixed it.", "segment": 0 },
+        { "id": "q2", "type": "choice", "prompt_zh": "和二十年前相比，欧洲人买衣服的习惯有什么变化？", "options": ["买得多得多，但每件穿的时间只有一半左右", "买得更少但更贵", "买得一样多"], "answer": 0, "explanation_zh": "原文：buy far more clothes … but keep each item for about half as long.", "segment": 2 },
+        { "id": "q3", "type": "choice", "prompt_zh": "作者的主要观点是：", "options": ["每个人都应该自己做裤子", "应该禁止便宜的衣服", "把衣服当一次性用品让我们失去了一些东西，修补值得提倡"], "answer": 2, "explanation_zh": "原文：we have lost something by treating clothes as disposable.", "segment": 5 },
+        { "id": "q4", "type": "choice", "prompt_zh": "作者认为对衣柜“最激进”的做法是什么？", "options": ["继续穿已经有的衣服", "只买二手衣服", "自己做所有衣服"], "answer": 0, "explanation_zh": "原文：the most radical thing … is simply to keep what you already have.", "segment": 9 }
+      ]
+    },
+    {
+      "id": "rd-b2-homework",
+      "type": "reading",
+      "level": "b2",
+      "can_do_ids": ["b2.r.viewpoints"],
+      "topic": "education",
+      "title_en": "Is Homework Worth It for Young Children?",
+      "title_zh": "小孩子的家庭作业值得吗？",
+      "summary_zh": "一篇评论：小学家庭作业的研究证据、可能的好处和问题，作者认为该问的是什么样、多少作业。",
+      "segments": [
+        { "en": "Few topics divide parents as sharply as homework in primary school.", "zh": "很少有话题像小学家庭作业这样让家长们意见分歧如此之大。" },
+        { "en": "Some see it as essential preparation for secondary school, while others believe it steals time that children should spend playing, reading for pleasure or simply being bored.", "zh": "有些人把它看作上中学前必不可少的准备，另一些人则认为它偷走了孩子本该用来玩耍、为乐趣而阅读、甚至只是发呆的时间。" },
+        { "en": "The research is less clear than either side tends to admit.", "zh": "研究结果并不像双方愿意承认的那样明确。" },
+        { "en": "For teenagers, a moderate amount of homework is linked to better results.", "zh": "对青少年来说，适量的家庭作业与更好的成绩相关。" },
+        { "en": "For children under about eleven, however, most studies find little or no benefit to achievement, especially when tasks are long or repetitive.", "zh": "然而，对大约十一岁以下的孩子，大多数研究发现家庭作业对学业成绩几乎没有好处，尤其是作业又长又重复的时候。" },
+        { "en": "That does not necessarily mean homework is useless at this age.", "zh": "这并不一定意味着这个年龄的家庭作业毫无用处。" },
+        { "en": "Short, regular tasks such as reading with a parent or practising times tables may build good habits and show families what their children are learning.", "zh": "简短、规律的任务，比如和父母一起阅读或练习乘法表，可能有助于养成好习惯，也能让家长了解孩子在学什么。" },
+        { "en": "The problems begin when homework becomes a nightly battle, or when it depends heavily on parents who may not have the time or confidence to help.", "zh": "问题出在家庭作业变成每晚的战斗，或者严重依赖那些可能没有时间或信心去辅导的家长的时候。" },
+        { "en": "In those cases, it can widen the gap between children from different backgrounds rather than narrow it.", "zh": "在这些情况下，它可能会拉大不同背景孩子之间的差距，而不是缩小差距。" },
+        { "en": "Perhaps the real question is not whether young children should have homework, but what kind, and how much.", "zh": "也许真正的问题不在于小孩子该不该有家庭作业，而在于什么样的作业、多少作业。" }
+      ],
+      "glossary": [
+        { "key": "sharply", "text": "sharply", "pos": "adverb", "ipa": "/ˈʃɑːpli/", "zh": "强烈地；鲜明地" },
+        { "key": "for-pleasure", "text": "for pleasure", "pos": "phrase", "zh": "为了乐趣" },
+        { "key": "moderate", "text": "moderate", "pos": "adjective", "ipa": "/ˈmɒdərət/", "zh": "适度的" },
+        { "key": "linked-to", "text": "linked to", "pos": "phrase", "zh": "与……有关" },
+        { "key": "achievement", "text": "achievement", "pos": "noun", "ipa": "/əˈtʃiːvmənt/", "zh": "学业成绩；成就" },
+        { "key": "repetitive", "text": "repetitive", "pos": "adjective", "ipa": "/rɪˈpetətɪv/", "zh": "重复的；单调的" },
+        { "key": "not-necessarily", "text": "not necessarily", "pos": "phrase", "zh": "不一定" },
+        { "key": "times-tables", "text": "times tables", "pos": "noun", "zh": "乘法表" },
+        { "key": "nightly", "text": "nightly", "pos": "adjective", "ipa": "/ˈnaɪtli/", "zh": "每晚的" },
+        { "key": "depend-heavily-on", "text": "depends heavily on", "pos": "phrase", "zh": "严重依赖" },
+        { "key": "widen-the-gap", "text": "widen the gap", "pos": "phrase", "zh": "扩大差距" },
+        { "key": "narrow", "text": "narrow", "pos": "verb", "ipa": "/ˈnærəʊ/", "zh": "缩小", "note_zh": "这里是动词，和 widen（扩大）相对" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "关于小学家庭作业，家长们的态度是：", "options": ["分歧很大", "普遍支持", "普遍反对"], "answer": 0, "explanation_zh": "原文：Few topics divide parents as sharply as homework in primary school.", "segment": 0 },
+        { "id": "q2", "type": "choice", "prompt_zh": "研究发现对十一岁以下的孩子，家庭作业：", "options": ["对学业成绩几乎没有好处，尤其是又长又重复时", "非常有帮助", "比对青少年更有用"], "answer": 0, "explanation_zh": "原文：most studies find little or no benefit to achievement.", "segment": 4 },
+        { "id": "q3", "type": "choice", "prompt_zh": "作者认为什么样的作业可能有用？", "options": ["每天两小时的作业", "只在周末做作业", "简短规律的任务，如亲子阅读、练习乘法表"], "answer": 2, "explanation_zh": "原文：Short, regular tasks such as reading with a parent or practising times tables.", "segment": 6 },
+        { "id": "q4", "type": "choice", "prompt_zh": "作业可能怎样拉大孩子之间的差距？", "options": ["严重依赖家长辅导时，没时间或没信心的家长帮不上忙", "作业太简单", "老师批改不公平"], "answer": 0, "explanation_zh": "原文：when it depends heavily on parents who may not have the time or confidence to help … it can widen the gap.", "segment": 8 },
+        { "id": "q5", "type": "choice", "prompt_zh": "作者认为真正的问题是什么？", "options": ["是否应该取消小学", "家长应不应该辅导", "该布置什么样、多少作业，而不是要不要作业"], "answer": 2, "explanation_zh": "原文：not whether young children should have homework, but what kind, and how much.", "segment": 9 }
+      ]
     }
   ]
 }

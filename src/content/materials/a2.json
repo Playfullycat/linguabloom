@@ -179,6 +179,169 @@
         { "id": "q2", "type": "choice", "prompt_zh": "手机壳是什么颜色的？", "options": ["黑色", "绿色", "蓝色"], "answer": 1, "explanation_zh": "原文：It's black, and it has a green case. 手机是黑色，手机壳是绿色。", "segment": 5 },
         { "id": "q3", "type": "choice", "prompt_zh": "最后工作人员请乘客做什么？", "options": ["付钱", "在表格上签字", "明天再来"], "answer": 1, "explanation_zh": "原文：Can you sign this form, please?", "segment": 9 }
       ]
+    },
+    {
+      "id": "rd-a2-first-job",
+      "type": "reading",
+      "level": "a2",
+      "can_do_ids": ["a2.r.everyday-texts"],
+      "topic": "work",
+      "title_en": "My First Job",
+      "title_zh": "我的第一份工作",
+      "summary_zh": "作者回忆十六岁在海边咖啡馆打工的暑假：一开始错误百出，后来学会了很多。",
+      "segments": [
+        { "en": "When I was sixteen, I got my first job in a small café near the beach.", "zh": "我十六岁时，在海边一家小咖啡馆找到了第一份工作。" },
+        { "en": "I worked there every Saturday and Sunday during the summer holidays.", "zh": "暑假期间，我每周六和周日都在那里工作。" },
+        { "en": "At first, everything was difficult.", "zh": "一开始，一切都很难。" },
+        { "en": "I dropped plates, forgot orders and gave people the wrong change.", "zh": "我打碎过盘子，忘记过点单，还找错过零钱。" },
+        { "en": "One day I spilled a whole glass of orange juice on a customer.", "zh": "有一天我把一整杯橙汁洒在了一位顾客身上。" },
+        { "en": "I wanted to go home and never come back.", "zh": "我真想回家再也不来了。" },
+        { "en": "But the owner, Mrs Lane, was very kind.", "zh": "但是老板莱恩太太人很好。" },
+        { "en": "She told me that everybody makes mistakes when they start.", "zh": "她告诉我，每个人刚开始都会犯错。" },
+        { "en": "By the end of the summer, I could carry four plates at once.", "zh": "到暑假结束时，我能一次端四个盘子了。" },
+        { "en": "I also learned how to talk to strangers and stay calm when the café was busy.", "zh": "我还学会了怎么和陌生人说话，以及在咖啡馆很忙的时候保持冷静。" }
+      ],
+      "glossary": [
+        { "key": "during", "text": "during", "pos": "preposition", "ipa": "/ˈdjʊərɪŋ/", "zh": "在……期间" },
+        { "key": "at-first", "text": "at first", "pos": "phrase", "zh": "起初；一开始" },
+        { "key": "drop", "text": "drop", "forms": ["dropped"], "pos": "verb", "ipa": "/drɒp/", "zh": "掉落；失手打碎" },
+        { "key": "order", "text": "order", "forms": ["orders"], "pos": "noun", "ipa": "/ˈɔːdə/", "zh": "点的菜；订单" },
+        { "key": "change", "text": "change", "pos": "noun", "ipa": "/tʃeɪndʒ/", "zh": "零钱；找的钱" },
+        { "key": "spill", "text": "spill", "forms": ["spilled"], "pos": "verb", "ipa": "/spɪl/", "zh": "洒出；泼出" },
+        { "key": "whole", "text": "whole", "pos": "adjective", "ipa": "/həʊl/", "zh": "整个的" },
+        { "key": "customer", "text": "customer", "pos": "noun", "ipa": "/ˈkʌstəmə/", "zh": "顾客" },
+        { "key": "owner", "text": "owner", "pos": "noun", "ipa": "/ˈəʊnə/", "zh": "老板；店主" },
+        { "key": "mistake", "text": "mistake", "forms": ["mistakes"], "pos": "noun", "ipa": "/mɪˈsteɪk/", "zh": "错误" },
+        { "key": "at-once", "text": "at once", "pos": "phrase", "zh": "同时；一次" },
+        { "key": "stranger", "text": "stranger", "forms": ["strangers"], "pos": "noun", "ipa": "/ˈstreɪndʒə/", "zh": "陌生人" },
+        { "key": "stay-calm", "text": "stay calm", "pos": "phrase", "zh": "保持冷静" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "作者什么时候在咖啡馆工作？", "options": ["每天放学后", "暑假的每个周末", "整个冬天"], "answer": 1, "explanation_zh": "原文：every Saturday and Sunday during the summer holidays.", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "作者一开始遇到了什么问题？", "options": ["找不到咖啡馆", "经常出错，比如打碎盘子、找错零钱", "老板对他很凶"], "answer": 1, "explanation_zh": "原文：I dropped plates, forgot orders and gave people the wrong change.", "segment": 3 },
+        { "id": "q3", "type": "choice", "prompt_zh": "老板莱恩太太说了什么？", "options": ["他应该回家", "他明天不用来了", "每个人刚开始都会犯错"], "answer": 2, "explanation_zh": "原文：everybody makes mistakes when they start.", "segment": 7 },
+        { "id": "q4", "type": "choice", "prompt_zh": "到暑假结束时，作者能做到什么？", "options": ["自己做橙汁", "开一家咖啡馆", "一次端四个盘子"], "answer": 2, "explanation_zh": "原文：By the end of the summer, I could carry four plates at once.", "segment": 8 }
+      ]
+    },
+    {
+      "id": "rd-a2-pool-rules",
+      "type": "reading",
+      "level": "a2",
+      "can_do_ids": ["a2.r.everyday-texts"],
+      "topic": "notices",
+      "title_en": "Swimming Pool Rules",
+      "title_zh": "游泳馆规定",
+      "summary_zh": "游泳馆的告示：游泳前要做什么、哪些事不允许、储物柜怎么用、什么时候只对成人开放。",
+      "segments": [
+        { "en": "Greenfield Swimming Pool: please read before you swim", "zh": "绿野游泳馆：游泳前请阅读" },
+        { "en": "Please take a shower before you go into the pool.", "zh": "进入泳池前请先淋浴。" },
+        { "en": "Children under eight must swim with an adult at all times.", "zh": "八岁以下儿童游泳时必须始终有成人陪同。" },
+        { "en": "Don't run near the pool, because the floor is often wet.", "zh": "不要在泳池边奔跑，因为地面经常是湿的。" },
+        { "en": "Food and drinks are not allowed in the pool area.", "zh": "泳池区域不允许带食物和饮料。" },
+        { "en": "You can use the lockers for free.", "zh": "储物柜免费使用。" },
+        { "en": "You need a one-pound coin, but you get it back later.", "zh": "需要一枚一英镑硬币，但之后会退还。" },
+        { "en": "From Monday to Friday, the pool is for adults only from six to eight in the morning.", "zh": "周一到周五早上六点到八点，泳池只对成人开放。" },
+        { "en": "Swimming lessons for children are on Saturday mornings.", "zh": "儿童游泳课在周六上午。" },
+        { "en": "If you need help, please ask a lifeguard.", "zh": "需要帮助请找救生员。" },
+        { "en": "We hope you enjoy your swim!", "zh": "祝你游得愉快！" }
+      ],
+      "glossary": [
+        { "key": "rule", "text": "rule", "forms": ["Rules"], "pos": "noun", "ipa": "/ruːl/", "zh": "规定；规则" },
+        { "key": "take-a-shower", "text": "take a shower", "pos": "phrase", "zh": "淋浴；洗澡" },
+        { "key": "adult", "text": "adult", "forms": ["adult", "adults"], "pos": "noun", "ipa": "/ˈædʌlt/", "zh": "成人" },
+        { "key": "at-all-times", "text": "at all times", "pos": "phrase", "zh": "始终；一直" },
+        { "key": "allowed", "text": "allowed", "pos": "adjective", "ipa": "/əˈlaʊd/", "zh": "被允许的", "note_zh": "be not allowed = 不允许" },
+        { "key": "area", "text": "area", "pos": "noun", "ipa": "/ˈeəriə/", "zh": "区域" },
+        { "key": "locker", "text": "locker", "forms": ["lockers"], "pos": "noun", "ipa": "/ˈlɒkə/", "zh": "储物柜" },
+        { "key": "for-free", "text": "for free", "pos": "phrase", "zh": "免费" },
+        { "key": "coin", "text": "coin", "pos": "noun", "ipa": "/kɔɪn/", "zh": "硬币" },
+        { "key": "get-it-back", "text": "get it back", "pos": "phrase", "zh": "拿回来；退还" },
+        { "key": "lifeguard", "text": "lifeguard", "pos": "noun", "ipa": "/ˈlaɪfɡɑːd/", "zh": "救生员" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "几岁以下的孩子必须有成人陪同？", "options": ["八岁", "六岁", "十岁"], "answer": 0, "explanation_zh": "原文：Children under eight must swim with an adult at all times.", "segment": 2 },
+        { "id": "q2", "type": "choice", "prompt_zh": "为什么不能在泳池边跑？", "options": ["地面经常是湿的", "会打扰别人", "救生员不喜欢"], "answer": 0, "explanation_zh": "原文：because the floor is often wet.", "segment": 3 },
+        { "id": "q3", "type": "choice", "prompt_zh": "关于储物柜，哪一项是对的？", "options": ["每次一英镑，不退", "免费，但要放一枚一英镑硬币，之后会退还", "只有成人能用"], "answer": 1, "explanation_zh": "原文：You can use the lockers for free. You need a one-pound coin, but you get it back later.", "segment": 6 },
+        { "id": "q4", "type": "choice", "prompt_zh": "工作日早上六点到八点谁可以游泳？", "options": ["只有成人", "只有儿童", "所有人"], "answer": 0, "explanation_zh": "原文：the pool is for adults only from six to eight in the morning.", "segment": 7 }
+      ]
+    },
+    {
+      "id": "rd-a2-where-is-pepper",
+      "type": "reading",
+      "level": "a2",
+      "can_do_ids": ["a2.r.everyday-texts"],
+      "topic": "story",
+      "title_en": "Where Is Pepper?",
+      "title_zh": "胡椒去哪儿了？",
+      "summary_zh": "家里的猫胡椒不见了，主人到处寻找，两天后接到一个电话。（虚构故事）",
+      "segments": [
+        { "en": "Pepper is our black and white cat, and she usually sleeps on the sofa all day.", "zh": "胡椒是我们家的黑白猫，她平时整天睡在沙发上。" },
+        { "en": "But last Monday, when I came home from work, she wasn't there.", "zh": "但是上周一我下班回家时，她不在那儿。" },
+        { "en": "I looked under the beds, in the garden and behind the fridge.", "zh": "我找了床底下、花园里和冰箱后面。" },
+        { "en": "Then I walked around the streets and called her name, but she didn't come.", "zh": "然后我在附近的街上转，喊她的名字，但她没出来。" },
+        { "en": "That night, I made posters with her photo and put them on trees.", "zh": "那天晚上，我做了带她照片的寻猫启事，贴在树上。" },
+        { "en": "Two days later, an old man from the next street phoned me.", "zh": "两天后，隔壁街的一位老人给我打电话。" },
+        { "en": "He said a cat was sleeping in his garage.", "zh": "他说有只猫睡在他的车库里。" },
+        { "en": "I ran there as fast as I could.", "zh": "我拼命跑了过去。" },
+        { "en": "It was Pepper! She was hungry but fine.", "zh": "是胡椒！她饿了，但没事。" },
+        { "en": "Now Pepper has a collar with our phone number on it, just in case.", "zh": "现在胡椒戴着一个写有我们电话号码的项圈，以防万一。" }
+      ],
+      "glossary": [
+        { "key": "sofa", "text": "sofa", "pos": "noun", "ipa": "/ˈsəʊfə/", "zh": "沙发" },
+        { "key": "fridge", "text": "fridge", "pos": "noun", "ipa": "/frɪdʒ/", "zh": "冰箱" },
+        { "key": "poster", "text": "poster", "forms": ["posters"], "pos": "noun", "ipa": "/ˈpəʊstə/", "zh": "海报；告示" },
+        { "key": "later", "text": "later", "pos": "adverb", "ipa": "/ˈleɪtə/", "zh": "……之后", "note_zh": "two days later = 两天后" },
+        { "key": "garage", "text": "garage", "pos": "noun", "ipa": "/ˈɡærɑːʒ/", "zh": "车库" },
+        { "key": "as-fast-as-i-could", "text": "as fast as I could", "pos": "phrase", "zh": "尽我所能地快" },
+        { "key": "collar", "text": "collar", "pos": "noun", "ipa": "/ˈkɒlə/", "zh": "（宠物的）项圈" },
+        { "key": "just-in-case", "text": "just in case", "pos": "phrase", "zh": "以防万一" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "胡椒平时白天做什么？", "options": ["在花园里玩", "睡在沙发上", "在街上走"], "answer": 1, "explanation_zh": "原文：she usually sleeps on the sofa all day.", "segment": 0 },
+        { "id": "q2", "type": "choice", "prompt_zh": "作者找猫时做了什么？", "options": ["做了寻猫启事贴在树上", "给宠物医院打电话", "在网上发了消息"], "answer": 0, "explanation_zh": "原文：I made posters with her photo and put them on trees.", "segment": 4 },
+        { "id": "q3", "type": "choice", "prompt_zh": "胡椒在哪里被找到？", "options": ["作者家的冰箱后面", "公园的树上", "隔壁街一位老人的车库里"], "answer": 2, "explanation_zh": "原文：an old man from the next street … a cat was sleeping in his garage.", "segment": 6 },
+        { "id": "q4", "type": "choice", "prompt_zh": "现在胡椒戴着什么？", "options": ["一个小铃铛", "写着电话号码的项圈", "她的照片"], "answer": 1, "explanation_zh": "原文：Now Pepper has a collar with our phone number on it.", "segment": 9 }
+      ]
+    },
+    {
+      "id": "rd-a2-cooking-class",
+      "type": "reading",
+      "level": "a2",
+      "can_do_ids": ["a2.r.everyday-texts"],
+      "topic": "food",
+      "title_en": "I Tried a Cooking Class",
+      "title_zh": "我去上了一节烹饪课",
+      "summary_zh": "一篇博客：作者和朋友去上泰国菜烹饪课，做了绿咖喱和芒果甜点。",
+      "segments": [
+        { "en": "Last Saturday, my friend Ben and I went to a Thai cooking class in the city centre.", "zh": "上周六，我和朋友本去市中心上了一节泰国菜烹饪课。" },
+        { "en": "There were eight people in the class, and our teacher was a chef called Nok.", "zh": "班上有八个人，我们的老师是一位叫诺克的厨师。" },
+        { "en": "First, she showed us how to make green curry.", "zh": "首先，她教我们做绿咖喱。" },
+        { "en": "We cut vegetables, crushed garlic and mixed the sauce ourselves.", "zh": "我们自己切菜、捣蒜、调酱汁。" },
+        { "en": "My curry was too spicy, so Nok added some coconut milk.", "zh": "我的咖喱太辣了，所以诺克加了些椰奶。" },
+        { "en": "After that, we made a simple mango dessert.", "zh": "之后，我们做了一道简单的芒果甜点。" },
+        { "en": "At the end, we all sat at a long table and ate what we cooked.", "zh": "最后，我们都坐在一张长桌旁，吃自己做的菜。" },
+        { "en": "The class cost forty pounds, and it lasted three hours.", "zh": "这节课四十英镑，持续了三个小时。" },
+        { "en": "It wasn't cheap, but I learned a lot and had a great time.", "zh": "不算便宜，但我学到了很多，玩得也很开心。" },
+        { "en": "I'm going to cook green curry for my parents this weekend!", "zh": "这个周末我要给爸妈做绿咖喱！" }
+      ],
+      "glossary": [
+        { "key": "chef", "text": "chef", "pos": "noun", "ipa": "/ʃef/", "zh": "厨师" },
+        { "key": "curry", "text": "curry", "pos": "noun", "ipa": "/ˈkʌri/", "zh": "咖喱" },
+        { "key": "crush", "text": "crush", "forms": ["crushed"], "pos": "verb", "ipa": "/krʌʃ/", "zh": "压碎；捣碎" },
+        { "key": "garlic", "text": "garlic", "pos": "noun", "ipa": "/ˈɡɑːlɪk/", "zh": "大蒜" },
+        { "key": "sauce", "text": "sauce", "pos": "noun", "ipa": "/sɔːs/", "zh": "酱汁" },
+        { "key": "spicy", "text": "spicy", "pos": "adjective", "ipa": "/ˈspaɪsi/", "zh": "辣的" },
+        { "key": "coconut-milk", "text": "coconut milk", "pos": "noun", "zh": "椰奶" },
+        { "key": "mango", "text": "mango", "pos": "noun", "ipa": "/ˈmæŋɡəʊ/", "zh": "芒果" },
+        { "key": "dessert", "text": "dessert", "pos": "noun", "ipa": "/dɪˈzɜːt/", "zh": "甜点" },
+        { "key": "last", "text": "last", "forms": ["lasted"], "pos": "verb", "ipa": "/lɑːst/", "zh": "持续" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "老师是谁？", "options": ["作者的朋友本", "一位叫诺克的厨师", "餐厅老板"], "answer": 1, "explanation_zh": "原文：our teacher was a chef called Nok.", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "作者的咖喱有什么问题？", "options": ["太辣了", "太甜了", "没煮熟"], "answer": 0, "explanation_zh": "原文：My curry was too spicy.", "segment": 4 },
+        { "id": "q3", "type": "choice", "prompt_zh": "这节课多少钱、多长时间？", "options": ["十四英镑，三个小时", "四十英镑，一个小时", "四十英镑，三个小时"], "answer": 2, "explanation_zh": "原文：The class cost forty pounds, and it lasted three hours.", "segment": 7 },
+        { "id": "q4", "type": "choice", "prompt_zh": "作者这个周末打算做什么？", "options": ["再上一节课", "给父母做绿咖喱", "和本去吃泰国菜"], "answer": 1, "explanation_zh": "原文：I'm going to cook green curry for my parents this weekend!", "segment": 9 }
+      ]
     }
   ]
 }

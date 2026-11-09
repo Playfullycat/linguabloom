@@ -169,6 +169,158 @@
         { "id": "q2", "type": "choice", "prompt_zh": "顾客买了几根香蕉？", "options": ["一根", "两根", "六根"], "answer": 2, "explanation_zh": "原文：I'll take six, please.", "segment": 7 },
         { "id": "q3", "type": "choice", "prompt_zh": "一共多少钱？", "options": ["两英镑", "三英镑", "六英镑"], "answer": 1, "explanation_zh": "苹果 2 英镑 + 香蕉 1 英镑 = 3 英镑。原文：That's three pounds altogether.", "segment": 8 }
       ]
+    },
+    {
+      "id": "rd-a1-postcard-from-rome",
+      "type": "reading",
+      "level": "a1",
+      "can_do_ids": ["a1.r.messages"],
+      "topic": "travel",
+      "title_en": "A Postcard from Rome",
+      "title_zh": "来自罗马的明信片",
+      "summary_zh": "艾米在罗马度假，给朋友写明信片：住在哪里、吃了什么、去了哪些地方。",
+      "segments": [
+        { "en": "Hi Jess,", "zh": "嗨，杰斯：" },
+        { "en": "Greetings from Rome! I'm here with my sister for five days.", "zh": "来自罗马的问候！我和姐姐在这里待五天。" },
+        { "en": "Our hotel is small, but it's very near the centre.", "zh": "我们的酒店很小，但离市中心很近。" },
+        { "en": "Every morning we have coffee and a croissant in a little café.", "zh": "每天早上我们在一家小咖啡馆喝咖啡、吃羊角面包。" },
+        { "en": "Yesterday we visited an old church and walked by the river.", "zh": "昨天我们参观了一座古老的教堂，还沿着河边散步。" },
+        { "en": "The food is fantastic, and the ice cream is the best in the world!", "zh": "这里的食物棒极了，冰淇淋是世界上最好吃的！" },
+        { "en": "The weather is hot and sunny, so I'm wearing my new hat.", "zh": "天气又热又晴，所以我戴着我的新帽子。" },
+        { "en": "Tomorrow we're going to the museum.", "zh": "明天我们要去博物馆。" },
+        { "en": "See you next week!", "zh": "下周见！" },
+        { "en": "Love, Amy", "zh": "爱你的艾米" }
+      ],
+      "glossary": [
+        { "key": "greetings", "text": "greetings", "pos": "noun", "ipa": "/ˈɡriːtɪŋz/", "zh": "问候", "note_zh": "Greetings from … = 来自……的问候" },
+        { "key": "centre", "text": "centre", "pos": "noun", "ipa": "/ˈsentə/", "zh": "市中心" },
+        { "key": "croissant", "text": "croissant", "pos": "noun", "zh": "羊角面包" },
+        { "key": "cafe", "text": "café", "pos": "noun", "ipa": "/ˈkæfeɪ/", "zh": "咖啡馆" },
+        { "key": "church", "text": "church", "pos": "noun", "ipa": "/tʃɜːtʃ/", "zh": "教堂" },
+        { "key": "fantastic", "text": "fantastic", "pos": "adjective", "ipa": "/fænˈtæstɪk/", "zh": "极好的" },
+        { "key": "ice-cream", "text": "ice cream", "pos": "noun", "ipa": "/ˌaɪs ˈkriːm/", "zh": "冰淇淋" },
+        { "key": "museum", "text": "museum", "pos": "noun", "ipa": "/mjuˈziːəm/", "zh": "博物馆" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "艾米和谁一起在罗马？", "options": ["她的朋友杰斯", "她的姐姐", "她的父母"], "answer": 1, "explanation_zh": "原文：I'm here with my sister for five days.", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "她们的酒店怎么样？", "options": ["很大，离市中心很远", "很小，但离市中心很近", "很贵，但很漂亮"], "answer": 1, "explanation_zh": "原文：Our hotel is small, but it's very near the centre.", "segment": 2 },
+        { "id": "q3", "type": "choice", "prompt_zh": "她们昨天做了什么？", "options": ["去了博物馆", "在酒店休息", "参观教堂，沿河散步"], "answer": 2, "explanation_zh": "原文：Yesterday we visited an old church and walked by the river.", "segment": 4 },
+        { "id": "q4", "type": "choice", "prompt_zh": "她们明天要去哪里？", "options": ["教堂", "博物馆", "咖啡馆"], "answer": 1, "explanation_zh": "原文：Tomorrow we're going to the museum.", "segment": 7 }
+      ]
+    },
+    {
+      "id": "rd-a1-class-trip",
+      "type": "reading",
+      "level": "a1",
+      "can_do_ids": ["a1.r.messages"],
+      "topic": "school",
+      "title_en": "Class Trip to the Science Museum",
+      "title_zh": "去科学博物馆的班级出游",
+      "summary_zh": "一份学校通知：出游的时间、要带什么、费用和表格什么时候交。",
+      "segments": [
+        { "en": "Class 4B: school trip", "zh": "4B 班：学校出游" },
+        { "en": "Next Friday, our class is going to the Science Museum.", "zh": "下周五，我们班要去科学博物馆。" },
+        { "en": "The bus leaves school at half past eight, so please don't be late.", "zh": "大巴八点半从学校出发，请不要迟到。" },
+        { "en": "We will come back at about three o'clock in the afternoon.", "zh": "我们大约下午三点回来。" },
+        { "en": "Please bring a packed lunch and a bottle of water.", "zh": "请带上自己准备的午饭和一瓶水。" },
+        { "en": "You can't buy food at the museum.", "zh": "博物馆里买不到吃的。" },
+        { "en": "Wear comfortable shoes, because we will walk a lot.", "zh": "穿舒服的鞋，因为我们要走很多路。" },
+        { "en": "There is a gift shop, but you don't need to bring extra money.", "zh": "那里有礼品店，但不需要带额外的钱。" },
+        { "en": "The trip costs five pounds.", "zh": "这次出游要五英镑。" },
+        { "en": "Please give the money and the form to Mr Brown by Wednesday.", "zh": "请在周三之前把钱和表格交给布朗老师。" },
+        { "en": "Thank you!", "zh": "谢谢！" }
+      ],
+      "glossary": [
+        { "key": "trip", "text": "trip", "pos": "noun", "ipa": "/trɪp/", "zh": "出游；旅行" },
+        { "key": "packed-lunch", "text": "packed lunch", "pos": "noun", "ipa": "/ˌpækt ˈlʌntʃ/", "zh": "自带的午饭" },
+        { "key": "bottle", "text": "bottle", "pos": "noun", "ipa": "/ˈbɒtl/", "zh": "瓶子" },
+        { "key": "comfortable", "text": "comfortable", "pos": "adjective", "ipa": "/ˈkʌmftəbl/", "zh": "舒服的" },
+        { "key": "gift-shop", "text": "gift shop", "pos": "noun", "zh": "礼品店" },
+        { "key": "extra", "text": "extra", "pos": "adjective", "ipa": "/ˈekstrə/", "zh": "额外的" },
+        { "key": "form", "text": "form", "pos": "noun", "ipa": "/fɔːm/", "zh": "表格" },
+        { "key": "by-wednesday", "text": "by Wednesday", "pos": "phrase", "zh": "周三之前", "note_zh": "by + 时间 = 在……之前" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "大巴几点出发？", "options": ["八点半", "三点", "九点"], "answer": 0, "explanation_zh": "原文：The bus leaves school at half past eight.", "segment": 2 },
+        { "id": "q2", "type": "choice", "prompt_zh": "为什么要自己带午饭？", "options": ["博物馆里买不到吃的", "自己带比较便宜", "老师要检查"], "answer": 0, "explanation_zh": "原文：You can't buy food at the museum.", "segment": 5 },
+        { "id": "q3", "type": "choice", "prompt_zh": "为什么要穿舒服的鞋？", "options": ["博物馆要求", "可能会下雨", "要走很多路"], "answer": 2, "explanation_zh": "原文：Wear comfortable shoes, because we will walk a lot.", "segment": 6 },
+        { "id": "q4", "type": "choice", "prompt_zh": "钱和表格要什么时候交？", "options": ["周三之前", "周五早上", "下周一"], "answer": 0, "explanation_zh": "原文：Please give the money and the form to Mr Brown by Wednesday.", "segment": 9 }
+      ]
+    },
+    {
+      "id": "rd-a1-my-best-friend",
+      "type": "reading",
+      "level": "a1",
+      "can_do_ids": ["a1.r.messages"],
+      "topic": "people",
+      "title_en": "My Best Friend",
+      "title_zh": "我最好的朋友",
+      "summary_zh": "作者介绍认识了将近二十年的好朋友索菲亚：她的样子、工作和两人的友谊。",
+      "segments": [
+        { "en": "My best friend is called Sofia.", "zh": "我最好的朋友叫索菲亚。" },
+        { "en": "We met at school when we were six.", "zh": "我们六岁时在学校认识。" },
+        { "en": "Now we are both twenty-five, and we are still friends.", "zh": "现在我们都二十五岁了，仍然是朋友。" },
+        { "en": "Sofia is tall and has short black hair.", "zh": "索菲亚个子高，留着黑色短发。" },
+        { "en": "She is very funny, and she always makes me laugh.", "zh": "她很幽默，总是逗我笑。" },
+        { "en": "She works in a hospital as a nurse.", "zh": "她在医院当护士。" },
+        { "en": "Her job is hard, but she loves it.", "zh": "她的工作很辛苦，但她很喜欢。" },
+        { "en": "We don't live in the same city now.", "zh": "我们现在不住在同一个城市。" },
+        { "en": "But we talk on the phone every Sunday evening.", "zh": "但是我们每周日晚上通电话。" },
+        { "en": "In the summer, we always go on holiday together.", "zh": "夏天我们总是一起去度假。" }
+      ],
+      "glossary": [
+        { "key": "be-called", "text": "called", "pos": "adjective", "zh": "名叫……的", "note_zh": "be called … = 叫……" },
+        { "key": "meet", "text": "meet", "forms": ["met"], "pos": "verb", "ipa": "/miːt/", "zh": "认识；遇见" },
+        { "key": "both", "text": "both", "pos": "determiner", "ipa": "/bəʊθ/", "zh": "两个都" },
+        { "key": "still", "text": "still", "pos": "adverb", "ipa": "/stɪl/", "zh": "仍然" },
+        { "key": "laugh", "text": "laugh", "pos": "verb", "ipa": "/lɑːf/", "zh": "笑" },
+        { "key": "nurse", "text": "nurse", "pos": "noun", "ipa": "/nɜːs/", "zh": "护士" },
+        { "key": "same", "text": "same", "pos": "adjective", "ipa": "/seɪm/", "zh": "同一个的" },
+        { "key": "go-on-holiday", "text": "go on holiday", "pos": "phrase", "zh": "去度假" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "她们是什么时候认识的？", "options": ["二十五岁时", "在医院工作时", "六岁时，在学校"], "answer": 2, "explanation_zh": "原文：We met at school when we were six.", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "索菲亚做什么工作？", "options": ["老师", "护士", "医生"], "answer": 1, "explanation_zh": "原文：She works in a hospital as a nurse.", "segment": 5 },
+        { "id": "q3", "type": "choice", "prompt_zh": "她们多久通一次电话？", "options": ["每周日晚上", "每天", "每个月"], "answer": 0, "explanation_zh": "原文：we talk on the phone every Sunday evening.", "segment": 8 },
+        { "id": "q4", "type": "choice", "prompt_zh": "她们夏天一起做什么？", "options": ["去医院", "去上学", "去度假"], "answer": 2, "explanation_zh": "原文：In the summer, we always go on holiday together.", "segment": 9 }
+      ]
+    },
+    {
+      "id": "rd-a1-lost-backpack",
+      "type": "reading",
+      "level": "a1",
+      "can_do_ids": ["a1.r.messages"],
+      "topic": "messages",
+      "title_en": "Lost: A Blue Backpack",
+      "title_zh": "寻物：一个蓝色背包",
+      "summary_zh": "玛丽亚贴出的寻物启事：背包丢在哪里、长什么样、里面有什么，找到了怎么联系她。",
+      "segments": [
+        { "en": "Lost! Have you seen my backpack?", "zh": "丢失！你看到我的背包了吗？" },
+        { "en": "I lost my blue backpack on Tuesday afternoon.", "zh": "我周二下午丢了我的蓝色背包。" },
+        { "en": "I think I left it on the number 12 bus.", "zh": "我想我把它落在了 12 路公交车上。" },
+        { "en": "It has a small yellow star on the front.", "zh": "它前面有一颗黄色的小星星。" },
+        { "en": "Inside there is a laptop, two books and a black umbrella.", "zh": "里面有一台笔记本电脑、两本书和一把黑伞。" },
+        { "en": "The books are not mine; they are from the library!", "zh": "书不是我的，是图书馆的！" },
+        { "en": "If you find it, please call me on 07700 900123.", "zh": "如果你找到了，请打 07700 900123 联系我。" },
+        { "en": "You can also leave it at the café on King Street.", "zh": "你也可以把它放在国王街的咖啡馆。" },
+        { "en": "Thank you very much! Maria", "zh": "非常感谢！玛丽亚" }
+      ],
+      "glossary": [
+        { "key": "backpack", "text": "backpack", "pos": "noun", "ipa": "/ˈbækpæk/", "zh": "背包" },
+        { "key": "leave", "text": "left", "pos": "verb", "ipa": "/left/", "zh": "落下；遗留（leave 的过去式）" },
+        { "key": "front", "text": "front", "pos": "noun", "ipa": "/frʌnt/", "zh": "前面" },
+        { "key": "inside", "text": "inside", "pos": "adverb", "ipa": "/ˌɪnˈsaɪd/", "zh": "在里面" },
+        { "key": "laptop", "text": "laptop", "pos": "noun", "ipa": "/ˈlæptɒp/", "zh": "笔记本电脑" },
+        { "key": "umbrella", "text": "umbrella", "pos": "noun", "ipa": "/ʌmˈbrelə/", "zh": "雨伞" },
+        { "key": "mine", "text": "mine", "pos": "pronoun", "ipa": "/maɪn/", "zh": "我的（东西）" },
+        { "key": "library", "text": "library", "pos": "noun", "ipa": "/ˈlaɪbrəri/", "zh": "图书馆" }
+      ],
+      "questions": [
+        { "id": "q1", "type": "choice", "prompt_zh": "背包是什么颜色？", "options": ["黄色", "蓝色", "黑色"], "answer": 1, "explanation_zh": "原文：I lost my blue backpack. 黄色的是背包上的星星。", "segment": 1 },
+        { "id": "q2", "type": "choice", "prompt_zh": "玛丽亚觉得背包丢在哪里了？", "options": ["图书馆", "咖啡馆", "12 路公交车上"], "answer": 2, "explanation_zh": "原文：I think I left it on the number 12 bus.", "segment": 2 },
+        { "id": "q3", "type": "choice", "prompt_zh": "背包里的书是谁的？", "options": ["图书馆的", "玛丽亚的", "她朋友的"], "answer": 0, "explanation_zh": "原文：The books are not mine; they are from the library!", "segment": 5 },
+        { "id": "q4", "type": "choice", "prompt_zh": "找到背包的人可以怎么做？", "options": ["送到图书馆", "打电话，或者放到国王街的咖啡馆", "交给公交司机"], "answer": 1, "explanation_zh": "原文：please call me … You can also leave it at the café on King Street.", "segment": 6 }
+      ]
     }
   ]
 }

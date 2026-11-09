@@ -136,6 +136,8 @@ async function lastActivityBefore(db: DbExecutor, userId: string, before: Date):
       union all
       select max(created_at) from fluency_attempts where user_id = ${userId} and created_at < ${iso}::timestamptz
       union all
+      select max(created_at) from book_reading_logs where user_id = ${userId} and created_at < ${iso}::timestamptz
+      union all
       select max(a.created_at) from assessment_attempts a join assessment_sessions s on s.id = a.session_id
         where s.user_id = ${userId} and a.created_at < ${iso}::timestamptz
     ) x

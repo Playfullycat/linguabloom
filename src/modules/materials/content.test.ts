@@ -7,11 +7,15 @@ import { checkDictation, difficultyOf, tokenize } from "./domain/text";
 describe("built-in materials", () => {
   it("all validate, with every glossary word present in the text", () => {
     const materials = loadMaterials();
-    expect(materials.length).toBe(28);
+    expect(materials.length).toBe(56);
     for (const level of ["pre_a1", "a1", "a2", "b1", "b2", "c1", "c2"]) {
-      for (const type of ["reading", "listening"]) {
-        expect(materials.filter((m) => m.level === level && m.type === type).length).toBeGreaterThanOrEqual(2);
-      }
+      expect(materials.filter((m) => m.level === level && m.type === "reading").length, `reading ${level}`).toBe(6);
+      expect(materials.filter((m) => m.level === level && m.type === "listening").length, `listening ${level}`).toBeGreaterThanOrEqual(2);
+    }
+    // Every reading links to a can-do statement and has 3–5 comprehension questions.
+    for (const m of materials.filter((x) => x.type === "reading")) {
+      expect(m.can_do_ids.length, m.id).toBeGreaterThan(0);
+      expect(m.questions.length, m.id).toBeGreaterThanOrEqual(3);
     }
   });
 });

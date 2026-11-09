@@ -20,6 +20,7 @@ const ROUTES = [
   "/errors",
   "/reading",
   "/reading/rd-c1-machine-translation",
+  "/reading/books",
   "/listening",
   "/listening/ls-b2-saying-no",
   "/pronunciation",

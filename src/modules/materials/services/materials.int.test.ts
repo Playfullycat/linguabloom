@@ -20,6 +20,7 @@ import {
   listMaterials,
   lookupWord,
   markCompleted,
+  pickInputMaterial,
   recordEvent,
   saveNote,
   setFavorite,
@@ -52,11 +53,35 @@ describe("material lists", () => {
   it("lists built-in materials with a difficulty hint for this learner", async () => {
     const { materials, learner } = await listMaterials(db, userA, "reading");
     expect(learner.level).toBe("pre_a1");
-    expect(materials).toHaveLength(14);
+    expect(materials).toHaveLength(42);
     expect(materials.find((m) => m.id === MIA)).toMatchObject({ fit: "right", completed: false, newWords: 9 });
     expect(materials.find((m) => m.level === "a1")!.fit).toBe("stretch");
     expect(materials.find((m) => m.level === "a2")!.fit).toBe("hard");
     expect((await listMaterials(db, userA, "listening")).materials.every((m) => m.type === "listening")).toBe(true);
+  });
+
+  it("estimates known-word coverage, which grows with the words the learner studies", async () => {
+    const { materials } = await listMaterials(db, userA, "reading");
+    const mia = materials.find((m) => m.id === MIA)!;
+    const c2 = materials.find((m) => m.level === "c2")!;
+    expect(mia.coverage.ratio).toBeGreaterThan(c2.coverage.ratio);
+    expect(c2.coverage).toMatchObject({ band: "hard", label: "生词偏多" });
+    expect((await getMaterialForReader(db, userA, MIA)).coverage).toEqual(mia.coverage);
+
+    // Words collected from the C2 text don't count until they are being studied.
+    const [row] = await db.select({ content: learningContents.content }).from(learningContents).where(eq(learningContents.id, c2.id));
+    const keys = (row!.content as { glossary: { key: string }[] }).glossary.map((g) => g.key);
+    for (const key of keys) await collectWord(db, userA, c2.id, `${c2.id}.${key}`);
+    const ratioOf = async (userId: string) => (await listMaterials(db, userId, "reading")).materials.find((m) => m.id === c2.id)!.coverage.ratio;
+    expect(await ratioOf(userA)).toBe(c2.coverage.ratio);
+    await db.update(userVocabulary).set({ status: "learning" }).where(eq(userVocabulary.userId, userA));
+    expect(await ratioOf(userA)).toBeGreaterThan(c2.coverage.ratio);
+    // Per learner.
+    expect(await ratioOf(userB)).toBe(c2.coverage.ratio);
+
+    // The Today plan says how much of the chosen text the learner probably knows.
+    const pick = await pickInputMaterial(db, userA, { fallbackType: "reading" });
+    expect(pick!.reasons!.some((r) => /估计你认识其中约 \d+% 的词/.test(r))).toBe(true);
   });
 
   it("hides another learner's imported material", async () => {
