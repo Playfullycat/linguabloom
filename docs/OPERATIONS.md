@@ -32,6 +32,29 @@
 
 4. 打开 `APP_URL`，在初始化页面创建 owner 账户。
 
+### 2a. 用 GitHub 自动构建的镜像（不在服务器上编译）
+
+推送到 GitHub 的 `main` 分支后，GitHub Actions（`.github/workflows/ci.yml`）会先运行 lint、类型检查、单元测试和集成测试，全部通过后构建 `linux/amd64` 和 `linux/arm64` 两种架构的镜像，发布到 GitHub Container Registry：
+
+- `ghcr.io/<owner>/<repo>:latest`：`main` 分支的最新版本；
+- `ghcr.io/<owner>/<repo>:sha-<提交>`：每次提交一个固定版本，适合回滚；
+- 打 `v1.2.3` 这样的 tag 时，额外发布 `1.2.3` 和 `1.2`。
+
+服务器上只需要 `docker-compose.yml`、`.env` 和 `scripts/`（直接克隆仓库最省事），在 `.env` 里设置：
+
+```bash
+APP_IMAGE=ghcr.io/<owner>/<repo>:latest
+```
+
+然后拉取并启动（不再需要 `--build`）：
+
+```bash
+docker compose pull app
+docker compose up -d
+```
+
+镜像是私有的话（仓库私有，或者包没有设为公开），先在服务器上登录一次：`echo <令牌> | docker login ghcr.io -u <GitHub 用户名> --password-stdin`，令牌只需要 `read:packages` 权限。镜像里不包含任何密钥：所有配置都在运行时从 `.env` 读取。
+
 **在公网服务器上**：完成初始化之前，任何能访问页面的人都可能抢先创建账户。可以任选一种保护方式：
 
 - 设置 `OWNER_SETUP_TOKEN=<随机值>`，初始化时需要输入这个口令；
@@ -189,9 +212,11 @@ bash scripts/update.sh
 
 1. `git pull --ff-only`（没有配置上游分支时跳过；加 `--no-pull` 也可跳过）；
 2. 自动备份；
-3. 构建新镜像；
+3. 构建新镜像（`.env` 里设置了 `APP_IMAGE` 时改为拉取 GitHub 构建好的镜像）；
 4. 重启：新容器启动时执行迁移；
 5. 等待健康检查，并运行 `scripts/healthcheck.sh`。
+
+使用预构建镜像时，想固定或回滚到某个版本，把 `APP_IMAGE` 改成对应的 `:sha-<提交>` 或版本 tag，再 `docker compose pull app && docker compose up -d`。
 
 升级失败时，脚本会打印回滚步骤：
 

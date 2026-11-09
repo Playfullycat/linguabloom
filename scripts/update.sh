@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Update LinguaBloom: pull, back up, rebuild, migrate, restart, verify.
+# Update LinguaBloom: pull, back up, rebuild (or pull the prebuilt image), migrate, restart, verify.
 #
 #   bash scripts/update.sh            # git pull (fast-forward only) + update
 #   bash scripts/update.sh --no-pull  # rebuild what is checked out now
@@ -24,8 +24,13 @@ log "backing up before the update"
 backup_output="$(bash scripts/backup.sh | tee /dev/stderr)"
 backup_dir="$(printf '%s\n' "$backup_output" | sed -n 's/.*restore with: bash scripts\/restore.sh //p' | tail -n 1)"
 
-log "building the new image"
-compose build app
+if [ -n "$(env_get APP_IMAGE)" ]; then
+  log "pulling the prebuilt image $(env_get APP_IMAGE)"
+  compose pull app
+else
+  log "building the new image"
+  compose build app
+fi
 
 log "restarting (migrations run on start)"
 compose up -d

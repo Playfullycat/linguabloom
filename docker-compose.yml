@@ -1,6 +1,8 @@
 # LinguaBloom — Docker Compose
 #
 #   docker compose up -d --build     # build and start app + database
+#   docker compose pull app && docker compose up -d
+#                                    # or: use the prebuilt image (APP_IMAGE in .env)
 #   docker compose ps                # health status
 #   docker compose logs -f app       # application logs
 #
@@ -35,6 +37,9 @@ services:
       start_period: 10s
 
   app:
+    # Unset: built locally from this checkout. Set APP_IMAGE (e.g. ghcr.io/<owner>/linguabloom:latest)
+    # to run the image built by GitHub Actions instead: `docker compose pull app`.
+    image: ${APP_IMAGE:-linguabloom-app}
     build:
       context: .
     restart: unless-stopped

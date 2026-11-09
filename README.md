@@ -78,6 +78,8 @@ Next.js 16（App Router、Cache Components）· React 19 · TypeScript · Tailwi
 
 4. 打开 `APP_URL`。第一次会进入 **初始化** 页面，创建你的账户后会自动登录。
 
+**不想在服务器上编译**：每次推送到 GitHub 的 `main` 分支，GitHub Actions 会在测试通过后构建 amd64 和 arm64 镜像并发布到 `ghcr.io`。在 `.env` 里设置 `APP_IMAGE=ghcr.io/<owner>/<repo>:latest`，第 3 步改为 `docker compose pull app && docker compose up -d`。详见 [`docs/OPERATIONS.md`](docs/OPERATIONS.md) 的“2a”。
+
 查看状态和日志：
 
 ```bash
